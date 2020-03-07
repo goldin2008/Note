@@ -35,6 +35,8 @@ week2
 Pitfall:
 Before wrapping up this video one pitfall I want to urge you to avoid is expecting a 100% accuracy from your AI software. Here's what I mean, let's say this is your test set which you've already seen on the last slide. But, let me add a few more examples to this test set. Here are some of the reasons it may not be possible for a piece of AI software to be a 100% accurate. First, machine learning technology today despite being very powerful still has limitations and they just can't do everything. So, you may be working on a problem that it's just very difficult even for today's machine learning technology. Second, insufficient data. If you don't have enough data specifically if you don't have enough training data for the AI software to learn from it may be very difficult to get a very high level of accuracy. Third, data is messy and sometimes data can be mislabeled. For example, this green coffee mug here looks perfectly okay to me, so, the label of it being a defect looks like an incorrect label and that would hurt the performance of your AI software. Data can also be ambiguous.
 
+AI technical tools:
+
 
 
 ```
