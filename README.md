@@ -30,6 +30,29 @@ What makes an AI company:
 What machine learning can and cannot do:
 
 How to choose an AI project:
+Machine learning is an “iterative” process, meaning that an AI team often has to try many ideas before coming up with something that’s good enough, rather than have the first thing they try work.
+Say you want to use Machine Learning to help your sales team with automatic lead sorting. I.e., Input A (a sales prospect) and output B (whether your sales team should prioritize them). The 3 steps of the workflow, in scrambled order, are:
+(i) Deploy a trained model and get data back from users
+(ii) Collect data with both A and B
+(iii) Train a machine learning system to input A and output B
+
+Say you want to build an AI system to help recruiters with automated resume screening. Which of these steps might be involved in “technical diligence” process?  (Select all that apply.)
+Defining an engineering timeline
+Making sure you can get enough data for this project
+Ensuring that this is valuable for your business (e.g., estimating the project ROI)
+Making sure that an AI system can meet the desired performance
+
+Which of these statements about “business diligence” do you agree with?
+Business diligence is the process of ensuring that the envisioned AI technology is feasible.
+Business diligence is the process of ensuring that the AI technology, if it is built, is valuable for your business.
+
+Say you want to build an AI system to help recruiters with automated resume screening. Which of these steps might be involved in “technical diligence” process?  (Select all that apply.)
+Defining an engineering timeline
+Making sure you can get enough data for this project
+Making sure that an AI system can meet the desired performance
+
+Ensuring that this is valuable for your business (e.g., estimating the project ROI)
+
 week2
 
 Pitfall:
@@ -37,6 +60,9 @@ Before wrapping up this video one pitfall I want to urge you to avoid is expecti
 
 AI technical tools:
 Finally, you might hear about Cloud versus On-premises, or for short, On-prem deployments. Cloud deployments refer to if you rent compute servers such as from Amazon's AWS, or Microsoft's Azure, or Google's GCP in order to use someone else's service to do your computation. Whereas, an On-prem deployment means buying your own compute servers and running the service locally in your own company. A detailed exploration of the pros and cons of these two options is beyond the scope of this video. A lot of the world is moving to Cloud deployments. Whether you search online you find many articles talking about the pros and cons of Cloud versus On-prem deployments. 
+
+Building AI in your company:
+week3
 
 
 ```
