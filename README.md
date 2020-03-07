@@ -66,7 +66,8 @@ week3
 
 As you can tell both from this rather complex example of an AI pipeline, as well as the early example of the four-step AI pipeline for the smart speaker, sometimes it takes a team to build all of these different components of a complex AI product. What I'd like to do in the next video is share with you what are the key roles in large AI teams. If you're either a one-person or small AI team now, that's okay, but I want you to have a vision of what building a large AI team, maybe in the distant future, might look like.
 
-
+ I hope this survey of AI application areas gives you a sense that the wide range of data that AI is successfully applied to today, and maybe this even inspire you to think of how some of these application areas may be useful for your own projects. Now, so far the one AI technique we've spent the most time talking about is supervised learning. That means learning inputs, output, or A to B mappings from labeled data where you give the AI system both A and B. But that's not the only AI technique out there. In fact, the term supervised learning almost invites the question of what is unsupervised learning, or you might also have heard from media articles, from the news about reinforcement learning. So, what are all these other techniques? In the next video, the final optional video for this week, we'll do a survey of AI techniques, and I hope that through that maybe you'll see if some of these other AI techniques and supervised learning could be useful for your projects as well. Let's go on to the final optional video for the week.
+ 
 ```
 
 http://solutionoptimist.com/2013/12/28/awesome-github-tricks/
