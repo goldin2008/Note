@@ -64,6 +64,8 @@ Finally, you might hear about Cloud versus On-premises, or for short, On-prem de
 Building AI in your company:
 week3
 
+As you can tell both from this rather complex example of an AI pipeline, as well as the early example of the four-step AI pipeline for the smart speaker, sometimes it takes a team to build all of these different components of a complex AI product. What I'd like to do in the next video is share with you what are the key roles in large AI teams. If you're either a one-person or small AI team now, that's okay, but I want you to have a vision of what building a large AI team, maybe in the distant future, might look like.
+
 
 ```
 
