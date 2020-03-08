@@ -1,5 +1,15 @@
 # Presentation and Note
 
+>Udacity
+Data Streaming:
+1) OPT:
+
+2) SF Crime:
+1./usr/bin/zookeeper-server-start config/zookeeper.properties
+2./usr/bin/kafka-server-start config/server.properties
+3.python kafka_server.py
+4.kafka-console-consumer --bootstrap-server localhost:9092 --topic com.udacity.project.sfcrimes --from-beginning
+
 
 >ML presentation
 
