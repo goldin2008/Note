@@ -1,16 +1,22 @@
 # Presentation and Note 
 
->Udacity Data Streaming: 1) OPT: ``` 
+>Udacity Data Streaming: 
+1) OPT: 
+``` 
 
-``` 2) SF Crime: ``` 1./usr/bin/zookeeper-server-start 
-config/zookeeper.properties 2./usr/bin/kafka-server-start 
-config/server.properties 3.python kafka_server.py 4.kafka-console-consumer --
-bootstrap-server localhost:9092 --topic com.udacity.project.sfcrimes --from-
-beginning ``` 
+``` 
+2) SF Crime: 
+
+``` 
+1./usr/bin/zookeeper-server-start config/zookeeper.properties 
+2./usr/bin/kafka-server-start config/server.properties 
+3.python kafka_server.py 
+4.kafka-console-consumer --bootstrap-server localhost:9092 --topic com.udacity.project.sfcrimes --from-beginning 
+``` 
 
 >ML presentation 
 
-``` 1. Intro: AI is changing the way we work and live and this nontechnical 
+1. Intro: AI is changing the way we work and live and this nontechnical 
 presentation will teach you how to navigate the rise of AI. Whether you want to 
 know what's behind the buzzwords or whether you want to perhaps use AI yourself 
 either in a personal context or in a corporation, this course will teach you 
@@ -1101,7 +1107,6 @@ work or school, and friends and family, and I'm grateful that you spend so much
 time with me and in this course learning these complex issues relating to both 
 the technology and the impact of AI. So thank you very much for both the time 
 and the effort you put Into this course. 
-
-``` 
+ 
 
 http://solutionoptimist.com/2013/12/28/awesome-github-tricks/ 
