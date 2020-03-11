@@ -16,6 +16,8 @@
 
 >ML presentation 
 
+https://www.sumologic.com/blog/machine-learning-deep-learning/
+
 1. Intro: AI is changing the way we work and live and this nontechnical 
 presentation will teach you how to navigate the rise of AI. Whether you want to 
 know what's behind the buzzwords or whether you want to perhaps use AI yourself 
