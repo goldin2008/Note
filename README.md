@@ -1,5 +1,10 @@
 # Presentation and Note 
 
+AWS Account:
+```
+udacitystudylei@gmail.com
+```
+
 >Udacity Data Streaming: 
 1) OPT: 
 ``` 
