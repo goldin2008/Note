@@ -42,6 +42,18 @@ Business diligence is the process of ensuring that the AI technology, if it is b
 
 What we would like to do is try to select projects that are at the intersection of these two sets, so you select projects hopefully that are both feasible for ML, and valuable for our business. ML experts will tend to have a good sense of what is and what isn't in the set on the left. And domain experts, will have the best sense of what is actually valuable for our business. When brainstorming projects that ML can do and are valuable for our business, we can bring together a team comprising both people knowledgeable of AI, as well as experts in your business area. By understanding the main pain points in the business and feasible technology we can build, that will allow us to select the most fruitful project for automation in the near term.
 
+***Technical tools for AI teams and Resources:
+When you work with AI teams, you may hear them refer to the tools that they're using to build these AI systems. In this video, I want to share with you some details and names of the most commonly used AI tools, so that you'd be able to better understand what these AI engineers are doing.
+We're fortunate that the AI world today is very open, and many teams will openly share ideas with each other. There are great machine learning open source frameworks that many teams will use to build their systems. So, if you hear of any of these: TensorFlow, PyTorch, Keras, MXNet, CNTK, Caffe,  PaddlePaddle, Scikit-learn, R or Weka, all of these are open source machine  learning frameworks that help AI teams be much more efficient in terms of writing software. 
+Along with AI technology breakthroughs are also publish freely on the Internet on this website called Arxiv. Spelled like this. I hope that other academic communities also freely share their research since I've seen firsthand how much this accelerates progress in the whole field of AI.  
+Finally, many teams will also share their code freely on the Internet, most commonly on a website called GitHub. By using appropriately licensed open-source software, many teams can get going much  faster than if they had to build everything from scratch. Finally, you might hear about Cloud versus On-prem deployments. Cloud deployments refer to if you rent  compute servers such as from Amazon's AWS, or Microsoft's Azure, or Google's GCP in order to use someone else's service to do your computation. Whereas, an On-prem deployment means buying your own compute servers and running the service locally in your own company. A lot of the world is moving to Cloud deployments. Whether you search online you find many articles talking about the pros and cons of Cloud versus On-prem deployments.
+
+
+
+
+
+
+
 
 
 https://www.sumologic.com/blog/machine-learning-deep-learning/
