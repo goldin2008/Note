@@ -30,7 +30,17 @@ You might have heard terminology from AI, such as machine learning or neural net
 If we were to draw a Venn diagram showing how all these concepts put together, this is what it may look like. AI is this huge set of tools for making computers behave intelligently. Off AI, the biggest subset is prairie tools from machine learning, but AI does have other tools than machine learning, such as some of buzzwords you might also hear in the media, like unsupervised learning, reinforcement learning, graphical models, planning, knowledge graph, and so on. The part of machine learning that's most important these days is neural networks or deep learning, which is a very powerful set of tools for carrying out supervised learning or A to B mappings as well as some other things. But there are also other machine learning tools that are not just deep learning tools, like linear regression, logistic regression, decision tree and so on.
 
 
+***How to choose an AI project: 
+The steps might be involved in “technical diligence” process:
+ensuring that the envisioned AI technology is feasible. 
+Defining an engineering timeline 
+Making sure you can get enough data for this project 
+Making sure that the ML system can meet the desired performance
 
+“business diligence”:
+Business diligence is the process of ensuring that the AI technology, if it is built, is valuable for your business.
+
+What we would like to do is try to select projects that are at the intersection of these two sets, so you select projects hopefully that are both feasible for ML, and valuable for our business. ML experts will tend to have a good sense of what is and what isn't in the set on the left. And domain experts, will have the best sense of what is actually valuable for our business. When brainstorming projects that ML can do and are valuable for our business, we can bring together a team comprising both people knowledgeable of AI, as well as experts in your business area. By understanding the main pain points in the business and feasible technology we can build, that will allow us to select the most fruitful project for automation in the near term.
 
 
 
