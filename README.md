@@ -22,6 +22,18 @@ nigama7@gmail.com
 
 >ML presentation 
 
+***Intro: 
+AI is changing the way we work and live. Whether you want to know what's behind the buzzwords or whether you want to perhaps use AI yourself either in a personal context or in a corporation, Today's talk will give you a realistic view of what AI really is.
+
+***Relationship between ML, DL and AI:
+You might have heard terminology from AI, such as machine learning or neural networks or deep learning. What do these terms mean?
+If we were to draw a Venn diagram showing how all these concepts put together, this is what it may look like. AI is this huge set of tools for making computers behave intelligently. Off AI, the biggest subset is prairie tools from machine learning, but AI does have other tools than machine learning, such as some of buzzwords you might also hear in the media, like unsupervised learning, reinforcement learning, graphical models, planning, knowledge graph, and so on. The part of machine learning that's most important these days is neural networks or deep learning, which is a very powerful set of tools for carrying out supervised learning or A to B mappings as well as some other things. But there are also other machine learning tools that are not just deep learning tools, like linear regression, logistic regression, decision tree and so on.
+
+
+
+
+
+
 https://www.sumologic.com/blog/machine-learning-deep-learning/
 
 1. Intro: AI is changing the way we work and live and this nontechnical 
