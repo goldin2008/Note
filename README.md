@@ -46,10 +46,15 @@ To run the consumer: (NOTE: Do not run the consumer until you have reached Ste
 2) SF Crime: 
 
 ``` 
-1./usr/bin/zookeeper-server-start config/zookeeper.properties 
-2./usr/bin/kafka-server-start config/server.properties 
-3.python kafka_server.py 
-4.kafka-console-consumer --bootstrap-server localhost:9092 --topic com.udacity.project.sfcrimes --from-beginning 
+1./usr/bin/zookeeper-server-start config/zookeeper.properties
+2./usr/bin/kafka-server-start config/server.properties
+3.python kafka_server.py
+4.kafka-console-consumer --bootstrap-server localhost:9092 --topic com.udacity.project.sfcrimes --from-beginning
+
+/usr/bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic org.chicago.cta.stations.table.v1 --from-beginning
+
+root@7aafb549a58e:/home/workspace/consumers# kill -15 1625
+root@7aafb549a58e:/home/workspace/consumers# pgrep -lf python
 ``` 
 
 >ML presentation 
