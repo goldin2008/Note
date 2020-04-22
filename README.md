@@ -7,6 +7,14 @@ udacitystudylei@gmail.com
 nigama7@gmail.com
 
 ```
+>Project
+```
+1. Install env
+2. Install packages
+3. Create requirements.txt
+4. 
+```
+
 >Project Command: 
 ```
 python3 -m venv env
@@ -15,6 +23,9 @@ pip list
 pip freeze > requirements.txt
 cat requirements.txt
 ```
+
+
+
 
 >Udacity Data Streaming: 
 1) OPT: 
