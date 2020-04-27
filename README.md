@@ -2,10 +2,8 @@
 
 AWS Account:
 ```
-
 udacitystudylei@gmail.com
 nigama7@gmail.com
-
 ```
 >Project
 ```
