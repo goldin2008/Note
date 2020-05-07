@@ -35,6 +35,7 @@ Will work in an Agile/Scrum environment to regularly deliver high quality softwa
 1+ years of experience contributing to the architecture and design (architecture, design patterns, reliability and scaling) of new and current systems.
 The motivation to achieve results in a fast-paced environment.
 Experience with statistical modelling / machine learning
+1+ years of relevant software experience with software development, data science/analytics or data modelling
 ```
 
 Preferred Qualifications
