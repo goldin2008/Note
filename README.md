@@ -1,11 +1,22 @@
 # Presentation and Note 
 
+Required Qualifications
+```
+*At least 4 years of hands-on professional industry experience in engineering positions focused on Machine Learning, Information Retrieval, Recommendation systems or Data Mining, Natural Language Processing, Learning to Rank.
+
+*Strong programming skills in Java, Python or Scala.
+
+*Strong knowledge of Object Oriented design, advanced algorithms, data structures, etc.
+```
 Preferred Qualifications
 ```
-*Master’s or PhD in a relevant field and/or experience in any of the following is highly regarded: Computer Science, Machine Learning, Data Science and Modeling techniques including classification, regression and Bayesian analysis.
-Experience with Agile software development and Test Driven Development methodologies.
-Experience working with large datasets, preferably using tools like Hadoop, Spark, Pig or Hive.
-Experience building Software as a Service (SaaS) applications.
+*Master’s or PhD in a relevant field and/or experience in any of the following is highly regarded: \\Computer Science, Machine Learning, Data Science and Modeling techniques including classification, regression and Bayesian analysis.
+
+*Experience with Agile software development and Test Driven Development methodologies.
+
+*Experience working with large datasets, preferably using tools like Hadoop, Spark, Pig or Hive.
+
+*Experience building Software as a Service (SaaS) applications.
 ```
 
 AWS Account:
