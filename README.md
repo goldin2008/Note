@@ -11,6 +11,8 @@ Required Qualifications
 *At least 2 years of experience with Python, Java or Scala
 
 *At least 2 years of experience with Diverse Data
+
+*Willingness to learn new skills, go out of your comfort zone, and get your hands dirty.
 ```
 Preferred Qualifications
 ```
