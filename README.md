@@ -27,6 +27,16 @@ Required Qualifications
 *Strong verbal and written communication skills.
 
 *Can work in a fast-paced environment.
+
+Responsible for the development and maintenance of key backend components and APIs
+Will work with business and technical stakeholders to determine end-to-end system design and overall technical strategy
+Will work with other team members to investigate design approaches, prototype new technology and evaluate technical feasibility.
+Will work in an Agile/Scrum environment to regularly deliver high quality software that has a measurable customer value
+1+ years of experience contributing to the architecture and design (architecture, design patterns, reliability and scaling) of new and current systems.
+The motivation to achieve results in a fast-paced environment.
+Experience with statistical modelling / machine learning
+Demonstrated ability to develop experimental and analytic plans for data modeling processes using strong baselines
+Demonstrated ability to accurately determine cause and effect relations
 ```
 
 Preferred Qualifications
