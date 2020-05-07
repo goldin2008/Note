@@ -23,7 +23,12 @@ Required Qualifications
 *Strong applied skills in machine learning, programming, and statistics
 
 *Excellent communicator and cross-functional collaborator
+
+*Strong verbal and written communication skills.
+
+*Can work in a fast-paced environment.
 ```
+
 Preferred Qualifications
 ```
 *Master’s or PhD in a relevant field and/or experience in any of the following is highly regarded:
@@ -62,6 +67,10 @@ Computer Science, Machine Learning, Data Science and Modeling techniques includi
 *Can work effectively without detailed instructions
 
 *Experience working in a product and/or business-driven environment.
+
+*Experience with building machine learning systems.
+
+*Have data science skills and experience with building machine learning models.
 ```
 
 AWS Account:
