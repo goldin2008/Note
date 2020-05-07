@@ -13,6 +13,14 @@ Required Qualifications
 *At least 2 years of experience with Diverse Data
 
 *Willingness to learn new skills, go out of your comfort zone, and get your hands dirty.
+
+*Ability to collaborate closely with cross functional teams
+
+*Ability to quickly prototype new ideas and use creative approaches to solve complex problems
+
+*Industry experience in Machine Learning, or similar experience
+
+
 ```
 Preferred Qualifications
 ```
@@ -36,6 +44,10 @@ Computer Science, Machine Learning, Data Science and Modeling techniques includi
 *Recent publications at ML conferences and workshops
 
 *Technical writings, blog posts, open source projects and contributions
+
+*Familiarity with ML tools like Caffe, pyTorch, TensorFlow, scikit-learn, nltk etc
+
+*Advanced knowledge of at least one programming language (Python, C/C++, C#, Objective-C)
 ```
 
 AWS Account:
