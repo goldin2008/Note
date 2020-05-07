@@ -60,6 +60,8 @@ Computer Science, Machine Learning, Data Science and Modeling techniques includi
 *Ability to articulate complex analytic and technical problems
 
 *Can work effectively without detailed instructions
+
+*Experience working in a product and/or business-driven environment.
 ```
 
 AWS Account:
