@@ -89,6 +89,10 @@ Computer Science, Machine Learning, Data Science and Modeling techniques includi
 *Excellent communication and collaboration skills
 *Excellent problem solving and analytical thinking skills
 *Proven track record of working successfully with cross-functional teams
+2+ years experience in building and evolving complex software systems for data processing and machine learning workloads
+1+ years of knowledge and experience with Databases – SQL, NOSQL
+1+ years of scripting skills in at least one of the following: Shell, Perl, Python, Bash, or Ruby
+1+ years of experience with Big Data processing and ML cloud native services on one or more Cloud Platforms (GCP, Azure and/or AWS)
 ```
 
 AWS Account:
