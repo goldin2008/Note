@@ -36,6 +36,8 @@ Will work in an Agile/Scrum environment to regularly deliver high quality softwa
 The motivation to achieve results in a fast-paced environment.
 Experience with statistical modelling / machine learning
 1+ years of relevant software experience with software development, data science/analytics or data modelling
+Excellent oral and written communication skills and presentation skills
+Good understanding of predictive analytics process from data validation to model assessment, stability, and deployment monitoring
 ```
 
 Preferred Qualifications
