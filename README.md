@@ -2,7 +2,7 @@
 
 Preferred Qualifications
 ```
-Master’s or PhD in a relevant field and/or experience in any of the following is highly regarded: Computer Science, Machine Learning, Data Science and Modeling techniques including classification, regression and Bayesian analysis.
+*Master’s or PhD in a relevant field and/or experience in any of the following is highly regarded: Computer Science, Machine Learning, Data Science and Modeling techniques including classification, regression and Bayesian analysis.
 Experience with Agile software development and Test Driven Development methodologies.
 Experience working with large datasets, preferably using tools like Hadoop, Spark, Pig or Hive.
 Experience building Software as a Service (SaaS) applications.
