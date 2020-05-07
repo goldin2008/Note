@@ -111,6 +111,12 @@ Familiarity with ML algorithms for time series datasets.
 Working knowledge and experience with Streaming platforms
 Demonstrated ability to develop experimental and analytic plans for data modeling processes using strong baselines
 Demonstrated ability to accurately determine cause and effect relations
+Proven track-record of solving complex data processing and storage challenges through scalable, fault-tolerant architecture
+Experience with AWS tools
+Expertise in building out data pipelines, efficient ETL design, implementation, and maintenance
+Comfort with open source technologies like Kafka, Hadoop, Hive, Presto, and Spark
+A knack for writing, clean, readable, maintainable code
+Passion for creating data infrastructure technologies from scratch using the right tools for the job
 ```
 
 AWS Account:
