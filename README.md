@@ -7,6 +7,10 @@ Required Qualifications
 *Strong programming skills in Java, Python or Scala.
 
 *Strong knowledge of Object Oriented design, advanced algorithms, data structures, etc.
+
+*At least 2 years of experience with Python, Java or Scala
+
+*At least 2 years of experience with Diverse Data
 ```
 Preferred Qualifications
 ```
@@ -18,6 +22,18 @@ Computer Science, Machine Learning, Data Science and Modeling techniques includi
 *Experience working with large datasets, preferably using tools like Hadoop, Spark, Pig or Hive.
 
 *Experience building Software as a Service (SaaS) applications.
+
+*2+ years experience with statistical methods, modern ML algorithms, and software engineering best practices
+
+*2+ years experience with framework such as Tensorflow, Torch, PyMC3, or Stan
+
+*3+ years experience with Julia, Scala, or C++
+
+*2+ years experience solving concrete business problems with novel applications of ML
+
+*Recent publications at ML conferences and workshops
+
+*Technical writings, blog posts, open source projects and contributions
 ```
 
 AWS Account:
