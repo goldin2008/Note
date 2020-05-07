@@ -35,8 +35,6 @@ Will work in an Agile/Scrum environment to regularly deliver high quality softwa
 1+ years of experience contributing to the architecture and design (architecture, design patterns, reliability and scaling) of new and current systems.
 The motivation to achieve results in a fast-paced environment.
 Experience with statistical modelling / machine learning
-Demonstrated ability to develop experimental and analytic plans for data modeling processes using strong baselines
-Demonstrated ability to accurately determine cause and effect relations
 ```
 
 Preferred Qualifications
@@ -111,6 +109,8 @@ Productionizing developed Machine Learning solutions
 Understanding of machine learning performance metrics and how to evaluate usefulness of output
 Familiarity with ML algorithms for time series datasets.
 Working knowledge and experience with Streaming platforms
+Demonstrated ability to develop experimental and analytic plans for data modeling processes using strong baselines
+Demonstrated ability to accurately determine cause and effect relations
 ```
 
 AWS Account:
