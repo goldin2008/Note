@@ -86,6 +86,9 @@ Computer Science, Machine Learning, Data Science and Modeling techniques includi
 *Good communication skills and team player attitude
 *Experience in Natural Language Processing/Understanding using deep neural networks ( RNN (LSTM, GRU) / CNN) is a plus
 *Experience with BigData ecosystem Hadoop, Hive, Spark/PySpark is a plus
+*Excellent communication and collaboration skills
+*Excellent problem solving and analytical thinking skills
+*Proven track record of working successfully with cross-functional teams
 ```
 
 AWS Account:
