@@ -20,7 +20,9 @@ Required Qualifications
 
 *Industry experience in Machine Learning, or similar experience
 
+*Strong applied skills in machine learning, programming, and statistics
 
+*Excellent communicator and cross-functional collaborator
 ```
 Preferred Qualifications
 ```
