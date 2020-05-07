@@ -122,6 +122,8 @@ Expertise in building out data pipelines, efficient ETL design, implementation, 
 Comfort with open source technologies like Kafka, Hadoop, Hive, Presto, and Spark
 A knack for writing, clean, readable, maintainable code
 Passion for creating data infrastructure technologies from scratch using the right tools for the job
+Scientific thinking and ability to design and critically analyze quantitative research
+Ability to think creatively about research problems and invent original solutions to modeling challenges
 ```
 
 AWS Account:
