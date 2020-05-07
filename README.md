@@ -71,6 +71,21 @@ Computer Science, Machine Learning, Data Science and Modeling techniques includi
 *Experience with building machine learning systems.
 
 *Have data science skills and experience with building machine learning models.
+
+*Discovering, analyzing, structuring and mining data
+*Statistical hypotheses validation and model performance analysis
+*Developing neural network models supporting business use cases
+*Design and coordinate implementation of DL based solutions for production usage
+*Deep understanding of data mining algorithms and statistical methods
+*Experience in successfully applying machine learning to real-world problems
+*Strong knowledge of Deep Learning frameworks: Keras, Tensorflow, PyTorch, etc
+*Knowledge in python and packages for data analysis (scipy, numpy, pandas, matplotlib)
+*Proficient in one or more of programming languages Scala, Java, C++
+*Strong knowledge of extracting and processing data with RDBMS/NoSQL
+*Experience with one or more Container-ecosystem (Docker, Mesos, Kubernetes) will be a plus
+*Good communication skills and team player attitude
+*Experience in Natural Language Processing/Understanding using deep neural networks ( RNN (LSTM, GRU) / CNN) is a plus
+*Experience with BigData ecosystem Hadoop, Hive, Spark/PySpark is a plus
 ```
 
 AWS Account:
