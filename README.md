@@ -50,6 +50,16 @@ Computer Science, Machine Learning, Data Science and Modeling techniques includi
 *Familiarity with ML tools like Caffe, pyTorch, TensorFlow, scikit-learn, nltk etc
 
 *Advanced knowledge of at least one programming language (Python, C/C++, C#, Objective-C)
+
+*Proficient in programming skills to include: JAVA, Python and Object Oriented Programming-3 years
+
+*Proficient in Machine Learning to include: feature extraction statistical approaches, linear and non-linear classifiers and deep learning-3 years
+
+*Ability to apply, evaluate, and modify machine learning algorithms against various data sources and use cases
+
+*Ability to articulate complex analytic and technical problems
+
+*Can work effectively without detailed instructions
 ```
 
 AWS Account:
