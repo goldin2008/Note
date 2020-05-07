@@ -38,6 +38,8 @@ Experience with statistical modelling / machine learning
 1+ years of relevant software experience with software development, data science/analytics or data modelling
 Excellent oral and written communication skills and presentation skills
 Good understanding of predictive analytics process from data validation to model assessment, stability, and deployment monitoring
+Experience creating data visualizations
+Ability to build dashboards and other tools using front-end development skills
 ```
 
 Preferred Qualifications
