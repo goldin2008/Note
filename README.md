@@ -93,6 +93,14 @@ Computer Science, Machine Learning, Data Science and Modeling techniques includi
 1+ years of knowledge and experience with Databases – SQL, NOSQL
 1+ years of scripting skills in at least one of the following: Shell, Perl, Python, Bash, or Ruby
 1+ years of experience with Big Data processing and ML cloud native services on one or more Cloud Platforms (GCP, Azure and/or AWS)
+Experience with Performance Engineering including testing, tuning and monitoring tools.
+Basic Familiarity with continuous integration tools and frameworks
+Expert knowledge and experience with Python
+Strong grasp of principles and approaches used in Data-driven systems, processes and algorithms
+Productionizing developed Machine Learning solutions
+Understanding of machine learning performance metrics and how to evaluate usefulness of output
+Familiarity with ML algorithms for time series datasets.
+Working knowledge and experience with Streaming platforms
 ```
 
 AWS Account:
