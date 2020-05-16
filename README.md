@@ -56,6 +56,28 @@ Experience in management or technology consulting across the full strategy-to-im
 Experience with Python-based data visualization packages and tools (Matplotlib, Plotly, Superset)
 Experience in building, deploying and maintaining data pipelines using open source tools like Python and Airflow
 Experience with git and version control workflows
+The ability to clearly and effectively communicate the results of complex analysis to a broad audience
+Expertise in designing and testing experiments.
+Experience working with data technologies that allow effective storage and analysis of large amounts of data (e.g. Hadoop, Hive, Spark, Presto, S3, etc).
+Experience with AWS technologies like Redshift, S3, EC2, Data Pipeline, & EMR
+Experience diving into data to discover hidden patterns
+Able to write production level code, which is well-written and explainable
+Experience with big data and building large-scale data pipelines end-to-end.
+Experience in working with cross-functional teams and driving data-driven decisions.
+Strong critical thinking and communication skills.
+Experience in the area of user growth and engagement.
+Experience working with large data sets and distributed computing tools (Map/Reduce, Hadoop, Hive, or Spark).
+Programming skills in one of the following languages SQL, Java, or JavaScript on a UNIX or Linux platform.
+5+ years professional experience in software development in languages related to ML like Python or R. Experience working with RESTful API and general service-oriented architectures.
+Ability to develop experimental and analytic plans for data modeling processes, use of strong baselines, ability to accurately determine cause and effect relationships
+Knowledge of SparkML
+Strong knowledge of computer science fundamentals, including object-oriented design, data structures, and algorithms
+Strong knowledge of statistics, machine learning, and natural language processing
+Familiarity with basic fundamentals of probability theory and statistics.
+Capable of clearly communicating complex analyses to a non-technical audience, including extensive experience presenting to leadership groups
+Strong programming (Scala/Java) and shell scripting skills
+Experience with real-time processing technologies like Spark/Storm/Flink
+Experience with Hadoop/Hive
 
 
 ```
@@ -146,6 +168,32 @@ Experience with distributed computational frameworks (YARN, Spark, Hadoop, Kuber
 Experience using big data technologies (e.g., Hadoop, Spark)
 Demonstrable experience performing ETL/ELT on multiple sources of data using technologies such as Sqoop, Hive, Spark, and Informatica
 Experience with streaming data a plus
+Research and build impactful data products that improve player experiences, driving them from conception, to experimentation, to productionization in-game.
+Contribute to the architecture and development of model deployment platforms, in particular providing guidance on automated model re-training, online training, scalability, failure recovery, updates with minimal downtime, model/pipeline versioning, performance monitoring.
+5+ years of experience applying data science/machine learning/deep learning methodologies to real-world problems
+Expertise in analyzing extremely large, complex, multi-dimensional data sets with a variety of tools, including Python, SQL, and Spark. Experience with big data technologies, distributed data query and computing engine.
+Programming experience in a system programming language such as C/C++ or Java.
+Familiarity with at least one scripting language: R, Python, or Scala
+Experience deploying machine learning systems using AWS, GCP, Virtual Machines, or Docker. Experience developing customizable, modular, and scalable deep learning algorithms in Keras/Pytorch/Tensorflow
+Hypothesis driven – uses data to test ideas rigorously and objectively
+Willing to teach and mentor colleagues
+Eager to stay on the cutting edge of methodologies and technologies
+Experience with scripting languages (Python preferred), SQL, and a shell.
+Experience writing and speaking about technical concepts to business, technical, and lay audiences and giving data-driven presentations
+Strong modeling/algorithmic skill set, hands-on mastery of data manipulation and experience with data analytics tools (SQL, Python, Hadoop, Hive, Spark, etc.).
+Solid programming skills. Familiarity with algorithms and data structures.
+Experience with online data storage and processing frameworks such as Kafka, MySQL, Redis, and Cassandra
+5+ years in a data science role with proven record of implementing end-to-end ML/AI solutions into production
+Experience deploying ML models to production and thinking deeply about model risk management.
+Experience in ETL pipelines, both batch and real-time data processing.
+Cloud computing: Google Cloud, Amazon Web Service, Azure, Docker, Kubernetes.
+Experience in big data technologies: Hadoop, Hive, Spark, Kafka.
+Experience in distributed system design and development
+Apply expertise in Machine Learning and data mining techniques feature engineering, regression, classification, anomaly detection, time series analysis etc
+Develop Machine Learning pipelines
+Fluent in Machine Learning techniques Regression, Trees, Clustering, Neural Networks, Anomaly Detection
+Strong technical background working in a Big Data ecosystem and ability to do data analysis, data engineering, ML design and development
+
 
 ```
 
