@@ -41,6 +41,23 @@ Excellent oral and written communication skills and presentation skills
 Good understanding of predictive analytics process from data validation to model assessment, stability, and deployment monitoring
 Experience creating data visualizations
 Ability to build dashboards and other tools using front-end development skills
+Hypothesize, plan and execute exploratory analyses, using data collected from sources throughout the firm
+Continuous monitoring, alerting and issue tracking and resolution to address violations found in project deliveries
+Analytical mindset, creativity and commercial focus
+Strong analytical, communication, interpersonal, problem solving, organizational and time management skills
+Excellent influencing skills at all levels and the ability to develop and maintain good relationships
+Ability to communicate effectively with non-technical stakeholders
+Strong knowledge of applied statistics, experimental design, and causal inference
+Outstanding verbal/written communication and presentation skills, including an ability to effectively communicate with both business and technical teams
+Identifying and ingesting new data sources and performing feature engineering for integration into models
+Excellent problem-framing, problem solving and project management skills, willingness to be flexible and adapt to change
+Ability to self-start and self-direct work in an unstructured environment, comfortable dealing with ambiguity
+Experience in management or technology consulting across the full strategy-to-implementation project lifecycle
+Experience with Python-based data visualization packages and tools (Matplotlib, Plotly, Superset)
+Experience in building, deploying and maintaining data pipelines using open source tools like Python and Airflow
+Experience with git and version control workflows
+
+
 ```
 
 Preferred Qualifications
@@ -125,6 +142,11 @@ A knack for writing, clean, readable, maintainable code
 Passion for creating data infrastructure technologies from scratch using the right tools for the job
 Scientific thinking and ability to design and critically analyze quantitative research
 Ability to think creatively about research problems and invent original solutions to modeling challenges
+Experience with distributed computational frameworks (YARN, Spark, Hadoop, Kubernetes, Docker)
+Experience using big data technologies (e.g., Hadoop, Spark)
+Demonstrable experience performing ETL/ELT on multiple sources of data using technologies such as Sqoop, Hive, Spark, and Informatica
+Experience with streaming data a plus
+
 ```
 
 AWS Account:
