@@ -1,6 +1,7 @@
 # Presentation and Note 
 
 Required Qualifications
+
 ```
 *At least 4 years of hands-on professional industry experience in engineering positions focused on Machine Learning, Information Retrieval, Recommendation systems or Data Mining, Natural Language Processing, Learning to Rank.
 
