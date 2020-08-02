@@ -1,7 +1,5 @@
 # Presentation and Note 
 
-```
-
 AWS Account:
 ```
 udacitystudylei@gmail.com
@@ -1434,3 +1432,4 @@ Apply expertise in Machine Learning and data mining techniques feature engineeri
 Develop Machine Learning pipelines
 Fluent in Machine Learning techniques Regression, Trees, Clustering, Neural Networks, Anomaly Detection
 Strong technical background working in a Big Data ecosystem and ability to do data analysis, data engineering, ML design and development
+```
