@@ -1,8 +1,7 @@
 # Presentation and Note 
 
-```
-https://www.datainnovation.org/2020/07/5-qs-for-priscilla-alexander-vice-president-of-engineering-at-arthurai/
-```
+> https://www.datainnovation.org/2020/07/5-qs-for-priscilla-alexander-vice-president-of-engineering-at-arthurai/
+
 
 AWS Account:
 ```
