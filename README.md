@@ -28,6 +28,9 @@ pip freeze > requirements.txt
 cat requirements.txt
 ```
 
+```
+pip install jupyterlab pandas sklearn matplotlib seaborn flake8 pycodestyle_magic
+```
 
 
 
