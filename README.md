@@ -15,11 +15,11 @@ nigama7@gmail.com
 ```
 1. Install env
 2. Install packages
-3. Create requirements.txt
-4. 
+3. Create requirements.txt 
 ```
 
->Project Command: 
+Project Command 
+>Install env
 ```
 python3 -m venv env
 source env/bin/activate
@@ -28,6 +28,7 @@ pip freeze > requirements.txt
 cat requirements.txt
 ```
 
+>Install packages
 ```
 pip install jupyterlab pandas sklearn matplotlib seaborn flake8 pycodestyle_magic
 ```
