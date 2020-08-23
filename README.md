@@ -1,20 +1,3 @@
-#### 0. Remove unuseful features (null, nan, duplicate)
-
-#### a. Check duplicate
-
-#### b. Check NULL
-
-#### c. Check if accountNumber equals to customerId
-
-#### We can remove echoBuffer, merchantCity, merchantState, merchantZip, posOnPremises and recurringAuthInd, since they are null. 
-
-#### And we also can remove accountNumber and customerId, since they are created to identify transaction and not meaningful for fraud detection.
-
-
-
-
-
-
 # Presentation and Note 
 
 > https://www.datainnovation.org/2020/07/5-qs-for-priscilla-alexander-vice-president-of-engineering-at-arthurai/
