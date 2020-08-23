@@ -1,3 +1,50 @@
+Data Type is object:
+accountNumber, customerId, transactionDateTime, merchantName, acqCountry merchantCountryCode, posEntryMode, posConditionCode, merchantCategoryCode, currentExpDate, accountOpenDate, dateOfLastAddressChange, cardCVV, enteredCVV, cardLast4Digits, transactionType, echoBuffer, merchantCity, merchantState, merchantZip, posOnPremises, recurringAuthInd
+
+Data Type is number:
+creditLimit, availableMoney, transactionAmount, currentBalance
+
+Data Type is boolean:
+isFraud, cardPresent, expirationDateKeyInMatch
+
+### Statistics for variables whose type is object
+
+### Statistics for variables whose type is boolean
+
+### Statistics for variables whose type is number
+
+### Count of NULL for each varialbe
+
+### Plot a histogram of the processed amounts of each transaction, the transactionAmount column.
+
+#### Number of transactionAmount whose type is ADDRESS_VERIFICATION. (All ADDRESS_VERIFICATION is charged $0.)
+
+#### Not all $0 transaction amount belongs to ADDRESS_VERIFICATION.
+
+#### Number of transactionAmount equal to $0
+
+### Report any structure you find and any hypotheses you have about that structure.
+
+There are 3 transaction types, including <span style='color:Blue'>PURCHASE, ADDRESS_VERIFICATION and REVERSAL</span>.
+There are 18479 transactions whose amount are zero. And 16478 of them are ADDRESS_VERIFICATION, which is 89% of all zero dollar transactions. The hypotheses is that $0 is charged for ADDRESS VERIFICATION.  The distribution of transaction type is shown in the figure below.
+
+#### 0. Remove unuseful features (null, nan, duplicate)
+
+#### a. Check duplicate
+
+#### b. Check NULL
+
+#### c. Check if accountNumber equals to customerId
+
+#### We can remove echoBuffer, merchantCity, merchantState, merchantZip, posOnPremises and recurringAuthInd, since they are null. 
+
+#### And we also can remove accountNumber and customerId, since they are created to identify transaction and not meaningful for fraud detection.
+
+
+
+
+
+
 # Presentation and Note 
 
 > https://www.datainnovation.org/2020/07/5-qs-for-priscilla-alexander-vice-president-of-engineering-at-arthurai/
