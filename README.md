@@ -1,7 +1,5 @@
-# Presentation and Note 
-
+# Presentation and Note
 > https://www.datainnovation.org/2020/07/5-qs-for-priscilla-alexander-vice-president-of-engineering-at-arthurai/
-
 
 > https://www.arthur.ai/blog/2020/4/8/fairness-in-machine-learning-is-tricky
 
