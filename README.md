@@ -32,7 +32,6 @@ pip install jupyterlab pandas sklearn matplotlib seaborn flake8 pycodestyle_magi
 ```
 
 
-
 >Udacity Data Streaming: 
 1) OPT: 
 ``` 
