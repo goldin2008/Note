@@ -44,7 +44,6 @@ org.chicago.stations
 
 /usr/bin/kafka-console-consumer --bootstrap-server localhost:9092 --partition 0 --topic org.chicago.cta.weather.v1 --from-beginning
 
-
 Show content in the topic
 /usr/bin/kafka-console-consumer --bootstrap-server localhost:9092 --partition 0 --topic org.chicago.cta.stations.table.v1 --from-beginning
 
