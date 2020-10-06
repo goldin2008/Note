@@ -4,7 +4,6 @@
 AI is changing the way we work and live. Whether you want to know what's behind the buzzwords or whether you want to perhaps use AI yourself either in a personal context or in a corporation, Today's talk will give you a realistic view of what AI really is.
 
 #### Relationship between ML, DL and AI:
-
 You might have heard terminology from AI, such as machine learning or neural networks or deep learning. What do these terms mean?
 If we were to draw a Venn diagram showing how all these concepts put together, this is what it may look like. AI is this huge set of tools for making computers behave intelligently. Off AI, the biggest subset is prairie tools from machine learning, but AI does have other tools than machine learning, such as some of buzzwords you might also hear in the media, graphical models, planning, knowledge graph, and so on. (unsupervised learning, reinforcement learning) The part of machine learning that's most important these days is neural networks or deep learning, which is a very powerful set of tools for carrying out supervised learning, which is also called A to B mappings, as well as some other things. But there are also other machine learning tools that are not just deep learning tools, like linear regression, logistic regression, decision tree and so on.
 
@@ -20,10 +19,10 @@ The key takeaways are that a neural network is a very effective technique for le
 
 One of the wonderful things about using neural networks is that to train a neural network, all you have to do is give it the input A and the output B. And it figures out all of the things in the middle by itself. So to build a neural network, what you would do is feed it lots of data, or the input A, and have a neural network that just looks like this. And then you have to give it data with the price B as well. And it's the software's job to figure out what these neurons should be computing, so that it can completely automatically learn the most accurate possible function mapping from the input A to the output B. And it turns out that if you give this enough data and train a neural network that is big enough, this can do an incredible good job mapping from inputs A to outputs B. So that's a neural network, is a group of artificial neurons each of which computes a relatively simple function. But when you stack enough of them together like Lego bricks, they can compute incredibly complicated functions that give you very accurate mappings from the input A to the output B.
 
-***Limitation
+#### Limitation
 But AI has other limitations, as well. One of the limitations of AI is that explainability is hard and many high-performing AI systems are black boxes. Meaning that it works very well but the AI doesn't know how to explain why it does what it does. Now, to be fair, humans are also not very good at explaining how we make decisions ourselves. 
 
-***Techniques: 
+#### Techniques
 There are a lot of AI and machine learning techniques today. And while supervised learning, that is learning A to B mappings, is the most valuable one, at least economically today, there are many other techniques that are worth knowing about. 
 == Supervised Learning ==
 The rise of AI has been largely driven by one tool in AI called machine learning. The most commonly used type of machine learning is a type of AI that learns A to B, or input to output mappings. This is called supervised learning. Let's see some examples. If the input A is an email and the output B one is email spam or not, zero one. Then this is the core piece of AI used to build a spam filter. Or if the input is an audio clip, and the AI's job is to output the text transcript, then this is speech recognition. More examples, if you want to input English and have it output a different language, Chinese, Spanish, something else, then this is machine translation. Or if you want to build a self-driving car, one of the key pieces of AI is in the AI that takes as input an image, and some information from their radar, or from other sensors, and output the position of other cars, so your self-driving car can avoid the other cars. This set of AI called supervised learning, just learns input to output, or A to B mappings. On one hand, input to output, A to B it seems quite limiting. But when you find a right application scenario, this can be incredibly valuable. Now, the idea of supervised learning has been around for many decades. But it's really taken off in the last few years, due to the rise of neural networks and deep learning.
@@ -34,7 +33,7 @@ Even though supervised learning is an incredibly valuable and powerful techniqu
 You may also have heard of a technique called reinforcement learning. So, what is reinforcement learning?  Let me illustrate with another example. I think of reinforcement learning as similar to how you might train a pet dog to behave. So, how do you train a dog to behave itself? Well, we let the dog do whatever it wanted to do, and then whenever it behaved well we would praise it. You go, good dog, and whenever it does something bad you would go, bad dog. And overtime it learns to do more of the, good dog, things, and fear of the bad dog things. This means that whenever it's doing well, you give it a large positive number to give it a large positive reward. And whenever it's doing really bad job, you send it a negative number to give it a negative reward. And it's the AI's job to the automatically learn to behave so  as to maximize the rewards. So, good dog responds to giving a positive number, and bad dog, corresponds to you giving a negative number. 
 You might have heard of AlphaGo, which did a very good job of playing Chess using reinforcement learning. And reinforcement learning has also been very effective at playing video games. One of the weaknesses of reinforcement learning algorithms is that they can require a huge amount of data. and get a huge amount of data to learn how to behave better.
 
-***How to choose an AI project: 
+#### How to choose an AI project: 
 The steps might be involved in “technical diligence” process:
 ensuring that the envisioned AI technology is feasible. 
 Defining an engineering timeline 
@@ -46,7 +45,7 @@ Business diligence is the process of ensuring that the AI technology, if it is b
 
 What we would like to do is try to select projects that are at the intersection of these two sets, so you select projects hopefully that are both feasible for ML, and valuable for our business. ML experts will tend to have a good sense of what is and what isn't in the set on the left. And domain experts, will have the best sense of what is actually valuable for our business. When brainstorming projects that ML can do and are valuable for our business, we can bring together a team comprising both people knowledgeable of AI, as well as experts in your business area. By understanding the main pain points in the business and feasible technology we can build, that will allow us to select the most fruitful project for automation in the near term.
 
-***Workflow of a Machine Learning Project: 
+#### Workflow of a Machine Learning Project: 
 Machine learning is an “iterative” process, meaning that an AI team often has to try many ideas before coming up with something that’s good enough, rather than have the first thing they try work. Say you want to use Machine Learning to help your sales team with automatic lead sorting. I.e., Input A (a sales prospect) and output B (whether your sales team should prioritize them). The 3 steps of the workflow, in scrambled order, are: (i) Deploy a trained model and get data back from users (ii) Collect data with both A and B (iii) Train a machine learning system to input A and output B.
 Machine learning algorithms can learn input to output mappings. So, how do you build a machine learning project? Let’s take a look what is the workflow of machine learning projects. I'm going to use speech recognition as a running example. So, some of you may have an Amazon Echo or Google Home or Apple Siri device in your homes. So, how do you build a speech recognition system that can recognize when you say, "Alexa," or "Hey, Google," or "Hey, Siri" ? Let's go through the key steps of a machine learning project. Just for simplicity, I'm going to use Amazon Echo or detecting the Alexa keywords as this running example. If you want to build an AI system or build a machine learning system to figure out when a user has said the word “Alexa”,
 the First Step is to collect data. So, that means, you would go around and get some people to say the word "Alexa" for you and you record the audio of that.  You'll also get a bunch of people to say other words like "Hello," or say lots of other words and record the audio of that as well. Having collected a lot of audio data, a lot of these audio clips of people saying either "Alexa" or saying other things,
@@ -54,19 +53,16 @@ Step Two is to then train the model. This means you will use a machine learning
 The Third Step is to then actually deploy the model. 
 
 
-***Technical tools for AI teams and Resources:
+#### Technical tools for AI teams and Resources:
 When you work with AI teams, you may hear them refer to the tools that they're using to build these AI systems. In this video, I want to share with you some details and names of the most commonly used AI tools, so that you'd be able to better understand what these AI engineers are doing.
 We're fortunate that the AI world today is very open, and many teams will openly share ideas with each other. There are great machine learning open source frameworks that many teams will use to build their systems. So, if you hear of any of these: TensorFlow, PyTorch, Keras, MXNet, CNTK, Caffe,  PaddlePaddle, Scikit-learn, R or Weka, all of these are open source machine  learning frameworks that help AI teams be much more efficient in terms of writing software. 
 Along with AI technology breakthroughs are also publish freely on the Internet on this website called Arxiv. Spelled like this. I hope that other academic communities also freely share their research since I've seen firsthand how much this accelerates progress in the whole field of AI.  
 Finally, many teams will also share their code freely on the Internet, most commonly on a website called GitHub. By using appropriately licensed open-source software, many teams can get going much  faster than if they had to build everything from scratch. Finally, you might hear about Cloud versus On-prem deployments. Cloud deployments refer to if you rent  compute servers such as from Amazon's AWS, or Microsoft's Azure, or Google's GCP in order to use someone else's service to do your computation. Whereas, an On-prem deployment means buying your own compute servers and running the service locally in your own company. A lot of the world is moving to Cloud deployments. Whether you search online you find many articles talking about the pros and cons of Cloud versus On-prem deployments.
 
+> https://www.sumologic.com/blog/machine-learning-deep-learning/
 
-
-
-
-https://www.sumologic.com/blog/machine-learning-deep-learning/
-
-1. Intro: AI is changing the way we work and live and this nontechnical 
+#### 1. Intro: 
+AI is changing the way we work and live and this nontechnical 
 presentation will teach you how to navigate the rise of AI. Whether you want to 
 know what's behind the buzzwords or whether you want to perhaps use AI yourself 
 either in a personal context or in a corporation, this course will teach you 
@@ -125,8 +121,7 @@ build AI teams and also built complex AI products. Now, one of the major
 technologies driving the recent rise of AI is Machine Learning. But what is 
 Machine Learning? Let's take a look in the next video. 
 
-2. What is Machine Learning: 
-
+#### 2. What is Machine Learning: 
 The rise of AI has been largely driven by one tool in AI called machine 
 learning. The most commonly used type of machine learning is a type of AI that 
 learns A to B, or input to output mappings. This is called supervised learning. 
@@ -179,7 +174,8 @@ input to output mappings. What enables it to work really well is data.
 
 We need to know what data we have and how to feed this data into AI system. 
 
-3. Data: It's up to you to decide what is A and what is B, and how to choose 
+#### 3. Data: 
+It's up to you to decide what is A and what is B, and how to choose 
 these definitions of A and B to make it valuable for your business. But how do 
 you get data? How do you acquire data? Well, one way to get data is manual 
 labeling. For example, you might collect a set of pictures like these over 
@@ -211,7 +207,8 @@ your IT infrastructure. More data is usually better than less data, but I
 wouldn't take it for granted that just because you have many terabytes or 
 gigabytes of data, that an AI team can actually make that valuable. 
 
-4. Terminology: You might have heard terminology from AI, such as machine 
+#### 4. Terminology: 
+You might have heard terminology from AI, such as machine 
 learning or data science or neural networks or deep learning. What do these 
 terms mean? The boundaries between these two terms, machine learning and data 
 science are actually little bit buzzy, and these terms are not used 
@@ -305,8 +302,8 @@ important terminology using AI, and you can start thinking about how these
 things might apply to your company. 
 
 
-
-5. What makes an AI company: But eventually, you then need to do step two which 
+#### 5. What makes an AI company: 
+But eventually, you then need to do step two which 
 is the building in house AI team and provide broad AI training, not just to the 
 engineers but also to the managers, division leaders and executives and how 
 they think about AI. After doing this or as you're doing this, you have a 
@@ -316,7 +313,8 @@ detail on in a later week as a road-map If you're interested, there is also
 published online an AI transformation playbook that goes into these five steps 
 in greater detail for you see more of these in the later weeks as well. 
 
-6. What machine learning can and cannot do: Now, one of the challenges of doing 
+#### 6. What machine learning can and cannot do: 
+Now, one of the challenges of doing 
 AI projects such as the pilot projects in step one is understanding what AI can 
 and cannot do. I want to show you and give you some examples of what AI can and 
 cannot do, to help you better select projects AI that there may be effective 
@@ -408,7 +406,8 @@ or not. But I hope that these examples can at least help you start imagining
 some things in your company that might be feasible and might be worth exploring 
 more. 
 
-7. Deep Learning: The terms deep learning and neural network are used almost 
+#### 7. Deep Learning: 
+The terms deep learning and neural network are used almost 
 interchangeably in AI. And even though they're great for machine learning, 
 there's also been a bit of hype and bit of mystique about them. This video will 
 demystify deep learning, so that you have a sense of what deep learning and 
@@ -496,8 +495,8 @@ identity B and the learning algorithm will figure out by itself what each of
 these neurons in the middle should be computing. 
 
 
-
-How to choose an AI project: Machine learning is an “iterative” process, 
+#### How to choose an AI project: 
+Machine learning is an “iterative” process, 
 meaning that an AI team often has to try many ideas before coming up with 
 something that’s good enough, rather than have the first thing they try work. 
 Say you want to use Machine Learning to help your sales team with automatic 
@@ -529,7 +528,8 @@ ROI)
 
 week2 
 
-Pitfall: Before wrapping up this video one pitfall I want to urge you to avoid 
+#### Pitfall: 
+Before wrapping up this video one pitfall I want to urge you to avoid 
 is expecting a 100% accuracy from your AI software. Here's what I mean, let's 
 say this is your test set which you've already seen on the last slide. But, let 
 me add a few more examples to this test set. Here are some of the reasons it 
@@ -654,7 +654,8 @@ you saw how all of these job functions, everything from sales, recruiting to
 marketing to manufacturing to farming agriculture, how all of these job 
 functions are being affected by data, by data science and machine learning. 
 
-How to choose an AI project: Let's say you want to build an AI project for your 
+#### How to choose an AI project: 
+Let's say you want to build an AI project for your 
 business. You've already seen that AI can't do everything, and so there's going 
 to be a certain set of things that is what AI can do. So let's let the circle 
 represent the set of things that AI can do. Now, there's also going to be a 
