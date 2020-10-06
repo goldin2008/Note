@@ -548,7 +548,8 @@ green coffee mug here looks perfectly okay to me, so, the label of it being a
 defect looks like an incorrect label and that would hurt the performance of 
 your AI software. Data can also be ambiguous. 
 
-AI technical tools: Finally, you might hear about Cloud versus On-premises, or 
+#### AI technical tools: 
+Finally, you might hear about Cloud versus On-premises, or 
 for short, On-prem deployments. Cloud deployments refer to if you rent compute 
 servers such as from Amazon's AWS, or Microsoft's Azure, or Google's GCP in 
 order to use someone else's service to do your computation. Whereas, an On-prem 
@@ -558,7 +559,8 @@ these two options is beyond the scope of this video. A lot of the world is
 moving to Cloud deployments. Whether you search online you find many articles 
 talking about the pros and cons of Cloud versus On-prem deployments. 
 
-Workflow of a Machine Learning Project: Machine learning algorithms can learn 
+#### Workflow of a Machine Learning Project: 
+Machine learning algorithms can learn 
 input to output or A to B mappings. So, how do you build a machine learning 
 project? Let’s take a look what is the workflow of machine learning projects. 
 As a running example, I'm going to use speech recognition. So, some of you may 
@@ -611,7 +613,8 @@ maintain and update the model so that, hopefully, you can have your AI softwar
 continually get better and better to the point where you end up with a software 
 that can do a pretty good job detecting other cars from pictures like these. 
 
-Job functions: Data is transforming many different job functions, whether you 
+#### Job functions: 
+Data is transforming many different job functions, whether you 
 work in recruiting or sales or marketing or manufacturing or agriculture, data 
 is probably transforming your job function. What's happened in the last few 
 decades is the digitization of our society. So, rather than handing out papers 
@@ -777,7 +780,8 @@ make these things better, but, a lot of AI systems are incredibly valuable ev
 without achieving a 100% accuracy. So, I will urge you to discuss with your AI 
 engineers what is a reasonable level of accuracy to try to accomplish? 
 
-Technical tools for AI teams: When you work with AI teams, you may hear them 
+#### Technical tools for AI teams: 
+When you work with AI teams, you may hear them 
 refer to the tools that they're using to build these AI systems. In this video, 
 I want to share with you some details and names of the most commonly used AI 
 tools, so that you'd be able to better understand what these AI engineers are 
@@ -820,7 +824,8 @@ service locally in your own company. A lot of the world is moving to Cloud
 deployments. Whether you search online you find many articles talking about the 
 pros and cons of Cloud versus On-prem deployments. 
 
-AI pitfalls to avoid: I hope you'll be able to use AI to build exciting and 
+#### AI pitfalls to avoid: 
+I hope you'll be able to use AI to build exciting and 
 valuable projects either for yourself or for your company and make life better 
 both for yourself and for others. Along the way, I hope you also manage to 
 avoid some of the pitfalls I've seen some AI teams fall into. Let's go over a 
@@ -857,7 +862,9 @@ important thing is to get started and to attempt your first AI project. In the
 final video for this week, I want to share with you some concrete first steps 
 you can take in AI. Let's go on to the next video. 
 
-major AI techniques and application areas: Applications: AI today is being 
+#### major AI techniques and application areas: 
+- Applications: 
+AI today is being 
 successfully applied to image and video data, to language data, to speech data, 
 to many other areas. you see a survey of AI applied to these different 
 application areas and I hope that this may spark off some ideas of how you 
@@ -943,7 +950,8 @@ learning almost invites the question of what is unsupervised learning, or you
 might also have heard from media articles, from the news about reinforcement 
 learning. So, what are all these other techniques? 
 
-Techniques: There are a lot of AI and machine learning techniques today. And 
+#### Techniques: 
+There are a lot of AI and machine learning techniques today. And 
 while supervised learning, that is learning A to B mappings, is the most 
 valuable one, at least economically today, there are many other techniques that 
 are worth knowing about. The best known example of unsupervised learning is 
@@ -1024,9 +1032,9 @@ work by different things right now on applying GANs to the entertainment
 industry. 
 
 
+week3 
 
-Building AI in your company: week3 
-
+#### Building AI in your company:
 As you can tell both from this rather complex example of an AI pipeline, as 
 well as the early example of the four-step AI pipeline for the smart speaker, 
 sometimes it takes a team to build all of these different components of a 
@@ -1075,7 +1083,10 @@ Playbook? Without having some practical AI experience and knowing what it feels
 like to build an AI project, a company usually does not know enough to 
 formulate a sound strategy. 
 
-week4 limitations: In fact, there's a lot it cannot do but it will transform 
+week4 
+
+#### limitations: 
+In fact, there's a lot it cannot do but it will transform 
 industries and society. When you speak with friends about AI, I hope you also 
 tell them about this Goldilocks rule for AI, so, that they too can have a more 
 realistic view of AI. There are many limitations of AI. You have already seen 
