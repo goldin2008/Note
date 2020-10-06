@@ -1089,7 +1089,9 @@ week4
 In fact, there's a lot it cannot do but it will transform 
 industries and society. When you speak with friends about AI, I hope you also 
 tell them about this Goldilocks rule for AI, so, that they too can have a more 
-realistic view of AI. There are many limitations of AI. You have already seen 
+realistic view of AI. 
+
+There are many limitations of AI. You have already seen 
 earlier some of the performance limitations. For example, given a small amount 
 of data, a pure AI probably cannot fully automate a call center and give very 
 flexible responses to whatever customers are emailing you with. But AI has 
@@ -1131,12 +1133,7 @@ valuable work by applying AI to whatever area you are already an expert in. So,
 I hope this video helps you navigate the coming impacts of AI in jobs. Let's go 
 on to the next and final video of this course. 
 
-Congratulations on coming to the last video of this course. AI is a super 
-power, and understanding it allows you to do things that very few people on the 
-planet can. Let's summarize what you've seen in this course. In the first week, 
-you learned about AI technology, what is AI and what is machine learning? 
-What's supervised learning, that is learning inputs, outputs, or A to B 
-mappings. As well as what is data signs, and how data feeds into all of these 
+Congratulations on coming to the last video of this course. AI is a super power, and understanding it allows you to do things that very few people on the planet can. Let's summarize what you've seen in this course. In the first week, you learned about AI technology, what is AI and what is machine learning? What's supervised learning, that is learning inputs, outputs, or A to B mappings. As well as what is data signs, and how data feeds into all of these 
 technologies? Importantly, you also saw examples of what AI can and cannot do. 
 In the second week, you learned what it feels like to build an AI project. You 
 saw the workflow of machine learning projects, of collecting data, building a 
