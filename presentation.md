@@ -1159,5 +1159,4 @@ time with me and in this course learning these complex issues relating to both
 the technology and the impact of AI. So thank you very much for both the time 
 and the effort you put Into this course. 
  
-
-http://solutionoptimist.com/2013/12/28/awesome-github-tricks/ 
+> http://solutionoptimist.com/2013/12/28/awesome-github-tricks/ 
