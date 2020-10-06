@@ -1,18 +1,17 @@
 > ML presentation 
 
 #### Intro: 
-
 AI is changing the way we work and live. Whether you want to know what's behind the buzzwords or whether you want to perhaps use AI yourself either in a personal context or in a corporation, Today's talk will give you a realistic view of what AI really is.
 
-***Relationship between ML, DL and AI:
+#### Relationship between ML, DL and AI:
 
 You might have heard terminology from AI, such as machine learning or neural networks or deep learning. What do these terms mean?
 If we were to draw a Venn diagram showing how all these concepts put together, this is what it may look like. AI is this huge set of tools for making computers behave intelligently. Off AI, the biggest subset is prairie tools from machine learning, but AI does have other tools than machine learning, such as some of buzzwords you might also hear in the media, graphical models, planning, knowledge graph, and so on. (unsupervised learning, reinforcement learning) The part of machine learning that's most important these days is neural networks or deep learning, which is a very powerful set of tools for carrying out supervised learning, which is also called A to B mappings, as well as some other things. But there are also other machine learning tools that are not just deep learning tools, like linear regression, logistic regression, decision tree and so on.
 
-***Machine Learning:
+#### Machine Learning:
 machine learning is the field of study that gives computers the ability to learn without being explicitly programmed. This is a definition by Arthur Samuel many decades ago. Arthur Samuel was one of the pioneers of machine learning, who was famous for building a checkers playing program.
 
-***Deep Learning:
+#### Deep Learning:
 You have also heard of deep learning. So, what is deep learning? The terms deep learning and neural network are used almost interchangeably in AI. And even though they're great for machine learning, there's also been a bit of hype and mystique about them. Let’s demystify deep learning, so that you have a sense of what deep learning and neural networks really are. 
 Let's say you want to predict housing prices, you want to price houses. So, you will have an input that tells you the size of the house, number of bedrooms, and number of bathrooms. Maybe location and whether it's newly renovated. One of the most effective ways to price houses, given this input A, would be to feed it to this thing here in order to have it output the price. This big thing in the middle is called a neural network, and sometimes we also called an artificial neural network. That's to distinguish it from the neural network in your brain. The human brain is made up of neurons. So, when we say artificial neural network, that's just to emphasize that this is not the biological brain, but this is a piece of software. What a neural network does is takes this input A, which is all of these three things, and then output B, which is the estimated price of the house. 
 But all of human cognition is made up of neurons in your brain passing electrical impulses, passing little messages each other. When we draw a picture of an artificial neural network, there's a very loose analogy to the brain. These little circles are called artificial neurons, or just neurons for short. That also passes neurons to each other. This big artificial neural network is just a big mathematical equation that tells it given the inputs A, how do you compute the price B. 
