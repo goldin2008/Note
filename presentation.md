@@ -402,6 +402,7 @@ valuable work by applying AI to whatever area you are already an expert in. So,
 I hope this video helps you navigate the coming impacts of AI in jobs. Let's go 
 on to the next and final video of this course. 
 
+> TO DO
 
 #### Technical tools for AI teams and Resources:
 When you work with AI teams, you may hear them refer to the tools that they're using to build these AI systems. In this video, I want to share with you some details and names of the most commonly used AI tools, so that you'd be able to better understand what these AI engineers are doing.
