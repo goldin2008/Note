@@ -373,7 +373,35 @@ some things in your company that might be feasible and might be worth exploring
 more. 
 
 #### Limitation
-But AI has other limitations, as well. One of the limitations of AI is that explainability is hard and many high-performing AI systems are black boxes. Meaning that it works very well but the AI doesn't know how to explain why it does what it does. Now, to be fair, humans are also not very good at explaining how we make decisions ourselves. 
+
+In fact, there's a lot it cannot do but it will transform 
+industries and society. When you speak with friends about AI, I hope you also 
+tell them about this Goldilocks rule for AI, so, that they too can have a more 
+realistic view of AI. 
+
+`
+There are many limitations of AI. You have already seen earlier some of the performance limitations. For example, given a small amount of data, a pure AI probably cannot fully automate a call center and give very flexible responses to whatever customers are emailing you with. But AI has other limitations, as well. One of the limitations of AI is that explainability is hard and many high-performing AI systems are black boxes. Meaning that it works very well but the AI doesn't know how to explain why it does what it does. Now, to be fair, humans are also not very good at explaining how we make decisions ourselves. For example, you've already seen this coffee mug in the last weeks videos but how do you know it's a coffee mug? How does a human look at this and say, that's a coffee mug? You know there are some things you can point to like, there's a room for liquid and it has a handle. But we humans are not very good at explaining, how we can look at this and decide what it is. But because AI is a relatively new thing, the lack of explainability is sometimes a barrier to its acceptance. Also, sometimes if an AI system isn't working then its ability to explain itself would also help us figure out how to go in and make the AI system work better. So, explainability is one of the major open research areas. A lot of researchers are working on. What I see in practice, is that when an AI team wants to deploy something, that AI team must often able to come up with an explanation that is good enough to enable the system to work and be deployed. So, explainability is hotbed, its often not impossible but we do need much better tools to help the AI systems explain themselves. 
+`
+
+One question now sometimes asked is what should you do if you want to work in 
+AI? Recently, a radiologist resident served radiologists near the start of his 
+career. He actually asked me. He said, "Hey, Andrew, I'm hearing a lot about 
+the coming impacts of AI on radiology." He said, "Should I quit my profession 
+and just learn AI and do AI instead?" My answer to him was no. You could do 
+that. You can actually quit whatever you are doing and pick up AI from scratch. 
+It is entirely possible to do that. Many people have done that. This one other 
+alternative that you could consider though, which is, I said to this radiology 
+resident consider doing work in AI plus radiology because with your knowledge 
+of radiology, if in addition you learned something about AI, you would be 
+better positioned to do work at the intersection of radiology and AI than most 
+other people. So, if you want to do more work in AI, it is possible in today's 
+world to learn AI from scratch through online courses and other resources. But 
+if you take whatever you are already knowledgeable in and learn some AI and do 
+your area plus AI, then you might be more uniquely qualified to do very 
+valuable work by applying AI to whatever area you are already an expert in. So, 
+I hope this video helps you navigate the coming impacts of AI in jobs. Let's go 
+on to the next and final video of this course. 
+
 
 #### Technical tools for AI teams and Resources:
 When you work with AI teams, you may hear them refer to the tools that they're using to build these AI systems. In this video, I want to share with you some details and names of the most commonly used AI tools, so that you'd be able to better understand what these AI engineers are doing.
@@ -1112,34 +1140,6 @@ formulate a sound strategy.
 
 week4 
 
-#### limitations: 
-In fact, there's a lot it cannot do but it will transform 
-industries and society. When you speak with friends about AI, I hope you also 
-tell them about this Goldilocks rule for AI, so, that they too can have a more 
-realistic view of AI. 
-
-`
-There are many limitations of AI. You have already seen earlier some of the performance limitations. For example, given a small amount of data, a pure AI probably cannot fully automate a call center and give very flexible responses to whatever customers are emailing you with. But AI has other limitations, as well. One of the limitations of AI is that explainability is hard and many high-performing AI systems are black boxes. Meaning that it works very well but the AI doesn't know how to explain why it does what it does. Now, to be fair, humans are also not very good at explaining how we make decisions ourselves. For example, you've already seen this coffee mug in the last weeks videos but how do you know it's a coffee mug? How does a human look at this and say, that's a coffee mug? You know there are some things you can point to like, there's a room for liquid and it has a handle. But we humans are not very good at explaining, how we can look at this and decide what it is. But because AI is a relatively new thing, the lack of explainability is sometimes a barrier to its acceptance. Also, sometimes if an AI system isn't working then its ability to explain itself would also help us figure out how to go in and make the AI system work better. So, explainability is one of the major open research areas. A lot of researchers are working on. What I see in practice, is that when an AI team wants to deploy something, that AI team must often able to come up with an explanation that is good enough to enable the system to work and be deployed. So, explainability is hotbed, its often not impossible but we do need much better tools to help the AI systems explain themselves. 
-`
-
-One question now sometimes asked is what should you do if you want to work in 
-AI? Recently, a radiologist resident served radiologists near the start of his 
-career. He actually asked me. He said, "Hey, Andrew, I'm hearing a lot about 
-the coming impacts of AI on radiology." He said, "Should I quit my profession 
-and just learn AI and do AI instead?" My answer to him was no. You could do 
-that. You can actually quit whatever you are doing and pick up AI from scratch. 
-It is entirely possible to do that. Many people have done that. This one other 
-alternative that you could consider though, which is, I said to this radiology 
-resident consider doing work in AI plus radiology because with your knowledge 
-of radiology, if in addition you learned something about AI, you would be 
-better positioned to do work at the intersection of radiology and AI than most 
-other people. So, if you want to do more work in AI, it is possible in today's 
-world to learn AI from scratch through online courses and other resources. But 
-if you take whatever you are already knowledgeable in and learn some AI and do 
-your area plus AI, then you might be more uniquely qualified to do very 
-valuable work by applying AI to whatever area you are already an expert in. So, 
-I hope this video helps you navigate the coming impacts of AI in jobs. Let's go 
-on to the next and final video of this course. 
 
 #### conclusion:
 Congratulations on coming to the last video of this course. 
