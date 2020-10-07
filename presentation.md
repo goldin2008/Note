@@ -1091,6 +1091,7 @@ industries and society. When you speak with friends about AI, I hope you also
 tell them about this Goldilocks rule for AI, so, that they too can have a more 
 realistic view of AI. 
 
+'''
 There are many limitations of AI. You have already seen 
 earlier some of the performance limitations. For example, given a small amount 
 of data, a pure AI probably cannot fully automate a call center and give very 
@@ -1113,6 +1114,7 @@ that when an AI team wants to deploy something, that AI team must often able to
 come up with an explanation that is good enough to enable the system to work 
 and be deployed. So, explainability is hotbed, its often not impossible but we 
 do need much better tools to help the AI systems explain themselves. 
+'''
 
 One question now sometimes asked is what should you do if you want to work in 
 AI? Recently, a radiologist resident served radiologists near the start of his 
