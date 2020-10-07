@@ -580,14 +580,17 @@ Baidu"? Let's go through the key steps of a machine learning project. Just fo
 simplicity, I'm going to use Amazon Echo or detecting the Alexa keywords as 
 this running example. If you want to build an AI system or build a machine 
 learning system to figure out when a user has said the word Alexa, 
+`
 
+`
 the first step is to collect data. So, that means, you would go around and get 
 some people to say the word "Alexa" for you and you record the audio of that. 
 You'll also get a bunch of people to say other words like "Hello," or say lots 
 of other words and record the audio of that as well. Having collected a lot of 
 audio data, a lot of these audio clips of people saying either "Alexa" or 
 saying other things, 
-
+`
+`
 step two is to then train the model. This means you will use a machine learning 
 algorithm to learn an input to output or A to B mapping, where the input A 
 would be an audio clip. In the case of the first audio clip above, hopefully, 
@@ -598,7 +601,8 @@ learn the A to B or input-output mapping, what happens, pretty much every time,
 is the first attempt doesn't work well. So invariably, the team will need to 
 try many times or in AI, we call this iterate many times. You have to iterate 
 many times until, hopefully, the model looks like is good enough. 
-
+`
+`
 The third step is to then actually deploy the model. What that means is you put 
 this AI software into an actual smart speaker and ship it to either a small 
 group of test users or to a large group of users. What happens in a lot of AI 
@@ -611,7 +615,9 @@ this smart speaker to the UK and you start having British-accented people say
 hoped. When that happens, hopefully, you can get data back of cases such as 
 maybe British-accented speakers was not working as well as you're hoping, and 
 then use this data to maintain and to update the model. 
+`
 
+`
 So, to summarize, the key steps of a machine learning project are to collect 
 data, to train the model, the A to B mapping, and then to deploy the model. 
 Throughout these steps, there is often a lot of iteration, meaning fine-tuning 
