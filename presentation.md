@@ -507,26 +507,32 @@ Say you want to use Machine Learning to help your sales team with automatic
 lead sorting. I.e., Input A (a sales prospect) and output B (whether your sales 
 team should prioritize them). The 3 steps of the workflow, in scrambled order, 
 are: (i) Deploy a trained model and get data back from users (ii) Collect data 
-with both A and B (iii) Train a machine learning system to input A and output B 
+with both A and B (iii) Train a machine learning system to input A and output B `
 
+`
 Say you want to build an AI system to help recruiters with automated resume 
 screening. Which of these steps might be involved in “technical diligence” 
 process?  (Select all that apply.) Defining an engineering timeline Making sure 
 you can get enough data for this project Ensuring that this is valuable for 
 your business (e.g., estimating the project ROI) Making sure that an AI system 
 can meet the desired performance 
+`
 
+`
 Which of these statements about “business diligence” do you agree with? 
 Business diligence is the process of ensuring that the envisioned AI technology 
 is feasible. Business diligence is the process of ensuring that the AI 
 technology, if it is built, is valuable for your business. 
+`
 
+`
 Say you want to build an AI system to help recruiters with automated resume 
 screening. Which of these steps might be involved in “technical diligence” 
 process?  (Select all that apply.) Defining an engineering timeline Making sure 
 you can get enough data for this project Making sure that an AI system can meet 
 the desired performance 
-
+`
+`
 Ensuring that this is valuable for your business (e.g., estimating the project 
 ROI) 
 `
