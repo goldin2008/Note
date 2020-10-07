@@ -1114,7 +1114,9 @@ valuable work by applying AI to whatever area you are already an expert in. So,
 I hope this video helps you navigate the coming impacts of AI in jobs. Let's go 
 on to the next and final video of this course. 
 
-Congratulations on coming to the last video of this course. AI is a super power, and understanding it allows you to do things that very few people on the planet can. Let's summarize what you've seen in this course. In the first week, you learned about AI technology, what is AI and what is machine learning? What's supervised learning, that is learning inputs, outputs, or A to B mappings. As well as what is data signs, and how data feeds into all of these 
+Congratulations on coming to the last video of this course. 
+`
+AI is a super power, and understanding it allows you to do things that very few people on the planet can. Let's summarize what you've seen in this course. In the first week, you learned about AI technology, what is AI and what is machine learning? What's supervised learning, that is learning inputs, outputs, or A to B mappings. As well as what is data signs, and how data feeds into all of these 
 technologies? Importantly, you also saw examples of what AI can and cannot do. 
 In the second week, you learned what it feels like to build an AI project. You 
 saw the workflow of machine learning projects, of collecting data, building a 
@@ -1150,5 +1152,6 @@ work or school, and friends and family, and I'm grateful that you spend so much
 time with me and in this course learning these complex issues relating to both 
 the technology and the impact of AI. So thank you very much for both the time 
 and the effort you put Into this course. 
+`
  
 > http://solutionoptimist.com/2013/12/28/awesome-github-tricks/ 
