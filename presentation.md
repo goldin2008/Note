@@ -996,11 +996,10 @@ like, what the wheels look like, how the vehicles move. Maybe that will be
 useful also for golf cart detection. Transfer learning doesn't get a lot of 
 press, but it is one of the very valuable techniques in AI today. And for 
 example, many computer vision systems are built using transfer learning, and 
-this makes a big difference to their performance. You may also have heard of a 
-technique called reinforcement learning. So, what is reinforcement learning? 
-Let me illustrate with another example. 
+this makes a big difference to their performance. 
 
-I think of reinforcement learning as similar to how you might train a pet dog 
+You may also have heard of a technique called reinforcement learning. So, what is reinforcement learning? 
+Let me illustrate with another example. I think of reinforcement learning as similar to how you might train a pet dog 
 to behave. My family, when I was growing up, had a pet dog. So, how do you 
 train a dog to behave itself? Well, we let the dog do whatever it wanted to do, 
 and then whenever it behaved well we would praise it. You go, good dog, and 
