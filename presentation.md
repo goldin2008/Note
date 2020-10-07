@@ -499,6 +499,7 @@ these neurons in the middle should be computing.
 
 
 #### How to choose an AI project: 
+`
 Machine learning is an “iterative” process, 
 meaning that an AI team often has to try many ideas before coming up with 
 something that’s good enough, rather than have the first thing they try work. 
@@ -528,6 +529,7 @@ the desired performance
 
 Ensuring that this is valuable for your business (e.g., estimating the project 
 ROI) 
+`
 
 week2 
 
@@ -560,6 +562,7 @@ moving to Cloud deployments. Whether you search online you find many articles
 talking about the pros and cons of Cloud versus On-prem deployments. 
 
 #### Workflow of a Machine Learning Project: 
+`
 Machine learning algorithms can learn 
 input to output or A to B mappings. So, how do you build a machine learning 
 project? Let’s take a look what is the workflow of machine learning projects. 
@@ -612,6 +615,7 @@ possible depending on whether you're able to get data back. using new data to
 maintain and update the model so that, hopefully, you can have your AI software 
 continually get better and better to the point where you end up with a software 
 that can do a pretty good job detecting other cars from pictures like these. 
+`
 
 #### Job functions: 
 Data is transforming many different job functions, whether you 
