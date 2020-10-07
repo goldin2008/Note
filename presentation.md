@@ -19,9 +19,6 @@ The key takeaways are that a neural network is a very effective technique for le
 
 One of the wonderful things about using neural networks is that to train a neural network, all you have to do is give it the input A and the output B. And it figures out all of the things in the middle by itself. So to build a neural network, what you would do is feed it lots of data, or the input A, and have a neural network that just looks like this. And then you have to give it data with the price B as well. And it's the software's job to figure out what these neurons should be computing, so that it can completely automatically learn the most accurate possible function mapping from the input A to the output B. And it turns out that if you give this enough data and train a neural network that is big enough, this can do an incredible good job mapping from inputs A to outputs B. So that's a neural network, is a group of artificial neurons each of which computes a relatively simple function. But when you stack enough of them together like Lego bricks, they can compute incredibly complicated functions that give you very accurate mappings from the input A to the output B.
 
-#### Limitation
-But AI has other limitations, as well. One of the limitations of AI is that explainability is hard and many high-performing AI systems are black boxes. Meaning that it works very well but the AI doesn't know how to explain why it does what it does. Now, to be fair, humans are also not very good at explaining how we make decisions ourselves. 
-
 #### Techniques
 There are a lot of AI and machine learning techniques today. And while supervised learning, that is learning A to B mappings, is the most valuable one, at least economically today, there are many other techniques that are worth knowing about. 
 - == Supervised Learning ==
@@ -45,6 +42,169 @@ Business diligence is the process of ensuring that the AI technology, if it is b
 
 What we would like to do is try to select projects that are at the intersection of these two sets, so you select projects hopefully that are both feasible for ML, and valuable for our business. ML experts will tend to have a good sense of what is and what isn't in the set on the left. And domain experts, will have the best sense of what is actually valuable for our business. When brainstorming projects that ML can do and are valuable for our business, we can bring together a team comprising both people knowledgeable of AI, as well as experts in your business area. By understanding the main pain points in the business and feasible technology we can build, that will allow us to select the most fruitful project for automation in the near term.
 
+`
+Machine learning is an “iterative” process, 
+meaning that an AI team often has to try many ideas before coming up with 
+something that’s good enough, rather than have the first thing they try work. 
+Say you want to use Machine Learning to help your sales team with automatic 
+lead sorting. I.e., Input A (a sales prospect) and output B (whether your sales 
+team should prioritize them). The 3 steps of the workflow, in scrambled order, 
+are: (i) Deploy a trained model and get data back from users (ii) Collect data 
+with both A and B (iii) Train a machine learning system to input A and output B `
+
+`
+Say you want to build an AI system to help recruiters with automated resume 
+screening. Which of these steps might be involved in “technical diligence” 
+process?  (Select all that apply.) Defining an engineering timeline Making sure 
+you can get enough data for this project Ensuring that this is valuable for 
+your business (e.g., estimating the project ROI) Making sure that an AI system 
+can meet the desired performance 
+`
+
+`
+Which of these statements about “business diligence” do you agree with? 
+Business diligence is the process of ensuring that the envisioned AI technology 
+is feasible. Business diligence is the process of ensuring that the AI 
+technology, if it is built, is valuable for your business. 
+`
+
+`
+Say you want to build an AI system to help recruiters with automated resume 
+screening. Which of these steps might be involved in “technical diligence” 
+process?  (Select all that apply.) Defining an engineering timeline Making sure 
+you can get enough data for this project Making sure that an AI system can meet 
+the desired performance 
+`
+`
+Ensuring that this is valuable for your business (e.g., estimating the project 
+ROI) 
+`
+
+`Let's say you want to build an AI project for your 
+business. You've already seen that AI can't do everything, and so there's going 
+to be a certain set of things that is what AI can do. So let's let the circle 
+represent the set of things that AI can do. Now, there's also going to be a 
+certain set of things that is valuable for your business. So let's let this 
+second circle represent a set of things that are valuable for your business. 
+What you would like to do is try to select projects that are at the 
+intersection of these two sets, so you select projects hopefully that are both 
+feasible, that can be done with AI, and that are also valuable for your 
+business. So AI experts will tend to have a good sense of what is and what 
+isn't in the set on the left. And domain experts, experts in your business, be 
+it sales and marketing, or agriculture or something else, will have the best 
+sense of what is actually valuable for your business. So when brainstorming 
+projects that AI can do and are valuable for your business, I will often bring 
+together a team comprising both people knowledgeable of AI, as well as experts 
+in your business area to brainstorm together. So that together they can try to 
+identify projects at the intersection of both of these two sets.`
+
+And it's by looking at all these tasks that the group of employees do and 
+selecting one that may allow you to select the most fruitful project for 
+automation in the near term. And so it's by looking at all of these tasks that 
+a radiologist does that you may Identify one of them, let's say AI assistance 
+or AI automation for reading x-rays, that allows you to select the most 
+fruitful projects to work on. So what I would recommend is, if you look at your 
+business, think about the tasks that people do, to see if you can identify just 
+one of them, or just a couple of them, that may be automatable using machine 
+learning. 
+
+When I'm meeting CEOs of large companies to brainstorm AI projects for the 
+company, a common question I'll also ask is, what are the main drivers of 
+business value? And sometimes finding AI solutions or data science solutions to 
+augment this can be very valuable. 
+`Finally, a third question that I've asked 
+that sometimes let to valuable project ideas is, what are the main pain points 
+in your business? Some of them could be solved with AI, some of them can't be 
+solved with AI. But by understanding the main pain points in the business, that 
+can create a useful starting point for brainstorming AI projects as well. The 
+amount of data you need is very problem dependent, and speaking with an AI 
+engineer or AI expert would help you get better sense. There are some problems 
+where 1,000 images may not be enough, where you do need big data to get good 
+performance. But my advice is, don't give up just because you don't have a lot 
+of data to start off with. And you can often still make progress, even with a 
+small dataset. In this video, you saw a brainstorming framework, and a set of 
+criteria for trying to come up with projects that hopefully can be doable with 
+AI, and are also valuable for your business. `
+
+
+`
+Maybe you have a lot of ideas for possible AI projects to work on. But before 
+committing to one, how do you make sure that this really is a worthwhile 
+project? If it's a quick project that might take you just a few days maybe just 
+jump in right away and see if it works or not, but some AI projects may take 
+many months to execute. In this video, I want to step you through the process 
+that I use to double-check if a project is worth that many months of effort. 
+Before committing to a big AI project, I will usually conduct due diligence on 
+it. Due diligence has a specific meaning in the legal world. But informally, it 
+just means that you want to spend some time to make sure you've already seen 
+how the best AI projects are ones that are feasible. So, it's something that AI 
+can do, as well as valuable. We really want to choose projects to that the 
+intersection of these two sets. So, to make sure a project is feasible, I will 
+usually go through technical diligence, and make sure that the project is 
+valuable, I will usually go through a business diligence process. Technical 
+diligence is the process of making sure that the AI system you hope to build 
+really is feasible. So, you might talk to AI experts about whether or not the 
+AI system can actually meet the desired level of performance. For example, if 
+you are hoping to build a speech system that is 95 percent accurate, consulting 
+of AI experts or perhaps reading some of the trade literature can give you a 
+sense of whether this is doable or not. Or if you want a system to inspect 
+coffee mugs in a factory and you need your system to be 99 percent accurate. 
+Again, is this actually doable with today's technology? A second important 
+question for technical diligence is how much data is needed to get to this 
+desired level of performance, and do you have a way to get that much data. 
+Third, would be engineering timeline to try to figure out how long it will take 
+and how many people it will take to build a system that you would like to have 
+built. In addition to technical diligence, I will often also conduct business 
+diligence to make sure that the project you envision really is valuable for the 
+business. So, a lot of AI projects will drive value through lowering costs. For 
+example, by automating a few tasks or by squeezing more efficiency onto the 
+system. A lot of AI systems can also increase revenue. For example, driving 
+more people to check out in your shopping cart or you may be building an AI 
+system to help you launch a new product or a new line of business. So, business 
+diligence is the process of thinking through carefully for the AI system that 
+you're building such as a speech recognition system that's 95 percent accurate 
+or a visual inspection system that's 99.9 percent accurate, would allow you to 
+achieve your business goals. Whether your business goal is to improve your 
+current business or to even create brand new businesses in your company. 
+`
+
+`
+When conducting business diligence, I'll often end up building spreadsheet 
+financial models to estimate the value quantitatively such as estimate how many 
+dollars are actually saved or what do we think is a reasonable assumption in 
+terms of entries revenue, and to model out the economics associated with a 
+project before committing to many months of effort on a project. So, when 
+there's a massive force of an industry standard solution that is been built, 
+you might be better off just embracing an industry standard or embracing 
+someone else's platform rather than trying to do everything in-house. We all 
+live in a world of limited resources, limited time, limited data, limited 
+engineering resources, and so, I hope you can focus those resources on the 
+projects with our most unique and will make the biggest difference to your 
+company. Through the process of technical diligence as well as business 
+diligence, I hope you can start to identify projects that are potentially 
+valuable or that seem promising for your business. If the project is a big 
+company, maybe it'll take many months to do. It's not unusual for me to spend 
+even a few weeks conducting this type of diligence before committing to a 
+project. 
+`
+
+`
+First, machine learning technology today despite being very powerful still has 
+limitations and they just can't do everything. So, you may be working on a 
+problem that it's just very difficult even for today's machine learning 
+technology. Second, insufficient data. If you don't have enough data 
+specifically if you don't have enough training data for the AI software to 
+learn from it may be very difficult to get a very high level of accuracy. 
+Third, data is messy and sometimes data can be mislabeled. Some of these 
+problems can be ameliorated. For example, if you don't have enough data maybe 
+you can try to collect more data and more data will often help. Or you can also 
+try to clean up mislabeled data or try to get your factories experts to come to 
+better agreement about these ambiguous labels. So, there are ways to try to 
+make these things better, but, a lot of AI systems are incredibly valuable even 
+without achieving a 100% accuracy. So, I will urge you to discuss with your AI 
+engineers what is a reasonable level of accuracy to try to accomplish? 
+`
+
 #### Workflow of a Machine Learning Project: 
 Machine learning is an “iterative” process, meaning that an AI team often has to try many ideas before coming up with something that’s good enough, rather than have the first thing they try work. Say you want to use Machine Learning to help your sales team with automatic lead sorting. I.e., Input A (a sales prospect) and output B (whether your sales team should prioritize them). The 3 steps of the workflow, in scrambled order, are: (i) Deploy a trained model and get data back from users (ii) Collect data with both A and B (iii) Train a machine learning system to input A and output B.
 
@@ -55,6 +215,165 @@ the First Step is to collect data. So, that means, you would go around and get
 Step Two is to then train the model. This means you will use a machine learning algorithm to learn an input to output mapping, where the input A would be an audio clip. In the case of the first audio clip above, hopefully,  it will tell you that the user said "Alexa," and in the case of audio clip two,  shown on the right, hopefully, the system will learn to recognize that the user has said "Hello." Whenever an AI team starts to train the model, meaning to learn the input-output mapping, what happens, pretty much every time,  is the first attempt doesn't work well. So invariably, the team will need to try many times or in AI, we call this iterate many times. You have to iterate many times until, hopefully, the model looks like is good enough.
 The Third Step is to then actually deploy the model. 
 
+`
+Machine learning algorithms can learn 
+input to output or A to B mappings. So, how do you build a machine learning 
+project? Let’s take a look what is the workflow of machine learning projects. 
+As a running example, I'm going to use speech recognition. So, some of you may 
+have an Amazon Echo or Google Home or Apple Siri device or a Baidu DuerOS 
+device in your homes. So, how do you build a speech recognition system that can 
+recognize when you say, "Alexa," or "Hey, Google," or "Hey, Siri," or "Hello, 
+Baidu"? Let's go through the key steps of a machine learning project. Just for 
+simplicity, I'm going to use Amazon Echo or detecting the Alexa keywords as 
+this running example. If you want to build an AI system or build a machine 
+learning system to figure out when a user has said the word Alexa, 
+`
+
+`
+the first step is to collect data. So, that means, you would go around and get 
+some people to say the word "Alexa" for you and you record the audio of that. 
+You'll also get a bunch of people to say other words like "Hello," or say lots 
+of other words and record the audio of that as well. Having collected a lot of 
+audio data, a lot of these audio clips of people saying either "Alexa" or 
+saying other things, 
+`
+`
+step two is to then train the model. This means you will use a machine learning 
+algorithm to learn an input to output or A to B mapping, where the input A 
+would be an audio clip. In the case of the first audio clip above, hopefully, 
+it will tell you that the user said "Alexa," and in the case of audio clip two, 
+shown on the right, hopefully, the system will learn to recognize that the user 
+has said "Hello." Whenever an AI team starts to train the model, meaning to 
+learn the A to B or input-output mapping, what happens, pretty much every time, 
+is the first attempt doesn't work well. So invariably, the team will need to 
+try many times or in AI, we call this iterate many times. You have to iterate 
+many times until, hopefully, the model looks like is good enough. 
+`
+`
+The third step is to then actually deploy the model. What that means is you put 
+this AI software into an actual smart speaker and ship it to either a small 
+group of test users or to a large group of users. What happens in a lot of AI 
+products is that when you ship it, you see that it starts getting new data and 
+it may not work as well as you had initially hoped. So, for example, I am from 
+the UK. So, I'm going to pick on the British. But let's say you had trained 
+your speech recognition system on American-accented speakers and you then ship 
+this smart speaker to the UK and you start having British-accented people say 
+"Alexa." They may find that it doesn't recognize the speech as well as you had 
+hoped. When that happens, hopefully, you can get data back of cases such as 
+maybe British-accented speakers was not working as well as you're hoping, and 
+then use this data to maintain and to update the model. 
+`
+
+`
+So, to summarize, the key steps of a machine learning project are to collect 
+data, to train the model, the A to B mapping, and then to deploy the model. 
+Throughout these steps, there is often a lot of iteration, meaning fine-tuning 
+or adapting the model to work better or getting data back even after you've 
+shipped it to, hopefully, make the product better, which may or may not be 
+possible depending on whether you're able to get data back. using new data to 
+maintain and update the model so that, hopefully, you can have your AI software 
+continually get better and better to the point where you end up with a software 
+that can do a pretty good job detecting other cars from pictures like these. 
+`
+
+
+
+
+#### 6. What machine learning can and cannot do: 
+Now, one of the challenges of doing 
+AI projects such as the pilot projects in step one is understanding what AI can 
+and cannot do. I want to show you and give you some examples of what AI can and 
+cannot do, to help you better select projects AI that there may be effective 
+for your company. I hope to help you develop intuition about what AI can and 
+cannot do. In practice, before I commit to a specific AI project, I'll usually 
+have either myself or engineers do technical diligence on the project to make 
+sure that it is feasible. This means: looking at the data, look at the input, 
+and output A and B, and just thinking through if this is something AI can 
+really do. One of the challenges is that the media, as well as the academic 
+literature, tends to only report on positive results or success stories using 
+AI, and we see a string of success stories and no failure stories, people 
+sometimes think AI can do everything. Unfortunately, that's just not true. what 
+I want to do in this and in the next video, is to show you a few examples of 
+what today's AI technology can do, but also what it cannot do, and I hope that 
+this will help you, hone your intuition about what might be more or less 
+promising projects to select for your company. 
+
+I usually end up having to ask engineering teams to sometimes spend a few weeks 
+doing deep technical diligence to decide for myself if a project is feasible. 
+But to hone your intuitions to help you quickly filter feasible or not feasible 
+projects, here are a couple of other rules of thumb about what makes a machine 
+learning problem easier or more likely to be feasible. One, learning a simple 
+concept is more likely to be feasible. Well, what does a simple concept mean? 
+There's no formal definition of that but it is something that takes you less 
+than a second of mental thought or a very small number of seconds of mental 
+thought to come up with a conclusion then that would lean to whether it being a 
+simple concept. So, you're looking outside the window of a self-driving car to 
+spot the other cars that would be a relatively simple concept. Whereas how to 
+write an empathetic response, so a complicated user complaints, that would be 
+less of a simple concept. Second, a machine learning problem is more likely to 
+be feasible if you have lots of data available. Here, our data means both the 
+input A and the output B, that you want the AI system to have in your A to B, 
+input to output mapping. So for example, in the customer support application, 
+the input A would be examples of emails from customers and B could be labeling 
+each of these customer emails as to whether it's a refund requests or a 
+shipping query, or some other problem, one of three outcomes. Then if you have 
+thousands of emails with both A and B, then the odds of you building a machine 
+learning system to do that would be pretty good. 
+
+What I hope to do, both in the previous video and in this video is to quickly 
+show you a few examples of AI successes and failures, or what it can and cannot 
+do so that in a much shorter time, you can see multiple concrete examples to 
+help hone your intuition and select valuable projects. So, let's take a look at 
+a few more examples. Let's say you're building a self-driving car, here's 
+something that AI can do pretty well, which is to take a picture of what's in 
+front of your car and maybe just using a camera, maybe using other senses as 
+well such as radar or lidar. Then to figure out, what is the position, or where 
+are the other cars. So, this would be an AI where the input A, is a picture of 
+what's in front of your car, or maybe both a picture as well as radar and other 
+sensor readings. The output B is, where are the other cars? So, that's what the 
+AI today can do. Here's an example of something that today's AI cannot do, or 
+at least would be very difficult using today's AI, which is to input a picture 
+and output the intention of whatever the human is trying to gesture at your 
+car. So, here's a construction worker holding out a hand to ask your car to 
+stop. Here's a hitchhiker trying to wave a car over. Here is a bicyclist 
+raising the left-hand to indicate that they want to turn left. So, if you were 
+to try to build a system to learn the A to B mapping, where the input A is a 
+short video of our human gesturing at your car, and the output B is, what's the 
+intention or what does this person want, that today is very difficult to do. 
+Part of the problem is that the number of ways people gesture at you is very, 
+very large. Imagine all the hand gestures someone could conceivably use asking 
+you to slow down or go, or stop. The number of ways that people could gesture 
+at you is just very, very large. So, learning from a video to what this person 
+wants, it's actually a somewhat complicated concept. In fact, even people have 
+a hard time figuring out sometimes what someone waving at your car wants. I 
+think it's quite hard today to build an AI system to recognize humans 
+intentions from their gestures at the very high level of accuracy needed in 
+order to drive safely around these people. So, that's why today, many self-
+driving car teams have some components for detecting other cars, and they do 
+rely on that technology to drive safely. But very few self-driving car teams 
+are trying to count on the AI system to recognize a huge diversity of human 
+gestures and counting just on that to drive safely around people. 
+
+To summarize, here are some of the strengths and weaknesses of machine 
+learning. Machine learning tends to work well when you're trying to learn a 
+simple concept, such as something that you could do with less than a second of 
+mental thought, and when there's lots of data available. Machine learning tends 
+to work poorly when you're trying to learn a complex concept from small amounts 
+of data. A second underappreciated weakness of AI is that it tends to do poorly 
+when it's asked to perform on new types of data that's different than the data 
+it has seen in your data set. 
+
+In case the boundary between what it can or cannot do still seems fuzzy to you, 
+don't worry. It is completely normal, completely okay. In fact even today, I 
+still can't look at a project and immediately tell is something that's feasible 
+or not. I often still need weeks or small numbers of weeks of technical 
+diligence before forming strong conviction about whether something is feasible 
+or not. But I hope that these examples can at least help you start imagining 
+some things in your company that might be feasible and might be worth exploring 
+more. 
+
+#### Limitation
+But AI has other limitations, as well. One of the limitations of AI is that explainability is hard and many high-performing AI systems are black boxes. Meaning that it works very well but the AI doesn't know how to explain why it does what it does. Now, to be fair, humans are also not very good at explaining how we make decisions ourselves. 
 
 #### Technical tools for AI teams and Resources:
 When you work with AI teams, you may hear them refer to the tools that they're using to build these AI systems. In this video, I want to share with you some details and names of the most commonly used AI tools, so that you'd be able to better understand what these AI engineers are doing.
@@ -316,98 +635,7 @@ detail on in a later week as a road-map If you're interested, there is also
 published online an AI transformation playbook that goes into these five steps 
 in greater detail for you see more of these in the later weeks as well. 
 
-#### 6. What machine learning can and cannot do: 
-Now, one of the challenges of doing 
-AI projects such as the pilot projects in step one is understanding what AI can 
-and cannot do. I want to show you and give you some examples of what AI can and 
-cannot do, to help you better select projects AI that there may be effective 
-for your company. I hope to help you develop intuition about what AI can and 
-cannot do. In practice, before I commit to a specific AI project, I'll usually 
-have either myself or engineers do technical diligence on the project to make 
-sure that it is feasible. This means: looking at the data, look at the input, 
-and output A and B, and just thinking through if this is something AI can 
-really do. One of the challenges is that the media, as well as the academic 
-literature, tends to only report on positive results or success stories using 
-AI, and we see a string of success stories and no failure stories, people 
-sometimes think AI can do everything. Unfortunately, that's just not true. what 
-I want to do in this and in the next video, is to show you a few examples of 
-what today's AI technology can do, but also what it cannot do, and I hope that 
-this will help you, hone your intuition about what might be more or less 
-promising projects to select for your company. 
 
-I usually end up having to ask engineering teams to sometimes spend a few weeks 
-doing deep technical diligence to decide for myself if a project is feasible. 
-But to hone your intuitions to help you quickly filter feasible or not feasible 
-projects, here are a couple of other rules of thumb about what makes a machine 
-learning problem easier or more likely to be feasible. One, learning a simple 
-concept is more likely to be feasible. Well, what does a simple concept mean? 
-There's no formal definition of that but it is something that takes you less 
-than a second of mental thought or a very small number of seconds of mental 
-thought to come up with a conclusion then that would lean to whether it being a 
-simple concept. So, you're looking outside the window of a self-driving car to 
-spot the other cars that would be a relatively simple concept. Whereas how to 
-write an empathetic response, so a complicated user complaints, that would be 
-less of a simple concept. Second, a machine learning problem is more likely to 
-be feasible if you have lots of data available. Here, our data means both the 
-input A and the output B, that you want the AI system to have in your A to B, 
-input to output mapping. So for example, in the customer support application, 
-the input A would be examples of emails from customers and B could be labeling 
-each of these customer emails as to whether it's a refund requests or a 
-shipping query, or some other problem, one of three outcomes. Then if you have 
-thousands of emails with both A and B, then the odds of you building a machine 
-learning system to do that would be pretty good. 
-
-What I hope to do, both in the previous video and in this video is to quickly 
-show you a few examples of AI successes and failures, or what it can and cannot 
-do so that in a much shorter time, you can see multiple concrete examples to 
-help hone your intuition and select valuable projects. So, let's take a look at 
-a few more examples. Let's say you're building a self-driving car, here's 
-something that AI can do pretty well, which is to take a picture of what's in 
-front of your car and maybe just using a camera, maybe using other senses as 
-well such as radar or lidar. Then to figure out, what is the position, or where 
-are the other cars. So, this would be an AI where the input A, is a picture of 
-what's in front of your car, or maybe both a picture as well as radar and other 
-sensor readings. The output B is, where are the other cars? So, that's what the 
-AI today can do. Here's an example of something that today's AI cannot do, or 
-at least would be very difficult using today's AI, which is to input a picture 
-and output the intention of whatever the human is trying to gesture at your 
-car. So, here's a construction worker holding out a hand to ask your car to 
-stop. Here's a hitchhiker trying to wave a car over. Here is a bicyclist 
-raising the left-hand to indicate that they want to turn left. So, if you were 
-to try to build a system to learn the A to B mapping, where the input A is a 
-short video of our human gesturing at your car, and the output B is, what's the 
-intention or what does this person want, that today is very difficult to do. 
-Part of the problem is that the number of ways people gesture at you is very, 
-very large. Imagine all the hand gestures someone could conceivably use asking 
-you to slow down or go, or stop. The number of ways that people could gesture 
-at you is just very, very large. So, learning from a video to what this person 
-wants, it's actually a somewhat complicated concept. In fact, even people have 
-a hard time figuring out sometimes what someone waving at your car wants. I 
-think it's quite hard today to build an AI system to recognize humans 
-intentions from their gestures at the very high level of accuracy needed in 
-order to drive safely around these people. So, that's why today, many self-
-driving car teams have some components for detecting other cars, and they do 
-rely on that technology to drive safely. But very few self-driving car teams 
-are trying to count on the AI system to recognize a huge diversity of human 
-gestures and counting just on that to drive safely around people. 
-
-To summarize, here are some of the strengths and weaknesses of machine 
-learning. Machine learning tends to work well when you're trying to learn a 
-simple concept, such as something that you could do with less than a second of 
-mental thought, and when there's lots of data available. Machine learning tends 
-to work poorly when you're trying to learn a complex concept from small amounts 
-of data. A second underappreciated weakness of AI is that it tends to do poorly 
-when it's asked to perform on new types of data that's different than the data 
-it has seen in your data set. 
-
-In case the boundary between what it can or cannot do still seems fuzzy to you, 
-don't worry. It is completely normal, completely okay. In fact even today, I 
-still can't look at a project and immediately tell is something that's feasible 
-or not. I often still need weeks or small numbers of weeks of technical 
-diligence before forming strong conviction about whether something is feasible 
-or not. But I hope that these examples can at least help you start imagining 
-some things in your company that might be feasible and might be worth exploring 
-more. 
 
 #### 7. Deep Learning: 
 The terms deep learning and neural network are used almost 
@@ -498,44 +726,7 @@ identity B and the learning algorithm will figure out by itself what each of
 these neurons in the middle should be computing. 
 
 
-#### How to choose an AI project: 
-`
-Machine learning is an “iterative” process, 
-meaning that an AI team often has to try many ideas before coming up with 
-something that’s good enough, rather than have the first thing they try work. 
-Say you want to use Machine Learning to help your sales team with automatic 
-lead sorting. I.e., Input A (a sales prospect) and output B (whether your sales 
-team should prioritize them). The 3 steps of the workflow, in scrambled order, 
-are: (i) Deploy a trained model and get data back from users (ii) Collect data 
-with both A and B (iii) Train a machine learning system to input A and output B `
 
-`
-Say you want to build an AI system to help recruiters with automated resume 
-screening. Which of these steps might be involved in “technical diligence” 
-process?  (Select all that apply.) Defining an engineering timeline Making sure 
-you can get enough data for this project Ensuring that this is valuable for 
-your business (e.g., estimating the project ROI) Making sure that an AI system 
-can meet the desired performance 
-`
-
-`
-Which of these statements about “business diligence” do you agree with? 
-Business diligence is the process of ensuring that the envisioned AI technology 
-is feasible. Business diligence is the process of ensuring that the AI 
-technology, if it is built, is valuable for your business. 
-`
-
-`
-Say you want to build an AI system to help recruiters with automated resume 
-screening. Which of these steps might be involved in “technical diligence” 
-process?  (Select all that apply.) Defining an engineering timeline Making sure 
-you can get enough data for this project Making sure that an AI system can meet 
-the desired performance 
-`
-`
-Ensuring that this is valuable for your business (e.g., estimating the project 
-ROI) 
-`
 
 week2 
 
@@ -567,67 +758,7 @@ these two options is beyond the scope of this video. A lot of the world is
 moving to Cloud deployments. Whether you search online you find many articles 
 talking about the pros and cons of Cloud versus On-prem deployments. 
 
-#### Workflow of a Machine Learning Project: 
-`
-Machine learning algorithms can learn 
-input to output or A to B mappings. So, how do you build a machine learning 
-project? Let’s take a look what is the workflow of machine learning projects. 
-As a running example, I'm going to use speech recognition. So, some of you may 
-have an Amazon Echo or Google Home or Apple Siri device or a Baidu DuerOS 
-device in your homes. So, how do you build a speech recognition system that can 
-recognize when you say, "Alexa," or "Hey, Google," or "Hey, Siri," or "Hello, 
-Baidu"? Let's go through the key steps of a machine learning project. Just for 
-simplicity, I'm going to use Amazon Echo or detecting the Alexa keywords as 
-this running example. If you want to build an AI system or build a machine 
-learning system to figure out when a user has said the word Alexa, 
-`
 
-`
-the first step is to collect data. So, that means, you would go around and get 
-some people to say the word "Alexa" for you and you record the audio of that. 
-You'll also get a bunch of people to say other words like "Hello," or say lots 
-of other words and record the audio of that as well. Having collected a lot of 
-audio data, a lot of these audio clips of people saying either "Alexa" or 
-saying other things, 
-`
-`
-step two is to then train the model. This means you will use a machine learning 
-algorithm to learn an input to output or A to B mapping, where the input A 
-would be an audio clip. In the case of the first audio clip above, hopefully, 
-it will tell you that the user said "Alexa," and in the case of audio clip two, 
-shown on the right, hopefully, the system will learn to recognize that the user 
-has said "Hello." Whenever an AI team starts to train the model, meaning to 
-learn the A to B or input-output mapping, what happens, pretty much every time, 
-is the first attempt doesn't work well. So invariably, the team will need to 
-try many times or in AI, we call this iterate many times. You have to iterate 
-many times until, hopefully, the model looks like is good enough. 
-`
-`
-The third step is to then actually deploy the model. What that means is you put 
-this AI software into an actual smart speaker and ship it to either a small 
-group of test users or to a large group of users. What happens in a lot of AI 
-products is that when you ship it, you see that it starts getting new data and 
-it may not work as well as you had initially hoped. So, for example, I am from 
-the UK. So, I'm going to pick on the British. But let's say you had trained 
-your speech recognition system on American-accented speakers and you then ship 
-this smart speaker to the UK and you start having British-accented people say 
-"Alexa." They may find that it doesn't recognize the speech as well as you had 
-hoped. When that happens, hopefully, you can get data back of cases such as 
-maybe British-accented speakers was not working as well as you're hoping, and 
-then use this data to maintain and to update the model. 
-`
-
-`
-So, to summarize, the key steps of a machine learning project are to collect 
-data, to train the model, the A to B mapping, and then to deploy the model. 
-Throughout these steps, there is often a lot of iteration, meaning fine-tuning 
-or adapting the model to work better or getting data back even after you've 
-shipped it to, hopefully, make the product better, which may or may not be 
-possible depending on whether you're able to get data back. using new data to 
-maintain and update the model so that, hopefully, you can have your AI software 
-continually get better and better to the point where you end up with a software 
-that can do a pretty good job detecting other cars from pictures like these. 
-`
 
 #### Job functions: 
 Data is transforming many different job functions, whether you 
@@ -676,131 +807,7 @@ you saw how all of these job functions, everything from sales, recruiting to
 marketing to manufacturing to farming agriculture, how all of these job 
 functions are being affected by data, by data science and machine learning. 
 
-#### How to choose an AI project: 
-`Let's say you want to build an AI project for your 
-business. You've already seen that AI can't do everything, and so there's going 
-to be a certain set of things that is what AI can do. So let's let the circle 
-represent the set of things that AI can do. Now, there's also going to be a 
-certain set of things that is valuable for your business. So let's let this 
-second circle represent a set of things that are valuable for your business. 
-What you would like to do is try to select projects that are at the 
-intersection of these two sets, so you select projects hopefully that are both 
-feasible, that can be done with AI, and that are also valuable for your 
-business. So AI experts will tend to have a good sense of what is and what 
-isn't in the set on the left. And domain experts, experts in your business, be 
-it sales and marketing, or agriculture or something else, will have the best 
-sense of what is actually valuable for your business. So when brainstorming 
-projects that AI can do and are valuable for your business, I will often bring 
-together a team comprising both people knowledgeable of AI, as well as experts 
-in your business area to brainstorm together. So that together they can try to 
-identify projects at the intersection of both of these two sets.`
 
-And it's by looking at all these tasks that the group of employees do and 
-selecting one that may allow you to select the most fruitful project for 
-automation in the near term. And so it's by looking at all of these tasks that 
-a radiologist does that you may Identify one of them, let's say AI assistance 
-or AI automation for reading x-rays, that allows you to select the most 
-fruitful projects to work on. So what I would recommend is, if you look at your 
-business, think about the tasks that people do, to see if you can identify just 
-one of them, or just a couple of them, that may be automatable using machine 
-learning. 
-
-When I'm meeting CEOs of large companies to brainstorm AI projects for the 
-company, a common question I'll also ask is, what are the main drivers of 
-business value? And sometimes finding AI solutions or data science solutions to 
-augment this can be very valuable. 
-`Finally, a third question that I've asked 
-that sometimes let to valuable project ideas is, what are the main pain points 
-in your business? Some of them could be solved with AI, some of them can't be 
-solved with AI. But by understanding the main pain points in the business, that 
-can create a useful starting point for brainstorming AI projects as well. The 
-amount of data you need is very problem dependent, and speaking with an AI 
-engineer or AI expert would help you get better sense. There are some problems 
-where 1,000 images may not be enough, where you do need big data to get good 
-performance. But my advice is, don't give up just because you don't have a lot 
-of data to start off with. And you can often still make progress, even with a 
-small dataset. In this video, you saw a brainstorming framework, and a set of 
-criteria for trying to come up with projects that hopefully can be doable with 
-AI, and are also valuable for your business. `
-
-
-`
-Maybe you have a lot of ideas for possible AI projects to work on. But before 
-committing to one, how do you make sure that this really is a worthwhile 
-project? If it's a quick project that might take you just a few days maybe just 
-jump in right away and see if it works or not, but some AI projects may take 
-many months to execute. In this video, I want to step you through the process 
-that I use to double-check if a project is worth that many months of effort. 
-Before committing to a big AI project, I will usually conduct due diligence on 
-it. Due diligence has a specific meaning in the legal world. But informally, it 
-just means that you want to spend some time to make sure you've already seen 
-how the best AI projects are ones that are feasible. So, it's something that AI 
-can do, as well as valuable. We really want to choose projects to that the 
-intersection of these two sets. So, to make sure a project is feasible, I will 
-usually go through technical diligence, and make sure that the project is 
-valuable, I will usually go through a business diligence process. Technical 
-diligence is the process of making sure that the AI system you hope to build 
-really is feasible. So, you might talk to AI experts about whether or not the 
-AI system can actually meet the desired level of performance. For example, if 
-you are hoping to build a speech system that is 95 percent accurate, consulting 
-of AI experts or perhaps reading some of the trade literature can give you a 
-sense of whether this is doable or not. Or if you want a system to inspect 
-coffee mugs in a factory and you need your system to be 99 percent accurate. 
-Again, is this actually doable with today's technology? A second important 
-question for technical diligence is how much data is needed to get to this 
-desired level of performance, and do you have a way to get that much data. 
-Third, would be engineering timeline to try to figure out how long it will take 
-and how many people it will take to build a system that you would like to have 
-built. In addition to technical diligence, I will often also conduct business 
-diligence to make sure that the project you envision really is valuable for the 
-business. So, a lot of AI projects will drive value through lowering costs. For 
-example, by automating a few tasks or by squeezing more efficiency onto the 
-system. A lot of AI systems can also increase revenue. For example, driving 
-more people to check out in your shopping cart or you may be building an AI 
-system to help you launch a new product or a new line of business. So, business 
-diligence is the process of thinking through carefully for the AI system that 
-you're building such as a speech recognition system that's 95 percent accurate 
-or a visual inspection system that's 99.9 percent accurate, would allow you to 
-achieve your business goals. Whether your business goal is to improve your 
-current business or to even create brand new businesses in your company. 
-`
-
-`
-When conducting business diligence, I'll often end up building spreadsheet 
-financial models to estimate the value quantitatively such as estimate how many 
-dollars are actually saved or what do we think is a reasonable assumption in 
-terms of entries revenue, and to model out the economics associated with a 
-project before committing to many months of effort on a project. So, when 
-there's a massive force of an industry standard solution that is been built, 
-you might be better off just embracing an industry standard or embracing 
-someone else's platform rather than trying to do everything in-house. We all 
-live in a world of limited resources, limited time, limited data, limited 
-engineering resources, and so, I hope you can focus those resources on the 
-projects with our most unique and will make the biggest difference to your 
-company. Through the process of technical diligence as well as business 
-diligence, I hope you can start to identify projects that are potentially 
-valuable or that seem promising for your business. If the project is a big 
-company, maybe it'll take many months to do. It's not unusual for me to spend 
-even a few weeks conducting this type of diligence before committing to a 
-project. 
-`
-
-`
-First, machine learning technology today despite being very powerful still has 
-limitations and they just can't do everything. So, you may be working on a 
-problem that it's just very difficult even for today's machine learning 
-technology. Second, insufficient data. If you don't have enough data 
-specifically if you don't have enough training data for the AI software to 
-learn from it may be very difficult to get a very high level of accuracy. 
-Third, data is messy and sometimes data can be mislabeled. Some of these 
-problems can be ameliorated. For example, if you don't have enough data maybe 
-you can try to collect more data and more data will often help. Or you can also 
-try to clean up mislabeled data or try to get your factories experts to come to 
-better agreement about these ambiguous labels. So, there are ways to try to 
-make these things better, but, a lot of AI systems are incredibly valuable even 
-without achieving a 100% accuracy. So, I will urge you to discuss with your AI 
-engineers what is a reasonable level of accuracy to try to accomplish? 
-`
 #### Technical tools for AI teams: 
 When you work with AI teams, you may hear them 
 refer to the tools that they're using to build these AI systems. In this video, 
