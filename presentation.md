@@ -661,7 +661,7 @@ marketing to manufacturing to farming agriculture, how all of these job
 functions are being affected by data, by data science and machine learning. 
 
 #### How to choose an AI project: 
-Let's say you want to build an AI project for your 
+`Let's say you want to build an AI project for your 
 business. You've already seen that AI can't do everything, and so there's going 
 to be a certain set of things that is what AI can do. So let's let the circle 
 represent the set of things that AI can do. Now, there's also going to be a 
@@ -677,7 +677,7 @@ sense of what is actually valuable for your business. So when brainstorming
 projects that AI can do and are valuable for your business, I will often bring 
 together a team comprising both people knowledgeable of AI, as well as experts 
 in your business area to brainstorm together. So that together they can try to 
-identify projects at the intersection of both of these two sets. 
+identify projects at the intersection of both of these two sets.`
 
 And it's by looking at all these tasks that the group of employees do and 
 selecting one that may allow you to select the most fruitful project for 
@@ -692,7 +692,8 @@ learning.
 When I'm meeting CEOs of large companies to brainstorm AI projects for the 
 company, a common question I'll also ask is, what are the main drivers of 
 business value? And sometimes finding AI solutions or data science solutions to 
-augment this can be very valuable. Finally, a third question that I've asked 
+augment this can be very valuable. 
+`Finally, a third question that I've asked 
 that sometimes let to valuable project ideas is, what are the main pain points 
 in your business? Some of them could be solved with AI, some of them can't be 
 solved with AI. But by understanding the main pain points in the business, that 
@@ -704,10 +705,10 @@ performance. But my advice is, don't give up just because you don't have a lot
 of data to start off with. And you can often still make progress, even with a 
 small dataset. In this video, you saw a brainstorming framework, and a set of 
 criteria for trying to come up with projects that hopefully can be doable with 
-AI, and are also valuable for your business. 
+AI, and are also valuable for your business. `
 
 
-
+`
 Maybe you have a lot of ideas for possible AI projects to work on. But before 
 committing to one, how do you make sure that this really is a worthwhile 
 project? If it's a quick project that might take you just a few days maybe just 
@@ -746,7 +747,9 @@ you're building such as a speech recognition system that's 95 percent accurate�
 or a visual inspection system that's 99.9 percent accurate, would allow you to 
 achieve your business goals. Whether your business goal is to improve your 
 current business or to even create brand new businesses in your company. 
+`
 
+`
 When conducting business diligence, I'll often end up building spreadsheet 
 financial models to estimate the value quantitatively such as estimate how many 
 dollars are actually saved or what do we think is a reasonable assumption in 
@@ -764,7 +767,9 @@ valuable or that seem promising for your business. If the project is a big
 company, maybe it'll take many months to do. It's not unusual for me to spend 
 even a few weeks conducting this type of diligence before committing to a 
 project. 
+`
 
+`
 First, machine learning technology today despite being very powerful still has 
 limitations and they just can't do everything. So, you may be working on a 
 problem that it's just very difficult even for today's machine learning 
@@ -779,7 +784,7 @@ better agreement about these ambiguous labels. So, there are ways to try to
 make these things better, but, a lot of AI systems are incredibly valuable even 
 without achieving a 100% accuracy. So, I will urge you to discuss with your AI 
 engineers what is a reasonable level of accuracy to try to accomplish? 
-
+`
 #### Technical tools for AI teams: 
 When you work with AI teams, you may hear them 
 refer to the tools that they're using to build these AI systems. In this video, 
