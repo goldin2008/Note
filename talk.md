@@ -93,7 +93,7 @@ The ML model fitting code is often less than a couple of hundred lines of code. 
 
 >19 Tools
 
-We do not need to create building bricks or reinvent the wheels. XX's ML is probably 70% or more based on Python. The UK and some of finance modeling teams prefer R. Deployment are frequently in JAVA either wrapped Python or exported directly to a JAVA object.
+When you work with ML teams, you may hear them refer to the tools that they're using to build these ML systems. We do not need to create building bricks or reinvent the wheels. Fortunately, the world today is very open, and many teams will openly share ideas and frameworks with each other. XX's ML is probably 70% or more based on Python. The UK and some of finance modeling teams prefer R. Deployment are frequently in JAVA either wrapped Python or exported directly to a JAVA object.
 
 >20 Framework at XX
 
@@ -101,7 +101,9 @@ Before you begin your own ML project, leverage what's already been built! Make s
 
 >21-24 Resources
 
-Modeling and Analytics Conference, IEEE digital library, arXiv, and Team confluence page.
+Modeling and Analytics Conference, IEEE digital library, arXiv, and Team confluence page. 
+
+Along with AI technology breakthroughs are also publish freely on the Internet on this website called Arxiv. Many teams will also share their code freely on GitHub. By using appropriately licensed open-source software, you can get going much faster than if you had to build everything from scratch.
 
 >25 Future Work
 
