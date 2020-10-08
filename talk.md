@@ -68,6 +68,8 @@ When brainstorming projects, we can bring together a team comprising both people
 
 >14 Modeling Workflow of ML project
 
+Machine learning is an “iterative” process, meaning that an AI team often has to try many ideas before coming up with something that’s good enough, rather than have the first thing they try work.
+
 >15 Modeling
 
 The hard part is getting the data and cleansing it to be ready to be tuned to a model. Once you have the data you can try a number of algorithms to determine which is most successful. You typically whittle down the number of features once you determine which ones are most successful. For example, in fraud you maybe start with hundreds of features and in the model there will only be 30. Tuning is an iterative exercises. This is the most compute-intensive part of the model building process. 
