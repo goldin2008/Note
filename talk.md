@@ -61,7 +61,10 @@ Questions we may ask:
 
 >13 What is GOOD ML projects?
 
-To make a good ML project, we need to make sure projects are both feasible for ML technology, and valuable for our business.
+To make a good ML project, we need to make sure projects are both feasible for ML technology, and valuable for our business. 
+“technical diligence” is ensuring that the envisioned ML technology is feasible, Defining an engineering timeline, Making sure we can get enough data for this project and the ML system can meet the desired performance.
+“business diligence” is the process of ensuring that the ML technology, if it is built, is valuable for your business.
+When brainstorming projects, we can bring together a team comprising both people knowledgeable of ML, as well as experts in the business area. By understanding the main pain points in the business and feasible technology we can build, that will allow us to make the most fruitful project for automation in the near term.
 
 >14 Workflow of ML project.
 
