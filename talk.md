@@ -78,7 +78,7 @@ When brainstorming projects, we can bring together a team comprising both people
 
 >19 Tools
 
-We do not need to create building bricks or reinvent the wheels.
+We do not need to create building bricks or reinvent the wheels. XX's ML is probably 70% or more based on Python. The UK and some of finance modeling teams prefer R. Deployment are frequently in JAVA either wrapped Python or exported directly to a JAVA object.
 
 >20 Framework at XX
 
