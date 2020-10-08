@@ -76,9 +76,11 @@ Step Two is to train the model. Then you will use a machine learning algorithm t
 
 The Third Step is to actually deploy the model. What that means is you put this ML software into an actual smart speaker and ship it to users.
 
+Throughout these steps, there are often many iterations of fine-tuning or adapting the model to make the product better.
+
 >15 Modeling
 
-The hard part is getting the data and cleansing it to be ready for modeling. Once you have the data you can try a number of algorithms to determine which is most successful. You typically whittle down the number of features once you determine which ones are most successful. For example, in fraud you maybe start with hundreds of features and in the model there will only be 30. Tuning is an iterative exercises. This is the most compute-intensive part of the model building process. 
+The hard part is getting the data and cleansing it to be ready for modeling. Once you have the data you can try a number of algorithms to determine which is the most successful. You typically whittle down the number of features once you determine which ones are the most successful. For example, in my previous fishing email detection project we start with hundreds of features and in the model there will only be about 50. Parameters and hyper-parameters tuning is an iterative process and it is the most compute-intensive part of the model building process. 
 
 >16 Engineering Workflow of ML project
 
