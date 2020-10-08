@@ -74,11 +74,11 @@ The First Step is to collect and preprocess data. So, that means, you would go a
 
 Step Two is to train the model. Then you will use a machine learning algorithm to learn an input to output mapping, where in our running example the input would be an audio clip. In the case of the audio clip above, hopefully, the system will learn to recognize that the user has said "Alexa". Whenever an ML team starts to train the model, what happens, I will say pretty much every time, is the first attempt doesn't work well. So the team will need to iterate many times until the model looks like is good enough. 
 
-The Third Step is to then actually deploy the model. 
+The Third Step is to actually deploy the model. What that means is you put this ML software into an actual smart speaker and ship it to users.
 
 >15 Modeling
 
-The hard part is getting the data and cleansing it to be ready to be tuned to a model. Once you have the data you can try a number of algorithms to determine which is most successful. You typically whittle down the number of features once you determine which ones are most successful. For example, in fraud you maybe start with hundreds of features and in the model there will only be 30. Tuning is an iterative exercises. This is the most compute-intensive part of the model building process. 
+The hard part is getting the data and cleansing it to be ready for modeling. Once you have the data you can try a number of algorithms to determine which is most successful. You typically whittle down the number of features once you determine which ones are most successful. For example, in fraud you maybe start with hundreds of features and in the model there will only be 30. Tuning is an iterative exercises. This is the most compute-intensive part of the model building process. 
 
 >16 Engineering Workflow of ML project
 
