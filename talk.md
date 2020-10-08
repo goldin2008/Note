@@ -57,6 +57,8 @@ Questions we may ask:
 
 >11 Opportunities for ML
 
+There are usually two types of use cases.
+
 >12 What is GOOD ML problems?
 
 >13 What is GOOD ML projects?
