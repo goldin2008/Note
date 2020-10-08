@@ -68,3 +68,26 @@ When brainstorming projects, we can bring together a team comprising both people
 
 >14 Workflow of ML project.
 
+>15 
+
+>16
+
+>17
+
+>18
+
+>19 Tools
+
+We do not need to create building bricks or reinvent the wheels.
+
+>20 Framework at XX
+
+Before you begin your own ML project, leverage what's already been built! Make sure to look at the repo to find out the last time it was updated to make sure it's still beiing updated and supported. Some of these are beiing folded into the new ML platform maybe. Once again, don't reinvent the wheels and save your time on the most importnat things.
+
+>21-24 Resources
+
+Modeling and Analytics Conference, IEEE digital library, arXiv, and Team confluence page.
+
+>25 Future Work
+
+These are common ML algorithms. The top 3 are supervised learning and are very common at XX. You can take multiple days classes in each of these courses but we're just going to give you an overview so you can better understand the types of algorithms that underlie ML.
