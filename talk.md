@@ -49,16 +49,11 @@ Use cases.
 >10
 
 Let use detecting fraudulent transactions as an example.
-
 Questions we may ask:
-
-- 1. How many attempted XX credit card transactions per day? Branded book card has over 10 million card transactions per day.
-
-- 2. How fast do we need to decide whether or not to approve? Have only about 10 milliseconds to make a fraud decision.
-
-- 3. What percent of authorizations are fraudulent? Only about 0.15% of transactions are fraudulent (need to be very careful when training data)
-
-- 4. Annual loss budget for fraudulent transactions? Transactional loss budget was $172 million for Branded Book in 2018; Partnerships added another $20 million.
+- How many attempted XX credit card transactions per day? Branded book card has over 10 million card transactions per day.
+- How fast do we need to decide whether or not to approve? Have only about 10 milliseconds to make a fraud decision.
+- What percent of authorizations are fraudulent? Only about 0.15% of transactions are fraudulent (need to be very careful when training data)
+- Annual loss budget for fraudulent transactions? Transactional loss budget was $172 million for Branded Book in 2018; Partnerships added another $20 million.
 
 >11
 
