@@ -16,3 +16,4 @@ So let's go back to this question. What is ML? Machine learning is the field of 
 
 >5
 
+Instead of using statements to explain what ML is, let me use an example ot explain it in another way. For example, we give a computer the answer key from existing data and train it to replicate that answer. Traditional programming will feed data and explicit program to machine, then the machine will give us output. However, in ML style, machine will receive input and output data and learn from them itself, and then output program.
