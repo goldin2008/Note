@@ -4,6 +4,11 @@ Hello everyone. The topic of my presentation today is Machine Learning at XX. We
 
 >2
 
-So what is ML? You might have heard some buzzwords in the media, such as machine learning, deep learning or neural networks. What do these terms mean? What is relationship between them? If we were to draw a Venn diagram showing how all these concepts put together, this is what it may look like. AI is this huge set of tools for making computers behave intelligently and it includes explicit programming. ML is part of AI and DL is a very specific class of algorithms within ML.
+So what is ML? You might have heard some buzzwords in the media, such as machine learning, deep learning or neural networks. What do these terms mean? What is relationship between them?
 
 >3
+
+If we were to draw a Venn diagram showing how all these concepts put together, this is what it may look like. AI is this huge set of tools for making computers behave intelligently and it includes explicit programming. ML is part of AI and DL is a very specific class of algorithms within ML.
+
+>4
+
