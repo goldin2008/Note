@@ -78,7 +78,8 @@ The hard part is getting the data and cleansing it to be ready to be tuned to a 
 
 The ML model fitting code is often less than a couple of hundred lines of code. Model validation code is often much more than that. Maybe you can find blog posts that talk about "ML in 5 lines of code." They assume that your data has already been prepared and are only doing the model fitting. In practice, you will find a lot of dirty work need to be done only when you touch it. 
 
->18
+>18 ML Team
+
 
 >19 Tools
 
