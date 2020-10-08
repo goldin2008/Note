@@ -12,3 +12,7 @@ If we were to draw a Venn diagram showing how all these concepts put together, t
 
 >4
 
+So let's go back to this question. What is ML? Machine learning is the field of study that gives computers the ability to learn without being explicitly programmed. This is a definition by Arthur Samuel many decades ago. Arthur Samuel was a pioneer in the field of machine learning, who was famous for building a checkers playing program. Actually, There are several definitions of ML, but in general, ML allows a machine to learn from data and improve its classification and predictive performance.
+
+>5
+
