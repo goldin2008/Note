@@ -91,3 +91,7 @@ Modeling and Analytics Conference, IEEE digital library, arXiv, and Team conflue
 >25 Future Work
 
 These are common ML algorithms. The top 3 are supervised learning and are very common at XX. You can take multiple days classes in each of these courses but we're just going to give you an overview so you can better understand the types of algorithms that underlie ML.
+
+>26 Bye
+
+Just shoot us an email if you have any questions about ML. Thanks for attending my talk today.
