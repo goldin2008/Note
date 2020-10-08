@@ -66,13 +66,15 @@ To make a good ML project, we need to make sure projects are both feasible for M
 “business diligence” is the process of ensuring that the ML technology, if it is built, is valuable for your business.
 When brainstorming projects, we can bring together a team comprising both people knowledgeable of ML, as well as experts in the business area. By understanding the main pain points in the business and feasible technology we can build, that will allow us to make the most fruitful project for automation in the near term.
 
->14 Workflow of ML project.
+>14 Modeling Workflow of ML project
 
->15 
+>15 Modeling
 
->16
+The hard part is getting the data and cleansing it to be ready to be tuned to a model. Once you have the data you can try a number of algorithms to determine which is most successful. You typically whittle down the number of features once you determine which ones are most successful. For example, in fraud you maybe start with hundreds of features and in the model there will only be 30. Tuning is an iterative exercises. This is the most compute-intensive part of the model building process. 
 
->17
+>16 Engineering Workflow of ML project
+
+>17 ML code
 
 The ML model fitting code is often less than a couple of hundred lines of code. Model validation code is often much more than that. Maybe you can find blog posts that talk about "ML in 5 lines of code." They assume that your data has already been prepared and are only doing the model fitting. In practice, you will find a lot of dirty work need to be done only when you touch it. 
 
