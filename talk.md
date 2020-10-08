@@ -68,7 +68,13 @@ When brainstorming projects, we can bring together a team comprising both people
 
 >14 Modeling Workflow of ML project
 
-Machine learning is an “iterative” process, meaning that an AI team often has to try many ideas before coming up with something that’s good enough, rather than have the first thing they try work.
+Machine learning is an “iterative” process, meaning that an ML team often has to try many ideas before coming up with something that’s good enough, rather than have the first thing they try work. Let’s take a look what is the workflow of machine learning projects. I'm going to use speech recognition as a running example. Some of you may have an Amazon Echo in your homes. So, how do you build a ML system that can recognize when a user has said the word “Alexa”? Let's go through the key steps of this machine learning project.
+
+The First Step is to collect and preprocess data. So, that means, you would go around and get some people to say the word "Alexa" for you and you record the audio of that. You'll also get a bunch of people to say other words like "Hello," or say lots of other words and record the audio of that as well. Having collected a lot of audio data, in most situations, it need to be cleaned and preprocessed before ready for use. And this is an “iterative” process.
+
+Step Two is to train the model. Then you will use a machine learning algorithm to learn an input to output mapping, where in our running example the input would be an audio clip. In the case of the audio clip above, hopefully, the system will learn to recognize that the user has said "Alexa". Whenever an ML team starts to train the model, what happens, I will say pretty much every time, is the first attempt doesn't work well. So the team will need to iterate many times until the model looks like is good enough. 
+
+The Third Step is to then actually deploy the model. 
 
 >15 Modeling
 
