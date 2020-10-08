@@ -55,5 +55,13 @@ Questions we may ask:
 - What percent of authorizations are fraudulent? Only about 0.15% of transactions are fraudulent (need to be very careful when training data)
 - Annual loss budget for fraudulent transactions? Transactional loss budget was $172 million for Branded Book in 2018; Partnerships added another $20 million.
 
->11
+>11 Opportunities for ML
+
+>12 What is GOOD ML problems?
+
+>13 What is GOOD ML projects?
+
+To make a good ML project, we need to make sure projects are both feasible for ML technology, and valuable for our business.
+
+>14 Workflow of ML project.
 
