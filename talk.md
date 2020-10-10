@@ -102,6 +102,7 @@ Another role that you sometimes hear about is Data Scientist. Usually the primar
 
 With the rise of big data, there are also more and more Data Engineers whose main role is to help organize data, build data pipeline to make sure data is stored in a easy accessible, secure and cost-effective way. 
 
+
 `
 The role of Data Scientist is not very well defined today.
 There are also a lot of Data Scientists working in industries.
