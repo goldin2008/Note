@@ -4,11 +4,13 @@
 
 > https://www.arthur.ai/blog/2020/4/8/fairness-in-machine-learning-is-tricky
 
+
 >AWS Account:
 ```
 udacitystudylei@gmail.com
 nigama7@gmail.com
 ```
+
 
 >Project
 ```
@@ -16,6 +18,7 @@ nigama7@gmail.com
 2. Install packages
 3. Create requirements.txt 
 ```
+
 
 Project Command 
 >Install env
@@ -26,6 +29,7 @@ pip list
 pip freeze > requirements.txt
 cat requirements.txt
 ```
+
 
 >Install packages
 ```
