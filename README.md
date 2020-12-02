@@ -11,14 +11,12 @@ udacitystudylei@gmail.com
 nigama7@gmail.com
 ```
 
-
 >Project
 ```
 1. Install env
 2. Install packages
 3. Create requirements.txt 
 ```
-
 
 Project Command 
 >Install env
@@ -29,7 +27,6 @@ pip list
 pip freeze > requirements.txt
 cat requirements.txt
 ```
-
 
 >Install packages
 ```
