@@ -134,3 +134,4 @@ These are common ML algorithms. The top 3 are supervised learning and are very c
 >26 Bye
 
 Just shoot us an email if you have any questions about ML. Thanks for attending my talk today.
+
