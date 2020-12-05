@@ -1,3 +1,5 @@
+## Intro to Machine Learing
+
 >1
 
 Hello everyone. The topic of my presentation today is Machine Learning at XX. We know ML is changing the way we work and live. Whether you want to know what's behind the buzzwords or whether you want to perhaps use ML yourself either in a personal context or in a corporation, I hope Today's talk will give you a realistic view of what ML really is.
@@ -135,3 +137,12 @@ These are common ML algorithms. The top 3 are supervised learning and are very c
 
 Just shoot us an email if you have any questions about ML. Thanks for attending my talk today.
 
+
+## Intro to Data Science
+
+
+
+
+## Intro to Data Engineering
+
+## Intro to Fintech

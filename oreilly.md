@@ -1,1 +1,0 @@
-# O'Reilly Note
