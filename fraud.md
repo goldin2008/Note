@@ -18,3 +18,6 @@
 
 ### Cross Validation
 > https://towardsdatascience.com/how-to-build-a-machine-learning-model-439ab8fb3fb1
+
+### Notebook
+> https://medium.com/3blades-blog/jupyter-notebook-little-known-tricks-b0866a558017
