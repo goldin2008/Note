@@ -15,3 +15,6 @@
 
 ### Learning Curve
 > https://www.ritchieng.com/machine-learning-cross-validation/
+
+### Cross Validation
+> https://towardsdatascience.com/how-to-build-a-machine-learning-model-439ab8fb3fb1
