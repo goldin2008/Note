@@ -10,6 +10,8 @@
 
 > https://zhuanlan.zhihu.com/p/70763004
 
-#### Feature selection Correlation Map
+### Feature selection Correlation Map
 > https://towardsdatascience.com/feature-selection-correlation-and-p-value-da8921bfb3cf
 
+### Learning Curve
+> https://www.ritchieng.com/machine-learning-cross-validation/
