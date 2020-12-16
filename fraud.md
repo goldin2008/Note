@@ -22,6 +22,13 @@
 ### Notebook
 > https://medium.com/3blades-blog/jupyter-notebook-little-known-tricks-b0866a558017
 
+### Modeling
+> https://towardsdatascience.com/random-forest-in-python-24d0893d51c0
+
+> https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74
+
+> https://towardsdatascience.com/improving-random-forest-in-python-part-1-893916666cd
+
 
 ### TODO
 > https://medium.com/@connor.anderson_42477/hot-or-not-heatmaps-and-correlation-matrix-plots-940088fa2806
