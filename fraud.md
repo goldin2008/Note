@@ -16,6 +16,8 @@
 ### Learning Curve
 > https://www.ritchieng.com/machine-learning-cross-validation/
 
+> https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/
+
 ### Cross Validation
 > https://towardsdatascience.com/how-to-build-a-machine-learning-model-439ab8fb3fb1
 
@@ -30,5 +32,9 @@
 > https://towardsdatascience.com/improving-random-forest-in-python-part-1-893916666cd
 
 > https://towardsdatascience.com/accuracy-precision-recall-or-f1-331fb37c5cb9
+
+> https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc
+
+> https://developers.google.com/machine-learning/crash-course/validation/another-partition
 
 ### TODO
