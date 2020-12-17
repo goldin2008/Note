@@ -27,6 +27,8 @@
 ### Cross Validation
 > https://towardsdatascience.com/how-to-build-a-machine-learning-model-439ab8fb3fb1
 
+> https://developers.google.com/machine-learning/crash-course/validation/another-partition
+
 ### Tunning
 > https://jakevdp.github.io/PythonDataScienceHandbook/05.03-hyperparameters-and-model-validation.html
 
@@ -46,6 +48,6 @@
 
 > https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc
 
-> https://developers.google.com/machine-learning/crash-course/validation/another-partition
+> https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/
 
 ### TODO
