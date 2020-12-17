@@ -18,8 +18,19 @@
 
 > https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/
 
+> https://www.dataquest.io/blog/learning-curves-machine-learning/
+
+> https://www.geeksforgeeks.org/using-learning-curves-ml/
+
+> https://github.com/abhmalik/Photometric_Z-Regression/blob/master/PhotoZ.ipynb
+
 ### Cross Validation
 > https://towardsdatascience.com/how-to-build-a-machine-learning-model-439ab8fb3fb1
+
+### Tunning
+> https://jakevdp.github.io/PythonDataScienceHandbook/05.03-hyperparameters-and-model-validation.html
+
+> https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.03-Hyperparameters-and-Model-Validation.ipynb
 
 ### Notebook
 > https://medium.com/3blades-blog/jupyter-notebook-little-known-tricks-b0866a558017
