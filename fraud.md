@@ -34,6 +34,8 @@
 
 > https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.03-Hyperparameters-and-Model-Validation.ipynb
 
+> https://github.com/pradeepmuni/Credit-Card-Fraud-Detection/blob/master/Credit%20Card%20Misuse.ipynb
+
 ### Notebook
 > https://medium.com/3blades-blog/jupyter-notebook-little-known-tricks-b0866a558017
 
@@ -51,3 +53,36 @@
 > https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/
 
 ### TODO
+
+https://zhuanlan.zhihu.com/p/79734015
+
+https://zhuanlan.zhihu.com/p/60729054
+
+https://zhuanlan.zhihu.com/p/37561534
+
+https://zhuanlan.zhihu.com/p/36752266
+
+https://zhuanlan.zhihu.com/p/84331658
+
+https://zhuanlan.zhihu.com/p/38078191
+
+https://zhuanlan.zhihu.com/p/128620605
+
+https://zhuanlan.zhihu.com/p/30461746
+
+https://zhuanlan.zhihu.com/p/158516162
+
+https://zhuanlan.zhihu.com/p/86771857
+
+https://zhuanlan.zhihu.com/p/35699985
+
+https://zhuanlan.zhihu.com/p/159178590
+
+https://zhuanlan.zhihu.com/p/143622170
+
+https://zhuanlan.zhihu.com/p/70409742
+
+https://www.zhihu.com/question/30508773/answer/205831957
+
+https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5
+
