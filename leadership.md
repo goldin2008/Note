@@ -1,3 +1,5 @@
+### Leadership
+
 Leadership是个loaded的词，如果communication和writing都提到的话，那意味着更多是思路问题。
 因为说和写都是表达的方式，之所以表达不好是因为想不到或者不熟。
 关键词：“perspective"。每提升一级你的看问题的角度，处理事情的方式，都需要改变。尤其是从IC(individual contributor)到manager的这一步需要mental change.
@@ -51,6 +53,23 @@ Writing is underrated，而且大多数人做不好。
 上面那个““Think Fast, Talk Smart”的video讲到了两个framework， 一个是“problem， solution， benefit”，另一个是“what， so what, then what". 我们比较容易用前一种，尤其是engineer出身的经常采取这种思考问题的结构，（就像是现在这样）。
 但我怀疑"what, so what, then what"这个方式更适合，因为我经常发现很多人其实并不read，尤其是长的email。我们写邮件的时候因该尽量简单，最好前三句话就把结论说明白了。
 
+### Toastmasters
+
+有位MM问，还有两位MM发短信问我Toastmasters的事，我就一起回答一下。因为现在所有Toastmasters clubs都online meeting 到至少明年六月，所以只要时间合适哪里的俱乐部都可以试一试。如果一定找居家附近的，可以去 https://www.toastmasters.org/find-a-club 找家附近的俱乐部, 然后visit俱乐部的网站，如果他们提到获得过President Distinguished Club称号，一般都不会错。大家可以多visit几个，都是free的，这样就看看哪个更适合自己 （时间，氛围，会员背景等）。一般俱乐部会欢迎guests随时去，想去多少次都可以。如果你第一次没经验，可以试一下我的俱乐部。我在加州，每周二中午12-1 点 meet （西部时间）。我们俱乐部所有人都特别真诚热情，所以Guests来参观都有宾至如归的感觉。这是我们俱乐部的网站 https://oaklandcitytoastmasters.toastmastersclubs.org/ ，上面就有Zoom 会议链接。
+
+所有Toastmasters俱乐部开会都有prepared speech（2-3个），要事先准备好，从选题到写作到delivery （5-7分钟长度），也有impromptu speech，还有evaluation，后两样不用准备。但所有都是参加的越多提高越快。另外还有各个会议角色，对主持会议能力也很有帮助。还有7个不同的club officer角色，对leadership 也是很好的锻炼。如果肯花些时间，一定会很快看到进步的。
+
+这有两个Toastmasters International Speech contest的录像，我特别喜欢这两个人的演讲：
+
+https://www.youtube.com/watch?v=JtJzKX6P2L0, by Kwong Yue Yang
+
+https://www.youtube.com/watch?v=IlvLgknrYQs， by Sherry Su
+
+大家可以看一下，7分钟的演讲是什么样的感觉（写的话一般700 字左右).
+我还可以推荐我们District下的参数好的俱乐部 (会员多，完成目标多的）。
+Toastmasters是一个Volunteer run的组织，每半年只用45美金会费，新入会有一个20美金新会员费用。培养public speaking和 leadership, 还有怎么给人feedbback, 我参加两年收获很大。我特别后悔第一次visit我现在的俱乐部以后，虽然喜欢可是等了10年才正式参加。希望大家不要像我一样，如果喜欢觉得有帮助，早日参加早日受益。
+
+### Practice
 需要做减法时就不是简单的语言问题。学会简洁明了可以如下训练自己
 
 每天睡前 summarize precisely in ONE sentence what you have accomplished today.
