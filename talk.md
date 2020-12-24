@@ -1,5 +1,10 @@
 ## Intro to Machine Learing
 
+### Terminology 
+
+So if classifier A has 95% precision, this means that when classifier A says something is a cat, there's a 95% chance it really is a cat. And recall is, of all the images that really are cats, what percentage were correctly recognized by your classifier? So what percentage of actual cats, Are correctly recognized?
+
+
 >1
 
 Hello everyone. The topic of my presentation today is Machine Learning at XX. We know ML is changing the way we work and live. Whether you want to know what's behind the buzzwords or whether you want to perhaps use ML yourself either in a personal context or in a corporation, I hope Today's talk will give you a realistic view of what ML really is.
