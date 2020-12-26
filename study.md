@@ -35,3 +35,6 @@
 
 > https://mp.weixin.qq.com/s/LA3jUS-QLP33vJ2OLln0xA
 
+# Big Data
+
+> https://github.com/bekhzod-olimov/Coursera-Machine-Learning-Algorithms-in-the-Real-World-Specialization
