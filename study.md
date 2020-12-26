@@ -40,3 +40,5 @@
 > https://github.com/bekhzod-olimov/Coursera-Machine-Learning-Algorithms-in-the-Real-World-Specialization
 
 > https://github.com/AlessandroCorradini/University-of-California-San-Diego-Big-Data-Specialization
+
+> https://github.com/smarthi/UnivOfWashington-Machine-Learning
