@@ -13,5 +13,6 @@
 >  https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=698113&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
 
 ## ML System Design
+> https://medium.com/acing-ai/machine-learning-system-design-c3a35c7df07d
 
 > https://www.1point3acres.com/bbs/thread-490321-1-1.html
