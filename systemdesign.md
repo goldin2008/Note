@@ -68,8 +68,7 @@ I would love your feedback, specially around the scaling. Also if any interviewe
 
 Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
-Reference:
-
+***Reference:***
 Model Debug http://josh-tobin.com/assets/pdf/troubleshooting-deep-neural-networks-01-19.pdf
 
 Data School Video on Feature Selection https://www.youtube.com/watch?v=YaKMeAlHgqQ
