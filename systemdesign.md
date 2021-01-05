@@ -21,15 +21,14 @@ I am a Software Engineer with ~4 years of Machine Learning Engineering (MLE) and
 
 I would love your feedback, specially around the scaling. Also if any interviewer from FANG is looking into this, please provide your feedback.
 
-**Overview**
+***Overview***
 - Clarify Requirements
 - How the ML system fits into the overal product backend
 - Data Related Activites
 - Model Related Activities
 - Scaling
 
-**Details**
-
+***Details***
 1. Clarify Requirements
     - What is the goal? Any secondary goal?
         - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
