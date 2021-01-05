@@ -31,7 +31,7 @@ Overview
 Details
 
 - Clarify Requirements
- - What is the goal? Any secondary goal?
+  - What is the goal? Any secondary goal?
 e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
 Ask questions about the scale of the system - how many users, how much content?
 How the ML system fits into the overall product backend
