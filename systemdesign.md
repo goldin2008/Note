@@ -97,3 +97,60 @@ ML Pipeline https://towardsdatascience.com/architecting-a-machine-learning-pipel
 > https://medium.com/acing-ai/machine-learning-system-design-models-as-a-service-32666eba0e6
 
 > https://www.1point3acres.com/bbs/thread-490321-1-1.html
+
+### FB
+We take the two coding interviews first. And then two team match interviews.
+
+Interview Questions
+
+Q: Give me an example of a project where you used data and machine learning.
+Q: Given a binary tree, write a function to find if this tree is a search binary tree or not.
+Q: Given an array, write a function that returns a samples from the array.  
+
+Given two sets
+words ["cat", "bat", "mat" )
+ordering = [c,b,a,t]
+Return TRUE when the words in words[] are sorted in lexographic order as in ordering[]  
+
+Python example:
+
+word = "cat"
+ordering = ['c', 'b', 'a', 't']
+
+def check_ordering(word, ordering):
+    """Recursive approach O(len(ordering))"""
+    # Base cases
+    if not word:
+        return True
+    # Recursion
+    else:
+        letter = word.pop(0)
+        print(letter)
+        for char in ordering:
+            if letter == char:
+                index = ordering.index(char)
+                print(ordering[index:])
+                return check_ordering(word, ordering[index:])
+        return False
+
+print(check_ordering(list(word), ordering))
+
+Given an infinite chessboard, find shortest distance for a knight to move from position A to position B  
+given a binary image, count the number of 4-directional connected components.  
+Serialize and de-serialize a binary tree  
+Given two sparse matrices, how would you compute the dot product? 
+Given a DAG, write a function to return the length of the longest path. 
+Given a tree, write a function to return the sum of the max-sum path which goes through the root node. 
+implement functions of constructing binary tree
+One problem is implement a trie tree.
+How would you build, train, and deploy a system to detect if multimedia and/or ads contents being posted violate terms or contains offensive materials?
+How you test your ML models for production scale?
+Variation of the number of islands LC question. You have a House, Well & Tree arranged in a large grid with empty spaces in between to show where you can go. How will you go from house to nearest well without hitting a tree? Assume you can only go up.down/left/right and not diagonally and cannot hit a tree else you backtrack.  
+
+### Google
+Interview Questions
+
+Given two strings, A and B, of the same length n, find whether it is possible to cut both strings at a common point such that the first part of A and the second part of B form a palindrome.
+have two pointers, first on A and second on end of B. move the pointer l and r (l++, r--) until both values are same( A[l] == B[r]) or l == r. if at any point both are not same just switch the pointer r from B to A and continue. If then it breaks then it is not a palindrome.
+
+You have 52 playing cards (26 red, 26 black). You draw cards one by one. A red card pays you a dollar. A black one fines you a dollar. You can stop any time you want. Cards are not returned to the deck after being drawn. What is the expected payoff following this optimal rule? for this, u need to find what is the optimal stopping rule in terms of maximizing expected payoff.
