@@ -76,6 +76,7 @@ Data School Video on Feature Selection https://www.youtube.com/watch?v=YaKMeAlHg
 
 ML Pipeline https://towardsdatascience.com/architecting-a-machine-learning-pipeline-a847f094d1c7
 
+***Questions in Interview***
 ```
 1. What size of data are you dealing with?
 
