@@ -17,7 +17,7 @@
 > https://leetcode.com/discuss/interview-question/system-design/566057/machine-learning-system-design-a-framework-for-the-interview-day
 
 Background:
-I am a Software Engineer with ~4 years of Machine Learning Engineering (MLE) experience primarily working at startups. I have never had any official 'Machine Learning System Design' interview. Seeing the recent requirements in big tech companies for MLE roles and our confusion around it, I decided to create a framework for solving any ML System Design problem during the interview. My note might be a bit too big for the 45 minute duration of the interview. Depending on your expertise and interviewers guide, you might want to emphasize on one section vs. the other (e.g. Data Engineering vs Modeling).
+I am a Software Engineer with ~4 years of Machine Learning Engineering (MLE) and Data Scientist experience working at Fintech Company. I have never had any official 'Machine Learning System Design' interview. Seeing the recent requirements in big tech companies for MLE roles and our confusion around it, I decided to create a framework for solving any ML System Design problem during the interview. Depending on your expertise and interviewers guide, you might want to emphasize on one section vs. the other (e.g. Data Engineering vs Modeling).
 
 I would love your feedback, specially around the scaling. Also if any interviewer from FANG is looking into this, please provide your feedback.
 
