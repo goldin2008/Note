@@ -30,13 +30,13 @@ Overview
 
 Details
 
-- Clarify Requirements
+1. Clarify Requirements
   - What is the goal? Any secondary goal?
     - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
-    - Ask questions about the scale of the system - how many users, how much content?
-- How the ML system fits into the overall product backend
+  - Ask questions about the scale of the system - how many users, how much content?
+2. How the ML system fits into the overall product backend
   - Think/draw a very simple diagram with input/output line between system backend and ML system
-- Data Related Activites
+3. Data Related Activites
   - Data Explore - whats the dataset looks like?
   - Understand different features and their relationship with the target
         - Is the data balanced? If not do you need oversampling/undersampling?
@@ -46,7 +46,7 @@ Details
   - (ML Pipeline: Data Ingestion) Think of Data ingestion services/storage
   - (ML Pipeline: Data Preparation) Feature Engineering - encoding categorical features, embedding generation etc.
   - (ML Pipeline - Data Segregation) Data split - train set, validation set, test set
-- Model Related Activities
+4. Model Related Activities
   - (ML Pipeline - Model Train and Evaluation) Build a simple model (XGBoost or NN)
         - How to select a model? Assuming its a Neural Network
             1. NLP/Sequence Model
@@ -65,7 +65,7 @@ Details
   - (ML Pipeline: Performance Monitoring) Metrics
     - AUC, F1, MSE, Accuracy, NDCG for ranking problems etc.
     - When to use which metrics?
-- Scaling
+5. Scaling
 
 Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
