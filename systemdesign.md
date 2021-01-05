@@ -69,6 +69,7 @@ I would love your feedback, specially around the scaling. Also if any interviewe
 Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
 ***Reference:***
+
 Model Debug http://josh-tobin.com/assets/pdf/troubleshooting-deep-neural-networks-01-19.pdf
 
 Data School Video on Feature Selection https://www.youtube.com/watch?v=YaKMeAlHgqQ
@@ -76,6 +77,7 @@ Data School Video on Feature Selection https://www.youtube.com/watch?v=YaKMeAlHg
 ML Pipeline https://towardsdatascience.com/architecting-a-machine-learning-pipeline-a847f094d1c7
 
 ***Questions in Interview***
+
 ```
 1. What size of data are you dealing with?
 
