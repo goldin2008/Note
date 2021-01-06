@@ -158,7 +158,7 @@ Return TRUE when the words in words[] are sorted in lexographic order as in orde
 
 Python example:
 
-```
+```python
 word = "cat"
 ordering = ['c', 'b', 'a', 't']
 
