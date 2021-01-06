@@ -72,6 +72,50 @@ I would love your feedback, specially around the scaling. Also if any interviewe
 
 Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
+System Design面试的例子
+
+我在自己面试的过程中 曾经被问到过许多System Design的题目，在这里我挑出几个典型的供大家参考:
+
+公司A: Design URL Shorten Service
+公司B: Design SQS(i.e. AWS's queue service)
+公司C: Design Uber(frontend app views + backend service)
+下面我来详细解释一下每一题的考点:
+
+Design URL Shortening Service
+
+这一题是非常经典的System Design题目，可以考的很浅，也可以考的很深。由于特别适合初学者入门，建议每个想学习System Design的同学都要把这道题的可能的条件和解法过一遍。比如说:
+
+If your website is the top URL shortening service in the world(i.e. handling 70% of world URL shortening traffic) How do you handle it?
+How do you handle URL customization?
+What if you have very hot URLs? How do you handle it?
+How do you track the top N popular URLs?
+Design SQS
+
+这一题是非常geeky的一道题，完全深度考察distributed system的各种知识。难度比URL Shortening Service高，原因在于后者已经成为常规考题，变种变来变去就那么几个，所以你死记硬背也能过关。而前者是非常见题 考查点对于没有系统学习过System Design的同学来讲难以琢磨。
+
+同时这道题也是道好题，因为如果你有realtime backend system经验，多半可能会用到queue service。那考察的就是你有没有抽出自己的spare time去理解queue service的具体原理呢?
+
+Design Uber
+
+这是一道极其抽象的题，难易全凭面试官把握。
+
+我被问到的具体情形是，根据手机app上的view transition design出整个后台service群以及互相交互的情况。我当时在白板上一口气写了10+个service的交互图，最后临走前还专门拍照留念，现在想来还是很自豪...
+
+100个人会design出100个Uber，没有谁对谁错，只要能自圆其说就可以。
+
+System Design积木的例子
+
+System design的另一大块是我前面所谈到的“积木”，也就是别人已经搭好的framework或product。
+
+业界的Framework非常之多，你并不需要每个都掌握。只要可以做到知道某方面的几个option，并在需要用到的时候快速ramp up就可以了。下面做一个小分类供大家参考:
+
+In-memory Cache: Guava cache
+Standalone Cache: Memcached, Redis
+Database: DynamoDB, Cassandra
+Queue: ActiveMQ, RabbitMQ, SQS, Kafka
+Data Processing: Hadoop, Spark, EMR
+Stream Processing: Samza, Storm
+
 ***Reference:***
 
 Model Debug http://josh-tobin.com/assets/pdf/troubleshooting-deep-neural-networks-01-19.pdf
@@ -113,7 +157,7 @@ ordering = [c,b,a,t]
 Return TRUE when the words in words[] are sorted in lexographic order as in ordering[]  
 
 Python example:
-
+```
 word = "cat"
 ordering = ['c', 'b', 'a', 't']
 
@@ -132,7 +176,7 @@ def check_ordering(word, ordering):
                 print(ordering[index:])
                 return check_ordering(word, ordering[index:])
         return False
-
+```
 print(check_ordering(list(word), ordering))
 
 Given an infinite chessboard, find shortest distance for a knight to move from position A to position B  
