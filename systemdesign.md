@@ -157,6 +157,7 @@ ordering = [c,b,a,t]
 Return TRUE when the words in words[] are sorted in lexographic order as in ordering[]  
 
 Python example:
+
 ```
 word = "cat"
 ordering = ['c', 'b', 'a', 't']
@@ -176,8 +177,9 @@ def check_ordering(word, ordering):
                 print(ordering[index:])
                 return check_ordering(word, ordering[index:])
         return False
-```
+
 print(check_ordering(list(word), ordering))
+```
 
 Given an infinite chessboard, find shortest distance for a knight to move from position A to position B  
 given a binary image, count the number of 4-directional connected components.  
