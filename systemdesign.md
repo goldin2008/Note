@@ -16,6 +16,10 @@
 
 > https://github.com/kuhung/machine-learning-systems-design
 
+> https://github.com/chiphuyen/machine-learning-systems-design
+
+> https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md
+
 > https://leetcode.com/discuss/interview-question/system-design/566057/machine-learning-system-design-a-framework-for-the-interview-day
 
 > https://www.linkedin.com/pulse/tips-machine-learning-interviews-karthik-mohan/
