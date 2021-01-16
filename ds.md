@@ -42,6 +42,11 @@ How Can I Deal With This Problem?
 
 > https://towardsdatascience.com/why-feature-correlation-matters-a-lot-847e8ba439c4
 
+***Outlier Detection***
+
+> https://www.kdnuggets.com/2018/12/four-techniques-outlier-detection.html
+> https://laptrinhx.com/5-ways-to-detect-outliers-that-every-data-scientist-should-know-python-code-1420067125/
+
 
 ### References
 
