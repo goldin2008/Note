@@ -25,7 +25,7 @@ gradient descent 的pesudo
 ## DS
 ***Feature Selection*** is the process of selecting the attributes that can make the predicted variable more accurate or eliminating those attributes that are irrelevant and can decrease the model accuracy and quality.
 
-***Data Correlation*** is a way to understand the relationship between multiple variables and attributes in your dataset. Using Correlation, you can get some insights such as:
+***Feature Correlation*** is a way to understand the relationship between multiple variables and attributes in your dataset. Using Correlation, you can get some insights such as:
 - One or multiple attributes depend on another attribute or a cause for another attribute.
 - One or multiple attributes are associated with other attributes.
 
