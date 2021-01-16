@@ -49,7 +49,7 @@ How Can I Deal With This Problem?
 
 > https://neptune.ai/blog/hyperparameter-tuning-in-python-a-complete-guide-2020
 
-***Missing Values***
+***Missing Values*** One way to handle this problem is to get rid of the observations that have missing data. However, you will risk losing data points with valuable information. A better strategy would be to impute the missing values. In other words, we need to infer those missing values from the existing part of the data.
 - Imputation Using (Mean/Median) Values
 - Imputation Using (Most Frequent) or (Zero/Constant) Values
 - Imputation Using k-NN
