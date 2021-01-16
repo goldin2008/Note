@@ -52,6 +52,7 @@ How Can I Deal With This Problem?
 ***Missing Values*** One way to handle this problem is to get rid of the observations that have missing data. However, you will risk losing data points with valuable information. A better strategy would be to impute the missing values. In other words, we need to infer those missing values from the existing part of the data.
 - Imputation Using (Mean/Median) Values
 - Imputation Using (Most Frequent) or (Zero/Constant) Values
+It also doesn’t factor the correlations between features.
 - Imputation Using k-NN
 - Imputation Using Multivariate Imputation by Chained Equation (MICE)
 - Imputation Using Deep Learning (Datawig)
