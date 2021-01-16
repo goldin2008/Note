@@ -37,7 +37,11 @@ So, why is correlation useful?
 ***Multicollinearity*** happens when one predictor variable in a multiple regression model can be linearly predicted from the others with a high degree of accuracy. This can lead to skewed or misleading results. Luckily, decision trees and boosted trees algorithms are immune to multicollinearity by nature. When they decide to split, the tree will choose only one of the perfectly correlated features. However, other algorithms like Logistic Regression or Linear Regression are not immune to that problem and you should fix it before training the model.
 
 How Can I Deal With This Problem?
-There are multiple ways to deal with this problem. The easiest way is to delete or eliminate one of the perfectly correlated features. Another way is to use a dimension reduction algorithm such as Principle Component Analysis (PCA).
+- There are multiple ways to deal with this problem. The easiest way is to delete or eliminate one of the perfectly correlated features. 
+- Another way is to use a dimension reduction algorithm such as Principle Component Analysis (PCA).
+
+> https://towardsdatascience.com/why-feature-correlation-matters-a-lot-847e8ba439c4
+
 
 ### References
 
