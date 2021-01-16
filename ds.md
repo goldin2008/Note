@@ -39,6 +39,7 @@ So, why is correlation useful?
 How Can I Deal With This Problem?
 - There are multiple ways to deal with this problem. The easiest way is to delete or eliminate one of the perfectly correlated features. 
 - Another way is to use a dimension reduction algorithm such as Principle Component Analysis (PCA).
+
 > https://towardsdatascience.com/why-feature-correlation-matters-a-lot-847e8ba439c4
 
 ***Hyperparameter Tuning***
@@ -48,10 +49,28 @@ How Can I Deal With This Problem?
 
 > https://neptune.ai/blog/hyperparameter-tuning-in-python-a-complete-guide-2020
 
+***Missing Values***
+- Imputation Using (Mean/Median) Values
+- Imputation Using (Most Frequent) or (Zero/Constant) Values
+- Imputation Using k-NN
+- Imputation Using Multivariate Imputation by Chained Equation (MICE)
+- Imputation Using Deep Learning (Datawig)
+
+> https://m.blog.naver.com/eeeee5813/221525847053
+
+> https://www.kaggle.com/residentmario/simple-techniques-for-missing-data-imputation
+
 ***Data imbalance*** usually reflects an unequal distribution of classes within a dataset. For example, in a credit card fraud detection dataset, most of the credit card transactions are not fraud and a very few classes are fraud transactions. This leaves us with something like 50:1 ratio between the fraud and non-fraud classes.
+
+> https://www.analyticsvidhya.com/blog/2020/07/10-techniques-to-deal-with-class-imbalance-in-machine-learning/
+
+> https://www.kdnuggets.com/2017/06/7-techniques-handle-imbalanced-data.html
+
 > https://www.kdnuggets.com/2019/05/fix-unbalanced-dataset.html
 
+> https://elitedatascience.com/imbalanced-classes
 
+> https://medium.com/james-blogs/handling-imbalanced-data-in-classification-problems-7de598c1059f
 
 ***Outlier Detection***
 > https://laptrinhx.com/5-ways-to-detect-outliers-that-every-data-scientist-should-know-python-code-1420067125/
@@ -61,7 +80,6 @@ How Can I Deal With This Problem?
 > https://towardsdatascience.com/a-brief-overview-of-outlier-detection-techniques-1e0b2c19e561
 
 > https://www.kdnuggets.com/2018/12/four-techniques-outlier-detection.html
-
 
 
 ### References
