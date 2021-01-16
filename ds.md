@@ -45,6 +45,8 @@ How Can I Deal With This Problem?
 ***Outlier Detection***
 > https://laptrinhx.com/5-ways-to-detect-outliers-that-every-data-scientist-should-know-python-code-1420067125/
 
+> https://towardsdatascience.com/ways-to-detect-and-remove-the-outliers-404d16608dba
+
 > https://towardsdatascience.com/a-brief-overview-of-outlier-detection-techniques-1e0b2c19e561
 
 > https://www.kdnuggets.com/2018/12/four-techniques-outlier-detection.html
@@ -69,6 +71,7 @@ How Can I Deal With This Problem?
 #### Statistics
 > https://www.cnblogs.com/Belter/p/5923828.html
 
+> https://online.stat.psu.edu/stat501/lesson/12
 
 ## Consulting Prep
 
