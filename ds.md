@@ -89,6 +89,21 @@ How Can I Deal With This Problem?
 ***Data Streams***
 > https://medium.com/analytics-vidhya/data-streams-and-online-machine-learning-in-python-a382e9e8d06a
 
+***Tree Based Model***
+Tree-based models have an innate feature of being robust to correlated features. When you drop a correlated variable to others, it will leave room for the tree to use one more variable in its trees. Due to the fact you are opening room for one more variable, it is possible to end up performing poorer. However, you potentially harvest another variable, and the importance of the correlated feature you removed is spread among all other variables (and more specifically to the correlated features you had before with the one you removed).
+
+> https://medium.com/analytics-vidhya/overview-about-the-decision-tree-model-267c870fa147
+
+> https://medium.com/data-design/ensembles-of-tree-based-models-why-correlated-features-do-not-trip-them-and-why-na-matters-7658f4752e1b
+
+
+***Regression***
+> https://www.kdnuggets.com/2020/03/linear-logistic-regression-explained.html
+
+> https://www.statisticssolutions.com/assumptions-of-linear-regression/
+
+> https://quantifyinghealth.com/correlation-collinearity-multicollinearity/
+
 ***Deep Learning***
 > https://medium.com/@sprhlabs/understanding-deep-learning-dnn-rnn-lstm-cnn-and-r-cnn-6602ed94dbff
 
