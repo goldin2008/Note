@@ -24,9 +24,13 @@ gradient descent 的pesudo
 
 ***References***
 
+Machine Learning Algorithms In Layman’s Terms
+
 > https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-1-d0368d769a7b
 
 > https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-2-a0a74df9a9ac
+
+> https://www.kdnuggets.com/2020/03/linear-logistic-regression-explained.html
 
 ## Consulting Prep
 
