@@ -60,6 +60,8 @@ How Can I Deal With This Problem?
 
 > https://www.kaggle.com/residentmario/simple-techniques-for-missing-data-imputation
 
+> https://www.hilarispublisher.com/open-access/a-comparison-of-six-methods-for-missing-data-imputation-2155-6180-1000224.pdf
+
 ***Data imbalance*** usually reflects an unequal distribution of classes within a dataset. For example, in a credit card fraud detection dataset, most of the credit card transactions are not fraud and a very few classes are fraud transactions. This leaves us with something like 50:1 ratio between the fraud and non-fraud classes.
 
 > https://www.analyticsvidhya.com/blog/2020/07/10-techniques-to-deal-with-class-imbalance-in-machine-learning/
@@ -81,6 +83,14 @@ How Can I Deal With This Problem?
 
 > https://www.kdnuggets.com/2018/12/four-techniques-outlier-detection.html
 
+***Large Data***
+> https://machinelearningmastery.com/large-data-files-machine-learning/
+
+***Data Streams***
+> https://medium.com/analytics-vidhya/data-streams-and-online-machine-learning-in-python-a382e9e8d06a
+
+***Deep Learning***
+> https://medium.com/@sprhlabs/understanding-deep-learning-dnn-rnn-lstm-cnn-and-r-cnn-6602ed94dbff
 
 ### References
 
