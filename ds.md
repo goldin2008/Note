@@ -39,7 +39,6 @@ So, why is correlation useful?
 How Can I Deal With This Problem?
 - There are multiple ways to deal with this problem. The easiest way is to delete or eliminate one of the perfectly correlated features. 
 - Another way is to use a dimension reduction algorithm such as Principle Component Analysis (PCA).
-
 > https://towardsdatascience.com/why-feature-correlation-matters-a-lot-847e8ba439c4
 
 ***Hyperparameter Tuning***
@@ -48,6 +47,11 @@ How Can I Deal With This Problem?
 > https://www.kdnuggets.com/2020/04/hyperparameter-tuning-python.html
 
 > https://neptune.ai/blog/hyperparameter-tuning-in-python-a-complete-guide-2020
+
+***Data imbalance*** usually reflects an unequal distribution of classes within a dataset. For example, in a credit card fraud detection dataset, most of the credit card transactions are not fraud and a very few classes are fraud transactions. This leaves us with something like 50:1 ratio between the fraud and non-fraud classes.
+> https://www.kdnuggets.com/2019/05/fix-unbalanced-dataset.html
+
+
 
 ***Outlier Detection***
 > https://laptrinhx.com/5-ways-to-detect-outliers-that-every-data-scientist-should-know-python-code-1420067125/
