@@ -22,6 +22,9 @@ how to select variables from thousands of them
 
 gradient descent 的pesudo
 
+## DS
+***Feature Selection*** is the process of selecting the attributes that can make the predicted variable more accurate or eliminating those attributes that are irrelevant and can decrease the model accuracy and quality.
+
 ***References***
 
 ### Machine Learning Algorithms In Layman’s Terms
