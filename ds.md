@@ -28,3 +28,6 @@ gradient descent 的pesudo
 
 > https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-2-a0a74df9a9ac
 
+## Consulting Prep
+
+> https://www.myconsultingcoach.com/case-interview
