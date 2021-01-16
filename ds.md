@@ -32,6 +32,18 @@ Machine Learning Algorithms In Layman’s Terms
 
 > https://www.kdnuggets.com/2020/03/linear-logistic-regression-explained.html
 
+> https://communities.sas.com/t5/SAS-Communities-Library/Decision-Tree-in-Layman-s-Terms/ta-p/571690#
+
+> https://www.experfy.com/blog/ai-ml/machine-learning-algorithms-in-laymans-terms-part-1/
+
+> https://www.experfy.com/blog/ai-ml/machine-learning-algorithms-in-laymans-terms-part-2/
+
 ## Consulting Prep
 
+> https://www.youtube.com/user/MConsultingPrep/videos
+
 > https://www.myconsultingcoach.com/case-interview
+
+> https://managementconsulted.com/case-interview-structure/
+
+> https://www.craftingcases.com/case-interview-examples/
