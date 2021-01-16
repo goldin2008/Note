@@ -25,7 +25,15 @@ gradient descent 的pesudo
 ## DS
 ***Feature Selection*** is the process of selecting the attributes that can make the predicted variable more accurate or eliminating those attributes that are irrelevant and can decrease the model accuracy and quality.
 
+***Data Correlation*** is a way to understand the relationship between multiple variables and attributes in your dataset. Using Correlation, you can get some insights such as:
+- One or multiple attributes depend on another attribute or a cause for another attribute.
+- One or multiple attributes are associated with other attributes.
+So, why is correlation useful?
+- Correlation can help in predicting one attribute from another (Great way to impute missing values).
+- Correlation can (sometimes) indicate the presence of a causal relationship.
+- Correlation is used as a basic quantity for many modelling techniques
 
+***Multicollinearity*** happens when one predictor variable in a multiple regression model can be linearly predicted from the others with a high degree of accuracy. This can lead to skewed or misleading results. Luckily, decision trees and boosted trees algorithms are immune to multicollinearity by nature. When they decide to split, the tree will choose only one of the perfectly correlated features. However, other algorithms like Logistic Regression or Linear Regression are not immune to that problem and you should fix it before training the model.
 
 ### References
 
