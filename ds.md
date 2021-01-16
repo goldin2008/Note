@@ -21,3 +21,10 @@ how to select variables from thousands of them
 问我map reduce的工作流程， spark跟map reduce的区别？
 
 gradient descent 的pesudo
+
+***References***
+
+> https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-1-d0368d769a7b
+
+> https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-2-a0a74df9a9ac
+
