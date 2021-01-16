@@ -25,9 +25,11 @@ gradient descent 的pesudo
 ## DS
 ***Feature Selection*** is the process of selecting the attributes that can make the predicted variable more accurate or eliminating those attributes that are irrelevant and can decrease the model accuracy and quality.
 
-***References***
 
-### Machine Learning Algorithms In Layman’s Terms
+
+### References
+
+#### Machine Learning Algorithms In Layman’s Terms
 > https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-1-d0368d769a7b
 
 > https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-2-a0a74df9a9ac
@@ -40,7 +42,7 @@ gradient descent 的pesudo
 
 > https://www.experfy.com/blog/ai-ml/machine-learning-algorithms-in-laymans-terms-part-2/
 
-### Statistics
+#### Statistics
 > https://www.cnblogs.com/Belter/p/5923828.html
 
 
