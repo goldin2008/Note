@@ -96,9 +96,7 @@ How Can I Deal With This Problem?
 
 > https://medium.com/james-blogs/handling-imbalanced-data-in-classification-problems-7de598c1059f
 
-***Overfitting*** is model doesn’t generalize well from our training data to unseen data.
-
-How to Prevent Overfitting
+***Overfitting*** is model doesn’t generalize well from our training data to unseen data. How to Prevent Overfitting
 - Cross-validation
 - Train with more data
 - Remove features
