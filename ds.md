@@ -28,6 +28,7 @@ gradient descent 的pesudo
 ***Data Correlation*** is a way to understand the relationship between multiple variables and attributes in your dataset. Using Correlation, you can get some insights such as:
 - One or multiple attributes depend on another attribute or a cause for another attribute.
 - One or multiple attributes are associated with other attributes.
+
 So, why is correlation useful?
 - Correlation can help in predicting one attribute from another (Great way to impute missing values).
 - Correlation can (sometimes) indicate the presence of a causal relationship.
