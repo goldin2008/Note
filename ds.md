@@ -42,6 +42,13 @@ How Can I Deal With This Problem?
 
 > https://towardsdatascience.com/why-feature-correlation-matters-a-lot-847e8ba439c4
 
+***Hyperparameter Tuning***
+> https://towardsdatascience.com/automated-machine-learning-hyperparameter-tuning-in-python-dfda59b72f8a
+
+> https://www.kdnuggets.com/2020/04/hyperparameter-tuning-python.html
+
+> https://neptune.ai/blog/hyperparameter-tuning-in-python-a-complete-guide-2020
+
 ***Outlier Detection***
 > https://laptrinhx.com/5-ways-to-detect-outliers-that-every-data-scientist-should-know-python-code-1420067125/
 
