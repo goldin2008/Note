@@ -24,7 +24,7 @@ gradient descent 的pesudo
 
 ***References***
 
-Machine Learning Algorithms In Layman’s Terms
+### Machine Learning Algorithms In Layman’s Terms
 
 > https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-1-d0368d769a7b
 
