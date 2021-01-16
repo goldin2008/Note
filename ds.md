@@ -49,13 +49,22 @@ How Can I Deal With This Problem?
 
 > https://neptune.ai/blog/hyperparameter-tuning-in-python-a-complete-guide-2020
 
-***Missing Values*** One way to handle this problem is to get rid of the observations that have missing data. However, you will risk losing data points with valuable information. A better strategy would be to impute the missing values. In other words, we need to infer those missing values from the existing part of the data.
-- Imputation Using (Mean/Median) Values
-- Imputation Using (Most Frequent) or (Zero/Constant) Values
+***Missing Values*** One way to handle this problem is to get rid of the observations that have missing data. However, you will risk losing data points with valuable information. A better strategy would be to impute the missing values. In other words, we need to infer those missing values from the existing part of the data. Imputation methods:
+- (Mean/Median) Values
+- (Most Frequent) or (Zero/Constant) Values
     - Cons: It also doesn’t factor the correlations between features.
-- Imputation Using k-NN
-- Imputation Using Multivariate Imputation by Chained Equation (MICE)
-- Imputation Using Deep Learning (Datawig)
+- k-NN
+    - The k nearest neighbours is an algorithm that is used for simple classification. The algorithm uses ‘feature similarity’ to predict the values of any new data points. This means that the new point is assigned a value based on how closely it resembles the points in the training set.
+    - Cons: Computationally expensive. KNN works by storing the whole training dataset in memory. K-NN is quite sensitive to outliers in the data (unlike SVM)
+- Multivariate Imputation by Chained Equation (MICE)
+    - This type of imputation works by filling the missing data multiple times. Multiple Imputations (MIs) are much better than a single imputation as it measures the uncertainty of the missing values in a better way. The chained equations approach is also very flexible and can handle different variables of different data types (ie., continuous or binary) as well as complexities such as bounds or survey skip patterns.
+- Stochastic regression imputation
+    - It is quite similar to regression imputation which tries to predict the missing values by regressing it from other related variables in the same dataset plus some random residual value.
+- Extrapolation and Interpolation
+    - It tries to estimate values from other observations within the range of a discrete set of known data points.
+- Hot-Deck imputation
+    - Works by randomly choosing the missing value from a set of related and similar variables.
+- Deep Neural Networks (Datawig)
 
 > https://m.blog.naver.com/eeeee5813/221525847053
 
