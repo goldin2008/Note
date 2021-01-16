@@ -22,6 +22,18 @@ how to select variables from thousands of them
 
 gradient descent 的pesudo
 
+How do you handle really large datasets, over a billion rows? (Think cloud here and be able able to explain what vendor you’d use and how you get that data up there. This is the hardest part of that process)
+
+What are gradient boosters?
+
+What’s your favorite gradient booster and why? (Gradient booster reign supreme on structured datasets. )
+
+What are a few metrics you use when modeling?
+
+What’s overfitting? What’s the easiest way to reduce it.
+
+What’s K-Fold Cross Val?
+
 ## DS
 ***Feature Selection*** is the process of selecting the attributes that can make the predicted variable more accurate or eliminating those attributes that are irrelevant and can decrease the model accuracy and quality.
 
@@ -83,6 +95,27 @@ How Can I Deal With This Problem?
 > https://elitedatascience.com/imbalanced-classes
 
 > https://medium.com/james-blogs/handling-imbalanced-data-in-classification-problems-7de598c1059f
+
+***Overfitting*** is model doesn’t generalize well from our training data to unseen data.
+
+How to Prevent Overfitting
+- Cross-validation
+- Train with more data
+- Remove features
+- Early stopping
+- Regularization
+- Ensembling
+- Data augmentation
+
+> https://www.kaggle.com/learn-forum/157623
+
+> https://elitedatascience.com/overfitting-in-machine-learning
+
+> https://laptrinhx.com/8-simple-techniques-to-prevent-overfitting-3288224346/
+
+> https://www.kdnuggets.com/2019/12/5-techniques-prevent-overfitting-neural-networks.html
+
+> https://machinelearningmastery.com/introduction-to-regularization-to-reduce-overfitting-and-improve-generalization-error/
 
 ***Outlier Detection***
 > https://laptrinhx.com/5-ways-to-detect-outliers-that-every-data-scientist-should-know-python-code-1420067125/
