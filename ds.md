@@ -41,7 +41,11 @@ Given a 1 TB data set on disk with around 1 KB per data record, how can I find d
 
 > https://zhuanlan.zhihu.com/p/50587308
 
+> https://stackoverflow.com/questions/2573653/given-a-1-tb-data-set-on-disk-with-around-1-kb-per-data-record-how-can-i-find-d
+
 ## DS
+***Exploratory Data Analysis***
+
 ***Feature Selection*** is the process of selecting the attributes that can make the predicted variable more accurate or eliminating those attributes that are irrelevant and can decrease the model accuracy and quality.
 
 ***Feature Correlation*** is a way to understand the relationship between multiple variables and attributes in your dataset. Using Correlation, you can get some insights such as:
