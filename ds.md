@@ -19,6 +19,22 @@ how to select variables from thousands of them
 比方说hadoop和spark的区别和原理
 
 问我map reduce的工作流程， spark跟map reduce的区别？
+```python
+map (String key, String value):  
+  // key: document name
+  // value: document contents
+
+  for each word in value:
+    EmitIntermediate (w, "1");
+
+reduce (String key, Iterator values):
+  // key: a word
+  // value: a list of counts
+  int result = 0;
+  for each v in values:
+    result += ParseInt(v);
+  Emit (AsString(result));
+```
 
 gradient descent 的pesudo
 
@@ -138,8 +154,15 @@ How Can I Deal With This Problem?
 ***Large Data***
 > https://machinelearningmastery.com/large-data-files-machine-learning/
 
-***Data Streams***
+***Data Streams/Online Learning*** In the past couple of years, a specific type of machine learning called online learning has become extremely popular in the world of realtime data infrastructure. Unlike traditional machine learning models, the statistical methods performed in online learning “partially fit” their equations to subsets of the overall dataset. This allows for a multitude of advantages:
+- Fast deployment of models
+- Models can be constantly updated with new chunks of data
+- Can use machines with smaller memory sizes since not all the data is required at once
+
 > https://medium.com/analytics-vidhya/data-streams-and-online-machine-learning-in-python-a382e9e8d06a
+
+> https://codeburst.io/realtime-machine-learning-online-learning-with-pubnub-2005e86670ad
+
 
 ***Tree Based Models*** have an innate feature of being robust to correlated features. When you drop a correlated variable to others, it will leave room for the tree to use one more variable in its trees. Due to the fact you are opening room for one more variable, it is possible to end up performing poorer. However, you potentially harvest another variable, and the importance of the correlated feature you removed is spread among all other variables (and more specifically to the correlated features you had before with the one you removed).
 
