@@ -34,6 +34,13 @@ What’s overfitting? What’s the easiest way to reduce it.
 
 What’s K-Fold Cross Val?
 
+Given a 1 TB data set on disk with around 1 KB per data record, how can I find duplicates using 512 MB RAM and infinite disk space? Answer is ***Bloom Filter***  
+> https://blog.csdn.net/jiaomeng/article/details/1495500
+
+> https://blog.csdn.net/hguisu/article/details/7866173
+
+> https://zhuanlan.zhihu.com/p/50587308
+
 ## DS
 ***Feature Selection*** is the process of selecting the attributes that can make the predicted variable more accurate or eliminating those attributes that are irrelevant and can decrease the model accuracy and quality.
 
