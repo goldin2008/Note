@@ -17,6 +17,16 @@ how to select variables from thousands of them
 被问到不同model为什么learning curve不同，multi-correlation怎么处理。主要是针对你用的model和feature提问。建议大家弄清自己为什么用某个方法以及用它的目的。
 
 比方说hadoop和spark的区别和原理
+***Hadoop and Spark***
+> https://zhuanlan.zhihu.com/p/95016937
+
+> https://logz.io/blog/hadoop-vs-spark/#:~:text=Spark%20has%20been%20found%20to,Naive%20Bayes%20and%20k%2Dmeans.
+
+> https://www.gigaspaces.com/blog/hadoop-vs-spark/
+
+> https://phoenixnap.com/kb/hadoop-vs-spark
+
+> https://www.educba.com/hadoop-vs-spark/
 
 问我map reduce的工作流程， spark跟map reduce的区别？
 ```python
@@ -35,6 +45,16 @@ reduce (String key, Iterator values):
     result += ParseInt(v);
   Emit (AsString(result));
 ```
+***Map Reduce***
+> http://snap.stanford.edu/class/cs246-2016/finals/final_2013.pdf
+
+> http://salsahpc.indiana.edu/tutorial/hadoopwc1.html
+
+> https://cseweb.ucsd.edu/classes/sp16/cse291-e/applications/ln/lecture14.html
+
+> http://www.ugr.es/~essir2013/slides/ESSIR_MapReduce_for_Indexing.pdf
+
+> https://en.wikipedia.org/wiki/MapReduce
 
 gradient descent 的pesudo
 
@@ -163,6 +183,14 @@ How Can I Deal With This Problem?
 
 > https://codeburst.io/realtime-machine-learning-online-learning-with-pubnub-2005e86670ad
 
+***Gradient Descent***
+> https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3
+
+> https://sebastianraschka.com/faq/docs/sgd-methods.html
+
+> https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html
+
+> https://www.geeksforgeeks.org/gradient-descent-algorithm-and-its-variants/
 
 ***Tree Based Models*** have an innate feature of being robust to correlated features. When you drop a correlated variable to others, it will leave room for the tree to use one more variable in its trees. Due to the fact you are opening room for one more variable, it is possible to end up performing poorer. However, you potentially harvest another variable, and the importance of the correlated feature you removed is spread among all other variables (and more specifically to the correlated features you had before with the one you removed).
 
