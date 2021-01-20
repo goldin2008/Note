@@ -109,7 +109,8 @@ How Can I Deal With This Problem?
 
 > https://towardsdatascience.com/why-feature-correlation-matters-a-lot-847e8ba439c4
 
-***Hyperparameter Tuning***
+***Hyperparameter Tuning*** hyperparameter除非deep learning，其它基本是要靠cv tune的，这也是被问的重点，一般randomized grid search cv也够了，如果答出bayesian optimization那是要加分的
+
 > https://towardsdatascience.com/automated-machine-learning-hyperparameter-tuning-in-python-dfda59b72f8a
 
 > https://www.kdnuggets.com/2020/04/hyperparameter-tuning-python.html
