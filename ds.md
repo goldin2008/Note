@@ -22,6 +22,13 @@ how to select variables from thousands of them
 后者定义你的模型是否有意义的metric，比如推荐歌单平均听的时长
 一般后者意义更大，更会被问。因为是无法直接直接optimize的，只能通过ab testing才测试，所以也有可能会被问到一点点experiment design的知识
 
+个基础知识点是几乎肯定会被问的
+1. unbalanced data set
+2. eval metric, e.g. precision and recall
+3. model a vs model b
+4. hyperparameter tuning
+5. bias variance tradeoff
+
 比方说hadoop和spark的区别和原理
 ***Hadoop and Spark***
 > https://zhuanlan.zhihu.com/p/95016937
