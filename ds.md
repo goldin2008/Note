@@ -196,11 +196,16 @@ Being able to quickly monitor these distributions via dashboards is a step in th
     - monitoring correlation coefficients between features
     - training models with one or two features
     - training a set of models that each have one of the features removed
-
+- EXAMINING THE TARGET DISTRIBUTIONS
 
 > https://www.kdnuggets.com/2019/12/ultimate-guide-model-retraining.html
 
 > https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45742.pdf
+
+***Model Retraining*** One way to think about this is that retraining doesn’t involve any code changes. It only involves changing the training data set. Depending on the maturity of your machine learning organization, such changes would ideally be introduced with A/B tests that measure the impact of the new model on predetermined metrics of interest, such as user engagement or retention.
+- It’s often a good idea to start with this simple strategy but you’ll need to determine exactly how frequently you’ll need to retrain. Quickly changing training sets might require you to train as often as daily or weekly. Slower varying distributions might require monthly or annual retraining.
+
+> https://www.inawisdom.com/machine-learning/machine-learning-automated-model-retraining-sagemaker/
 
 ***Gradient Descent***
 > https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3
