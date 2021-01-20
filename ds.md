@@ -185,6 +185,15 @@ How Can I Deal With This Problem?
 
 > https://codeburst.io/realtime-machine-learning-online-learning-with-pubnub-2005e86670ad
 
+***Model Drift*** refers to a model’s predictive performance degrading over time due to a change in the environment that violates the model’s assumptions.
+- EXAMINING THE FEATURE DISTRIBUTIONS OF TRAINING AND LIVE DATA, There are a number of different things to monitor per feature including:
+    - the range of possible values
+    - histograms of values
+    - whether the feature accepts NULLs and if so, the number of NULLs expected
+
+
+> https://www.kdnuggets.com/2019/12/ultimate-guide-model-retraining.html
+
 ***Gradient Descent***
 > https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3
 
@@ -199,7 +208,6 @@ How Can I Deal With This Problem?
 > https://medium.com/analytics-vidhya/overview-about-the-decision-tree-model-267c870fa147
 
 > https://medium.com/data-design/ensembles-of-tree-based-models-why-correlated-features-do-not-trip-them-and-why-na-matters-7658f4752e1b
-
 
 ***Regression***
 > https://www.kdnuggets.com/2020/03/linear-logistic-regression-explained.html
