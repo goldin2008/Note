@@ -16,6 +16,12 @@ how to select variables from thousands of them
 
 被问到不同model为什么learning curve不同，multi-correlation怎么处理。主要是针对你用的model和feature提问。建议大家弄清自己为什么用某个方法以及用它的目的。
 
+---Evaluation
+一定要区分statistical metric和business metric
+前者是你训练模型时候定义的metric，主要用来tune hyperparameter的，比如accuracy, F1-score...
+后者定义你的模型是否有意义的metric，比如推荐歌单平均听的时长
+一般后者意义更大，更会被问。因为是无法直接直接optimize的，只能通过ab testing才测试，所以也有可能会被问到一点点experiment design的知识
+
 比方说hadoop和spark的区别和原理
 ***Hadoop and Spark***
 > https://zhuanlan.zhihu.com/p/95016937
