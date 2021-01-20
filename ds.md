@@ -190,12 +190,13 @@ How Can I Deal With This Problem?
     - the range of possible values
     - histograms of values
     - whether the feature accepts NULLs and if so, the number of NULLs expected
+
 Being able to quickly monitor these distributions via dashboards is a step in the right direction. This can be taken even further by automatically tracking training-serving skew and issuing alerts when the divergence in features is significant.
 - EXAMINING THE CORRELATIONS BETWEEN FEATURES
     - monitoring correlation coefficients between features
     - training models with one or two features
     - training a set of models that each have one of the features removed
-    
+
 
 > https://www.kdnuggets.com/2019/12/ultimate-guide-model-retraining.html
 
