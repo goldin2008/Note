@@ -129,6 +129,11 @@ Queue: ActiveMQ, RabbitMQ, SQS, Kafka
 Data Processing: Hadoop, Spark, EMR
 Stream Processing: Samza, Storm
 
+***Netflix Recommender System competition***
+
+
+
+
 ***Reference:***
 
 Model Debug http://josh-tobin.com/assets/pdf/troubleshooting-deep-neural-networks-01-19.pdf
