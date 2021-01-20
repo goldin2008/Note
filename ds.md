@@ -20,13 +20,15 @@ how to select variables from thousands of them
 ***Hadoop and Spark***
 > https://zhuanlan.zhihu.com/p/95016937
 
-> https://logz.io/blog/hadoop-vs-spark/#:~:text=Spark%20has%20been%20found%20to,Naive%20Bayes%20and%20k%2Dmeans.
+> https://logz.io/blog/hadoop-vs-spark
 
 > https://www.gigaspaces.com/blog/hadoop-vs-spark/
 
 > https://phoenixnap.com/kb/hadoop-vs-spark
 
 > https://www.educba.com/hadoop-vs-spark/
+
+> https://developer.ibm.com/tutorials/getting-started-with-pyspark/
 
 问我map reduce的工作流程， spark跟map reduce的区别？
 ```python
