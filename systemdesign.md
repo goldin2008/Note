@@ -12,19 +12,26 @@
 
 >  https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=698113&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
 
+> https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md
+
+> https://1o24bbs.com/t/topic/4487
+
 ## ML System Design
 
 > https://github.com/kuhung/machine-learning-systems-design
 
 > https://github.com/chiphuyen/machine-learning-systems-design
 
-> https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md
-
 > https://leetcode.com/discuss/interview-question/system-design/566057/machine-learning-system-design-a-framework-for-the-interview-day
 
 > https://www.linkedin.com/pulse/tips-machine-learning-interviews-karthik-mohan/
 
 > https://www.springboard.com/blog/machine-learning-interview-questions/
+
+> https://www.1point3acres.com/bbs/thread-490321-1-1.html
+
+> https://blog.nowcoder.net/n/11b85636258b49b09eb116084d0d67f1
+
 
 Background:
 I am a Software Engineer with ~4 years of Machine Learning Engineering (MLE) and Data Scientist (DS) experience working at Fintech Company. Seeing the recent requirements in big tech companies for MLE roles and our confusion around it, I decided to create a framework for solving any ML System Design problem during the interview. Depending on your expertise and interviewers guide, you might want to emphasize on one section vs. the other (e.g. Data Engineering vs Modeling).
