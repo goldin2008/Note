@@ -130,8 +130,12 @@ Data Processing: Hadoop, Spark, EMR
 Stream Processing: Samza, Storm
 
 ***Netflix Recommender System competition***
-
-
+基本这个问题可以抽象为你有很多user，很多item，一定的历史数据(user买item后的rating)，现在你要决定推荐哪些新的东西给每个user
+具体到你被问的问题，可能会有一定的变种，举几个例子
+1. Yelp饭馆的推荐，涉及到了geolocation information
+2. Facebook Newsfeed推荐，涉及到了不同user之前的networking
+3. Ins Story推荐，每条Story是独一无二的并且是有时间性的
+4. Spotify音乐推荐，怎么把音乐做个embedding
 
 
 ***Reference:***
