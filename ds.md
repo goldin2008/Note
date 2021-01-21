@@ -29,6 +29,10 @@ how to select variables from thousands of them
 4. hyperparameter tuning
 5. bias variance tradeoff
 
+你也提到了几点DS不需要担心的问题，下面抛砖引玉再加几点：
+数据获取和清理：online serving的时候，features从哪里来，是不是需要做一些处理？例如NLP问题，raw text进来，怎么转变成 feature？production 里面如果不能调python包，一行搞定的情况下，java/C++/别的语言怎么搞定？
+deployment：要不要考虑serving latency的问题？太慢的情况怎么办？infra还没有支持到你的use case的时候，怎么办？你需要做 ab testing，那么serving的时候怎么做来实现区分 control 和 treatment
+
 比方说hadoop和spark的区别和原理
 ***Hadoop and Spark***
 > https://zhuanlan.zhihu.com/p/95016937
