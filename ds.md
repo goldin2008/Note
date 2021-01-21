@@ -185,10 +185,10 @@ How Can I Deal With This Problem?
 
 ***Outlier Detection*** In statistics, an outlier is an observation point that is distant from other observations.
 - Discover outliers with visualization tools
-Box plot, Scatter plot
+    - Box plot, Scatter plot
 
 - Discover outliers with mathematical function
-Z-Score
+    - Z-Score
 
 > https://laptrinhx.com/5-ways-to-detect-outliers-that-every-data-scientist-should-know-python-code-1420067125/
 
