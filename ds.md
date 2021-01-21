@@ -188,7 +188,7 @@ How Can I Deal With This Problem?
     - Box plot, Scatter plot
 
 - Discover outliers with mathematical function
-    - Z-Score
+    - Z-Score, IQR score, Dbscan, Isolation Forest
 
 > https://laptrinhx.com/5-ways-to-detect-outliers-that-every-data-scientist-should-know-python-code-1420067125/
 
