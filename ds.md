@@ -257,6 +257,9 @@ Being able to quickly monitor these distributions via dashboards is a step in th
 ***Deep Learning***
 > https://medium.com/@sprhlabs/understanding-deep-learning-dnn-rnn-lstm-cnn-and-r-cnn-6602ed94dbff
 
+***A/B testing*** 
+> https://medium.com/capital-one-tech/the-role-of-a-b-testing-in-the-machine-learning-future-3d2ba035daeb
+
 ### References
 
 #### Machine Learning Algorithms In Layman’s Terms
