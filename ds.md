@@ -163,14 +163,15 @@ How Can I Deal With This Problem?
 
 > https://medium.com/james-blogs/handling-imbalanced-data-in-classification-problems-7de598c1059f
 
-***Overfitting*** is model doesn’t generalize well from our training data to unseen data. How to Prevent Overfitting
-- Cross-validation
+***Overfitting*** occurs when the model performs well on training data but generalizes poorly to unseen data. In the following, I’ll describe eight simple approaches to alleviate overfitting by introducing only one change to the data, model, or learning algorithm in each approach.
+- Cross-validation (data)
+- L1/L2 regularization (learning algorithm)
+- Feature selection (data)
+- Dropout (model)
+- Early stopping (model)
+- Data augmentation (data)
 - Train with more data
-- Remove features
-- Early stopping
-- Regularization
 - Ensembling
-- Data augmentation
 
 > https://www.kaggle.com/learn-forum/157623
 
