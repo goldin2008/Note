@@ -183,7 +183,13 @@ How Can I Deal With This Problem?
 
 > https://machinelearningmastery.com/introduction-to-regularization-to-reduce-overfitting-and-improve-generalization-error/
 
-***Outlier Detection***
+***Outlier Detection*** In statistics, an outlier is an observation point that is distant from other observations.
+- Discover outliers with visualization tools
+Box plot, Scatter plot
+
+- Discover outliers with mathematical function
+Z-Score
+
 > https://laptrinhx.com/5-ways-to-detect-outliers-that-every-data-scientist-should-know-python-code-1420067125/
 
 > https://towardsdatascience.com/ways-to-detect-and-remove-the-outliers-404d16608dba
