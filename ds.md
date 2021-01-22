@@ -34,7 +34,9 @@ how to select variables from thousands of them
 deployment：要不要考虑serving latency的问题？太慢的情况怎么办？infra还没有支持到你的use case的时候，怎么办？你需要做 ab testing，那么serving的时候怎么做来实现区分 control 和 treatment
 
 比方说hadoop和spark的区别和原理
-***Hadoop and Spark***
+***Hadoop and Spark*** 
+Apache Spark is a fast and powerful framework that provides an API to perform massive distributed processing over resilient sets of data. The main abstraction Spark provides is a resilient distributed dataset (RDD), which is the fundamental and backbone data type of this engine. Spark SQL is Apache Spark's module for working with structured data and MLlib is Apache Spark's scalable machine learning library. Apache Spark is written in Scala programming language. To support Python with Spark, Apache Spark community released a tool, PySpark. PySpark has similar computation speed and power as Scala. PySpark is a parallel and distributed engine for running big data applications. Using PySpark, you can work with RDDs in Python programming language.
+
 > https://zhuanlan.zhihu.com/p/95016937
 
 > https://logz.io/blog/hadoop-vs-spark
@@ -198,7 +200,16 @@ How Can I Deal With This Problem?
 
 > https://www.kdnuggets.com/2018/12/four-techniques-outlier-detection.html
 
-***Large Data***
+***Big Data*** Storing this data is one thing, but what about processing it and developing machine learning algorithms to work with it? In this article, we will discuss how to easily create a scalable and parallelized machine learning platform on the cloud to process large-scale data.
+- Environment Setup — Dockers and Containers
+- Parallelization with Dask and Kubernetes
+- Dask Cloud Deployment
+- Example Cloud Deployment on AWS
+
+> https://github.com/TomAugspurger/dask-tutorial-pycon-2018
+
+> https://towardsdatascience.com/machine-learning-with-big-data-86bcb39f2f0b
+
 > https://machinelearningmastery.com/large-data-files-machine-learning/
 
 ***Data Streams/Online Learning*** In the past couple of years, a specific type of machine learning called online learning has become extremely popular in the world of realtime data infrastructure. Unlike traditional machine learning models, the statistical methods performed in online learning “partially fit” their equations to subsets of the overall dataset. This allows for a multitude of advantages:
