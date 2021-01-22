@@ -205,12 +205,13 @@ How Can I Deal With This Problem?
 - Parallelization with Dask and Kubernetes
 - Dask Cloud Deployment
 - Example Cloud Deployment on AWS
+
 ***Docker container*** In this case, all these components will be encapsulated in a Docker container:
 - The application itself,
 - The Conda environment that can run your application (so a compatible Python version and packages),
 - The local server or service (for example: a database server and a web server) required to run the application
-***Dask*** - a library for parallel computing in Python
-***Kubernetes*** - an open-source container orchestration system for automating application deployment, scaling, and management.***Kubernetes*** is a cluster manager. We can think of it like being an operating system for the cluster. It provides service discovery, scaling, load-balancing, and is self-healing. Kubernetes think of applications as stateless, and movable from one machine to another to enable better resource utilization. There is a controlling master node on which the cluster operating system runs, and worker nodes which perform the bulk of the work. If a node (computer associated with the cluster) loses connection or breaks, the master node will assign the work to someone new, just like your boss would if you stopped working.
+
+***Dask*** - a library for parallel computing in Python. ***Kubernetes*** - an open-source container orchestration system for automating application deployment, scaling, and management. ***Kubernetes*** is a cluster manager. We can think of it like being an operating system for the cluster. It provides service discovery, scaling, load-balancing, and is self-healing. Kubernetes think of applications as stateless, and movable from one machine to another to enable better resource utilization. There is a controlling master node on which the cluster operating system runs, and worker nodes which perform the bulk of the work. If a node (computer associated with the cluster) loses connection or breaks, the master node will assign the work to someone new, just like your boss would if you stopped working.
 
 > https://towardsdatascience.com/machine-learning-with-big-data-86bcb39f2f0b
 
