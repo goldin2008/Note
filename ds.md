@@ -200,7 +200,7 @@ How Can I Deal With This Problem?
 
 > https://www.kdnuggets.com/2018/12/four-techniques-outlier-detection.html
 
-####Big Data#### 
+#### Big Data #### 
 Storing this data is one thing, but what about processing it and developing machine learning algorithms to work with it? In this article, we will discuss how to easily create a scalable and parallelized machine learning platform on the cloud to process large-scale data.
 - Environment Setup — Dockers and Containers
 - Parallelization with Dask and Kubernetes
