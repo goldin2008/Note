@@ -214,11 +214,19 @@ Storing this data is one thing, but what about processing it and developing mach
 
 ***Dask*** - a library for parallel computing in Python. ***Kubernetes*** - an open-source container orchestration system for automating application deployment, scaling, and management. ***Kubernetes*** is a cluster manager. We can think of it like being an operating system for the cluster. It provides service discovery, scaling, load-balancing, and is self-healing. Kubernetes think of applications as stateless, and movable from one machine to another to enable better resource utilization. There is a controlling master node on which the cluster operating system runs, and worker nodes which perform the bulk of the work. If a node (computer associated with the cluster) loses connection or breaks, the master node will assign the work to someone new, just like your boss would if you stopped working.
 
+***Vaex*** is an open-source DataFrame library which enables the visualisation, exploration, analysis and even machine learning on tabular datasets that are as large as your hard-drive. To do this, Vaex employs concepts such as memory mapping, efficient out-of-core algorithms and lazy evaluations. All of this is wrapped in a familiar Pandas-like API, so anyone can get started right away.
+
 > https://towardsdatascience.com/machine-learning-with-big-data-86bcb39f2f0b
 
 > https://github.com/TomAugspurger/dask-tutorial-pycon-2018
 
 > https://machinelearningmastery.com/large-data-files-machine-learning/
+
+> https://medium.com/analytics-vidhya/how-to-deal-with-large-datasets-in-machine-learning-61b966a338fe
+
+> https://towardsdatascience.com/how-to-analyse-100s-of-gbs-of-data-on-your-laptop-with-python-f83363dda94
+
+> https://thealphadollar.me/learning/2020/02/23/large-data-analytics.html
 
 ***Data Streams/Online Learning*** In the past couple of years, a specific type of machine learning called online learning has become extremely popular in the world of realtime data infrastructure. Unlike traditional machine learning models, the statistical methods performed in online learning “partially fit” their equations to subsets of the overall dataset. This allows for a multitude of advantages:
 - Fast deployment of models
