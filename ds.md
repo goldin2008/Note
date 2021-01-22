@@ -277,6 +277,9 @@ The starting point for your architecture should always be your business requirem
 7. Can this task be done without ML?
 8. How large and experienced is your team - including data scientists, engineers and DevOps?
 
+![Diagram of example_architecture.](example_architecture.png)
+
+
 #### ML System Monitoring #### 
 The monitoring of machine learning models refers to the ways we track and understand our model performance in production from both a data science and operational perspective. Inadequate monitoring can lead to incorrect models left unchecked in production, stale models that stop adding business value, or subtle bugs in models that appear over time and never get caught. When ML is at the core of your business, a failure to catch these sorts of bugs can be a bankruptcy-inducing event - particularly if your company operates in a regulated environment.
 1. `Model Building`: Understanding the problem, data preparation, feature engineering and initial code. Typical artifacts are rough Jupyter notebooks.
