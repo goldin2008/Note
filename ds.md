@@ -259,6 +259,14 @@ Being able to quickly monitor these distributions via dashboards is a step in th
 
 > https://www.inawisdom.com/machine-learning/machine-learning-automated-model-retraining-sagemaker/
 
+***ML System Monitoring*** The monitoring of machine learning models refers to the ways we track and understand our model performance in production from both a data science and operational perspective. Inadequate monitoring can lead to incorrect models left unchecked in production, stale models that stop adding business value, or subtle bugs in models that appear over time and never get caught. When ML is at the core of your business, a failure to catch these sorts of bugs can be a bankruptcy-inducing event - particularly if your company operates in a regulated environment.
+
+> https://christophergs.com/machine%20learning/2020/03/14/how-to-monitor-machine-learning-models/
+
+> https://aws.amazon.com/blogs/machine-learning/monitoring-in-production-ml-models-at-large-scale-using-amazon-sagemaker-model-monitor/
+
+> https://aws.amazon.com/blogs/machine-learning/automated-monitoring-of-your-machine-learning-models-with-amazon-sagemaker-model-monitor-and-sending-predictions-to-human-review-workflows-using-amazon-a2i/
+
 ***Gradient Descent***
 > https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3
 
