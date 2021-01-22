@@ -317,6 +317,16 @@ As well as for prediction monitoring centered around basic statistical measures:
 - Min/Max prediction values
 - Standard deviation over a given timeframe
 
+Practical Implementation: One of the most popular open-source stacks for monitoring metrics is the combination of ***Prometheus*** and ***Grafana***. We can create dashboards with Prometheus & Grafana to track our model standard statistical metrics.
+
+`Logging for Machine Learning`
+If we consider our key areas to monitor for ML, we saw earlier how we could use metrics to monitor our prediction outputs, i.e. the model itself. However, investigating the data input values via metrics is likely to lead to high cardinality challenges, as many models have multiple inputs, including categorical values. Whilst we could instrument metrics on perhaps a few key inputs, if we want to track them without high cardinality issues, we are better off using logs to keep track of the inputs. If we were working with an NLP application with text input then we might have to lean more heavily on log monitoring as the cardinality of language is extremely high. We would check for input red flags such as:
+- A feature becoming unavailable - (either vanishing from inputs, or a high number of NAs)
+- Notable shifts in the distribution of key input values, for example, a categorical value that was relatively rare in the training data becomes more common
+- Patterns specific to your model, for example in an NLP scenario a sudden rise in the number of words not seen in the training data
+
+Practical Implementation: ***Kibana*** is an open-source analytics and visualization platform which is part of the elastic stack, formerly the ELK stack. You use Kibana to search, view, and interact with logs stored in Elasticsearch indices. You can easily perform advanced data analysis and visualize your logs in a variety of charts, tables, and maps. This is one of the most common open-source stacks for building monitoring systems for logs. Within Kibana you can setup dashboards to track and display your ML model input values, as well as automated alerts when values exhibit unexpected behaviors.
+
 > https://christophergs.com/machine%20learning/2020/03/14/how-to-monitor-machine-learning-models/
 
 > https://www.microsoft.com/en-us/research/uploads/prod/2019/03/amershi-icse-2019_Software_Engineering_for_Machine_Learning.pdf
