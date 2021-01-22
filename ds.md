@@ -277,7 +277,7 @@ The starting point for your architecture should always be your business requirem
 7. Can this task be done without ML?
 8. How large and experienced is your team - including data scientists, engineers and DevOps?
 
-![Diagram of example_architecture.](example_architecture.png)
+![Diagram of example_architecture.](example_architecture.jpg)
 
 
 #### ML System Monitoring #### 
