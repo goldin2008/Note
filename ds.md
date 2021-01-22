@@ -261,6 +261,12 @@ Being able to quickly monitor these distributions via dashboards is a step in th
 
 ***ML System Monitoring*** The monitoring of machine learning models refers to the ways we track and understand our model performance in production from both a data science and operational perspective. Inadequate monitoring can lead to incorrect models left unchecked in production, stale models that stop adding business value, or subtle bugs in models that appear over time and never get caught. When ML is at the core of your business, a failure to catch these sorts of bugs can be a bankruptcy-inducing event - particularly if your company operates in a regulated environment.
 
+![Diagram of rsz_system_monitoring.](rsz_system_monitoring.png)
+
+Most ML Systems change all the time - businesses grow, customer preferences shift and new laws are enacted. Our goal is to identify shifts in our ML system behavior that conflict with our expectations. Broadly speaking, we can categorize the ways our ML system can go wrong into two buckets:
+1. Data Science issues (data monitoring, prediction monitoring)
+2. Operations issues (system monitoring)
+
 > https://christophergs.com/machine%20learning/2020/03/14/how-to-monitor-machine-learning-models/
 
 > https://aws.amazon.com/blogs/machine-learning/monitoring-in-production-ml-models-at-large-scale-using-amazon-sagemaker-model-monitor/
