@@ -277,6 +277,18 @@ The monitoring of machine learning models refers to the ways we track and unders
 
 ![Diagram of rsz_system_monitoring.](rsz_system_monitoring.png)
 
+Monitoring should be designed to provide early warnings to the myriad of things that can go wrong with a production ML model, which include the following:
+- Data Skews: Data skews occurs when our model training data is not representative of the live data. That is to say, the data that we used to train the model in the research or production environment does not represent the data that we actually get in our live system.
+    - We designed the training data incorrectly: Distributions of the variables in our training data do not match the distribution of the variables in the live data.
+    - A feature is not available in production: This often means that we need to either remove the feature, change it for an alternative similar variable that exists in production, or re-create that feature by combining other features that exist in production.
+    - Research/Live Data mismatch: Data we used to train our models in the research environment comes from one source and the live data comes from a different source. This can mean that the variables may not be fabricated identically, so even though the pipeline returns the same prediction for the same input data (which will mean our differential tests pass), different data sources may lead to inherent different values in the same features, which will result in different predictions.
+    - Data Dependencies: Our models may ingest variables that are created or stored by other systems (internal or external). These systems may change the way they produce the data, and sadly it’s common that this is not communicated clearly. The knock-on effect is that the variables that are produced today are not equivalent to those that were produced a few years ago. Either the code implementation of a feature changes, producing slightly different results, or the definition of a feature may change. For example, an external system may adjust the voting age from 18 to 16. If voting age is a significant feature in the model, this will change its predictions.
+- Model Staleness
+    - Shifts in the environment: If we use historic data to train the models, we need to anticipate that the population and its behavior may not be the same in current times. For example, if we train our financial models using data from the time of the recession, it may not be effective for predicting default in times when the economy is healthy.
+    - Changes in consumer behavior: Customer preferences change with trends in fashion, politics, ethics, etc. Particularly in recommender ML systems this is a risk that has to be constantly monitored.
+    - Adversarial scenarios: Bad actors (fraudsters, criminals, foreign governments) may actively seek out weaknesses in your model and adjust their attacks accordingly. This is often an ongoing “arms race”.
+
+
 Most ML Systems change all the time - businesses grow, customer preferences shift and new laws are enacted. Our goal is to identify shifts in our ML system behavior that conflict with our expectations. Broadly speaking, we can categorize the ways our ML system can go wrong into two buckets:
 1. Data Science issues (data monitoring, prediction monitoring)
 2. Operations issues (system monitoring)
