@@ -293,7 +293,7 @@ Most ML Systems change all the time - businesses grow, customer preferences shif
 1. Data Science issues (data monitoring, prediction monitoring)
 2. Operations issues (system monitoring)
 
-***Data Science Monitoring***
+`Data Science Monitoring`
 - model input distribution (numerical features) or frequencies (categorical features), as well as missing value checks
 - model prediction distribution (regression algorithms) or frequencies (classification algorithms)
     - In either an automated (more on this in coming sections) or manual process we can compare our model prediction distributions with statistical tests: Basic statistics: median, mean, standard deviation, max/min values
