@@ -288,7 +288,9 @@ As you shift from the Jupyter notebooks of the research environment to productio
 3. Variable selection
 4. Model building
 
-***ML Model Deployment***
+***ML Model Deployment*** There is nothing in this section that isn’t equally applicable to any non-ML system, and that is deliberate. Don’t try and reinvent the wheel with your machine learning application deployments, established practices will save you pain. When it comes to deployments, you need to decide if you’re going to go with a Platform as a Service (PaaS) or Infrastructure as a Service (IaaS). A PaaS can be great for prototyping and businesses with lower traffic. Eventually, once the business grows and/or traffic increases, you’re going to need to embrace more complexity with IaaS. There are plenty of solutions from the usual suspects (AWS, Google, Microsoft), as well as an army of niche players hoping Jeff Bezos doesn’t wipe them out one day. If you’ve never deployed anything before, I’d recommend starting with Heroku. If your applications are containerized, deployments on most platforms/infrastructure tend to be easier. Containerization also gives you the option to use a container orchestration platform (Kubernetes is now the standard) to rapidly scale the number of containers as demand shifts.
+
+Be sure that your deployments occur via a Continuous Deployment platform.
 
 ![Diagram of deployment.](deployment.png)
 
