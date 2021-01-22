@@ -263,6 +263,19 @@ Being able to quickly monitor these distributions via dashboards is a step in th
 
 > https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/
 
+> https://papers.nips.cc/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf
+
+***Machine Learning System Architecture***
+The starting point for your architecture should always be your business requirements and wider company goals. You need to understand your constraints, what value you are creating and for whom, before you start Googling the latest tech. Questions of note might include some of the following:
+- Do you need to be able to serve predictions in real time (and if so, do you mean like, within a dozen milliseconds or after a second or two), or will delivery of predictions 30 minutes or a day after the input data is received suffice?
+1. How often do you expect to update your models?
+2. What will the demand for predictions be (i.e. traffic)?
+3. What size of data are you dealing with?
+4. What sort(s) of algorithms do you expect to use (and do you really need them)
+5. Are you in a regulated environment where the ability to audit your system is important?
+6. Does your company have product-market fit? (i.e. do you need to prepare for the system’s original purpose to radically change)
+7. Can this task be done without ML?
+8. How large and experienced is your team - including data scientists, engineers and DevOps?
 
 #### ML System Monitoring #### 
 The monitoring of machine learning models refers to the ways we track and understand our model performance in production from both a data science and operational perspective. Inadequate monitoring can lead to incorrect models left unchecked in production, stale models that stop adding business value, or subtle bugs in models that appear over time and never get caught. When ML is at the core of your business, a failure to catch these sorts of bugs can be a bankruptcy-inducing event - particularly if your company operates in a regulated environment.
