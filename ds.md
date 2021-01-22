@@ -299,6 +299,23 @@ Most ML Systems change all the time - businesses grow, customer preferences shif
     - In either an automated (more on this in coming sections) or manual process we can compare our model prediction distributions with statistical tests: Basic statistics: median, mean, standard deviation, max/min values
 - model versions
 
+`Operations Monitoring Concerns`
+Monitoring in the realm of software engineering is a far more well-established area and is part of Site Reliability Engineering. A great (free) reference book for this is Google’s SRE Handbook. The operational concerns around our ML System consist of the following areas:
+- System Performance (Latency)
+- System Performance (IO/Memory/Disk Utilisation)
+- System Reliability (Uptime)
+- Auditability (though this applies also to our model)
+
+`Metrics for Machine Learning`
+Given the above pros and cons, metrics are a great fit for both operational concerns for our ML system:
+- Latency when calling ML API endpoints
+- Memory/CPU usage when performing prediction
+- Disk utilization (if applicable)
+
+As well as for prediction monitoring centered around basic statistical measures:
+- Median & mean prediction values over a given timeframe
+- Min/Max prediction values
+- Standard deviation over a given timeframe
 
 > https://christophergs.com/machine%20learning/2020/03/14/how-to-monitor-machine-learning-models/
 
