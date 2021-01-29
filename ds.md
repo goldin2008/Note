@@ -430,7 +430,6 @@ Practical Implementation: ***Kibana*** is an open-source analytics and visualiza
 > https://online.stat.psu.edu/stat501/lesson/12
 
 ## Consulting Prep
-
 > https://www.youtube.com/user/MConsultingPrep/videos
 
 > https://www.myconsultingcoach.com/case-interview
@@ -438,3 +437,6 @@ Practical Implementation: ***Kibana*** is an open-source analytics and visualiza
 > https://managementconsulted.com/case-interview-structure/
 
 > https://www.craftingcases.com/case-interview-examples/
+
+## Data Challenge
+> https://www.1point3acres.com/bbs/thread-326201-1-1.html
