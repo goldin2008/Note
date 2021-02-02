@@ -427,6 +427,10 @@ for i in range(num_epochs):
 > https://quantifyinghealth.com/correlation-collinearity-multicollinearity/
 
 ***Deep Learning***
+`Deep Neural Networks (DNNs)` are typically `Feed Forward Networks (FFNNs)` in which data flows from the input layer to the output layer without going backward³ and the links between the layers are one way which is in the forward direction and they never touch a node again.
+`Recurrent Neural Network (RNN)` addresses this issue which is a FFNN with a time twist. This neural network isn’t stateless, has connections between passes and connections through time. RNNs also have problems like vanishing (or exploding) gradient/long-term dependency problem where information rapidly gets lost over time.
+`Long Short Term Memory (LSTM)` LSTMs are a special kind of RNN, capable of learning long-term dependencies which make RNN smart at remembering things that have happened in the past and finding patterns across time to make its next guesses make sense.
+
 > https://medium.com/@sprhlabs/understanding-deep-learning-dnn-rnn-lstm-cnn-and-r-cnn-6602ed94dbff
 
 ***A/B testing*** 
