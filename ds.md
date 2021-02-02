@@ -382,6 +382,29 @@ Practical Implementation: ***Kibana*** is an open-source analytics and visualiza
 
 
 ***Gradient Descent***
+`Batch Gradient Descent`
+```python
+for i in range(num_epochs):
+    grad = compute_gradient(data, params)
+    params = params — learning_rate * grad
+```
+`Stochastic Gradient Descent`
+```python
+for i in range(num_epochs):
+    np.random.shuffle(data)
+    for example in data:
+        grad = compute_gradient(example, params)
+        params = params — learning_rate * grad
+```
+`Mini-batch Gradient Descent`
+```python
+for i in range(num_epochs):
+    np.random.shuffle(data)
+    for batch in radom_minibatches(data, batch_size=32):
+        grad = compute_gradient(batch, params)
+        params = params — learning_rate * grad
+```
+
 > https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3
 
 > https://sebastianraschka.com/faq/docs/sgd-methods.html
