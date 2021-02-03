@@ -40,6 +40,20 @@
 2. Build a visual understanding system for a self-driving car
 3. Build a search-ranking system
 
+Performance and Capacity Considerations
+- Training time: How much training data and capacity is needed to build our predictor?
+- Evaluation time: What are the SLA that we have to meet while serving the model and capacity needs?
+
+Online experimentation
+- A/B testing
+In an A/B experiment, a webpage or screen is modified to create a second version of it. The original version is known as the control, and the modified version is the variation. From here, we can formulate two hypothesis:
+- The null hypothesis
+- The alternative hypothesis
+
+1. Setting up the problem
+- This will help you narrow down the scope of the problem and ensure your system’s requirements closely match the interviewer’s.
+- Your conversation should also include questions about performance/speed and capacity considerations of the system.
+
 Background:
 I am a Software Engineer with ~4 years of Machine Learning Engineering (MLE) and Data Scientist (DS) experience working at Fintech Company. Seeing the recent requirements in big tech companies for MLE roles and our confusion around it, I decided to create a framework for solving any ML System Design problem during the interview. Depending on your expertise and interviewers guide, you might want to emphasize on one section vs. the other (e.g. Data Engineering vs Modeling).
 
