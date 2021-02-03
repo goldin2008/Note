@@ -50,7 +50,7 @@ In an A/B experiment, a webpage or screen is modified to create a second version
 - The null hypothesis
 - The alternative hypothesis
 
-1. Setting up the problem
+1. `Setting up the problem`
 - This will help you narrow down the scope of the problem and ensure your system’s requirements closely match the interviewer’s.
 - Your conversation should also include questions about performance/speed and capacity considerations of the system.
 
