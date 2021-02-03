@@ -470,16 +470,24 @@ for i in range(num_epochs):
 
 
 ## Projects in Resume
-1. Data Engineering
+1. Data Engineering: A really intense data cleaning project (multiple datasets, missing data that requires imputation)
 2. Cloud Engineering
 3. CI/CD pipeline
 4. Model deployment
 5. Model and Feature monitoring
-6. NLP
-7. Computer Vision
-8. Data Analysis and Data Visualization
+6. NLP: A text-based project
+7. Computer Vision: An image project
+8. Data Analysis and Data Visualization: A visualization project
+9. Time series analysis
 
 `Build a dashboard to monitor data and model in real time`
 End-to-End System Building Project: A lot of data science jobs can include building systems that can efficiently analyze regular data sets as they come in, rather than analyzing a single specific data set. For example, you might be tasked with building a dashboard for the sales team that visualizes the company’s sales data and updates regularly as new data comes in.
 This project should show that you’re capable of building a system that can perform the same analysis on new data sets as they’re input, as well as capable of building a system that can be understood and run with relative ease by others. The simplest version of this would be well-commented code that can take data from a public, regularly-updated data set, and perform some analysis. Its README file should explain how it can be used by others, and the project should be relatively easy for other coders to run via the command line.
 If you’d like to step up the difficulty here, the sky’s the limit: you could build full-fledged interactive web dashboards, or build a system that handles real-time/streaming data. The key here is just to show that you can build an analytical system that’s reusable and that other people, or at the very least other programmers, can understand.
+
+`Building End-to-End projects:` A great way of proving that you are truly a generalist is to build end-to-end projects (more like products). Don’t stop at finding the solution or creating a prototype for a recommendations system or a fintech chatbot. Go the extra mile, deploy it, share it with your peers to use it, collect some analytics. This shows how passionate you are about what you do and to what extent you can go to learn new technologies and methods.
+
+`Deployed applications:` If you’ve deployed your ML-powered application, provide the link for the employer to play around with it.
+
+`Dashboards:` If you are proud of your analysis, you can go about creating a dashboard out of it. You may use Voila or Dash if you’re working in Python. If you’re a business analytics expert, you can add your Power BI, or Tableau dashboard to showcase your analytics skills.
+
