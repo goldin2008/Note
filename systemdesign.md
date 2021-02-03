@@ -36,6 +36,10 @@
 
 > https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=462348&extra=page%3D1
 
+1. Build a recommendation system that shows relevant products to users
+2. Build a visual understanding system for a self-driving car
+3. Build a search-ranking system
+
 Background:
 I am a Software Engineer with ~4 years of Machine Learning Engineering (MLE) and Data Scientist (DS) experience working at Fintech Company. Seeing the recent requirements in big tech companies for MLE roles and our confusion around it, I decided to create a framework for solving any ML System Design problem during the interview. Depending on your expertise and interviewers guide, you might want to emphasize on one section vs. the other (e.g. Data Engineering vs Modeling).
 
