@@ -467,3 +467,13 @@ for i in range(num_epochs):
 
 ## Data Challenge
 > https://www.1point3acres.com/bbs/thread-326201-1-1.html
+
+
+## Projects in Resume
+1. Data Engineering
+2. Cloud Engineering
+3. CI/CD pipeline
+4. Model deployment
+5. Model and Feature monitoring
+6. NLP
+7. Computer Vision
