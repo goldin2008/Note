@@ -18,6 +18,8 @@
 
 ## ML System Design
 
+> https://www.educative.io/blog/cracking-machine-learning-interview-system-design
+
 > https://github.com/kuhung/machine-learning-systems-design
 
 > https://github.com/chiphuyen/machine-learning-systems-design
