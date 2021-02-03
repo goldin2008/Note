@@ -478,3 +478,8 @@ for i in range(num_epochs):
 6. NLP
 7. Computer Vision
 8. Data Analysis and Data Visualization
+
+`Build a dashboard to monitor data and model in real time`
+End-to-End System Building Project: A lot of data science jobs can include building systems that can efficiently analyze regular data sets as they come in, rather than analyzing a single specific data set. For example, you might be tasked with building a dashboard for the sales team that visualizes the company’s sales data and updates regularly as new data comes in.
+This project should show that you’re capable of building a system that can perform the same analysis on new data sets as they’re input, as well as capable of building a system that can be understood and run with relative ease by others. The simplest version of this would be well-commented code that can take data from a public, regularly-updated data set, and perform some analysis. Its README file should explain how it can be used by others, and the project should be relatively easy for other coders to run via the command line.
+If you’d like to step up the difficulty here, the sky’s the limit: you could build full-fledged interactive web dashboards, or build a system that handles real-time/streaming data. The key here is just to show that you can build an analytical system that’s reusable and that other people, or at the very least other programmers, can understand.
