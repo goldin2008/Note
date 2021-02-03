@@ -465,6 +465,26 @@ for i in range(num_epochs):
 
 > https://www.craftingcases.com/case-interview-examples/
 
+## MBA
+
+## Book
+> https://learning.oreilly.com/library/view/hands-on-artificial-intelligence/9781788830782/
+
+> https://learning.oreilly.com/library/view/machine-learning-design/9781098115777/
+
+> https://learning.oreilly.com/library/view/building-machine-learning/9781492053187/
+
+> https://learning.oreilly.com/library/view/building-machine-learning/9781492045106/
+
+> https://learning.oreilly.com/library/view/python-machine-learning/9781800209718/
+
+> https://learning.oreilly.com/library/view/machine-learning-pocket/9781492047537/
+
+> https://learning.oreilly.com/library/view/machine-learning/9789389588132/
+
+> https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/
+
+
 ## Data Challenge
 > https://www.1point3acres.com/bbs/thread-326201-1-1.html
 
