@@ -53,6 +53,11 @@ In an A/B experiment, a webpage or screen is modified to create a second version
 1. `Setting up the problem`
 - This will help you narrow down the scope of the problem and ensure your system’s requirements closely match the interviewer’s.
 - Your conversation should also include questions about performance/speed and capacity considerations of the system.
+2. `Defining the metrics of the problem`
+- The next step is to carefully choose your system’s performance metrics for both online and offline testing. The metrics you choose will depend on the problem your system is trying to solve.
+3. `Architecture discussion`
+- The next step is to design your system’s architecture. You need to think about the components of the system and how the data will flow through those components. In this step, you need to be careful to design a model that can scale easily.
+
 
 Background:
 I am a Software Engineer with ~4 years of Machine Learning Engineering (MLE) and Data Scientist (DS) experience working at Fintech Company. Seeing the recent requirements in big tech companies for MLE roles and our confusion around it, I decided to create a framework for solving any ML System Design problem during the interview. Depending on your expertise and interviewers guide, you might want to emphasize on one section vs. the other (e.g. Data Engineering vs Modeling).
