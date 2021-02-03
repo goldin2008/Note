@@ -477,3 +477,5 @@ for i in range(num_epochs):
 5. Model and Feature monitoring
 6. NLP
 7. Computer Vision
+8. Data Analysis and Data Visualization
+
