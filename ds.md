@@ -499,6 +499,7 @@ for i in range(num_epochs):
 7. Computer Vision: An image project
 8. Data Analysis and Data Visualization: A visualization project
 9. Time series analysis
+10. Unsupervised Learning like KNN
 
 `Build a dashboard to monitor data and model in real time`
 End-to-End System Building Project: A lot of data science jobs can include building systems that can efficiently analyze regular data sets as they come in, rather than analyzing a single specific data set. For example, you might be tasked with building a dashboard for the sales team that visualizes the company’s sales data and updates regularly as new data comes in.
