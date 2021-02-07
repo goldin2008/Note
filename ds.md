@@ -180,6 +180,9 @@ However, you will risk losing data points with valuable information. A better st
 - Feature selection (data)
 - Dropout (model)
 - Early stopping (model)
+    - Limit tree depth: Stop splitting after a certain depth
+    - Classification error: Do not consider any split that does not cause a sufficient decrease in classification error
+    - Minimum node size: Do not split an intermediate node which contains too few data points
 - Data augmentation (data)
 - Train with more data
 - Ensembling
@@ -427,6 +430,18 @@ for i in range(num_epochs):
 > https://medium.com/analytics-vidhya/overview-about-the-decision-tree-model-267c870fa147
 
 > https://medium.com/data-design/ensembles-of-tree-based-models-why-correlated-features-do-not-trip-them-and-why-na-matters-7658f4752e1b
+
+***Variants of boosting and related algorithms***
+There are hundreds of variants of boosting, most important:
+`Gradient boosting`
+Like AdaBoost, but useful beyond basic classification
+Many other approaches to learn ensembles, most important:
+`Random forests`
+- `Bagging`: Pick random subsets of the data
+    -  Learn a tree in each subset
+    -  Average predictions
+- Simpler than boosting & easier to parallelize
+- Typically higher error than boosting for same number of trees
 
 ***Regression***
 > https://www.kdnuggets.com/2020/03/linear-logistic-regression-explained.html
