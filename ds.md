@@ -513,3 +513,38 @@ If you’d like to step up the difficulty here, the sky’s the limit: you could
 `Dashboards:` If you are proud of your analysis, you can go about creating a dashboard out of it. You may use Voila or Dash if you’re working in Python. If you’re a business analytics expert, you can add your Power BI, or Tableau dashboard to showcase your analytics skills.
 
 > https://github.com/nitsuga1986/machine-learning-nd-portfolio
+
+# TO DO
+> https://www.coursera.org/learn/sequence-models-in-nlp/programming/TzwWY/lab
+
+> https://www.coursera.org/learn/sequence-models-in-nlp/programming/jjKpq/lab
+
+> https://trax-ml.readthedocs.io/en/latest/notebooks/trax_intro.html
+
+> https://github.com/jiadaizhao/Advanced-Machine-Learning-Specialization/blob/master/Natural%20Language%20Processing/Week2/week2-NER.ipynb
+
+> https://github.com/jiadaizhao/Advanced-Machine-Learning-Specialization/blob/master/Natural%20Language%20Processing/Week3/week3-Embeddings.ipynb
+
+> https://www.kaggle.com/dijorajsenroy/different-ways-to-use-bert-ner-sent-analysis
+
+> https://www.kaggle.com/johoshua/word-embedding-teach-machine-to-learn-words
+
+> https://www.kaggle.com/hoonkeng/deep-eda-word-embeddings-sentiment-analysis
+
+> https://www.kaggle.com/ankur561999/enron-email-classification-using-word-embeddings
+
+> https://www.kaggle.com/jannesklaas/17-nlp-and-word-embeddings
+
+> https://www.kaggle.com/tkrsh09/nlp-starter-complete-tpu-bert-guide-keras
+
+> https://www.kaggle.com/datafan07/disaster-tweets-nlp-eda-bert-with-transformers
+
+> https://www.kaggle.com/lapidshay/bilstm-for-text-classification
+
+> https://www.kaggle.com/vbmokin/nlp-eda-bag-of-words-tf-idf-glove-bert
+
+> https://www.kaggle.com/urbanbricks/keras-lstm-for-document-classification
+
+> https://www.kaggle.com/kawiswara/malicious-web-detection-with-1d-cnn
+
+> https://www.kaggle.com/muonneutrino/sentiment-analysis-with-amazon-reviews
