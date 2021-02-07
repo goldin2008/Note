@@ -136,8 +136,8 @@ How Can I Deal With This Problem?
 2. Skip features with many missing values
 3. Impute missing values using other data points
 4. Modify learning algorithm (decision trees) to handle missing data
-- Missing values get added to one branch of split
-- Use classification error to determine where missing values go
+    - Missing values get added to one branch of split
+    - Use classification error to determine where missing values go
 
 However, you will risk losing data points with valuable information. A better strategy would be to impute the missing values. In other words, we need to infer those missing values from the existing part of the data. Imputation methods:
 - (Mean/Median) Values
