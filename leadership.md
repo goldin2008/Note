@@ -79,3 +79,8 @@ Toastmasters是一个Volunteer run的组织，每半年只用45美金会费，�
 每月底 summarize precisely in THREE sentences what you have accomplished this month.
 
 养成习惯，想好了再说，怎么能三句话就能说凊楚。
+
+
+## Work
+每周给一个solid idea给老板，ask for opinion 和尝试机会
+慢慢这些idea多了，我就有了自己的远景。这些都不是任何人给我安排的工作，但对我来说我重要，时间上有绝对优先权。老板看到的我给他的每周的东西（作完他布置的，还会每周有具体项目proposal)，而其他同事没有这些，印象分就不错。更何况我的点子抓准了，有效益出来，我和别人的差距马上就拉开了。
