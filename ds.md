@@ -1,4 +1,5 @@
 ## DS Interview
+`Data Science is about extracting insights; machine learning is about generalizing from data.`
 
 1. what is 95% CI ， 给了个例子how to get the population response rate from sample given the 95% ci.
 2. 给了个例子，age~ height+weight 问了multicollinearity的问题，要求解释，完了问一般情况下怎么detect
