@@ -431,12 +431,11 @@ for i in range(num_epochs):
 
 > https://medium.com/data-design/ensembles-of-tree-based-models-why-correlated-features-do-not-trip-them-and-why-na-matters-7658f4752e1b
 
-***Variants of boosting and related algorithms***
-There are hundreds of variants of boosting, most important:
-`Gradient boosting`
-Like AdaBoost, but useful beyond basic classification
-Many other approaches to learn ensembles, most important:
-`Random forests`
+***Variants of boosting and related algorithms*** There are hundreds of variants of boosting, most important:
+
+`Gradient boosting` Like AdaBoost, but useful beyond basic classification
+
+`Random forests` Many other approaches to learn ensembles, most important:
 - `Bagging`: Pick random subsets of the data
     -  Learn a tree in each subset
     -  Average predictions
