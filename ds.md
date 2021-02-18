@@ -304,7 +304,7 @@ As you shift from the Jupyter notebooks of the research environment to productio
 
 Clearly, effective building and deployment of machine learning systems is hard. Whilst it is relatively easy to pickle a model and get it behind a Flask REST API, it’s the ongoing maintenance, iterative adjustments and regulatory burden that are the real sources of difficulty.
 
-![Diagram of deployment.](deployment.png)
+![Diagram of deployment.](pic/deployment.png)
 
 `Containers` 
 Since the arrival of Docker in 2013, containerization has revolutionized the way software is deployed. The benefits of containerization apply equally if not more so for machine learning systems. Reproducing containerized systems is much easier because the container images ensure operating system and runtime dependencies stay fixed. The ability to consistently and quickly generate precise environments is a huge advantage for reproducibility during testing and training. Containerization also works well with modern CI/CD workflows, and has implications for scaling which I’ll talk about more in part 7. Bottom line: Build your machine learning system so that all parts of it (including model training, testing and serving) can be containerized.
@@ -330,7 +330,7 @@ The monitoring of machine learning models refers to the ways we track and unders
 
 ***Monitoring Scenarios*** The first scenario is simply the deployment of a brand new model. The second scenario is where we completely replace this model with an entirely different model. The third scenario (on the right) is very common and implies making small tweaks to our current live model. Say we have a model in production, and one variable becomes unavailable, so we need to re-deploy that model without that feature. Or alternatively we develop a super feature that we think is going to be awesomely predictive, and we want to re-deploy our model, but now taking that new feature as an additional input.
 
-![Diagram of rsz_system_monitoring.](rsz_system_monitoring.png)
+![Diagram of rsz_system_monitoring.](pic/rsz_system_monitoring.png)
 
 Monitoring should be designed to provide early warnings to the myriad of things that can go wrong with a production ML model, which include the following:
 - Data Skews: Data skews occurs when our model training data is not representative of the live data. That is to say, the data that we used to train the model in the research or production environment does not represent the data that we actually get in our live system.
