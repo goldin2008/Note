@@ -283,7 +283,7 @@ The starting point for your architecture should always be your business requirem
 7. Can this task be done without ML?
 8. How large and experienced is your team - including data scientists, engineers and DevOps?
 
-![Diagram of example_architecture.](example_architecture.jpg)
+![Diagram of example_architecture.](pic/example_architecture.jpg)
 
 `Key Principles For Designing Your ML System`
 Regardless of how you decide to design your system, it is worth bearing in mind the following principles:
