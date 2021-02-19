@@ -2,6 +2,8 @@
 #### NLP Pipeline #### 
 This step-by-step processing of text is known as a pipeline. Note that, in the real world, the process may not always be linear as it’s shown in the pipeline in Figure 2-1; it often involves going back and forth between individual steps (e.g., between feature extraction and modeling, modeling and evaluation, and so on). Also, there are loops in between, most commonly going from evaluation to pre-processing, feature engineering, modeling, and back to evaluation. There is also an overall loop that goes from monitoring to data acquisition, but this loop happens at the project level.
 
+![Diagram of rsz_system_monitoring.](pic/pnlp_0201.png)
+
 ***Data Acquisition***
 - Use a public dataset
 - Scrape data
@@ -27,6 +29,7 @@ This step-by-step processing of text is known as a pipeline. Note that, in the r
     - The pipeline in this case starts with extraction of plain text from PDF documents. However, different PDF documents are encoded differently, and sometimes, we may not be able to extract the full text, or the structure of the text may get messed up. Text extraction from scanned documents is typically done through optical character recognition (OCR), using libraries such as Tesseract [25, 26].
 
 ***Pre-Processing***
+![Diagram of rsz_system_monitoring.](pic/pnlp_0207.png)
 However, all NLP software typically works at the sentence level and expects a separation of words at the minimum. So, we need some way to split a text into words and sentences before proceeding further in a processing pipeline. Sometimes, we need to remove special characters and digits, and sometimes, we don’t care whether a word is in upper or lowercase and want everything in lowercase. Many more decisions like this are made while processing text. Such decisions are addressed during the pre-processing step of the NLP pipeline. Here are some common pre-processing steps used in NLP software:
 - Preliminaries
     - Sentence segmentation and word tokenization.
@@ -38,6 +41,10 @@ However, all NLP software typically works at the sentence level and expects a se
     - Normalization, language detection, code mixing, transliteration, etc.
 - Advanced processing
     - POS tagging, parsing, coreference resolution, etc.
+
+![Diagram of rsz_system_monitoring.](pic/pnlp_0210.png)
+
+![Diagram of rsz_system_monitoring.](pic/pnlp_0211.png)
 
 Remember that not all of these steps are always necessary, and not all of them are performed in the order in which they’re discussed here. For example, if we were to remove digits and punctuation, what is removed first may not matter much. However, we typically lowercase the text before stemming. We also don’t remove tokens or lowercase the text before doing lemmatization because we have to know the part of speech of the word to get its lemma, and that requires all tokens in the sentence to be intact. A good practice to follow is to prepare a sequential list of pre-processing tasks to be done after having a clear understanding of how to process our data.
 
