@@ -58,6 +58,8 @@ When we use ML methods to perform our modeling step later, we’ll still need a 
 
 ***Modeling***
 
+![Diagram of rsz_system_monitoring.](pic/pnlp_0212.png)
+
 ***Evaluation***
 
 ***Deployment***
