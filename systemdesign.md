@@ -256,6 +256,9 @@ Variation of the number of islands LC question. You have a House, Well & Tree ar
 4. System Design #2
 这一轮没有计入面试结果，但也挺有意思的。和第一轮Design一样，不按套路出牌，我把框架画完之后面试官说，这个设计很好，但是如果不用Cassandra或者任何storage layer你要怎么设计，Redis也不用的话要怎么办，message queue也不用的话要怎么做，而且不是明着说的，就是说 “我们想尽量减少server间的networking”，反复沟通了很久，最后才明白他的意图原来就是不用任何轮子设计一个啥都有的monolith。明白了这个以后进展就很快，最终结果他也非常满意，后半程明显语气快乐得多（其实我想说这种设计挺糟糕的，拣了芝麻丢了西瓜）。。。
 
+ ML design。abusive comments
+第四轮：design music playlist to display top music
+第五轮：design friends recommendation system
 
 ### Google
 Interview Questions
