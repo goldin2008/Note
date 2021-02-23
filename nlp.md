@@ -69,6 +69,8 @@ We may have to do many iterations of the model-building process to “build THE 
 
 ![Diagram of rsz_system_monitoring.](pic/pnlp_0212.png)
 
+![Diagram of rsz_system_monitoring.](pic/pnlp_0403.png)
+
 ***Evaluation***
 Also, evaluations are of two types: `intrinsic` and `extrinsic`. Intrinsic focuses on intermediary objectives, while extrinsic focuses on evaluating performance on the final objective. For example, consider a spam-classification system. The ML metric will be precision and recall, while the business metric will be “the amount of time users spent on a spam email.” `Intrinsic evaluation` will focus on measuring the system performance using precision and recall. `Extrinsic evaluation` will focus on measuring the time a user wasted because a spam email went to their inbox or a genuine email went to their spam folder.
 
