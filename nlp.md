@@ -144,6 +144,18 @@ Steps 3 through 5 are iterated on to explore different variants of features and 
 
 Apart from these, when classification systems are deployed in real-world applications, key performance indicators (KPIs) specific to a given business use case are also used to evaluate their impact and return on investment (ROI). 
 
+ When we say “good” dataset, we mean a dataset that is a true representation of the data we’re likely to see in production. No single approach is known to work universally well on all kinds of data and all classification problems. In the real world, we experiment with multiple approaches, evaluate them, and choose one final approach to deploy in practice. While there are many different ways to do the pre-processing, let’s say we want to do the following: lowercasing and removal of punctuation, digits and any custom strings, and stop words. CountVectorizer in scikit-learn, which is the implementation of the BoW approach. This is not a far-fetched assumption—in industry, we often don’t have the luxury of collecting more data; we have to work with what we have. Two typical approaches are oversampling the instances belonging to minority classes or undersampling the majority class to create a balanced dataset. Reason 3 in our list was: “Perhaps we need a better learning algorithm.” This gives rise to the question: “What is a better learning algorithm?” A general rule of thumb when working with ML approaches is that there is no one algorithm that learns well on all datasets. A common approach is to experiment with various algorithms and compare them. 
+
+***Using Neural Embeddings in Text Classification***
+we discussed feature engineering techniques using neural networks, such as word embeddings, character embeddings, and document embeddings. The advantage of using embedding-based features is that they create a dense, low-dimensional feature representation instead of the sparse, high-dimensional structure of BoW/TF-IDF and other such features. 
+
+1. Word Embeddings
+- Loading and pre-processing the text data remains a common step. However, instead of vectorizing the texts using BoW-based features, we’ll now rely on neural embedding models.
+
+2. 
+
+
+
 
 
 #### NER ####
