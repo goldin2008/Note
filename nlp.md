@@ -68,8 +68,6 @@ We may have to do many iterations of the model-building process to “build THE 
 
 ![Diagram of rsz_system_monitoring.](pic/pnlp_0212.png)
 
-![Diagram of rsz_system_monitoring.](pic/pnlp_0403.png)
-
 ***Evaluation***
 Also, evaluations are of two types: `intrinsic` and `extrinsic`. Intrinsic focuses on intermediary objectives, while extrinsic focuses on evaluating performance on the final objective. For example, consider a spam-classification system. The ML metric will be precision and recall, while the business metric will be “the amount of time users spent on a spam email.” `Intrinsic evaluation` will focus on measuring the system performance using precision and recall. `Extrinsic evaluation` will focus on measuring the time a user wasted because a spam email went to their inbox or a genuine email went to their spam folder.
 
@@ -137,7 +135,15 @@ Ranking tasks like information search and retrieval mostly uses ranking-based me
 
  For some applications, such as text classification, it’s more common to see vectorization approaches and embeddings as the go-to feature representations for text. For some other applications, such as information extraction, or in the examples we saw in the previous section, it’s more common to look for handcrafted, domain-specific features. Quite often, a hybrid approach that combines both kinds of features are used in practice. 
 
- #### Text Classification #### 
+#### Text Classification #### 
+Our aim is to provide an overview of some of the most commonly applied techniques along with practical advice on handling different scenarios and decisions that have to be made when building text classification systems in practice. Let’s briefly discuss some of the popular applications before diving into the different approaches to perform text classification. 
+
+![Diagram of rsz_system_monitoring.](pic/pnlp_0403.png)
+
+Steps 3 through 5 are iterated on to explore different variants of features and classification algorithms and their parameters and to tune the hyperparameters before proceeding to Step 6, deploying the optimal model in production. 
+
+Apart from these, when classification systems are deployed in real-world applications, key performance indicators (KPIs) specific to a given business use case are also used to evaluate their impact and return on investment (ROI). 
+
 
 
 #### NER ####
@@ -162,5 +168,9 @@ NER is very sensitive to the format of its input. It’s more accurate with well
 What's so hard about PDF text extraction? ​
 
 > https://filingdb.com/b/pdf-text-extraction
+
+NER is also very sensitive to the accuracy of the prior steps in its processing pipeline: sentence splitting, tokenization, and POS tagging (refer back to Figure 5-2). To understand how improper sentence splitting can result in poor NER results, try taking the content from the screenshot back in Figure 5-1 and looking at the output from spaCy (see the notebook Ch5/NERIssues.ipynb for a short illustration). So, some amount of pre-processing may be necessary before passing a piece of text into an NER model to extract entities.
+
+
 
 
