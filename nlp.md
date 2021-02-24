@@ -150,9 +150,15 @@ Apart from these, when classification systems are deployed in real-world applica
 we discussed feature engineering techniques using neural networks, such as word embeddings, character embeddings, and document embeddings. The advantage of using embedding-based features is that they create a dense, low-dimensional feature representation instead of the sparse, high-dimensional structure of BoW/TF-IDF and other such features. 
 
 1. Word Embeddings
-    - Loading and pre-processing the text data remains a common step. However, instead of vectorizing the texts using BoW-based features, we’ll now rely on neural embedding models.
+    - Loading and pre-processing the text data remains a common step. However, instead of vectorizing the texts using BoW-based features, we’ll now rely on neural embedding models. Here, we’ll use the one from Google [15]. The following code snippet shows how to load this model into Python using gensim. This is a large model that can be seen as a dictionary where the keys are words in the vocabulary and the values are their learned embedding representations. A simple approach is just to average the embeddings for individual words in text. Note that it uses embeddings only for the words that are present in the dictionary. It ignores the words for which embeddings are absent. 
+    - there are other pre-trained embedding approaches, such as GloVe, which can be experimented with for this approach. Gensim, which we used in this example, also supports training our own word embeddings if necessary. If we’re working on a custom domain whose vocabulary is remarkably different from that of the pre-trained news embeddings we used here, it would make sense to train our own embeddings to extract features.
+    - In order to decide whether to train our own embeddings or use pre-trained embeddings, a good rule of thumb is to compute the vocabulary overlap. If the overlap between the vocabulary of our custom domain and that of pre-trained word embeddings is greater than 80%, pre-trained word embeddings tend to give good results in text classification.
+    - An important factor to consider when deploying models with embedding-based feature extraction approaches is that the learned or pre-trained embedding models have to be stored and loaded into memory while using these approaches. If the model itself is bulky (e.g., the pre-trained model we used takes 3.6 GB), we need to factor this into our deployment needs.
 
-2. 
+2. Subword Embeddings and fastText
+    - We discussed fastText embeddings [16] in Chapter 3. They’re based on the idea of enriching word embeddings with subword-level information. Thus, the embedding representation for each word is represented as a sum of the representations of individual character n-grams. While this may seem like a longer process compared to just estimating word-level embeddings, it has two advantages:
+        - This approach can handle words that did not appear in training data (OOV).
+        - The implementation facilitates extremely fast learning on even very large corpora.
 
 
 
