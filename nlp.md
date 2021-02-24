@@ -140,6 +140,16 @@ Ranking tasks like information search and retrieval mostly uses ranking-based me
  #### Text Classification #### 
 
 
-#### NER #### 
+#### NER ####
+***Building an NER System***
 However, in real-world scenarios, using the trained model by itself won’t be sufficient, as the data keeps changing and new entities keep getting added, and there will also be some domain-specific entities or patterns that were not seen in generic training datasets. Hence, most NER systems deployed in real-world scenarios use a combination of ML models, gazetteers, and some pattern matching–based heuristics to improve their performance.
 
+***NER Using an Existing Library***
+NER has been well researched over the past few decades, and we have off-the-shelf libraries to start with. Stanford NER [28], spaCy, and AllenNLP [29] are some well-known NLP libraries that can be used to incorporate a pre-trained NER model into a software product.
+
+Considering that spaCy’s NER is `based on a state-of-the-art neural model coupled with some pattern matching and heuristics`, it’s a good starting point. However, we may run into two issues:
+1. As mentioned earlier, we may be using NER in a specific domain, and the pre-trained models may not capture the specific nature of our own domain.
+2. Sometimes, we may want to add new categories to the NER system without having to collect a large dataset for all the common categories.
+
+***NER Using Active Learning***
+From our experience, the best approach to NER when we want customized solutions but don’t want to train everything from scratch is to `start with an off-the-shelf product and either augment it with customized heuristics for our problem domain` (using tools such as RegexNER or EntityRuler) and/or use active learning using tools like `Prodigy` (like we saw in Chapter 4 for text classification). This allows us to improve an `existing pre-trained NER model by manually tagging a few example sentences containing new NER categories or correct a few model predictions manually and use these to retrain the model`. [30] shows some examples of going through this process using Prodigy.
