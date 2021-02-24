@@ -153,3 +153,14 @@ Considering that spaCy’s NER is `based on a state-of-the-art neural model coup
 
 ***NER Using Active Learning***
 From our experience, the best approach to NER when we want customized solutions but don’t want to train everything from scratch is to `start with an off-the-shelf product and either augment it with customized heuristics for our problem domain` (using tools such as RegexNER or EntityRuler) and/or use active learning using tools like `Prodigy` (like we saw in Chapter 4 for text classification). This allows us to improve an `existing pre-trained NER model by manually tagging a few example sentences containing new NER categories or correct a few model predictions manually and use these to retrain the model`. [30] shows some examples of going through this process using Prodigy.
+
+In general, in most cases, we don’t always have to think about developing an NER system from scratch. If we do have to develop an NER system from scratch, the first thing we would need, as we saw in this section, is a large collection of annotated data of sentences where each word/token is tagged with its category (entity type or other). Once such a dataset is available, the next step is to use it to obtain handcrafted and/or neural feature representations and feed them to a sequence labeling model.
+`Start with a pre-trained NER model and enhance it with heuristics, active learning, or both.`
+
+NER is very sensitive to the format of its input. It’s more accurate with well-formatted plain text than with, say, a PDF document from which plain text needs to be extracted first. illustrates some of the challenges with PDF-to-text extraction. In PDFs, partial sentences, headings, and formatting are common, and they can all mess up NER accuracy. There’s no single solution for this. One approach is to do custom post-processing of PDFs to extract blobs of text, then run NER on the blobs.
+
+What's so hard about PDF text extraction? ​
+
+> https://filingdb.com/b/pdf-text-extraction
+
+
