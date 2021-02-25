@@ -1,5 +1,5 @@
 ## Natural Language Processing
-#### NLP Pipeline #### 
+### NLP Pipeline ### 
 This step-by-step processing of text is known as a pipeline. Note that, in the real world, the process may not always be linear as it’s shown in the pipeline in Figure 2-1; it often involves going back and forth between individual steps (e.g., between feature extraction and modeling, modeling and evaluation, and so on). Also, there are loops in between, most commonly going from evaluation to pre-processing, feature engineering, modeling, and back to evaluation. There is also an overall loop that goes from monitoring to data acquisition, but this loop happens at the project level.
 
 ![Diagram of rsz_system_monitoring.](pic/pnlp_0201.png)
@@ -135,7 +135,7 @@ Ranking tasks like information search and retrieval mostly uses ranking-based me
 
  For some applications, such as text classification, it’s more common to see vectorization approaches and embeddings as the go-to feature representations for text. For some other applications, such as information extraction, or in the examples we saw in the previous section, it’s more common to look for handcrafted, domain-specific features. Quite often, a hybrid approach that combines both kinds of features are used in practice. 
 
-#### Text Classification #### 
+### Text Classification ### 
 Our aim is to provide an overview of some of the most commonly applied techniques along with practical advice on handling different scenarios and decisions that have to be made when building text classification systems in practice. Let’s briefly discuss some of the popular applications before diving into the different approaches to perform text classification. 
 
 ![Diagram of rsz_system_monitoring.](pic/pnlp_0403.png)
@@ -231,7 +231,40 @@ These representations have been used successfully for text classification in the
 
 However, in our experience as industry practitioners, several NLP tasks, especially text classification, still widely use several of the non-DL approaches we described earlier in the chapter. Two primary reasons for this are a lack of the large amounts of task-specific training data that neural networks demand and issues related to computing and deployment costs. in most industrial settings, it always makes sense to start with a simpler, easy-to-deploy approach as your MVP and go from there incrementally, taking customer needs and feasibility into account.
 
-#### NER ####
+***Learning with No or Less Data and Adapting to New Domains***
+1. No Training Data
+    - The first step in such a scenario is creating an annotated dataset where customer complaints are mapped to the set of categories mentioned above. One way to approach this is to get customer service agents to manually label some of the complaints and use that as the training data for our ML model. Another approach is called “bootstrapping” or “weak supervision.” We can get started with compiling some such patterns and using their presence or absence in a customer request to label it, thereby creating a small (perhaps noisy) annotated dataset for this classification task. From here, we can build a classifier to annotate a larger collection of data.
+    - `Snorkel` [30], a recent software tool developed by Stanford University, is useful for deploying weak supervision for various learning tasks, including classification. Snorkel was used to deploy weak supervision–based text classification models at industrial scale at Google [31]. They showed that weak supervision could create classifiers comparable in quality to those trained on tens of thousands of hand-labeled examples! [32] shows an example of how to use Snorkel to generate training data for text classification using a large amount of unlabeled data.
+
+2. Less Training Data: Active Learning and Domain Adaptation
+    - One approach to address such problems is active learning, which is primarily about identifying which data points are more crucial to be used as training data. It helps answer the following question: if we had 1,000 data points but could get only 100 of them labeled, which 100 would we choose? What this means is that, when it comes to training data, not all data points are equal. Some data points are more important as compared to others in determining the quality of the classifier trained. Active learning converts this into a continuous process.
+    - Using `active learning` for training a classifier can be described as a step-by-step process:
+        - Train the classifier with the available amount of data.
+        - Start using the classifier to make predictions on new data.
+        - For the data points where the classifier is very unsure of its predictions, send them to human annotators for their correct classification.
+        - Include these data points in the existing training data and retrain the model.
+    Repeat Steps 1 through 4 until a satisfactory model performance is reached.
+    - Tools like `Prodigy` [33] have active learning solutions implemented for text classification and support the efficient usage of active learning to create annotated data and text classification models quickly. The basic idea behind active learning is that the data points where the model is less confident are the data points that contribute most significantly to improving the quality of the model, and therefore only those data points get labeled.
+    - Domain adaptation is a method to address such scenarios; this is also called `transfer learning`. Here, we “transfer” what we learned from one domain (source) with large amounts of data to another domain (target) with less labeled data but large amounts of unlabeled data. This approach for `domain adaptation` in text classification can be summarized as follows:
+        - Start with a large, pre-trained language model trained on a large dataset of the source domain (e.g., Wikipedia data).
+        - Fine-tune this model using the target language’s unlabeled data.
+        - Train a classifier on the labeled target domain data by extracting feature representations from the fine-tuned language model from Step 2.
+
+***Practical Advice***
+`Establish strong baselines`: However, it’s always good to start with simpler approaches and try to establish strong baselines first. This is useful for three main reasons:
+- It helps us get a better understanding of the problem statement and key challenges.
+- Building a quick MVP helps us get initial feedback from end users and stakeholders.
+- A state-of-the-art research model may give us only a minor improvement compared to the baseline, but it might come with a huge amount of technical debt.
+
+`Balance training data`: Some of them are collecting more data, resampling (undersample from majority classes or oversample from minority classes), and weight balancing.
+
+`Combine models and humans in the loop`: In practical scenarios, it makes sense to combine the outputs of multiple classification models with handcrafted rules from domain experts to achieve the best performance for the business. In other cases, it’s practical to defer the decision to a human evaluator if the machine is not sure of its classification decision.
+
+`Make it work, make it better`:  It is always good to build a model quickly, use it to build a system, then start improvement iterations.
+
+`Use the wisdom of many`: Every text classification algorithm has its own strengths and weaknesses. There is no single algorithm that always works well. One way to circumvent this is via ensembling: training multiple classifiers.
+
+### NER ###
 ***Building an NER System***
 However, in real-world scenarios, using the trained model by itself won’t be sufficient, as the data keeps changing and new entities keep getting added, and there will also be some domain-specific entities or patterns that were not seen in generic training datasets. Hence, most NER systems deployed in real-world scenarios use a combination of ML models, gazetteers, and some pattern matching–based heuristics to improve their performance.
 
