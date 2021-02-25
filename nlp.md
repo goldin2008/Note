@@ -262,7 +262,7 @@ However, in our experience as industry practitioners, several NLP tasks, especia
 
 `Make it work, make it better`:  It is always good to build a model quickly, use it to build a system, then start improvement iterations.
 
-`Use the wisdom of many`: Every text classification algorithm has its own strengths and weaknesses. There is no single algorithm that always works well. One way to circumvent this is via ensembling: training multiple classifiers.
+`Use the wisdom of many`: Every text classification algorithm has its own strengths and weaknesses. There is no single algorithm that always works well. One way to circumvent this is via ensembling: training multiple classifiers. The data is passed through every classifier, and the predictions generated are combined (e.g., majority voting) to arrive at a final class prediction.
 
 ### NER ###
 ***Building an NER System***
