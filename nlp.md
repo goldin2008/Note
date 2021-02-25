@@ -159,6 +159,14 @@ we discussed feature engineering techniques using neural networks, such as word 
     - We discussed fastText embeddings [16] in Chapter 3. They’re based on the idea of enriching word embeddings with subword-level information. Thus, the embedding representation for each word is represented as a sum of the representations of individual character n-grams. While this may seem like a longer process compared to just estimating word-level embeddings, it has two advantages:
         - This approach can handle words that did not appear in training data (OOV).
         - The implementation facilitates extremely fast learning on even very large corpora.
+    - However, there’s one concern to keep in mind when using fastText, as was the case with Word2vec embeddings: it uses pre-trained character n-gram embeddings. Thus, when we save the trained model, it carries the entire character n-gram embeddings dictionary with it. This results in a bulky model and can result in engineering issues. fastText is extremely fast to train and very useful for setting up strong baselines. The downside is the model size.
+    - However, both of the embedding representations we’ve seen so far learn a representation of words and characters and collect them together to form a text representation.
+
+3. Document Embeddings
+    - In the Doc2vec embedding scheme, we learn a direct representation for the entire document (sentence/paragraph) rather than each word. Just as we used word and character embeddings as features for performing text classification, we can also use Doc2vec as a feature representation mechanism.
+    - An important point to keep in mind when using Doc2vec is the same as for fastText: if we have to use Doc2vec for feature representation, we have to store the model that learned the representation. While it’s not typically as bulky as fastText, it’s also not as fast to train. Such trade-offs need to be considered and compared before we make a deployment decision.
+
+Over the past few years, it has shown remarkable improvements on standard machine learning tasks, such as image classification, speech recognition, and machine translation.    
 
 
 
