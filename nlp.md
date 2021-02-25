@@ -229,11 +229,11 @@ print("Preparing of embedding matrix is done")
 ***Text Classification with Large, Pre-Trained Language Models***
 These representations have been used successfully for text classification in the recent past by fine-tuning the pre-trained models to the given task and dataset. BERT, which was mentioned in Chapter 3, is a popular model used in this way for text classification.
 
-However, in our experience as industry practitioners, several NLP tasks, especially text classification, still widely use several of the non-DL approaches we described earlier in the chapter. Two primary reasons for this are a lack of the large amounts of task-specific training data that neural networks demand and issues related to computing and deployment costs. in most industrial settings, it always makes sense to start with a simpler, easy-to-deploy approach as your MVP and go from there incrementally, taking customer needs and feasibility into account.
+However, in our experience as industry practitioners, several NLP tasks, especially text classification, still widely use several of the non-DL approaches we described earlier in the chapter. Two primary reasons for this are a lack of the large amounts of task-specific training data that neural networks demand and issues related to computing and deployment costs. in most industrial settings, it always makes sense to start with a simpler, easy-to-deploy approach as your MVP and go from there incrementally, taking customer needs and feasibility into account. Unlike  `heuristics-based approaches` where the predictions can be justified by tracing back the rules applied on the data sample, ML models are treated as a black box while making predictions. However, `in the recent past`, the topic of interpretable ML started to gain prominence, and programs that can “explain” an ML model’s predictions exist now. Let’s take a quick look at their application for text classification.
 
 ***Learning with No or Less Data and Adapting to New Domains***
 1. No Training Data
-    - The first step in such a scenario is creating an annotated dataset where customer complaints are mapped to the set of categories mentioned above. One way to approach this is to get customer service agents to manually label some of the complaints and use that as the training data for our ML model. Another approach is called “bootstrapping” or “weak supervision.” We can get started with compiling some such patterns and using their presence or absence in a customer request to label it, thereby creating a small (perhaps noisy) annotated dataset for this classification task. From here, we can build a classifier to annotate a larger collection of data.
+    - The first step in such a scenario is creating an annotated dataset where customer complaints are mapped to the set of categories mentioned above. One way to approach this is to get customer service agents to manually label some of the complaints and use that as the training data for our ML model. Another approach is called `“bootstrapping” or “weak supervision.”` We can get started with compiling some such patterns and using their presence or absence in a customer request to label it, thereby creating a small (perhaps noisy) annotated dataset for this classification task. From here, we can build a classifier to annotate a larger collection of data.
     - `Snorkel` [30], a recent software tool developed by Stanford University, is useful for deploying weak supervision for various learning tasks, including classification. Snorkel was used to deploy weak supervision–based text classification models at industrial scale at Google [31]. They showed that weak supervision could create classifiers comparable in quality to those trained on tens of thousands of hand-labeled examples! [32] shows an example of how to use Snorkel to generate training data for text classification using a large amount of unlabeled data.
 
 2. Less Training Data: Active Learning and Domain Adaptation
@@ -249,6 +249,10 @@ However, in our experience as industry practitioners, several NLP tasks, especia
         - Start with a large, pre-trained language model trained on a large dataset of the source domain (e.g., Wikipedia data).
         - Fine-tune this model using the target language’s unlabeled data.
         - Train a classifier on the labeled target domain data by extracting feature representations from the fine-tuned language model from Step 2.
+
+![Diagram of rsz_system_monitoring.](pic/pnlp_0411.png)
+
+A sample pipeline summarizing these ideas may look like what’s shown in Figure 4-11. We start with no labeled data and use either a public API or a model created with a public dataset or weak supervision as the first baseline model. Once we put this model to production, we’ll get explicit and implicit signals on where it’s working or failing. We use this information to refine our model and active learning to select the best set of instances that need to be labeled. Over time, as we collect more data, we can build more sophisticated and deeper models.
 
 ***Practical Advice***
 `Establish strong baselines`: However, it’s always good to start with simpler approaches and try to establish strong baselines first. This is useful for three main reasons:
@@ -266,7 +270,7 @@ However, in our experience as industry practitioners, several NLP tasks, especia
 
 ### NER ###
 ***Building an NER System***
-However, in real-world scenarios, using the trained model by itself won’t be sufficient, as the data keeps changing and new entities keep getting added, and there will also be some domain-specific entities or patterns that were not seen in generic training datasets. Hence, most NER systems deployed in real-world scenarios use a combination of ML models, gazetteers, and some pattern matching–based heuristics to improve their performance.
+However, in real-world scenarios, using the trained model by itself won’t be sufficient, as the data keeps changing and new entities keep getting added, and there will also be some domain-specific entities or patterns that were not seen in generic training datasets. Hence, most NER systems deployed in real-world scenarios use a combination of ML models, gazetteers, and some `pattern matching–based heuristics` to improve their performance.
 
 ***NER Using an Existing Library***
 NER has been well researched over the past few decades, and we have off-the-shelf libraries to start with. Stanford NER [28], spaCy, and AllenNLP [29] are some well-known NLP libraries that can be used to incorporate a pre-trained NER model into a software product.
