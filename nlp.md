@@ -166,7 +166,34 @@ we discussed feature engineering techniques using neural networks, such as word 
     - In the Doc2vec embedding scheme, we learn a direct representation for the entire document (sentence/paragraph) rather than each word. Just as we used word and character embeddings as features for performing text classification, we can also use Doc2vec as a feature representation mechanism.
     - An important point to keep in mind when using Doc2vec is the same as for fastText: if we have to use Doc2vec for feature representation, we have to store the model that learned the representation. While it’s not typically as bulky as fastText, it’s also not as fast to train. Such trade-offs need to be considered and compared before we make a deployment decision.
 
+***Deep Learing for Text Classification***
 Over the past few years, it has shown remarkable improvements on standard machine learning tasks, such as image classification, speech recognition, and machine translation.    
+
+Two of the most commonly used neural network architectures for text classification are convolutional neural networks (CNNs) and recurrent neural networks (RNNs). Long short-term memory (LSTM) networks are a popular form of RNNs. Recent approaches also involve starting with large, pre-trained language models and fine-tuning them for the task at hand.
+
+The first step toward training any ML or DL model is to define a feature representation. This step has been relatively straightforward in the approaches we’ve seen so far, with BoW or embedding vectors. However, for neural networks, we need further processing of input vectors, as we saw in Chapter 3. Let’s quickly recap the steps involved in converting training and test data into a format suitable for the neural network input layers:
+1. Tokenize the texts and convert them into word index vectors.
+2. Pad the text sequences so that all text vectors are of the same length.
+```Python
+#Vectorize these text samples into a 2D integer tensor using Keras Tokenizer.
+#Tokenizer is fit on training data only, and that is used to tokenize both train 
+#and test data.
+tokenizer = Tokenizer(num_words=MAX_NUM_WORDS)
+tokenizer.fit_on_texts(train_texts)
+train_sequences = tokenizer.texts_to_sequences(train_texts) 
+test_sequences = tokenizer.texts_to_sequences(test_texts)
+word_index = tokenizer.word_index
+print('Found %s unique tokens.' % len(word_index))
+#Converting this to sequences to be fed into neural network. Max seq. len is 
+#1000 as set earlier. Initial padding of 0s, until vector is of 
+#size MAX_SEQUENCE_LENGTH
+trainvalid_data = pad_sequences(train_sequences, maxlen=MAX_SEQUENCE_LENGTH)
+test_data = pad_sequences(test_sequences, maxlen=MAX_SEQUENCE_LENGTH)
+trainvalid_labels = to_categorical(np.asarray(train_labels))
+test_labels = to_categorical(np.asarray(test_labels))
+```
+3. Map every word index to an embedding vector. We do that by multiplying word index vectors with the embedding matrix. The embedding matrix can either be populated using pre-trained embeddings or it can be trained for embeddings on this corpus.
+4. Use the output from Step 3 as the input to a neural network architecture.
 
 
 
