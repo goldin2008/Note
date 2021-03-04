@@ -263,7 +263,7 @@ Variation of the number of islands LC question. You have a House, Well & Tree ar
 这段时间面试了脸书的码工职位，整理了一下最近地里和朋友那里打听出来的系统设计题目
 - Push notification
 - Search status，或者叫twitter search，一般要求real time，仅限text post。可以参考 https://blog.twitter.com/engineering/en_us/a/2011/the-engineering-behind-twitter-s-new-search-experience.html
-- Aggregation system，一般会考虑到fast和slow两种cases
+- Aggregation system，一般会考虑到fast和slow两种cases: Fast就是要realtime的给出结果来，slow就是不需要及时给结果，可能需要一天一report。另外，fast的方法可以很准确，也可以不精准，但是cost比较高。slow的cost会小一些。这些tradeoff需要和面试官沟通清楚。
 - Design Yelp，经典题目，quadtree或者grid，geohash我自己没多看，觉着重点不在这里
 - Translation syste，两种思路，一个是google translate这种，你可以assume已经有一个现成可用的translation service，然后你要设计一个系统满足三高。另外一个思路可以借鉴一下airbnb的翻译系统 https://medium.com/airbnb-engineering/building-airbnbs-internationalization-platform-45cf0104b63c
 - News feed
