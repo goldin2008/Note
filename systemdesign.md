@@ -302,7 +302,7 @@ Variation of the number of islands LC question. You have a House, Well & Tree ar
 这里还有一篇帖子加两个youtube视频很好的总结了几个热门系统设计题： https://medium.com/the-interview ... stions-ec976c6cdaa9
  这段时间面试了脸书的码工职位，整理了一下最近地里和朋友那里打听出来的系统设计题目，分享出来换大米，换大米~~~
 - Push notification
-- Search status，或者叫twitter search，一般要求real time，仅限text post。可以参考 https://blog.twitter.com/enginee ... rch-experience.html
+- Search status，或者叫twitter search，一般要求real time，仅限text post。可以参考 https://blog.twitter.com/engineering/en_us/a/2011/the-engineering-behind-twitter-s-new-search-experience.html
 - Aggregation system，一般会考虑到fast和slow两种cases
 - Design Yelp，经典题目，quadtree或者grid，geohash我自己没多看，觉着重点不在这里
 - Translation syste，两种思路，一个是google translate这种，你可以assume已经有一个现成可用的translation service，然后你要设计一个系统满足三高。另外一个思路可以借鉴一下airbnb的翻译系统 https://medium.com/airbnb-engine ... atform-45cf0104b63c
