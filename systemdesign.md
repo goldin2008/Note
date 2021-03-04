@@ -260,6 +260,7 @@ Variation of the number of islands LC question. You have a House, Well & Tree ar
 第四轮：design music playlist to display top music
 第五轮：design friends recommendation system
 
+这段时间面试了脸书的码工职位，整理了一下最近地里和朋友那里打听出来的系统设计题目
 - Push notification
 - Search status，或者叫twitter search，一般要求real time，仅限text post。可以参考 https://blog.twitter.com/engineering/en_us/a/2011/the-engineering-behind-twitter-s-new-search-experience.html
 - Aggregation system，一般会考虑到fast和slow两种cases
