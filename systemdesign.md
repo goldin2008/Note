@@ -274,7 +274,7 @@ Variation of the number of islands LC question. You have a House, Well & Tree ar
 - Hashtag trend，类似于topK，YouTube上有个视频讲的挺好 https://www.youtube.com/watch?v=kx-XDoPjoHw&t=53s,
 另外我也很推荐这个哥们儿的channel
 - Live commenting system，个人感觉这个地方偏重考database
-- KV store，经典题，主要靠怎么满足三高
+- KV store，经典题，主要靠怎么满足三高: 高并发,高可用,高一致性，不是一定要满足，重点是讨论tradeoffs
 - Design Facebook Messenge，要求能做到group chat
 - Design Instagram
 - Proximity server backend，参考design Yelp
