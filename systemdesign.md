@@ -292,7 +292,7 @@ Variation of the number of islands LC question. You have a House, Well & Tree ar
 
 看到新题再补充吧，另外我买了Alex Xu出的system design Interview，相当入门非常好读。
 
-这里还有一篇帖子加两个youtube视频很好的总结了几个热门系统设计题： https://medium.com/the-interview ... stions-ec976c6cdaa9
+这里还有一篇帖子加两个youtube视频很好的总结了几个热门系统设计题： https://medium.com/the-interview-sage/top-facebook-system-design-interview-questions-ec976c6cdaa9
 
 ### Google
 Interview Questions
