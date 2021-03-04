@@ -272,10 +272,10 @@ Variation of the number of islands LC question. You have a House, Well & Tree ar
 - Collaborative doc editing，就是设计个google doc
 - Subscription system，比如说youtube的subscription
     - 这道题我自己也没有啥经验，按照举一反三的学习方法来的话我能想到的是：
-        1. 类似于设计一个notification系统，你需要知道从哪里去拿到谁订阅了什么内容的信息，这里能展开的就是一个存储和快速查询的问题。
-        2. 类似于messenger系统设计里的fanout，需要知道如何高效快速的把更新的消息发给订阅了的客户
-        3. 经典的话题，某些topic的订阅量一定远远高于另一些，那怎么做balance
-        4. 需不需要调用第三方的notification service，或者等用户自己来pull？如果pull的话我们就要为每一个用户存储这些消息，那么需要每个客户存一份还是大家share一份？
+    1. 类似于设计一个notification系统，你需要知道从哪里去拿到谁订阅了什么内容的信息，这里能展开的就是一个存储和快速查询的问题。
+    2. 类似于messenger系统设计里的fanout，需要知道如何高效快速的把更新的消息发给订阅了的客户
+    3. 经典的话题，某些topic的订阅量一定远远高于另一些，那怎么做balance
+    4. 需不需要调用第三方的notification service，或者等用户自己来pull？如果pull的话我们就要为每一个用户存储这些消息，那么需要每个客户存一份还是大家share一份？
 - Hashtag trend，类似于topK，YouTube上有个视频讲的挺好 https://www.youtube.com/watch?v=kx-XDoPjoHw&t=53s,
 另外我也很推荐这个哥们儿的channel
 - Live commenting system，个人感觉这个地方偏重考database
