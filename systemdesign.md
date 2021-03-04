@@ -270,7 +270,8 @@ Variation of the number of islands LC question. You have a House, Well & Tree ar
 - i18n，参见上面说的airbnb的翻译系统
 - Collaborative doc editing，就是设计个google doc
 - Subscription system，比如说youtube的subscription
-- Hashtag trend，类似于topK，YouTube上有个视频讲的挺好 https://www.youtube.com/watch?v=kx-XDoPjoHw&t=53s，另外我也很推荐这个哥们儿的channel
+- Hashtag trend，类似于topK，YouTube上有个视频讲的挺好 https://www.youtube.com/watch?v=kx-XDoPjoHw&t=53s,
+另外我也很推荐这个哥们儿的channel
 - Live commenting system，个人感觉这个地方偏重考database
 - KV store，经典题，主要靠怎么满足三高
 - Design Facebook Messenge，要求能做到group chat
