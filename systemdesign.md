@@ -307,3 +307,27 @@ Given two strings, A and B, of the same length n, find whether it is possible to
 have two pointers, first on A and second on end of B. move the pointer l and r (l++, r--) until both values are same( A[l] == B[r]) or l == r. if at any point both are not same just switch the pointer r from B to A and continue. If then it breaks then it is not a palindrome.
 
 You have 52 playing cards (26 red, 26 black). You draw cards one by one. A red card pays you a dollar. A black one fines you a dollar. You can stop any time you want. Cards are not returned to the deck after being drawn. What is the expected payoff following this optimal rule? for this, u need to find what is the optimal stopping rule in terms of maximizing expected payoff.
+
+### Recommender System
+https://towardsdatascience.com/deep-dive-into-netflixs-recommender-system-341806ae3b48
+
+https://dl.acm.org/doi/epdf/10.1145/2843948
+
+https://uxplanet.org/netflix-binging-on-the-algorithm-a3a74a6c1f59
+
+https://github.com/gauravtheP/Netflix-Movie-Recommendation-System/blob/master/NetflixMoviesRecommendation.ipynb
+
+https://madasamy.medium.com/introduction-to-recommendation-systems-and-how-to-design-recommendation-system-that-resembling-the-9ac167e30e95
+
+https://pub.towardsai.net/build-your-own-recommendation-engine-netflix-demystified-demo-code-550401d4885e
+
+https://medium.com/refraction-tech-everything/how-netflix-works-the-hugely-simplified-complex-stuff-that-happens-every-time-you-hit-play-3a40c9be254b
+
+https://www.codecademy.com/articles/how-netflix-recommendation-works-data-science
+
+https://xamat.github.io/pubs/BigAndPersonal.pdf
+
+https://rpubs.com/geeman/599770
+
+https://www.newamerica.org/oti/reports/why-am-i-seeing-this/case-study-netflix/
+
