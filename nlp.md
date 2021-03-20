@@ -293,3 +293,14 @@ What's so hard about PDF text extraction? ​
 
 NER is also very sensitive to the accuracy of the prior steps in its processing pipeline: sentence splitting, tokenization, and POS tagging (refer back to Figure 5-2). To understand how improper sentence splitting can result in poor NER results, try taking the content from the screenshot back in Figure 5-1 and looking at the output from spaCy (see the notebook Ch5/NERIssues.ipynb for a short illustration). So, some amount of pre-processing may be necessary before passing a piece of text into an NER model to extract entities.
 
+### To Do ###
+https://www.coursera.org/learn/sequence-models-in-nlp/programming/TzwWY/lab
+
+https://www.coursera.org/learn/sequence-models-in-nlp/programming/jjKpq/lab
+
+https://trax-ml.readthedocs.io/en/latest/notebooks/trax_intro.html
+
+https://github.com/jiadaizhao/Advanced-Machine-Learning-Specialization/blob/master/Natural%20Language%20Processing/Week2/week2-NER.ipynb
+
+https://github.com/jiadaizhao/Advanced-Machine-Learning-Specialization/blob/master/Natural%20Language%20Processing/Week3/week3-Embeddings.ipynb
+
