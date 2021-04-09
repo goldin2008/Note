@@ -300,6 +300,17 @@ Variation of the number of islands LC question. You have a House, Well & Tree ar
 
 这里还有一篇帖子加两个youtube视频很好的总结了几个热门系统设计题： https://medium.com/the-interview-sage/top-facebook-system-design-interview-questions-ec976c6cdaa9
 
+machine learning design的问题一般都是问设计一个推荐系统，广告排序，还有一般的监督学习的系统。所以准备起来要了解各类的推荐系统的优缺点，以及最新的embeding的方法, 可以看一下这个博客，https://medium.com/the-graph/applying-deep-learning-to-related-pins-a6fee3c92f5e。 
+现在为止，面的两家pinterest和facebook都是围绕着推荐系统展开的，中间会问到各种小问题，比如feature提取，model不够好怎么办。
+另外ML的问题，建议最好按照sd一样，按照逻辑点进行回答。
+1. 厘清问题，该问题属于什么类型的machine learning问题，比如监督性学习，比如推荐系统。
+2. 明确输出目标，明白该问题的目标是什么
+3. 数据收集，了解一下都有哪些数据可以给我们利用
+4. 数据特征提取，把你想到的特征进行分类，都有哪些domain的特征可以进行提取。
+5. 模型，有哪些模型可以使用，然后点出各个模型的优缺点是哪些
+6. 评估，你怎么进行模型的评估好坏，评价指标是什么，还有怎么改进。
+7. 画出框图，然后进行优化。
+
 ### Google
 Interview Questions
 
