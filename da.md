@@ -14,4 +14,3 @@
 5. 30% Communicate the answer
 
 Your hypotheses will often not be supported with the first round of analysis. It is common to need to "go back to the drawing board" and re-develop hypotheses that are more informed than when you started.
-
