@@ -34,4 +34,8 @@ pip install jupyterlab pandas sklearn matplotlib seaborn flake8 pycodestyle_magi
 ```
 
 ## TODO
+> OCR
+
+https://www.kaggle.com/ahoo1260/ocr-post-correction-using-nlp-bert
+
 
