@@ -36,8 +36,6 @@ pip install jupyterlab pandas sklearn matplotlib seaborn flake8 pycodestyle_magi
 ## TODO
 > OCR
 
-> OCR
-
 https://www.kaggle.com/ahoo1260/ocr-post-correction-using-nlp-bert
 
 https://www.kaggle.com/zacchaeus/rl-ocr-pipeline
@@ -53,6 +51,42 @@ https://www.kaggle.com/blagoyh/identifying-handwriting-with-ai-99-6
 https://www.kaggle.com/rrishabhporwal/handwriting-recognisation-on-mnistNLP
 
 > NLP
+
+https://www.kaggle.com/arthurtok/spooky-nlp-and-topic-modelling-tutorial
+
+https://www.kaggle.com/itratrahman/nlp-tutorial-using-python
+
+https://www.kaggle.com/shahules/basic-eda-cleaning-and-glove
+
+https://www.kaggle.com/dijorajsenroy/different-ways-to-use-bert-ner-sent-analysis
+
+https://www.kaggle.com/johoshua/word-embedding-teach-machine-to-learn-words
+
+https://www.kaggle.com/hoonkeng/deep-eda-word-embeddings-sentiment-analysis
+
+https://www.kaggle.com/ankur561999/enron-email-classification-using-word-embeddings
+
+https://www.kaggle.com/jannesklaas/17-nlp-and-word-embeddings
+
+https://www.kaggle.com/tkrsh09/nlp-starter-complete-tpu-bert-guide-keras
+
+https://www.kaggle.com/datafan07/disaster-tweets-nlp-eda-bert-with-transformers
+
+https://www.kaggle.com/lapidshay/bilstm-for-text-classification
+
+https://www.kaggle.com/urbanbricks/keras-lstm-for-document-classification
+
+https://www.kaggle.com/kawiswara/malicious-web-detection-with-1d-cnn
+
+https://www.kaggle.com/muonneutrino/sentiment-analysis-with-amazon-reviews
+
+https://www.kaggle.com/zuhaalfaraj/customer-behavior-prediction-auc-85
+
+https://www.kaggle.com/shival16/2020-kaggle-ml-ds-survey-generation-behavior
+
+https://www.kaggle.com/tuli09/customer-behavior-prediction-model
+
+> NLP 2
 
 https://www.kaggle.com/vbmokin/nlp-eda-bag-of-words-tf-idf-glove-bert
 
@@ -235,4 +269,3 @@ https://docs.microsoft.com/en-us/azure/cognitive-services/bing-spell-check/quick
 https://github.com/pyenchant/pyenchant
 
 https://github.com/KBNLresearch/ochre
-
