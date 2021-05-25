@@ -50,3 +50,7 @@ https://www.kaggle.com/blagoyh/identifying-handwriting-with-ai-99-6
 
 https://www.kaggle.com/rrishabhporwal/handwriting-recognisation-on-mnist
 
+> NLP
+
+https://www.kaggle.com/vbmokin/nlp-eda-bag-of-words-tf-idf-glove-bert
+
