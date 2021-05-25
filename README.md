@@ -38,4 +38,15 @@ pip install jupyterlab pandas sklearn matplotlib seaborn flake8 pycodestyle_magi
 
 https://www.kaggle.com/ahoo1260/ocr-post-correction-using-nlp-bert
 
+https://www.kaggle.com/zacchaeus/rl-ocr-pipeline
+
+https://www.kaggle.com/dmitryyemelyanov/receipt-ocr-part-1-image-segmentation-by-opencv
+
+https://www.kaggle.com/deshwalmahesh/image-processing-1-basic-ocr-feature-pooling-conv
+
+https://www.kaggle.com/samfc10/handwriting-recognition-using-crnn-in-keras
+
+https://www.kaggle.com/blagoyh/identifying-handwriting-with-ai-99-6
+
+https://www.kaggle.com/rrishabhporwal/handwriting-recognisation-on-mnist
 
