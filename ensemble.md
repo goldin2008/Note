@@ -44,7 +44,7 @@ Stacking is designed to improve modeling performance, although is not guaranteed
 
 
 
-### References
+> References
 
 https://machinelearningmastery.com/ensemble-machine-learning-algorithms-python-scikit-learn/
 
