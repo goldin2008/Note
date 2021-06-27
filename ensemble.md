@@ -26,6 +26,8 @@ Stacking is appropriate when multiple different machine learning models have ski
 
 Stacking is designed to improve modeling performance, although is not guaranteed to result in an improvement in all cases. Achieving an improvement in performance depends on the complexity of the problem and whether it is sufficiently well represented by the training data and complex enough that there is more to learn by combining predictions. It is also dependent upon the choice of base models and whether they are sufficiently skillful and sufficiently uncorrelated in their predictions (or errors). If a base-model performs as well as or better than the stacking ensemble, the base model should be used instead, given its lower complexity (e.g. it’s simpler to describe, train and maintain).
 
+
+
 ### TF-IDF LOGIT ###
 
 
