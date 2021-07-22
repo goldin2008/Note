@@ -1,2 +1,3 @@
-NOTE:
+NOTE
 
+## ML in Finance:
