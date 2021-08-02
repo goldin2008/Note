@@ -21,8 +21,8 @@
     2. why cant you parallelise stuff in python?
     3. Some synchronisation stuff 
 2. Community Detection Algorithms
-    1. what is modularity expression?
-    2. What is condition for convergence of modularity based algorithm?
+    1. what is modularity expression?
+    2. What is condition for convergence of modularity based algorithm?
 3. Page Rank Project
     1. What is the condition for convergence of page rank?
     2. ergodicity of a matrix
