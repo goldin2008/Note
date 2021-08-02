@@ -29,7 +29,7 @@
     3. laplacian of a graph
 4. Satellite Image
     1. Attention in Images in a CNN
-    2. how i‍‌‌‍‌‍‌‍‍‌s attention added in a CNN?
+    2. how is attention added in a CNN?
     3. 16 images of a town for the same class, how will you use so many images
         -1. wanted to use attention
         -2. other methods → random cropping, reshaping, different images in different epochs
