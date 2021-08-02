@@ -11,7 +11,7 @@
 7. Can you use decision tree to make a non-linear boundaries like a quadratic one
 8. Explain k-nearest neighbour algo
 9. Gates can be implemented in 1 or 2 hidden layers, don't need more layers
-    1. concept of making gates using neural network
+    - concept of making gates using neural network
 
 
 #### 2nd Interview
