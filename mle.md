@@ -17,9 +17,9 @@
 # 2nd Interview
 
 1. Travelling Salesman Project
-    1. Open MP how did you parallelise the algorithm exactly?
-    2. why cant you parallelise stuff in python?
-    3. Some synchronisation stuff 
+  1. Open MP how did you parallelise the algorithm exactly?
+  2. why cant you parallelise stuff in python?
+  3. Some synchronisation stuff 
 2. Community Detection Algorithms
     1. what is modularity expression?
     2. What is condition for convergence of modularity based algorithm?
