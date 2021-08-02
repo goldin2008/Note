@@ -1,6 +1,6 @@
 ## MLE interview
 ### Amazon
-# 1st Interview
+#### 1st Interview
 
 1. Talk about linear regression, why it is called linear?
 2. Talk about logistic regression, is it linear? 
@@ -14,7 +14,7 @@
     1. concept of making gates using neural network
 
 
-# 2nd Interview
+#### 2nd Interview
 
 1. Travelling Salesman Project
   -1. Open MP how did you parallelise the algorithm exactly?
