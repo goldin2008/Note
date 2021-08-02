@@ -31,8 +31,8 @@
     1. Attention in Images in a CNN
     2. how i‍‌‌‍‌‍‌‍‍‌s attention added in a CNN?
     3. 16 images of a town for the same class, how will you use so many images
-        1. wanted to use attention
-        2. other methods → random cropping, reshaping, different images in different epochs
+        -1. wanted to use attention
+        -2. other methods → random cropping, reshaping, different images in different epochs
     4. Image as word vector can be fed row wise with ordering information
     5. CNN vs Bert of 16 images → what is the difference?
     6. Sequence to Sequence model in Vision Scenario
