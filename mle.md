@@ -52,5 +52,4 @@ batch norm 作用，公式，batch size 不同时mean值不同怎么处理
 l1和l2，公式，作用，特性，推导
 最后了简单‍聊了下attention
 
-train的时候把mean保存下来，inference的时候用保存的值
-0处出现的情况极小，可以忽略不计，一旦出现直接取0
+train的时候把mean保存下来，inference的时候用保存的值. 0处出现的情况极小，可以忽略不计，一旦出现直接取0
