@@ -37,4 +37,8 @@
     5. CNN vs Bert of 16 images → what is the difference?
     6. Sequence to Sequence model in Vision Scenario
  
+ML相关问题：Recall/precision tradeoff， SVM VS LR， support vector如何产生的，Kmeans 是什么和什么的tradeoff（问题问的非常无语，答案是k和purity的tradeoff，面试官期望你说出purity这个单词），通过KNN考察bias/variance tradeoff， 以及工作中有没有遇到过模型选择的问题（比如有哪些system constraint，为什么选该模型）
 
+ML depth：主要是presentation，需要做ppt，顺带问了GBDT和XGboost的异同（推荐看一下XGBoost的论文），以及lightGBM和XGboost的异同
+
+Coding：手写一个KNN。找出最受欢迎的topk个商品 （两道题思路是一摸一样的，都是用‍‌‌‍‌‍‌‍‍‌heap）
