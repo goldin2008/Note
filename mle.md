@@ -43,6 +43,9 @@ ML depth：主要是presentation，需要做ppt，顺带问了GBDT和XGboost的�
 
 Coding：手写一个KNN。找出最受欢迎的topk个商品 （两道题思路是一摸一样的，都是用heap）
 
+第一题，modeling，design buy it again model
+https://assets.amazon.science/40/e5/89556a6341eaa3d7dacc074ff24d/buy-it-again-modeling-repeat-purchase-recommendations.pdf?tag=1p3a-api-20
+
 ### Microsoft
 
 MS 电面，一个西雅图小哥，没有coding，纯ml探讨，要推写公式。
@@ -88,3 +91,13 @@ KL divergence 和 maximum likelihood的关系，SVM实现，LSTM vs transformer
 第二轮店面，手写precision, recall， 和三个ml问题：
 1. sigmoid, relu哪个能解决gradient的啥问题
 2. AUC ?
+
+ML基础，考了多标签和多任务，loss func的不同。最后问了解决过拟合的办法。
+
+问的其实都是非常基础的ML问题：model evaluation, precision&recall, ROC, AUC, logistic regression, comments on different methods such as decision tree, logistic regression, SVM, neural network. 
+
+1. 他问我AUC该如何理解，我就说AUC越大越好，确实不知道有什么解释。他又问是不是说AUC=1就比AUC=0好？我觉得是肯定的
+2. AUC=0.7意味着什么？如何跟别人解释这个prediction？我答不上来，只说model挺好，比0.5好。
+3. 两个不同的models，binary classification的gap一个小一个大，哪个AUC大？我犹豫了一会说是gap大的那个，也没解释。
+4. logistic regression跟linear regression的比较。没答上来，我就说两个差不多。logistic不就是linear加了个sigmoid activation吗？还有啥？
+5. high level评价一下各种方法(就是我上面写的那几个)？该用哪个？我毫无准备，就简要说了一下各个方法存在的问题，并没有对他们比较。感觉答的很失败。
