@@ -60,9 +60,24 @@ train的时候把mean保存下来，inference的时候用保存的值. 0处出�
 
 ML system design面的是设计search engine相关的， system design面的设计fee
 
+### Linkedin
+
+接下来问probability，用什么样的distribution来model这些event最好：扔硬币，掷骰子，接线员下午4-5点接到了10个电话，5-6点会接到几个电话，股票走势等等，可能问了十来个。这里因为不知道要考probability，所以也没有复习到，可能有些没有答对。
+
+再来就是挑一个算法，从头到尾讲。我讲了logistic regression，包括loss function，optimization，regularization。follow-up了两个问题，一是如果MLE换成MAP，求的是什么。二是，为什么logistic regression对于correlated features表现不好。我‍觉得我第二个follow up没答好，也请教各位会如何回答这个问题。
+
 ### Others
 
 第一个面官问了linear regression的各种，还有各种Optimizer。哎，各种oprimizer的区别，我真的只有考试前背过一下，后来就再也没看过。由于签了NDA, 不详细展开了，大家可以参考往这方面复习。
 第二轮跟面官一起解决一个ml的问题，期间他提到能不能用image features加入现有model. 因为楼主自己做过structured feature + free text + image的multi-modality model, 我说根据我的经验，加入Image embedding效果不会提升太多。（可能我是不是不应该跟面试官唱反调，而应该顺着他的意思来回答？但因为我正好做过类似Model，加了图像确实效果提升很小，所以就直接脱口而出了。）然后就开始聊的很不顺利。
 
 KL divergence 和 maximum likelihood的关系，SVM实现，LSTM vs transformer
+
+
+第一轮店面， Alien Dictionary
+和三个ml问题，有一个是logistic regression, random forest, LSTM, NN 哪些是linear的
+其他两个问题不太记得了， 很简单
+
+第二轮店面，手写precision, recall， 和三个ml问题：
+1. sigmoid, relu哪个能解决gradient的啥问题
+2. AUC ?
