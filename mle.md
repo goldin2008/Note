@@ -68,6 +68,13 @@ ML system design面的是设计search engine相关的， system design面的设�
 
 ### Others
 
+5) ML Sys Design
+Build and serve a DL model with given feature engineering logics
+a) how to distributed training
+b) online batch inferencingn
+c) online real-time inferencing, includes data flow design
+d) completeness of all pipelines and how to guarantee consistency of batching inferencing and real-time inferencing.
+
 第一个面官问了linear regression的各种，还有各种Optimizer。哎，各种oprimizer的区别，我真的只有考试前背过一下，后来就再也没看过。由于签了NDA, 不详细展开了，大家可以参考往这方面复习。
 第二轮跟面官一起解决一个ml的问题，期间他提到能不能用image features加入现有model. 因为楼主自己做过structured feature + free text + image的multi-modality model, 我说根据我的经验，加入Image embedding效果不会提升太多。（可能我是不是不应该跟面试官唱反调，而应该顺着他的意思来回答？但因为我正好做过类似Model，加了图像确实效果提升很小，所以就直接脱口而出了。）然后就开始聊的很不顺利。
 
