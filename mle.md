@@ -13,7 +13,6 @@
 9. Gates can be implemented in 1 or 2 hidden layers, don't need more layers
     - concept of making gates using neural network
 
-
 #### 2nd Interview
 
 1. Travelling Salesman Project
@@ -42,4 +41,13 @@ ML相关问题：Recall/precision tradeoff， SVM VS LR， support vector如何�
 
 ML depth：主要是presentation，需要做ppt，顺带问了GBDT和XGboost的异同（推荐看一下XGBoost的论文），以及lightGBM和XGboost的异同
 
-Coding：手写一个KNN。找出最受欢迎的topk个商品 （两道题思路是一摸一样的，都是用‍‌‌‍‌‍‌‍‍‌heap）
+Coding：手写一个KNN。找出最受欢迎的topk个商品 （两道题思路是一摸一样的，都是用heap）
+
+### Microsoft
+
+MS 电面，一个西雅图小哥，没有coding，纯ml探讨，要推写公式。
+闲聊了聊自己的项目，推了一遍arcface 的loss，楼主英语表达一般，纯靠公式和画图给面试官讲明白了
+聊了聊各个loss function，relu 0处求导怎么办等等
+batch norm 作用，公式，batch size 不同时mean值不同怎么处理
+l1和l2，公式，作用，特性，推导
+最后了简单‍聊了下attention
