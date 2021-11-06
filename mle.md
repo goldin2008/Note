@@ -18,6 +18,8 @@ DP ， segment tree/BIT 这些起码 medium 以上的先留一留
 
 每个类别，dfs，bfs，queue，stack，trie tree，binary tree，graph， binary search，等各刷了10道题
 
+youtube上面有个叫花花还有古城算法，你按照那个刷。尤其推荐花花，我记得他有个刷题单子。核心就是相近的题目得放在一起刷，技能体会细节的不同，又能知道哪些是通用的。
+
 ### Amazon
 #### 1st Interview
 
