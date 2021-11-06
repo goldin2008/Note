@@ -16,6 +16,8 @@ DP ， segment tree/BIT 这些起码 medium 以上的先留一留
 搜一下 残酷刷题群 或者 youtube 每日一题，找那个 excel文档，guan大神每个tag基本要连着刷 3~5题，按这个刷 进阶
 还有花花酱 和 古城算法 也不错，不过残酷群是目测几年来一直在update更新的，有些大神已经上岸了所以不再更新的
 
+每个类别，dfs，bfs，queue，stack，trie tree，binary tree，graph， binary search，等各刷了10道题
+
 ### Amazon
 #### 1st Interview
 
