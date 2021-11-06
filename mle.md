@@ -4,6 +4,9 @@
 * Grokking the Coding Interview: Patterns for Coding Questions
 * Grokking-the-system-design-interview
 * Designing Data-intensive Applications
+* 【Grokking Dynamic Programming Patterns for Coding Interviews】
+* 【Data Structures for Coding Interviews in Java】
+* 【Grokking the Object Oriented Design Interview】
 
 ### Amazon
 #### 1st Interview
