@@ -11,19 +11,6 @@
 * 【Data Structures for Coding Interviews in Java】
 * 【Grokking the Object Oriented Design Interview】
 
-`
-题目理解(关键概念)+提出问题(输入输出类型/edge cases/算法使用环境要求)+讨论可行方案(分析时间空间复杂度)+确定最合理方案(保证在规定时间内可以写完/合理简化问题)+coding(write test cases)+follow up（1）做LC的时候我按照算法类别做题， 每周主攻一个topic，（2）中档题目如果最多半小时内自己找不到思路，就看discussion，然后按照discussion自己写一遍。(3)每个专题的题目，先把所有题目题干过一遍，把每类型的题目分类，相似的归为一个小组，合在一起做。（4）每个专题在做题的时候把各种错误和好的思路都用文档记录下来，把重要信息都高亮显示。
-`
-
-刚开始刷 别自己蛮干，有钱可以考虑上个班突击，或者看几个大神那一系列的视频，跟着大神的视频把基本的20几个tag先过一遍，或者把最简单的10个左右能cover easy level的tag先过一遍， 最最高频，最最基础的的 BS二分，分治，二叉树，链表，DFS BFS， 。。etc 先过一遍
-DP ， segment tree/BIT 这些起码 medium 以上的先留一留
-搜一下 残酷刷题群 或者 youtube 每日一题，找那个 excel文档，guan大神每个tag基本要连着刷 3~5题，按这个刷 进阶
-还有花花酱 和 古城算法 也不错，不过残酷群是目测几年来一直在update更新的，有些大神已经上岸了所以不再更新的
-
-每个类别，dfs，bfs，queue，stack，trie tree，binary tree，graph， binary search，等各刷了10道题
-
-youtube上面有个叫花花还有古城算法，你按照那个刷。尤其推荐花花，我记得他有个刷题单子。核心就是相近的题目得放在一起刷，技能体会细节的不同，又能知道哪些是通用的。
-
 ### Amazon
 #### 1st Interview
 
