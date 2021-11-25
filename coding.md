@@ -90,6 +90,24 @@ youtube上面有个叫花花还有古城算法，你按照那个刷。尤其推�
 ## 系统设计
 https://www.jianshu.com/nb/28197258
 
+https://timilearning.com/posts/ddia/notes/
+
+https://github.com/keyvanakbary/learning-notes/blob/master/books/designing-data-intensive-applications.md
+
+https://github.com/donnemartin/system-design-primer
+
+https://leanpub.com/software-architecture-for-developers
+
+https://www.aosabook.org/en/distsys.html
+
+
+## BQ
+
+
+## Mock Interview
+https://www.pramp.com/#/
+
+
 
 
 # 项目简介
