@@ -87,6 +87,10 @@ youtube上面有个叫花花还有古城算法，你按照那个刷。尤其推�
 (8) Binary Index Tree 和Segment Tree涉及到的题目有限，需要记住模板。Segment Tree解法一般来说可以覆盖BIT能解决的问题，但是BIT写起来短一些。
 (9) 复合数据结构里面LRU和LFU相对比较重要。其他的在掌握基本数据结构即复杂度之后，可以随机应变。
 
+### 系统设计
+https://www.jianshu.com/nb/28197258
+
+
 
 # 项目简介
 算法面试圣经(俗称cc150)《Cracking the Coding Interview: 150 Programming Interview Questions and Solutions》。LeetCode上很多的题目都是来自这本书的。
