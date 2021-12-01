@@ -17,6 +17,12 @@ Text classification is a way to categorize documents or pieces of text. By exami
 
 We need to first convert PDF to text format, since the text can not be read directly from PDF format. There are many conversion tools and a lot of variance in output quality. Converting PDF to text is one of the most common features for standard PDF converting tool. However, there could be great difference in output quality. In our daily documents processing, PDF that with multi-column text is somehow inevitable. Unfortunately, many PDF Text converters handle single column text well but fail miserably when presented with a typical multiple-column layout by interlacing the multiple columns. For these journal papers, we need to clean the text, since after conversion from PDF format the text would get scrambled, with pieces of left column being mixed with the right one. Some papers have three columns, making the problem more serious. Another common problem is that the position of splitting is not fixed. Part of content in the first paragraph may be split to the second, or even third paragraph. These would make cleaning text tough.
 
+In this section, we delve into text analysis and use machine learning algorithms to classify documents or pieces of text (sentence, paragraph, section) based on the attitude or emotions of the end user, like interested in them or not. The details of machine learning algorithms and performance evaluation metrics we used here are in section 3.
+For the section classification problem, it consists of 1690 files that are labeled as 1177 positive and 513 negative, where positive means that the user is interested in that text and negative means that the user is not interested in that text. And for the paragraph classification task, it consists of 7543 files (6045 positives and 1498 negatives). I spent a lot of time on the labeling process since the documents are labeled manually. The positves and negatives are placed on different folders. After we got these files, we preprocess them into a useable format for machine learning algorithms, and extract meaningful information from them to feed to models. Then we use these models to predict whether the user is interested in the text or not.
+
+1. To handle text data easier, we read the text data into a pandas DataFrame object and it gives more structured data and better visualization.
+2. 
+
 ### Conclusion
 The contributions of this thesis are:
 1. Web harvesting: We downloaded 38,444 papers with size of 29.53 GB from Digital Library at University of Nebraska Lincoln.
