@@ -31,7 +31,7 @@ For the section classification problem, it consists of 1690 files that are label
 9. The approach of grid search is a brute force exhaustive search paradigm where we specify a list of values for different hyperparameters, and the computer evaluates the model performance for each combination of those to obtain the optimal combination of values. Here, we use 10-fold cross-validation for tuning hyperparameters, since it would help to find the optimal hyperparameter values that yields a satisfying generalization performance. 
 
 `Deep Learning`
-T Size is Tokenizer Size. We can see LSTM achieved the best performance and it shows us that users will get 1 paper which they are interested in given every 2.89 recommendations.
+We can see LSTM achieved the best performance and it shows us that users will get 1 paper which they are interested in given every 2.89 recommendations.
 ### Conclusion
 The contributions of this thesis are:
 1. Web harvesting: We downloaded 38,444 papers with size of 29.53 GB from Digital Library at University of Nebraska Lincoln.
