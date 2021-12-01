@@ -12,6 +12,8 @@ To make system recommend journal papers to users automatically, we built machine
 
 My contributions consist of five parts: Web harvesting, Text Classification, Table Analysis, Named Entity Recognition and Database System Building. Finally all of them can populate a relational database with information automatically extracted from journal papers collected from internet resources, and send users proper recommendations. The reason we used a web crawler to download papers is we need collect papers to build database and the papers are also the basis of the following tasks. Text classification can help identify the section or paragraph in a paper that may be of interest to users based on their own search interest. Named Entity Recognition can extract author and experiment location from paper to store them in data system, and database system will make the future query more efficiently.
 
+### Text Classification
+Text classification is a way to categorize documents or pieces of text. By examining the word usage in a piece of text, classifiers can decide what class label to assign to it. A binary classifier decides between two labels, such as positive review or negative review, desirable or not desirable information. The text can either be one label or another, but not both. The purpose of text classification in this project is to classify the unknown journal paper or pieces of text in it as desirable information or not by training on already highlighted desirable documents, in order to save the users’ new paper seeking time and save the desirable information in queryable database.
 
 ### Conclusion
 The contributions of this thesis are:
