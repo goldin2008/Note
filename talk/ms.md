@@ -32,6 +32,11 @@ For the section classification problem, it consists of 1690 files that are label
 
 `Deep Learning`
 We can see LSTM achieved the best performance and it shows us that users will get 1 paper which they are interested in given every 2.89 recommendations.
+
+Figure \ref{fig:dl_plot} shows the accuracy and loss during training and testing and we can see the gap between train and test makes sense and does not trigger overfitting. To build robust model, we need to catch all true positives and reduce false positives. Figure \ref{fig:dl_cutoff} shows how we search the optimum cutoff to achieve this goal. The top two plots are for Percentage, while the bottom two are for Counts. They give us a clear tracking during the search. We search twice, the first search window is $0$ to $1$ which are probabilities of class 1 (interest). Then we narrow the search window and get a preciser cutoff, since a tiny cutoff change can change the model performance a lot as shown in the Figure \ref{fig:dl_cutoff}.
+
+CM shows we catch all positives and 195 (83\%) negatives. This means every 2.89 suggested papers, users can get 1 which they are interested. 2.89 is calculated on (103+195)/103. Because the data is imbalanced, accuracy is not a good metric for model evaluation. Our goal is to make sure all true positives can be identified since we hope the model does not miss any piece of text which users are interested in, while reduce the false positives since they are undesirable informaiton to users. To achieve this purpose, we built a custom metric which can catch all true positives and reduce false positives as many as it could.
+
 ### Conclusion
 The contributions of this thesis are:
 1. Web harvesting: We downloaded 38,444 papers with size of 29.53 GB from Digital Library at University of Nebraska Lincoln.
