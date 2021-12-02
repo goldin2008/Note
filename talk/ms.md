@@ -109,7 +109,7 @@ The contributions of this thesis are:
 5. Database System Building: We stored the journal paper related information including Title, Publication Date, Abstract, Journal, DOI and Type, authors, city and state extracted from papers by Stanford NER, the count of the occurrences of terms of interest to soil scientists, and infromation contained in the well-formed table converted by the algorithm of Seth et al. \cite{t1} in the Microsoft Access Database.
 
 
-Committee: 
-Prof. Stephen D. Scott
-Prof. Vinodchandran Variyam
-Prof. Ashok Samal
+Committee: \\
+Prof. Stephen D. Scott \\
+Prof. Vinodchandran Variyam \\
+Prof. Ashok Samal \\
