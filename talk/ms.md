@@ -17,6 +17,9 @@ The system overview shown in Figure \ref{fig:big} gives a outline of the contrib
 
 First, we built a web crawler to download soil science journal papers which are the basis to build entire machine learning based system. Then I used tools to convert downloaded journal papers from PDF to TXT format, which is vital for following stages. Second, text classification can help identify the section or paragraph in a paper that may be of interest to users based on their own search interest. Third, Named Entity Recognition can extract author and experiment location from paper to store them in data system. In the forth step, another important information which is of interest to users is table. I did not find any good method to extract table from PDF format directly. It is also not valid for TXT format since the table structure will lose after format conversion. I followed Prof. Seth's well formed table requirement and create tables in CSV format manually and used his program to store the table in a queryable machine readable format. Finally, I populate a relational database with information automatically extracted from journal papers collected from internet resources. The users can query and search key words or highlight some section or paragraph in the paper, then the system will provide the relevant information or recommend a paper which is of interest to users. This system will make future queries more efficient.
 
+### Background
+ROC curves are appropriate when the observations are balanced between each class, whereas precision-recall curves are appropriate for imbalanced datasets. In both cases the area under the curve (AUC) can be used as a summary of the model performance.
+
 ### Web Scraping
 
 
