@@ -58,7 +58,9 @@ CM shows we catch all positives and 195 (83\%) negatives. This means every 2.89 
 
 
 ### Database System
+We used Stanford NER to extract first five authors, city and state from papers, wrote code to extract Title, Publication Date, Abstract, Journal, DOI and Type from papers, and count if keywords defined by soil scientist appear in the paper. Then we used the algorithm of Seth et al. \cite{t1} to convert the well-formed table (manually created by myself) to tables. Finally, we inserted all information mentioned above into Microsoft Access Database.
 
+The details of the system is shown in the Figures \ref{db2} to \ref{db6}. Table \ref{tab:db1} indicates and describes columns stored in database shown in Figure \ref{db2}. And Table \ref{tab:db2} indicates and describes columns stored in database shown in Figures \ref{db4} and \ref{db6}, where keywords are defined by soil scientist and they are used to count the occurrences of terms that soil scientists are interested in, including Conservation, No Tillage, Ridge Tillage, Mulch Tillage, Strip Tillage, Reduced Till etc. in Keyword 1 list and Germanium, Gold, Hafnium, Hassium etc. in Keyword 2 list. 
 
 ### Conclusion
 The contributions of this thesis are:
