@@ -9,7 +9,7 @@ We followed Prof. Seth's well formed table requirement and create tables in CSV 
 
 ### Background
 Embedding layer:
-The Embedding layer is defined as the first hidden layer of a network. It must specify 3 arguments: It must specify 3 arguments: input_dim: This is the size of the vocabulary in the text data.
+The Embedding layer is defined as the first hidden layer of a network.
 An embedding is a relatively low-dimensional space into which you can translate high-dimensional vectors. Embeddings make it easier to do machine learning on large inputs like sparse vectors representing words.
 
 1D-CNN:
