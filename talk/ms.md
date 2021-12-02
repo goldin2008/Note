@@ -107,3 +107,9 @@ The contributions of this thesis are:
 3. Table Analysis: After manually creating different kinds of tables in the journal papers, we used Seth et al.'s approach and found the program could process about 90\% of all tables, which are well-formed tables. For the other 10\% not well-formed tables, the program can not extract correct information.
 4. Named Entity Recognition: We used Stanford's Named Entity Recognition to extract author and experiment location from paper and store them in data system which will make the future query more efficiently. The accuracy can reach about 83\%.
 5. Database System Building: We stored the journal paper related information including Title, Publication Date, Abstract, Journal, DOI and Type, authors, city and state extracted from papers by Stanford NER, the count of the occurrences of terms of interest to soil scientists, and infromation contained in the well-formed table converted by the algorithm of Seth et al. \cite{t1} in the Microsoft Access Database.
+
+
+Committee: 
+Prof. Stephen D. Scott
+Prof. Vinodchandran Variyam
+Prof. Ashok Samal
