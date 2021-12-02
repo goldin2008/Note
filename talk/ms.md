@@ -8,6 +8,16 @@ To make system recommend journal papers to users automatically, we built machine
 We followed Prof. Seth's well formed table requirement and create tables in CSV format manually and used his program to store the table in a queryable machine readable format. The users can query and search key words or highlight some section or paragraph in the paper, then the system will provide the relevant information or recommend a paper which is of interest to users. This system will make future queries more efficient.
 
 ### Background
+Embedding layer:
+The Embedding layer is defined as the first hidden layer of a network. It must specify 3 arguments: It must specify 3 arguments: input_dim: This is the size of the vocabulary in the text data.
+An embedding is a relatively low-dimensional space into which you can translate high-dimensional vectors. Embeddings make it easier to do machine learning on large inputs like sparse vectors representing words.
+
+1D-CNN:
+To process an entire sequence of words, these kernels will slide down a list of word embeddings, in sequence. This is called a 1D convolution because the kernel is moving in only one dimension: time. A single kernel will move one-by-one down a list of input embeddings, looking at the first word embedding (and a small window of next-word embeddings) then the next word embedding, and the next, and so on. The resultant output will be a feature vector.
+
+Multi-Channel CNN:
+Just like in a typical convolutional neural network, one convolutional kernel is not enough to detect all the different kinds of features that will be useful for a classification task. To set up a network so that it is capable of learning a variety of different relationships between words, you’ll need many filters of different heights.
+
 The diagonal of a ROC graph can be interpreted as random guessing and classification models that fall below the diagonal are considered as worse than random guessing. A perfect classifier would fall into the top left corner of the graph with a True Positive Rate of $1$ and a False Positive Rate of $0$. Based on the ROC curve, the so-called Area Under the Curve (AUC) can be used to calculate the performance of a classification model. The bigger AUC value, the better classification model.
 
 `ROC curves are appropriate when the observations are balanced between each class, whereas precision-recall curves are appropriate for imbalanced datasets. In both cases the area under the curve (AUC) can be used as a summary of the model performance.`
