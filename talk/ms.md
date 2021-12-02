@@ -41,9 +41,9 @@ Named entities are definite noun phrases that refer to specific types of individ
 ### Table Analysis
 `In Seth et al.'s algorithm, critical cells (CC1, CC2, CC3, CC4) delineate regions. In a WFT every critical cell must appear in the grid. CC1 and CC2 demarcate the StubHeader and CC3 and CC4 demarcate the Data region. Furthermore, in combination with one another, these critical cells also demarcate both the ColHeader and RowHeader regions. Letting row \textit{$r_i$} and column \textit{$c_i$} be the coordinates of critical cell CCi, a WFT satisfies the following constraints: $r_1 \leq r_2 < r_3 \leq r_4$ and $c_1 \leq c_2 < c_3 \leq c_4$. These constraints guarantee that the ColHeader and RowHeader regions properly align with the Data region and that the Data region is not degenerate. A single row or column of data is acceptable, provided both row and column headers exist.`
 
-In a well-formed table (WFT), every data cell is uniquely indexed by its row and column header paths, which are respectively left of and above the data region. A hierarchical (row or column) header may index one or more categories. A single-category header path consists of the root-to-leaf path of the corresponding category tree. A multi-category header path consists of concatenated category paths.
+`In a well-formed table (WFT), every data cell is uniquely indexed by its row and column header paths, which are respectively left of and above the data region. A hierarchical (row or column) header may index one or more categories. A single-category header path consists of the root-to-leaf path of the corresponding category tree. A multi-category header path consists of concatenated category paths.`
 
-They do not deal with composite tables, nested tables (tables whose data cells may themselves be tables), tables containing graphic data.
+`They do not deal with composite tables, nested tables (tables whose data cells may themselves be tables), tables containing graphic data.`
 
 Their program could transform well-formed tables to a new canonical table format via: segmenting table regions by algorithmic data cell indexing, factoring header paths into categories by algorithmic header analysis, and generating queryable canonical relational tables.
 
