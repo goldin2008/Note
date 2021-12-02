@@ -12,6 +12,12 @@ To make system recommend journal papers to users automatically, we built machine
 
 My contributions consist of five parts: Web harvesting, Text Classification, Table Analysis, Named Entity Recognition and Database System Building. Finally all of them can populate a relational database with information automatically extracted from journal papers collected from internet resources, and send users proper recommendations. The reason we used a web crawler to download papers is we need collect papers to build database and the papers are also the basis of the following tasks. Text classification can help identify the section or paragraph in a paper that may be of interest to users based on their own search interest. Named Entity Recognition can extract author and experiment location from paper to store them in data system, and database system will make the future query more efficiently.
 
+### Web Scraping
+
+
+### Data Statistical Description
+
+
 ### Text Classification
 Text classification is a way to categorize documents or pieces of text. By examining the word usage in a piece of text, classifiers can decide what class label to assign to it. A binary classifier decides between two labels, such as positive review or negative review, desirable or not desirable information. The text can either be one label or another, but not both. The purpose of text classification in this project is to classify the unknown journal paper or pieces of text in it as desirable information or not by training on already highlighted desirable documents, in order to save the users’ new paper seeking time and save the desirable information in queryable database.
 
@@ -44,6 +50,15 @@ We can see LSTM achieved the best performance and it shows us that users will ge
 Figure \ref{fig:dl_plot} shows the accuracy and loss during training and testing and we can see the gap between train and test makes sense and does not trigger overfitting. To build robust model, we need to catch all true positives and reduce false positives. Figure \ref{fig:dl_cutoff} shows how we search the optimum cutoff to achieve this goal. The top two plots are for Percentage, while the bottom two are for Counts. They give us a clear tracking during the search. We search twice, the first search window is $0$ to $1$ which are probabilities of class 1 (interest). Then we narrow the search window and get a preciser cutoff, since a tiny cutoff change can change the model performance a lot as shown in the Figure \ref{fig:dl_cutoff}.
 
 CM shows we catch all positives and 195 (83\%) negatives. This means every 2.89 suggested papers, users can get 1 which they are interested. 2.89 is calculated on (103+195)/103. Because the data is imbalanced, accuracy is not a good metric for model evaluation. Our goal is to make sure all true positives can be identified since we hope the model does not miss any piece of text which users are interested in, while reduce the false positives since they are undesirable informaiton to users. To achieve this purpose, we built a custom metric which can catch all true positives and reduce false positives as many as it could.
+
+### Named Entity Recognition
+
+
+### Table Analysis
+
+
+### Database System
+
 
 ### Conclusion
 The contributions of this thesis are:
