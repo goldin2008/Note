@@ -13,6 +13,7 @@ The Embedding layer is defined as the first hidden layer of a network.
 An embedding is a relatively low-dimensional space into which you can translate high-dimensional vectors. Embeddings make it easier to do machine learning on large inputs like sparse vectors representing words.
 
 1D-CNN:
+Convolutional layers are designed to find spatial patterns in a sequence of words.
 To process an entire sequence of words, these kernels will slide down a list of word embeddings, in sequence. This is called a 1D convolution because the kernel is moving in only one dimension: time. A single kernel will move one-by-one down a list of input embeddings, looking at the first word embedding (and a small window of next-word embeddings) then the next word embedding, and the next, and so on. The resultant output will be a feature vector.
 
 Multi-Channel CNN:
