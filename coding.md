@@ -172,7 +172,6 @@ sys.path.insert(0, os.path.abspath('./common'))
 cc150的题目，知识面广，但是难度相对较小，相当于leetcode的easy题。但是在这些题型中受到启蒙以后，leetcode的题型也会打开思路的。为了扩充一些题量，整理leetcode的类型总结。
 
 ## 计划表
-
 - [x] 统一代码格式
 - [x] 美化文字格式，提升阅读体验
 - [ ] 增加LeetCode的相关专题
