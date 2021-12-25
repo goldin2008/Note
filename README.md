@@ -5,6 +5,16 @@
 > https://www.arthur.ai/blog/2020/4/8/fairness-in-machine-learning-is-tricky
 
 
+## Books list
+
+https://polar-wildflower-43c.notion.site/0ec3885738e94fd28627bd4c857a9fb5?v=10ab37b2428a4991baa80ba248a7e2fd
+
+https://zhuanlan.zhihu.com/p/367753613
+
+https://pages.cs.wisc.edu/~remzi/OSTEP/
+
+
+
 >AWS Account:
 ```
 udacitystudylei@gmail.com
