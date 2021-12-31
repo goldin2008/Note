@@ -12,6 +12,14 @@ https://madewithml.com/
 * 【Data Structures for Coding Interviews in Java】
 * 【Grokking the Object Oriented Design Interview】
 
+![Diagram of deployment.](pic/connect.png)
+
+![Diagram of deployment.](pic/dataops.png)
+
+![Diagram of deployment.](pic/model.png)
+
+![Diagram of deployment.](pic/update.png)
+
 ### Amazon
 #### 1st Interview
 
