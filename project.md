@@ -11,3 +11,4 @@ https://eugeneyan.com/writing/setting-up-python-project-for-automation-and-colla
 7. Lint to Ensure Consistency `pylint`
 8. Check For Type Errors `mypy src`
 9. Build a Wrapper For Developer Experience `Makefile`
+10. Automate Checks with each `git push`
