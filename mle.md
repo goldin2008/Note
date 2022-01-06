@@ -1,7 +1,9 @@
 ## MLE interview
 https://madewithml.com/
 
-到时候把Grokking the Coding Interview: Patterns for Coding Questions也学一下。感觉这两门课，对Machine learning engineer的面试可能就够了（当然，还有机器学习专业方面的你还需要去好好准备） 
+https://eugeneyan.com/writing/testing-ml/
+
+到时候把Grokking the Coding Interview: Patterns for Coding Questions也学一下。感觉这两门课，对Machine learning engineer的面试可能就够了（当然，还有机器学习专业方面的你还需要去好好准备）
 
 > https://www.1point3acres.com/bbs/thread-652770-1-1.html
 
@@ -24,11 +26,11 @@ https://madewithml.com/
 #### 1st Interview
 
 1. Talk about linear regression, why it is called linear?
-2. Talk about logistic regression, is it linear? 
+2. Talk about logistic regression, is it linear?
 3. If we can use one non-linear neuron to train a model, why do we need a lot of layers in our model
 4. How do we detect if model is overfitting?
 5. Talk about one project that you did, what was the objective function, limitations, future scope
-6. Decision trees → do they capture non-linearity? 
+6. Decision trees → do they capture non-linearity?
 7. Can you use decision tree to make a non-linear boundaries like a quadratic one
 8. Explain k-nearest neighbour algo
 9. Gates can be implemented in 1 or 2 hidden layers, don't need more layers
@@ -39,7 +41,7 @@ https://madewithml.com/
 1. Travelling Salesman Project
     1. Open MP how did you parallelise the algorithm exactly?
     2. why cant you parallelise stuff in python?
-    3. Some synchronisation stuff 
+    3. Some synchronisation stuff
 2. Community Detection Algorithms
     1. what is modularity expression?
     2. What is condition for convergence of modularity based algorithm?
@@ -115,7 +117,7 @@ KL divergence 和 maximum likelihood的关系，SVM实现，LSTM vs transformer
 
 ML基础，考了多标签和多任务，loss func的不同。最后问了解决过拟合的办法。
 
-问的其实都是非常基础的ML问题：model evaluation, precision&recall, ROC, AUC, logistic regression, comments on different methods such as decision tree, logistic regression, SVM, neural network. 
+问的其实都是非常基础的ML问题：model evaluation, precision&recall, ROC, AUC, logistic regression, comments on different methods such as decision tree, logistic regression, SVM, neural network.
 
 1. 他问我AUC该如何理解，我就说AUC越大越好，确实不知道有什么解释。他又问是不是说AUC=1就比AUC=0好？我觉得是肯定的
 2. AUC=0.7意味着什么？如何跟别人解释这个prediction？我答不上来，只说model挺好，比0.5好。
