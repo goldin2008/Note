@@ -42,6 +42,7 @@ Depending on the position you’re conducting an interview for, you can incorpor
 
 
 13. Please share a time when you set a goal for yourself and achieved it.
+- being end-to-end
 I found this worrying. It’s difficult to be effective when the data science process (problem framing, data engineering, ML, deployment/maintenance) is split across different people. It leads to coordination overhead, diffusion of responsibility, and lack of a big picture view.
 IMHO, I believe data scientists can be more effective by being end-to-end. Here, I’ll discuss the benefits and counter-arguments, how to become end-to-end, and the experiences of Stitch Fix amakend Netflix. An end-to-end data scientist can identify and solve problems with data, to deliver value. To achieve the goal, they’ll wear as many (or as little) hats as required. They’ll also learn and apply whatever tech, methodology, and process that works. Throughout the process, they ask questions such as:
 What is the problem? Why is it important?
