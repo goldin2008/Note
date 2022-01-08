@@ -42,9 +42,11 @@ Depending on the position you’re conducting an interview for, you can incorpor
 
 
 13. Please share a time when you set a goal for yourself and achieved it.
-
+I found this worrying. It’s difficult to be effective when the data science process (problem framing, data engineering, ML, deployment/maintenance) is split across different people. It leads to coordination overhead, diffusion of responsibility, and lack of a big picture view.
+IMHO, I believe data scientists can be more effective by being end-to-end. Here, I’ll discuss the benefits and counter-arguments, how to become end-to-end, and the experiences of Stitch Fix amakend Netflix.
 
 14. Tell me about your proudest professional accomplishment and why this achievement is significant to you.
 
 
 15. Tell me about your greatest professional failure and how you recovered.
+Allocate tasks to team members in parallel to avoid blockers. Set up reasonable deadline as use advantages of everyone.
