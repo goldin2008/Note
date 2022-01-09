@@ -91,7 +91,7 @@ Define and link to business or technical terms.
 Add references that you might have consulted for your methodology.
 
 ---
-## Other templates, examples, etc
+### Other templates, examples, etc
 - [A Software Design Doc](https://www.industrialempathy.com/posts/design-doc-a-design-doc/) `Google`
 - [Design Docs at Google](https://www.industrialempathy.com/posts/design-docs-at-google/) `Google`
 - [Product Spec of Emoji Reactions on Twitter Messages](https://docs.google.com/document/d/1sUX-sm5qZ474PCQQUpvdi3lvvmWPluqHOyfXz3xKL2M/edit#heading=h.554u12gw2xpd) `Twitter`
