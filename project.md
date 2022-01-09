@@ -55,34 +55,25 @@ If you're A/B testing, how will you assign treatment and control (e.g., customer
 How will you incorporate human intervention into your ML system (e.g., product/customer exclusion lists)?
 
 6. Implementation
-
-6.1. High-level design:
+- 6.1. High-level design:
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Data-flow-diagram-example.svg/1280px-Data-flow-diagram-example.svg.png)
 
 Start by providing a big-picture view. [System-context diagrams](https://en.wikipedia.org/wiki/System_context_diagram) and [data-flow diagrams](https://en.wikipedia.org/wiki/Data-flow_diagram) work well.
-
-6.2. Infra:
+- 6.2. Infra:
 How will you host your system? On-premise, cloud, or hybrid? This will define the rest of this section
-
-6.3. Performance (Throughput, Latency):
+- 6.3. Performance (Throughput, Latency):
 How will your system meet the throughput and latency requirements? Will it scale vertically or horizontally?
-
-6.4. Security:
+- 6.4. Security:
 How will your system/application authenticate users and incoming requests? If it's publicly accessible, will it be behind a firewall?
-
-6.5. Data privacy:
+- 6.5. Data privacy:
 How will you ensure the privacy of customer data? Will your system be compliant with data retention and deletion policies (e.g., [GDPR](https://gdpr.eu/what-is-gdpr/))?
-
-6.6. Monitoring & Alarms:
+- 6.6. Monitoring & Alarms:
 How will you log events in your system? What metrics will you monitor and how? Will you have alarms if a metric breaches a threshold or something else goes wrong?
-
-6.7. Cost:
+- 6.7. Cost:
 How much will it cost to build and operate your system? Share estimated monthly costs (e.g., EC2 instances, Lambda, etc.)
-
-6.8. Integration points:
+- 6.8. Integration points:
 How will your system integrate with upstream data and downstream users?
-
-6.9. Risks & Uncertainties:
+- 6.9. Risks & Uncertainties:
 Risks are the known unknowns; uncertainties are the unknown unknows. What worries you and you would like others to review?
 
 7. Appendix:
