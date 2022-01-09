@@ -86,10 +86,8 @@ How will your system integrate with upstream data and downstream users?
 Risks are the known unknowns; uncertainties are the unknown unknows. What worries you and you would like others to review?
 
 7. Appendix:
-
 - 7.1. Alternatives:
 What alternatives did you consider and exclude? List pros and cons of each alternative and the rationale for your decision.
-
 - 7.2. Experiment Results:
 Share any results of offline experiments that you conducted.
 - 7.3. Performance benchmarks:
