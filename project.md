@@ -87,7 +87,7 @@ Risks are the known unknowns; uncertainties are the unknown unknows. What worrie
 
 7. Appendix:
 
-7.1. Alternatives:
+- 7.1. Alternatives:
 What alternatives did you consider and exclude? List pros and cons of each alternative and the rationale for your decision.
 
 7.2. Experiment Results:
