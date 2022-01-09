@@ -1,5 +1,5 @@
 ## Project
-### Setup
+### setup
 https://eugeneyan.com/writing/setting-up-python-project-for-automation-and-collaboration/
 
 1. Install a Python Version Manager
