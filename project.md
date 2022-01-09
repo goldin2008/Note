@@ -90,19 +90,15 @@ Risks are the known unknowns; uncertainties are the unknown unknows. What worrie
 - 7.1. Alternatives:
 What alternatives did you consider and exclude? List pros and cons of each alternative and the rationale for your decision.
 
-7.2. Experiment Results:
+- 7.2. Experiment Results:
 Share any results of offline experiments that you conducted.
-
-7.3. Performance benchmarks:
+- 7.3. Performance benchmarks:
 Share any performance benchmarks you ran (e.g., throughput vs. latency vs. instance size/count).
-
-7.4. Milestones & Timeline:
+- 7.4. Milestones & Timeline:
 What are the key milestones for this system and the estimated timeline?
-
-7.5. Glossary:
+- 7.5. Glossary:
 Define and link to business or technical terms.
-
-7.6. References:
+- 7.6. References:
 Add references that you might have consulted for your methodology.
 
 ---
