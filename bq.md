@@ -6,18 +6,19 @@ https://www.indeed.com/hire/c/info/behavioral-interview-questions-to-ask-candida
 Depending on the position you’re conducting an interview for, you can incorporate some or all of the following 15 behavioral interview questions into the process. Doing so will help you identify the right candidate for your organization.
 
 1. Can you give me an example of a difficult problem you solved at work? How did you go about reaching a solution?
-
+`proudest achievement`
 
 2. Tell me about a time when you made a mistake. How did you handle this experience?
-
+`failure`
 
 3. Please share a time when you faced an unexpected challenge. How did you overcome this challenge?
-
+`failure`
 
 4. Can you tell me about a time when things didn’t work out well?
-
+`failure`
 
 5. Tell me about a time when you had to develop a new skill. How do you approach the learning process?
+`Learn end-to-end pipeline/take multiple roles`
 - The best way to pick it up is via learning by doing
 If you’re still keen on becoming more end-to-end, we’ll now discuss how to do so. Before that, without going into specific technology, here are the buckets of skills that end-to-end data scientists commonly use:
 Product: Understand customer problems, define and prioritize requirements
@@ -40,6 +41,7 @@ While volunteers may be assigned specific roles (e.g., PM, DS), you’re always 
 
 
 6. Please share a time when you had to share or pitch an idea to someone in a more senior position. How did you go about this task, and what was the outcome?
+`Learn end-to-end pipeline/take multiple roles`
 - The goal of data science is not to execute. Rather, the goal is to learn and develop new business capabilities. … There are no blueprints; these are new capabilities with inherent uncertainty. … All the elements you’ll need must be learned through experimentation, trial and error, and iteration. – Eric Colson
 He suggests that data science roles should be made more general, with broad responsibilities agnostic to technical function and optimized for learning. Thus, his team hires and grows generalists who can conceptualize, model, implement, and measure. Of course, this is dependent on a solid data platform that abstracts away the complexities of infra setup, distributed processing, monitoring, automated failover, etc.
 Having end-to-end data scientists improved Stitch Fix’s learning and innovation capabilities, enabling them to discover and build more business capabilities (relative to a specialist team).
@@ -47,6 +49,7 @@ Netflix Edge Engineering initially had specialized roles. However, this created 
 To address this, they experimented with Full Cycle Developers who were empowered to work across the entire software life cycle. This required a mindset shift—instead of just considering design and development, devs also had to consider deployment and reliability.
 To support full cycle devs, centralized teams built tooling to automate and simplify common development process (e.g., build and deploy pipelines, monitoring, managed rollbacks). Such tooling is reusable across multiple teams, acts as a force multiplier, and helped devs be effective across the entire cycle.
 With the full cycle developer approach, Edge Engineering was able to iterate quicker (instead of coordinating across teams), with faster and more routine deployments.
+Data science is part software engineering, part research and innovation, and fully about using data to create impact and value. Aspects of data science that work well with agile tend to be more of the engineering nature, while those closer related to research tends not to fit as well.
 -  my examples
 At IBM, I was on a team that created job recommendations for staff. Running the entire pipeline took a very long time. I thought we could halve the time by moving the data prep and feature engineering pipelines into the database. But, the database guy didn’t have time to test this. Being impatient, I ran some benchmarks and reduced overall run time by 90%. This allowed us to experiment 10x faster and save on compute cost in production.
 While building Lazada’s ranking system, I found Spark necessary for data pipelines (due to the large data volume). However, our cluster only supported the Scala API which I was unfamiliar with. Not wanting to wait (for data engineering support), I chose the faster—but painful—route of figuring out Scala Spark and writing the pipelines myself. This likely halved dev time and gave me a better understanding of the data to build a better model.
@@ -59,24 +62,31 @@ Instead, I’m trying to convince that end-to-end visibility, cohesion (i.e., re
 
 
 7. Tell me about a time when you had a task to complete with a tight deadline.
-
+`proudest achievement`
 
 8. How do you resolve situations with difficult clients?
-
+`Learn end-to-end pipeline/take multiple roles`
+as MLE to solve DS issues.
+Difficult clients are part of any business, particularly fields such as customer service and sales. Clients can place unrealistic demands, refuse to listen and even become rude, but it’s important to remain professional no matter what. Being able to resolve situations with difficult clients is an important skill in itself that indicates professionalism, grace and patience.
+For me, the first step in dealing with a difficult client is getting on the same page. When things don’t go a person’s way, they often assume you’re malicious and become defensive. Of course, this isn’t the case, and my first priority is proving this. Once I reassure a difficult client that their success is also in my best interest, it always becomes easier to resolve their problem.
 
 9. Tell me about a time when you experienced conflict at work. How did you overcome it?
-
+`failure`
 
 10. What’s one thing you’ve done in your professional history that you wish you would have handled differently?
-
+`failure`
 
 11. As a leader, how do you motivate those who follow you?
-
+`Learn end-to-end pipeline/take multiple roles`
+allocate tasks to proper individuals
+Those in leadership positions need to be able to motivate their subordinates. Good morale is one of the keys to maximizing the quality of work, as well as quantity. By learning how a person motivates their team members, you’ll gain a look into their interpersonal skills, maturity and knack for management.
+I believe that when you set people up to succeed while doing work they’re good at, they motivate themselves. I get to know my team members as individuals, make use of their unique skills and show my appreciation and awareness for the contributions they make.
 
 12. Tell me about a time when you were under a lot of stress. How did you handle this pressure?
-
+`failure` or `proudest achievement`
 
 13. Please share a time when you set a goal for yourself and achieved it.
+`proudest achievement`
 https://eugeneyan.com/writing/end-to-end-data-science/
 - being end-to-end
 I found this worrying. It’s difficult to be effective when the data science process (problem framing, data engineering, ML, deployment/maintenance) is split across different people. It leads to coordination overhead, diffusion of responsibility, and lack of a big picture view.
@@ -123,7 +133,8 @@ Others have also made arguments for why data scientists should specialize (and n
 
 
 14. Tell me about your proudest professional accomplishment and why this achievement is significant to you.
-
+`proudest achievement`
 
 15. Tell me about your greatest professional failure and how you recovered.
+`failure`
 Allocate tasks to team members in parallel to avoid blockers. Set up reasonable deadline as use advantages of everyone.
