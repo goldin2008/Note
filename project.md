@@ -36,7 +36,6 @@ Functional requirements are those that should be met to ship the project. They s
 Non-functional/technical requirements are those that define system quality and how the system should be implemented. These include performance (throughput, latency, error rates), cost (infra cost, ops effort), security, data privacy, etc.
 
 Constraints can come in the form of non-functional requirements (e.g., cost below $`x` a month, p99 latency < `y`ms)
-
 - 4.1 What's in-scope & out-of-scope?
 Some problems are too big to solve all at once. Be clear about what's out of scope.
 
