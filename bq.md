@@ -109,7 +109,7 @@ Having the end-to-end data scientist take ownership and responsibility for the e
 Diffusion of responsibility: We are less likely to take responsibility and act when there are others present. Individuals feel less responsibility and urgency to help if we know that there are others also watching the situation.
 Social loafing: We exert less effort when we work in a group vs. working alone. In the 1890s, Ringelmann made people pull on ropes both separately and in groups. He measured how hard they pulled and found that members of a group tended to exert less effort in pulling a rope than did individuals alone.
 
-For (some) data scientists, it can lead to increased motivation and job satisfaction, which is closely tied to autonomy, mastery, and purpose.
+- For (some) data scientists, it can lead to increased motivation and job satisfaction, which is closely tied to autonomy, mastery, and purpose.
 Autonomy: By being able to solve problems independently. Instead of waiting and depending on others, end-to-end data scientists are able to identify and define the problem, build their own data pipelines, and deploy and validate a solution.
 Mastery: In the problem, solution, outcome from end-to-end. They can also pick up the domain and tech as required.
 Purpose: By being deeply involved in the entire process, they have a more direct connection with the work and outcomes, leading to an increased sense of purpose.
