@@ -32,26 +32,21 @@ Non-functional/technical requirements are those that define system quality and h
 
 Constraints can come in the form of non-functional requirements (e.g., cost below $`x` a month, p99 latency < `y`ms)
 
-4.1 What's in-scope & out-of-scope?
+- 4.1 What's in-scope & out-of-scope?
 Some problems are too big to solve all at once. Be clear about what's out of scope.
 
 5. Methodology
-
-5.1. Problem statement:
+- 5.1. Problem statement:
 How will you frame the problem? For example, fraud detection can be framed as an unsupervised (outlier detection, graph cluster) or supervised problem (e.g., classification).
-
-5.2. Data:
+- 5.2. Data:
 What data will you use to train your model? What input data is needed during serving?
-
-5.3. Techniques:
+- 5.3. Techniques:
 What machine learning techniques will you use? How will you clean and prepare the data (e.g., excluding outliers) and create features?
-
-5.4. Experimentation & Validation:
+- 5.4. Experimentation & Validation:
 How will you validate your approach offline? What offline evaluation metrics will you use?
 
 If you're A/B testing, how will you assign treatment and control (e.g., customer vs. session-based) and what metrics will you measure? What are the success and [guardrail](https://medium.com/airbnb-engineering/designing-experimentation-guardrails-ed6a976ec669) metrics?
-
-5.5. Human-in-the-loop:
+- 5.5. Human-in-the-loop:
 How will you incorporate human intervention into your ML system (e.g., product/customer exclusion lists)?
 
 6. Implementation
