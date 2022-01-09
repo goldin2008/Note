@@ -13,6 +13,11 @@ https://eugeneyan.com/writing/setting-up-python-project-for-automation-and-colla
 9. Build a Wrapper For Developer Experience `Makefile`
 10. Automate Checks with each `git push`
 
+### testing
+https://github.com/eugeneyan/testing-ml
+
+https://eugeneyan.com/writing/testing-ml/
+
 ### ml-design-doc
 https://github.com/eugeneyan/ml-design-docs
 
