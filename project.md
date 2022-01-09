@@ -16,11 +16,10 @@ https://eugeneyan.com/writing/setting-up-python-project-for-automation-and-colla
 ### ml-design-doc
 https://github.com/eugeneyan/ml-design-docs
 
-1. Overview
-
+1. Overview:
 A summary of the doc's purpose, problem, solution, and desired outcome, usually in 3-5 sentences.
 
-2. Motivation
+2. Motivation:
 Why the problem is important to solve, and why now.
 
 ## 3. Success metrics
