@@ -3,6 +3,8 @@ https://madewithml.com/
 
 https://eugeneyan.com/writing/testing-ml/
 
+https://completedesigninterviewcourse.com/system-design-interview/
+
 到时候把Grokking the Coding Interview: Patterns for Coding Questions也学一下。感觉这两门课，对Machine learning engineer的面试可能就够了（当然，还有机器学习专业方面的你还需要去好好准备）
 
 > https://www.1point3acres.com/bbs/thread-652770-1-1.html
@@ -21,6 +23,15 @@ https://eugeneyan.com/writing/testing-ml/
 ![Diagram of deployment.](pic/model.png)
 
 ![Diagram of deployment.](pic/update.png)
+
+### System Design for Recommendations and Search
+https://eugeneyan.com/writing/system-design-for-discovery/
+
+1. `The offline environment` largely hosts batch processes such as model training (e.g., representation learning, ranking), creating embeddings for catalog items, and building an approximate nearest neighbors (ANN) index or knowledge graph to find similar items. It may also include loading item and user data into a feature store that is used to augment input data during ranking.
+2. `The online environment` then uses the artifacts generated (e.g., ANN indices, knowledge graphs, models, feature stores) to serve individual requests. A typical approach is converting the input item or search query into an embedding, followed by candidate retrieval and ranking. There are also other preprocessing steps (e.g., standardizing queries, tokenization, spell check) and post-processing steps (e.g., filtering undesirable items, business logic) though we won’t discuss them in this writeup.
+3. `Candidate retrieval` is a fast—but coarse—step to narrow down millions of items into hundreds of candidates. We trade off precision for efficiency to quickly narrow the search space (e.g., from millions to hundreds, a 99.99% reduction) for the downstream ranking task. Most contemporary retrieval methods convert the input (i.e., item, search query) into an embedding before using ANN to find similar items. Nonetheless, in the examples below, we’ll also see systems using graphs (DoorDash) and decision trees (LinkedIn).
+4. `Ranking` is a slower—but more precise—step to score and rank top candidates. As we’re processing fewer items (i.e., hundreds instead of millions), we have room to add features that would have been infeasible in the retrieval step (due to compute and latency constraints). Such features include item and user data, and contextual information. We can also use more sophisticated models with more layers and parameters.
+
 
 ### Amazon
 #### 1st Interview
