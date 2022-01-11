@@ -65,6 +65,16 @@ Instead, I’m trying to convince that end-to-end visibility, cohesion (i.e., re
 `proudest achievement`
 
 8. How do you resolve situations with difficult clients?
+https://www.callcentrehelper.com/the-top-50-interview-questions-and-how-to-handle-them-8000.htm
+https://www.myperfectresume.com/career-center/interviews/questions/handling-a-difficult-customer
+https://www.thebalancecareers.com/how-would-you-handle-an-angry-call-from-a-customer-2059720
+https://broadly.com/blog/examples-of-difficult-customers/
+https://www.snagajob.com/blog/post/tell-me-about-a-time-you-dealt-with-a-difficult-customer
+https://www.nextiva.com/blog/how-to-deal-with-difficult-customers.html
+https://www.vendhq.com/blog/how-to-deal-with-difficult-customers/
+https://www.mindtools.com/pages/article/unhappy-customers.htm
+https://www.glassdoor.com/blog/guide/example-of-dealing-with-a-difficult-customer-interview-question/
+https://blog.hubspot.com/service/how-to-deal-with-difficult-customers
 `Learn end-to-end pipeline/take multiple roles`
 as MLE to solve DS issues.
 Difficult clients are part of any business, particularly fields such as customer service and sales. Clients can place unrealistic demands, refuse to listen and even become rude, but it’s important to remain professional no matter what. Being able to resolve situations with difficult clients is an important skill in itself that indicates professionalism, grace and patience.
