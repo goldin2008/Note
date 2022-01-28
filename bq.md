@@ -1,6 +1,7 @@
 ### Behavior Questions
 https://www.indeed.com/hire/c/info/behavioral-interview-questions-to-ask-candidates
 
+https://www.amazon.jobs/en/principles
 
 15 top behavioral interview questions
 Depending on the position you’re conducting an interview for, you can incorporate some or all of the following 15 behavioral interview questions into the process. Doing so will help you identify the right candidate for your organization.
