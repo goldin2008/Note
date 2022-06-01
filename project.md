@@ -1,4 +1,24 @@
 ## Project
+### work
+There are some problems we encountered in our qa converse project, and those pain points are actually for all NLP related tasks due to lack of existing platform and support.
+
+To Solve theses pain points, we built a pipeline and 
+including data and model storage and versioning in qa converse projects, experiments comparison and parameters/hyperparameters selection, and outdated dependencies monitoring.
+
+1. Data and Models Storage
+Github is not a good place to store due to security and capacity limit.
+Store our data and models in S3 bucket.
+
+2. Automation
+model training, testing, refitting and deployment, experiments comparison and optimum parameters/hyperparameters selection
+
+3. Real production environment
+Since we can not test application in production directly.
+We use Fastapi and built an API to make inference and test model and make sure it works in real production evnironment.
+
+4. Automatic Reporting
+EDA, model performance, environments(ibraries and dependencies) and business value.
+
 ### setup
 https://eugeneyan.com/writing/setting-up-python-project-for-automation-and-collaboration/
 
