@@ -1,9 +1,13 @@
 ## Project
 ### work
 There are some problems we encountered in our qa converse project, and those pain points are actually for all NLP related tasks due to lack of existing platform and support.
+1. data and model storage and security issue due to github capacity limit
+2. experiments, data and model versioning
+3. optimum parameters/hyperparameters selection trials
+4. environment and outdated libraries, dependencies test and monitoring
+5. one-time code and project
 
-To Solve theses pain points, we built a pipeline and 
-including data and model storage and versioning in qa converse projects, experiments comparison and parameters/hyperparameters selection, and outdated dependencies monitoring.
+To Solve theses pain points, I built a ML pipeline including data ingestion, model training, testing, refitting, deployment, monitoring and reporting.
 
 1. Data and Models Storage
 Github is not a good place to store due to security and capacity limit.
