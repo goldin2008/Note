@@ -36,6 +36,14 @@
 
 > https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=462348&extra=page%3D1
 
+> https://kuhungio.me/2019/machine_learning_system_design/
+
+> https://www.jiqizhixin.com/articles/2021-01-26-3
+
+> https://www.jiqizhixin.com/articles/2019-11-26-5
+
+> https://pxiaoer.blog/2021/01/26/cs329s/
+
 1. Build a recommendation system that shows relevant products to users
 2. Build a visual understanding system for a self-driving car
 3. Build a search-ranking system
