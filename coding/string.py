@@ -1,6 +1,6 @@
 class Solution:
     #1.去除多余的空格
-    def trim_spaces(self,s):     
+    def trim_spaces(self, s):     
         n=len(s)
         left=0
         right=n-1
@@ -18,7 +18,7 @@ class Solution:
             left+=1
         return tmp
     #2.翻转字符数组
-    def reverse_string(self,nums,left,right):
+    def reverse_string(self, nums, left, right):
         while left<right:
             nums[left], nums[right]=nums[right],nums[left]
             left+=1
@@ -40,6 +40,6 @@ class Solution:
     #4.翻转字符串里的单词
     def reverseWords(self, s): #测试用例："the sky is blue"
         l = self.trim_spaces(s)   #输出：['t', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e'
-        self.reverse_string( l,  0, len(l) - 1)   #输出：['e', 'u', 'l', 'b', ' ', 's', 'i', ' ', 'y', 'k', 's', ' ', 'e', 'h', 't']
+        self.reverse_string(l, 0, len(l)-1)   #输出：['e', 'u', 'l', 'b', ' ', 's', 'i', ' ', 'y', 'k', 's', ' ', 'e', 'h', 't']
         self.reverse_each_word(l)               #输出：['b', 'l', 'u', 'e', ' ', 'i', 's', ' ', 's', 'k', 'y', ' ', 't', 'h', 'e']
         return ''.join(l)         #输出：blue is sky the
