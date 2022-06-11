@@ -43,3 +43,4 @@ class Solution:
         self.reverse_string(l, 0, len(l)-1)   #输出：['e', 'u', 'l', 'b', ' ', 's', 'i', ' ', 'y', 'k', 's', ' ', 'e', 'h', 't']
         self.reverse_each_word(l)               #输出：['b', 'l', 'u', 'e', ' ', 'i', 's', ' ', 's', 'k', 'y', ' ', 't', 'h', 'e']
         return ''.join(l)         #输出：blue is sky the
+
