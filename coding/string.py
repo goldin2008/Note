@@ -44,3 +44,5 @@ class Solution:
         self.reverse_each_word(l)               #输出：['b', 'l', 'u', 'e', ' ', 'i', 's', ' ', 's', 'k', 'y', ' ', 't', 'h', 'e']
         return ''.join(l)         #输出：blue is sky the
 
+
+
