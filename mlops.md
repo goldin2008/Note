@@ -8,7 +8,7 @@ https://github.com/goldin2008/mlops_deploy_fastapi
 
 https://github.com/goldin2008/mlops_risk_system
 
-## Online Course
+## Online Courses
 `Udacity`
 > Machine Learning DevOps Engineer
 
@@ -20,6 +20,16 @@ https://github.com/goldin2008/mlops_risk_system
 
 > Natural Language Processing Nanodegree
 
+`Coursera`
+> Practical Data Science on the AWS Cloud (Amazon Web Services)
+
+> Modern Application Development with Python on AWS (Amazon Web Services)
+
+> DevOps on AWS (Amazon Web Services)
+
+> Machine Learning Engineering for Production (MLOps) (DeepLearning.AI)
+
+> Building Cloud Computing Solutions at Scale (Duke University)
 
 ## ML pipeline
 http://patrickhalina.com/posts/ml-systems-design-interview-guide/
