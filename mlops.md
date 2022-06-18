@@ -16,6 +16,10 @@ https://github.com/goldin2008/mlops_risk_system
 
 > Data Scientist Nanodegree
 
+> Data Streaming Nanodegree
+
+> Natural Language Processing Nanodegree
+
 
 ## ML pipeline
 http://patrickhalina.com/posts/ml-systems-design-interview-guide/
