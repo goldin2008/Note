@@ -9,10 +9,12 @@ https://github.com/goldin2008/mlops_deploy_fastapi
 https://github.com/goldin2008/mlops_risk_system
 
 ## Online Course
-`Machine Learning DevOps Engineer`
+`Udacity`
+> Machine Learning DevOps Engineer
 
-`Data Engineering Nanodegree`
-`Data Scientist Nanodegree`
+> Data Engineering Nanodegree
+
+> Data Scientist Nanodegree
 
 
 ## ML pipeline
