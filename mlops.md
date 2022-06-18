@@ -12,7 +12,6 @@ https://github.com/goldin2008/mlops_risk_system
 `Machine Learning DevOps Engineer`
 
 `Data Engineering Nanodegree`
-
 `Data Scientist Nanodegree`
 
 
