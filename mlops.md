@@ -46,9 +46,11 @@
 > Building Cloud Computing Solutions at Scale (Duke University)
 
 ## ML pipeline
-http://patrickhalina.com/posts/ml-systems-design-interview-guide/
+> http://patrickhalina.com/posts/ml-systems-design-interview-guide/
 
-https://docs.google.com/document/d/1_-hKt2YmXxe3aJDb1Mk_lZpBBUq3Gk4OVIYrub_8b0Q/edit#heading=h.6ywr8ha9mniw
+> https://docs.google.com/document/d/1_-hKt2YmXxe3aJDb1Mk_lZpBBUq3Gk4OVIYrub_8b0Q/edit#heading=h.6ywr8ha9mniw
 
-https://medium.com/analytics-vidhya/fundamentals-of-mlops-part-1-a-gentle-introduction-to-mlops-1b184d2c32a8
+> https://medium.com/analytics-vidhya/fundamentals-of-mlops-part-1-a-gentle-introduction-to-mlops-1b184d2c32a8
 
+`Setup Jenkins pipeline`
+> https://opensource.com/article/19/9/intro-building-cicd-pipelines-jenkins
