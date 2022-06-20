@@ -2,7 +2,7 @@
 ## Projects
 `Udacity Machine Learning DevOps Engineer`
 
-https://github.com/goldin2008/mlops_clean_code
+> https://github.com/goldin2008/mlops_clean_code
 
 https://github.com/goldin2008/mlops_model_workflow
 
