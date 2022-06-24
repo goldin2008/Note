@@ -124,3 +124,5 @@ Docker and other container technologies are currently taking the infrastructure 
 
 `Setup Jenkins pipeline`
 > https://opensource.com/article/19/9/intro-building-cicd-pipelines-jenkins
+
+### Model retrain and refit
