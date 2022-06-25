@@ -1,4 +1,13 @@
 ## MLE interview
+`面试总结`
+> https://zhuanlan.zhihu.com/p/58434325
+
+> https://zhuanlan.zhihu.com/p/82105066
+
+> https://www.zhihu.com/question/56676679
+
+> https://msank00.github.io/blog/
+
 `机器学习面试笔试求职必背！八股文`
 > https://zhuanlan.zhihu.com/p/404809298
 
@@ -9,7 +18,6 @@
 > https://blog.csdn.net/qq_18822147/article/details/120243772
 
 > https://www.cnblogs.com/ljygoodgoodstudydaydayup/category/2074962.html
-
 
 `机器学习八股文`
 > https://www.1point3acres.com/bbs/thread-713903-1-1.html
