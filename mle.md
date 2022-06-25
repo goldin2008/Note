@@ -1,4 +1,16 @@
 ## MLE interview
+`机器学习面试笔试求职必背！八股文`
+> https://zhuanlan.zhihu.com/p/404809298
+
+> https://zhuanlan.zhihu.com/p/405194507
+
+> https://zhuanlan.zhihu.com/p/405197734
+
+> https://blog.csdn.net/qq_18822147/article/details/120243772
+
+> https://www.cnblogs.com/ljygoodgoodstudydaydayup/category/2074962.html
+
+
 `机器学习八股文`
 > https://www.1point3acres.com/bbs/thread-713903-1-1.html
 > https://northern-dracopelta-98c.notion.site/5b22e124e16d4b2d937940367ca20eb0?v=19feabb85e9e4b54bc498579b3c7f1c5
@@ -8,7 +20,6 @@
 > https://www.1point3acres.com/bbs/thread-714558-1-1.html
 
 > https://www.zhihu.com/people/is-aze/posts
-
 
 > https://zhuanlan.zhihu.com/p/405194507
 
