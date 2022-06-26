@@ -220,6 +220,6 @@ Special considerations need to be taken if your model is operating in an adverse
 1. What is retrain and refit?
 2. Metric to decide whether to do it or not/fixed periodic interval
 3. Monitor
-4. Retrain or Refit (Get live data or batch data/label)
+4. Retrain or Refit (Get live data or batch data/label) Repeatability of Experiments: MLFlow, KubeFlow
 5. Before and after comparison
 6. Infra (Container, Kubernetes, Data ingestion, CI/CD)
