@@ -132,9 +132,41 @@ Docker and other container technologies are currently taking the infrastructure 
 
 > https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45742.pdf
 
+> https://machinelearningmastery.com/gentle-introduction-concept-drift-machine-learning/
+
+> https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45742.pdf
+
+
 Once the optimal model is found, it’s released out into the wild with the goal of generating accurate predictions on future unseen data. Ideally, we hope that our models predict these future instances as accurately as the data used during the training process. When we deploy models to production and expect to observe error rates like those we saw during model evaluation, we are making an assumption that future data will be similar to past observed data. Specifically, we are assuming that the distributions of the features and targets will remain fairly constant. But this assumption usually does not hold. Trends change over time, customer’s interests/behavior vary with the seasons, and frausder's behavior change. And so our models must adapt. Since we expect the world to change over time, model deployment should be treated as a continuous process. Rather than deploying a model once and moving on to another project, machine learning practitioners need to retrain their models if they find that the data distributions have deviated significantly from those of the original training set. This concept, known as model drift, can be mitigated but involves additional overhead in the forms of monitoring infrastructure, oversight, and process. In this post I’d like to define model drift and discuss strategies of identifying and tracking when a model drifts over time. I’ll then describe how to use model retraining to mitigate the effects of drift on predictive performance and suggest how frequently models should be retrained. Finally, I’ll mention a few ways to enable model retraining. At the end of this post you can download my Quickstart Guide to Model Retraining for a blueprint of how to retrain your model and set up an automated retraining pipeline on your own!
 
-A machine learning model’s predictive performance is expected to decline as soon as the model is deployed to production. For that reason it’s imperative that practitioners prepare for degraded performance by setting up ML-specific monitoring solutions and workflows to enable model retraining. While the frequency of retraining will vary from problem-to-problem, ML engineers can start with a simple strategy that retrains models on a periodic basis as new data arrives and evolve to more complex processes that quantify and react to model drift. Now that you know why model retraining is important, you may be wondering how to setup and automate the retraining. I’ve put together a a guide showing you the exact steps you need to implement in order to automate model retraining. Sign up below to download the quickstart guide!
+A machine learning model’s predictive performance is expected to decline as soon as the model is deployed to production. For that reason it’s imperative that practitioners prepare for degraded performance by setting up ML-specific monitoring solutions and workflows to enable model retraining. While the frequency of retraining will vary from problem-to-problem, ML engineers can start with a simple strategy that retrains models on a periodic basis as new data arrives and evolve to more complex processes that quantify and react to model drift. Now that you know why model retraining is important, you may be wondering how to setup and automate the retraining. I’ve put together a a guide showing you the exact steps you need to implement in order to automate model retraining.
+
+`What is Model Drift?`
+Model Drift refers to a model’s predictive performance degrading over time due to a change in the environment that violates the model’s assumptions. Model drift is a bit of a misnomer because it’s not the model that is changing, but rather the environment in which the model is operating. For that reason, the term concept drift may actually be a better name, but both terms describe the same phenomenon.
+
+Notice that my definition of model drift actually includes several different variables that can change. Predictive performance will degrade, it will degrade over some period of time and at some rate, and this degradation will be due to changes in the environment that violate the modeling assumptions. Each of these variables should be taken into account when determining how to diagnose model drift and how to correct it through model retraining.
+
+`How do you track model drift?`
+`MODEL PERFORMANCE DEGREDATION`
+The most direct way to identify model drift is to explicitly determine that predictive performance has deteriorated and to quantify this decline.
+
+`EXAMINING THE FEATURE DISTRIBUTIONS OF TRAINING AND LIVE DATA`
+Since model performance is expected to degrade as the distributions of the input features deviate from those of the training data, comparing these distributions is a great way to infer model drift. Notice that I said infer rather than detect model drift, since we aren’t observing an actual decline in predictive performance, but rather expecting that a decline will occur. This can be incredibly useful in cases where you can’t observe the actual ground truth due to the nature of the data generating process.
+
+There are a number of different things to monitor per feature including:
+- the range of possible values
+- histograms of values
+- whether the feature accepts NULLs and if so, the number of NULLs expected
+- dashborad
+
+`EXAMINING THE CORRELATIONS BETWEEN FEATURES`
+Many models assume that the relationships between features must remain fixed. Therefore you’ll also want to monitor pairwise correlations between individual input features. As mentioned in What’s your ML Test Score? A rubric for ML production systems, you can do this by:
+- monitoring correlation coefficients between features
+- training models with one or two features
+- training a set of models that each have one of the features removed
+
+`EXAMINING THE TARGET DISTRIBUTIONS`
+If the distributions of the target variables changes significantly, a model’s predictive performance will almost certainly deterioriate. The authors of Machine Learning: The High-Interest Credit Card of Technical Debt state that one simple and useful diagnostic is to track the target distribution. Deviations in this metric from the training data can mean that it’s time to reassess the quality of your deployed model. But keep in mind that "This is by no means a comprehensive test, as it can be met by a null model that simply predicts average values of label occurrences without regard to the input features.".
 
 `What exactly do we mean by model retraining?`
 At times, model retraining seems to be an overloaded operator. Does it only refer to finding new paramaters of an existing model architecture? What about changing the hyperparamater search space? What about searching over different model types (RandomForest, SVMs, etc)? Can we include new features or exclude previously used features? These are all good questions and it’s very important to be as explicit as possible. To answer these questions, it’s important to think directly about the problem we are trying to solve. That is, reducing the effect of model drift on our deployed models.
@@ -170,3 +202,9 @@ Let’s think about the time horizon of such a model. Since we’re generating p
 If your team has the infrastructure in place to monitor the metrics discussed in the previous section, then it may make sense to automate the management of model drift. This solution requires tracking diagnostics and then triggering model retraining when the diagnostics on live data diverge from the training data diagnostics. But this approach is not without it’s own challenges. First, you need to determine a threshold of divergence that will trigger model retraining. If the threshold is too low you risk retraining too often which can result in high costs associated with the cost of compute. If the threshold is too high you risk not retraining often enough which leads to suboptimal models in production. This is more complicated than it seems because you are faced with determining how much new training data must be collected in order to represent the new state of the world. Even if the world has changed, there is no point in replacing the existing model with one whose training set size is too small.
 
 Special considerations need to be taken if your model is operating in an adverserial environment. In settings such as fraud detection, the adversary changes the data distribution to profit themselves. These problems may benefit from online learning where the model is updated incrementally as new data becomes available.
+
+`Solution`
+1. What is retrain and refit?
+2. Metric to decide whether to do it or not
+3. Monitor
+4. Before and after comparison
