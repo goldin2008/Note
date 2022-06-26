@@ -134,7 +134,15 @@ Docker and other container technologies are currently taking the infrastructure 
 
 > https://machinelearningmastery.com/gentle-introduction-concept-drift-machine-learning/
 
-> https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45742.pdf
+> https://www.oreilly.com/radar/lessons-learned-turning-machine-learning-models-into-real-products-and-services/
+
+> https://towardsdatascience.com/when-are-you-planning-to-retrain-your-machine-learning-model-5349eb0c4706
+
+> https://aws.amazon.com/blogs/machine-learning/automate-model-retraining-with-amazon-sagemaker-pipelines-when-drift-is-detected/
+
+> https://neptune.ai/blog/retraining-model-during-deployment-continuous-training-continuous-testing
+
+> https://cloud.google.com/architecture/architecture-for-mlops-using-tfx-kubeflow-pipelines-and-cloud-build
 
 
 Once the optimal model is found, it’s released out into the wild with the goal of generating accurate predictions on future unseen data. Ideally, we hope that our models predict these future instances as accurately as the data used during the training process. When we deploy models to production and expect to observe error rates like those we saw during model evaluation, we are making an assumption that future data will be similar to past observed data. Specifically, we are assuming that the distributions of the features and targets will remain fairly constant. But this assumption usually does not hold. Trends change over time, customer’s interests/behavior vary with the seasons, and frausder's behavior change. And so our models must adapt. Since we expect the world to change over time, model deployment should be treated as a continuous process. Rather than deploying a model once and moving on to another project, machine learning practitioners need to retrain their models if they find that the data distributions have deviated significantly from those of the original training set. This concept, known as model drift, can be mitigated but involves additional overhead in the forms of monitoring infrastructure, oversight, and process. In this post I’d like to define model drift and discuss strategies of identifying and tracking when a model drifts over time. I’ll then describe how to use model retraining to mitigate the effects of drift on predictive performance and suggest how frequently models should be retrained. Finally, I’ll mention a few ways to enable model retraining. At the end of this post you can download my Quickstart Guide to Model Retraining for a blueprint of how to retrain your model and set up an automated retraining pipeline on your own!
@@ -204,7 +212,10 @@ If your team has the infrastructure in place to monitor the metrics discussed in
 Special considerations need to be taken if your model is operating in an adverserial environment. In settings such as fraud detection, the adversary changes the data distribution to profit themselves. These problems may benefit from online learning where the model is updated incrementally as new data becomes available.
 
 `Solution`
+0. Data Source (Batch/Live) and Label Source
 1. What is retrain and refit?
-2. Metric to decide whether to do it or not
+2. Metric to decide whether to do it or not/fixed periodic interval
 3. Monitor
-4. Before and after comparison
+4. Retrain or Refit (Get live data or batch data/label)
+5. Before and after comparison
+6. Infra (Container, Kubernetes, Data ingestion, CI/CD)
