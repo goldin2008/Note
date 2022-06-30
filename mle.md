@@ -148,16 +148,6 @@ train的时候把mean保存下来，inference的时候用保存的值. 0处出�
 
 比如说如何选择metrics， 对于不 balanced数据怎么办。为什么要用cnn 等等。
 
-### Facebook
-
-细桶射击是个印度大姐，题目就是给一堆机子去爬一个网站，我把sql，nosql，redis，filesystem还有log-message queue这些都说了一大通，还有如何parition和sharding巴拉巴拉，基本都是我在说，我中途问了一下有什么问题对方说没事我知道你说的，然后中间提了一些问题关于data model，我大概说了下怎么做index，我看她也没什么反应。然后又问了一些具体大概爬虫算法是个什么逻辑，还画了个testcase的 bfs 例子。。。最后问还有什么补充的，然后又加了个监控，check point 调度系统，因为机子可能不稳定会挂之类的。。。然后又问bottleneck 答完后就没了。。。也不知道怎么样
-
-ML system design面的是设计search engine相关的， system design面的设计fee
-
-SD. 设计一个系统, 将用户的状态更新推送给该用户的好友.
-ML SD. 向用户推荐某类东西, 很常规了.
-考得完全不一样吧, 可以参考grokking的system design interview以及machine learning interview.
-
 
 ### Linkedin
 
@@ -191,8 +181,6 @@ coding: 刷题网参六邻
 之后是第二部分机器学习八股。涉及到了各个方面，线性回归，逻辑回归，regularization L1和L2区别，表达式。随机森林和GBDT区别，scale和transform对它的影响。如何处理overfitting, 如何处理imbalanced dataset, 什么是unsupervised learning. 涉及的内容很细，但是并没有其他版友碰到的推公式的地步。如果是想复习机器学习基本概念，包括公式推导，楼主最近看了一个知乎叫 阿泽的 复旦计算机博主总结的 经典机器学习的各种知识点，从逻辑回归，到PCA， 树模型，甚至到XGBOOST和LIGHTGBM的公式都有。觉得受益匪浅。‍‌‌‍‌‍‌‍‍‌
 保佑自己🙏🏻，同时也希望能帮助到大家。
 
-### Google
-
 
 ### Twitter
 coding部分：
@@ -200,8 +188,6 @@ coding部分：
 问了如何encode tweets，用Bert有什么好处之类的
 我先说了特别简单的one-hot / tf-idf / word2vec 提了一嘴可以train your own version of embedding用word2vec或者bert
 2. Clustering有哪些算法，我说我只知道kmeans，然后就是kmeans的实现，可以用numpy，pandas之‍‌‌‍‌‍‌‍‍‌类的数据处理的包
-
-
 
 
 ### Others
@@ -253,3 +239,15 @@ System Design 1:
 System Design 2
 设计一个类似youtube的视频推荐系统，同样也是以考察系统为主，而没有专注于model的设计，同时也问了一些和设计第一轮里的提到的如何做数据收‍‌‌‍‌‍‌‍‍‌集和清洗最后用来继续做model training的一些东西。
 
+### Google
+
+
+### Facebook
+
+细桶射击是个印度大姐，题目就是给一堆机子去爬一个网站，我把sql，nosql，redis，filesystem还有log-message queue这些都说了一大通，还有如何parition和sharding巴拉巴拉，基本都是我在说，我中途问了一下有什么问题对方说没事我知道你说的，然后中间提了一些问题关于data model，我大概说了下怎么做index，我看她也没什么反应。然后又问了一些具体大概爬虫算法是个什么逻辑，还画了个testcase的 bfs 例子。。。最后问还有什么补充的，然后又加了个监控，check point 调度系统，因为机子可能不稳定会挂之类的。。。然后又问bottleneck 答完后就没了。。。也不知道怎么样
+
+ML system design面的是设计search engine相关的， system design面的设计fee
+
+SD. 设计一个系统, 将用户的状态更新推送给该用户的好友.
+ML SD. 向用户推荐某类东西, 很常规了.
+考得完全不一样吧, 可以参考grokking的system design interview以及machine learning interview.
