@@ -272,4 +272,9 @@ Educative.io Grokking Machine the Learning Interview + blogs on machine learning
 
 `
 Wide & Deep Learning for Recommender Systems
+Deep Neural Networks for YouTube Recommendations
+The Netflix Recommender System
+From RankNet to LambdaRank
+Predictive Model Performance: Offline and Online Evaluation
+Practical Lessons from Predicting Clicks on Ads at Facebook
 `
