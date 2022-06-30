@@ -21,6 +21,7 @@
 
 `机器学习八股文`
 > https://www.1point3acres.com/bbs/thread-713903-1-1.html
+
 > https://northern-dracopelta-98c.notion.site/5b22e124e16d4b2d937940367ca20eb0?v=19feabb85e9e4b54bc498579b3c7f1c5
 
 > https://www.1point3acres.com/bbs/thread-714090-1-1.html
@@ -268,13 +269,40 @@ SD. 设计一个系统, 将用户的状态更新推送给该用户的好友.
 ML SD. 向用户推荐某类东西, 很常规了.
 考得完全不一样吧, 可以参考grokking的system design interview以及machine learning interview.
 
+ML design。 国人小哥。ads recomendation
+
+ML design。国人女生。event recommendation
+
+ML sys design: restaurant recommendations
+老题，ml八股文，没什么难度
+
+ML design 国人小哥，给了一堆user的log data和一个可以知道user当前location的real time API，要求recommend next place to go。问了可以用哪些feature，用什么model，怎么生成label data，用什么metric等。条件给的很模糊，需要多问来clarify。自我感觉答的还不错，事后feedback说ML不够strong。。。
+
+System Design，东南亚小哥，CV specialist。让设计iphone的stocks app里面每个股票点进去后，下面推荐的articles。问了API设计，爬虫和read/write等等。感觉面的不错哦，feedback说非常strong。。。醉了
+
+SWE SD: 在instagram中设计auction system
+
+ML SD: 设计model identify weapon ads
+
+ML design 一班会是一轮rank
+
+我的理解是这道题的特点在于数据来源/label获取，detection entry point以及enforcement都是灵活的，如果思维局限了的话作为E5就会差点意思
+
 Educative.io Grokking Machine the Learning Interview + blogs on machine learning design from Medium.com
 
 `
-> Wide & Deep Learning for Recommender Systems
-> Deep Neural Networks for YouTube Recommendations
+Wide & Deep Learning for Recommender Systems
+
+Deep Neural Networks for YouTube Recommendations
+> https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf
+
 The Netflix Recommender System
+
 From RankNet to LambdaRank
+
 Predictive Model Performance: Offline and Online Evaluation
+
 Practical Lessons from Predicting Clicks on Ads at Facebook
 `
+
+bq着重问了我teamwork以及处理conflict的事情，并且有问怎么看待meta的vision以及privacy相关问题。面试官感觉是个大manager但是人很nice，甚至教了我一些有用的teamwork小技巧。
