@@ -243,6 +243,7 @@ System Design 2
 
 
 ### Facebook
+`一轮ML Design, 一轮System design, 2轮coding`
 
 细桶射击是个印度大姐，题目就是给一堆机子去爬一个网站，我把sql，nosql，redis，filesystem还有log-message queue这些都说了一大通，还有如何parition和sharding巴拉巴拉，基本都是我在说，我中途问了一下有什么问题对方说没事我知道你说的，然后中间提了一些问题关于data model，我大概说了下怎么做index，我看她也没什么反应。然后又问了一些具体大概爬虫算法是个什么逻辑，还画了个testcase的 bfs 例子。。。最后问还有什么补充的，然后又加了个监控，check point 调度系统，因为机子可能不稳定会挂之类的。。。然后又问bottleneck 答完后就没了。。。也不知道怎么样
 
@@ -251,6 +252,3 @@ ML system design面的是设计search engine相关的， system design面的设�
 SD. 设计一个系统, 将用户的状态更新推送给该用户的好友.
 ML SD. 向用户推荐某类东西, 很常规了.
 考得完全不一样吧, 可以参考grokking的system design interview以及machine learning interview.
-
-`一轮ML Design, 一轮System design, 2轮coding`
-
