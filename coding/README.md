@@ -1,5 +1,24 @@
 
-## Algorithms
+# Algorithms
+### 代码随想录
+种类 | 数量
+-----| -----
+数组 | 
+链表 |
+哈希表 |
+字符串 |
+双指针 |
+栈和队列 |
+二叉树 |
+回溯 |
+贪心 |
+单调栈 |
+额外 |
+动态规划 |
+
+
+
+
 排序算法、查找算法、二叉树遍历这些最基本的一定要很顺溜的写下来，其他的就看自己去拓展了。
 
 > https://github.com/girliemac/a-picture-is-worth-a-1000-words/tree/main/algorithms
