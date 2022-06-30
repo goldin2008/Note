@@ -270,6 +270,6 @@ ML SD. 向用户推荐某类东西, 很常规了.
 
 Educative.io Grokking Machine the Learning Interview + blogs on machine learning design from Medium.com
 
-"""
+`
 Wide & Deep Learning for Recommender Systems
-"""
+`
