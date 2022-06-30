@@ -252,3 +252,24 @@ ML system design面的是设计search engine相关的， system design面的设�
 SD. 设计一个系统, 将用户的状态更新推送给该用户的好友.
 ML SD. 向用户推荐某类东西, 很常规了.
 考得完全不一样吧, 可以参考grokking的system design interview以及machine learning interview.
+
+sys design:search/update status 和 search most popular status 
+
+ml design：resolve member complain about bad content
+
+设计yelp, 设计instagram
+
+一轮system design， 一轮machine learning design, 并没有给别的选择。
+至于system design有两个track一个product，一个backend，backend就是偏向于distrubuted system design，product就是纯api design, recruiter没说而我呢自己也是没问，按照那个guide里面准备的，而guide基本就是那种distributed system design，再结合别人的面经，只按distributed system准备的。
+
+E5 MLE是两轮coding、一轮system design、一轮ML system design、两轮behavioral。Leetcode要求能秒medium，能做hard。
+
+SD. 设计一个系统, 将用户的状态更新推送给该用户的好友.
+ML SD. 向用户推荐某类东西, 很常规了.
+考得完全不一样吧, 可以参考grokking的system design interview以及machine learning interview.
+
+Educative.io Grokking Machine the Learning Interview + blogs on machine learning design from Medium.com
+
+"""
+Wide & Deep Learning for Recommender Systems
+"""
