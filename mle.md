@@ -290,7 +290,7 @@ ML design 一班会是一轮rank
 
 Educative.io Grokking Machine the Learning Interview + blogs on machine learning design from Medium.com
 
-`
+
 Wide & Deep Learning for Recommender Systems
 
 Deep Neural Networks for YouTube Recommendations
@@ -303,6 +303,6 @@ From RankNet to LambdaRank
 Predictive Model Performance: Offline and Online Evaluation
 
 Practical Lessons from Predicting Clicks on Ads at Facebook
-`
+
 
 bq着重问了我teamwork以及处理conflict的事情，并且有问怎么看待meta的vision以及privacy相关问题。面试官感觉是个大manager但是人很nice，甚至教了我一些有用的teamwork小技巧。
