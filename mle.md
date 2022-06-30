@@ -251,3 +251,6 @@ ML system design面的是设计search engine相关的， system design面的设�
 SD. 设计一个系统, 将用户的状态更新推送给该用户的好友.
 ML SD. 向用户推荐某类东西, 很常规了.
 考得完全不一样吧, 可以参考grokking的system design interview以及machine learning interview.
+
+`一轮ML Design, 一轮System design, 2轮coding`
+
