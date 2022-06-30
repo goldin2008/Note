@@ -271,8 +271,8 @@ ML SD. 向用户推荐某类东西, 很常规了.
 Educative.io Grokking Machine the Learning Interview + blogs on machine learning design from Medium.com
 
 `
-Wide & Deep Learning for Recommender Systems
-Deep Neural Networks for YouTube Recommendations
+> Wide & Deep Learning for Recommender Systems
+> Deep Neural Networks for YouTube Recommendations
 The Netflix Recommender System
 From RankNet to LambdaRank
 Predictive Model Performance: Offline and Online Evaluation
