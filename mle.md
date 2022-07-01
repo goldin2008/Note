@@ -396,6 +396,17 @@ Round 1: ML Design: 设计自动检测带武器内容的广告
 Round2: BQ + LC238简化版，可以用除法。
 Round3: ML Design: nearby place recommendation
 Round4: ML Design: Instagram 推荐来自非好友的帖子
+个人觉得location, time这些应该都是constraints，用于进行filtering, 是个deterministic的东西。如果candidate generation stage直接用这些constraint是不是顺序会有些不正确？假如说你用了Collaborative Filtering,通过Matrix Factorization得到了query&item embedding, 找到和你最感兴趣的k个餐厅，那如果这个用户走到新的地方是不是还需要跑一遍CF->MF再重新计算similarity找nearest neighors?
+我个人觉得正确的顺序应该是offline的时候把CF完成(对于所有user和item)， 产生M（M>>K）个candidates，这样query and item embedding就都是static的了，当这个user发起新的query就可以通过constraints实时地得到k个items。
+还是说以上这个过程就是LZ所说的粗排？然后再训练一个独立的模型用于精排？我比较纠结的就是filtering应该放在哪一层，个人觉得如果是像yelp一样的餐厅推荐app，如果先取离你最近的所有餐厅做训练是不是不可能达到real-time的标准？所以这个filter是不是应该放在最后一步来做。
+最近正在0基础学习推荐系统，如果不对请多多指正。
+我说的不一定对啊。我当时回答的时候还是按照ml design的标准套路来的。先画个图，然后列几个要讲的话题。本质上还是推荐系统的那一套，要预测的应该是用户会不会点开推荐的place， binary classifier, sort by probability。 一般的推荐系统都会有个粗排-》精排的分步，这个问题因为place跟用户的相对位置是相关的，利用距离信息直接filter就可以完成candidate generation, 不需要再train 粗排的model. 精排的模型就是基本套路了。值得注意的是时间信息(time of day)非常重要，要确保推荐的place是在当时是营业的。
+是跟abusive一个套路，预测结果都是最终交给人工审核。那么怎么在保证准确率的基础上减少人工的工作量就是这个系统的business goal. 可以做成一个多分类问题，让分类器把目标分成三类：非常确定有武器，非常确定没有武器，中间类。系统自动排出非常确定的两类，只把中间类交给人工审核。
+另外面试官还提出了一个问题，怎么cold start。我当时答的是可以去第三方专门卖武器的网站上去爬一些广告作为系统的初始training data。
+感觉这个作为binary classification 更好吧？最后logistic function threshold >=0.9的就是肯定不行，0.65 到0.9之间（或者更小）的就送去人工检测，0.65以下的就都是ok没问题的，感觉这种更 make sense？不然你分三类的话，你怎么给你的model 去feed 给人工审核的data？你没办法优化这一块啊？
+请问楼主能详细讲讲怎么解决positive example少的问题吗？感觉positive training data极其少（尤其还限定了是武器）
+我想得到的可能用一些curator已经label的，用户mark的，或者用一些heuristic来filter一些已有的广告，或者自己generate一些。 楼主有什么好的想法吗？谢谢
+
 
 第一轮：机器学习系统设计，广告推荐系统
 第二轮：行为问题。问完以后还有时间就写了道题，蠡口 旧疤
@@ -594,3 +605,15 @@ thanks for sharing 我是NLP 领域 我司常用的是PCA or auto encoer, word e
 4. ML 设计 国人大姐 问一些以前的项目经历 然后问的是 怎么设计fb的page模块的 search,比如搜san jose 出来的是地名 搜lady gaga 出来的是人的page.
 
 
+#### Machine Learning System Design Framework
+`Scenario: Clarify question/senario/feature/background`
+`System goal: Clarify metrics`
+`Data extraction:`
+1. target variable construction:
+- Deduplication
+- EDA(0,1 ratio), imbalance data
+2. Feature engineering:
+- What should be feature: page metadata, user metadata, friend metadata
+- Important feature distribution
+`Preprocessing(why preprocess):` 1. Text embedding 2. Categorical feature 3. Date Parse 4. Missing value 5. Outlier detector
+Model selection: There are 3 widely-use classification model
