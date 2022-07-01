@@ -607,7 +607,9 @@ thanks for sharing 我是NLP 领域 我司常用的是PCA or auto encoer, word e
 
 #### Machine Learning System Design Framework
 `Scenario: Clarify question/senario/feature/background`
+
 `System goal: Clarify metrics`
+
 `Data extraction:`
 1. target variable construction:
 - Deduplication
