@@ -244,6 +244,8 @@ System Design 2
 
 
 ### Facebook
+> 
+
 `一轮ML Design, 一轮System design, 2轮coding`
 
 细桶射击是个印度大姐，题目就是给一堆机子去爬一个网站，我把sql，nosql，redis，filesystem还有log-message queue这些都说了一大通，还有如何parition和sharding巴拉巴拉，基本都是我在说，我中途问了一下有什么问题对方说没事我知道你说的，然后中间提了一些问题关于data model，我大概说了下怎么做index，我看她也没什么反应。然后又问了一些具体大概爬虫算法是个什么逻辑，还画了个testcase的 bfs 例子。。。最后问还有什么补充的，然后又加了个监控，check point 调度系统，因为机子可能不稳定会挂之类的。。。然后又问bottleneck 答完后就没了。。。也不知道怎么样
@@ -306,3 +308,289 @@ Practical Lessons from Predicting Clicks on Ads at Facebook
 
 
 bq着重问了我teamwork以及处理conflict的事情，并且有问怎么看待meta的vision以及privacy相关问题。面试官感觉是个大manager但是人很nice，甚至教了我一些有用的teamwork小技巧。
+
+系统设计 国人大哥 typeahead: 心中窃喜 然后刚说到qps 大哥问你是不是看过这道题 一下子怔住了不知道怎么回答 后来实诚的说 确实以前见过 然后就换了道题 是关于如何search fb的post (比如搜apple,出来苹果公司消息的post) 全程阴着脸 不苟言笑 最后这轮好像也没过
+
+ML 设计 国人大姐 问一些以前的项目经历 然后问的是 怎么设计fb的page模块的 search,比如搜san jose 出来的是地名 搜lady gaga 出来的是人的page.
+
+2 design a personalized location recommendation system
+基本上就是把recommendation的流程说一遍，candidate generation到ranking，是e5
+tree base 的ranker: 问的重点就是解释一下什么是tree model，有哪些tree model，怎么build tree之类
+
+3 behavior: conflict with other, most challenging, received sharp feedback, most ambiguous project,
+4 tree based model, neural net, bias ‍‌‌‍‌‍‌‍‍‌variance, overfitting, regularizations, evaluation metrics,
+
+系统设计:  ticket master，卖演唱会的票
+ML 设计： 给定news ‍‌‌‍‌‍‌‍‍‌feed和所有的评论，抽取top3 评论
+一点拙见，请各位大佬指正。input feature可以包括几大类 一是 评论本身features：quality index，length，relevence to the news feed，time等；二是评论者的features：average historic comments scores，impact （like number of fans），location等；三是互动的feature，点赞数，comment的回复数。用这些所有的做个mlp
+我是当成recommendation问题处理的，推荐王喆那本“深度学习推荐系统”，里面有不少reference的paper值得看。也可以根据那些paper的引用以及关键词找一些更新的文章。
+这一轮不用聊system design，纯ML就行。这题不涉及news feed本身的ranking，是rank 那些feed下面的comments，top 3这个跟面试官沟通了一下，是个soft number也可以自己定义，比如某个feed只有两个评论，那就都show出来就行了。
+比如对于一些popular的帖子comments比较多，我们就需要挑一些出来显示，我是formulate成一个recommendation的问题（用classification的方法算每个comment的score，然后挑分高的显示
+
+system design 是 推荐广告，和 手机 NLP 相关的推荐.
+
+ML design: Design a classifier for bad ads
+BQ: A time you had conflict with others, most challenge project, peer you felt difficult to work with, a time you provided constructive feedback
+
+Sys design: 唯一的国人 web crawler 感觉尚佳
+
+ML Sys Design: Recommend job posts to facebook users (什么时候fb也做linkedin的事了？？）
+
+ML design - 名人推荐
+ML system design, 就是要设计一个end to end的推荐系统，推荐的内容是名人的page, 不知道这样说清楚没有。
+
+ML research - ML 教科书知道‍‌‌‍‌‍‌‍‍‌，但问得很细，也有涉及到NLP，Deep NN
+
+ML Sys design deep dive会具体问到哪些方面呢?
+如果你面senior, 最好主导conversation, 从需求分析，框架构建，数据收集，特征提取，建模，offline online 评估等各方面去讨论。
+据我理解，要全面（覆盖关键的component)，多种方法以及trade-off，能提到一些与主题相关(也就是domain specific)的实用的点是个plus。
+
+ML sys design: ads ranking
+
+Round3(ML)：ML system design，case是关于Facebook Event的推荐系统，target是判断user是否会参加这些event，难点在于得判断他们是否是physically attendance，其他地方没什么特别的），印度小哥，态度还行；
+    Round4(BQ)：constructive feedback，collaboration with different teams，challengest work，the personality you never want to work for，why not stay in academia，总共问了八九个问题，其他实在记不起来了，白人小哥，非常活泼；
+我觉得可以先看看FB的那个event里都有什么，我之前完全不了解，把它当成一个类似广告的东西说。其实里面有个find ticket，可能还有其他的内容。另外如果能得到一个相对小但是比较precise的labeled set，semi-supervised也可能是个思路。面完我问面试官，他说这是个brainstorm，没有什么标准答案。
+因为我把它当成类似广告的东西，所以分成了engagement(click) 和 satisfaction(rating, like/dislike, comments)来做的，面的时候我主要当成multitask learning来说的。
+
+3. nearby places recommendation system - 跟面試官聊得挺開心的, hr feedback時說了表現的excellent
+4. Design 一個像Kaggle的平台, 能做各種project competition
+5. 中規中距, 自介, conflict, why leave your current job, etc
+nearby place 就是基本的recommendation system那一套拿出來講 沒啥特別的 有稍微多講一點deep learning的部分
+Design Kaggle 面試官有要求要有leader board的function, 能看哪個user排名高, 還有說系統必須要能抵抗malicious code, 問怎麼做到, 我感覺並不是read> write 吧？
+
+1. ML System Design。问了Algo Expert的ML system design的其中一个，主要问了数据，feature，model，metrics，AB testing等方面
+2. Behavior。就很普通的聊天，没什么可具体展开的
+3. NLP Specialized System Design。因为本人不是CS出身，所以把System Design换成了这个。问了NLP的某个场景的design以及细节，很多问题都比较open ended
+conversational ai （比如echo，google home）的end to end component。然后问了一些比较具体的conversation设计方法，比较open ended。还有intent detection，slot filling之类的。
+
+第一轮ml design国人小哥，ecommerce推荐系统，这轮感觉一般面的，小哥水平倒是不错，overall structure没怎么说完就dive deep了，如果国人小哥也上这个论坛求高抬贵手，不求别的给个hire就好，感恩
+最后一轮ml设计，看不出国籍的外国小哥，做nlp的，问的设计语音助手，不是我的domain，不知道答得在不在他的点上，虽然给出了一个基本solution但是感觉摸不到头绪get不到他想考的点，好在小哥态度还比较nice
+
+ML Design
+面试官三哥。交流不算很顺畅。
+Design a harmful content detection system.
+
+system d‍‌‌‍‌‍‌‍‍‌esign. 广告ctr
+
+第二轮，ml 设计，四十岁国人，题目是推荐附近地点给用户，一直challenge我，问我数据从哪里来，估计是想我问我数据库的问题，然后让我设计feature，我大概设计了七八个，最后我拿出deep and wide那一套做框架做上去，从测试到最后问冷启动，一直challenge我，中途一度想摔键盘，应该是挂在这轮了吧。
+第三轮，bq，普通问题，问了一些工作conflict啥的然后就普普通通，也有可能挂在了这一轮。
+我感觉general idea上没啥大问题。我觉得是不是需要两个model，一个model负责candidate generation，一个model负责ranking。这是一个可能需要增加的点。可以参考google的recommender system tutorial。第二个点是不是可以input可以更多种类的data，比如item那边的data【，就是店家的information比如地址，电话，店家的id】user那边的data（context or query，比如你的信息，你的id，地址，你用的device， 你和商家的互动，你有没有给商家打过分，或者浏览过，甚至消费过，你浏览时长这些信息）。感觉这个真的无法猜测因何而挂，每个人在意的点真的差距很大，有些人会很烦你老沟通，有些人则是怕你不沟通，唉真的是，有些人觉得函数名写的不工业化都可能给你weak hire，贼坑
+model 我就是和你是一个意思，一个用作处理nonlinear data，一个最后负责ranking，是谷歌那套deep wide的recommender算法，我非科班出身且是ng，至于feature那边我还想说很多，然后面试官说他觉得这些feature已经够了，good enough是原话，面到最后很不耐烦地样子，语气也不是很友好，本来45分钟的面试迟到了快十分钟，最后准时结束，然后还定了15分钟的buffer他说有啥要问的，我也没啥要问的，就象征性的问了下，然后一句祝你在其他面试中有好运就挂了，coding基本上是全秒的而且很明显感觉到两个小哥都挺positive的，最后连加面都没有，思来想去可能也是挂在这里了吧，谢谢你还特意看了我的note。也希望对大家有所帮助
+楼主我觉得你做附近饭店推荐的还按deep&wide来可能有些冗余，一开始的KNN做的candidate generation step可以去掉，因为一个人附近本来就没几个饭店，重点可能是如何精排吧
+不是饭店，是所有place，任何地点都可以
+
+ML design 这一轮面试官是oculus research的，我问是不是fair，他说不是。题目是做一个 video search engine，input是用户upload一段 video clip（只有视频没有任何文字query），output是一堆排好序的 video list（我们存好的视频，有metadata），总而言之就是youtube 但是把搜索的输入从文本query替换成视频clip。
+我的解决方案大概是先把 video clip 选一些frame放到CNN里获得一个embedding，然后pooling之后先用kNN召回（因为库里也存了现有视频的embedding），然后用MLP精排。
+他问得很 detail，比如 train CNN的时候如果遇到未知的分类怎么办，问了半天最后告诉我 locality sensitivity hashing；还有正负样本怎么选择的问题，我觉得我答得也差不多但是他最后一定要问我知不知道有个 term 叫 triplet loss。这俩词我听都没听过，搜了一下发现其实挺intuitive的。另外沟通也不是很流畅（听不太懂越南口音），应该就是这一轮挂了。
+System design 是个印度人，还挺nice的。问的是让我设计一个 leetcode，只要支持能存储和浏览题目、用户作答、自动检验有没有通过的功能。按常规流程来就行，算peak qps要考虑leetcode主要用户分布在某几个国家而不是全球均匀分布；难点主要是记得考虑一下用户可以submit不同语言的代码、submit后是怎么compile/run，然后状态存在哪、怎么返回给用户，万一崩了或者用户代码里死循环怎么办之类的就行了。
+BQ 很常规，可能因为面我的是个华人，最后还留了十分钟做题（好像是 fb 惯例了）。
+
+ml设计广告系统
+sd设计ins
+
+ML system design面的是设计search engine相关的， system design面的设计feed
+
+细桶射击是个印度大姐，题目就是给一堆机子去爬一个网站，我把sql，nosql，redis，filesystem还有log-message queue这些都说了一大通，还有如何parition和sharding巴拉巴拉，基本都是我在说，我中途问了一下有什么问题对方说没事我知道你说的，然后中间提了一些问题关于data model，我大概说了下怎么做index，我看她也没什么反应。然后又问了一些具体大概爬虫算法是个什么逻辑，还画了个testcase的 bfs 例子。。。最后问还有什么补充的，然后又加了个监‍‌‌‍‌‍‌‍‍‌控，check point 调度系统，因为机子可能不稳定会挂之类的。。。然后又问bottleneck 答完后就没了。。。也不知道怎么样
+
+Round 1: ML Design: 设计自动检测带武器内容的广告
+Round2: BQ + LC238简化版，可以用除法。
+Round3: ML Design: nearby place recommendation
+Round4: ML Design: Instagram 推荐来自非好友的帖子
+
+第一轮：机器学习系统设计，广告推荐系统
+第二轮：行为问题。问完以后还有时间就写了道题，蠡口 旧疤
+第三轮：系统设计，聊天软件的群聊如何实现
+
+第四轮： design auto comments suggestion system
+第五轮： walk through ‍‌‌‍‌‍‌‍‍‌an ml project (present like in a conference, what's new? trade-off? why A not B?)
+
+第二轮 设计instagram，一半system design 一半ml design, 先各种scalability 然后是ml如何提高instagram ( search, recommendation, push notification, image recognization....etc)
+第三轮 hm bq， q&a的时候hm直接给我讲了未来12 month都要做什么 当时感觉有戏了。。男人的直觉果然不准= =
+第四轮 ml design + ml deep dive 设计游戏对战机器人，提高玩家engagement，先说了如何用ml做匹配系统，匹配游戏玩家和游戏机器人的type，然后followup如何在游戏中提高，我就说了reinforcement learning，用td lambda，面试官好像不是很懂rl，没有follow
+
+3) BQ: 激动的工作、什么时候需要其他组帮忙、不好合作的同事、和别人有异议、组长给你的反馈，没时间code
+4) sys design
+此次面试最大的惊讶，需要跟地里请教一下。题目原话“有三个组要用到一个功能：给URL之后下载文件。现在让你设计有这个功能的library的API和architect”。 我听完有点懵（说好的分布式系统呢、说好的scalability/availability呢），不知道他具体想问什么。给了一个简单的get_url(url, dest=None) -> response之类的简单接口，他暗示user experience不好，特别是在下载大文件的情况，一直揪着不放。我也提到了authentication, multipart-download, queue for async call, tempfile/atomic write， 但对方说这些都是好考虑但请回到API设计上。到了最后还是不知道他想问什么，最后反馈也是这轮不好。
+5) ML sys design
+设计FB广告推送系统。大部分时间在找feature，对方还一直问我有什么FB specific feature。 跟地里以及prep session里说的不一样的是：考官一直在让我写原理、写公式。我提到一开始可以用别人训练好的w2v/bert来给文字提取特征，对方就让我画w2v怎么训练的、损失函数是什么，最后怎么预测（我提了这模型本身不用来预测，不知道他是不是故意挖坑），bert是怎么训练的，两者变成vec有什么不一样。特征提取完了后我提了可以从简单模型到复杂模型循序剪辑，考官让我比较线性、树模型，提到RF的feature是random set还被他质‍‌‌‍‌‍‌‍‍‌疑说是random data但fix feature set,不知道是不是挖坑+1
+
+System: messenger
+ML: 推荐locat‍‌‌‍‌‍‌‍‍‌ions
+
+2. System Design #1
+是设计一个location based search。这一轮画风就比较非主流了。我因为看过一些uber/lyft的talk，也准备过geohash的知识，想说开心这都准备到了哈，上来讨论了一下需求，就说先画个架构图吧，本来计划每个component都大概讲一下，再落实到具体的schema design什么的，结果画完以后面试官说其他都不重要，咱直接说geohash怎么用，为什么用geohash，我就解释它为什么可以在密集地区持续split啊，找相邻block是O(1) time啊什么的，然后面试官一直追问geohash的细节，比如为什么每一层是划4x8个格子而不是比如8x8，直接给我问蒙了，这我确实不知道啊！在这个上面纠结到了只剩五分钟，最后只能草草讲一下返回结果怎么排序，就结束了。
+个人反思是不是一开始不说geohash比较好？先讲讲even grid为什么不行，再讲讲quad tree这样？另一个失误的点是时间控制的不好，生平第一次面大厂design，有点被牵着鼻子走，其实不知道的细节可以申请先放一放，把大框架讲完了以后再回头抠细节？
+3. ML Design
+这一轮是一个非常常规的recommendation问题，被推荐的东西（item）不经常变，用户的interest变化比较快。用collaborative filtering或者binary classification都能做，分析了一下两个方案，觉得用classification比较合适，有一些比较明显的优点，面试官也同意，就开始讨论metrics，feature engineering，不同算法的优缺点，然后就是些model serving上面的工程问题，比如怎么monitor，online表现明显有问题的时候怎么debug，因为工作中都遇到过，感觉答得也不错，面试官全程I like it, fantastic。唯一没有想到的是可以用好友graph来扩展feature解决冷启动问题，这个是面试官提醒了以后才想到的。
+这一轮就和上一轮画风相反。全程感觉很顺，但是还是给了个borderline，求大佬们指点一下，这是挂在哪了？
+4. System Design #2
+这一轮没有计入面试结果，但也挺有意思的。和第一轮Design一样，不按套路出牌，我把框架画完之后面试官说，这个设计很好，但是如果不用Cassandra或者任何s‍‌‌‍‌‍‌‍‍‌torage layer你要怎么设计，Redis也不用的话要怎么办，message queue也不用的话要怎么做，而且不是明着说的，就是说 “我们想尽量减少server间的networking”，反复沟通了很久，最后才明白他的意图原来就是不用任何轮子设计一个啥都有的monolith。明白了这个以后进展就很快，最终结果他也非常满意，后半程明显语气快乐得多（其实我想说这种设计挺糟糕的，拣了芝麻丢了西瓜）。。。
+geohash 4*8是因为用base32编码，8*8也可以，就是base64了。
+我面脸系统设计的反馈说是一开始problem exploration和clarification没答好。recruiter给我读了feedback，感觉广度，深度，量化和dive deep是几个主要考察的点。比如他抓问geohash就可能是想考察你dive deep
+用binary classification来做推荐，天然就能处理用户兴趣的快速变化，因为推荐的item和对应的排序都不是提前算好的，而是在query time实时算出来的，比如（随便举个例子）你看YouTube，连续看了几个美食节目以后，下一次回到主页，首页需要做一次推荐，这时候在feature extraction的时候你最最近的浏览记录都会被包含进去，所以虽然model没有变，model evaluation的结果会和你看美食节目之前有很大差别。
+相比之下，像CF的推荐结果经常是提前算好存在user profile里的，这就最多几个小时更新一次。
+我都已经挂了，理解得不一定对，工作中没用过CF，说得不一定对，仅供参考！
+我个人理解是deep dive是需要靠自己引导话题到一个自己熟悉/擅长的方面，比如我遇到这题我就会把话题引导到spatial index上，然后展开讨论。
+哦我这一条回复说的不严谨，应该限定成“输出normalized probability的classification模型”，包括logreg，nn之类。我看一些Netflix的论文，以及自己做ad recommendation，都是用输出的概率做ranking，应该是挺常见的做法吧？是有什么问题我没有意识到？
+同在做推荐，感谢楼主分享这么多细节！有个地方想讨论一下，用binary classification output probability 来ranking 我可以理解， 如果user和item都很多的话，楼主会先做candidate generation减少一下item的量级嘛？ 比如这个例子，user interest一直在变，之前一直看fashion style突然改cooking video，可是有millions of cooking videos, 需不需要减少到hundreds of 然后再用binary classification处理，这样online推荐会快一点？ PS, 我自己的亲身体验是youtube的recommendation多刷新几下的话，推荐内容基本上不怎么变化，只有位置变了。感觉都是些提前被cache住的推荐？
+哈哈这个问题就复杂了，说实话我也没有太多实际经验。我面试的时候遇到的问题是item数量比较少的，所以没有这方面问题，像YouTube这样的item超多的系统肯定是要做个initial filtering/candidate generation吧。可能这也是我fail的一个点，我完全没有提candidate generation，其实应该至少提一嘴为什么用不上。
+以我广告行业的工作经验来说，open exchange ad bidding就算用最简单的log reg，一次evaluate一两百个广告就是极限了，因为timeout限制是很短的，算上路上的时间总共能有个两三百毫秒就不错了。但是如果是自家平台的广告或者视频推荐就非常不一样，比如YouTube，可能可以在你看视频的时候，在后台发一个ajax query要求更新首页推荐列表，这个返回时限就不是卡的很死。但是不管是哪种情况，initial filtering肯定是要做的。
+感谢参与讨论，在这个帖子里越讨论好像就越明白自己fail在了哪里。还是论文blog读得太少，对自己工作领域以外的推荐系统懂得还是太浅。本来以为懂一点high level的东西就够了，毕竟不可能在每个领域都有实际工作经验，看起来还是要多学习，bar比我想的高。
+依旧是随便想的哈，没有实战经验。
+我的想法是完全不在用户访问首页的时候试图更新rec list，而是每次用户点开一个视频，或者视频播放到某个位置的时候，因为有了新的观看记录，这时候送一个async call给server要求更新rec list，甚至可以在这些观看记录被发到server的时候，server顺便就把rec list更新了。因为更新的结果是存在server端的，不用马上返回给客户端，用户下一次回首页的时候直接读这个新的list就可以了。
+这样虽然不是实时更新，但是只要你有新的观看记录，几秒几十秒之内rec list就能被更新好，除非你经常点开一个视频看几秒立马关掉回主页，不然基本上可以保证下次回主页的时候能看到新的推荐。
+
+2. System design. Autocomplete system.
+5. ML design。abusive comments
+ml meet bar，system design不达标（not scalable）
+
+一轮系统（爬虫），一轮ML设计（滥用）
+anti-abuse, 像虚假账号
+
+4. System Design
+Design a system that returns nearby places (similar to Yelp Design)
+5. ML System Design
+Design a ML system for delecting / hiding violent posts
+6. System Design (Shadow Interview)
+Design a system that crawls websites
+
+system design 这个也问了一堆 如何处理model 的问题.   
+你如何确定你的 model 是 ok 的, 你如何 debug 你的 model, 你有多个目标如何优化
+
+3. Distributed System Design: 给FB设计一个搜索引擎，给你FB月活数自己估计flow。LZ作为DS，这些姿势在3周内突击的。只能扯一些从知乎看来的教科书做法（帖子末尾有准备介绍）。结果这轮根据feedback非常positive
+4. Machine Learning Design:  根据用户习惯推荐用户附近的商家。LZ机器学习功底算比较好，这轮也是比较positive的feedback
+5. Behavior Question: 问了很多针对senior的问题，比如你对你搞过的product的评价。有什么你成功/失败的经验。Cross functional.末了还有个小coding，LZ啰嗦所以没时间code
+
+第三轮系统设计，设计feeds，具体到一个senario：一个人正看着别人的主页呢，别人新发了贴，这时候怎么更新页面。问的比较细，这一轮感觉不太好
+第四轮ML设计，设计垃圾网页识别的系统，感觉对模型不太关心，更关心工程方面
+
+2.两轮design.
+一轮是闲聊，聊各种AI相关技术， 比如cv一些比较popular的模型，RCNN是什么，怎么解决data稀疏问题。之前项目经历，模型怎么选的，tradeoff是什么。
+这一轮比较随意，聊到哪问到哪。不过问的都是深度学习一些基本概念，关于数据，流行的算法比如cnn,lstm, transformer。。 很重要一点是有些模型/算法 面试官不了解，怎么解释清楚教会他。
+另一轮典型ml desig‍‌‌‍‌‍‌‍‍‌n题，确切说是ai design。 偏nlp。  问题是如何根据文字做一些基本的fake news检测。 这里没有标准答案了. 一些基础的nlp context extraction方法。楼主不是纯nlp出身，这轮答得不好。
+
+第三轮：ML research：一个资深的做NLP的（崇拜脸）。 问怎么用computer vision 优化FB的ads 推荐系统。用Deep learning 的common sense解释想法，让他听得懂。image segmentation 被他challenge了一下，不大记得paper细节了，讲得不是清楚。sparse，dense feature vectors。deep learning model上线的时候怎样提高计算速度。
+第四轮：ML design：fb location based user recommendation. 先画整个ML 系统，然后每个部分深挖。feature和data比较重要。data 要设计schema，怎么存储。f‍‌‌‍‌‍‌‍‍‌eature部分最好答出一些亮点（像amazon的ads一个比较重要的feature是position）。 cold start 问题：如果user从来没有到过该location怎么办？你也不知道user喜欢什么怎么办？怎么判断你的model是最好的？online vs. offline training
+
+第一轮 ml design
+就是给用户推荐地点，感觉面试官没什么反应，每次我问有没有什么问题，is everything making sense， 她要么说没问题，要么没反应， 感觉我说话都占聊99%。 最后recruiter好像这轮最weak， 说没有ask the right questions和没有给具体都例子。我觉得两方面吧， 一是自己确实之前没有做过推荐系统，可能很多东西没问到点上，另一方面感觉面试官在guiding方面并不是很effective，跟其他面试官比起来还是挺不一样。
+第二轮 ml research
+问题是如何identify user interest， 挺有趣都问题， 不过这个也是一个很大都问题，所以肯定没有时间讨论所有方面，high level讨论以后， 就focus on 其中一个点，然后讨论另可以用都模型，具体问另模型都各种细节， 比如lstm和logistic 都training都细节啊之类。feedback还行
+第三轮 bq
+这轮feedback说overall都挺好，但是有些问题给都答案比较weak， 比如处理conflict都具体例子等等，这个确实对我来说有点难，因为之前对公司大家都和和气气，基本没啥conflict，偶尔有大家也都很心平气和地讨论和解决，真是没有啥好说的。。
+第四，五轮
+基本都是medium的原题，有一个hard 的dp原题，没时间写code，只写了transition的公式。feedback挺好
+有一轮ml design 的follow up
+因为说第一轮的ml design没有体现我的experience， 但是不知道咋回事，这一轮还是问的general的ml design，而不是之前说的我domain里的ml design，不过最后feedback也还可以。
+
+ml：就是知道用户的location，让设计一个推荐系统推荐附近的point of interest 给用户，可以是酒店，景点等等
+
+ml论坛上有几个总结的帖子写的很全面了。我个人觉得有两篇文章很有用：Wide & Deep Learning for Recommender Systems；Deep Neural Networks for YouTube Recommendations，ml system里面重要的部分文章都有讲到。我面试的时候基本上就是按照这两个的框架讲的。
+
+3. ML 设计：新鲜事排序
+4. bq，就各种故事各种聊（还问，你作为女生，觉得在cs最大的挑战是什么），连扣腚的时间都没有了
+对方不怎么和我互动，所以一个人独角戏唱到了最后。讲的内容也就是之前地里总结的四个部分：数据，预处理，模型，metric
+
+ML system design，基本上按照prep上面说的准备就行，面试过程基本就是给一个scenario，然后问你怎么design这个系统，比如news feed或者ads recommendation，然后聊下去，各个design component可能会比较随机的聊一些不同的方法和pros cons，比如feature engineer什么的打算怎么用什么feature，怎么处理这些feature之类的。基本上都是‍‌‌‍‌‍‌‍‍‌比较常规的ML问题。我准备上主要是看了一些相关的post和youtube视频，了解下这些系统，其实这些系统本质上都是差不多的，感觉基本上都是一个套路准备就行。
+
+一篇文章下面有很多评论，怎么排序，从data到online inference都有问
+问了很多ML的基础知识，然后‍‌‌‍‌‍‌‍‍‌是一道design：推荐热门文章
+
+第四轮ML page recommendation
+第五轮System Newsfeed ranking
+
+第四轮 system design
+设计在线text autocomplete，要求reliability，low latency
+第五轮 ML
+ML basics +
+用户有很多query，怎么对query进行topic分类，假设我们已经有‍‌‌‍‌‍‌‍‍‌20个topic的label
+
+ML design：问了一个怎么推荐附近的餐厅，主要考察recommendation system。建议看一下地里面的神贴，可以循序渐进，从简单的统计方法，比如最hot的地方，到content based方法，最后讲讲collaborative-filtering, 最忌讳的是上来就用很复杂的模型，然后不知所云。注意跟面试官交流也很重要，时不时要check一下进度，不要一个人滔滔不绝讲一大堆。
+
+第三轮: nlp design: 假定现在有个机器翻译系统上线了，如何评估翻译质量.
+第四轮: ml design: newsfeed.
+比如在fb的feed里，自动把英文翻译成了德语，如何知道现在这个系统的翻译质量。 <= 我的想法适用user 的behavior 当作feedback 比如说 user preference 是德文 看了翻译的之后 就有做post or like 等等action , 这就是ㄍㄧ个质量的说明 ? 不知到lz 怎答的?
+和你的答复差不多， 构建一个机器模型预测用户feedback的置信度。
+
+第四轮是distributed system design，疑似国人或者ABC小哥
+给一个地点和一个距离，和一大堆places，设计一个service返回这个距离内所有的places，重点focus在如何存储这些places和如何query，以及如何把这么多数据分别存储
+第五轮是ml design，依然是国人小哥
+news feed，不过重点在于如何给一个用户能看到的story排序，先问选什么feature，如何处理data，选什么Model, 不同模型的对比，以及最后如何measure你的结果。用我残存的记忆大概讲了一些，具体到model的部分就不太会了，只能说我不知道= =
+加面题目是，设计一个service，每天给每个用户推荐一条最符合他兴趣的广告，没有讨论具体的feature selection或者model这种ml问题，主要就是讨论如何把广告存起来，如何handle很多用户，service的interface之类
+
+machine learning面的是newsfeed，其中有一问是怎么推荐用户兴趣以外的post，楼主不太会就说可以randomly推荐一下。这问我现在也不清楚，请大家讨论一下吧
+如果是我我会把user 没有warch 过的post category 当作我们的target , 带入reccommendation 的system 也就是说简单的方法是CF 搜寻相似的user 找到共同兴趣的post 然后就可以产生new feed 这因该是最简单的做法
+
+第二轮：ML系统设计。比较坑的一轮，之前那么多人的ML engineer面经，都是News Feed ranking, Ads ranking，我也按这个准备。。。结果考了一个用Machine learning来做Facebook的好友推荐功能。。这轮回答的磕磕绊绊，有可能会挂。。
+
+第二轮ML设计：国人小哥。要求设计一个NLP分类器，输入为搜索语句，输出为归类。比如是体育类，新闻类，音乐类等。本人工作中没做过NLP，但是平时注重学习，对NLP有所了解。标准ML设计流程，讨论data性质，给出NLTK包做data filter，bag of words做feature extraction，模型选择选用了LR和SVM，并讨论了模型的推导，优缺点，必考的overfitting underfitting问题。最后讨论了一些优化。由于紧张，混淆了一个概念，小哥纠正以后才意识到。如果60分hire，80分strong，自我感觉表现在70分左右。小哥并没有帮忙提一格，给了hire，没有给strong。
+又想起来一些细节，补充一下。第二轮ML设计，小哥提了一个问题，说如何做可以使SVM来predict连续值，而不仅用作binary classification
+针对第二轮ML系统设计，baca推荐的学习资料如下，希望对大家有用：NLP特征提取Query Intent understanding和Query rewrite， 书籍《美团机器学习实践》，知乎美团，达观文化的技术文章
+楼主那个NLP的问题，我感觉应该是class 场景分类，类似于Google搜索歌名，能自动给出歌曲歌词，MV之类的搜索。。如果回答是一个命名识别问题NER 是不是会加分？其实标准做法应该是LSTM + CRF....个人理解是这样的。。面试官了解你不是完全了解这个领域，你的做法可行，但不是公司会用的做法。。。
+第五轮distributed system design：也是阿三。题目比较刁钻，要求设计news feed，返回一个区域范围内所有的news，针对这个2D空间的范围搜索进行设计。我给的是用K-D tree可以做二位空间搜索，然后一些常规的分布式优化等。有一个负载平衡的优化问题没说清楚，这轮自我感觉也是在hire和strong之间，最后给了hire。
+第五轮distributed system design：给的数据量是10亿个news的地理位置，qps是每秒十万次。
+10亿个news的地理位置，qps每秒十万次。数据存储和CPU单机都解决不了，需要分布。我当时给的解法用AWS EC2和ELB服务，这个解CPU分布很容易，但是解不了数据分布。用nosql数据库，我给他按照每个item最大32kb估的，也有几十个TB了。我给的解是数据按照地理位置分开存储，比如搜索纽约，就到专门存纽约的库里找。每个单机存两到三个地区库，平时主要服务一个区域。开机的时候可以把主库加载到memcached。既可以多备份保证安全，也可以在局部出现热点的时候，这样可以用非热点服务器帮忙接一下。
+但个人感觉这个解太复杂，实际并不太现实。
+
+design: FB news feed
+ML design: ‍‌‌‍‌‍‌‍‍‌POI , features, models
+这个是个看上去很累而且漫不经心的小哥面的， 所以我就简答带过了因为poi 多数情况是作为general system design出现的，我遇到的可能比较特殊， 要求personalize, 然后看我之前做过的项目集中问了怎么产生user level embedding, location level embedding, 如何采集negative example, pos example, 对 neg example 怎么sample, model 选择上LR, XGB, NN 各自有啥优缺点。总之问的很随意发散， 和大多数同学遇到的有点不一样， 可能是个例/
+
+Prob 4: ML design. Some NLP prediction task. Basic questions about data collection, loss function design, and so on. Don't remember the details.
+Prob 5: ML design. FB newsfeed ranking design. Basic questions ‍‌‌‍‌‍‌‍‍‌about data collection, loss function design, and so on.
+
+3，设计facebook newsfeed
+后面把我转到distributed system 组，加面一轮system design, 给10k个server 和一个url, 要求设计一个distributed ‍‌‌‍‌‍‌‍‍‌system 从给定的url进去，来crawl 10^9 urls。我对系统设计完全没概念，所以毫无悬念地再次挂了。
+ml设计一开始就问怎么设计 newsfeed，我准备不充分，不知道这种问题有没什么套路。面试官问了一些 metric, 模型之类的问题，具体有点不记得了，都是跟newsfeed想关的问题。
+new feeds 是click -through rate 的optimize 还是只是相关性的recommendatio system ?
+click, like, comment, share 这边是偏向feature engineering 吧? 那主要是考察什么呢? 算法 or 储存 or 公式推倒?
+面试官没说，我是按CTR这种来做的，算click, like, comment, share这些的概率
+没有问存储这种，都是ml的相关的比如feature, model这些
+
+不好意思回的晚了点。他当初提的问题是这样的，given一个用户点击了一个网页，如何给他推荐相关的网页。总体来说应该要求你design一个完整的system，包括用什么做feature，用什么算法，model evaluation之类的。但是我的面试过程比较纠结，因为我提的算法似乎有点问题，我们就纠结了很久这个。所以没太来得及到后面的部分。
+反正整个过程就是随时可能被打断问各种的问题，然后很可能没法按照原定的计划讲下去。
+第一个点就是用什么algorithm，我说可以把点击其他网页的概率用logistics regression，然后我们就在logistics regression的算法上面纠结了许久。比如定义，kernel之类的东西。剩5分钟的时候才提了feature selection和model evaluation的问题
+
+系统设计，设计记录手机用户浏览和点击广告，并用来算点击率。主要是写的部分，用户读手机不用管
+ml 设计，facebook marketplace， 基本上是ranking的问题
+
+d). （噩梦开始）12:30， 一个白人大哥很犀利的样子（背景也很牛），爬虫设计，10k的机子爬1B的wiki，不能爬重复的page。本人准备的设计题中恰巧没注重这方面，所以答的很磕绊。大哥先问了单机子多线程怎么实现，怎么加锁，然后到了分布式。其实核心思想是hash url，然后进行更even的分配负载。
+e). 1:15，很nice的国人小哥，问的是ML design关于POI（point of interest). 注重点是ML的整体思路，从问题的描述道最后的service搭建，过程中会涉及到‍‌‌‍‌‍‌‍‍‌database的query，categorical feature的降唯（embedding）等等细节。这轮楼主表示面的一般，但不至于挂。
+
+1. System design: typeahead. 问得很详细，比如DB里面存什么内容，如何index，如何对suggestion排序，如何更新排序等等。并不太清楚trie是怎么存在DB里面的，所以只答了trie在cache里面。DB里面就存排序好的words。
+3. ML design: 设计marketplace的recommendation，主要讲了选什么样的feature和model overfitting了怎么办
+
+round 2: machine learning design:  in youtube search engineer： 如果你想search key word “machine”， 当你type “ma”时， 可能多种选择 “map”， “mat”。。。how to rank it。 how to search in database。
+round 5: system design： goe 题： 给你 p（latitude，longitude） search 一个 半径 n miles 的circle 内所有 p（latitude，longitude）。 如何get database， 怎么存 database，设计怎么search。 map reduce 之类
+我个人觉得是 search 和ranking 如何 ranking in database ， 如何search
+请问楼主第二轮ml design是用machine learning 做ranking吗？主要考察什么？考察的是 trie structure 和 search enigeer
+
+1. 设计 亚麻 商品 推荐系统，
+2. 设计 推特 状态 搜索
+系统设计偏重infra吧
+ML 特征选取，特征工程，评估，模型 之类的
+
+3. 系统：爬虫
+4. 系统：机器学习rank page
+
+4. system design：国人，typeahead，面的还行，貌似帮忙。hr反馈回来不是strongest，估计bar高。
+5. system design：国人，friend recommendation。hr反馈回来不是strongest，估计bar高。
+
+第三轮是system design，上来先问了我一下有没有tradeoff的experience。然后system design的问题是design a geo info system which provides service to find the nearest n locations from 50M point of interest
+第四轮是machine learning system design，让我design一个public video recommendation system
+我觉得你可以搜一搜point of interests system design就会有很多相关的介绍。
+
+第二轮：ML system design. Newsfeed ranking. 这一轮是论坛里讨论的比较少的一个类型。我复习的方式是先复习一遍一些ML的经典算法，然后学习Facebook的ML视频（来自FB blog和YouTube搜索）。看得多了，会发现总结起来答题有章可循的。
+我自己准备的时候在白板上对空气讲过几遍，但是面试的时候其实问题会特别发散，跳来跳去的，比如我提到“训练效果。。。”，对方就问“怎么知道好不好”。但是大体上都是很常规的问题。
+ML design: 把基础打好，多了解一下工业界的操作，总结一个ML系统的组成部分和每个部分的design要点。
+
+Round1: ML System Design: 设计一个系统来识别广告或者post里面有没有违禁的内容（色情，暴力）。如果看文字要怎么做，如何筛选关键词，如果用naive bayes怎么做，如果用deep learning怎么做。如何根据图片来做，DL。用什么feature，performance metric，如果case比例很低怎么办，等等
+Round2: ML Theory：在没有label的情况下，如何根据post里的文字来分类（聚类）。K-means原理，如何判断post里某个聚类的中心更近。
+如果case比例很低，就用skewed sampling，就是对case over-sampling，对control under-sampling，让他们尽量balance，另外，好像cross entropy可以较好的处理这种情况，因为里面有个log，这一点我也不太确定，还请大神来解答。面试节奏很快，就想到什么说什么了。
+feature selection有这么几种方法，统计上喜欢用forward, backward, stepwise selection。 L1 会把一些coefficient 压缩到0，所以有feature selection的作用。另外，用PCA把维数降低，应该也算。最后有一些package 比如我知道H2O.ai里面有一些模型比如RF，可以把每个feature的importance算出来，从而帮助feature selection。我就能想到这些，还请大神门帮忙补充。
+thanks for sharing 我是NLP 领域 我司常用的是PCA or auto encoer, word embedding 也是常用的技术 当然怎么tune 这些skill 又是另一件事
+
+3. 系统设计 国人大哥 typeahead: 心中窃喜 然后刚说到qps 大哥问你是不是看过这道题 一下子怔住了不知道怎么回答 后来实诚的说 确实以前见过 然后就换了道题 是关于如何search fb的post (比如搜apple,出来苹果公司消息的post) 全程阴着脸 不苟言笑 最后这轮好像也没过
+4. ML 设计 国人大姐 问一些以前的项目经历 然后问的是 怎么设计fb的page模块的 search,比如搜san jose 出来的是地名 搜lady gaga 出来的是人的page.
+
+
