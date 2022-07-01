@@ -605,7 +605,7 @@ thanks for sharing 我是NLP 领域 我司常用的是PCA or auto encoer, word e
 4. ML 设计 国人大姐 问一些以前的项目经历 然后问的是 怎么设计fb的page模块的 search,比如搜san jose 出来的是地名 搜lady gaga 出来的是人的page.
 
 
-#### Machine Learning System Design Framework
+### Machine Learning System Design Framework (page recommendation)
 `Scenario: Clarify question/senario/feature/background`
 
 `System goal: Clarify metrics`
@@ -617,5 +617,46 @@ thanks for sharing 我是NLP 领域 我司常用的是PCA or auto encoer, word e
 2. Feature engineering:
 - What should be feature: page metadata, user metadata, friend metadata
 - Important feature distribution
+Data generation 这块可能还要考虑下用什么data 做training， label 是什么
 `Preprocessing(why preprocess):` 1. Text embedding 2. Categorical feature 3. Date Parse 4. Missing value 5. Outlier detector
-Model selection: There are 3 widely-use classification model
+Preprocessing 可能还需要做standardization跟normalize data
+我好像记得linear regression  和logistics regression是scale invariant? 所以也可以不做normalize?
+当然Ridge 和lasso是有影响的
+KNN 里面非常需要normalize data，因为这个会用到距离。
+
+`Model selection: There are 3 widely-use classification model`
+- Logistic regression is a linear classifier(linear combination + sigmoid function(Monotonically increasing)). The model output is the predicted probability of label being 1. It requires assumptions: each data point independent. No correlation between features. It’s fast to train and easy to interpret because of it is a parametric model. This is a simple, robust, low variance model compared to tree classifiers and other non-parametric classifiers.
+- Bagging method such random forest tree classifier does not need assumption to data. It randomly bootstrap features to parallelly train n models and take average of each model’s output. Random forest will result in low variance because low correlation between each tree. It’s relatively quick to train because each tree is independent.
+- Boosting method such as gradient boosting tree classifier does not need assumption either. It sequentially trains n trees, using residuals between actual y and predicted probability. This is a complicated, high variance, low bias model. Relatively slow to train because we have to wait until the first tree complete before training the second tree. And it requires relatively large data amount, otherwise easy to overfit.
+
+In practice, I would train a logistic regression model as baseline model. Also try random forest and gradient boosting tree to see which one has the best performance. According to my experience, gradient boosting tree usually works better, regarding to the large-scale data. So I would choose gradient boosting tree for this problem.
+
+To find best parameters for gradient boosting tree, I need to split data to train, test dataset.
+- Split by timestamp by 90/10
+- Important feature and target variable distribution should be close for both data set. If not close, do data extraction again
+- Imbalance data: up sample
+
+`Hyper parameter tuning: grid search, random search, Bayesian opti‍‌‌‍‌‍‌‍‍‌mization`
+Based on my experience, these parameters are quite important: N_estimator, learning rate, max_depth, min_split, regularization
+Cross validation 90/10
+
+`Model evaluation`
+Offline evaluation
+
+`Main metrics: AUC`
+Metrics 这块如果是个ranking problem， 那就不仅是AUC，要用些专用的metric 比如 MAP@K , NDCG
+If test AUC >= 0.8, move to next step. If not, could be multiple reason. Overfitting, redo data extraction (train, test data set distribution not close).
+
+Retrain model based on whole data set.
+
+Model Calibration if necessary.
+Online evaluation
+
+Before model deployment, I would do a A/B test to compare existing policy and using new model as recommendation policy.
+
+Metrics: num of like
+Two proportion sample test, z statics, 5% significant level
+
+`Model iteration:`
+- Batch model: monthly retrain, better solution is to monitor AUC
+- Online retrain: using latest hour/daily data to partially update model parameter (add a tree with smaller learning rate)
