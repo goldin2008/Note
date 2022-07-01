@@ -604,13 +604,118 @@ thanks for sharing 我是NLP 领域 我司常用的是PCA or auto encoer, word e
 3. 系统设计 国人大哥 typeahead: 心中窃喜 然后刚说到qps 大哥问你是不是看过这道题 一下子怔住了不知道怎么回答 后来实诚的说 确实以前见过 然后就换了道题 是关于如何search fb的post (比如搜apple,出来苹果公司消息的post) 全程阴着脸 不苟言笑 最后这轮好像也没过
 4. ML 设计 国人大姐 问一些以前的项目经历 然后问的是 怎么设计fb的page模块的 search,比如搜san jose 出来的是地名 搜lady gaga 出来的是人的page.
 
+ML system design，基本上按照prep上面说的准备就行，面试过程基本就是给一个scenario，然后问你怎么design这个系统，比如news feed或者ads recommendation，然后聊下去，各个design component可能会比较随机的聊一些不同的方法和pros cons，比如feature engineer什么的打算怎么用什么feature，怎么处理这些feature之类的。基本上都是比较常规的ML问题。我准备上主要是看了一些相关的post和youtube视频，了解下这些系统，其实这些系统本质上都是差不多的，感觉基本上都是一个套路准备就行。
+
+第二轮：ML system design. Newsfeed ranking. 这一轮是论坛里讨论的比较少的一个类型。我复习的方式是先复习一遍一些ML的经典算法，然后学习Facebook的ML视频（来自FB blog和YouTube搜索）。看得多了，会发现总结起来答题有章可循的。
+我自己准备的时候在白板上对空气讲过几遍，但是面试的时候其实问题会特别发散，跳来跳去的，比如我提到“训练效果。。。”，对方就问“怎么知道好不好”。但是大体上都是很常规的问题。
+
+1. Friend recommendation
+2. Video recommendation
+3. Design market place
+4. Amazon recommendations
+5. Ad click through rate
+6. Text clustering
+7. Text classification
+8. Point of interest
+9. Newsfeed randking
+
+ML Design I:
+Design video recommendation system.
+Follow-up: How to maximize the video watching duration.
+嗯，Collaborative Filtering（CF）可以做。但是CF不太容易使用用户及video的特征。此外还要考虑scalability 的问题。可以参考[1], [2].
+关于video duration的问题，可以定义一个新的loss function，比如累加用户$u_j$ 观看的video $x_i$概率与video长度$length(x_i)$的乘积等.
+$\sum_i_{length(x_i) * P(x_i|u_j, ...)}$  
+[1] Paul Covington et al., Deep Neural Networks for YouTube Recommendations, RecSys 2016.
+[2] Xinran He, Practical lessons from predicting clicks on ads at facebook, PAKDD  2014.
+还有个问题 如果是到youtube这个量级 矩阵的规模都在亿乘以亿水平 那么像spark这种mr也没法完成分解 可能要使用到parameter server. 目前的推荐系统都是召回加精排 召回多用cf 而非youtube的dnn 当然阿里的可能更复杂如din这些 cf可以看spark mahout这些 精排就各显神通了 但是复杂模型的线上推理也是个大难题 用lgb xgboost做embedding 后接lr是主流做法 还有就是谷歌的wide and deep
+
+ML Design II:
+Design Ads security system, detecting non-appropriate ads.
+
+
+一轮system design：我第一次面真的system design轮，相对的弱项。不过recruiter说ML candidate一般都比较弱，会考虑进去。跟我之前看得常见系统设计题不一样，还是偏analytics的。需要设计算法来计算某种metric，这部分也相对传统的system design可能更open-ended一点。问了些data base access pattern啥的，我确实不太懂。。就直接说不是很熟悉哈哈。。
+- 不需要state-of-the-art的fancy ML model，但是需要正确formulate问题。也就是明确这是个classification/regression/ranking problem，且解释为什么。
+- 基于选择的problem formulation来思考如何拿到labeled data。事先熟悉面试公司的业务，然后思考如何巧妙利用他们现有的数据。这几个公司基本都是social platform，所以可以有很多user intention的signal。往这方面思索一下，基本思路都是hybrid 的semi-supervised approach。
+- 有用的feature可以从你得intuition出发，然后讨论能否获得那些数据，处理的复杂程度之类的。feature engineering和embedding approach都可以讨论下。
+- 那些大厂会注重scalability，所以可以讨论下如何sample data， train的时候估计需要多少data points。
+- model serving的时候讨论是real-time prediction呢还是batch job这种
+- 讨论下offline/online metrics。这里也最好结合业务本身propose relevant metrics。
+我也还需要提升呢，不过我觉得宗旨就是要凸显你的在project里的leadership，过程中遇到了什么困难，如何解决一些conflicts，deliver了如何的result，对公司业务有怎样的impact。总之故事要娓娓道来，然后一个故事涵盖体现你的综合实力。
+不过我觉得还是要实事求是比较重要，可以适当夸大，但是如果真的没什么太厉害的project或者本身经验不足，硬给你个过高的level，入职后也会很艰辛。但是一定要争取到体现自身价值的position和package。
+梳理一下简历，回顾一下过往。我确实有几次面完了，想起来还有个更好的例子，或者当时还有些困难的解决，可是面试的时候临时没想起来。事先多做点self reflection，也可以帮助自己建立信心哦。
+以前觉得behavioural round就是闲聊，后来发现其实大有学问。还需要继续钻研
+请问面试中手动run thru test case来debug是指什么呢？ 我的理解是自己写一个test case，然后把程序里每一行做了什么，中间结果自己手动算出来嘛？这样是不是太难了，对于有些复杂的dfs problems..
+对，是你理解的没错。有些test case确实比较复杂，所以我猜测选择有代表性的有比较简单的test case来检验也是考核的一部分？不过我拿到的题没有dfs的所以相对容易些
+
+现在这两家公司都有单独的ml track engineer 的面试。和普通的swe的区别是可以不考常规的system design，而是更加侧重于ml的相关问题。
+我觉得这个帖子里面提到的paper都非常有帮助：https://www.teamblind.com/article/ML-design-interview-3cYD0vdM
+特别是 youtube recommendation, wide and deep, rules of machine learning, 基本涵盖了大部分相关的知识点。其实很多问题归根结底都是推荐问题，本质都差不多，比如ads，news feed，product recommendations, etc
+其他几篇我感觉很有用的是：
+tfx: https://www.kdd.org/kdd2017/pape ... e-learning-platform  侧重于整个ml workflow
+linkedin 的tutorial ：https://engineering.linkedin.com ... p-learning-tutorial    deep learning recommendation很好的总结
+对常用的sgd的方法和变种的总结：an overview of gradient descent optimization algorithms
+[backcolor=rgb(255, 24‍‌‌‍‌‍‌‍‍‌7, 160)]
+最后，面哪家公司可以多看看那个公司最近发的paper，engineer blog神马的 （e.g. https://medium.com/airbnb-engineering）。总体的感觉是，如果准备方法得当，在短时间内还是可以取得不错的成效的。
+
+4. Design Twitter
+Pull + push model, nosql, multi-level cache, load balancing, using queue to prevent leaky requests, db separate read/write, request cross region route vs request local route, data cross regiona sync, data sharding, photo support
+5. Design Feeds Ranking, feeds include a mix of friend feeds, news feed
+Learning to rank framework -> chose pairwise, just because it's more familiar
+post embedding, user embedding
+feature engineering, feature engineering, feature engineering
+pairwise scoring function architecture -> any binary classifier (nn tower + sigmod, fb btst + log regression, google long and wide, linkedin modified version of long and wide)
+embedding cold start -> global average, airbnb bucket overage, cron job re-train
+ab test, sticky session, maybe you can a‍‌‌‍‌‍‌‍‍‌lso talk about session vs tracking during ab testing
+metrics: ndcg vs map vs mrr, how to calculate
+这个问题原来问的是，如果新的用户我们怎么办。所以我理解为user embedding cold start的问题。YouTube和Airbnb的论文里都有一些类似的解决方案。说实话我自己并没啥很好的想法，就很直白的说YouTube怎么做的，airbnb怎么做的，我觉得都可以尝试一下。
+Airbnb embedding: https://astro.temple.edu/~tua95067/kdd2018.pdf
+feed每一个post自身的embedding我感觉还是蛮固定的，我给的方法虽然在production中可能很不切实际，但是感觉只要有post就能算出post embedding来，所以这个方面好像没有特别的cold start的问题。
+synthetic data我从来没真正试过，隐约感觉在这个环境下生成数据有一定挑战性，但很可能是一个不错的切入角。如果是我给面试的话我会想了解一下你准备怎么生成。
+都是open ended question，没有正确答案，只要能讲得通，大家觉得理论上make sense就好了。
+我也不是很清楚人家想问多么细节，一般都是我在说，他在听，偶尔问下问题。我觉得大约就是看看你了解多少，能不能把问题阐述清楚。
+如果你想了解ranking具体的细节的话，ml推荐阅读的第四篇是关于ranking的，内容有点多，讲了非常多的ranking architecture，但不是所有的内筒都要很仔细的看。如果只是为了面试的话我推荐把其中一种弄得很明白，剩下的大概了解一下。有基础的话，每天一两个小时，一个星期就够了。
+面试的时候我建议double check with your interviewers看他们有没有明白你在说什么，问问哪说的不够清楚，需要具体讲一下。说实话特别是ml，一个方向的有些细节做另一个方向的人很可能并不完全清楚。如果你能像讲课一样然别人明白的话，interviewer一定对你印象很好。
+楼主本来是做search和ranking的
+btst是手残到家了……我想说的是fb gbdt + logistic regression……感谢帮忙指出，ml推荐阅读的第三个就是facebook的那个architecture
+我觉得feed ranking更多的是一个personalized ranking problem，我没有按recommendation system的方式去想过。pairwise ranking的话就是拿两个两个documents相互比，看哪个应该排在前面，最后还是需要从pair order生成total order。前面做post embedding和user embedding的时候那些embedding应该包含相似度信息，我就没有从score function的角度再考虑相似度。
+不过我觉得只要你能说得通应该都行，感觉和system design一样都是open ended questions
+multi-level cache <＝ 这边的multi-level cache 的应用能说一下吗? request cross region route vs request local route => 我想这边跟根据user 的region 用比较近的CDN or data center support?
+multi-level cache就是给几个cache layer再搞一层cache layer，fb live是这么做的。
+request cross region route就是user read write不一定是local，有可能根据business logic把你route到另外一个region，netflix就是这么干的。这样regional data center之间不需要sync，也没有直接的communication。
+相反的，就是read write是在local data center，然后regional data center之间互相sync，github是这么干的。不过这个需要比较复杂coordination和distributed lock，github还因此出过一次20+h的outage。
+两种方法其实都可行，各有利弊，而且在不同公司都在production里面用，只是有不同的trade off
+原来是问新用户 那用history 其他的用户资料 ＋cluster or 相似度的想法 可能比synthetic data 好（虽然synthetic data 也是near neighbor 的概念） 跟lz 讨论学习了!
+
+
+> https://towardsdatascience.com/recommender-systems-in-practice-cef9033bb23a
+
+> https://towardsdatascience.com/introduction-to-recommender-systems-6c66cf15ada
+
+> https://www.kdnuggets.com/2019/04/text-preprocessing-nlp-machine-learning.html
+
+> https://medium.com/@MSalnikov/text-clustering-with-k-means-and-tf-idf-f099bcf95183
+
+> https://stats.stackexchange.com/questions/263429/how-to-run-linear-regression-in-a-parallel-distributed-way-for-big-data-setting
+
+> https://engineering.fb.com/2015/06/02/core-data/recommending-items-to-more-than-a-billion-people/
+
+> https://www.youtube.com/watch?v=mhUQe4BKZXs&list=PLkQkbY7JNJuBoTemzQfjym0sqbOHt5fnV
+
+> https://www.youtube.com/watch?v=0DYQzZp68ok
+
+> https://www.youtube.com/watch?v=Xpx5RYNTQvg
+
+> https://www.youtube.com/watch?v=nxhCyeRR75Q&list=PLIG2x2RJ_4LTF-IIu7-J3y_yg8LRe1WZq&index=2
+
+
 
 ### Machine Learning System Design Framework (page recommendation)
 `Scenario: Clarify question/senario/feature/background`
 
 `System goal: Clarify metrics`
 
-`Data extraction:`
+`Data extraction/Data collection:`
+You have to understand the problem and figure out possible data you can collect.
 1. target variable construction:
 - Deduplication
 - EDA(0,1 ratio), imbalance data
@@ -618,7 +723,9 @@ thanks for sharing 我是NLP 领域 我司常用的是PCA or auto encoer, word e
 - What should be feature: page metadata, user metadata, friend metadata
 - Important feature distribution
 Data generation 这块可能还要考虑下用什么data 做training， label 是什么
-`Preprocessing(why preprocess):` 1. Text embedding 2. Categorical feature 3. Date Parse 4. Missing value 5. Outlier detector
+`Feature engineering/Preprocessing(why preprocess):` 1. Text embedding 2. Categorical feature 3. Date Parse 4. Missing value 5. Outlier detector
+categorical feature, numerical feature, text feature (TF-IDF, word2vec), image (Use pre-trained CNN model like VGG as feature extractor)
+Dimension reduction (optional): SVD based ALS (useful for TF-IDF), PCA
 Preprocessing 可能还需要做standardization跟normalize data
 我好像记得linear regression  和logistics regression是scale invariant? 所以也可以不做normalize?
 当然Ridge 和lasso是有影响的
@@ -636,12 +743,23 @@ To find best parameters for gradient boosting tree, I need to split data to trai
 - Important feature and target variable distribution should be close for both data set. If not close, do data extraction again
 - Imbalance data: up sample
 
+What I do is to convert a recommendation system problem to one of the following models:
+1. A simple distance metric (for example, number of shared friends in friend recommendation)
+2. Logistic regression (Best and simplest one)
+3. Matrix factorization (Netflix)
+4. Neutral network using Triplet loss function (If you have a lot of text and/or image)
+
+一个是关于Deep Learning。大神的帖子里说面试时不推荐用Deep learning的model，这个我同意。但是一定要准备。有时候你能听的出来Interviewer就是想让你说DL‍‌‌‍‌‍‌‍‍‌，不说就挂了。还有时候不得不用，比如Data是图片的情况，那么必须用CNN把Image转成Vector，然后可以用LR什么的。第二个是Distributed training。不管用什么模型，都要想一下怎么用多个Machine做distributed training。模型越简单考官越喜欢问这个。
+
 `Hyper parameter tuning: grid search, random search, Bayesian opti‍‌‌‍‌‍‌‍‍‌mization`
 Based on my experience, these parameters are quite important: N_estimator, learning rate, max_depth, min_split, regularization
 Cross validation 90/10
 
 `Model evaluation`
 Offline evaluation
+1. F1 score
+2. AUC
+3. A/B testing if interviewer ask for business evaluation
 
 `Main metrics: AUC`
 Metrics 这块如果是个ranking problem， 那就不仅是AUC，要用些专用的metric 比如 MAP@K , NDCG
