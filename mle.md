@@ -715,7 +715,9 @@ ml的newsfeed ranking design和instagram newsfeed 还蛮像的
 
 > https://www.youtube.com/watch?v=nxhCyeRR75Q&list=PLIG2x2RJ_4LTF-IIu7-J3y_yg8LRe1WZq&index=2
 
+> https://igotanoffer.com/blogs/product-manager/behavioral-interview-questions-tech-companies
 
+> https://leetcode.com/explore/
 
 ### Machine Learning System Design Framework (page recommendation)
 `Scenario: Clarify question/senario/feature/background`
