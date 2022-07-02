@@ -720,7 +720,30 @@ ml的newsfeed ranking design和instagram newsfeed 还蛮像的
 > https://leetcode.com/explore/
 
 ### Machine Learning System Design Framework (page recommendation)
+• Design a personalized news ranking system.
+• Design a product recommendation system.
+• Design an evaluation framework for ads ranking.
+
+• Can you visualize the entire problem and solution space?
+• Can you come up with relevant ML features for your model?
+• Can you detect flaws in ML systems and suggest improvements?
+• Can you design consistent evaluation and deployment techniques?
+• Do you understand architecture requirements (storage, perf etc.) of your system?
+• Can you model product requirements into your ML system?
+• Are you able to overcome common ML problems such as overfitting, cold start, data collection and logging?
+
+• Problem formulation:
+    • Optimization function.
+    • Supervision signal.
+• Feature engineering:
+    • Data source.
+    • Representation.
+• Model architecture.
+• Evaluation metrics.
+• Deployment (A / B testing).
+
 `Scenario: Clarify question/senario/feature/background`
+understand the problem and ask clarifying questions
 
 `System goal: Clarify metrics`
 

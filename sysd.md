@@ -331,6 +331,42 @@ have two pointers, first on A and second on end of B. move the pointer l and r (
 
 You have 52 playing cards (26 red, 26 black). You draw cards one by one. A red card pays you a dollar. A black one fines you a dollar. You can stop any time you want. Cards are not returned to the deck after being drawn. What is the expected payoff following this optimal rule? for this, u need to find what is the optimal stopping rule in terms of maximizing expected payoff.
 
+`Distributed systems design round`
+• Design a key-value store.
+• Design a search for an internet search engine.
+• Architect a world-wide video distribution system.
+• Build Facebook Chat.
+
+• Familiarity with complex systems.
+• Concurrency (threads, deadlock, starvation, consistency, coherence).
+• Abstraction (understanding how OS, filesystem, and database works).
+• Real-world performance (relative performance RAM, disk, your network, SSD).
+• Availability and reliability (durability, understanding how things can fail).
+• Data storage (RAM vs. durable storage, compression, byte sizes).
+• Byte math.
+
+• Arrive at an answer in the face of constraints.
+• Visualize the entire problem and solution space.
+• Make tradeoffs like consistency, availability, partitioning, and performance.
+• Give ballpark numbers on QPS supported, number of machines needed using a modern computer.
+• Consider Facebook and some of the unique challenges we face.
+• Propose a design for a system that breaks down the problem into components that can be built independently, with the ability to talk in detail about any piece of the design.
+• Identify the bottlenecks as the system scales and understand the limitations in your design.
+• Understand how to adapt the solution when requirements change.
+• Draw diagrams that clearly describe the relationship between the different components in the system.
+• Calculate (back-of-the-envelope) the physical resources necessary to make this system work.
+
+• Start with requirements. Your interviewer might ask: “How would you architect the backend for a messaging system?” Obviously, this question is extremely vague. Where do you even start? You could start with some requirements:
+    • How many users are we talking about?
+    • How many messages sent?
+    • How many messages read?
+    • What are the latency requirements for sender-to-receiver message delivery?
+    • How will messages be stored?
+    • What operations does this data store need to support?
+    • What operations is it optimized for?
+    • How do you push new messages to clients? Do you push at all, or rely on a pull-based model?
+
+
 ### Recommender System
 https://towardsdatascience.com/deep-dive-into-netflixs-recommender-system-341806ae3b48
 

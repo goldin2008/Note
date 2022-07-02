@@ -223,3 +223,19 @@ Others have also made arguments for why data scientists should specialize (and n
 15. Tell me about your greatest professional failure and how you recovered.
 `failure`
 Allocate tasks to team members in parallel to avoid blockers. Set up reasonable deadline as use advantages of everyone.
+
+• Know yourself: Take the time to review your own resume as your interviewer will almost certainly ask about key events in your work history.
+• Motivation and collaboration: Different interviewers will ask different questions, typically seeking two signals in particular:
+    • Motivation: What’s your motivation? Why do you want to work at Facebook? Why are you working as a software engineer?
+    • Collaboration: How do you collaborate with peers? How do you resolve conflicts?
+
+• Have concrete examples or anecdotes: Support each question with examples. Some typical behavioral interview questions are:
+    • What were some of the best things you’ve built?
+    • What are you proud of?
+    • What could you have done better?
+    • What were some successful collaborations you’ve had?
+    • Tell me about a time when you advocated for and pushed your own ideas forward despite opposition?
+    • How do you deal with conflict?
+    • How do you like to give and receive feedback?
+    • What kinds of technologies are you most excited about?
+    • Why Facebook?
