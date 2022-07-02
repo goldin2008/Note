@@ -719,6 +719,13 @@ ml的newsfeed ranking design和instagram newsfeed 还蛮像的
 
 > https://leetcode.com/explore/
 
+> https://ai.facebook.com/blog/powered-by-ai-instagrams-explore-recommender-system/
+
+> http://highscalability.com/;jsessionid=BB3A3CFAC4FDBDE62CD99D810F4337B3.v5-web020
+
+> https://research.facebook.com/research-areas/machine-learning/
+
+
 ### Machine Learning System Design Framework (page recommendation)
 • Design a personalized news ranking system.
 • Design a product recommendation system.
