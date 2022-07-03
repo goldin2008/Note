@@ -726,7 +726,7 @@ ml的newsfeed ranking design和instagram newsfeed 还蛮像的
 > https://research.facebook.com/research-areas/machine-learning/
 
 
-### Machine Learning System Design Framework (page recommendation)
+### Machine Learning System Design Framework (page recommendation/fraud)
 • Design a personalized news ranking system.
 • Design a product recommendation system.
 • Design an evaluation framework for ads ranking.
