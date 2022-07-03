@@ -40,17 +40,17 @@
 
 > https://fullstackdeeplearning.com/spring2021/lecture-6/
 
-imbalanced class 看主要优化的目标是啥，可以是 precision, recall, 如果二者兼具的话就是F1.
+> https://madewithml.com/
 
-https://madewithml.com/
+> https://eugeneyan.com/writing/testing-ml/
 
-https://eugeneyan.com/writing/testing-ml/
-
-https://completedesigninterviewcourse.com/system-design-interview/
-
-到时候把Grokking the Coding Interview: Patterns for Coding Questions也学一下。感觉这两门课，对Machine learning engineer的面试可能就够了（当然，还有机器学习专业方面的你还需要去好好准备）
+> https://completedesigninterviewcourse.com/system-design-interview/
 
 > https://www.1point3acres.com/bbs/thread-652770-1-1.html
+
+imbalanced class 看主要优化的目标是啥，可以是 precision, recall, 如果二者兼具的话就是F1.
+
+到时候把Grokking the Coding Interview: Patterns for Coding Questions也学一下。感觉这两门课，对Machine learning engineer的面试可能就够了（当然，还有机器学习专业方面的你还需要去好好准备）
 
 * Grokking the Coding Interview: Patterns for Coding Questions
 * Grokking-the-system-design-interview
