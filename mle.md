@@ -744,6 +744,10 @@ How do we monitor and make sure models don’t go stale?
 How do we design inference components to provide high availability and low latency?
 Once models are deployed, we want to run inference with low latency (<100ms) and scale our system to serve millions of users.
 
+`Cold Start`
+- boost new movies based on their similarity with the watched movies
+- increse their relevance scores a little
+
 `Train and evaluate model`
 `1. Data extraction/Data collection:`
 You have to understand the problem and figure out possible data you can collect.
@@ -821,7 +825,3 @@ Which components are likely to be overloaded?
 How can we scale the overloaded components?
 Is the system good enough to serve millions of users?
 How we would handle some components becoming unavailable, etc.
-
-`Cold Start`
-- boost new movies based on their similarity with the watched movies
-- increse their relevance scores a little
