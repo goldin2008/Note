@@ -290,23 +290,6 @@ ML design 一班会是一轮rank
 
 我的理解是这道题的特点在于数据来源/label获取，detection entry point以及enforcement都是灵活的，如果思维局限了的话作为E5就会差点意思
 
-Educative.io Grokking Machine the Learning Interview + blogs on machine learning design from Medium.com
-
-
-Wide & Deep Learning for Recommender Systems
-
-Deep Neural Networks for YouTube Recommendations
-> https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf
-
-The Netflix Recommender System
-
-From RankNet to LambdaRank
-
-Predictive Model Performance: Offline and Online Evaluation
-
-Practical Lessons from Predicting Clicks on Ads at Facebook
-
-
 bq着重问了我teamwork以及处理conflict的事情，并且有问怎么看待meta的vision以及privacy相关问题。面试官感觉是个大manager但是人很nice，甚至教了我一些有用的teamwork小技巧。
 
 系统设计 国人大哥 typeahead: 心中窃喜 然后刚说到qps 大哥问你是不是看过这道题 一下子怔住了不知道怎么回答 后来实诚的说 确实以前见过 然后就换了道题 是关于如何search fb的post (比如搜apple,出来苹果公司消息的post) 全程阴着脸 不苟言笑 最后这轮好像也没过
@@ -406,7 +389,6 @@ Round4: ML Design: Instagram 推荐来自非好友的帖子
 感觉这个作为binary classification 更好吧？最后logistic function threshold >=0.9的就是肯定不行，0.65 到0.9之间（或者更小）的就送去人工检测，0.65以下的就都是ok没问题的，感觉这种更 make sense？不然你分三类的话，你怎么给你的model 去feed 给人工审核的data？你没办法优化这一块啊？
 请问楼主能详细讲讲怎么解决positive example少的问题吗？感觉positive training data极其少（尤其还限定了是武器）
 我想得到的可能用一些curator已经label的，用户mark的，或者用一些heuristic来filter一些已有的广告，或者自己generate一些。 楼主有什么好的想法吗？谢谢
-
 
 第一轮：机器学习系统设计，广告推荐系统
 第二轮：行为问题。问完以后还有时间就写了道题，蠡口 旧疤
@@ -694,6 +676,21 @@ request cross region route就是user read write不一定是local，有可能根�
 ml的newsfeed ranking design和instagram newsfeed 还蛮像的
 是啊，不過考 instagram 那次面試官問比較多關於 scaling 的問題，所以就沒碰太多設計推薦系統的部份
 
+
+Educative.io Grokking Machine the Learning Interview + blogs on machine learning design from Medium.com
+
+Wide & Deep Learning for Recommender Systems
+
+Deep Neural Networks for YouTube Recommendations
+> https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf
+
+The Netflix Recommender System
+
+From RankNet to LambdaRank
+
+Predictive Model Performance: Offline and Online Evaluation
+
+Practical Lessons from Predicting Clicks on Ads at Facebook
 
 > https://towardsdatascience.com/recommender-systems-in-practice-cef9033bb23a
 
