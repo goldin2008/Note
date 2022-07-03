@@ -818,3 +818,7 @@ Two proportion sample test, z statics, 5% significant level
 `Model iteration:`
 - Batch model: monthly retrain, better solution is to monitor AUC
 - Online retrain: using latest hour/daily data to partially update model parameter (add a tree with smaller learning rate)
+
+`Cold Start`
+- boost new movies based on their similarity with the watched movies
+- increse their relevance scores a little
