@@ -734,12 +734,18 @@ Practical Lessons from Predicting Clicks on Ads at Facebook
 • Evaluation metrics.
 • Deployment (A / B testing).
 
-`Scenario: Clarify question/senario/feature/background`
+`Problem Statement: Clarify question/senario/feature/background`
 understand the problem and ask clarifying questions
 
-`System goal: Clarify metrics`
+`System Goal: Identify metrics and requirements`
+During the development phase, we need to quickly test model performance using offline metrics. You can start with the popular metrics like logloss and AUC for binary classification, or RMSE and MAPE for forecast.
+How do we train models to handle an imbalance class?
+How do we monitor and make sure models don’t go stale?
+How do we design inference components to provide high availability and low latency?
+Once models are deployed, we want to run inference with low latency (<100ms) and scale our system to serve millions of users.
 
-`Data extraction/Data collection:`
+`Train and evaluate model`
+`1. Data extraction/Data collection:`
 You have to understand the problem and figure out possible data you can collect.
 1. target variable construction:
 - Deduplication
@@ -748,7 +754,7 @@ You have to understand the problem and figure out possible data you can collect.
 - What should be feature: page metadata, user metadata, friend metadata
 - Important feature distribution
 Data generation 这块可能还要考虑下用什么data 做training， label 是什么
-`Feature engineering/Preprocessing(why preprocess):` 1. Text embedding 2. Categorical feature 3. Date Parse 4. Missing value 5. Outlier detector
+`2. Feature engineering/Preprocessing(why preprocess):` 1. Text embedding 2. Categorical feature 3. Date Parse 4. Missing value 5. Outlier detector
 categorical feature, numerical feature, text feature (TF-IDF, word2vec), image (Use pre-trained CNN model like VGG as feature extractor)
 Dimension reduction (optional): SVD based ALS (useful for TF-IDF), PCA
 Preprocessing 可能还需要做standardization跟normalize data
@@ -756,7 +762,7 @@ Preprocessing 可能还需要做standardization跟normalize data
 当然Ridge 和lasso是有影响的
 KNN 里面非常需要normalize data，因为这个会用到距离。
 
-`Model selection: There are 3 widely-use classification model`
+`3. Model selection: There are 3 widely-use classification model`
 - Logistic regression is a linear classifier(linear combination + sigmoid function(Monotonically increasing)). The model output is the predicted probability of label being 1. It requires assumptions: each data point independent. No correlation between features. It’s fast to train and easy to interpret because of it is a parametric model. This is a simple, robust, low variance model compared to tree classifiers and other non-parametric classifiers.
 - Bagging method such random forest tree classifier does not need assumption to data. It randomly bootstrap features to parallelly train n models and take average of each model’s output. Random forest will result in low variance because low correlation between each tree. It’s relatively quick to train because each tree is independent.
 - Boosting method such as gradient boosting tree classifier does not need assumption either. It sequentially trains n trees, using residuals between actual y and predicted probability. This is a complicated, high variance, low bias model. Relatively slow to train because we have to wait until the first tree complete before training the second tree. And it requires relatively large data amount, otherwise easy to overfit.
@@ -776,17 +782,16 @@ What I do is to convert a recommendation system problem to one of the following 
 
 一个是关于Deep Learning。大神的帖子里说面试时不推荐用Deep learning的model，这个我同意。但是一定要准备。有时候你能听的出来Interviewer就是想让你说DL‍‌‌‍‌‍‌‍‍‌，不说就挂了。还有时候不得不用，比如Data是图片的情况，那么必须用CNN把Image转成Vector，然后可以用LR什么的。第二个是Distributed training。不管用什么模型，都要想一下怎么用多个Machine做distributed training。模型越简单考官越喜欢问这个。
 
-`Hyper parameter tuning: grid search, random search, Bayesian opti‍‌‌‍‌‍‌‍‍‌mization`
+`4. Train/Hyper parameter tuning: grid search, random search, Bayesian opti‍‌‌‍‌‍‌‍‍‌mization`
 Based on my experience, these parameters are quite important: N_estimator, learning rate, max_depth, min_split, regularization
 Cross validation 90/10
 
-`Model evaluation`
+`5. Model evaluation/Main metrics: AUC`
 Offline evaluation
 1. F1 score
 2. AUC
 3. A/B testing if interviewer ask for business evaluation
 
-`Main metrics: AUC`
 Metrics 这块如果是个ranking problem， 那就不仅是AUC，要用些专用的metric 比如 MAP@K , NDCG
 If test AUC >= 0.8, move to next step. If not, could be multiple reason. Overfitting, redo data extraction (train, test data set distribution not close).
 
@@ -800,9 +805,22 @@ Before model deployment, I would do a A/B test to compare existing policy and us
 Metrics: num of like
 Two proportion sample test, z statics, 5% significant level
 
-`Model iteration:`
+`Model Deployment`
+
+`Model iteration/enhancement:`
 - Batch model: monthly retrain, better solution is to monitor AUC
 - Online retrain: using latest hour/daily data to partially update model parameter (add a tree with smaller learning rate)
+
+`Design high level system`
+In this stage, we need to think about the system components and how data flows through each of them. The goal of this section is to identify a minimal, viable design to demonstrate a working system. We need to explain why we decided to have these components and what their roles are.
+For example, when designing Video Recommendation systems, we would need two separate components: the Video Candidate Generation Service and the Ranking Model Service.
+
+`Scale the design`
+In this stage, it’s crucial to understand system bottlenecks and how to address these bottlenecks. You can start by identifying:
+Which components are likely to be overloaded?
+How can we scale the overloaded components?
+Is the system good enough to serve millions of users?
+How we would handle some components becoming unavailable, etc.
 
 `Cold Start`
 - boost new movies based on their similarity with the watched movies
