@@ -792,20 +792,19 @@ What I do is to convert a recommendation system problem to one of the following 
 Based on my experience, these parameters are quite important: N_estimator, learning rate, max_depth, min_split, regularization
 Cross validation 90/10
 
-`5. Model evaluation/Main metrics: AUC`
-Offline evaluation
+`5. Model evaluation`
+In practice, it’s common that the model performs well during offline evaluation but does not perform well when in production. Therefore, it is important to measure model performance in both on and offline environments.
+- Offline evaluation/Offline metrics
 1. F1 score
 2. AUC
 3. A/B testing if interviewer ask for business evaluation
 
 Metrics 这块如果是个ranking problem， 那就不仅是AUC，要用些专用的metric 比如 MAP@K , NDCG
 If test AUC >= 0.8, move to next step. If not, could be multiple reason. Overfitting, redo data extraction (train, test data set distribution not close).
-
 Retrain model based on whole data set.
-
 Model Calibration if necessary.
-Online evaluation
 
+- Online evaluation/Online metrics
 Before model deployment, I would do a A/B test to compare existing policy and using new model as recommendation policy.
 
 Metrics: num of like
@@ -827,3 +826,7 @@ Which components are likely to be overloaded?
 How can we scale the overloaded components?
 Is the system good enough to serve millions of users?
 How we would handle some components becoming unavailable, etc.
+
+During inference, one common pattern is to split workloads onto multiple inference servers. We use similar architecture in Load Balancers. It is also sometimes called an Aggregator Service.
+
+For any business-driven system, it’s important to be able to change logic in serving models. For example, in an Ad Prediction system, depending on the type of ad candidates, we will route to a different model to get a score.
