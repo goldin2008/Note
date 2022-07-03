@@ -759,8 +759,27 @@ You have to understand the problem and figure out possible data you can collect.
 - Important feature distribution
 Data generation 这块可能还要考虑下用什么data 做training， label 是什么
 `2. Feature engineering/Preprocessing(why preprocess):`
-One hot encoding, Feature hashing, Numeric features, Crossed feature, Embedding
-1.Text embedding 2. Categorical feature 3. Date Parse 4. Missing value 5. Outlier detector
+Data Preprocessing:
+1. Categorical feature
+2. Date Parse 
+3. Missing value 
+4. Outlier detector
+
+Feature Engineering:
+1. One hot encoding
+2. Feature hashing
+3. Numeric features
+4. Crossed feature
+5. Embedding
+- Text embeddings (Word2vec)
+    - CBOW: Continuous bag of words (CBOW)
+    - Skipgram: In this architecture, we try to predict surrounding words from the current word.
+- Context-based embeddings
+    - Embeddings from Language Models (ELMo)
+    - Bidirectional Encoder Representations from Transformers (BERT)
+- Visual embedding
+- Network/Relationship-based embedding (two-tower neural network model)
+
 categorical feature, numerical feature, text feature (TF-IDF, word2vec), image (Use pre-trained CNN model like VGG as feature extractor)
 Dimension reduction (optional): SVD based ALS (useful for TF-IDF), PCA
 Preprocessing 可能还需要做standardization跟normalize data
