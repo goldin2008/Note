@@ -798,6 +798,8 @@ In practice, it’s common that the model performs well during offline evaluatio
 1. F1 score
 2. AUC
 3. A/B testing if interviewer ask for business evaluation
+Metrics: num of like
+Two proportion sample test, z statics, 5% significant level
 
 Metrics 这块如果是个ranking problem， 那就不仅是AUC，要用些专用的metric 比如 MAP@K , NDCG
 If test AUC >= 0.8, move to next step. If not, could be multiple reason. Overfitting, redo data extraction (train, test data set distribution not close).
@@ -807,9 +809,7 @@ Model Calibration if necessary.
 - Online evaluation/Online metrics
 Use A/B testing to compare Click Through Rates, watch time, and Conversion rates.
 Before model deployment, I would do a A/B test to compare existing policy and using new model as recommendation policy.
-
-Metrics: num of like
-Two proportion sample test, z statics, 5% significant level
+This is where online experimentation comes in handy. It allows us to conduct controlled experiments that provide a valuable way to assess the impact of new features on customer behavior.
 
 `Model Deployment`
 
