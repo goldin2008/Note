@@ -36,6 +36,11 @@
 
 In the following chapters, we will try to define some of the core building blocks of scalable systems. Familiarizing these concepts would greatly benefit in understanding distributed system concepts. In the next section, we will go through Consistent Hashing, CAP Theorem, Load Balancing, Caching, Data Partitioning, Indexes, Proxies, Queues, Replication, and choosing between SQL vs. NoSQL.
 
+- Scalability
+- Reliability
+- Availability
+- Efficiency
+- Serviceability or Manageability
 
 `IDEA`
 
