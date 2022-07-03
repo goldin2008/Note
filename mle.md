@@ -807,12 +807,12 @@ Retrain model based on whole data set.
 Model Calibration if necessary.
 
 - Online evaluation/Online metrics
-    - A/B testing
+    - A/B testing:
 Use A/B testing to compare Click Through Rates, watch time, and Conversion rates. 
 Before model deployment, I would do a A/B test to compare existing policy and using new model as recommendation policy. This is where online experimentation comes in handy. It allows us to conduct controlled experiments that provide a valuable way to assess the impact of new features on customer behavior. A/B testing is very beneficial for gauging the impact of new features or changes in the system on the user experience. It is a method of comparing two versions of a webpage or app against each other simultaneously to determine which one performs better. In an A/B experiment, a webpage or app screen is modified to create a second version of the same page. The original version of the page is known as the control and the modified version of the page is known as the variation.
-    - Back Testing
+    - Back Testing:
 Assume that the A/B experiment gave a gain of 5% and B/A experiment gave a loss of 5%. This will ensure that the changes made in the system improved performance.
-    - Long-running A/B tests
+    - Long-running A/B tests:
 In a few experiments, one key concern could be that the experiment can have a negative long term impact since we do A/B testing for only a short period of time.
 
 `Model Deployment`
