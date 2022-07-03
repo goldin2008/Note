@@ -78,7 +78,6 @@ https://eugeneyan.com/writing/system-design-for-discovery/
 
 ### Amazon
 #### 1st Interview
-
 1. Talk about linear regression, why it is called linear?
 2. Talk about logistic regression, is it linear?
 3. If we can use one non-linear neuron to train a model, why do we need a lot of layers in our model
@@ -137,7 +136,6 @@ DL
 而酒屋 没写出那个最优解不过也过了
 
 ### Microsoft
-
 MS 电面，一个西雅图小哥，没有coding，纯ml探讨，要推写公式。
 闲聊了聊自己的项目，推了一遍arcface 的loss，楼主英语表达一般，纯靠公式和画图给面试官讲明白了
 聊了聊各个loss function，relu 0处求导怎么办等等
@@ -149,9 +147,7 @@ train的时候把mean保存下来，inference的时候用保存的值. 0处出�
 
 比如说如何选择metrics， 对于不 balanced数据怎么办。为什么要用cnn 等等。
 
-
 ### Linkedin
-
 接下来问probability，用什么样的distribution来model这些event最好：扔硬币，掷骰子，接线员下午4-5点接到了10个电话，5-6点会接到几个电话，股票走势等等，可能问了十来个。这里因为不知道要考probability，所以也没有复习到，可能有些没有答对。
 
 再来就是挑一个算法，从头到尾讲。我讲了logistic regression，包括loss function，optimization，regularization。follow-up了两个问题，一是如果MLE换成MAP，求的是什么。二是，为什么logistic regression对于correlated features表现不好。我‍觉得我第二个follow up没答好，也请教各位会如何回答这个问题。
@@ -182,7 +178,6 @@ coding: 刷题网参六邻
 之后是第二部分机器学习八股。涉及到了各个方面，线性回归，逻辑回归，regularization L1和L2区别，表达式。随机森林和GBDT区别，scale和transform对它的影响。如何处理overfitting, 如何处理imbalanced dataset, 什么是unsupervised learning. 涉及的内容很细，但是并没有其他版友碰到的推公式的地步。如果是想复习机器学习基本概念，包括公式推导，楼主最近看了一个知乎叫 阿泽的 复旦计算机博主总结的 经典机器学习的各种知识点，从逻辑回归，到PCA， 树模型，甚至到XGBOOST和LIGHTGBM的公式都有。觉得受益匪浅。‍‌‌‍‌‍‌‍‍‌
 保佑自己🙏🏻，同时也希望能帮助到大家。
 
-
 ### Twitter
 coding部分：
 1. 给出一些tweets，找出meaningful的组：很open的问题，要自己定义什么是meaningful，tweets的有用的features
@@ -190,9 +185,7 @@ coding部分：
 我先说了特别简单的one-hot / tf-idf / word2vec 提了一嘴可以train your own version of embedding用word2vec或者bert
 2. Clustering有哪些算法，我说我只知道kmeans，然后就是kmeans的实现，可以用numpy，pandas之‍‌‌‍‌‍‌‍‍‌类的数据处理的包
 
-
 ### Others
-
 5) ML Sys Design
 Build and serve a DL model with given feature engineering logics
 a) how to distributed training
@@ -241,7 +234,6 @@ System Design 2
 设计一个类似youtube的视频推荐系统，同样也是以考察系统为主，而没有专注于model的设计，同时也问了一些和设计第一轮里的提到的如何做数据收‍‌‌‍‌‍‌‍‍‌集和清洗最后用来继续做model training的一些东西。
 
 ### Google
-
 
 ### Facebook
 `一轮ML Design, 一轮System design, 2轮coding`
