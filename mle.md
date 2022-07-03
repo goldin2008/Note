@@ -758,7 +758,9 @@ You have to understand the problem and figure out possible data you can collect.
 - What should be feature: page metadata, user metadata, friend metadata
 - Important feature distribution
 Data generation 这块可能还要考虑下用什么data 做training， label 是什么
-`2. Feature engineering/Preprocessing(why preprocess):` 1. Text embedding 2. Categorical feature 3. Date Parse 4. Missing value 5. Outlier detector
+`2. Feature engineering/Preprocessing(why preprocess):`
+One hot encoding, Feature hashing, Numeric features, Crossed feature, Embedding
+1.Text embedding 2. Categorical feature 3. Date Parse 4. Missing value 5. Outlier detector
 categorical feature, numerical feature, text feature (TF-IDF, word2vec), image (Use pre-trained CNN model like VGG as feature extractor)
 Dimension reduction (optional): SVD based ALS (useful for TF-IDF), PCA
 Preprocessing 可能还需要做standardization跟normalize data
