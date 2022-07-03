@@ -244,10 +244,7 @@ System Design 2
 
 
 ### Facebook
-> 
-
 `一轮ML Design, 一轮System design, 2轮coding`
-
 细桶射击是个印度大姐，题目就是给一堆机子去爬一个网站，我把sql，nosql，redis，filesystem还有log-message queue这些都说了一大通，还有如何parition和sharding巴拉巴拉，基本都是我在说，我中途问了一下有什么问题对方说没事我知道你说的，然后中间提了一些问题关于data model，我大概说了下怎么做index，我看她也没什么反应。然后又问了一些具体大概爬虫算法是个什么逻辑，还画了个testcase的 bfs 例子。。。最后问还有什么补充的，然后又加了个监控，check point 调度系统，因为机子可能不稳定会挂之类的。。。然后又问bottleneck 答完后就没了。。。也不知道怎么样
 
 ML system design面的是设计search engine相关的， system design面的设计fee
@@ -613,7 +610,6 @@ $\sum_i_{length(x_i) * P(x_i|u_j, ...)}$  
 
 ML Design II:
 Design Ads security system, detecting non-appropriate ads.
-
 
 一轮system design：我第一次面真的system design轮，相对的弱项。不过recruiter说ML candidate一般都比较弱，会考虑进去。跟我之前看得常见系统设计题不一样，还是偏analytics的。需要设计算法来计算某种metric，这部分也相对传统的system design可能更open-ended一点。问了些data base access pattern啥的，我确实不太懂。。就直接说不是很熟悉哈哈。。
 - 不需要state-of-the-art的fancy ML model，但是需要正确formulate问题。也就是明确这是个classification/regression/ranking problem，且解释为什么。
