@@ -256,16 +256,11 @@ ml design：resolve member complain about bad content
 
 E5 MLE是两轮coding、一轮system design、一轮ML system design、两轮behavioral。Leetcode要求能秒medium，能做hard。
 
-SD. 设计一个系统, 将用户的状态更新推送给该用户的好友.
-ML SD. 向用户推荐某类东西, 很常规了.
-考得完全不一样吧, 可以参考grokking的system design interview以及machine learning interview.
-
 ML design。 国人小哥。ads recomendation
 
 ML design。国人女生。event recommendation
 
-ML sys design: restaurant recommendations
-老题，ml八股文，没什么难度
+ML sys design: restaurant recommendations 老题，ml八股文，没什么难度
 
 ML design 国人小哥，给了一堆user的log data和一个可以知道user当前location的real time API，要求recommend next place to go。问了可以用哪些feature，用什么model，怎么生成label data，用什么metric等。条件给的很模糊，需要多问来clarify。自我感觉答的还不错，事后feedback说ML不够strong。。。
 
@@ -288,9 +283,8 @@ ML 设计 国人大姐 问一些以前的项目经历 然后问的是 怎么设�
 2 design a personalized location recommendation system
 基本上就是把recommendation的流程说一遍，candidate generation到ranking，是e5
 tree base 的ranker: 问的重点就是解释一下什么是tree model，有哪些tree model，怎么build tree之类
-
 3 behavior: conflict with other, most challenging, received sharp feedback, most ambiguous project,
-4 tree based model, neural net, bias ‍‌‌‍‌‍‌‍‍‌variance, overfitting, regularizations, evaluation metrics,
+4 tree based model, neural net, bias variance, overfitting, regularizations, evaluation metrics,
 
 系统设计:  ticket master，卖演唱会的票
 ML 设计： 给定news ‍‌‌‍‌‍‌‍‍‌feed和所有的评论，抽取top3 评论
@@ -311,7 +305,7 @@ ML Sys Design: Recommend job posts to facebook users (什么时候fb也做linked
 ML design - 名人推荐
 ML system design, 就是要设计一个end to end的推荐系统，推荐的内容是名人的page, 不知道这样说清楚没有。
 
-ML research - ML 教科书知道‍‌‌‍‌‍‌‍‍‌，但问得很细，也有涉及到NLP，Deep NN
+ML research - ML 教科书，但问得很细，也有涉及到NLP，Deep NN
 
 ML Sys design deep dive会具体问到哪些方面呢?
 如果你面senior, 最好主导conversation, 从需求分析，框架构建，数据收集，特征提取，建模，offline online 评估等各方面去讨论。
@@ -320,7 +314,7 @@ ML Sys design deep dive会具体问到哪些方面呢?
 ML sys design: ads ranking
 
 Round3(ML)：ML system design，case是关于Facebook Event的推荐系统，target是判断user是否会参加这些event，难点在于得判断他们是否是physically attendance，其他地方没什么特别的），印度小哥，态度还行；
-    Round4(BQ)：constructive feedback，collaboration with different teams，challengest work，the personality you never want to work for，why not stay in academia，总共问了八九个问题，其他实在记不起来了，白人小哥，非常活泼；
+Round4(BQ)：constructive feedback，collaboration with different teams，challengest work，the personality you never want to work for，why not stay in academia，总共问了八九个问题，其他实在记不起来了，白人小哥，非常活泼；
 我觉得可以先看看FB的那个event里都有什么，我之前完全不了解，把它当成一个类似广告的东西说。其实里面有个find ticket，可能还有其他的内容。另外如果能得到一个相对小但是比较precise的labeled set，semi-supervised也可能是个思路。面完我问面试官，他说这是个brainstorm，没有什么标准答案。
 因为我把它当成类似广告的东西，所以分成了engagement(click) 和 satisfaction(rating, like/dislike, comments)来做的，面的时候我主要当成multitask learning来说的。
 
