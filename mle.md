@@ -668,17 +668,22 @@ ml的newsfeed ranking design和instagram newsfeed 还蛮像的
 Educative.io Grokking Machine the Learning Interview + blogs on machine learning design from Medium.com
 
 Wide & Deep Learning for Recommender Systems
+> https://dl.acm.org/doi/pdf/10.1145/2988450.2988454
 
 Deep Neural Networks for YouTube Recommendations
 > https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf
 
 The Netflix Recommender System
+> https://dl.acm.org/doi/pdf/10.1145/2843948
 
 From RankNet to LambdaRank
+> https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/MSR-TR-2010-82.pdf
 
 Predictive Model Performance: Offline and Online Evaluation
+> https://chbrown.github.io/kdd-2013-usb/kdd/p1294.pdf
 
 Practical Lessons from Predicting Clicks on Ads at Facebook
+> https://quinonero.net/Publications/predicting-clicks-facebook.pdf
 
 > https://towardsdatascience.com/recommender-systems-in-practice-cef9033bb23a
 
