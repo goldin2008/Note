@@ -589,7 +589,7 @@ Design video recommendation system.
 Follow-up: How to maximize the video watching duration.
 嗯，Collaborative Filtering（CF）可以做。但是CF不太容易使用用户及video的特征。此外还要考虑scalability 的问题。可以参考[1], [2].
 关于video duration的问题，可以定义一个新的loss function，比如累加用户$u_j$ 观看的video $x_i$概率与video长度$length(x_i)$的乘积等.
-$\sum_i_{length(x_i) * P(x_i|u_j, ...)}$  
+$\sum_i_{length(x_i) * P(x_i|u_j, ...)}$
 [1] Paul Covington et al., Deep Neural Networks for YouTube Recommendations, RecSys 2016.
 [2] Xinran He, Practical lessons from predicting clicks on ads at facebook, PAKDD  2014.
 还有个问题 如果是到youtube这个量级 矩阵的规模都在亿乘以亿水平 那么像spark这种mr也没法完成分解 可能要使用到parameter server. 目前的推荐系统都是召回加精排 召回多用cf 而非youtube的dnn 当然阿里的可能更复杂如din这些 cf可以看spark mahout这些 精排就各显神通了 但是复杂模型的线上推理也是个大难题 用lgb xgboost做embedding 后接lr是主流做法 还有就是谷歌的wide and deep
@@ -628,32 +628,26 @@ post embedding, user embedding
 feature engineering, feature engineering, feature engineering
 pairwise scoring function architecture -> any binary classifier (nn tower + sigmod, fb btst + log regression, google long and wide, linkedin modified version of long and wide)
 embedding cold start -> global average, airbnb bucket overage, cron job re-train
-ab test, sticky session, maybe you can a‍‌‌‍‌‍‌‍‍‌lso talk about session vs tracking during ab testing
+ab test, sticky session, maybe you can also talk about session vs tracking during ab testing
 metrics: ndcg vs map vs mrr, how to calculate
-这个问题原来问的是，如果新的用户我们怎么办。所以我理解为user embedding cold start的问题。YouTube和Airbnb的论文里都有一些类似的解决方案。说实话我自己并没啥很好的想法，就很直白的说YouTube怎么做的，airbnb怎么做的，我觉得都可以尝试一下。
-Airbnb embedding: https://astro.temple.edu/~tua95067/kdd2018.pdf
+这个问题原来问的是，如果新的用户我们怎么办。所以我理解为user embedding cold start的问题。YouTube和Airbnb的论文里都有一些类似的解决方案。说实话我自己并没啥很好的想法，就很直白的说YouTube怎么做的，airbnb怎么做的，我觉得都可以尝试一下。Airbnb embedding
 feed每一个post自身的embedding我感觉还是蛮固定的，我给的方法虽然在production中可能很不切实际，但是感觉只要有post就能算出post embedding来，所以这个方面好像没有特别的cold start的问题。
-synthetic data我从来没真正试过，隐约感觉在这个环境下生成数据有一定挑战性，但很可能是一个不错的切入角。如果是我给面试的话我会想了解一下你准备怎么生成。
-都是open ended question，没有正确答案，只要能讲得通，大家觉得理论上make sense就好了。
+synthetic data我从来没真正试过，隐约感觉在这个环境下生成数据有一定挑战性，但很可能是一个不错的切入角。如果是我给面试的话我会想了解一下你准备怎么生成。都是open ended question，没有正确答案，只要能讲得通，大家觉得理论上make sense就好了。
 我也不是很清楚人家想问多么细节，一般都是我在说，他在听，偶尔问下问题。我觉得大约就是看看你了解多少，能不能把问题阐述清楚。
 如果你想了解ranking具体的细节的话，ml推荐阅读的第四篇是关于ranking的，内容有点多，讲了非常多的ranking architecture，但不是所有的内筒都要很仔细的看。如果只是为了面试的话我推荐把其中一种弄得很明白，剩下的大概了解一下。有基础的话，每天一两个小时，一个星期就够了。
 面试的时候我建议double check with your interviewers看他们有没有明白你在说什么，问问哪说的不够清楚，需要具体讲一下。说实话特别是ml，一个方向的有些细节做另一个方向的人很可能并不完全清楚。如果你能像讲课一样然别人明白的话，interviewer一定对你印象很好。
-楼主本来是做search和ranking的
-btst是手残到家了……我想说的是fb gbdt + logistic regression……感谢帮忙指出，ml推荐阅读的第三个就是facebook的那个architecture
+楼主本来是做search和ranking的, btst是手残到家了……我想说的是fb gbdt + logistic regression……感谢帮忙指出，ml推荐阅读的第三个就是facebook的那个architecture
 我觉得feed ranking更多的是一个personalized ranking problem，我没有按recommendation system的方式去想过。pairwise ranking的话就是拿两个两个documents相互比，看哪个应该排在前面，最后还是需要从pair order生成total order。前面做post embedding和user embedding的时候那些embedding应该包含相似度信息，我就没有从score function的角度再考虑相似度。
 不过我觉得只要你能说得通应该都行，感觉和system design一样都是open ended questions
 multi-level cache <＝ 这边的multi-level cache 的应用能说一下吗? request cross region route vs request local route => 我想这边跟根据user 的region 用比较近的CDN or data center support?
 multi-level cache就是给几个cache layer再搞一层cache layer，fb live是这么做的。
-request cross region route就是user read write不一定是local，有可能根据business logic把你route到另外一个region，netflix就是这么干的。这样regional data center之间不需要sync，也没有直接的communication。
-相反的，就是read write是在local data center，然后regional data center之间互相sync，github是这么干的。不过这个需要比较复杂coordination和distributed lock，github还因此出过一次20+h的outage。
-两种方法其实都可行，各有利弊，而且在不同公司都在production里面用，只是有不同的trade off
+request cross region route就是user read write不一定是local，有可能根据business logic把你route到另外一个region，netflix就是这么干的。这样regional data center之间不需要sync，也没有直接的communication。相反的，就是read write是在local data center，然后regional data center之间互相sync，github是这么干的。不过这个需要比较复杂coordination和distributed lock，github还因此出过一次20+h的outage。两种方法其实都可行，各有利弊，而且在不同公司都在production里面用，只是有不同的trade off
 原来是问新用户 那用history 其他的用户资料 ＋cluster or 相似度的想法 可能比synthetic data 好（虽然synthetic data 也是near neighbor 的概念） 跟lz 讨论学习了!
 
 第四關 system design：設計 Yelp，100M 餐廳位置資訊，每秒可能會有 10K requests 要拿最近 200 個點，暫不討論新增餐廳的問題。這個問題我從來沒想過，所以就慌了。現場瞎掰一個 geo encoding 的方法，但由於分佈不均，所以會有某個 hash 太多點的問題。後來回去查，發現這是個正確的起點，接下來只要用 Quad-tree 的概念去切 encoding 就可以解決問題，但面試當時我只想到用好幾個 level 的 geo encoding。想當然爾這個解法就非常混亂，面試官一直聽不懂我的 approach，連帶壓縮到講系統架構設計的時間，於是就草草結束。
 第五關 ML Design：設計 news feed ranking algorithm，但很可能那時候已經餓昏頭了，加上被上一關震撼教育，這關也回答的不好。開頭本來想要用 contextual bandit 來解，還寫好 cost function。解果不知怎的，講到後面居然變成 logistic regression
 完全對不到一開始的 cost function。甚至還不是 ranking 的演算法。
-他們的 engineer manager，考了我怎麼設計 instagram newsfeed ，提供了使用者量，平均有多少照片上傳，active user 佔比多少，peak load 多少等等。我自覺
-講的還蠻順的，initial approach 雖然頗糟的，但後面的修改就都有達到系統需求。只是因為我前面問問題問太久（～15 min），中間因為邊講邊思考，語速太慢，導致根本沒談到 scalling 和 ranking algorithm 的地方。
+他們的 engineer manager，考了我怎麼設計 instagram newsfeed ，提供了使用者量，平均有多少照片上傳，active user 佔比多少，peak load 多少等等。我自覺講的還蠻順的，initial approach 雖然頗糟的，但後面的修改就都有達到系統需求。只是因為我前面問問題問太久（～15 min），中間因為邊講邊思考，語速太慢，導致根本沒談到 scalling 和 ranking algorithm 的地方。
 ml的newsfeed ranking design和instagram newsfeed 还蛮像的
 是啊，不過考 instagram 那次面試官問比較多關於 scaling 的問題，所以就沒碰太多設計推薦系統的部份
 
