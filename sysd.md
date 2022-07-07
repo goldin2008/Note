@@ -201,7 +201,9 @@ I would love your feedback, specially around the scaling. Also if any interviewe
 5. Scaling
 
 ### System Design Problems ###
+Be in charge and tradeoffs, tradeoffs, tradeoffs...
 ***Design URL Shorten Service***
+Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
 ***Interview Questions:***
 
