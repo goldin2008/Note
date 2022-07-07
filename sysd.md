@@ -79,7 +79,6 @@ Here are a few reasons to choose a NoSQL database: Storing large volumes of data
 `IDEA`
 视频推荐：评论里面包括对视频内容的点评，应该提升权重
 
-
 > https://www.1point3acres.com/bbs/thread-169343-1-1.html
 
 > https://www.1point3acres.com/bbs/thread-559285-1-1.html
@@ -97,7 +96,6 @@ Here are a few reasons to choose a NoSQL database: Storing large volumes of data
 > https://1o24bbs.com/t/topic/4487
 
 ## ML System Design
-
 > https://www.educative.io/blog/cracking-machine-learning-interview-system-design
 
 > https://github.com/kuhung/machine-learning-systems-design
@@ -145,7 +143,6 @@ In an A/B experiment, a webpage or screen is modified to create a second version
 - The next step is to carefully choose your system’s performance metrics for both online and offline testing. The metrics you choose will depend on the problem your system is trying to solve.
 3. `Architecture discussion`
 - The next step is to design your system’s architecture. You need to think about the components of the system and how the data will flow through those components. In this step, you need to be careful to design a model that can scale easily.
-
 
 Background:
 I am a Software Engineer with ~4 years of Machine Learning Engineering (MLE) and Data Scientist (DS) experience working at Fintech Company. Seeing the recent requirements in big tech companies for MLE roles and our confusion around it, I decided to create a framework for solving any ML System Design problem during the interview. Depending on your expertise and interviewers guide, you might want to emphasize on one section vs. the other (e.g. Data Engineering vs Modeling).
@@ -253,7 +250,6 @@ Stream Processing: Samza, Storm
 
 
 ***Reference:***
-
 Model Debug http://josh-tobin.com/assets/pdf/troubleshooting-deep-neural-networks-01-19.pdf
 
 Data School Video on Feature Selection https://www.youtube.com/watch?v=YaKMeAlHgqQ
@@ -261,7 +257,6 @@ Data School Video on Feature Selection https://www.youtube.com/watch?v=YaKMeAlHg
 ML Pipeline https://towardsdatascience.com/architecting-a-machine-learning-pipeline-a847f094d1c7
 
 ***Questions in Interview***
-
 ```
 1. What size of data are you dealing with?
 
@@ -400,8 +395,6 @@ machine learning design的问题一般都是问设计一个推荐系统，广告
 7. 画出框图，然后进行优化。
 
 ### Google
-Interview Questions
-
 Given two strings, A and B, of the same length n, find whether it is possible to cut both strings at a common point such that the first part of A and the second part of B form a palindrome.
 have two pointers, first on A and second on end of B. move the pointer l and r (l++, r--) until both values are same( A[l] == B[r]) or l == r. if at any point both are not same just switch the pointer r from B to A and continue. If then it breaks then it is not a palindrome.
 
@@ -430,4 +423,3 @@ https://xamat.github.io/pubs/BigAndPersonal.pdf
 https://rpubs.com/geeman/599770
 
 https://www.newamerica.org/oti/reports/why-am-i-seeing-this/case-study-netflix/
-
