@@ -1,4 +1,15 @@
 ## System Design
+
+### System Design Problems ###
+Be in charge and tradeoffs, tradeoffs, tradeoffs...
+
+***Design URL Shorten Service***
+Be in charge and tradeoffs, tradeoffs, tradeoffs...
+
+***Interview Questions:***
+
+***Interview Questions:***
+
 `Distributed systems design round`
 • Design a key-value store.
 • Design a search for an internet search engine.
@@ -199,21 +210,6 @@ I would love your feedback, specially around the scaling. Also if any interviewe
     - AUC, F1, MSE, Accuracy, NDCG for ranking problems etc.
     - When to use which metrics?
 5. Scaling
-
-### System Design Problems ###
-Be in charge and tradeoffs, tradeoffs, tradeoffs...
-
-***Design URL Shorten Service***
-Be in charge and tradeoffs, tradeoffs, tradeoffs...
-
-***Interview Questions:***
-
-***Interview Questions:***
-
-
-
-
-Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
 System Design面试的例子
 
