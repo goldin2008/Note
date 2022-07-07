@@ -589,7 +589,7 @@ Design video recommendation system.
 Follow-up: How to maximize the video watching duration.
 嗯，Collaborative Filtering（CF）可以做。但是CF不太容易使用用户及video的特征。此外还要考虑scalability 的问题。可以参考[1], [2].
 关于video duration的问题，可以定义一个新的loss function，比如累加用户$u_j$ 观看的video $x_i$概率与video长度$length(x_i)$的乘积等.
-$\sum_i_{length(x_i) * P(x_i|u_j, ...)}$
+$$\sum_i_{length(x_i) * P(x_i|u_j, ...)}$$
 [1] Paul Covington et al., Deep Neural Networks for YouTube Recommendations, RecSys 2016.
 [2] Xinran He, Practical lessons from predicting clicks on ads at facebook, PAKDD  2014.
 还有个问题 如果是到youtube这个量级 矩阵的规模都在亿乘以亿水平 那么像spark这种mr也没法完成分解 可能要使用到parameter server. 目前的推荐系统都是召回加精排 召回多用cf 而非youtube的dnn 当然阿里的可能更复杂如din这些 cf可以看spark mahout这些 精排就各显神通了 但是复杂模型的线上推理也是个大难题 用lgb xgboost做embedding 后接lr是主流做法 还有就是谷歌的wide and deep
