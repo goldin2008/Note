@@ -1,14 +1,59 @@
 ## System Design
+> https://github.com/alex-xu-system/bytebytego
 
 ### System Design Problems ###
 Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
-***Design URL Shorten Service***
+***4 DESIGN A RATE LIMITER***
 Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
-***Interview Questions:***
+***5 DESIGN CONSISTENT HASHING***
 
-***Interview Questions:***
+***6 DESIGN A KEY-VALUE STORE***
+
+***7 DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS***
+
+***8 DESIGN A URL SHORTENER***
+
+***9 DESIGN A WEB CRAWLER***
+
+***10 DESIGN A NOTIFICATION SYSTEM***
+
+***11 DESIGN A NEWS FEED SYSTEM***
+
+***12 DESIGN A CHAT SYSTEM***
+
+***13 DESIGN A SEARCH AUTOCOMPLETE SYSTEM***
+
+***14 DESIGN YOUTUBE***
+
+***15 DESIGN GOOGLE DRIVE***
+
+***1 Proximity Service***
+
+***2 Nearby Friends***
+
+***3 Google Maps***
+
+***4 Distributed Message Queue***
+
+***5 Metrics Monitoring***
+
+***6 Ad Click Event Aggregation***
+
+***7 Hotel Reservation***
+
+***8 Distributed Email Service***
+
+***9 S3-like Object Storage***
+
+***10 Real-time Gaming Leaderboard***
+
+***11 Payment System***
+
+***12 Digital Wallet***
+
+***13 Stock Exchange***
 
 `Distributed systems design round`
 • Design a key-value store.
