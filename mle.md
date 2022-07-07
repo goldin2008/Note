@@ -615,10 +615,9 @@ Design Ads security system, detecting non-appropriate ads.
 我觉得这个帖子里面提到的paper都非常有帮助：https://www.teamblind.com/article/ML-design-interview-3cYD0vdM
 特别是 youtube recommendation, wide and deep, rules of machine learning, 基本涵盖了大部分相关的知识点。其实很多问题归根结底都是推荐问题，本质都差不多，比如ads，news feed，product recommendations, etc
 其他几篇我感觉很有用的是：
-tfx: https://www.kdd.org/kdd2017/pape ... e-learning-platform  侧重于整个ml workflow
-linkedin 的tutorial ：https://engineering.linkedin.com ... p-learning-tutorial    deep learning recommendation很好的总结
+tfx: https://www.kdd.org/kdd2017/pape ... e-learning-platform 侧重于整个ml workflow
+linkedin 的tutorial ：https://engineering.linkedin.com ... p-learning-tutorial deep learning recommendation很好的总结
 对常用的sgd的方法和变种的总结：an overview of gradient descent optimization algorithms
-[backcolor=rgb(255, 24‍‌‌‍‌‍‌‍‍‌7, 160)]
 最后，面哪家公司可以多看看那个公司最近发的paper，engineer blog神马的 （e.g. https://medium.com/airbnb-engineering）。总体的感觉是，如果准备方法得当，在短时间内还是可以取得不错的成效的。
 
 4. Design Twitter
@@ -657,7 +656,6 @@ request cross region route就是user read write不一定是local，有可能根�
 講的還蠻順的，initial approach 雖然頗糟的，但後面的修改就都有達到系統需求。只是因為我前面問問題問太久（～15 min），中間因為邊講邊思考，語速太慢，導致根本沒談到 scalling 和 ranking algorithm 的地方。
 ml的newsfeed ranking design和instagram newsfeed 还蛮像的
 是啊，不過考 instagram 那次面試官問比較多關於 scaling 的問題，所以就沒碰太多設計推薦系統的部份
-
 
 Educative.io Grokking Machine the Learning Interview + blogs on machine learning design from Medium.com
 
