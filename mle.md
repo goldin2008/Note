@@ -239,7 +239,7 @@ System Design 2
 `一轮ML Design, 一轮System design, 2轮coding`
 细桶射击是个印度大姐，题目就是给一堆机子去爬一个网站，我把sql，nosql，redis，filesystem还有log-message queue这些都说了一大通，还有如何parition和sharding巴拉巴拉，基本都是我在说，我中途问了一下有什么问题对方说没事我知道你说的，然后中间提了一些问题关于data model，我大概说了下怎么做index，我看她也没什么反应。然后又问了一些具体大概爬虫算法是个什么逻辑，还画了个testcase的 bfs 例子。。。最后问还有什么补充的，然后又加了个监控，check point 调度系统，因为机子可能不稳定会挂之类的。。。然后又问bottleneck 答完后就没了。。。也不知道怎么样
 
-ML system design面的是设计search engine相关的， system design面的设计fee
+ML system design面的是设计search engine相关的， system design面的设计feed
 
 SD. 设计一个系统, 将用户的状态更新推送给该用户的好友.
 ML SD. 向用户推荐某类东西, 很常规了.
@@ -257,9 +257,7 @@ ml design：resolve member complain about bad content
 E5 MLE是两轮coding、一轮system design、一轮ML system design、两轮behavioral。Leetcode要求能秒medium，能做hard。
 
 ML design。 国人小哥。ads recomendation
-
 ML design。国人女生。event recommendation
-
 ML sys design: restaurant recommendations 老题，ml八股文，没什么难度
 
 ML design 国人小哥，给了一堆user的log data和一个可以知道user当前location的real time API，要求recommend next place to go。问了可以用哪些feature，用什么model，怎么生成label data，用什么metric等。条件给的很模糊，需要多问来clarify。自我感觉答的还不错，事后feedback说ML不够strong。。。
@@ -286,8 +284,8 @@ tree base 的ranker: 问的重点就是解释一下什么是tree model，有哪�
 3 behavior: conflict with other, most challenging, received sharp feedback, most ambiguous project,
 4 tree based model, neural net, bias variance, overfitting, regularizations, evaluation metrics,
 
-系统设计:  ticket master，卖演唱会的票
-ML 设计： 给定news ‍‌‌‍‌‍‌‍‍‌feed和所有的评论，抽取top3 评论
+系统设计: ticket master，卖演唱会的票
+ML 设计： 给定newsfeed和所有的评论，抽取top3 评论
 一点拙见，请各位大佬指正。input feature可以包括几大类 一是 评论本身features：quality index，length，relevence to the news feed，time等；二是评论者的features：average historic comments scores，impact （like number of fans），location等；三是互动的feature，点赞数，comment的回复数。用这些所有的做个mlp
 我是当成recommendation问题处理的，推荐王喆那本“深度学习推荐系统”，里面有不少reference的paper值得看。也可以根据那些paper的引用以及关键词找一些更新的文章。
 这一轮不用聊system design，纯ML就行。这题不涉及news feed本身的ranking，是rank 那些feed下面的comments，top 3这个跟面试官沟通了一下，是个soft number也可以自己定义，比如某个feed只有两个评论，那就都show出来就行了。
@@ -326,8 +324,7 @@ Design Kaggle 面試官有要求要有leader board的function, 能看哪個user�
 
 1. ML System Design。问了Algo Expert的ML system design的其中一个，主要问了数据，feature，model，metrics，AB testing等方面
 2. Behavior。就很普通的聊天，没什么可具体展开的
-3. NLP Specialized System Design。因为本人不是CS出身，所以把System Design换成了这个。问了NLP的某个场景的design以及细节，很多问题都比较open ended
-conversational ai （比如echo，google home）的end to end component。然后问了一些比较具体的conversation设计方法，比较open ended。还有intent detection，slot filling之类的。
+3. NLP Specialized System Design。因为本人不是CS出身，所以把System Design换成了这个。问了NLP的某个场景的design以及细节，很多问题都比较open ended, conversational ai （比如echo，google home）的end to end component。然后问了一些比较具体的conversation设计方法，比较open ended。还有intent detection，slot filling之类的。
 
 第一轮ml design国人小哥，ecommerce推荐系统，这轮感觉一般面的，小哥水平倒是不错，overall structure没怎么说完就dive deep了，如果国人小哥也上这个论坛求高抬贵手，不求别的给个hire就好，感恩
 最后一轮ml设计，看不出国籍的外国小哥，做nlp的，问的设计语音助手，不是我的domain，不知道答得在不在他的点上，虽然给出了一个基本solution但是感觉摸不到头绪get不到他想考的点，好在小哥态度还比较nice
@@ -336,7 +333,7 @@ ML Design
 面试官三哥。交流不算很顺畅。
 Design a harmful content detection system.
 
-system d‍‌‌‍‌‍‌‍‍‌esign. 广告ctr
+system design. 广告ctr
 
 第二轮，ml 设计，四十岁国人，题目是推荐附近地点给用户，一直challenge我，问我数据从哪里来，估计是想我问我数据库的问题，然后让我设计feature，我大概设计了七八个，最后我拿出deep and wide那一套做框架做上去，从测试到最后问冷启动，一直challenge我，中途一度想摔键盘，应该是挂在这轮了吧。
 第三轮，bq，普通问题，问了一些工作conflict啥的然后就普普通通，也有可能挂在了这一轮。
@@ -593,7 +590,7 @@ Follow-up: How to maximize the video watching duration.
 $\sum_i_{length(x_i) * P(x_i|u_j, ...)}$
 
 [1] Paul Covington et al., Deep Neural Networks for YouTube Recommendations, RecSys 2016.
-[2] Xinran He, Practical lessons from predicting clicks on ads at facebook, PAKDD  2014.
+[2] Xinran He, Practical lessons from predicting clicks on ads at facebook, PAKDD 2014.
 还有个问题 如果是到youtube这个量级 矩阵的规模都在亿乘以亿水平 那么像spark这种mr也没法完成分解 可能要使用到parameter server. 目前的推荐系统都是召回加精排 召回多用cf 而非youtube的dnn 当然阿里的可能更复杂如din这些 cf可以看spark mahout这些 精排就各显神通了 但是复杂模型的线上推理也是个大难题 用lgb xgboost做embedding 后接lr是主流做法 还有就是谷歌的wide and deep
 
 ML Design II:
