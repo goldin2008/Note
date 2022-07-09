@@ -55,7 +55,7 @@ Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
 ***13 Stock Exchange***
 
-#### Concept
+### Concept
 `Distributed systems design round`
 
 • Design a key-value store.
