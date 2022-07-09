@@ -55,7 +55,9 @@ Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
 ***13 Stock Exchange***
 
+#### Concept
 `Distributed systems design round`
+
 • Design a key-value store.
 • Design a search for an internet search engine.
 • Architect a world-wide video distribution system.
