@@ -864,3 +864,5 @@ system design不达标（not scalable）
 7. Text classification
 8. Point of interest
 9. Newsfeed randking
+
+我也还需要提升呢，不过我觉得宗旨就是要凸显你的在project里的leadership，过程中遇到了什么困难，如何解决一些conflicts，deliver了如何的result，对公司业务有怎样的impact。总之故事要娓娓道来，然后一个故事涵盖体现你的综合实力。
