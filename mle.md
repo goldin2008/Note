@@ -610,8 +610,7 @@ $\sum_i_{length(x_i) * P(x_i|u_j, ...)}$
 [2] Xinran He, Practical lessons from predicting clicks on ads at facebook, PAKDD 2014.
 还有个问题 如果是到youtube这个量级 矩阵的规模都在亿乘以亿水平 那么像spark这种mr也没法完成分解 可能要使用到parameter server. 目前的推荐系统都是召回加精排 召回多用cf 而非youtube的dnn 当然阿里的可能更复杂如din这些 cf可以看spark mahout这些 精排就各显神通了 但是复杂模型的线上推理也是个大难题 用lgb xgboost做embedding 后接lr是主流做法 还有就是谷歌的wide and deep
 
-ML Design II:
-Design Ads security system, detecting non-appropriate ads.
+ML Design II: Design Ads security system, detecting non-appropriate ads.
 
 一轮system design：我第一次面真的system design轮，相对的弱项。不过recruiter说ML candidate一般都比较弱，会考虑进去。跟我之前看得常见系统设计题不一样，还是偏analytics的。需要设计算法来计算某种metric，这部分也相对传统的system design可能更open-ended一点。问了些data base access pattern啥的，我确实不太懂。。就直接说不是很熟悉哈哈。。
 - 不需要state-of-the-art的fancy ML model，但是需要正确formulate问题。也就是明确这是个classification/regression/ranking problem，且解释为什么。
