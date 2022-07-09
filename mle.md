@@ -73,6 +73,9 @@ Predictive Model Performance: Offline and Online Evaluation
 Practical Lessons from Predicting Clicks on Ads at Facebook
 > https://quinonero.net/Publications/predicting-clicks-facebook.pdf
 
+[1] Paul Covington et al., Deep Neural Networks for YouTube Recommendations, RecSys 2016.
+[2] Xinran He, Practical lessons from predicting clicks on ads at facebook, PAKDD 2014.
+
 ml论坛上有几个总结的帖子写的很全面了。我个人觉得有两篇文章很有用：Wide & Deep Learning for Recommender Systems；Deep Neural Networks for YouTube Recommendations，ml system里面重要的部分文章都有讲到。我面试的时候基本上就是按照这两个的框架讲的。
 
 针对第二轮ML系统设计，baca推荐的学习资料如下，希望对大家有用：NLP特征提取Query Intent understanding和Query rewrite， 书籍《美团机器学习实践》，知乎美团，达观文化的技术文章
@@ -532,38 +535,35 @@ machine learning面的是newsfeed，其中有一问是怎么推荐用户兴趣�
 楼主那个NLP的问题，我感觉应该是class 场景分类，类似于Google搜索歌名，能自动给出歌曲歌词，MV之类的搜索。。如果回答是一个命名识别问题NER 是不是会加分？其实标准做法应该是LSTM + CRF....个人理解是这样的。。面试官了解你不是完全了解这个领域，你的做法可行，但不是公司会用的做法。。。
 第五轮distributed system design：也是阿三。题目比较刁钻，要求设计news feed，返回一个区域范围内所有的news，针对这个2D空间的范围搜索进行设计。我给的是用K-D tree可以做二位空间搜索，然后一些常规的分布式优化等。有一个负载平衡的优化问题没说清楚，这轮自我感觉也是在hire和strong之间，最后给了hire。
 第五轮distributed system design：给的数据量是10亿个news的地理位置，qps是每秒十万次。
-10亿个news的地理位置，qps每秒十万次。数据存储和CPU单机都解决不了，需要分布。我当时给的解法用AWS EC2和ELB服务，这个解CPU分布很容易，但是解不了数据分布。用nosql数据库，我给他按照每个item最大32kb估的，也有几十个TB了。我给的解是数据按照地理位置分开存储，比如搜索纽约，就到专门存纽约的库里找。每个单机存两到三个地区库，平时主要服务一个区域。开机的时候可以把主库加载到memcached。既可以多备份保证安全，也可以在局部出现热点的时候，这样可以用非热点服务器帮忙接一下。
-但个人感觉这个解太复杂，实际并不太现实。
+10亿个news的地理位置，qps每秒十万次。数据存储和CPU单机都解决不了，需要分布。我当时给的解法用AWS EC2和ELB服务，这个解CPU分布很容易，但是解不了数据分布。用nosql数据库，我给他按照每个item最大32kb估的，也有几十个TB了。我给的解是数据按照地理位置分开存储，比如搜索纽约，就到专门存纽约的库里找。每个单机存两到三个地区库，平时主要服务一个区域。开机的时候可以把主库加载到memcached。既可以多备份保证安全，也可以在局部出现热点的时候，这样可以用非热点服务器帮忙接一下。但个人感觉这个解太复杂，实际并不太现实。
 
 design: FB news feed
-ML design: ‍‌‌‍‌‍‌‍‍‌POI , features, models
-这个是个看上去很累而且漫不经心的小哥面的， 所以我就简答带过了因为poi 多数情况是作为general system design出现的，我遇到的可能比较特殊， 要求personalize, 然后看我之前做过的项目集中问了怎么产生user level embedding, location level embedding, 如何采集negative example, pos example, 对 neg example 怎么sample, model 选择上LR, XGB, NN 各自有啥优缺点。总之问的很随意发散， 和大多数同学遇到的有点不一样， 可能是个例/
+ML design: POI, features, models
+这个是个看上去很累而且漫不经心的小哥面的， 所以我就简答带过了因为poi 多数情况是作为general system design出现的，我遇到的可能比较特殊， 要求personalize, 然后看我之前做过的项目集中问了怎么产生user level embedding, location level embedding, 如何采集negative example, pos example, 对 neg example 怎么sample, model 选择上LR, XGB, NN 各自有啥优缺点。总之问的很随意发散， 和大多数同学遇到的有点不一样， 可能是个例
 
 Prob 4: ML design. Some NLP prediction task. Basic questions about data collection, loss function design, and so on. Don't remember the details.
-Prob 5: ML design. FB newsfeed ranking design. Basic questions ‍‌‌‍‌‍‌‍‍‌about data collection, loss function design, and so on.
+Prob 5: ML design. FB newsfeed ranking design. Basic questions about data collection, loss function design, and so on.
 
 3，设计facebook newsfeed
-后面把我转到distributed system 组，加面一轮system design, 给10k个server 和一个url, 要求设计一个distributed ‍‌‌‍‌‍‌‍‍‌system 从给定的url进去，来crawl 10^9 urls。我对系统设计完全没概念，所以毫无悬念地再次挂了。
+后面把我转到distributed system 组，加面一轮system design, 给10k个server 和一个url, 要求设计一个distributed system 从给定的url进去，来crawl 10^9 urls。我对系统设计完全没概念，所以毫无悬念地再次挂了。
 ml设计一开始就问怎么设计 newsfeed，我准备不充分，不知道这种问题有没什么套路。面试官问了一些 metric, 模型之类的问题，具体有点不记得了，都是跟newsfeed想关的问题。
 new feeds 是click -through rate 的optimize 还是只是相关性的recommendatio system ?
 click, like, comment, share 这边是偏向feature engineering 吧? 那主要是考察什么呢? 算法 or 储存 or 公式推倒?
 面试官没说，我是按CTR这种来做的，算click, like, comment, share这些的概率
-没有问存储这种，都是ml的相关的比如feature, model这些
-
-不好意思回的晚了点。他当初提的问题是这样的，given一个用户点击了一个网页，如何给他推荐相关的网页。总体来说应该要求你design一个完整的system，包括用什么做feature，用什么算法，model evaluation之类的。但是我的面试过程比较纠结，因为我提的算法似乎有点问题，我们就纠结了很久这个。所以没太来得及到后面的部分。
-反正整个过程就是随时可能被打断问各种的问题，然后很可能没法按照原定的计划讲下去。
+没有问存储这种，都是ml的相关的比如feature, model这些
+不好意思回的晚了点。他当初提的问题是这样的，given一个用户点击了一个网页，如何给他推荐相关的网页。总体来说应该要求你design一个完整的system，包括用什么做feature，用什么算法，model evaluation之类的。但是我的面试过程比较纠结，因为我提的算法似乎有点问题，我们就纠结了很久这个。所以没太来得及到后面的部分。反正整个过程就是随时可能被打断问各种的问题，然后很可能没法按照原定的计划讲下去。
 第一个点就是用什么algorithm，我说可以把点击其他网页的概率用logistics regression，然后我们就在logistics regression的算法上面纠结了许久。比如定义，kernel之类的东西。剩5分钟的时候才提了feature selection和model evaluation的问题
 
 系统设计，设计记录手机用户浏览和点击广告，并用来算点击率。主要是写的部分，用户读手机不用管
 ml 设计，facebook marketplace， 基本上是ranking的问题
 
 d). （噩梦开始）12:30， 一个白人大哥很犀利的样子（背景也很牛），爬虫设计，10k的机子爬1B的wiki，不能爬重复的page。本人准备的设计题中恰巧没注重这方面，所以答的很磕绊。大哥先问了单机子多线程怎么实现，怎么加锁，然后到了分布式。其实核心思想是hash url，然后进行更even的分配负载。
-e). 1:15，很nice的国人小哥，问的是ML design关于POI（point of interest). 注重点是ML的整体思路，从问题的描述道最后的service搭建，过程中会涉及到‍‌‌‍‌‍‌‍‍‌database的query，categorical feature的降唯（embedding）等等细节。这轮楼主表示面的一般，但不至于挂。
+e). 1:15，很nice的国人小哥，问的是ML design关于POI（point of interest). 注重点是ML的整体思路，从问题的描述道最后的service搭建，过程中会涉database的query，categorical feature的降唯（embedding）等等细节。这轮楼主表示面的一般，但不至于挂。
 
 1. System design: typeahead. 问得很详细，比如DB里面存什么内容，如何index，如何对suggestion排序，如何更新排序等等。并不太清楚trie是怎么存在DB里面的，所以只答了trie在cache里面。DB里面就存排序好的words。
 3. ML design: 设计marketplace的recommendation，主要讲了选什么样的feature和model overfitting了怎么办
 
-round 2: machine learning design:  in youtube search engineer： 如果你想search key word “machine”， 当你type “ma”时， 可能多种选择 “map”， “mat”。。。how to rank it。 how to search in database。
+round 2: machine learning design: in youtube search engineer： 如果你想search key word “machine”， 当你type “ma”时， 可能多种选择 “map”， “mat”。。。how to rank it。 how to search in database。
 round 5: system design： goe 题： 给你 p（latitude，longitude） search 一个 半径 n miles 的circle 内所有 p（latitude，longitude）。 如何get database， 怎么存 database，设计怎么search。 map reduce 之类
 我个人觉得是 search 和ranking 如何 ranking in database ， 如何search
 请问楼主第二轮ml design是用machine learning 做ranking吗？主要考察什么？考察的是 trie structure 和 search enigeer
@@ -597,19 +597,6 @@ thanks for sharing 我是NLP 领域 我司常用的是PCA or auto encoer, word e
 4. ML 设计 国人大姐 问一些以前的项目经历 然后问的是 怎么设计fb的page模块的 search,比如搜san jose 出来的是地名 搜lady gaga 出来的是人的page.
 
 ML system design，基本上按照prep上面说的准备就行，面试过程基本就是给一个scenario，然后问你怎么design这个系统，比如news feed或者ads recommendation，然后聊下去，各个design component可能会比较随机的聊一些不同的方法和pros cons，比如feature engineer什么的打算怎么用什么feature，怎么处理这些feature之类的。基本上都是比较常规的ML问题。我准备上主要是看了一些相关的post和youtube视频，了解下这些系统，其实这些系统本质上都是差不多的，感觉基本上都是一个套路准备就行。
-
-第二轮：ML system design. Newsfeed ranking. 这一轮是论坛里讨论的比较少的一个类型。我复习的方式是先复习一遍一些ML的经典算法，然后学习Facebook的ML视频（来自FB blog和YouTube搜索）。看得多了，会发现总结起来答题有章可循的。
-我自己准备的时候在白板上对空气讲过几遍，但是面试的时候其实问题会特别发散，跳来跳去的，比如我提到“训练效果。。。”，对方就问“怎么知道好不好”。但是大体上都是很常规的问题。
-
-1. Friend recommendation
-2. Video recommendation
-3. Design market place
-4. Amazon recommendations
-5. Ad click through rate
-6. Text clustering
-7. Text classification
-8. Point of interest
-9. Newsfeed randking
 
 ML Design I:
 Design video recommendation system.
@@ -868,3 +855,13 @@ Solution 1: Use model-as-a-service, each model will run in Docker containers.
 Solution 2: We can use Kubernetes to auto-scale the number of pods.
 
 system design不达标（not scalable）
+
+1. Friend recommendation
+2. Video recommendation
+3. Design market place
+4. Amazon recommendations
+5. Ad click through rate
+6. Text clustering
+7. Text classification
+8. Point of interest
+9. Newsfeed randking
