@@ -102,14 +102,6 @@ imbalanced class 看主要优化的目标是啥，可以是 precision, recall, �
 
 ![Diagram of deployment.](pic/update.png)
 
-### System Design for Recommendations and Search
-https://eugeneyan.com/writing/system-design-for-discovery/
-
-1. `The offline environment` largely hosts batch processes such as model training (e.g., representation learning, ranking), creating embeddings for catalog items, and building an approximate nearest neighbors (ANN) index or knowledge graph to find similar items. It may also include loading item and user data into a feature store that is used to augment input data during ranking.
-2. `The online environment` then uses the artifacts generated (e.g., ANN indices, knowledge graphs, models, feature stores) to serve individual requests. A typical approach is converting the input item or search query into an embedding, followed by candidate retrieval and ranking. There are also other preprocessing steps (e.g., standardizing queries, tokenization, spell check) and post-processing steps (e.g., filtering undesirable items, business logic) though we won’t discuss them in this writeup.
-3. `Candidate retrieval` is a fast—but coarse—step to narrow down millions of items into hundreds of candidates. We trade off precision for efficiency to quickly narrow the search space (e.g., from millions to hundreds, a 99.99% reduction) for the downstream ranking task. Most contemporary retrieval methods convert the input (i.e., item, search query) into an embedding before using ANN to find similar items. Nonetheless, in the examples below, we’ll also see systems using graphs (DoorDash) and decision trees (LinkedIn).
-4. `Ranking` is a slower—but more precise—step to score and rank top candidates. As we’re processing fewer items (i.e., hundreds instead of millions), we have room to add features that would have been infeasible in the retrieval step (due to compute and latency constraints). Such features include item and user data, and contextual information. We can also use more sophisticated models with more layers and parameters.
-
 
 ### Amazon
 #### 1st Interview
@@ -176,7 +168,7 @@ MS 电面，一个西雅图小哥，没有coding，纯ml探讨，要推写公式
 聊了聊各个loss function，relu 0处求导怎么办等等
 batch norm 作用，公式，batch size 不同时mean值不同怎么处理
 l1和l2，公式，作用，特性，推导
-最后了简单‍聊了下attention
+最后了简单聊了下attention
 
 train的时候把mean保存下来，inference的时候用保存的值. 0处出现的情况极小，可以忽略不计，一旦出现直接取0
 
@@ -210,7 +202,7 @@ coding: 刷题网参六邻
 面试大概等了3-4天才安排好，L家是到了最后面试前一天通知你面试官的信息，是个国人小哥，人很nice.
 上来显示15-20分钟的工作经历聊天，简单介绍了一下自己的项目，找了找共同点。
 然后是第二轮写码，是地理和蠡口超高频 三路领。大概确认了一下没有额外的变数，大概10分钟做完。
-之后是第二部分机器学习八股。涉及到了各个方面，线性回归，逻辑回归，regularization L1和L2区别，表达式。随机森林和GBDT区别，scale和transform对它的影响。如何处理overfitting, 如何处理imbalanced dataset, 什么是unsupervised learning. 涉及的内容很细，但是并没有其他版友碰到的推公式的地步。如果是想复习机器学习基本概念，包括公式推导，楼主最近看了一个知乎叫 阿泽的 复旦计算机博主总结的 经典机器学习的各种知识点，从逻辑回归，到PCA， 树模型，甚至到XGBOOST和LIGHTGBM的公式都有。觉得受益匪浅。‍‌‌‍‌‍‌‍‍‌
+之后是第二部分机器学习八股。涉及到了各个方面，线性回归，逻辑回归，regularization L1和L2区别，表达式。随机森林和GBDT区别，scale和transform对它的影响。如何处理overfitting, 如何处理imbalanced dataset, 什么是unsupervised learning. 涉及的内容很细，但是并没有其他版友碰到的推公式的地步。如果是想复习机器学习基本概念，包括公式推导，楼主最近看了一个知乎叫 阿泽的 复旦计算机博主总结的 经典机器学习的各种知识点，从逻辑回归，到PCA， 树模型，甚至到XGBOOST和LIGHTGBM的公式都有。觉得受益匪浅
 保佑自己🙏🏻，同时也希望能帮助到大家。
 
 ### Twitter
@@ -218,7 +210,7 @@ coding部分：
 1. 给出一些tweets，找出meaningful的组：很open的问题，要自己定义什么是meaningful，tweets的有用的features
 问了如何encode tweets，用Bert有什么好处之类的
 我先说了特别简单的one-hot / tf-idf / word2vec 提了一嘴可以train your own version of embedding用word2vec或者bert
-2. Clustering有哪些算法，我说我只知道kmeans，然后就是kmeans的实现，可以用numpy，pandas之‍‌‌‍‌‍‌‍‍‌类的数据处理的包
+2. Clustering有哪些算法，我说我只知道kmeans，然后就是kmeans的实现，可以用numpy，pandas之类的数据处理的包
 
 ### Others
 5) ML Sys Design
@@ -255,7 +247,7 @@ ML基础，考了多标签和多任务，loss func的不同。最后问了解决
 上上周我参加了Uber MLE L4的onsite。一共四轮，一轮系统设计（bar raiser），一轮BQ，一轮ML coding 以及一轮general coding。
 1. 系统设计：设计一个uber eats的餐厅推荐系统。 都可以，基本上还是讲架构和模型。使用什么的模型架构，数据怎么使用，怎么分割数据，怎么制作负样本。对于底层不是特别的关心。感谢！有信心了！最怕架构 database, in memory cache, message queue, 这些都不会
 2. ML coding：实现Kmeans，允许使用numpy。
-3. General coding：L‍‌‌‍‌‍‌‍‍‌C399
+3. General coding：LC399
 4. BQ：经典BQ问题
 
 ML CASE: 每一个用户在app ui上会看到一个视频矩阵， 每一行是一个channel, 每一行的内容是这个channel下推荐的视频。现在的推荐系统分别独立训练 推荐channel, 和推荐每一个channel下的内容 ， 这样做可以吗， 有什么劣势？
@@ -266,7 +258,7 @@ System Design 1:
 一道在ML背景下的系统设计，要求设计一个user activity tracking system来追踪给user推荐了广告之后怎么样搜集user和它们的activities并用于后续的training.
 没有考察具体的model的设计，但考察了每一步storage的选择，data flow，时效性，以及如何筛选出没有被interact过的推荐并同样把它们作为signals。
 System Design 2
-设计一个类似youtube的视频推荐系统，同样也是以考察系统为主，而没有专注于model的设计，同时也问了一些和设计第一轮里的提到的如何做数据收‍‌‌‍‌‍‌‍‍‌集和清洗最后用来继续做model training的一些东西。
+设计一个类似youtube的视频推荐系统，同样也是以考察系统为主，而没有专注于model的设计，同时也问了一些和设计第一轮里的提到的如何做数据收集和清洗最后用来继续做model training的一些东西。
 
 ### Google
 
@@ -432,7 +424,7 @@ ML: 推荐locations
 3. ML Design
 这一轮是一个非常常规的recommendation问题，被推荐的东西（item）不经常变，用户的interest变化比较快。用collaborative filtering或者binary classification都能做，分析了一下两个方案，觉得用classification比较合适，有一些比较明显的优点，面试官也同意，就开始讨论metrics，feature engineering，不同算法的优缺点，然后就是些model serving上面的工程问题，比如怎么monitor，online表现明显有问题的时候怎么debug，因为工作中都遇到过，感觉答得也不错，面试官全程I like it, fantastic。唯一没有想到的是可以用好友graph来扩展feature解决冷启动问题，这个是面试官提醒了以后才想到的。这一轮就和上一轮画风相反。全程感觉很顺，但是还是给了个borderline，求大佬们指点一下，这是挂在哪了？
 4. System Design #2
-这一轮没有计入面试结果，但也挺有意思的。和第一轮Design一样，不按套路出牌，我把框架画完之后面试官说，这个设计很好，但是如果不用Cassandra或者任何s‍‌‌‍‌‍‌‍‍‌torage layer你要怎么设计，Redis也不用的话要怎么办，message queue也不用的话要怎么做，而且不是明着说的，就是说 “我们想尽量减少server间的networking”，反复沟通了很久，最后才明白他的意图原来就是不用任何轮子设计一个啥都有的monolith。明白了这个以后进展就很快，最终结果他也非常满意，后半程明显语气快乐得多（其实我想说这种设计挺糟糕的，拣了芝麻丢了西瓜）。。。
+这一轮没有计入面试结果，但也挺有意思的。和第一轮Design一样，不按套路出牌，我把框架画完之后面试官说，这个设计很好，但是如果不用Cassandra或者任何storage layer你要怎么设计，Redis也不用的话要怎么办，message queue也不用的话要怎么做，而且不是明着说的，就是说 “我们想尽量减少server间的networking”，反复沟通了很久，最后才明白他的意图原来就是不用任何轮子设计一个啥都有的monolith。明白了这个以后进展就很快，最终结果他也非常满意，后半程明显语气快乐得多（其实我想说这种设计挺糟糕的，拣了芝麻丢了西瓜）。。。
 geohash 4*8是因为用base32编码，8*8也可以，就是base64了。
 我面脸系统设计的反馈说是一开始problem exploration和clarification没答好。recruiter给我读了feedback，感觉广度，深度，量化和dive deep是几个主要考察的点。比如他抓问geohash就可能是想考察你dive deep
 用binary classification来做推荐，天然就能处理用户兴趣的快速变化，因为推荐的item和对应的排序都不是提前算好的，而是在query time实时算出来的，比如（随便举个例子）你看YouTube，连续看了几个美食节目以后，下一次回到主页，首页需要做一次推荐，这时候在feature extraction的时候你最最近的浏览记录都会被包含进去，所以虽然model没有变，model evaluation的结果会和你看美食节目之前有很大差别。
@@ -696,6 +688,13 @@ ml的newsfeed ranking design和instagram newsfeed 还蛮像的
 
 > https://research.facebook.com/research-areas/machine-learning/
 
+### System Design for Recommendations and Search
+https://eugeneyan.com/writing/system-design-for-discovery/
+
+1. `The offline environment` largely hosts batch processes such as model training (e.g., representation learning, ranking), creating embeddings for catalog items, and building an approximate nearest neighbors (ANN) index or knowledge graph to find similar items. It may also include loading item and user data into a feature store that is used to augment input data during ranking.
+2. `The online environment` then uses the artifacts generated (e.g., ANN indices, knowledge graphs, models, feature stores) to serve individual requests. A typical approach is converting the input item or search query into an embedding, followed by candidate retrieval and ranking. There are also other preprocessing steps (e.g., standardizing queries, tokenization, spell check) and post-processing steps (e.g., filtering undesirable items, business logic) though we won’t discuss them in this writeup.
+3. `Candidate retrieval` is a fast—but coarse—step to narrow down millions of items into hundreds of candidates. We trade off precision for efficiency to quickly narrow the search space (e.g., from millions to hundreds, a 99.99% reduction) for the downstream ranking task. Most contemporary retrieval methods convert the input (i.e., item, search query) into an embedding before using ANN to find similar items. Nonetheless, in the examples below, we’ll also see systems using graphs (DoorDash) and decision trees (LinkedIn).
+4. `Ranking` is a slower—but more precise—step to score and rank top candidates. As we’re processing fewer items (i.e., hundreds instead of millions), we have room to add features that would have been infeasible in the retrieval step (due to compute and latency constraints). Such features include item and user data, and contextual information. We can also use more sophisticated models with more layers and parameters.
 
 ### Machine Learning System Design Framework (page recommendation/fraud)
 • Design a personalized news ranking system.
@@ -769,7 +768,7 @@ Feature Engineering:
 categorical feature, numerical feature, text feature (TF-IDF, word2vec), image (Use pre-trained CNN model like VGG as feature extractor)
 Dimension reduction (optional): SVD based ALS (useful for TF-IDF), PCA
 Preprocessing 可能还需要做standardization跟normalize data
-我好像记得linear regression  和logistics regression是scale invariant? 所以也可以不做normalize?
+我好像记得linear regression和logistics regression是scale invariant? 所以也可以不做normalize?
 当然Ridge 和lasso是有影响的
 KNN 里面非常需要normalize data，因为这个会用到距离。
 
@@ -793,9 +792,9 @@ What I do is to convert a recommendation system problem to one of the following 
 3. Matrix factorization (Netflix)
 4. Neutral network using Triplet loss function (If you have a lot of text and/or image)
 
-一个是关于Deep Learning。大神的帖子里说面试时不推荐用Deep learning的model，这个我同意。但是一定要准备。有时候你能听的出来Interviewer就是想让你说DL‍‌‌‍‌‍‌‍‍‌，不说就挂了。还有时候不得不用，比如Data是图片的情况，那么必须用CNN把Image转成Vector，然后可以用LR什么的。第二个是Distributed training。不管用什么模型，都要想一下怎么用多个Machine做distributed training。模型越简单考官越喜欢问这个。
+一个是关于Deep Learning。大神的帖子里说面试时不推荐用Deep learning的model，这个我同意。但是一定要准备。有时候你能听的出来Interviewer就是想让你说DL，不说就挂了。还有时候不得不用，比如Data是图片的情况，那么必须用CNN把Image转成Vector，然后可以用LR什么的。第二个是Distributed training。不管用什么模型，都要想一下怎么用多个Machine做distributed training。模型越简单考官越喜欢问这个。
 
-`4. Train/Hyper parameter tuning: grid search, random search, Bayesian opti‍‌‌‍‌‍‌‍‍‌mization`
+`4. Train/Hyper parameter tuning: grid search, random search, Bayesian optimization`
 Based on my experience, these parameters are quite important: N_estimator, learning rate, max_depth, min_split, regularization
 Cross validation 90/10
 
