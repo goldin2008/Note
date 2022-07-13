@@ -82,7 +82,6 @@ ml论坛上有几个总结的帖子写的很全面了。我个人觉得有两篇
 
 Educative.io Grokking Machine the Learning Interview + blogs on machine learning design from Medium.com
 
-
 imbalanced class 看主要优化的目标是啥，可以是 precision, recall, 如果二者兼具的话就是F1.
 
 到时候把Grokking the Coding Interview: Patterns for Coding Questions也学一下。感觉这两门课，对Machine learning engineer的面试可能就够了（当然，还有机器学习专业方面的你还需要去好好准备）
@@ -102,7 +101,6 @@ imbalanced class 看主要优化的目标是啥，可以是 precision, recall, �
 
 ![Diagram of deployment.](pic/update.png)
 
-
 ### Amazon
 #### 1st Interview
 1. Talk about linear regression, why it is called linear?
@@ -117,7 +115,6 @@ imbalanced class 看主要优化的目标是啥，可以是 precision, recall, �
     - concept of making gates using neural network
 
 #### 2nd Interview
-
 1. Travelling Salesman Project
     1. Open MP how did you parallelise the algorithm exactly?
     2. why cant you parallelise stuff in python?
@@ -139,7 +136,6 @@ imbalanced class 看主要优化的目标是啥，可以是 precision, recall, �
     5. CNN vs Bert of 16 images → what is the difference?
     6. Sequence to Sequence model in Vision Scenario
 
-
 ML相关问题：Recall/precision tradeoff， SVM VS LR， support vector如何产生的，Kmeans 是什么和什么的tradeoff（问题问的非常无语，答案是k和purity的tradeoff，面试官期望你说出purity这个单词），通过KNN考察bias/variance tradeoff， 以及工作中有没有遇到过模型选择的问题（比如有哪些system constraint，为什么选该模型）
 
 ML depth：主要是presentation，需要做ppt，顺带问了GBDT和XGboost的异同（推荐看一下XGBoost的论文），以及lightGBM和XGboost的异同
@@ -148,7 +144,6 @@ Coding：手写一个KNN。找出最受欢迎的topk个商品 （两道题思路
 
 第一题，modeling，design buy it again model
 https://assets.amazon.science/40/e5/89556a6341eaa3d7dacc074ff24d/buy-it-again-modeling-repeat-purchase-recommendations.pdf?tag=1p3a-api-20
-
 
 分享一个四月的AS 店面，Deep Learninig 组
 自我介绍+why amazon+简历
