@@ -683,7 +683,6 @@ ml的newsfeed ranking design和instagram newsfeed 还蛮像的
 
 > https://research.facebook.com/research-areas/machine-learning/
 
-
 ### System Design for Recommendations and Search
 https://eugeneyan.com/writing/system-design-for-discovery/
 
