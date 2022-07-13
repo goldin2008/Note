@@ -5,7 +5,6 @@
 Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
 ***4 DESIGN A RATE LIMITER***
-Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
 ***5 DESIGN CONSISTENT HASHING***
 
