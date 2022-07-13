@@ -138,7 +138,6 @@ Here are a few reasons to choose a NoSQL database: Storing large volumes of data
 
 
 
-
 `IDEA`
 视频推荐：评论里面包括对视频内容的点评，应该提升权重
 
@@ -158,7 +157,8 @@ Here are a few reasons to choose a NoSQL database: Storing large volumes of data
 
 > https://1o24bbs.com/t/topic/4487
 
-## ML System Design
+
+### ML System Design
 > https://www.educative.io/blog/cracking-machine-learning-interview-system-design
 
 > https://github.com/kuhung/machine-learning-systems-design
@@ -309,7 +309,6 @@ Stream Processing: Samza, Storm
 3. Ins Story推荐，每条Story是独一无二的并且是有时间性的
 4. Spotify音乐推荐，怎么把音乐做个embedding
 
-
 ***Reference:***
 Model Debug http://josh-tobin.com/assets/pdf/troubleshooting-deep-neural-networks-01-19.pdf
 
@@ -459,7 +458,6 @@ Given two strings, A and B, of the same length n, find whether it is possible to
 have two pointers, first on A and second on end of B. move the pointer l and r (l++, r--) until both values are same( A[l] == B[r]) or l == r. if at any point both are not same just switch the pointer r from B to A and continue. If then it breaks then it is not a palindrome.
 
 You have 52 playing cards (26 red, 26 black). You draw cards one by one. A red card pays you a dollar. A black one fines you a dollar. You can stop any time you want. Cards are not returned to the deck after being drawn. What is the expected payoff following this optimal rule? for this, u need to find what is the optimal stopping rule in terms of maximizing expected payoff.
-
 
 ### Recommender System
 https://towardsdatascience.com/deep-dive-into-netflixs-recommender-system-341806ae3b48
