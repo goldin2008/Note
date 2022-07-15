@@ -101,6 +101,39 @@ imbalanced class 看主要优化的目标是啥，可以是 precision, recall, �
 
 ![Diagram of deployment.](pic/update.png)
 
+LZ 加油！关于A/B testing，可以参考下面的视频和书。我以前在另一个帖子回复过。
+
+（1）Youtube Video
+https://www.youtube.com/watch?v=Eh00PoR76NY
+
+Book
+http://www.amazon.com/Testing-Mo ... eywords=a+b+testing 鏉ユ簮涓€浜�.涓夊垎鍦拌鍧�. 
+视频和书都是一个叫Dan Siroker出的，以前从Google出来创业， 现在是一个网站Optimizely的CEO，这个网站专门帮其他公司做A/B testing，优化他们的网页。
+.鐣欏璁哄潧-涓€浜�-涓夊垎鍦�
+（2）
+Harvard Data Science 有一讲请了Quora 的Data Scientist讲了一些A/B testing 内容 
+
+Lecture 22. visit 1point3acres.com for more.
+http://cm.dce.harvard.edu/2014/01/14328/publicationListing.shtml
+
+缺点是，这些都是比较General的讲解，没有特别偏Statistical modeling的教程，估计得复习一下Design的东西。
+
+Airbnb的面试可能不简单，我在Quora上面看到这家有所谓的 In-house data challenge, 要求面试当场清数据，分析问题等等，具体可参考这个链接：
+http://www.quora.com/How-does-Airbnb-hire-data-scientists
+
+另外不知道你有没有看过Airbnb的 Nerds Blog，里面有很多Airbnb工程师如何运用数据分析的实例，希望能帮到你。
+http://nerds.airbnb.com/
+
+ab testing, read some industry white paper /paper
+G, L, M, F都有
+
+中文乱码mac
+iconv -c -f GB2312 -t UTF-8 a.txt b.txt
+iconv -c -f GB2312 -t UTF-8 a.txt>> b.txt
+iconv -c -f GB2312 -t UTF-8 1.txt 2.txt 3.txt 4.txt 5.txt>> ice_and_fire_utf8.txt
+
+    review_text = BeautifulSoup(string, \"lxml\").get_text()
+
 ### Amazon
 #### 1st Interview
 1. Talk about linear regression, why it is called linear?
