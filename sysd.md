@@ -54,6 +54,15 @@ Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
 ***13 Stock Exchange***
 
+### Other Cases
+***Search Ranking***
+
+***Feed Based System***
+
+***Recommendation System***
+
+***Ad Prediction System***
+
 ### Concept
 `Distributed systems design round`
 
