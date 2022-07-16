@@ -58,6 +58,12 @@ Be in charge and tradeoffs, tradeoffs, tradeoffs...
 ***Search Ranking***
 ![Diagram of deployment.](pic/search_rank.png)
 
+Query rewriting -> Spell checker -> Query expansion/query relaxation -> Query understanding -> Document selection -> Ranker -> Blender -> Training data generation
+
+![Diagram of deployment.](pic/layered_model.png)
+
+
+
 > Clarifying questions
 `Problem scope`: 
 `Scale`: How many websites exist that you want to enable through this search engine? How many requests per second do you anticipate to handle? the search engine is getting around 10K queries per second (QPS).
@@ -74,6 +80,18 @@ Time to success
 normalized discounted cumulative gain (NDCG) in detail as it’s a critical evaluation metric for any ranking problem
 NDCG:
 In contrast to cumulative gain, discounted cumulative gain (DCG) allows us to penalize the search engine’s ranking if highly relevant documents (as per ground truth) appear lower in the result list.
+
+`Ranker`
+The ranker will actively utilize machine learning to find the best order of documents (this is also called learning to rank).
+In stage one, you can use fast (nanoseconds) linear ML models to rank them. In stage two, you can utilise computationally expensive models (like deep learning models) to find the most optimized order of top 500 documents given by stage one. `When choosing an algorithm, remember to consider the model execution time. Cost vs benefit tradeoff is always an important consideration in large scale ML systems.`
+
+`Blender`
+Blender gives relevant results from various search verticals, like, images, videos, news, local results, and blog posts. The blender finally outputs a search engine result page (SERP) in response to the searcher’s query.
+
+`Training data generation`
+This component displays the cyclic manner of using machine learning to make a search engine ranking system. It takes online user engagement data from the SERP displayed in response to queries and generates positive and negative training examples. The training data generated is then fed to the machine learning models trained to rank search engine results.
+
+
 
 
 ***Feed Based System***
