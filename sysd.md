@@ -62,7 +62,7 @@ Query rewriting -> Spell checker -> Query expansion/query relaxation -> Query un
 
 ![Diagram of deployment.](pic/layered_model.png)
 
-
+The above example configuration assumes that you are first selecting one-hundred thousand documents for the searcher’s query from the index, then using two-stage ranking, with the first one reducing from one-hundred thousand to five-hundred documents and the second stage is then ranking these five-hundred documents. The blender can then blend results from different search verticals, and the filter will further screen irrelevant or offensive results to get good user engagement.
 
 > Clarifying questions
 `Problem scope`: 
