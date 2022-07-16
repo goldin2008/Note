@@ -195,7 +195,7 @@ Here are a few reasons to choose a NoSQL database: Storing large volumes of data
 `Checksum`
 
 
-> IDEA
+#### IDEA ####
 视频推荐：评论里面包括对视频内容的点评，应该提升权重
 
 > https://www.1point3acres.com/bbs/thread-169343-1-1.html
