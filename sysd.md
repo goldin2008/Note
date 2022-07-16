@@ -176,10 +176,15 @@ Replication means sharing information to ensure consistency between redundant re
 Here are a few reasons to choose a SQL database: We need to ensure ACID compliance. Your data is structured and unchanging.
 Here are a few reasons to choose a NoSQL database: Storing large volumes of data that often have little to no structure. Making the most of cloud computing and storage. Rapid development.
 
-`CAP Theorem`
+> CAP Theorem
 
+> PACELC Theorem
 
+> Consistent Hashing
 
+> Long-Polling vs WebSockets vs Server-Sent Events
+
+> Bloom Filters
 
 
 
