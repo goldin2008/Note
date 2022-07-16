@@ -56,7 +56,7 @@ Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
 ### Other Cases
 ***Search Ranking***
-![Diagram of deployment.](pic/search.png)
+![Diagram of deployment.](pic/search_rank.png)
 
 > Clarifying questions
 `Problem scope`: 
