@@ -56,6 +56,22 @@ Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
 ### Other Cases
 ***Search Ranking***
+> Clarifying questions
+`Problem scope`: 
+`Scale`: How many websites exist that you want to enable through this search engine? How many requests per second do you anticipate to handle? the search engine is getting around 10K queries per second (QPS).
+Personalization: have access to their profile as well as their historical search data
+
+> Metrics
+`Online metrics`
+Click-through rate:
+The click-through rate measures the ratio of clicks to impressions.
+successful sessions can be defined as the ones that have a click with a ten-second or longer dwell time.
+Zero-click searches
+Time to success
+`Offline metrics`
+normalized discounted cumulative gain (NDCG) in detail as it’s a critical evaluation metric for any ranking problem
+NDCG:
+
 
 ***Feed Based System***
 
