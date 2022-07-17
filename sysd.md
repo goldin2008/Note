@@ -178,19 +178,27 @@ Here are a few reasons to choose a NoSQL database: Storing large volumes of data
 
 `CAP Theorem`
 
+
 `PACELC Theorem`
+
 
 `Consistent Hashing`
 
+
 `Long-Polling vs WebSockets vs Server-Sent Events`
+
 
 `Bloom Filters`
 
+
 `Quorum`
+
 
 `Leader and Follower`
 
+
 `Heartbeat`
+
 
 `Checksum`
 
