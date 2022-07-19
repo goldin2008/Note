@@ -132,7 +132,7 @@ iconv -c -f GB2312 -t UTF-8 a.txt b.txt
 iconv -c -f GB2312 -t UTF-8 a.txt>> b.txt
 iconv -c -f GB2312 -t UTF-8 1.txt 2.txt 3.txt 4.txt 5.txt>> ice_and_fire_utf8.txt
 
-    review_text = BeautifulSoup(string, \"lxml\").get_text()
+review_text = BeautifulSoup(string, \"lxml\").get_text()
 
 ### Amazon
 #### 1st Interview
@@ -205,7 +205,7 @@ train的时候把mean保存下来，inference的时候用保存的值. 0处出�
 ### Linkedin
 接下来问probability，用什么样的distribution来model这些event最好：扔硬币，掷骰子，接线员下午4-5点接到了10个电话，5-6点会接到几个电话，股票走势等等，可能问了十来个。这里因为不知道要考probability，所以也没有复习到，可能有些没有答对。
 
-再来就是挑一个算法，从头到尾讲。我讲了logistic regression，包括loss function，optimization，regularization。follow-up了两个问题，一是如果MLE换成MAP，求的是什么。二是，为什么logistic regression对于correlated features表现不好。我‍觉得我第二个follow up没答好，也请教各位会如何回答这个问题。
+再来就是挑一个算法，从头到尾讲。我讲了logistic regression，包括loss function，optimization，regularization。follow-up了两个问题，一是如果MLE换成MAP，求的是什么。二是，为什么logistic regression对于correlated features表现不好。觉得我第二个follow up没答好，也请教各位会如何回答这个问题。
 
 data coding: K means
 
