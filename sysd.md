@@ -91,7 +91,8 @@ Blender gives relevant results from various search verticals, like, images, vide
 `Training data generation`
 This component displays the cyclic manner of using machine learning to make a search engine ranking system. It takes online user engagement data from the SERP displayed in response to queries and generates positive and negative training examples. The training data generated is then fed to the machine learning models trained to rank search engine results.
 
-
+`Document Selection`
+Inverted Index, Relevance scoring scheme
 
 
 ***Feed Based System***
