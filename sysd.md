@@ -94,6 +94,14 @@ This component displays the cyclic manner of using machine learning to make a se
 `Document Selection`
 Inverted Index, Relevance scoring scheme
 
+`Feature Engineering`
+Searcher-specific features
+Query-specific features
+Document-specific features
+Context-specific features
+Searcher-document features
+Query-document features
+
 
 ***Feed Based System***
 
