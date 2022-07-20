@@ -26,6 +26,14 @@ We use Fastapi and built an API to make inference and test model and make sure i
 4. Automatic Reporting
 EDA, model performance, environments(ibraries and dependencies) and business value.
 
+#### Fraud
+
+#### Underwriting
+Underwriting is an essential part of the insurance through which insurers assess risk and determine premiums to accept it. Evaluating and pricing risk requires extensive research on the risk profile of the customer. Consequently, manual underwriting is time-consuming, prone to errors, and can lead to inefficient pricing. This is why AI is well suited for underwriting and risk pricing processes.
+
+https://research.aimultiple.com/ai-underwriting/
+
+
 ### setup
 https://eugeneyan.com/writing/setting-up-python-project-for-automation-and-collaboration/
 
