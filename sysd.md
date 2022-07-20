@@ -91,6 +91,14 @@ Blender gives relevant results from various search verticals, like, images, vide
 `Training data generation`
 This component displays the cyclic manner of using machine learning to make a search engine ranking system. It takes online user engagement data from the SERP displayed in response to queries and generates positive and negative training examples. The training data generated is then fed to the machine learning models trained to rank search engine results.
 
+Training data generation for pointwise approach
+
+Training data generation for pairwise approach
+
+Human raters (offline method)
+
+User-engagement (online method)
+
 `Document Selection`
 Inverted Index, Relevance scoring scheme
 
@@ -101,6 +109,30 @@ Document-specific features
 Context-specific features
 Searcher-document features
 Query-document features
+
+`Ranking`
+Learning to Rank (LTR): A class of techniques that applies supervised machine learning (ML) to solve ranking problems. The pointwise and pairwise techniques that we will apply fall under this class.
+
+for a large scale search engine, it makes sense to adopt a multi-layer funnel approach. The top layer of the funnel looks at a large number of documents and uses simpler and faster algorithms for ranking. The bottom layer ranks a small number of documents with complex machine-learned models.
+
+The configuration shown above assumes that the first stage will receive one-hundred thousand relevant documents from the document selection component. You then reduce this number to five-hundred after ranking in this layer, ensuring that the topmost relevant results are forwarded to the second stage (also referred to as `the recall of the documents`).
+
+It will then be the responsibility of the second stage to rank the documents such that topmost relevant results are placed in the correct order (also referred to as `the precision of the documents`).
+
+First stage model will focus on the `recall` of the top five to ten relevant documents in the first five-hundred results while the second stage will ensure `precision` of the top five to ten relevant documents.
+
+This is achieved by changing the objective function from a `single pointwise objective` (click, session success) to a pairwise objective. `Pairwise optimization for learning to rank` means that the model is not trying to minimize the classification error but rather trying to get as many pairs of documents in the right order as possible.
+
+From RankNet to LambdaRank to LambdaMART: An Overview
+> https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/MSR-TR-2010-82.pdf
+
+`Filtering Results`
+Result set after ranking, These results are inappropriate despite having good user engagement
+- are offensive
+- cause misinformation
+- are trying to spread hatred
+- are not appropriate for children
+- are inconsiderate towards a particular group
 
 
 ***Feed Based System***
