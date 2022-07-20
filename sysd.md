@@ -137,9 +137,16 @@ Result set after ranking, These results are inappropriate despite having good us
 
 ***Feed Based System***
 
+
+
+
 ***Recommendation System***
 
+
+
 ***Ad Prediction System***
+
+
 
 ### Concept
 `Distributed systems design round`
