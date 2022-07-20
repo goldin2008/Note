@@ -108,10 +108,9 @@ https://www.youtube.com/watch?v=Eh00PoR76NY
 
 Book
 http://www.amazon.com/Testing-Mo ... eywords=a+b+testing 鏉ユ簮涓€浜�.涓夊垎鍦拌鍧�. 
-视频和书都是一个叫Dan Siroker出的，以前从Google出来创业， 现在是一个网站Optimizely的CEO，这个网站专门帮其他公司做A/B testing，优化他们的网页。
-.鐣欏璁哄潧-涓€浜�-涓夊垎鍦�
-（2）
-Harvard Data Science 有一讲请了Quora 的Data Scientist讲了一些A/B testing 内容 
+视频和书都是一个叫Dan Siroker出的，以前从Google出来创业， 现在是一个网站Optimizely的CEO，这个网站专门帮其他公司做A/B testing，优化他们的网页
+
+（2）Harvard Data Science 有一讲请了Quora 的Data Scientist讲了一些A/B testing 内容 
 
 Lecture 22. visit 1point3acres.com for more.
 http://cm.dce.harvard.edu/2014/01/14328/publicationListing.shtml
