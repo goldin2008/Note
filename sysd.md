@@ -240,6 +240,27 @@ Impression: If a Tweet is displayed on a user’s Twitter feed, it counts as an 
 - Balancing positive and negative training examples
 - Train test split
 
+`Ranking`
+- Logistic regression
+A major limitation of the linear model is that it assumes linearity exists between the input features and prediction. Therefore, you have to manually model feature interactions. For example, if you believe that the day of the week before a major holiday will have a major impact on your engagement prediction, you will have to create this feature in your training data manually. Other models like tree-based and neural networks are able to learn these feature interactions and utilize them effectively for predictions.
+
+- MART: multiple additive regression trees
+Trees are inherently able to utilize non-linear relations between features that aren’t readily available to logistic regression.
+
+Tree-based models also don’t require a large amount of data as they are able to generalize well quickly. So, a few million examples should be good enough to give us an optimized model.
+
+Consider a scenario, where a person reshares a Tweet but does not click the like button. Even though the user didn’t actually click on the like button, retweeting generally implies that the user likes the Tweet. The positive training example for the retweet model may prove useful for the like model as well. Hence, you can reuse all positive training examples across every model.
+
+One way to utilize the overall engagement data among each individual predictor of P(like), P(comment) and P(retweet) is to build one common predictor, i.e., P(engagement) and share its output as input into all of your predictors.
+
+- Multi-task neural networks
+
+total_loss = like_loss + comment_loss + retweet_loss
+
+Given the training time is slow for neural networks, training one model (shared layers) would make the overall training time much faster. Moreover, this will also allow us to share all the engagement data across each learning task.
+
+![Diagram of deployment.](pic/multi_network.png)
+
 
 
 ***Recommendation System***
