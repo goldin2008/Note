@@ -164,6 +164,12 @@ the Tweet selection component now fetches a mix of newly generated Tweets along 
 
 ![Diagram of deployment.](pic/tweet_selection.png)
 
+An engaging Tweet could be one that:
+- aligns with user A’s interests
+- is locally/globally trending
+- engages user A’s network
+
+![Diagram of deployment.](pic/tweet_network.png)
 
 
 ***Recommendation System***
