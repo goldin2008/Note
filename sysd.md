@@ -183,6 +183,17 @@ Dense features
   - User-author historical interactions
     - author_liked_posts_3months
     - author_liked_posts_count_1year
+  - User-author similarity
+    - common_followees
+    - topic_similarity
+    - tweet_content_embedding_similarity
+    - social_embedding_similarity [X]
+- Author features
+  - Author’s degree of influence
+    - is_verified
+    - author_social_rank
+    - author_num_followers
+    - follower_to_following_ratio
 
 
 ***Recommendation System***
