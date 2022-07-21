@@ -187,7 +187,7 @@ Dense features
     - common_followees
     - topic_similarity
     - tweet_content_embedding_similarity
-    - social_embedding_similarity [X]
+    - [x] social_embedding_similarity
 - Author features
   - Author’s degree of influence
     - is_verified
