@@ -175,6 +175,12 @@ Selecting these Tweets can prove to be very beneficial in two cases:
 - The user has recently joined the platform and follows only a few others. As such, their small network is not able to generate a sufficient number of Tweets for the Tweet selection component (known as the Bootstrap problem).
 - The user likes a Tweet from a person outside of his network and decides to add them to their network. This would increase the discoverability on the platform and help grow the user’s network.
 
+![Diagram of deployment.](pic/tweet_feature.png)
+
+`Feature Engineering`
+
+
+
 ***Recommendation System***
 
 
