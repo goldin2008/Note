@@ -194,6 +194,42 @@ Dense features
     - author_social_rank
     - author_num_followers
     - follower_to_following_ratio
+  - Historical trend of interactions on the author’s Tweets
+    - author_engagement_rate_3months
+    - author_topic_engagement_rate_3months
+- User-Tweet features
+  - topic_similarity
+  - embedding_similarity
+- Tweet features
+  - Features based on Tweet’s content
+    - Tweet_length
+    - Tweet_recency
+    - is_image_video
+    - is_URL
+  - Features based on Tweet’s interaction
+    - num_total_interactions (Time decay can be used in all features where there is a decline in the value of a quantity over time.)
+    - use different time windows to capture the recency of interactions
+    - interactions_in_last_1_hour
+    - interactions_in_last_1_day
+  - Separate features for different engagements
+    - likes_in_last_3_days
+    - comments_in_last_1_day
+    - reshares_in_last_2_hours
+    - likes_in_last_3_days_user’s_network_only
+    - comments_in_last_1_day_user’s_network_only
+    - reshares_in_last_2_hours_user’s_network_only
+  - Context-based features
+    - day_of_week
+    - time_of_day
+    - current_user_location
+    - season
+    - lastest_k_tag_interactions
+    - approaching_holiday
+
+Sparse features
+- unigrams/bigrams of a Tweet
+- user_id
+- tweets_id
 
 
 ***Recommendation System***
