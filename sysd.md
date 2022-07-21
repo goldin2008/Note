@@ -231,6 +231,16 @@ Sparse features
 - user_id
 - tweets_id
 
+`Training Data Generation`
+- Training data generation through online user engagement
+The users’ online engagement with Tweets can give us positive and negative training examples. For instance, if you are training a single model to predict user engagement, then all the Tweets that received user engagement would be labeled as positive training examples. Similarly, the Tweets that only have impressions would be labeled as negative training examples.
+
+Impression: If a Tweet is displayed on a user’s Twitter feed, it counts as an impression. It is not necessary that the user reads it or engages with it, scrolling past it also counts as an impression.
+
+- Balancing positive and negative training examples
+- Train test split
+
+
 
 ***Recommendation System***
 
