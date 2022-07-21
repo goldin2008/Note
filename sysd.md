@@ -178,7 +178,11 @@ Selecting these Tweets can prove to be very beneficial in two cases:
 ![Diagram of deployment.](pic/tweet_feature.png)
 
 `Feature Engineering`
-
+Dense features
+- User-author features
+  - User-author historical interactions
+    - author_liked_posts_3months
+    - author_liked_posts_count_1year
 
 
 ***Recommendation System***
