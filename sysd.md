@@ -281,8 +281,11 @@ Now that you have selected the best model offline, you will use A/B testing to c
 - Step 4: To deploy or not to deploy
 You should go for complex solutions (based on new features, or data, etc.) only if you anticipate it to bring larger gains in the future.
 
-***Recommendation System***
+*** Netflix Recommendation System ***
 
+`Feature Engineering`
+
+![Diagram of deployment.](pic/rec_feat.png)
 
 
 ***Ad Prediction System***
