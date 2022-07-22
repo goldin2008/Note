@@ -345,6 +345,14 @@ Media-user cross features
   - music_composer
   - actors
 
+`Candidate Generation`
+1. Collaborative filtering
+- Nearest neighborhood
+- [x] Matrix factorization
+2. Content-based filtering
+3. Embedding-based similarity
+
+
 
 ***Ad Prediction System***
 
