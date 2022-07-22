@@ -287,6 +287,64 @@ You should go for complex solutions (based on new features, or data, etc.) only 
 
 ![Diagram of deployment.](pic/rec_feat.png)
 
+User-based features
+- age
+- gender
+- language
+- country
+- average_session_time
+- last_genre_watched
+- user_actor_histogram
+- user_genre_histogram
+- user_language_histogram
+
+Context-based features
+- season_of_the_year
+- upcoming_holiday
+- days_to_upcoming_holiday
+- time_of_day
+- day_of_week
+- device
+
+Media-based features
+- public-platform-rating
+- revenue
+- time_passed_since_release_date
+- time_on_platform
+- media_watch_history
+- genre
+- movie_duration
+- content_set_time_period
+- content_tags
+- show_season_number
+- country_of_origin
+- release_country
+- release_year
+- release_type
+- maturity_rating
+
+Media-user cross features
+- User-genre historical interaction features
+  - user_genre_historical_interaction_3months
+  - user_genre_historical_interaction_1year
+  - user_and_movie_embedding_similarity
+  - user_actor
+  - user_director
+  - user_language_match
+  - user_age_match
+- sparse features
+  - movie_id
+  - title_of_media
+  - synopsis
+  - original_title
+  - distributor
+  - creator
+  - original_language
+  - director
+  - first_release_year
+  - music_composer
+  - actors
+
 
 ***Ad Prediction System***
 
