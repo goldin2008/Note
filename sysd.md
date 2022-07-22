@@ -366,6 +366,10 @@ If you are also considering past watches for the media recommendations, then re-
 
 
 ***Ad Prediction System***
+Predict the probability of engagement of an ad for a given user and context(query, device, etc.)
+
+Offline metrics are mainly used to compare the models offline quickly and see which one gives the best result. Online metrics are used to validate the model for an end-to-end system to see how the revenue and engagement rate improve before making the final decision to launch the model.
+
 
 
 
