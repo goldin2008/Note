@@ -370,6 +370,20 @@ Predict the probability of engagement of an ad for a given user and context(quer
 
 Offline metrics are mainly used to compare the models offline quickly and see which one gives the best result. Online metrics are used to validate the model for an end-to-end system to see how the revenue and engagement rate improve before making the final decision to launch the model.
 
+They should also ensure that these models help the overall improvement of the platform, increase revenue, and provide value for the advertisers.
+- Offline metrics
+  - area under the receiver operator curve (AUC)
+  However, given that the system needs well-calibrated prediction scores, AUC, has the following shortcomings in this ad prediction scenario.
+  
+  - Log Loss
+
+- Online metrics
+  - Overall revenue
+  - Overall ads engagement rate
+    - Click rate
+    - Downstream action rate
+  - Counter metrics
+
 
 
 ### Concept
