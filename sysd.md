@@ -407,16 +407,44 @@ The auction mechanism then determines whether these top K relevant ads are shown
 - ad_id
 - ad_content_raw_terms
 - historical_engagement_rate
-
+  - ad_engagement_history_last_24_hrs
+  - ad_engagement_history_last_7_days
+- ad_impression
+- ad_negative_engagement_rate
+- ad_embedding
+- ad_age
+- ad_bid
 2. Advertiser specific features
-
+- advertiser_domain
+- historical_engagement_rate
+- region_wise_engagement
 3. User specific features
-
+- user_previous_search_terms
+- user_search_terms
+- age
+- gender
+- language
+- embedding_last_k_ads
+- engagement_content_type
+- engagement_days
+- platform_time_spent
+- region
 4. Context specific features
-
+- current_region
+- time
+- device
+  - screen_size
 5. User-ad cross features
-
+- embedding_similarity
+- region_wise_engagement
+- user_ad_category_histogram
+- user_ad_subcategory_histogram
+- user_gender_ad_histogram
+- user_age_ad_histogram
 6. User-advertiser cross features
+- embedding_similarity
+- user_gender_advertiser_histogram
+- user_age_advertiser_histogram
 
 ### Concept
 `Distributed systems design round`
