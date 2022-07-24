@@ -373,9 +373,9 @@ Offline metrics are mainly used to compare the models offline quickly and see wh
 They should also ensure that these models help the overall improvement of the platform, increase revenue, and provide value for the advertisers.
 - Offline metrics
   - area under the receiver operator curve (AUC)
-  However, given that the system needs well-calibrated prediction scores, AUC, has the following shortcomings in this ad prediction scenario.
-    1. AUC does not penalize for “how far off” predicted score is from the actual label. For example, let’s take two positive examples (i.e., with actual label 1) that have the predicted scores of 0.51 and 0.7 at threshold 0.5. These scores will contribute equally to our loss even though one is much closer to our predicted value.
-    2. AUC is insensitive to well-calibrated probabilities.
+    1. However, given that the system needs well-calibrated prediction scores, AUC, has the following shortcomings in this ad prediction scenario.
+    2. AUC does not penalize for “how far off” predicted score is from the actual label. For example, let’s take two positive examples (i.e., with actual label 1) that have the predicted scores of 0.51 and 0.7 at threshold 0.5. These scores will contribute equally to our loss even though one is much closer to our predicted value.
+    3. AUC is insensitive to well-calibrated probabilities.
 
   - Log Loss
 
