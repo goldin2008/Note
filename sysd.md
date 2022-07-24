@@ -366,10 +366,11 @@ If you are also considering past watches for the media recommendations, then re-
 
 
 ***Ad Prediction System***
+`Problem Statement`
 Predict the probability of engagement of an ad for a given user and context(query, device, etc.)
 
+`metrics`
 Offline metrics are mainly used to compare the models offline quickly and see which one gives the best result. Online metrics are used to validate the model for an end-to-end system to see how the revenue and engagement rate improve before making the final decision to launch the model.
-
 They should also ensure that these models help the overall improvement of the platform, increase revenue, and provide value for the advertisers.
 - Offline metrics
   - area under the receiver operator curve (AUC)
@@ -391,7 +392,29 @@ They should also ensure that these models help the overall improvement of the pl
 
 ![Diagram of deployment.](pic/ads_sys.png)
 
+`Architectural Components`
+- `Ad selection`
+The ad selection component will fetch the top k ads based on relevance (subject to the user context) and bid from the ads index.
+- `Ad prediction`
+The ad prediction component will predict user engagement with the ad (the probability that an action will be taken on the ad if it is shown), given the ad, advertiser, user, and context. Then, it will rank ads based on relevance score and bid.
+- `Auction`
+The auction mechanism then determines whether these top K relevant ads are shown to the user, the order in which they are shown, and the price the advertisers pay if an action is taken on the ad.
 
+![Diagram of deployment.](pic/ads_feat.png)
+
+`Feature Engineering`
+1. Ad specific features
+- ad_id
+
+2. Advertiser specific features
+
+3. User specific features
+
+4. Context specific features
+
+5. User-ad cross features
+
+6. User-advertiser cross features
 
 ### Concept
 `Distributed systems design round`
