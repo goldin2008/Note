@@ -405,6 +405,8 @@ The auction mechanism then determines whether these top K relevant ads are shown
 `Feature Engineering`
 1. Ad specific features
 - ad_id
+- ad_content_raw_terms
+- historical_engagement_rate
 
 2. Advertiser specific features
 
