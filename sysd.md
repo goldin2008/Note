@@ -372,7 +372,6 @@ Offline metrics are mainly used to compare the models offline quickly and see wh
 
 
 
-
 ### Concept
 `Distributed systems design round`
 
