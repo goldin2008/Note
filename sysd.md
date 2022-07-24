@@ -376,8 +376,9 @@ They should also ensure that these models help the overall improvement of the pl
     1. However, given that the system needs well-calibrated prediction scores, AUC, has the following shortcomings in this ad prediction scenario.
     2. AUC does not penalize for “how far off” predicted score is from the actual label. For example, let’s take two positive examples (i.e., with actual label 1) that have the predicted scores of 0.51 and 0.7 at threshold 0.5. These scores will contribute equally to our loss even though one is much closer to our predicted value.
     3. AUC is insensitive to well-calibrated probabilities.
-
-  - Log Loss
+  - Log Loss (or more precisely cross-entropy loss) is the measure of our predictive error.
+    1. This metric captures to what degree expected probabilities diverge from class labels. As such, it is an absolute measure of quality, which accounts for generating well-calibrated, probabilistic output.
+    2. Let’s consider a scenario that differentiates why log loss gives a better output compared to AUC. If we multiply all the predicted scores by a factor of 2 and our average prediction rate is double than the empirical rate, AUC won’t change but log loss will go down.
 
 - Online metrics
   - Overall revenue
@@ -385,6 +386,10 @@ They should also ensure that these models help the overall improvement of the pl
     - Click rate
     - Downstream action rate
   - Counter metrics
+  It’s important to track counter metrics to see if the ads are negatively impacting the platform.
+  There is a risk that users can leave the platform if ads degrade the experience significantly.
+
+![Diagram of deployment.](pic/ads_sys.png)
 
 
 
