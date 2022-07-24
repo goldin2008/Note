@@ -393,6 +393,17 @@ They should also ensure that these models help the overall improvement of the pl
 ![Diagram of deployment.](pic/ads_sys.png)
 
 `Architectural Components`
+
+`Advertiser flow`
+- Query-based targeting
+- User-based targeting
+- Interest-based targeting
+- Set-based targeting
+
+`User flow`
+- Advertisers create ads providing targeting information, and the ads are stored in the ads index
+- When a user queries the platform, ads can be selected from the index based on their information (e.g., demographics, interests, etc.) and run through our ads prediction system.
+
 - `Ad selection`
 The ad selection component will fetch the top k ads based on relevance (subject to the user context) and bid from the ads index.
 - `Ad prediction`
