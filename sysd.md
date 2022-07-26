@@ -409,7 +409,11 @@ The ad selection component will fetch the top k ads based on relevance (subject 
 - `Ad prediction`
 The ad prediction component will predict user engagement with the ad (the probability that an action will be taken on the ad if it is shown), given the ad, advertiser, user, and context. Then, it will rank ads based on relevance score and bid.
 - `Auction`
-The auction mechanism then determines whether these top K relevant ads are shown to the user, the order in which they are shown, and the price the advertisers pay if an action is taken on the ad.
+The auction mechanism then determines whether these top K relevant ads are shown to the user, the order in which they are shown, and the price the advertisers pay if an action is taken on the ad. For every ad request, an auction takes place to determine which ads to show. The top relevant ads selected by the ad prediction system are given as input to Auction. Auction then looks at total value based on an ad’s bid as well as its relevance score. An ad with the highest total value is the winner of the auction. The total value depends on the following factors:
+- Bid
+- User engagement rate
+- Ad quality score
+- Budget
 
 ![Diagram of deployment.](pic/ads_feat.png)
 
@@ -456,6 +460,11 @@ The auction mechanism then determines whether these top K relevant ads are shown
 - embedding_similarity
 - user_gender_advertiser_histogram
 - user_age_advertiser_histogram
+
+`Funnel model approach`
+
+![Diagram of deployment.](pic/ads_funnel.png)
+
 
 ### Concept
 `Distributed systems design round`
