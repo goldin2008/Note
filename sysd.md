@@ -499,7 +499,7 @@ To overcome this, we can use additive trees and neural networks to find such com
 - Neural Network
 neural network-based models are also really good at capturing non-linear, complex relationships between features.
 
-![Diagram of deployment.](pic/ads_online_learning.png)
+![Diagram of deployment.](pic/ads_new_feat.png)
 
 So, let’s combine the above two ideas together:
 - We train additive trees and neural network to predict non-linear complex relationships among our features. We then use these models to generate features.
