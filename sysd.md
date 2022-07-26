@@ -475,6 +475,19 @@ Let’s go over an example to see how these components will interact for the sea
 - user_gender_advertiser_histogram
 - user_age_advertiser_histogram
 
+`Ad Selection`
+- Phase 1: Quick selection of ads for the given query and user context according to selection criteria
+The first key requirement to be able to achieve the quick selection objective is to have the ads stored in a system that is fast and enables complex selection criteria. This is where building an in-memory index to store the ads will be massively helpful.
+- Phase 2: Rank these selected ads based on a simple and fast algorithm to trim ads.
+The number of ads selected in phase 1 can be quite large depending on the query and the user, e.g., we can have millions of ads targeted for a sports fan. So, running a complex ML model to predict engagement on all these selected ads will be slow and expensive. At this point, it makes sense to narrow down the space using a simplistic approach before we start running complex models.
+- Phase 3: Apply the machine learning model on the trimmed ads to select the top ones.
+As the ranking in phase 2 is super simplistic, we should still select a sizable ads(e.g., ten thousand) by running a better model as we work towards reducing the ad set. We can run a simplistic and efficient model on ads selected in phase 2 to further narrow it down. The top ads from this phase will be passed to our ad prediction stage to run more complex and accurate models for better user engagement prediction.
+We can use either logistic regression or additive trees based models (such as random forest or boosted decision trees) as they are quite efficient. Neural network-based models need more capacity and time so they might not be the best choice at this stage.
+
+![Diagram of deployment.](pic/ads_pred.png)
+
+`Ad Prediction`
+
 
 
 ### Concept
