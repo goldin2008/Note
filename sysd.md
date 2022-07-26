@@ -487,8 +487,23 @@ We can use either logistic regression or additive trees based models (such as ra
 ![Diagram of deployment.](pic/ads_pred.png)
 
 `Ad Prediction`
+The following figure shows some key components that are critical for enabling online learning. We need a mechanism that generates the latest training examples via an online joiner. Our training data generator will take these examples and generate the right feature set for them. The model trainer will then receive these new examples to refresh the model using stochastic gradient descent. This forms a tightly closed loop where changes in the feature distribution or model output can be detected, learned on, and improved in short successions. Note that the refresh of the model doesn’t have to be instantaneous, and we can do it in same batches at a certain frequency, e.g., every 30 mins, 60 mins etc.
 
+Model for online learning:
+One model that easily supports online learning and has the ability to update it using stochastic gradient descent using mini-batches is logistic regression.
 
+Auto non-linear feature generation:
+One potential drawback is that simple logistic regression (generalized linear model) relies on manual effort to create complex feature crosses and generating non-linear features. Manually creating such features is cumbersome and will mostly be restricted to modeling the relationship between two or three features. On the other hand, tree and neural network-based models are really good at generating complex relationships among features when optimizing the model.
+To overcome this, we can use additive trees and neural networks to find such complex feature crosses and non-linear feature relationships in data, and then these features are input to our logistic regression model.
+- Additive trees
+- Neural Network
+neural network-based models are also really good at capturing non-linear, complex relationships between features.
+
+![Diagram of deployment.](pic/ads_online_learning.png)
+
+So, let’s combine the above two ideas together:
+- We train additive trees and neural network to predict non-linear complex relationships among our features. We then use these models to generate features.
+- We use raw features and features generated in the previous step to train a logic regression model.
 
 ### Concept
 `Distributed systems design round`
