@@ -415,6 +415,12 @@ The auction mechanism then determines whether these top K relevant ads are shown
 - Ad quality score
 - Budget
 
+![Diagram of deployment.](pic/ads_funnel.png)
+
+`Funnel model approach`
+As we go down the funnel (as shown in the diagram), the complexity of the models becomes higher and the set of ads that they run on becomes smaller. It’s also important to note that the initial layers are mostly responsible for ads selection. On the other hand, ads prediction is responsible for predicting a well-calibrated engagement and quality score for ads. This predicted score is going to be utilized in the auction as well.
+
+
 ![Diagram of deployment.](pic/ads_feat.png)
 
 `Feature Engineering`
@@ -461,9 +467,6 @@ The auction mechanism then determines whether these top K relevant ads are shown
 - user_gender_advertiser_histogram
 - user_age_advertiser_histogram
 
-`Funnel model approach`
-
-![Diagram of deployment.](pic/ads_funnel.png)
 
 
 ### Concept
