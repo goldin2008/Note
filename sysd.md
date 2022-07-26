@@ -582,7 +582,12 @@ Here are a few reasons to choose a SQL database: We need to ensure ACID complian
 Here are a few reasons to choose a NoSQL database: Storing large volumes of data that often have little to no structure. Making the most of cloud computing and storage. Rapid development.
 
 `CAP Theorem`
+CAP theorem states that it is impossible for a distributed system to simultaneously provide all three of the following desirable properties: 
+- Consistency (C): All nodes see the same data at the same time.
+- Availability (A): In simple terms, availability refers to a system’s ability to remain accessible even if one or more nodes in the system go down.
+- Partition tolerance (P): A partition is a communication break (or a network failure) between any two nodes in the system, i.e., both nodes are up but cannot communicate with each other.
 
+Therefore, the theorem can really be stated as: In the presence of a network partition, a distributed system must choose either Consistency or Availability.
 
 `PACELC Theorem`
 
