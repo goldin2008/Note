@@ -406,6 +406,7 @@ They should also ensure that these models help the overall improvement of the pl
 
 - `Ad selection`
 The ad selection component will fetch the top k ads based on relevance (subject to the user context) and bid from the ads index.
+The main goal of the ads selection component is to narrow down the set of ads that are relevant for a given query. In a search-based system, the ads selection component is responsible for retrieving the top relevant ads from the ads database (built using all the active ads in the system) according to the user and query context. In a feed-based system, the ads selection component will select the top k relevant ads based more on user interests than search terms.
 - `Ad prediction`
 The ad prediction component will predict user engagement with the ad (the probability that an action will be taken on the ad if it is shown), given the ad, advertiser, user, and context. Then, it will rank ads based on relevance score and bid.
 - `Auction`
