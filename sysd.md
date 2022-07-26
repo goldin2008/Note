@@ -420,6 +420,13 @@ The auction mechanism then determines whether these top K relevant ads are shown
 `Funnel model approach`
 As we go down the funnel (as shown in the diagram), the complexity of the models becomes higher and the set of ads that they run on becomes smaller. It’s also important to note that the initial layers are mostly responsible for ads selection. On the other hand, ads prediction is responsible for predicting a well-calibrated engagement and quality score for ads. This predicted score is going to be utilized in the auction as well.
 
+Let’s go over an example to see how these components will interact for the search scenario.
+- A thirty-year old male user issues a query “machine learning”.
+- The `ads selection` component selects all the ads that match the targeting criteria ( user demographics and query) and uses a simple model to predict the ad’s relevance score.
+- The `ads selection` component ranks the ads according to r, where r = bid * relevance and sends the top ads to our ads prediction system.
+- The `ads prediction` component will go over the selected ads and uses a highly optimized ML model to predict a precise calibrated score.
+- The `ads auction` component then runs the auction algorithm based on the bid and predicted ads score to select the top most relevant ads that are shown to the user.
+
 
 ![Diagram of deployment.](pic/ads_feat.png)
 
