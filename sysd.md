@@ -592,10 +592,15 @@ CAP theorem states that it is impossible for a distributed system to simultaneou
 Therefore, the theorem can really be stated as: In the presence of a network partition, a distributed system must choose either Consistency or Availability. We cannot build a general data store that is continually available, sequentially consistent, and tolerant to any partition failures. We can only build a system that has any two of these three properties.
 
 `PACELC Theorem`
-
+The PACELC theorem states that in a system that replicates data:
+- if there is a partition (‘P’), a distributed system can tradeoff between availability and consistency (i.e., ‘A’ and ‘C’);
+- else (‘E’), when the system is running normally in the absence of partitions, the system can tradeoff between latency (‘L’) and consistency (‘C’).
 
 `Consistent Hashing`
-
+Long-Polling, WebSockets, and Server-Sent Events are popular communication protocols between a client like a web browser and a web server. First, let’s start with understanding what a standard HTTP web request looks like. Following are a sequence of events for regular HTTP request:
+1. The client opens a connection and requests data from the server.
+2. The server calculates the response.
+3. The server sends the response back to the client on the opened request.
 
 `Long-Polling vs WebSockets vs Server-Sent Events`
 
