@@ -12,22 +12,19 @@ Batteries Included
 ------------------
 
 The following tools are pre-configured for you if you use this ``cookiecutter`` for your project:
-
-1. `Python packaging <https://packaging.python.org/>`_: automatic ``pip`` install!
 1. [Python packaging](https://packaging.python.org/): automatic ``pip`` install!
-
-2. `Pre-commit <https://pre-commit.com/>`_: automatic formatting on every commit.
-3. `Pytest <https://pytest.org/en/latest/>`_: robust Python testing framework.
-4. `Mypy <http://mypy-lang.org/>`_: static typing scanning and configuration.
-5. `Pylint <https://www.pylint.org/>`_: code analysis, and a requirement for Surge model migration.
-6. `Sphinx <http://www.sphinx-doc.org/en/master/>`_ and the
-   `Furo theme <https://pradyunsg.me/furo/>`_: build pages for your code!
-7. `Black <https://black.readthedocs.io/en/stable/>`_ and
-   `isort <https://isort.readthedocs.io/en/latest/>`_: opinionated code formatting.
-8. `Check-Manifest <https://pypi.org/project/check-manifest/>`_: never forget a static file.
-9. `Tox <https://tox.readthedocs.io/en/latest/>`_: run all of your test environments!
-10. `Dockerfile <https://hub.docker.com/_/python>`_ and
-    `Jenkinsfile <https://jenkins.io/doc/book/pipeline/jenkinsfile/>`_: continuous integration ready to go, including Checkmarx/WSD and Artifactory publishing.
+2. [Pre-commit] (https://pre-commit.com/): automatic formatting on every commit.
+3. [Pytest] (https://pytest.org/en/latest/): robust Python testing framework.
+4. [Mypy] (http://mypy-lang.org/): static typing scanning and configuration.
+5. [Pylint] (https://www.pylint.org/): code analysis, and a requirement for Surge model migration.
+6. [Sphinx] (http://www.sphinx-doc.org/en/master/) and the
+   [Furo theme](https://pradyunsg.me/furo/): build pages for your code!
+7. [Black] (https://black.readthedocs.io/en/stable/) and
+   [isort] (https://isort.readthedocs.io/en/latest/): opinionated code formatting.
+8. [Check-Manifest] (https://pypi.org/project/check-manifest/): never forget a static file.
+9. [Tox] (https://tox.readthedocs.io/en/latest/): run all of your test environments!
+10. [Dockerfile] (https://hub.docker.com/_/python) and
+    [Jenkinsfile] (https://jenkins.io/doc/book/pipeline/jenkinsfile/): continuous integration ready to go, including Checkmarx/WSD and Artifactory publishing.
 
 
 ### Docker and Kubernetes
