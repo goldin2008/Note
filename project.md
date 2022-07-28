@@ -4,9 +4,9 @@ Python 3 cookie cutter template
 ===============================
 
 .. image:: https://img.shields.io/badge/python-3.8%20%7C%203.9-green
-     https://www.python.org
+    :target: https://www.python.org
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-     https://github.com/psf/black
+    :target: https://github.com/psf/black
 
 Batteries Included
 ------------------
