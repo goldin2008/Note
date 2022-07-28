@@ -14,7 +14,7 @@ Batteries Included
 The following tools are pre-configured for you if you use this ``cookiecutter`` for your project:
 
 1. `Python packaging <https://packaging.python.org/>`_: automatic ``pip`` install!
-1. [Python packaging](<https://packaging.python.org/): automatic ``pip`` install!
+1. `[Python packaging](<https://packaging.python.org/)`: automatic ``pip`` install!
 
 2. `Pre-commit <https://pre-commit.com/>`_: automatic formatting on every commit.
 3. `Pytest <https://pytest.org/en/latest/>`_: robust Python testing framework.
