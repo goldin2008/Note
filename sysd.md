@@ -597,27 +597,44 @@ The PACELC theorem states that in a system that replicates data:
 - else (‘E’), when the system is running normally in the absence of partitions, the system can tradeoff between latency (‘L’) and consistency (‘C’).
 
 `Consistent Hashing`
+
+
+`Long-Polling vs WebSockets vs Server-Sent Events`
 Long-Polling, WebSockets, and Server-Sent Events are popular communication protocols between a client like a web browser and a web server. First, let’s start with understanding what a standard HTTP web request looks like. Following are a sequence of events for regular HTTP request:
 1. The client opens a connection and requests data from the server.
 2. The server calculates the response.
 3. The server sends the response back to the client on the opened request.
 
-`Long-Polling vs WebSockets vs Server-Sent Events`
-
-
 `Bloom Filters`
+Use Bloom filters to quickly find if an element might be present in a set.
 
+The Bloom filter data structure tells whether an element may be in a set, or definitely is not. The only possible errors are false positives, i.e., a search for a nonexistent element might give an incorrect answer. With more elements in the filter, the error rate increases. An empty Bloom filter is a bit-array of m bits, all set to 0. There are also k different hash functions, each of which maps a set element to one of the m bit positions.
+- To add an element, feed it to the hash functions to get k bit positions, and set the bits at these positions to 1.
+- To test if an element is in the set, feed it to the hash functions to get k bit positions.
+  - If any of the bits at these positions is 0, the element is definitely not in the set.
+  - If all are 1, then the element may be in the set.
 
 `Quorum`
-
+In a distributed environment, a quorum is the minimum number of servers on which a distributed operation needs to be performed successfully before declaring the operation’s overall success.
+What value should we choose for a quorum? More than half of the number of nodes in the cluster:
+(N/2+1) where N is the total number of nodes in the cluster. Because of this logic, it is recommended to always have an odd number of total nodes in the cluster.
+The following two things should be kept in mind before deciding read/write quorum:
+- R=1 and W=N ⇒ full replication (write-all, read-one): undesirable when servers can be unavailable because writes are not guaranteed to complete.
+- Best performance (throughput/availability) when 1 < r < w < n, because reads are more frequent than writes in most applications
 
 `Leader and Follower`
-
+Allow only a single server (called leader) to be responsible for data replication and to coordinate work.
+At any time, one server is elected as the leader. This leader becomes responsible for data replication and can act as the central point for all coordination. The followers only accept writes from the leader and serve as a backup. In case the leader fails, one of the followers can become the leader. In some cases, the follower can serve read requests for load balancing.
 
 `Heartbeat`
-
+Each server periodically sends a heartbeat message to a central monitoring server or other servers in the system to show that it is still alive and functioning.
+Heartbeating is one of the mechanisms for detecting failures in a distributed system. If there is a central server, all servers periodically send a heartbeat message to it. If there is no central server, all servers randomly choose a set of servers and send them a heartbeat message every few seconds. This way, if no heartbeat message is received from a server for a while, the system can suspect that the server might have crashed. If there is no heartbeat within a configured timeout period, the system can conclude that the server is not alive anymore and stop sending requests to it and start working on its replacement.
 
 `Checksum`
+How can a distributed system ensure data integrity, so that the client receives an error instead of corrupt data?
+Calculate a checksum and store it with data.
+To calculate a checksum, a cryptographic hash function like MD5, SHA-1, SHA-256, or SHA-512 is used. The hash function takes the input data and produces a string (containing letters and numbers) of fixed length; this string is called the checksum.
+When a system is storing some data, it computes a checksum of the data and stores the checksum with the data. When a client retrieves data, it verifies that the data it received from the server matches the checksum stored. If not, then the client can opt to retrieve that data from another replica.
 
 
 #### IDEA ####
