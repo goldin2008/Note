@@ -1,5 +1,43 @@
 ## Project
 ### Code Quality Standards
+Python 3 cookie cutter template
+===============================
+
+.. image:: https://img.shields.io/badge/python-3.8%20%7C%203.9-green
+     https://www.python.org
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+     https://github.com/psf/black
+
+Batteries Included
+------------------
+
+The following tools are pre-configured for you if you use this ``cookiecutter`` for your project:
+
+1. `Python packaging <https://packaging.python.org/>`_: automatic ``pip`` install!
+2. `Pre-commit <https://pre-commit.com/>`_: automatic formatting on every commit.
+3. `Pytest <https://pytest.org/en/latest/>`_: robust Python testing framework.
+4. `Mypy <http://mypy-lang.org/>`_: static typing scanning and configuration.
+5. `Pylint <https://www.pylint.org/>`_: code analysis, and a requirement for Surge model migration.
+6. `Sphinx <http://www.sphinx-doc.org/en/master/>`_ and the
+   `Furo theme <https://pradyunsg.me/furo/>`_: build pages for your code!
+7. `Black <https://black.readthedocs.io/en/stable/>`_ and
+   `isort <https://isort.readthedocs.io/en/latest/>`_: opinionated code formatting.
+8. `Check-Manifest <https://pypi.org/project/check-manifest/>`_: never forget a static file.
+9. `Tox <https://tox.readthedocs.io/en/latest/>`_: run all of your test environments!
+10. `Dockerfile <https://hub.docker.com/_/python>`_ and
+    `Jenkinsfile <https://jenkins.io/doc/book/pipeline/jenkinsfile/>`_: continuous integration ready to go, including Checkmarx/WSD and Artifactory publishing.
+
+
+### Docker and Kubernetes
+> https://www.datadoghq.com/blog/monitoring-kubernetes-era/
+
+> https://www.cncf.io/phippy/the-childrens-illustrated-guide-to-kubernetes/
+
+> https://docs.docker.com/get-started/
+
+
+
+
 
 ### Work
 #### Converse Quality Assurance
