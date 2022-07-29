@@ -244,3 +244,43 @@ Following are some grammatical points to keep in mind as you write.
     - "e.g." means "for example" and it allows you to provide multiple examples; it would be used like so: "After work, I'll walk over to a sports arena, e.g., Thunderdome, Victory Court, or Arena Racing."
   - If you are specifying/clarifying what you are referring to, use "i.e." followed by a comma.
     - "i.e." means "in other words" and it narrows down what you are talking about; it would be used like so: "After work, I'll walk over to that new sports arena, i.e., Thunderdome."
+
+
+# Considerations for a Good Technical Paper
+## UNDERSTANDING THE TASK
+xx standards and regulatory guidelines may determine the basic structure and minimal content of a white paper; however, key choices are left up to the Model Owner and Developer, who actually writes the paper, with guidance from the Model Risk Officer. These executive
+decisions include:
+- What content to provide in the body of the white paper and what to reference or relegate to the appendix
+- What information to emphasize and what to mention without further detail
+- Where to use numbers and graphics only and where to supplement them with words to make a point
+Every model presents questions like these in a different way. The template that follows cannot solve specific dilemmas about granularity, referencing, and style that you will face once you start writing. Nonetheless, there are two heuristic principles you can apply to the task: consider the model and consider the audience.
+
+## MODEL-DRIVEN REQUIREMENTS
+Some models are simple while others are very complex. Some models are built from scratch while others rely on the principles and structure of older models. A number of characteristics determine how exhaustive your written treatment of it may be.
+
+White papers should be shorter and lighter on detail if the models they describe have many of these characteristics: are low risk or low impact, use familiar techniques in familiar ways, solve straightforward business problems, and/or rely on older models for structure. Much of the context setting and description of aims and assumptions can be left out of the white paper provided you include references to existing work that serves as precedent or sets parameters for the new model. Models that modify or substantially build on previous models would typically justify this "lighter" type of white paper. In such papers, your main focus as a writer should be on (1) justifying decisions that pertain to key risks not already referenced in previous documented work and (2) discussing departures from older principles and concepts documented in the original model's white paper.
+
+Models that are high-risk, high-value, accomplish multiple tasks, have significant uncertainties, and/or break new ground from an analytic or business standpoint should be longer, heavier on detail, and explicitly grounded within the paper itself. Your focus here will be triple: (1) explaining the approach in such a way that readers will understand you decisions well enough to be able to assess your conclusions, (2) justifying to your readers that key risks are understood and appropriately mitigated, and (3) demonstrating that you have chosen the best of several alternative approaches. Naturally, it will take more space to accomplish these tasks.
+
+## READER-DRIVEN REQUIREMENTS
+The intended audience determines how you write the white paper. In technical writing in general, a readership that has had previous experience with a topic, understands the business application, and is well versed in the available methodologies needs to be addressed differently from one that is inexperienced with these things. For this ideal "expert reader," you could safely assume that context and methods are understood and could build your account of the model primarily out of the data without taking much time to explain what you are doing and why.
+
+However, as noted above (under Purpose ), a white paper is used by a diverse readership that includes in-house analysts, business executives, and outside reviewers who do not necessarily possess a common level of both technical and business knowledge. Most likely, they do not even possess a shared view of what is interesting or important about your model. Yet each has a role to play in developing, assessing, and improving the model, and how you write the white paper helps or hinders them in their role.
+
+Therefore, segmenting your audience is a key conceptual step before you begin to write your white paper. First, it is useful to create a picture in your mind of the types of readers who will use and judge your white paper:
+- Model Risk Officer: Has high technical skills and medium-high business experience. Role is to assess model development choices, pose effective challenge, and approve the final model.
+- Regulator: Has medium-high technical skills but low experience with our business. Role is to assess the following: compliance with internal policy and federal guidelines, model development choices, model risk management practices, and model quality.
+- Future Model Developer: Has high technical skills but likely low business experience (especially if newly recruited from academia). Role is to manage and monitor the model in production (possibly without access to the original model developer) and to carry out future model evolution. The future model developer or others with a similar profile may use your white paper and the choices outlined therein as a starting point for future analysis or new models.
+- Business Customer: Typically has low technical skills (though may well have strong analytic abilities) and high business experience. Role is to use the model safely to drive business results.
+
+From their background and role, you can infer the main challenges of writing technical material for each reader type:
+- For the Model Risk Officer, your challenge is to outline and substantiate model development choices and drive the model towards final sign-off.
+- For the Regulator, your challenge is to demonstrate sound model risk management consistent with federal guidelines.
+- For the Future Model Developer, your challenge is to create a basis for model management and further model development.
+- For the Business Owner, your challenge is to articulate how the model solves the business problem and to account for its risks and limitations.
+
+The next step is to look closely at what information will best satisfy each reader type and how they would prefer to have that information presented. Grasping the expectations of each reader type helps you see more clearly what you have to do as a writer to meet those expectations.
+
+In theory, you should be able to construct a white paper that fully satisfies all four types of reader at once. In practice, however, you would rarely (if ever) want to do so. The four reader types are not of equal importance in the development of each model, and they will not devote equal time and effort to reading your white paper. At different times, you will go to greater lengths to meet the needs of one reader type or another. You will emphasize individual techniques to a greater or lesser extent depending on which reader is most critical to satisfy.
+
+Some of the techniques are all-round good practices and belong in any well-made white paper. Some, however, answer the special needs of a particular reader type: The decision whether to address a reader's unique needs at length can sometimes mean a tradeoff: it could make the white paper less user friendly to the other readers. You must decide if the tradeoff is justified by the criticality of that reader to the overall success of your model development effort. You should look to your manager and your Model Risk Officer for guidance in making these tradeoffs. As you go off to write, remember you are not alone. Get some guidance from Model Risk Officers. They are well positioned to tell you what they need to be told, how much detail they want to read, what points need elaboration, and what sensitivities they will apply in their reading. Consider them a resource throughout the writing process.
