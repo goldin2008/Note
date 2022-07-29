@@ -35,9 +35,6 @@ The following tools are pre-configured for you if you use this ``cookiecutter`` 
 > https://docs.docker.com/get-started/
 
 
-
-
-
 ### Work
 #### Converse Quality Assurance
 There are some problems we encountered in our qa converse project, and those pain points are actually for all NLP related tasks due to lack of existing platform and support.
@@ -73,7 +70,6 @@ Underwriting is an essential part of the insurance through which insurers assess
 
 > https://research.aimultiple.com/ai-underwriting/
 
-
 ### setup
 https://eugeneyan.com/writing/setting-up-python-project-for-automation-and-collaboration/
 
@@ -88,6 +84,9 @@ https://eugeneyan.com/writing/setting-up-python-project-for-automation-and-colla
 9. Build a Wrapper For Developer Experience `Makefile`
 10. Automate Checks with each `git push`
 
+### ssh
+> https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
 ### ml testing
 https://github.com/eugeneyan/testing-ml
 
@@ -95,6 +94,15 @@ https://eugeneyan.com/writing/testing-ml/
 
 ### ml design doc
 https://github.com/eugeneyan/ml-design-docs
+
+### Retain DS
+DjangoCon 2014 - Technical Onboarding, Training, and Mentoring
+> https://av.tib.eu/media/32852
+
+> https://www.youtube.com/watch?v=B1dZ3AjRJJI
+
+
+
 
 1. Overview:
 A summary of the doc's purpose, problem, solution, and desired outcome, usually in 3-5 sentences.
