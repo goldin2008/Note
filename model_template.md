@@ -4,10 +4,10 @@ The purpose of this style guide is to provide direction for a consistent and pro
 This style guide will give you the framework to follow as you create your documents while allowing you the flexibility to tell your story and insert additional material as needed (e.g., bullets, tables, figures, etc.). The fonts, primary sections, and heading styles are established for you so that you can focus on writing the content and not have to worry about the style.
 
 ## 2 Fonts and Style
-We are using Arial, the CO font, throughout all documentation. We've provided several heading levels, so sometimes that Arial font will be bold or italicized. We've broken the fonts and style down by page type for you in the sections that follow, but here's a quick summary of the most commonly used fonts:
+We are using Arial, the xx font, throughout all documentation. We've provided several heading levels, so sometimes that Arial font will be bold or italicized. We've broken the fonts and style down by page type for you in the sections that follow, but here's a quick summary of the most commonly used fonts:
 
 ### 2.1 Cover Page
-- CO logo is centered at the top of the document.
+- xx logo is centered at the top of the document.
   - The enterprise-wide "CO" logo is provided for you; the logo is not specific to any one line of business (i.e., not the "COB" logo)
 - Title of the document:
   - The title is the model name from ModelOne, the system of record
@@ -61,7 +61,7 @@ We are using Arial, the CO font, throughout all documentation. We've provided se
     - Arial 11, bold, italics, initial caps and lowercase, flush left
       - Note that this level of subhead will not appear in the table of contents, but it will be in the document itself as needed
 - Body copy: All text within the documents will be in Arial 11 and will be flush left and will wrap (not set centered)
-- Page numbers: Sit in the footer in Arial 8 in the right-hand corner and have the format "PAGE X of Y" (The words "CO Confidential/Proprietary" are centered in the footer.)
+- Page numbers: Sit in the footer in Arial 8 in the right-hand corner and have the format "PAGE X of Y" (The words "xx Confidential/Proprietary" are centered in the footer.)
 Example of headings:
 5.1 Sample Heading
 5.1.1 Sample Subhead
@@ -172,7 +172,7 @@ If you are inserting hyperlinks in your document, make sure that they are linked
 
 ### 2.10 Headers and Footers
 - Our documents will not have any headers.
-- The footers will contain the page number in the format of "Page X of Y," and they will contain the words "CO Confidential/Proprietary."
+- The footers will contain the page number in the format of "Page X of Y," and they will contain the words "xx Confidential/Proprietary."
 - Both the page numbers and the "confidential/proprietary" designation will be in Arial 9 pt. all small caps.
 - Pages will automatically number sequentially as your document grows.
 
