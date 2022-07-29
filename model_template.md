@@ -8,7 +8,7 @@ We are using Arial, the xx font, throughout all documentation. We've provided se
 
 ### 2.1 Cover Page
 - xx logo is centered at the top of the document.
-  - The enterprise-wide "CO" logo is provided for you; the logo is not specific to any one line of business (i.e., not the "COB" logo)
+  - The enterprise-wide "CO" logo is provided for you; the logo is not specific to any one line of business (i.e., not the "xxx" logo)
 - Title of the document:
   - The title is the model name from ModelOne, the system of record
   - Arial 28, centered, all caps, dark blue
