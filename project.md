@@ -1,5 +1,7 @@
 ## Project
 ### Code Quality Standards
+> https://peps.python.org/pep-0008/ 
+
 Python 3 cookie cutter template
 ===============================
 
@@ -95,13 +97,14 @@ https://eugeneyan.com/writing/testing-ml/
 ### ml design doc
 https://github.com/eugeneyan/ml-design-docs
 
-### Retain DS
+### Onboarding
 DjangoCon 2014 - Technical Onboarding, Training, and Mentoring
 > https://av.tib.eu/media/32852
 
 > https://www.youtube.com/watch?v=B1dZ3AjRJJI
 
-
+### ### Retain DS
+> https://www.techrepublic.com/article/7-guerrilla-tactics-for-retaining-data-scientists/
 
 
 1. Overview:
