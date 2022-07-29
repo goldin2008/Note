@@ -65,10 +65,13 @@ EDA, model performance, environments(ibraries and dependencies) and business val
 
 #### Fraud
 
+> https://shap.readthedocs.io/en/latest/index.html
+
+
 #### Underwriting
 Underwriting is an essential part of the insurance through which insurers assess risk and determine premiums to accept it. Evaluating and pricing risk requires extensive research on the risk profile of the customer. Consequently, manual underwriting is time-consuming, prone to errors, and can lead to inefficient pricing. This is why AI is well suited for underwriting and risk pricing processes.
 
-https://research.aimultiple.com/ai-underwriting/
+> https://research.aimultiple.com/ai-underwriting/
 
 
 ### setup
