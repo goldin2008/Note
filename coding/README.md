@@ -17,6 +17,37 @@
 额外 | 35
 总数 | 220
 
+转码时要注意：学东西要多花时间学“根”，少花时间学“叶”
+根，就是基础，就是原理。叶，就是在这些基础上的衍生的工具。前者变化慢，影响力大。后者变化快，影响力小。
+
+转码要成功，这些基础要扎实:
+
+数据结构：
+
+stack, queue, list, heap, hashmap, tree 各有什么特点，再哪些场景下适合使用。
+
+语言基本概念：
+
+class, function, interface, abstract class, inheritance, method overloading, static method, instance method, reference vs pointer, garbage collection, statically typed vs dynamically typed, compilation vs interpretation, virtual machine, JIT (just in time compilation), stack memory vs heap memory， thread vs process vs coroutine
+
+操作系统基本概念：
+
+二进制，文件系统（file system）， 内存管理，kernel space vs user space, linux bash, linux file permissioning (chmod), linux pipes
+
+网络基本概念：
+
+http, tcp vs udp, web server, web request (一个web server 收到 web request 以后怎么处理，怎么返回数据的？）, xml, html, javascript (typescript), 现代 javascript 怎么在本地浏览器运行的。 面试最喜欢问的问题： 你在你浏览器打入一个网页，按回车键开始，直到这个网页出现，这当中发生了些什么？
+
+分布式系统基本概念：
+
+Database (SQL vs NoSQL), Transactions (ACID), Messaging Queues, Load Balancing, Hashing, Master-Slave, Replication, CAP theorem.
+
+你光刷题，就算进去某个大厂，不牢牢掌握以上知识，也出不了活（除非去做哪些平台有人给你搭好，你在上面填业务逻辑就行的那种产品工程师，所谓“API Boy”， 这和software engineering 没啥关系 ）。你基础打好了，用什么语言，什么框架，都是细枝末节。就好比，你知道这个世界上有个东西叫锤子，有个东西叫螺丝，有个东西叫螺帽，有个东西叫钉子，知道他们的工作原理，应用场景。你别这些没搞明白，花时间钻研某个牌子的锤子外面涂的什么颜色，把手是塑料的还是铁的，放在盒子里头朝上还是朝下，这就是学了叶子没学根，本末倒置了。
+最后，哪怕失业在家，也别去肺部X光片厂。
+最后贡献75道算法必刷题： https://www.techinterviewhandbook.org/grind75 必刷不是指高频题，而是指很有代表性的，对某些常用技巧和概念有强化意义的题。若能每道题背后技巧原理吃透，就算打通任督二脉了。
+
+
+
 
 ```python
 #!/usr/bin/env python
