@@ -1,4 +1,40 @@
 ## Project
+
+### Work
+#### Converse Quality Assurance
+There are some problems we encountered in our qa converse project, and those pain points are actually for all NLP related tasks due to lack of existing platform and support.
+1. data and model storage and security issue due to github capacity limit
+2. experiments, data and model versioning
+3. optimum parameters/hyperparameters selection trials
+4. environment and outdated libraries, dependencies test and monitoring
+5. one-time code and project
+
+To Solve theses pain points, I built a ML pipeline including data ingestion, model training, testing, refitting, deployment, monitoring and reporting.
+
+1. Data and Models Storage
+Github is not a good place to store due to security and capacity limit.
+Store our data and models in S3 bucket.
+
+2. Automation
+model training, testing, refitting and deployment, experiments comparison and optimum parameters/hyperparameters selection
+
+3. Real production environment
+Since we can not test application in production directly.
+We use Fastapi and built an API to make inference and test model and make sure it works in real production evnironment.
+
+4. Automatic Reporting
+EDA, model performance, environments(ibraries and dependencies) and business value.
+
+#### Fraud
+> https://shap.readthedocs.io/en/latest/index.html
+
+
+#### Underwriting
+Underwriting is an essential part of the insurance through which insurers assess risk and determine premiums to accept it. Evaluating and pricing risk requires extensive research on the risk profile of the customer. Consequently, manual underwriting is time-consuming, prone to errors, and can lead to inefficient pricing. This is why AI is well suited for underwriting and risk pricing processes.
+
+> https://research.aimultiple.com/ai-underwriting/
+
+
 ### Code Quality Standards
 > https://peps.python.org/pep-0008/ 
 
@@ -36,41 +72,6 @@ The following tools are pre-configured for you if you use this ``cookiecutter`` 
 
 > https://docs.docker.com/get-started/
 
-
-### Work
-#### Converse Quality Assurance
-There are some problems we encountered in our qa converse project, and those pain points are actually for all NLP related tasks due to lack of existing platform and support.
-1. data and model storage and security issue due to github capacity limit
-2. experiments, data and model versioning
-3. optimum parameters/hyperparameters selection trials
-4. environment and outdated libraries, dependencies test and monitoring
-5. one-time code and project
-
-To Solve theses pain points, I built a ML pipeline including data ingestion, model training, testing, refitting, deployment, monitoring and reporting.
-
-1. Data and Models Storage
-Github is not a good place to store due to security and capacity limit.
-Store our data and models in S3 bucket.
-
-2. Automation
-model training, testing, refitting and deployment, experiments comparison and optimum parameters/hyperparameters selection
-
-3. Real production environment
-Since we can not test application in production directly.
-We use Fastapi and built an API to make inference and test model and make sure it works in real production evnironment.
-
-4. Automatic Reporting
-EDA, model performance, environments(ibraries and dependencies) and business value.
-
-#### Fraud
-
-> https://shap.readthedocs.io/en/latest/index.html
-
-
-#### Underwriting
-Underwriting is an essential part of the insurance through which insurers assess risk and determine premiums to accept it. Evaluating and pricing risk requires extensive research on the risk profile of the customer. Consequently, manual underwriting is time-consuming, prone to errors, and can lead to inefficient pricing. This is why AI is well suited for underwriting and risk pricing processes.
-
-> https://research.aimultiple.com/ai-underwriting/
 
 ### setup
 https://eugeneyan.com/writing/setting-up-python-project-for-automation-and-collaboration/
