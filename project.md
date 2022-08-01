@@ -87,16 +87,20 @@ https://eugeneyan.com/writing/setting-up-python-project-for-automation-and-colla
 9. Build a Wrapper For Developer Experience `Makefile`
 10. Automate Checks with each `git push`
 
+
 ### ssh
 > https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
 
 ### ml testing
 https://github.com/eugeneyan/testing-ml
 
 https://eugeneyan.com/writing/testing-ml/
 
+
 ### ml design doc
 https://github.com/eugeneyan/ml-design-docs
+
 
 ### Onboarding
 DjangoCon 2014 - Technical Onboarding, Training, and Mentoring
@@ -104,8 +108,11 @@ DjangoCon 2014 - Technical Onboarding, Training, and Mentoring
 
 > https://www.youtube.com/watch?v=B1dZ3AjRJJI
 
+
 ### ### Retain DS
 > https://www.techrepublic.com/article/7-guerrilla-tactics-for-retaining-data-scientists/
+
+
 
 
 1. Overview:
