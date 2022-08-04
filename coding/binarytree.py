@@ -124,3 +124,24 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
         return result
+
+
+# 98.验证二叉搜索树
+# 迭代-中序遍历
+class Solution:
+    def isValidBST(self, root: TreeNode) -> bool:
+        stack = []
+        cur = root
+        pre = None
+        while cur or stack:
+            if cur: # 指针来访问节点，访问到最底层
+                stack.append(cur)
+                cur = cur.left
+            else: # 逐一处理节点
+                cur = stack.pop()
+                if pre and cur.val <= pre.val: # 比较当前节点和前节点的值的大小
+                    return False
+                pre = cur 
+                cur = cur.right
+        return True
+
