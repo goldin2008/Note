@@ -162,3 +162,65 @@ class Solution:
         if left:
             return left
         return right
+
+
+# 701.二叉搜索树中的插入操作
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def insertIntoBST(self, root: TreeNode, val: int) -> TreeNode:
+        # 返回更新后的以当前root为根节点的新树，方便用于更新上一层的父子节点关系链
+
+        # Base Case
+        if not root: return TreeNode(val)
+
+        # 单层递归逻辑:
+        if val < root.val: 
+            # 将val插入至当前root的左子树中合适的位置
+            # 并更新当前root的左子树为包含目标val的新左子树
+            root.left = self.insertIntoBST(root.left, val)
+
+        if root.val < val:
+            # 将val插入至当前root的右子树中合适的位置
+            # 并更新当前root的右子树为包含目标val的新右子树
+            root.right = self.insertIntoBST(root.right, val)
+
+        # 返回更新后的以当前root为根节点的新树
+        return root
+
+
+# 450.删除二叉搜索树中的节点
+class Solution:
+    def deleteNode(self, root: TreeNode, key: int) -> TreeNode:
+        if not root: return root  #第一种情况：没找到删除的节点，遍历到空节点直接返回了
+        if root.val == key:  
+            if not root.left and not root.right:  #第二种情况：左右孩子都为空（叶子节点），直接删除节点， 返回NULL为根节点
+                del root
+                return None
+            if not root.left and root.right:  #第三种情况：其左孩子为空，右孩子不为空，删除节点，右孩子补位 ，返回右孩子为根节点
+                tmp = root
+                root = root.right
+                del tmp
+                return root
+            if root.left and not root.right:  #第四种情况：其右孩子为空，左孩子不为空，删除节点，左孩子补位，返回左孩子为根节点
+                tmp = root
+                root = root.left
+                del tmp
+                return root
+            else:  #第五种情况：左右孩子节点都不为空，则将删除节点的左子树放到删除节点的右子树的最左面节点的左孩子的位置
+                v = root.right
+                while v.left:
+                    v = v.left
+                v.left = root.left
+                tmp = root
+                root = root.right
+                del tmp
+                return root
+        if root.val > key: root.left = self.deleteNode(root.left,key)  #左递归
+        if root.val < key: root.right = self.deleteNode(root.right,key)  #右递归
+        return root
+
