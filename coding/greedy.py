@@ -25,3 +25,26 @@ class Solution:
         return result
 
 
+# 122.买卖股票的最佳时机II
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        result = 0
+        for i in range(1, len(prices)):
+            result += max(prices[i] - prices[i - 1], 0)
+        return result
+
+
+# 55. 跳跃游戏
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        cover = 0
+        if len(nums) == 1: return True
+        i = 0
+        # python不支持动态修改for循环中变量,使用while循环代替
+        while i <= cover:
+            cover = max(i + nums[i], cover)
+            if cover >= len(nums) - 1: return True
+            i += 1
+        return False
+
+
