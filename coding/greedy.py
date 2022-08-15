@@ -64,3 +64,4 @@ class Solution:
                     if nextDistance >= len(nums) - 1: break
         return ans
 
+
