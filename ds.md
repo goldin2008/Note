@@ -1,4 +1,21 @@
 ## DS Interview
+
+### Amazon DS
+- 考了Bert概念，
+- recommendation SVD 函数，每一列 每一行有意义么？矩阵相乘
+- 还有stratified sampling 算法处理imbalanced data
+-a/b 问的是：, a/b testing 情景问题:
+他们做了两个 recommedation system , 怎么比较？如果有些用户不会划到下面，所以我们没有足够sample 怎么解决
+-解释了什么是 words encoding
+- 解释了bert 和albert 的区别（我不知道ALbert 拼的对不对。。）好像这么读
+-如果视频中的text 没办法很好ext‍‌‌‍‌‍‌‍‍‌ract 做training data 怎么办
+- 想要看一个新的feature 的影响，但没办法加在我们系统上，怎么评价影响？
+
+### Amazon AS
+
+
+
+
 `Data Science is about extracting insights; machine learning is about generalizing from data.`
 
 1. what is 95% CI ， 给了个例子how to get the population response rate from sample given the 95% ci.
