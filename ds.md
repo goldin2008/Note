@@ -11,6 +11,7 @@
 -如果视频中的text 没办法很好extract 做training data 怎么办
 - 想要看一个新的feature 的影响，但没办法加在我们系统上，怎么评价影响？
 
+
 解释confidence interval
 解释 linear regression 有哪些assumption
 讲讲 random forest/gbdt
@@ -32,6 +33,43 @@ python 用pandas高一些groupby， filter, count_values之类的也很基本
     - How to determine sample size
 
 
+1. Bias-Variance trade off
+2. How to optimize and find better solution. （他想让你说Gradient Descent）
+
+
+Amazon Onsite一共五轮前后加上休息时间一共7个小时, 之所以是没完全挂，是面试结束之后不打算move forward to DS role but recommend to comtinue as BIE...
+1. Data Science Breath + LP: 概率统计快问快答+ Small Case Study + 2 LP questions
+2. Information talk: 不算在面试里
+3. Application + Problem Solving + LP: 之前说是会有case但是大概只聊了简历以及大概4个LP questions
+4. 一开始说是纯LP，实际面试大概3-4个LP question + case study
+6. Coding + LP: Leetcode easy/medium难度的SQL + 2 LP questions.
+5. Data Science Depth + LP: 简历project + case study + 2个LP
+
+
+全程一小时，由ML和Coding两部分组成 最后有五分钟提问时间。根据职位要求，ML部分面试侧重general ML，decision tree的理论和实践, including the following:
+* decision tree training -- how decision stumps are decided，
+* how to prevent, identify and resolve overfitting, including both principles and practice of data augumentation, feature selection, regularization and cross validation.
+* how to resolve data imbalance, including resampling and weighting, as well as how to adapt the related metrics (precision/recall/F1/etc).
+* how random forest and gradient boosting work, including their implications in model bias-variance tradeoff,
+* how to resolve multicolinearity
+* how to use/transform categorical features.
+* some scratch on CNN and SGD
+Coding 部分考了如何find the median of a numeric stream. including
+* how the candidate communicate and clarify the requirements
+* how the problem was solved.
+* how to code (Python) and documentation were written.
+(我当时很紧张，忘了heapq，就跟面试官说我放一个placeholder用来implement a heap，但最后也没有时间implement，不过不影响算法的正确性）
+准备经验
+----------
+* job description 一般比较general，建议面试者了解组里正真常用的techniques，不是所有ML都是DL。上手解决问题一般都要从logistic/linear regression 开始，其次xgboost，最后才想着CNN/LSTM/etc。
+* 细读 ISLR / python 书，上一门本科高年级的Machine learning课。
+* 建议多问问题澄清题目要求，同时练习边写边说，哪怕自觉很naive也要把想法说出来。
+
+
+一小时店面，三个部分。
+先是ML breath。 都是常见题，阐述logistic regression, gradient decent, trees, xgboost and gradient boost, boost and bagging, l1 l2 regularization.
+第二部分是project walkthrough.详细说个自己简历上的project。 我选的是和我科研文章相关的一个， 需要一定的domian knowledge 才能理解，所以面试官问了很多背景方面的问题，真正ML 的问题比较少。
+最后是coding.给两个list, 其中一个是target，另一个是数值，写class要可以给一个target，能得到对应的平均值。但时间有限，他说把大概过程写出来就行。楼主有点紧张，但最后还是完成了大概思路。面试官说get到我的i‍‌‌‍‌‍‌‍‍‌dea了，不需要继续写了。
 
 
 ### Amazon AS
@@ -40,6 +78,32 @@ BERT model 包含什么，mask的作用，input是什么，为什么用attention
 word2vec input是什么怎么训练
 bq大概是：Time when you went above and beyond your job responsibilities.和Tell me about a time when you went way beyond the scope of the project and delivered
 
+
+报一个上周的店面recruiters给我找的一个AWS Applied Scientist的职位虽然我觉得背景不符，但是还是给了店面
+店面有两个面试官
+1. 聊了一下我research 做的东西（我research做的和ML无关）
+2. 简单的概率题
+3. 写逻辑回归，损失函数，以及gradient descent的递推公式 （这个没写出了，我说公式记不得了，但是知道怎么算偏导数）
+4. 解释随机森林，决策树
+5. 解释L1, L2正则化，两者除了公式不同外结果上会有什么区别
+6. 解释简历上项目做的具体内容
+7. Imbalanced data set 怎么处理
+8. 介绍几种unsupervised learning 的方法
+9. BQ: tight deadline, 追问: 再做一次，有什么地方可以做得更好
+大概就是这些，还有些ML相关的小问题，记不起来了，总体感觉基础知识很重要，具体的公式和细节都要知道
+
+ml：针对一个实际的例子来做设计，比如给一个场景，来询问是什么类型的问题？比如是reg还是classification？用什么样的模型去预测结果如何预测结果？中间穿插着对每一个回答的细致追问。
+coding：这道题没做好。欢迎大家讨论下思路。给了一个数组有正有负，代表客户对不同产品的分数，然后选出最大满意度的组合。满意度的定义是，选出的不同产品组合的分数乘以在组合里的位置。比如 分数是[-2,0,0,3,2], 选的组合如果是[0,3,2],满意度就是0*1+3*2+2*3=12。问题是要找出给定产品分数的数组，满意度最大的组合。
+
+
+总共5轮， 每轮至少30分钟军规， 大概2-3个题目。有的会直接告诉你是哪条军规。science depth就自行在简历里选一个项目，然后问模型的具体方法，为什么选这个模型，会问到公式，所以要对模型熟悉。scicen breath就是很random问模型，基本都是ML 常见问题。 science application就是给你一个想解决的问题，问你怎么用数据进行分析。我这次没有强调建模，更是对数据的处理。coding问了三道题。首先interviewer感觉很不supportive， 是个senior。 就把题扔给你，自己看，没有解释，基本上就是不说话。没有conversation，就只有我自己自言自述。说是用什么写都行，但第一题明显是个sql题。我没想到AS 会考sql,所以没准备。好在题本身不难，结构应该没错，但某个build in名字可能不是很准备，毕竟我很久没用sql了。第二天是个迭代题，没做出来。他给了一点提示，但也听不太清。还是我自己algorithm这里基本功不好吧。第三题是一个GMM, 不难，但要知道具体package的名字，我觉得其实这种题只要把function名字格式记住就行，实际操作中网上一查就知道怎么用了，放在interview中，我觉得考察不出什么来。总之coding题很怪，要不就是unexpected,要不就是感觉比较难。BR 就是纯军规，没什么特别的。
+
+
+通过内推拿到了面试。前面两轮店面都是秒过。店面内容差不多，都是ML八股文+一道算法题。为了VO准备了好多BQ，但是感觉最终还是挂在了这上面。
+VO六轮：Presentation, Science Breadth, Science Application, Science Depth, BQ, Algorithm. 但实际面完了觉得这些topic其实根本没用，除了算法和BQ基本都没按剧本走。然后这两轮还在VO前一天对换了，结果也没人通知我。比如Science Depth照理说是deep dive项目经历，结果只是问了一堆面试官觉得和这个职位相关的知识点，我觉得更像是Science Breadth。Science Application倒是反复地问我之前的research topic。我不知道这是不是因为刚开始就没打算要我所以就胡乱问，还是亚麻的VO就是那么disorganized。最终我追问具体的反馈也搞不清楚在技术问题上我的回答到底有什么问题，因为根本就没有按照预设的程序走。
+Algorithm的问法和利口不大一样。是给了一个非常模糊的问题，然后一步一步和面试官沟通来clarify，最后确定API和实现一部分功能。这其实更像是Science Application。
+我想最终还是因为LP的问题所以挂了。地理强调面亚麻时BQ的重要性，面完以后觉得说得太对啦！每轮一小时的面试至少有30分钟在讲LP。我觉得把VO说成是五轮BQ也不为过。我现在在一个中等银行做DS，感觉整个组织的leadership style可能和亚麻不匹配，所以对项目的处理态度没能说到他们期望的点上。
+加一句：在VO之前的prep call尽量抓住recruiter问每个interviewer被assign到什么LP，这样能更有针对性地准备。
 
 
 
