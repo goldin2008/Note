@@ -1,5 +1,22 @@
 ## DS Interview
 ### Amazon DS
+去年面热带雨林的ds position汇总了一个ml question list，此处分享给大家，祝大家逢面必过。
+1. Explain Xgboost, how it is different from GBM?2. What's the difference from random forest to GBM?
+3. LASSO, how to selection variable, loss function.
+4. What's the difference of LASSO vs Ridge and what situations are they preferred?
+5. How do you interpret ML models and their features?
+6. Assumptions of linear regression
+7. How to deal with categorical features
+8. formular of logistic regression and the loss function
+10. Explain how Kmeans is working
+11. If the linear regression dataset is duplicated, how would all the parameter change in your model?
+12. In linear regression, how will multicollinearit‍‌‌‍‌‍‌‍‍‌y impact the cofficients and variance?
+13. If the correlated features should be excluded in random forest model?
+14. what is bias-variance trade-off
+15. how to deal with overfitting
+16. how to deal with imbalanced dataset
+17. How to deal with missing data
+
 - 考了Bert概念，
 - recommendation SVD 函数，每一列 每一行有意义么？矩阵相乘
 - 还有stratified sampling 算法处理imbalanced data
@@ -63,7 +80,28 @@ Coding 部分考了如何find the median of a numeric stream. including
 一小时店面，三个部分。
 先是ML breath。 都是常见题，阐述logistic regression, gradient decent, trees, xgboost and gradient boost, boost and bagging, l1 l2 regularization.
 第二部分是project walkthrough.详细说个自己简历上的project。 我选的是和我科研文章相关的一个， 需要一定的domian knowledge 才能理解，所以面试官问了很多背景方面的问题，真正ML 的问题比较少。
-最后是coding.给两个list, 其中一个是target，另一个是数值，写class要可以给一个target，能得到对应的平均值。但时间有限，他说把大概过程写出来就行。楼主有点紧张，但最后还是完成了大概思路。面试官说get到我的i‍‌‌‍‌‍‌‍‍‌dea了，不需要继续写了。
+最后是coding.给两个list, 其中一个是target，另一个是数值，写class要可以给一个target，能得到对应的平均值。但时间有限，他说把大概过程写出来就行。楼主有点紧张，但最后还是完成了大概思路。面试官说get到我的idea了，不需要继续写了。
+
+面热带雨林昂赛时有两轮system design，觉得很有意思，分享给大家。
+1） 每个产品都会有很多label，比如 教育，健康etc。怎么predict一个产品的label。可以用所有网站上我们能看到的所有信息。
+2） fraud detection：怎么预测fraud，需要哪些data？当我们已知的label不是100%确定时对的时候怎么办？
+
+过简历，讲讲项目，说一个modeling的项目全程。楼主把这些准备地滚瓜烂熟了，全程也有各种follow-up，关于模型的，比如random forest v.s. boosting区别，优缺点。怎么做feature selection，楼主各种方法都说了，descriptive的， model-based的。还有
+performance metrics有哪些：Area Under ROC Curve, F1 score, 把sensitivity, specicific和precision顺便也解释了。
+后面有专门的问题：linear regression vs logistic regression, overfitting vs underfitting, neural network activation functions。
+
+大家要review一下一些统计和machine learning的基本概念:
+1. Tell me about yourself?
+2. Tell me about your most recent project and what you learned from it?
+3. Some follow-up questions about my project - mainly asking what’s the usefulness/meaning of the output from above project? What kind of metrics do you use to measure the outcome? How do you do downsampling; How do you do up-sampling
+4. How do you compare the means of two samples
+5. What’s the assumptions in linear regression?
+6. What’s p value, what’s the meaning of p value, how do you use p value to compare two sample means
+7. What’s central limit theorem and what’s the meaning of it?
+8. What’s the bias variance trade off
+9. What’s under-fitting?
+10. What’s the differences between bagged tree and boosted tree?
+Living code problem: read in a Json structured data 50,000 rows and find out the majority of the ‘label’ (categorical 3 classes) - 15 mins 这个题居然卡在了一开始，因为对Json file不熟悉工作中很少用，但是Amazon的data scientist很常用。 另外没有考SQL（有点意外）。
 
 
 ### Amazon AS
@@ -121,6 +159,21 @@ AWS AI Applied Scientist岗位，NLP相关。共6轮session。5轮interview+1 te
 4&5： 两轮coding面，不是LeetCode原题，都是在实际NLP落地场景里面抽象出的题目（被问到implement一个很简单的beam search）。还蛮有意思的
 以上5轮中会穿插问巨多BQ问题，强烈推荐多多准备下故事模板，不同的面试官会分到Leadership Principle的不同i‍‌‌‍‌‍‌‍‍‌tems，然后会根据具体的items来设置问题。感觉对于没有项目经验的fresh PhD grad，面试官会启发从平时的科研经历找素材（被问到不喜欢老板安排的项目怎么办，有没有从事过自己不熟悉的科研领域的问题之类的）。
 
+phone interview
+Amazon的applied scientist， NLP方向。 这个面试很舒服，华人，很nice。
+1.What is your work/project?
+2.What are the metrics for measuring a classification model. What are micro-F1 and macro-F1? What are the differences?
+3.How does attention work? Give an example
+4.hat are regularization methods in deep learning?
+5.Explain Dropout in training and inference?
+6.How do you solve the problem when something is not in your programming tools? (I talked about the Pytorch loss function, restful api data storage
+有几个问题是我的盲点，平时工作没有用到。后来没有过，跟我解释是我的经验不足。
+
+第一面一小时，自我介绍项目+codin(树， 层序) + ML问题。
+1. 谈过拟合，如何解决， 正则化
+2. 线性回归，解， 什么时候有唯一解等。如果矩阵不可逆怎么办
+3. dropout
+4. batch norm
 
 
 `Data Science is about extracting insights; machine learning is about generalizing from data.`
