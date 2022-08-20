@@ -4,14 +4,42 @@
 - 考了Bert概念，
 - recommendation SVD 函数，每一列 每一行有意义么？矩阵相乘
 - 还有stratified sampling 算法处理imbalanced data
--a/b 问的是：, a/b testing 情景问题:
+- a/b 问的是：, a/b testing 情景问题:
 他们做了两个 recommedation system , 怎么比较？如果有些用户不会划到下面，所以我们没有足够sample 怎么解决
--解释了什么是 words encoding
+- 解释了什么是 words encoding
 - 解释了bert 和albert 的区别（我不知道ALbert 拼的对不对。。）好像这么读
--如果视频中的text 没办法很好ext‍‌‌‍‌‍‌‍‍‌ract 做training data 怎么办
+-如果视频中的text 没办法很好extract 做training data 怎么办
 - 想要看一个新的feature 的影响，但没办法加在我们系统上，怎么评价影响？
 
+解释confidence interval
+解释 linear regression 有哪些assumption
+讲讲 random forest/gbdt
+讲讲 kmeans
+讲讲dl里的 normalization
+sql很常规，题不记得了，就是写个group by 那种
+python 用pandas高一些groupby， filter, count_values之类的也很基本
+
+- examples about regression and classification problems
+- Regression
+    - cost function
+    - multicollinearity
+    - performance metrics
+- Logistic regression
+    - How to estimate the coefficient
+- Statistics
+    - What is significance level alpha, p value, beta
+- AB testing
+    - How to determine sample size
+
+
+
+
 ### Amazon AS
+roc curve是什么，以及项目中F-score，precision，recall怎么计算
+BERT model 包含什么，mask的作用，input是什么，为什么用attention
+word2vec input是什么怎么训练
+bq大概是：Time when you went above and beyond your job responsibilities.和Tell me about a time when you went way beyond the scope of the project and delivered
+
 
 
 
