@@ -104,6 +104,8 @@ performance metrics有哪些：Area Under ROC Curve, F1 score, 把sensitivity, s
 Living code problem: read in a Json structured data 50,000 rows and find out the majority of the ‘label’ (categorical 3 classes) - 15 mins 这个题居然卡在了一开始，因为对Json file不熟悉工作中很少用，但是Amazon的data scientist很常用。 另外没有考SQL（有点意外）。
 
 
+
+
 ### Amazon AS
 roc curve是什么，以及项目中F-score，precision，recall怎么计算
 BERT model 包含什么，mask的作用，input是什么，为什么用attention
@@ -174,6 +176,9 @@ Amazon的applied scientist， NLP方向。 这个面试很舒服，华人，很n
 2. 线性回归，解， 什么时候有唯一解等。如果矩阵不可逆怎么办
 3. dropout
 4. batch norm
+
+
+
 
 
 `Data Science is about extracting insights; machine learning is about generalizing from data.`
