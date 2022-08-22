@@ -81,3 +81,42 @@ class Solution:
         if totalSum < 0: return -1
         return start
 
+# 135. 分发糖果
+class Solution:
+    def candy(self, ratings: List[int]) -> int:
+        candyVec = [1] * len(ratings)
+        for i in range(1, len(ratings)):
+            if ratings[i] > ratings[i - 1]:
+                candyVec[i] = candyVec[i - 1] + 1
+        for j in range(len(ratings) - 2, -1, -1):
+            if ratings[j] > ratings[j + 1]:
+                candyVec[j] = max(candyVec[j], candyVec[j + 1] + 1)
+        return sum(candyVec)
+
+# ?? 406.根据身高重建队列
+class Solution:
+    def reconstructQueue(self, people: List[List[int]]) -> List[List[int]]:
+    	# 先按照h维度的身高顺序从高到低排序。确定第一个维度
+        # lambda返回的是一个元组：当-x[0](维度h）相同时，再根据x[1]（维度k）从小到大排序
+        people.sort(key=lambda x: (-x[0], x[1]))
+        que = []
+	
+	# 根据每个元素的第二个维度k，贪心算法，进行插入
+        # people已经排序过了：同一高度时k值小的排前面。
+        for p in people:
+            que.insert(p[1], p)
+        return que
+
+# 452. 用最少数量的箭引爆气球
+class Solution:
+    def findMinArrowShots(self, points: List[List[int]]) -> int:
+        if len(points) == 0: return 0
+        points.sort(key=lambda x: x[0])
+        result = 1
+        for i in range(1, len(points)):
+            if points[i][0] > points[i - 1][1]: # 气球i和气球i-1不挨着，注意这里不是>=
+                result += 1     
+            else:
+                points[i][1] = min(points[i - 1][1], points[i][1]) # 更新重叠气球最小右边界
+        return result
+
