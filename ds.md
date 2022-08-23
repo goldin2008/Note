@@ -107,8 +107,13 @@ Living code problem: read in a Json structured data 50,000 rows and find out the
 
 
 ### Amazon AS
-介绍
+微软AS面试更取决于组。。每个组可以自己决定面试的侧重点。。我面了一个组是4轮coding。。亚麻AS虽然也是组面 但是一轮AS coding三轮ML （breath depth applicatoin）不会变。。
+年初要relocate面了其他几家的senior MLE Google就是coding + ML design
+Meta差不多 可以选system design + ML design或者两轮ML design
+Linkedin两轮coding其中一轮data coding 就是Leetcode上比较数学的coding基本都是面经题 一轮data science （ML八股文和统计基础）一轮ML design
+Tiktok基本上每轮都是ML基础 （类似Amazon的breadth + 一部分depth）+ 一道题coding。。当然Tiktok可能也比较看组。。
 
+介绍
 AS@Amazon整体来说的定义是要求你能够理解business问题，然后把business问题转化成一个ML的问题，然后提出并且implement ML solutions，从而improve business metrics的目的。它整体的定义有点类似于别的公司的half MLE + half Research Scientist的定义：
 由于amazon本身没有centralized ML Research team，所以amazon基本上没有纯ML research (research for resolving general ML problems)，而只会在每个product组有Applied Research (research for resolving ML problems under a specific business domain/application)。而amazon并没有类似于google research scientist的role，所以Applied ML Research是applied scientist重要工作内容之一。BTW， amazon本身有research scientist的title，但本质上是弱化版本的AS或者非ML domain的researcher。
 同时amazon没有MLE的job family (有的engineer会把business title改成这个，但实际上并不存在)。所以基本上传统意义上的MLE的工作会一部分会分到别的job family：比如ML infra和实际的ux/customer-facing product可能有engineering team做，data pipeline可能有BI engineer/Data Scientist/Data Engineer来负责。而AS会主要负责模型数据的preprocessing, post-processing, ML model training/inference。然后AS可以创建一个模型inference的endpoint从而跟engineering team来interact。
@@ -118,7 +123,6 @@ AS@Amazon整体来说的定义是要求你能够理解business问题，然后把
 据我所知，AS的total compensation在同样level的ic job families中也是最高的。L4有二十多万刀。而Sr. 40w+ 到 60w+。
 
 面试
-
 常常一个职位的面试跟这个职位所需要的人的skills是高度契合的。AS的面试主要分成三块：
 一轮coding。基本上是leetcode easy - medium的题目。虽然内部要求AS达到entry level SDE的coding bar，而我的体验是很多都没有。很多AS面试的coding往往非常简单，会比很多公司的MLE的coding面试简单很多。这也使得很多非CS background的人有着更低的coding门槛。
 三轮ML面试：ML breadth (类似于别的公司的ML knowledge) + ML depth + ML application (类似于别的公司的ML design，但相对更注重ML problem formulation rather than MLE八股文）。AS对ML的要求往往会比别的公司的MLE的ML要求更高更广。因为它需要你不但是个engineer也是个researcher。希望你有很好的ML基础同时有实际解决问题的能力。sample question比如说：
