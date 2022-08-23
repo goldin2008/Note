@@ -107,6 +107,29 @@ Living code problem: read in a Json structured data 50,000 rows and find out the
 
 
 ### Amazon AS
+介绍
+
+AS@Amazon整体来说的定义是要求你能够理解business问题，然后把business问题转化成一个ML的问题，然后提出并且implement ML solutions，从而improve business metrics的目的。它整体的定义有点类似于别的公司的half MLE + half Research Scientist的定义：
+由于amazon本身没有centralized ML Research team，所以amazon基本上没有纯ML research (research for resolving general ML problems)，而只会在每个product组有Applied Research (research for resolving ML problems under a specific business domain/application)。而amazon并没有类似于google research scientist的role，所以Applied ML Research是applied scientist重要工作内容之一。BTW， amazon本身有research scientist的title，但本质上是弱化版本的AS或者非ML domain的researcher。
+同时amazon没有MLE的job family (有的engineer会把business title改成这个，但实际上并不存在)。所以基本上传统意义上的MLE的工作会一部分会分到别的job family：比如ML infra和实际的ux/customer-facing product可能有engineering team做，data pipeline可能有BI engineer/Data Scientist/Data Engineer来负责。而AS会主要负责模型数据的preprocessing, post-processing, ML model training/inference。然后AS可以创建一个模型inference的endpoint从而跟engineering team来interact。
+. Waral dи,
+整体来说AS在amazon是个非常prestigious的job family，常常会是一个大的ML project的主要lead，从而跟其他job family的人共同推进ML产品的开发维护。所以好的优势是：
+项目的scope常常比较大，从而有着比SDE更快的promotion速度。一般一个L4的AS能够在1-2年到L5 (PhD hire也有可能进来就是L5)，而一个L5 AS能够在2-4年到Sr. level。
+据我所知，AS的total compensation在同样level的ic job families中也是最高的。L4有二十多万刀。而Sr. 40w+ 到 60w+。
+
+面试
+
+常常一个职位的面试跟这个职位所需要的人的skills是高度契合的。AS的面试主要分成三块：
+一轮coding。基本上是leetcode easy - medium的题目。虽然内部要求AS达到entry level SDE的coding bar，而我的体验是很多都没有。很多AS面试的coding往往非常简单，会比很多公司的MLE的coding面试简单很多。这也使得很多非CS background的人有着更低的coding门槛。
+三轮ML面试：ML breadth (类似于别的公司的ML knowledge) + ML depth + ML application (类似于别的公司的ML design，但相对更注重ML problem formulation rather than MLE八股文）。AS对ML的要求往往会比别的公司的MLE的ML要求更高更广。因为它需要你不但是个engineer也是个researcher。希望你有很好的ML基础同时有实际解决问题的能力。sample question比如说：
+ML breadth: 有哪些做feature selection的方法。
+ML depth: in details, transformer模型比RNN family的优势在什么地方; BERT集体的模型结构是什么；为什么需要multi-head attention。能不能写一下logistic regression的loss并且计算gradient。
+ML application: 如果说现在amazon search bar只支持general retail products，然后我现在也想同时支持amazon fresh的搜索，你会怎么设计。(面试题一般非常取决于面试组的problem domain)
+3. 一轮behavior questions (BQ)。常常是bar raiser面这一轮。熟悉leadership principles会非常重要。同时在其它四轮中也会有一到两个BQ. ..
+research presentation。我不确定是不是每个组都需要。但如果有不错的research background是属于一轮bonus轮。
+所以在准备面试过程中，你需要非常in detailed的准备常用的ML算法。同时针对面试组的domain problem有一个基本解决问题的方法。
+
+
 roc curve是什么，以及项目中F-score，precision，recall怎么计算
 BERT model 包含什么，mask的作用，input是什么，为什么用attention
 word2vec input是什么怎么训练
