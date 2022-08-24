@@ -3,6 +3,28 @@ https://www.indeed.com/hire/c/info/behavioral-interview-questions-to-ask-candida
 
 https://www.amazon.jobs/en/principles
 
+
+#### Amazon LP
+1. Earn Trust 不自傲自满,自我批判,敢于承认错误
+2. Dive Deep 愿意刨根问底,有能力troubleshoot到根本问题,解决问题
+3. Customer Obsession 顾客至上, do the best for customers and the rest will come
+4. Bias for Action 速度很重要, 数据不足的时候，衡量利弊，想好backup plan，敢于冒险
+5. Invent and Simplify 创新,简化, 多research借鉴别人已有的方法提高效率也很好
+6. Are right, A Lot 大多数时候正确，努力证明自己正确, 说服别人
+7. Have Backbone; Disagree and Commit 不趋附大众,敢于提出自己的意见
+8. Deliver Results 排除万难,最后完成任务, 或者最终失败学到了什么
+9. Insist on the Highest Standards 不妥协自己的高要求
+10. Learn and Be Curious 学习工作外的事情
+11. Ownership 不只顾着自己的一亩三分地, 为了长期利益履行工作分外的职责; sacrifice short-term profit for long-term gain
+12. Frugality
+13. Strive to be Earth's Best Employer
+14. Success and Scale Bring Broad Responsibility
+15. Hire and Develop the Best
+16. Think Big
+
+
+
+
 15 top behavioral interview questions
 Depending on the position you’re conducting an interview for, you can incorporate some or all of the following 15 behavioral interview questions into the process. Doing so will help you identify the right candidate for your organization.
 
