@@ -7,15 +7,32 @@ https://www.amazon.jobs/en/principles
 #### Amazon LP
 1. Earn Trust 不自傲自满,自我批判,敢于承认错误
 2. Dive Deep 愿意刨根问底,有能力troubleshoot到根本问题,解决问题
+CNN, RNN, LSTM to improve NLP model in Call Center.
+
 3. Customer Obsession 顾客至上, do the best for customers and the rest will come
+Fraud Risk Model to improve customer experience.
+
 4. Bias for Action 速度很重要, 数据不足的时候，衡量利弊，想好backup plan，敢于冒险
 5. Invent and Simplify 创新,简化, 多research借鉴别人已有的方法提高效率也很好
+Built pipeline to simplify retrain and refit cycle.
+
 6. Are right, A Lot 大多数时候正确，努力证明自己正确, 说服别人
 7. Have Backbone; Disagree and Commit 不趋附大众,敢于提出自己的意见
+Use ML based solution to replace current heuristc.
+
 8. Deliver Results 排除万难,最后完成任务, 或者最终失败学到了什么
+我的项目launch A/B test发现performance不好。然后我dive deep into it，首先check 有没有engineering bugs；然后check 模型performance是不是和offline metrics match；然后check feature distribution有没有shift。然后我发现了问题所在。然后我做了这几个change，然后重新上线了，performance improve x%
+显示出一个系统性逻辑性的解决问题方法。而高级的回答显示出了面试者quantitative and critical thinking的mindset
+
 9. Insist on the Highest Standards 不妥协自己的高要求
+In DS team, insist the code quality and standards even it will take some time to implement and trade-off balance.
+
 10. Learn and Be Curious 学习工作外的事情
+Learn a lot engineering and cloud knowledge to understand the entire ml life cycle and make it easier to collaborate with tech and business teams.
+
 11. Ownership 不只顾着自己的一亩三分地, 为了长期利益履行工作分外的职责; sacrifice short-term profit for long-term gain
+Balance modeling and engineering.
+
 12. Frugality
 13. Strive to be Earth's Best Employer
 14. Success and Scale Bring Broad Responsibility
