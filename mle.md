@@ -133,6 +133,13 @@ iconv -c -f GB2312 -t UTF-8 1.txt 2.txt 3.txt 4.txt 5.txt>> ice_and_fire_utf8.tx
 
 review_text = BeautifulSoup(string, \"lxml\").get_text()
 
+```
+I. information and data：5分钟
+II. feature engineering：10分钟
+IV. model：15分钟
+V. evaluation：5分钟
+```
+
 ### Amazon
 #### 1st Interview
 1. Talk about linear regression, why it is called linear?

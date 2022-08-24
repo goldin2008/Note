@@ -6,15 +6,17 @@ https://www.amazon.jobs/en/principles
 
 #### Amazon LP
 1. Earn Trust 不自傲自满,自我批判,敢于承认错误
+Earn trust可以通过很多不同的方式: Fail了勇于承担错误和责任, 接受来自同事老板的批评建议努力改进, 帮助同事(完成一项工作, 或者帮助改善工作表现)，勇于提出建议和坚持自己意见改善组里的效率, 衡量利弊后顺从组里其他人或者多数人的意见，加入一个新组但迅速通过工作获得信任。所以应该按问题准备故事, 而不是按照LP。上面的问题同样的color code其实可以用同一个故事来回答, 当然你有很多经验apply的话一类问题准备多个故事当然最好, 因为他们问的问题很多overlap, 能给每个人讲不一样的故事当然最好咯。
+
 2. Dive Deep 愿意刨根问底,有能力troubleshoot到根本问题,解决问题
 CNN, RNN, LSTM to improve NLP model in Call Center.
 
 3. Customer Obsession 顾客至上, do the best for customers and the rest will come
-Fraud Risk Model to improve customer experience.
+Fraud Risk Model to improve customer experience. make customer life easier
 
 4. Bias for Action 速度很重要, 数据不足的时候，衡量利弊，想好backup plan，敢于冒险
 5. Invent and Simplify 创新,简化, 多research借鉴别人已有的方法提高效率也很好
-Built pipeline to simplify retrain and refit cycle.
+Built pipeline to simplify retrain and refit cycle. solve complex problem in simple way
 
 6. Are right, A Lot 大多数时候正确，努力证明自己正确, 说服别人
 7. Have Backbone; Disagree and Commit 不趋附大众,敢于提出自己的意见
