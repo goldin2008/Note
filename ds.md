@@ -103,17 +103,33 @@ performance metrics有哪些：Area Under ROC Curve, F1 score, 把sensitivity, s
 10. What’s the differences between bagged tree and boosted tree?
 Living code problem: read in a Json structured data 50,000 rows and find out the majority of the ‘label’ (categorical 3 classes) - 15 mins 这个题居然卡在了一开始，因为对Json file不熟悉工作中很少用，但是Amazon的data scientist很常用。 另外没有考SQL（有点意外）。
 
-
+亚麻内部 DS如何快速转AS呢？
+否则的话需要找到一个好的老板可以帮你要到AS scope的项目，同时建立起能够support你换title的人脉。比如经常跟Sr AS review你的项目。有AS/SDE review你的code。然后就是顺其自然的事了。
 
 
 ### Amazon AS
-微软AS面试更取决于组。。每个组可以自己决定面试的侧重点。。我面了一个组是4轮coding。。亚麻AS虽然也是组面 但是一轮AS coding三轮ML （breath depth applicatoin）不会变。。
+微软AS面试更取决于组。。每个组可以自己决定面试的侧重点。。我面了一个组是4轮coding.微软AS面试一半engineering一半ML。但ML不会这么细致，engineering bar更高一点。微软升职不错啊，但工资的确不行.
+亚麻AS虽然也是组面 但是一轮AS coding三轮ML （breath depth applicatoin）不会变。。
 年初要relocate面了其他几家的senior MLE Google就是coding + ML design
 Meta差不多 可以选system design + ML design或者两轮ML design
 Linkedin两轮coding其中一轮data coding 就是Leetcode上比较数学的coding基本都是面经题 一轮data science （ML八股文和统计基础）一轮ML design
 Tiktok基本上每轮都是ML基础 （类似Amazon的breadth + 一部分depth）+ 一道题coding。。当然Tiktok可能也比较看组。。
 
 介绍
+关于ml depth方面，在传统机器学习中，除了手推lr还有其他的知识点吗，例如树和svm，adaboost, xgboost会考到什么程度
+熟悉到你能够写出伪代码的程度,em算法
+我个人觉得search, Aws AI, personalization, amazon video的有些组, Alexa的有些组, product graph等等感觉都还不错
+
+presentation:
+建议讲工业界的项目。不一定说一定需要很多science的innovation。更多的是自己遇到的challenges，而这种challenges 可能有很多方面，像没有high quality labeling data, 很多legacy system，太多上下游team需要communication，或者latency/scalability/robustness要求很高，或者不容易formulate business problems等等等。更多的是你需要展示你能很好的解决这些challenges。你可能需要尽量隐藏key business numbers (比如只展示relative的提升)，避开一些还没有open to general public的产品等等
+
+AS的核心是 你首先是一个scientist，能合理的把biz problem转化成model problem，还能比较sciency地把你的理论基础，考虑了哪些candidate model，他们的优劣以及你选择的依据写清楚 （到这里为止也是DS/RS的要求），最后你要比DS/RS更能落地product，能构建一套pipeline啥的部署到aws上。注意，这里完全没人要求你的model一定要用ML或者DL，或者一定要用aws。用不用要具体问题具体分析。
+
+senior AS的scope/工作内容
+一般是会负责一到两套核心算法模块在生产环境的落地，一般是要对算法在产品上的体验负责的。核心任务一般是derisk and deliver science product。. 1point3acres.com
+项目早期会比较hands on，一般是做一些demo或者feasibility study性质的工作，目的是为了团队争取资源或者推进新feature的priority。项目后期会比较focus在mentor组里更junior的deliverable上，通常会influence从2-10个人的产出和规划。
+当然cross team的science合作通常也都是senior AS牵头，这类工作通常更senior SDE类似。
+
 AS@Amazon整体来说的定义是要求你能够理解business问题，然后把business问题转化成一个ML的问题，然后提出并且implement ML solutions，从而improve business metrics的目的。它整体的定义有点类似于别的公司的half MLE + half Research Scientist的定义：
 由于amazon本身没有centralized ML Research team，所以amazon基本上没有纯ML research (research for resolving general ML problems)，而只会在每个product组有Applied Research (research for resolving ML problems under a specific business domain/application)。而amazon并没有类似于google research scientist的role，所以Applied ML Research是applied scientist重要工作内容之一。BTW， amazon本身有research scientist的title，但本质上是弱化版本的AS或者非ML domain的researcher。
 同时amazon没有MLE的job family (有的engineer会把business title改成这个，但实际上并不存在)。所以基本上传统意义上的MLE的工作会一部分会分到别的job family：比如ML infra和实际的ux/customer-facing product可能有engineering team做，data pipeline可能有BI engineer/Data Scientist/Data Engineer来负责。而AS会主要负责模型数据的preprocessing, post-processing, ML model training/inference。然后AS可以创建一个模型inference的endpoint从而跟engineering team来interact。
