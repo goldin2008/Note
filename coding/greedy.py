@@ -133,4 +133,61 @@ class Solution:
                 end = intervals[i][1]
         return len(intervals) - count
 
+# 763.划分字母区间
+class Solution:
+    def partitionLabels(self, s: str) -> List[int]:
+        hash = [0] * 26
+        for i in range(len(s)):
+            hash[ord(s[i]) - ord('a')] = i
+        result = []
+        left = 0
+        right = 0
+        for i in range(len(s)):
+            right = max(right, hash[ord(s[i]) - ord('a')])
+            if i == right:
+                result.append(right - left + 1)
+                left = i + 1
+        return result
+
+# 56. 合并区间
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        if len(intervals) == 0: return intervals
+        intervals.sort(key=lambda x: x[0])
+        result = []
+        result.append(intervals[0])
+        for i in range(1, len(intervals)):
+            last = result[-1]
+            if last[1] >= intervals[i][0]:
+                result[-1] = [last[0], max(last[1], intervals[i][1])]
+            else:
+                result.append(intervals[i])
+        return result
+
+# 738.单调递增的数字
+class Solution:
+    def monotoneIncreasingDigits(self, n: int) -> int:
+        a = list(str(n))
+        for i in range(len(a)-1,0,-1):
+            if int(a[i]) < int(a[i-1]):
+                a[i-1] = str(int(a[i-1]) - 1)
+                a[i:] = '9' * (len(a) - i)  #python不需要设置flag值，直接按长度给9就好了
+        return int("".join(a)) 
+
+#??? 714. 买卖股票的最佳时机含手续费
+class Solution: # 贪心思路
+    def maxProfit(self, prices: List[int], fee: int) -> int:
+        result = 0
+        minPrice = prices[0]
+        for i in range(1, len(prices)):
+            if prices[i] < minPrice:
+                minPrice = prices[i]
+            elif prices[i] >= minPrice and prices[i] <= minPrice + fee: 
+                continue
+            else: 
+                result += prices[i] - minPrice - fee
+                minPrice = prices[i] - fee
+        return result
+
+
 
