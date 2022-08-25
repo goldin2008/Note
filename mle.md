@@ -140,6 +140,9 @@ IV. model：15分钟
 V. evaluation：5分钟
 ```
 
+Bayesian optimization
+
+
 ### Amazon
 #### 1st Interview
 1. Talk about linear regression, why it is called linear?
