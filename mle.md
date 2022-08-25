@@ -142,6 +142,10 @@ V. evaluation：5分钟
 
 Bayesian optimization
 
+code/memory profiling找到整个pipeline的bottleneck，framework化以上的步骤能让更多人同时develop
+
+matrix factorization可能会问你怎么加进user and item metadata
+
 
 ### Amazon
 #### 1st Interview
