@@ -16,6 +16,7 @@ class Solution:
             
         return answer
 
+
 # 496.下一个更大元素 I
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
@@ -35,6 +36,7 @@ class Solution:
                 stack.append(i)
         return result
 
+
 # 503.下一个更大元素II
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
@@ -46,6 +48,7 @@ class Solution:
                     stack.pop()
             stack.append(i%len(nums))
         return dp
+
 
 # 42. 接雨水
 class Solution:
@@ -91,7 +94,6 @@ class Solution:
                         result += h * w
                 stack.append(i)
         return result
-        
 # 单调栈压缩版        
 class Solution:
     def trap(self, height: List[int]) -> int:
@@ -109,6 +111,7 @@ class Solution:
                     result += h * w
             stack.append(i)
         return result
+
 
 # 84.柱状图中最大的矩形
 # 单调栈
@@ -152,7 +155,6 @@ class Solution:
                         result = max(result, width * height)
                 stack.append(i)
         return result
-
 # 单调栈精简
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
