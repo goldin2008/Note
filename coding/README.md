@@ -74,6 +74,7 @@ Database (SQL vs NoSQL), Transactions (ACID), Messaging Queues, Load Balancing, 
 写完代码之后， 再重头到尾把代码和面试官讲一遍。
 
 
+
 ```python
 #!/usr/bin/env python
 
