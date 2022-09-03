@@ -140,6 +140,72 @@ class Solution:
         # 将最终的数组翻转
         return result[::-1]
 
+# 迭代统一写法
+# 迭代法前序遍历：
+class Solution:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
+        result = []
+        st= []
+        if root:
+            st.append(root)
+        while st:
+            node = st.pop()
+            if node != None:
+                if node.right: #右
+                    st.append(node.right)
+                if node.left: #左
+                    st.append(node.left)
+                st.append(node) #中
+                st.append(None)
+            else:
+                node = st.pop()
+                result.append(node.val)
+        return result
+# 迭代法中序遍历：
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        result = []
+        st = []
+        if root:
+            st.append(root)
+        while st:
+            node = st.pop()
+            if node != None:
+                if node.right: #添加右节点（空节点不入栈）
+                    st.append(node.right)
+                
+                st.append(node) #添加中节点
+                st.append(None) #中节点访问过，但是还没有处理，加入空节点做为标记。
+                
+                if node.left: #添加左节点（空节点不入栈）
+                    st.append(node.left)
+            else: #只有遇到空节点的时候，才将下一个节点放进结果集
+                node = st.pop() #重新取出栈中元素
+                result.append(node.val) #加入到结果集
+        return result
+# 迭代法后序遍历：
+class Solution:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        result = []
+        st = []
+        if root:
+            st.append(root)
+        while st:
+            node = st.pop()
+            if node != None:
+                st.append(node) #中
+                st.append(None)
+                
+                if node.right: #右
+                    st.append(node.right)
+                if node.left: #左
+                    st.append(node.left)
+            else:
+                node = st.pop()
+                result.append(node.val)
+        return result
+
+
 # 递归法
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
@@ -153,7 +219,7 @@ class Solution:
         helper(root, 0)
         return res
 
-# 二叉树层序遍历迭代解法
+#层序遍,历迭代解法
 class Solution:
     """二叉树层序遍历迭代解法"""
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
