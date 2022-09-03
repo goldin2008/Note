@@ -189,8 +189,6 @@ class Solution:
         self.invertTree(root.left) #左
         self.invertTree(root.right) #右
         return root
-
-
 # 迭代法：深度优先遍历（前序遍历）：
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
@@ -206,8 +204,6 @@ class Solution:
             if node.left:
                 st.append(node.left) #左
         return root
-
-
 # 迭代法：广度优先遍历（层序遍历）：
 import collections
 class Solution:
@@ -240,14 +236,12 @@ class Solution:
         rightNum = self.getNodesNum(cur.right) #右
         treeNum = leftNum + rightNum + 1 #中
         return treeNum
-
 # 递归法：精简版
 class Solution:
     def countNodes(self, root: TreeNode) -> int:
         if not root:
             return 0
         return 1 + self.countNodes(root.left) + self.countNodes(root.right)
-
 # 迭代法
 import collections
 class Solution:
