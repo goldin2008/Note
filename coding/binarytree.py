@@ -2,6 +2,9 @@
 NOTE:
 递归只需要function call function，用一个result储存结果；
 迭代需要额外用stack来存遍历的node，用while循环来遍历stack里面的所有node。
+数据结构栈stack用list [], 队列queue用deque([])
+广度遍历level order先处理node，然后再遍历添加子node
+深度遍历先遍历子node，然后再处理node，所以是preorder的话，先处理node再添加子node，如果不是preorder，需要用None标记待处理node
 
 
 满二叉树: 如果一棵二叉树只有度为0的结点和度为2的结点，并且度为0的结点在同一层上，则这棵二叉树为满二叉树。
@@ -182,11 +185,15 @@ class Solution:
         que = deque([root])
 
         while que:
+            # que里面现有的所有node都是一层要遍历的node
             size = len(que)
             result = []
+            # 遍历一层的所有node
             for _ in range(size):
+                # 处理node
                 cur = que.popleft()
                 result.append(cur.val)
+                # 添加左右子node
                 if cur.left:
                     que.append(cur.left)
                 if cur.right:
