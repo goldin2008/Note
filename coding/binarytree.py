@@ -1,4 +1,9 @@
 """
+NOTE:
+递归只需要function call function，用一个result储存结果；
+迭代需要额外用stack来存遍历的node，用while循环来遍历stack里面的所有node。
+
+
 满二叉树: 如果一棵二叉树只有度为0的结点和度为2的结点，并且度为0的结点在同一层上，则这棵二叉树为满二叉树。
 这棵二叉树为满二叉树，也可以说深度为k，有2^k-1个节点的二叉树。
 
@@ -33,7 +38,7 @@
 # 二叉树节点定义
 class TreeNode: 
     def __init__(self, value):
-        self.value = value
+        self.val = value
         self.left = None
         self.right = None
 
