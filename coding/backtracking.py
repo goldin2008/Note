@@ -1,6 +1,7 @@
 """
 因为回溯的本质是穷举，穷举所有可能，然后选出我们想要的答案，如果想让回溯法高效一些，可以加一些剪枝的操作，但也改不了回溯法就是穷举的本质。
 回溯法解决的问题都可以抽象为树形结构，所有回溯法的问题都可以抽象为树形结构
+本题我把回溯问题抽象为树形结构，可以直观的看出其搜索的过程: for循环横向遍历，递归纵向遍历，回溯不断调整结果集。
 因为回溯法解决的都是在集合中递归查找子集，集合的大小就构成了树的宽度，递归的深度，都构成的树的深度。
 递归就要有终止条件，所以必然是一棵高度有限的树（N叉树)
 1. 回溯函数模板返回值以及参数
@@ -31,6 +32,7 @@
 
 
 # 第77题. 组合
+# 给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
         res=[]  #存放符合条件结果的集合
@@ -48,6 +50,7 @@ class Solution:
         return res
 
 # 216.组合总和III
+# 找出所有相加之和为 n 的 k 个数的组合。组合中只允许含有 1 - 9 的正整数，并且每种组合中不存在重复的数字。
 class Solution:
     def __init__(self):
         self.res = []
@@ -74,6 +77,7 @@ class Solution:
 
 
 # 17.电话号码的字母组合
+# 给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。
 # 回溯
 class Solution:
     def __init__(self):
@@ -142,6 +146,7 @@ class Solution:
 
 
 # 39. 组合总和
+# 给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
 class Solution:
     def __init__(self):
         self.path = []
@@ -155,6 +160,7 @@ class Solution:
         self.paths.clear()
 
         # 为了剪枝需要提前进行排序
+        # 对总集合排序之后，如果下一层的sum（就是本层的 sum + candidates[i]）已经大于target，就可以结束本轮for循环的遍历。
         candidates.sort()
         self.backtracking(candidates, target, 0, 0)
         return self.paths
@@ -166,6 +172,7 @@ class Solution:
             return
         # 单层递归逻辑 
         # 如果本层 sum + condidates[i] > target，就提前结束遍历，剪枝
+        # 对总集合排序之后，如果下一层的sum（就是本层的 sum + candidates[i]）已经大于target，就可以结束本轮for循环的遍历。
         for i in range(start_index, len(candidates)):
             if sum_ + candidates[i] > target: 
                 return 
@@ -174,3 +181,47 @@ class Solution:
             self.backtracking(candidates, target, sum_, i)  # 因为无限制重复选取，所以不是i-1
             sum_ -= candidates[i]   # 回溯
             self.path.pop()        # 回溯
+
+# 40.组合总和II
+# 给定一个数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
+# 本题的难点在于区别2中：集合（数组candidates）有重复元素，但还不能有重复的组合。
+class Solution:
+    def __init__(self):
+        self.paths = []
+        self.path = []
+
+    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+        '''
+        类似于求三数之和，求四数之和，为了避免重复组合，需要提前进行数组排序
+        '''
+        self.paths.clear()
+        self.path.clear()
+        # 必须提前进行数组排序，避免重复
+        candidates.sort()
+        self.backtracking(candidates, target, 0, 0)
+        return self.paths
+
+    def backtracking(self, candidates: List[int], target: int, sum_: int, start_index: int) -> None:
+        # Base Case
+        if sum_ == target:
+            self.paths.append(self.path[:])
+            return
+        
+        # 单层递归逻辑
+        for i in range(start_index, len(candidates)):
+            # 剪枝，同39.组合总和
+            if sum_ + candidates[i] > target:
+                return
+            
+            # 跳过同一树层使用过的元素
+            if i > start_index and candidates[i] == candidates[i-1]:
+                continue
+            
+            sum_ += candidates[i]
+            self.path.append(candidates[i])
+            self.backtracking(candidates, target, sum_, i+1)
+            self.path.pop()             # 回溯，为了下一轮for loop
+            sum_ -= candidates[i]       # 回溯，为了下一轮for loop
+
+# 131.分割回文串
+# 给定一个字符串 s，将 s 分割成一些子串，使每个子串都是回文串。
