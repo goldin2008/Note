@@ -513,3 +513,156 @@ class Solution:
             self.path.pop()
 
 
+# 46.全排列
+# 给定一个 没有重复 数字的序列，返回其所有可能的全排列。
+# 输入: [1,2,3]
+# 输出: [ [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1] ]
+# 回溯
+class Solution:
+    def __init__(self):
+        self.path = []
+        self.paths = []
+
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        '''
+        因为本题排列是有序的，这意味着同一层的元素可以重复使用，但同一树枝上不能重复使用(usage_list)
+        所以处理排列问题每层都需要从头搜索，故不再使用start_index
+        '''
+        usage_list = [False] * len(nums)
+        self.backtracking(nums, usage_list)
+        return self.paths
+
+    def backtracking(self, nums: List[int], usage_list: List[bool]) -> None:
+        # Base Case本题求叶子节点
+        if len(self.path) == len(nums):
+            self.paths.append(self.path[:])
+            return
+
+        # 单层递归逻辑
+        for i in range(0, len(nums)):  # 从头开始搜索
+            # 若遇到self.path里已收录的元素，跳过
+            if usage_list[i] == True:
+                continue
+            usage_list[i] = True
+            self.path.append(nums[i])
+            self.backtracking(nums, usage_list)     # 纵向传递使用信息，去重
+            self.path.pop()
+            usage_list[i] = False
+
+# 回溯+丢掉usage_list
+class Solution:
+    def __init__(self):
+        self.path = []
+        self.paths = []
+
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        '''
+        因为本题排列是有序的，这意味着同一层的元素可以重复使用，但同一树枝上不能重复使用
+        所以处理排列问题每层都需要从头搜索，故不再使用start_index
+        '''
+        self.backtracking(nums)
+        return self.paths
+
+    def backtracking(self, nums: List[int]) -> None:
+        # Base Case本题求叶子节点
+        if len(self.path) == len(nums):
+            self.paths.append(self.path[:])
+            return
+
+        # 单层递归逻辑
+        for i in range(0, len(nums)):  # 从头开始搜索
+            # 若遇到self.path里已收录的元素，跳过
+            if nums[i] in self.path:
+                continue
+            self.path.append(nums[i])
+            self.backtracking(nums)
+            self.path.pop()
+
+
+# 47.全排列 II
+# 给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。
+# 输入：nums = [1,1,2]
+# 输出： [[1,1,2], [1,2,1], [2,1,1]]
+# 还要强调的是去重一定要对元素进行排序，这样我们才方便通过相邻的节点来判断是否重复使用了。
+class Solution:
+    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+        # res用来存放结果
+        if not nums: return []
+        res = []
+        used = [0] * len(nums)
+        def backtracking(nums, used, path):
+            # 终止条件
+            if len(path) == len(nums):
+                res.append(path.copy())
+                return
+            for i in range(len(nums)):
+                if not used[i]:
+                    if i>0 and nums[i] == nums[i-1] and not used[i-1]:
+                        continue
+                    used[i] = 1
+                    path.append(nums[i])
+                    backtracking(nums, used, path)
+                    path.pop()
+                    used[i] = 0
+        # 记得给nums排序
+        backtracking(sorted(nums),used,[])
+        return res
+
+
+# ??? 332.重新安排行程
+# 给定一个机票的字符串二维数组 [from, to]，子数组中的两个成员分别表示飞机出发和降落的机场地点，对该行程进行重新规划排序。所有这些机票都属于一个从 JFK（肯尼迪国际机场）出发的先生，所以该行程必须从 JFK 开始。
+# 输入：[["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]]
+# 输出：["JFK", "MUC", "LHR", "SFO", "SJC"]
+
+
+# 第51题. N皇后
+# n 皇后问题 研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
+# 输入：n = 4
+# 输出：[[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
+# 解释：如上图所示，4 皇后问题存在两个不同的解法。
+class Solution:
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        if not n: return []
+        board = [['.'] * n for _ in range(n)]
+        res = []
+        def isVaild(board,row, col):
+            #判断同一列是否冲突
+            for i in range(len(board)):
+                if board[i][col] == 'Q':
+                    return False
+            # 判断左上角是否冲突
+            i = row -1
+            j = col -1
+            while i>=0 and j>=0:
+                if board[i][j] == 'Q':
+                    return False
+                i -= 1
+                j -= 1
+            # 判断右上角是否冲突
+            i = row - 1
+            j = col + 1
+            while i>=0 and j < len(board):
+                if board[i][j] == 'Q':
+                    return False
+                i -= 1
+                j += 1
+            return True
+
+        def backtracking(board, row, n):
+            # 如果走到最后一行，说明已经找到一个解
+            if row == n:
+                temp_res = []
+                for temp in board:
+                    temp_str = "".join(temp)
+                    temp_res.append(temp_str)
+                res.append(temp_res)
+            for col in range(n):
+                if not isVaild(board, row, col):
+                    continue
+                board[row][col] = 'Q'
+                backtracking(board, row+1, n)
+                board[row][col] = '.'
+        backtracking(board, 0, n)
+        return res
+
+
