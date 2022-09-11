@@ -33,6 +33,17 @@
 
 # 第77题. 组合
 # 给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
+# 示例:
+# 输入: n = 4, k = 2
+# 输出:
+# [
+# [2,4],
+# [3,4],
+# [2,3],
+# [1,2],
+# [1,3],
+# [1,4],
+# ]
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
         res=[]  #存放符合条件结果的集合
@@ -52,6 +63,8 @@ class Solution:
 
 # 216.组合总和III
 # 找出所有相加之和为 n 的 k 个数的组合。组合中只允许含有 1 - 9 的正整数，并且每种组合中不存在重复的数字。
+# 示例 1: 输入: k = 3, n = 7 输出: [[1,2,4]]
+# 示例 2: 输入: k = 3, n = 9 输出: [[1,2,6], [1,3,5], [2,3,4]]
 class Solution:
     def __init__(self):
         self.res = []
@@ -79,6 +92,7 @@ class Solution:
 
 # 17.电话号码的字母组合
 # 给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。
+# 示例: 输入："23" 输出：["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 # 回溯
 class Solution:
     def __init__(self):
@@ -148,6 +162,8 @@ class Solution:
 
 # 39. 组合总和
 # 给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
+# 示例 1： 输入：candidates = [2,3,6,7], target = 7, 所求解集为： [ [7], [2,2,3] ]
+# 示例 2： 输入：candidates = [2,3,5], target = 8, 所求解集为： [   [2,2,2,2],   [2,3,3],   [3,5] ]
 class Solution:
     def __init__(self):
         self.path = []
@@ -187,6 +203,8 @@ class Solution:
 # 40.组合总和II
 # 给定一个数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
 # 本题的难点在于区别2中：集合（数组candidates）有重复元素，但还不能有重复的组合。
+# 示例 1: 输入: candidates = [10,1,2,7,6,1,5], target = 8, 所求解集为: [ [1, 7], [1, 2, 5], [2, 6], [1, 1, 6] ]
+# 示例 2: 输入: candidates = [2,5,2,1,2], target = 5, 所求解集为: [   [1,2,2],   [5] ]
 class Solution:
     def __init__(self):
         self.paths = []
@@ -228,6 +246,7 @@ class Solution:
 
 # 131.分割回文串
 # 给定一个字符串 s，将 s 分割成一些子串，使每个子串都是回文串。
+# 示例: 输入: "aab" 输出: [ ["aa","b"], ["a","a","b"] ]
 # 回溯+正反序判断回文串
 class Solution:
     def __init__(self):
@@ -312,6 +331,8 @@ class Solution:
 
 # 93.复原IP地址
 # 给定一个只包含数字的字符串，复原它并返回所有可能的 IP 地址格式。
+# 输入：s = "25525511135"
+# 输出：["255.255.11.135","255.255.111.35"]
 class Solution:
     def __init__(self):
         self.result = []
