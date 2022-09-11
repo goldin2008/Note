@@ -406,3 +406,32 @@ class Solution:
             self.path.pop()     # 回溯
 
 
+# 90.子集II
+# 给定一个可能包含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。
+# 输入: [1,2,2]
+# 输出: [ [2], [1], [1,2,2], [2,2], [1,2], [] ]
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        path = []
+        nums.sort() # 去重需要先对数组进行排序
+
+        def backtracking(nums, startIndex):
+            # 终止条件
+            res.append(path[:])
+            if startIndex == len(nums):
+                return
+            
+            # for循环
+            for i in range(startIndex, len(nums)):
+                # 数层去重
+                if i > startIndex and nums[i] == nums[i-1]: # 去重
+                    continue
+                path.append(nums[i])
+                backtracking(nums, i+1)
+                path.pop()
+        
+        backtracking(nums, 0)
+        return res
+
+
