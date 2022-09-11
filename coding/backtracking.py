@@ -354,3 +354,34 @@ class Solution:
         return True
 
 
+# 78.子集
+# 给定一组不含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。
+# 说明：解集不能包含重复的子集。
+# 示例: 输入: nums = [1,2,3] 输出: [ [3],   [1],   [2],   [1,2,3],   [1,3],   [2,3],   [1,2],   [] ]
+# 但是要清楚子集问题和组合问题、分割问题的的区别，子集是收集树形结构中树的所有节点的结果。
+# 而组合问题、分割问题是收集树形结构中叶子节点的结果。
+class Solution:
+    def __init__(self):
+        self.path: List[int] = []
+        self.paths: List[List[int]] = []
+
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        self.paths.clear()
+        self.path.clear()
+        self.backtracking(nums, 0)
+        return self.paths
+
+    def backtracking(self, nums: List[int], start_index: int) -> None:
+        # 收集子集，要先于终止判断(因为要收集所以node，而不只是leaf，所以要base case前把path放入paths)
+        self.paths.append(self.path[:])
+        # Base Case
+        if start_index == len(nums):
+            return
+
+        # 单层递归逻辑
+        for i in range(start_index, len(nums)):
+            self.path.append(nums[i])
+            self.backtracking(nums, i+1)
+            self.path.pop()     # 回溯
+
+
