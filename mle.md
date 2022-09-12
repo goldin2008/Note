@@ -1,91 +1,4 @@
 ## MLE interview
-`面试总结`
-> https://zhuanlan.zhihu.com/p/58434325
-
-> https://zhuanlan.zhihu.com/p/82105066
-
-> https://www.zhihu.com/question/56676679
-
-> https://msank00.github.io/blog/
-
-`机器学习面试笔试求职必背！八股文`
-> https://zhuanlan.zhihu.com/p/404809298
-
-> https://zhuanlan.zhihu.com/p/405194507
-
-> https://zhuanlan.zhihu.com/p/405197734
-
-> https://blog.csdn.net/qq_18822147/article/details/120243772
-
-> https://www.cnblogs.com/ljygoodgoodstudydaydayup/category/2074962.html
-
-`机器学习八股文`
-> https://www.1point3acres.com/bbs/thread-713903-1-1.html
-
-> https://northern-dracopelta-98c.notion.site/5b22e124e16d4b2d937940367ca20eb0?v=19feabb85e9e4b54bc498579b3c7f1c5
-
-> https://www.1point3acres.com/bbs/thread-714090-1-1.html
-
-> https://www.1point3acres.com/bbs/thread-714558-1-1.html
-
-> https://www.zhihu.com/people/is-aze/posts
-
-> https://zhuanlan.zhihu.com/p/405194507
-
-> https://zhuanlan.zhihu.com/p/405196671
-
-> https://zhuanlan.zhihu.com/p/405197734
-
-> https://zhuanlan.zhihu.com/p/405199136
-
-> https://fullstackdeeplearning.com/spring2021/lecture-6/
-
-> https://madewithml.com/
-
-> https://eugeneyan.com/writing/testing-ml/
-
-> https://completedesigninterviewcourse.com/system-design-interview/
-
-> https://www.1point3acres.com/bbs/thread-652770-1-1.html
-
-#### Books and Papers
-> 美团机器学习实践
-
-> 推荐系统实践 项亮
-
-> 深度学习推荐系统 王喆
-
-Wide & Deep Learning for Recommender Systems
-> https://dl.acm.org/doi/pdf/10.1145/2988450.2988454
-
-Deep Neural Networks for YouTube Recommendations
-> https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf
-
-The Netflix Recommender System
-> https://dl.acm.org/doi/pdf/10.1145/2843948
-
-From RankNet to LambdaRank
-> https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/MSR-TR-2010-82.pdf
-
-Predictive Model Performance: Offline and Online Evaluation
-> https://chbrown.github.io/kdd-2013-usb/kdd/p1294.pdf
-
-Practical Lessons from Predicting Clicks on Ads at Facebook
-> https://quinonero.net/Publications/predicting-clicks-facebook.pdf
-
-[1] Paul Covington et al., Deep Neural Networks for YouTube Recommendations, RecSys 2016.
-[2] Xinran He, Practical lessons from predicting clicks on ads at facebook, PAKDD 2014.
-
-ml论坛上有几个总结的帖子写的很全面了。我个人觉得有两篇文章很有用：Wide & Deep Learning for Recommender Systems；Deep Neural Networks for YouTube Recommendations，ml system里面重要的部分文章都有讲到。我面试的时候基本上就是按照这两个的框架讲的。
-
-针对第二轮ML系统设计，baca推荐的学习资料如下，希望对大家有用：NLP特征提取Query Intent understanding和Query rewrite， 书籍《美团机器学习实践》，知乎美团，达观文化的技术文章
-
-Educative.io Grokking Machine the Learning Interview + blogs on machine learning design from Medium.com
-
-imbalanced class 看主要优化的目标是啥，可以是 precision, recall, 如果二者兼具的话就是F1.
-
-到时候把Grokking the Coding Interview: Patterns for Coding Questions也学一下。感觉这两门课，对Machine learning engineer的面试可能就够了（当然，还有机器学习专业方面的你还需要去好好准备）
-
 * Grokking the Coding Interview: Patterns for Coding Questions
 * Grokking-the-system-design-interview
 * Designing Data-intensive Applications
@@ -100,52 +13,6 @@ imbalanced class 看主要优化的目标是啥，可以是 precision, recall, �
 ![Diagram of deployment.](pic/model.png)
 
 ![Diagram of deployment.](pic/update.png)
-
-LZ 加油！关于A/B testing，可以参考下面的视频和书。我以前在另一个帖子回复过。
-
-（1）Youtube Video
-https://www.youtube.com/watch?v=Eh00PoR76NY
-
-Book
-http://www.amazon.com/Testing-Mo ... eywords=a+b+testing 鏉ユ簮涓€浜�.涓夊垎鍦拌鍧�. 
-视频和书都是一个叫Dan Siroker出的，以前从Google出来创业， 现在是一个网站Optimizely的CEO，这个网站专门帮其他公司做A/B testing，优化他们的网页
-
-（2）Harvard Data Science 有一讲请了Quora 的Data Scientist讲了一些A/B testing 内容 
-
-Lecture 22. visit 1point3acres.com for more.
-http://cm.dce.harvard.edu/2014/01/14328/publicationListing.shtml
-
-缺点是，这些都是比较General的讲解，没有特别偏Statistical modeling的教程，估计得复习一下Design的东西。
-
-Airbnb的面试可能不简单，我在Quora上面看到这家有所谓的 In-house data challenge, 要求面试当场清数据，分析问题等等，具体可参考这个链接：
-http://www.quora.com/How-does-Airbnb-hire-data-scientists
-
-另外不知道你有没有看过Airbnb的 Nerds Blog，里面有很多Airbnb工程师如何运用数据分析的实例，希望能帮到你。
-http://nerds.airbnb.com/
-
-ab testing, read some industry white paper /paper
-G, L, M, F都有
-
-中文乱码mac
-iconv -c -f GB2312 -t UTF-8 a.txt b.txt
-iconv -c -f GB2312 -t UTF-8 a.txt>> b.txt
-iconv -c -f GB2312 -t UTF-8 1.txt 2.txt 3.txt 4.txt 5.txt>> ice_and_fire_utf8.txt
-
-review_text = BeautifulSoup(string, \"lxml\").get_text()
-
-```
-I. information and data：5分钟
-II. feature engineering：10分钟
-IV. model：15分钟
-V. evaluation：5分钟
-```
-
-Bayesian optimization
-
-code/memory profiling找到整个pipeline的bottleneck，framework化以上的步骤能让更多人同时develop
-
-matrix factorization可能会问你怎么加进user and item metadata
-
 
 ### Amazon
 #### 1st Interview
@@ -906,3 +773,139 @@ system design不达标（not scalable）
 9. Newsfeed randking
 
 我也还需要提升呢，不过我觉得宗旨就是要凸显你的在project里的leadership，过程中遇到了什么困难，如何解决一些conflicts，deliver了如何的result，对公司业务有怎样的impact。总之故事要娓娓道来，然后一个故事涵盖体现你的综合实力。
+
+
+
+References:
+
+`面试总结`
+> https://zhuanlan.zhihu.com/p/58434325
+
+> https://zhuanlan.zhihu.com/p/82105066
+
+> https://www.zhihu.com/question/56676679
+
+> https://msank00.github.io/blog/
+
+`机器学习面试笔试求职必背！八股文`
+> https://zhuanlan.zhihu.com/p/404809298
+
+> https://zhuanlan.zhihu.com/p/405194507
+
+> https://zhuanlan.zhihu.com/p/405197734
+
+> https://blog.csdn.net/qq_18822147/article/details/120243772
+
+> https://www.cnblogs.com/ljygoodgoodstudydaydayup/category/2074962.html
+
+`机器学习八股文`
+> https://www.1point3acres.com/bbs/thread-713903-1-1.html
+
+> https://northern-dracopelta-98c.notion.site/5b22e124e16d4b2d937940367ca20eb0?v=19feabb85e9e4b54bc498579b3c7f1c5
+
+> https://www.1point3acres.com/bbs/thread-714090-1-1.html
+
+> https://www.1point3acres.com/bbs/thread-714558-1-1.html
+
+> https://www.zhihu.com/people/is-aze/posts
+
+> https://zhuanlan.zhihu.com/p/405194507
+
+> https://zhuanlan.zhihu.com/p/405196671
+
+> https://zhuanlan.zhihu.com/p/405197734
+
+> https://zhuanlan.zhihu.com/p/405199136
+
+> https://fullstackdeeplearning.com/spring2021/lecture-6/
+
+> https://madewithml.com/
+
+> https://eugeneyan.com/writing/testing-ml/
+
+> https://completedesigninterviewcourse.com/system-design-interview/
+
+> https://www.1point3acres.com/bbs/thread-652770-1-1.html
+
+#### Books and Papers
+> 美团机器学习实践
+
+> 推荐系统实践 项亮
+
+> 深度学习推荐系统 王喆
+
+Wide & Deep Learning for Recommender Systems
+> https://dl.acm.org/doi/pdf/10.1145/2988450.2988454
+
+Deep Neural Networks for YouTube Recommendations
+> https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf
+
+The Netflix Recommender System
+> https://dl.acm.org/doi/pdf/10.1145/2843948
+
+From RankNet to LambdaRank
+> https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/MSR-TR-2010-82.pdf
+
+Predictive Model Performance: Offline and Online Evaluation
+> https://chbrown.github.io/kdd-2013-usb/kdd/p1294.pdf
+
+Practical Lessons from Predicting Clicks on Ads at Facebook
+> https://quinonero.net/Publications/predicting-clicks-facebook.pdf
+
+[1] Paul Covington et al., Deep Neural Networks for YouTube Recommendations, RecSys 2016.
+[2] Xinran He, Practical lessons from predicting clicks on ads at facebook, PAKDD 2014.
+
+ml论坛上有几个总结的帖子写的很全面了。我个人觉得有两篇文章很有用：Wide & Deep Learning for Recommender Systems；Deep Neural Networks for YouTube Recommendations，ml system里面重要的部分文章都有讲到。我面试的时候基本上就是按照这两个的框架讲的。
+
+针对第二轮ML系统设计，baca推荐的学习资料如下，希望对大家有用：NLP特征提取Query Intent understanding和Query rewrite， 书籍《美团机器学习实践》，知乎美团，达观文化的技术文章
+
+Educative.io Grokking Machine the Learning Interview + blogs on machine learning design from Medium.com
+
+imbalanced class 看主要优化的目标是啥，可以是 precision, recall, 如果二者兼具的话就是F1.
+
+到时候把Grokking the Coding Interview: Patterns for Coding Questions也学一下。感觉这两门课，对Machine learning engineer的面试可能就够了（当然，还有机器学习专业方面的你还需要去好好准备）
+
+LZ 加油！关于A/B testing，可以参考下面的视频和书。我以前在另一个帖子回复过。
+
+（1）Youtube Video
+https://www.youtube.com/watch?v=Eh00PoR76NY
+
+Book
+http://www.amazon.com/Testing-Mo ... eywords=a+b+testing 鏉ユ簮涓€浜�.涓夊垎鍦拌鍧�. 
+视频和书都是一个叫Dan Siroker出的，以前从Google出来创业， 现在是一个网站Optimizely的CEO，这个网站专门帮其他公司做A/B testing，优化他们的网页
+
+（2）Harvard Data Science 有一讲请了Quora 的Data Scientist讲了一些A/B testing 内容 
+
+Lecture 22. visit 1point3acres.com for more.
+http://cm.dce.harvard.edu/2014/01/14328/publicationListing.shtml
+
+缺点是，这些都是比较General的讲解，没有特别偏Statistical modeling的教程，估计得复习一下Design的东西。
+
+Airbnb的面试可能不简单，我在Quora上面看到这家有所谓的 In-house data challenge, 要求面试当场清数据，分析问题等等，具体可参考这个链接：
+http://www.quora.com/How-does-Airbnb-hire-data-scientists
+
+另外不知道你有没有看过Airbnb的 Nerds Blog，里面有很多Airbnb工程师如何运用数据分析的实例，希望能帮到你。
+http://nerds.airbnb.com/
+
+ab testing, read some industry white paper /paper
+G, L, M, F都有
+
+中文乱码mac
+iconv -c -f GB2312 -t UTF-8 a.txt b.txt
+iconv -c -f GB2312 -t UTF-8 a.txt>> b.txt
+iconv -c -f GB2312 -t UTF-8 1.txt 2.txt 3.txt 4.txt 5.txt>> ice_and_fire_utf8.txt
+
+review_text = BeautifulSoup(string, \"lxml\").get_text()
+
+```
+I. information and data：5分钟
+II. feature engineering：10分钟
+IV. model：15分钟
+V. evaluation：5分钟
+```
+
+Bayesian optimization
+
+code/memory profiling找到整个pipeline的bottleneck，framework化以上的步骤能让更多人同时develop
+
+matrix factorization可能会问你怎么加进user and item metadata
