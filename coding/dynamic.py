@@ -159,3 +159,63 @@ class Solution:
         return dp[-1]
 
 
+# 01 背包
+# 有n件物品和一个最多能背重量为w 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。每件物品只能用一次，求解将哪些物品装入背包里物品价值总和最大。
+# dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i])
+# 大家可以看出，虽然两个for循环遍历的次序不同，但是dp[i][j]所需要的数据就是左上角，根本不影响dp[i][j]公式的推导！
+# 其实背包问题里，两个for循环的先后循序是非常有讲究的，理解遍历顺序其实比理解推导公式难多了。
+def test_2_wei_bag_problem1(bag_size, weight, value) -> int: 
+	rows, cols = len(weight), bag_size + 1
+	dp = [[0 for _ in range(cols)] for _ in range(rows)]
+    
+	# 初始化dp数组. 
+	for i in range(rows): 
+		dp[i][0] = 0
+	first_item_weight, first_item_value = weight[0], value[0]
+	for j in range(1, cols): 	
+		if first_item_weight <= j: 
+			dp[0][j] = first_item_value
+
+	# 更新dp数组: 先遍历物品, 再遍历背包. 
+	for i in range(1, len(weight)): 
+		cur_weight, cur_val = weight[i], value[i]
+		for j in range(1, cols): 
+			if cur_weight > j: # 说明背包装不下当前物品. 
+				dp[i][j] = dp[i - 1][j] # 所以不装当前物品. 
+			else: 
+				# 定义dp数组: dp[i][j] 前i个物品里，放进容量为j的背包，价值总和最大是多少。
+				dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - cur_weight]+ cur_val)
+
+	print(dp)
+
+
+if __name__ == "__main__": 
+	bag_size = 4
+	weight = [1, 3, 4]
+	value = [15, 20, 30]
+	test_2_wei_bag_problem1(bag_size, weight, value)
+
+
+# 01 背包(滚动数组)
+# 把i相关的部分去掉
+# dp[j] = max(dp[j], dp[j - weight[i]] + value[i])
+# 二维dp遍历的时候，背包容量是从小到大，而一维dp遍历的时候，背包是从大到小。
+# 倒序遍历是为了保证物品i只被放入一次！。但如果一旦正序遍历了，那么物品0就会被重复加入多次！
+def test_1_wei_bag_problem():
+    weight = [1, 3, 4]
+    value = [15, 20, 30]
+    bag_weight = 4
+    # 初始化: 全为0
+    dp = [0] * (bag_weight + 1)
+
+    # 先遍历物品, 再遍历背包容量
+    for i in range(len(weight)):
+        for j in range(bag_weight, weight[i] - 1, -1):
+            # 递归公式
+            dp[j] = max(dp[j], dp[j - weight[i]] + value[i])
+
+    print(dp)
+
+test_1_wei_bag_problem()
+
+
