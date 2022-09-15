@@ -219,14 +219,16 @@ def test_1_wei_bag_problem():
 test_1_wei_bag_problem()
 
 
-#10 416. 分割等和子集
+#10 ??? 416. 分割等和子集
 # 给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。
+# 注意: 每个数组中的元素不会超过 100 数组的大小不会超过 200
 # 示例 1: 输入: [1, 5, 11, 5] 输出: true 解释: 数组可以分割成 [1, 5, 5] 和 [11].
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
         target = sum(nums)
         if target % 2 == 1: return False
         target //= 2
+        # // 总和不会大于20000，背包最大只需要其中一半，所以10001大小就可以了
         dp = [0] * 10001
         for i in range(len(nums)):
             for j in range(target, nums[i] - 1, -1):
