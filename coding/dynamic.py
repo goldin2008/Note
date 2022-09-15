@@ -159,7 +159,7 @@ class Solution:
         return dp[-1]
 
 
-# 01 背包
+#8 01 背包
 # 有n件物品和一个最多能背重量为w 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。每件物品只能用一次，求解将哪些物品装入背包里物品价值总和最大。
 # dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i])
 # 大家可以看出，虽然两个for循环遍历的次序不同，但是dp[i][j]所需要的数据就是左上角，根本不影响dp[i][j]公式的推导！
@@ -196,7 +196,7 @@ if __name__ == "__main__":
 	test_2_wei_bag_problem1(bag_size, weight, value)
 
 
-# 01 背包(滚动数组)
+#9 ？？？ 01 背包(滚动数组)
 # 把i相关的部分去掉
 # dp[j] = max(dp[j], dp[j - weight[i]] + value[i])
 # 二维dp遍历的时候，背包容量是从小到大，而一维dp遍历的时候，背包是从大到小。
@@ -217,5 +217,20 @@ def test_1_wei_bag_problem():
     print(dp)
 
 test_1_wei_bag_problem()
+
+
+#10 416. 分割等和子集
+# 给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。
+# 示例 1: 输入: [1, 5, 11, 5] 输出: true 解释: 数组可以分割成 [1, 5, 5] 和 [11].
+class Solution:
+    def canPartition(self, nums: List[int]) -> bool:
+        target = sum(nums)
+        if target % 2 == 1: return False
+        target //= 2
+        dp = [0] * 10001
+        for i in range(len(nums)):
+            for j in range(target, nums[i] - 1, -1):
+                dp[j] = max(dp[j], dp[j - nums[i]] + nums[i])
+        return target == dp[target]
 
 
