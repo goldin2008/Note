@@ -681,35 +681,37 @@ You have 52 playing cards (26 red, 26 black). You draw cards one by one. A red c
 
 > https://pxiaoer.blog/2021/01/26/cs329s/
 
-***Reference:***
-Model Debug http://josh-tobin.com/assets/pdf/troubleshooting-deep-neural-networks-01-19.pdf
+Model Debug
+> http://josh-tobin.com/assets/pdf/troubleshooting-deep-neural-networks-01-19.pdf
 
-Data School Video on Feature Selection https://www.youtube.com/watch?v=YaKMeAlHgqQ
+Data School Video on Feature Selection
+> https://www.youtube.com/watch?v=YaKMeAlHgqQ
 
-ML Pipeline https://towardsdatascience.com/architecting-a-machine-learning-pipeline-a847f094d1c7
+ML Pipeline
+> https://towardsdatascience.com/architecting-a-machine-learning-pipeline-a847f094d1c7
 
 ### Recommender System
-https://towardsdatascience.com/deep-dive-into-netflixs-recommender-system-341806ae3b48
+> https://towardsdatascience.com/deep-dive-into-netflixs-recommender-system-341806ae3b48
 
-https://dl.acm.org/doi/epdf/10.1145/2843948
+> https://dl.acm.org/doi/epdf/10.1145/2843948
 
-https://uxplanet.org/netflix-binging-on-the-algorithm-a3a74a6c1f59
+> https://uxplanet.org/netflix-binging-on-the-algorithm-a3a74a6c1f59
 
-https://github.com/gauravtheP/Netflix-Movie-Recommendation-System/blob/master/NetflixMoviesRecommendation.ipynb
+> https://github.com/gauravtheP/Netflix-Movie-Recommendation-System/blob/master/NetflixMoviesRecommendation.ipynb
 
-https://madasamy.medium.com/introduction-to-recommendation-systems-and-how-to-design-recommendation-system-that-resembling-the-9ac167e30e95
+> https://madasamy.medium.com/introduction-to-recommendation-systems-and-how-to-design-recommendation-system-that-resembling-the-9ac167e30e95
 
-https://pub.towardsai.net/build-your-own-recommendation-engine-netflix-demystified-demo-code-550401d4885e
+> https://pub.towardsai.net/build-your-own-recommendation-engine-netflix-demystified-demo-code-550401d4885e
 
-https://medium.com/refraction-tech-everything/how-netflix-works-the-hugely-simplified-complex-stuff-that-happens-every-time-you-hit-play-3a40c9be254b
+> https://medium.com/refraction-tech-everything/how-netflix-works-the-hugely-simplified-complex-stuff-that-happens-every-time-you-hit-play-3a40c9be254b
 
-https://www.codecademy.com/articles/how-netflix-recommendation-works-data-science
+> https://www.codecademy.com/articles/how-netflix-recommendation-works-data-science
 
-https://xamat.github.io/pubs/BigAndPersonal.pdf
+> https://xamat.github.io/pubs/BigAndPersonal.pdf
 
-https://rpubs.com/geeman/599770
+> https://rpubs.com/geeman/599770
 
-https://www.newamerica.org/oti/reports/why-am-i-seeing-this/case-study-netflix/
+> https://www.newamerica.org/oti/reports/why-am-i-seeing-this/case-study-netflix/
 
 #### IDEA ####
 视频推荐：评论里面包括对视频内容的点评，应该提升权重
@@ -724,7 +726,7 @@ https://www.newamerica.org/oti/reports/why-am-i-seeing-this/case-study-netflix/
 
 > https://medium.com%2F@medium.com/@cfpinela/recommender-systems-user-based-and-item-based-collaborative-filtering-5d5f375a127f
 
->  https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=698113&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
+> https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=698113&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
 
 > https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md
 
