@@ -1,61 +1,74 @@
-## System Design
-> https://github.com/alex-xu-system/bytebytego
+## ML System Design
+### Template
+Performance and Capacity Considerations
+- Training time: How much training data and capacity is needed to build our predictor?
+- Evaluation time: What are the SLA that we have to meet while serving the model and capacity needs?
 
-### System Design Problems ###
-Be in charge and tradeoffs, tradeoffs, tradeoffs...
+Online experimentation
+- A/B testing
+In an A/B experiment, a webpage or screen is modified to create a second version of it. The original version is known as the control, and the modified version is the variation. From here, we can formulate two hypothesis:
+- The null hypothesis
+- The alternative hypothesis
 
-***4 DESIGN A RATE LIMITER***
+1. `Setting up the problem`
+- This will help you narrow down the scope of the problem and ensure your system’s requirements closely match the interviewer’s.
+- Your conversation should also include questions about performance/speed and capacity considerations of the system.
+2. `Defining the metrics of the problem`
+- The next step is to carefully choose your system’s performance metrics for both online and offline testing. The metrics you choose will depend on the problem your system is trying to solve.
+3. `Architecture discussion`
+- The next step is to design your system’s architecture. You need to think about the components of the system and how the data will flow through those components. In this step, you need to be careful to design a model that can scale easily.
 
-***5 DESIGN CONSISTENT HASHING***
+Background:
+I am a Software Engineer with ~4 years of Machine Learning Engineering (MLE) and Data Scientist (DS) experience working at Fintech Company. Seeing the recent requirements in big tech companies for MLE roles and our confusion around it, I decided to create a framework for solving any ML System Design problem during the interview. Depending on your expertise and interviewers guide, you might want to emphasize on one section vs. the other (e.g. Data Engineering vs Modeling).
 
-***6 DESIGN A KEY-VALUE STORE***
+I would love your feedback, specially around the scaling. Also if any interviewer from FANG is looking into this, please provide your feedback.
 
-***7 DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS***
+***Overview***
+- Clarify Requirements
+- How the ML system fits into the overal product backend
+- Data Related Activites
+- Model Related Activities
+- Scaling
 
-***8 DESIGN A URL SHORTENER***
+***Details***
+1. Clarify Requirements
+    - What is the goal? Any secondary goal?
+        - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
+    - Ask questions about the scale of the system - how many users, how much content?
+2. How the ML system fits into the overall product backend
+    - Think/draw a very simple diagram with input/output line between system backend and ML system
+3. Data Related Activites
+    - Data Explore - whats the dataset looks like?
+    - Understand different features and their relationship with the target
+        - Is the data balanced? If not do you need oversampling/undersampling?
+        - Is there a missing value (not an issue for tree-based models)
+        - Is there an unexpected value for one/more data columns? How do you know if its a typo etc. and decide to ignore?
+    - Feature Importance - partial dependency plot, SHAP values, dataschool video (reference)
+    - (ML Pipeline: Data Ingestion) Think of Data ingestion services/storage
+    - (ML Pipeline: Data Preparation) Feature Engineering - encoding categorical features, embedding generation etc.
+    - (ML Pipeline - Data Segregation) Data split - train set, validation set, test set
+4. Model Related Activities
+    - (ML Pipeline - Model Train and Evaluation) Build a simple model (XGBoost or NN)
+        - How to select a model? Assuming its a Neural Network
+            1. NLP/Sequence Model
+                - start: LSTM with 2 hidden layers
+                - see if 3 layers help,
+                - improve: check if Attention based model can help
+            2. Image Models - (Don't care right now)
+            3. Other
+                - start: Fully connected NN with 2 hidden layers
+                - Improve: problem specific
+    - (ML Pipeline - Model Train and Evaluation) What are the different hyperparameters (HPO) in the model that you chose and why?
+    - (ML Pipeline - Model Train and Evaluation) Once the simple model is built, do a bias-variance tradeoff, it will give you an idea of overfitting vs underfitting and based on whether overfit or underfit, you need different approaches to make you model better.
+    - Draw the ML pipeline (reference #3)
+    - Model Debug (reference #1)
+    - Model Deployment (reference#3)
+    - (ML Pipeline: Performance Monitoring) Metrics
+    - AUC, F1, MSE, Accuracy, NDCG for ranking problems etc.
+    - When to use which metrics?
+5. Scaling
 
-***9 DESIGN A WEB CRAWLER***
-
-***10 DESIGN A NOTIFICATION SYSTEM***
-
-***11 DESIGN A NEWS FEED SYSTEM***
-
-***12 DESIGN A CHAT SYSTEM***
-
-***13 DESIGN A SEARCH AUTOCOMPLETE SYSTEM***
-
-***14 DESIGN YOUTUBE***
-
-***15 DESIGN GOOGLE DRIVE***
-
-***1 Proximity Service***
-
-***2 Nearby Friends***
-
-***3 Google Maps***
-
-***4 Distributed Message Queue***
-
-***5 Metrics Monitoring***
-
-***6 Ad Click Event Aggregation***
-
-***7 Hotel Reservation***
-
-***8 Distributed Email Service***
-
-***9 S3-like Object Storage***
-
-***10 Real-time Gaming Leaderboard***
-
-***11 Payment System***
-
-***12 Digital Wallet***
-
-***13 Stock Exchange***
-
-### Other Cases
-***Search Ranking***
+***1. Search Ranking***
 ![Diagram of deployment.](pic/search_rank.png)
 
 Query rewriting -> Spell checker -> Query expansion/query relaxation -> Query understanding -> Document selection -> Ranker -> Blender -> Training data generation
@@ -135,7 +148,7 @@ Result set after ranking, These results are inappropriate despite having good us
 - are inconsiderate towards a particular group
 
 
-***Feed Ranking System***
+***2. Feed Ranking System***
 ![Diagram of deployment.](pic/feed_system.png)
 
 In the past, a rather simplistic approach has been followed for this purpose. All the Tweets generated by their followees since user A’s last visit were displayed in reverse chronological order.
@@ -281,7 +294,14 @@ Now that you have selected the best model offline, you will use A/B testing to c
 - Step 4: To deploy or not to deploy
 You should go for complex solutions (based on new features, or data, etc.) only if you anticipate it to bring larger gains in the future.
 
-***Netflix Recommendation System***
+***3. Netflix Recommendation System***
+***Netflix Recommender System competition***
+基本这个问题可以抽象为你有很多user，很多item，一定的历史数据(user买item后的rating)，现在你要决定推荐哪些新的东西给每个user
+具体到你被问的问题，可能会有一定的变种，举几个例子
+1. Yelp饭馆的推荐，涉及到了geolocation information
+2. Facebook Newsfeed推荐，涉及到了不同user之前的networking
+3. Ins Story推荐，每条Story是独一无二的并且是有时间性的
+4. Spotify音乐推荐，怎么把音乐做个embedding
 
 `Feature Engineering`
 
@@ -365,7 +385,7 @@ Re-ranking is done for various reasons, such as bringing diversity to the recomm
 If you are also considering past watches for the media recommendations, then re-ranking can help you. It prevents the recommendation list from being overwhelmed by previous watches by moving some previously watched media down the list of recommendations.
 
 
-***Ad Prediction System***
+***4. Ad Prediction System***
 `Problem Statement`
 Predict the probability of engagement of an ad for a given user and context(query, device, etc.)
 
@@ -506,203 +526,7 @@ So, let’s combine the above two ideas together:
 - We use raw features and features generated in the previous step to train a logic regression model.
 
 
-## References
-
-#### IDEA ####
-视频推荐：评论里面包括对视频内容的点评，应该提升权重
-
-> https://www.1point3acres.com/bbs/thread-169343-1-1.html
-
-> https://www.1point3acres.com/bbs/thread-559285-1-1.html
-
-> https://www.1point3acres.com/bbs/thread-683982-1-1.html
-
-> https://eng.uber.com/observability-at-scale/
-
-> https://medium.com%2F@medium.com/@cfpinela/recommender-systems-user-based-and-item-based-collaborative-filtering-5d5f375a127f
-
->  https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=698113&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
-
-> https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md
-
-> https://1o24bbs.com/t/topic/4487
-
-
-### ML System Design
-> https://www.educative.io/blog/cracking-machine-learning-interview-system-design
-
-> https://github.com/kuhung/machine-learning-systems-design
-
-> https://github.com/chiphuyen/machine-learning-systems-design
-
-> https://leetcode.com/discuss/interview-question/system-design/566057/machine-learning-system-design-a-framework-for-the-interview-day
-
-> https://www.linkedin.com/pulse/tips-machine-learning-interviews-karthik-mohan/
-
-> https://www.springboard.com/blog/machine-learning-interview-questions/
-
-> https://www.1point3acres.com/bbs/thread-490321-1-1.html
-
-> https://blog.nowcoder.net/n/11b85636258b49b09eb116084d0d67f1
-
-> https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=462348&extra=page%3D1
-
-> https://kuhungio.me/2019/machine_learning_system_design/
-
-> https://www.jiqizhixin.com/articles/2021-01-26-3
-
-> https://www.jiqizhixin.com/articles/2019-11-26-5
-
-> https://pxiaoer.blog/2021/01/26/cs329s/
-
-1. Build a recommendation system that shows relevant products to users
-2. Build a visual understanding system for a self-driving car
-3. Build a search-ranking system
-
-Performance and Capacity Considerations
-- Training time: How much training data and capacity is needed to build our predictor?
-- Evaluation time: What are the SLA that we have to meet while serving the model and capacity needs?
-
-Online experimentation
-- A/B testing
-In an A/B experiment, a webpage or screen is modified to create a second version of it. The original version is known as the control, and the modified version is the variation. From here, we can formulate two hypothesis:
-- The null hypothesis
-- The alternative hypothesis
-
-1. `Setting up the problem`
-- This will help you narrow down the scope of the problem and ensure your system’s requirements closely match the interviewer’s.
-- Your conversation should also include questions about performance/speed and capacity considerations of the system.
-2. `Defining the metrics of the problem`
-- The next step is to carefully choose your system’s performance metrics for both online and offline testing. The metrics you choose will depend on the problem your system is trying to solve.
-3. `Architecture discussion`
-- The next step is to design your system’s architecture. You need to think about the components of the system and how the data will flow through those components. In this step, you need to be careful to design a model that can scale easily.
-
-Background:
-I am a Software Engineer with ~4 years of Machine Learning Engineering (MLE) and Data Scientist (DS) experience working at Fintech Company. Seeing the recent requirements in big tech companies for MLE roles and our confusion around it, I decided to create a framework for solving any ML System Design problem during the interview. Depending on your expertise and interviewers guide, you might want to emphasize on one section vs. the other (e.g. Data Engineering vs Modeling).
-
-I would love your feedback, specially around the scaling. Also if any interviewer from FANG is looking into this, please provide your feedback.
-
-***Overview***
-- Clarify Requirements
-- How the ML system fits into the overal product backend
-- Data Related Activites
-- Model Related Activities
-- Scaling
-
-***Details***
-1. Clarify Requirements
-    - What is the goal? Any secondary goal?
-        - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
-    - Ask questions about the scale of the system - how many users, how much content?
-2. How the ML system fits into the overall product backend
-    - Think/draw a very simple diagram with input/output line between system backend and ML system
-3. Data Related Activites
-    - Data Explore - whats the dataset looks like?
-    - Understand different features and their relationship with the target
-        - Is the data balanced? If not do you need oversampling/undersampling?
-        - Is there a missing value (not an issue for tree-based models)
-        - Is there an unexpected value for one/more data columns? How do you know if its a typo etc. and decide to ignore?
-    - Feature Importance - partial dependency plot, SHAP values, dataschool video (reference)
-    - (ML Pipeline: Data Ingestion) Think of Data ingestion services/storage
-    - (ML Pipeline: Data Preparation) Feature Engineering - encoding categorical features, embedding generation etc.
-    - (ML Pipeline - Data Segregation) Data split - train set, validation set, test set
-4. Model Related Activities
-    - (ML Pipeline - Model Train and Evaluation) Build a simple model (XGBoost or NN)
-        - How to select a model? Assuming its a Neural Network
-            1. NLP/Sequence Model
-                - start: LSTM with 2 hidden layers
-                - see if 3 layers help,
-                - improve: check if Attention based model can help
-            2. Image Models - (Don't care right now)
-            3. Other
-                - start: Fully connected NN with 2 hidden layers
-                - Improve: problem specific
-    - (ML Pipeline - Model Train and Evaluation) What are the different hyperparameters (HPO) in the model that you chose and why?
-    - (ML Pipeline - Model Train and Evaluation) Once the simple model is built, do a bias-variance tradeoff, it will give you an idea of overfitting vs underfitting and based on whether overfit or underfit, you need different approaches to make you model better.
-    - Draw the ML pipeline (reference #3)
-    - Model Debug (reference #1)
-    - Model Deployment (reference#3)
-    - (ML Pipeline: Performance Monitoring) Metrics
-    - AUC, F1, MSE, Accuracy, NDCG for ranking problems etc.
-    - When to use which metrics?
-5. Scaling
-
-System Design面试的例子
-
-我在自己面试的过程中 曾经被问到过许多System Design的题目，在这里我挑出几个典型的供大家参考:
-
-公司A: Design URL Shorten Service
-公司B: Design SQS(i.e. AWS's queue service)
-公司C: Design Uber(frontend app views + backend service)
-下面我来详细解释一下每一题的考点:
-
-Design URL Shortening Service
-
-这一题是非常经典的System Design题目，可以考的很浅，也可以考的很深。由于特别适合初学者入门，建议每个想学习System Design的同学都要把这道题的可能的条件和解法过一遍。比如说:
-
-If your website is the top URL shortening service in the world(i.e. handling 70% of world URL shortening traffic) How do you handle it?
-How do you handle URL customization?
-What if you have very hot URLs? How do you handle it?
-How do you track the top N popular URLs?
-Design SQS
-
-这一题是非常geeky的一道题，完全深度考察distributed system的各种知识。难度比URL Shortening Service高，原因在于后者已经成为常规考题，变种变来变去就那么几个，所以你死记硬背也能过关。而前者是非常见题 考查点对于没有系统学习过System Design的同学来讲难以琢磨。
-
-同时这道题也是道好题，因为如果你有realtime backend system经验，多半可能会用到queue service。那考察的就是你有没有抽出自己的spare time去理解queue service的具体原理呢?
-
-Design Uber
-
-这是一道极其抽象的题，难易全凭面试官把握。
-
-我被问到的具体情形是，根据手机app上的view transition design出整个后台service群以及互相交互的情况。我当时在白板上一口气写了10+个service的交互图，最后临走前还专门拍照留念，现在想来还是很自豪...
-
-100个人会design出100个Uber，没有谁对谁错，只要能自圆其说就可以。
-
-System Design积木的例子
-
-System design的另一大块是我前面所谈到的“积木”，也就是别人已经搭好的framework或product。
-
-业界的Framework非常之多，你并不需要每个都掌握。只要可以做到知道某方面的几个option，并在需要用到的时候快速ramp up就可以了。下面做一个小分类供大家参考:
-
-In-memory Cache: Guava cache
-Standalone Cache: Memcached, Redis
-Database: DynamoDB, Cassandra
-Queue: ActiveMQ, RabbitMQ, SQS, Kafka
-Data Processing: Hadoop, Spark, EMR
-Stream Processing: Samza, Storm
-
-***Netflix Recommender System competition***
-基本这个问题可以抽象为你有很多user，很多item，一定的历史数据(user买item后的rating)，现在你要决定推荐哪些新的东西给每个user
-具体到你被问的问题，可能会有一定的变种，举几个例子
-1. Yelp饭馆的推荐，涉及到了geolocation information
-2. Facebook Newsfeed推荐，涉及到了不同user之前的networking
-3. Ins Story推荐，每条Story是独一无二的并且是有时间性的
-4. Spotify音乐推荐，怎么把音乐做个embedding
-
-***Reference:***
-Model Debug http://josh-tobin.com/assets/pdf/troubleshooting-deep-neural-networks-01-19.pdf
-
-Data School Video on Feature Selection https://www.youtube.com/watch?v=YaKMeAlHgqQ
-
-ML Pipeline https://towardsdatascience.com/architecting-a-machine-learning-pipeline-a847f094d1c7
-
-***Questions in Interview***
-```
-1. What size of data are you dealing with?
-
-2. Do you need to be able to serve predictions in real time? 
-
-3. How often do you expect to update your models?
-
-4. How large and experienced is your team — including data scientists, engineers and DevOps?
-
-```
-> https://medium.com/acing-ai/machine-learning-system-design-c3a35c7df07d
-
-> https://medium.com/acing-ai/machine-learning-system-design-models-as-a-service-32666eba0e6
-
-> https://www.1point3acres.com/bbs/thread-490321-1-1.html
-
+## Interview Questions
 ### FB
 We take the two coding interviews first. And then two team match interviews.
 
@@ -829,6 +653,41 @@ have two pointers, first on A and second on end of B. move the pointer l and r (
 
 You have 52 playing cards (26 red, 26 black). You draw cards one by one. A red card pays you a dollar. A black one fines you a dollar. You can stop any time you want. Cards are not returned to the deck after being drawn. What is the expected payoff following this optimal rule? for this, u need to find what is the optimal stopping rule in terms of maximizing expected payoff.
 
+## References
+### ML System Design
+> https://www.educative.io/blog/cracking-machine-learning-interview-system-design
+
+> https://github.com/kuhung/machine-learning-systems-design
+
+> https://github.com/chiphuyen/machine-learning-systems-design
+
+> https://leetcode.com/discuss/interview-question/system-design/566057/machine-learning-system-design-a-framework-for-the-interview-day
+
+> https://www.linkedin.com/pulse/tips-machine-learning-interviews-karthik-mohan/
+
+> https://www.springboard.com/blog/machine-learning-interview-questions/
+
+> https://www.1point3acres.com/bbs/thread-490321-1-1.html
+
+> https://blog.nowcoder.net/n/11b85636258b49b09eb116084d0d67f1
+
+> https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=462348&extra=page%3D1
+
+> https://kuhungio.me/2019/machine_learning_system_design/
+
+> https://www.jiqizhixin.com/articles/2021-01-26-3
+
+> https://www.jiqizhixin.com/articles/2019-11-26-5
+
+> https://pxiaoer.blog/2021/01/26/cs329s/
+
+***Reference:***
+Model Debug http://josh-tobin.com/assets/pdf/troubleshooting-deep-neural-networks-01-19.pdf
+
+Data School Video on Feature Selection https://www.youtube.com/watch?v=YaKMeAlHgqQ
+
+ML Pipeline https://towardsdatascience.com/architecting-a-machine-learning-pipeline-a847f094d1c7
+
 ### Recommender System
 https://towardsdatascience.com/deep-dive-into-netflixs-recommender-system-341806ae3b48
 
@@ -851,3 +710,22 @@ https://xamat.github.io/pubs/BigAndPersonal.pdf
 https://rpubs.com/geeman/599770
 
 https://www.newamerica.org/oti/reports/why-am-i-seeing-this/case-study-netflix/
+
+#### IDEA ####
+视频推荐：评论里面包括对视频内容的点评，应该提升权重
+
+> https://www.1point3acres.com/bbs/thread-169343-1-1.html
+
+> https://www.1point3acres.com/bbs/thread-559285-1-1.html
+
+> https://www.1point3acres.com/bbs/thread-683982-1-1.html
+
+> https://eng.uber.com/observability-at-scale/
+
+> https://medium.com%2F@medium.com/@cfpinela/recommender-systems-user-based-and-item-based-collaborative-filtering-5d5f375a127f
+
+>  https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=698113&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26sortid%3D311
+
+> https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md
+
+> https://1o24bbs.com/t/topic/4487

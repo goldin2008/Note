@@ -1,3 +1,60 @@
+## System Design
+> https://github.com/alex-xu-system/bytebytego
+
+### System Design Problems ###
+Be in charge and tradeoffs, tradeoffs, tradeoffs...
+
+***4 DESIGN A RATE LIMITER***
+
+***5 DESIGN CONSISTENT HASHING***
+
+***6 DESIGN A KEY-VALUE STORE***
+
+***7 DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS***
+
+***8 DESIGN A URL SHORTENER***
+
+***9 DESIGN A WEB CRAWLER***
+
+***10 DESIGN A NOTIFICATION SYSTEM***
+
+***11 DESIGN A NEWS FEED SYSTEM***
+
+***12 DESIGN A CHAT SYSTEM***
+
+***13 DESIGN A SEARCH AUTOCOMPLETE SYSTEM***
+
+***14 DESIGN YOUTUBE***
+
+***15 DESIGN GOOGLE DRIVE***
+
+***1 Proximity Service***
+
+***2 Nearby Friends***
+
+***3 Google Maps***
+
+***4 Distributed Message Queue***
+
+***5 Metrics Monitoring***
+
+***6 Ad Click Event Aggregation***
+
+***7 Hotel Reservation***
+
+***8 Distributed Email Service***
+
+***9 S3-like Object Storage***
+
+***10 Real-time Gaming Leaderboard***
+
+***11 Payment System***
+
+***12 Digital Wallet***
+
+***13 Stock Exchange***
+
+
 ### Concept
 `Distributed systems design round`
 
@@ -144,3 +201,72 @@ How can a distributed system ensure data integrity, so that the client receives 
 Calculate a checksum and store it with data.
 To calculate a checksum, a cryptographic hash function like MD5, SHA-1, SHA-256, or SHA-512 is used. The hash function takes the input data and produces a string (containing letters and numbers) of fixed length; this string is called the checksum.
 When a system is storing some data, it computes a checksum of the data and stores the checksum with the data. When a client retrieves data, it verifies that the data it received from the server matches the checksum stored. If not, then the client can opt to retrieve that data from another replica.
+
+
+### References
+
+1. Build a recommendation system that shows relevant products to users
+2. Build a visual understanding system for a self-driving car
+3. Build a search-ranking system
+
+System Design面试的例子
+
+我在自己面试的过程中 曾经被问到过许多System Design的题目，在这里我挑出几个典型的供大家参考:
+
+公司A: Design URL Shorten Service
+公司B: Design SQS(i.e. AWS's queue service)
+公司C: Design Uber(frontend app views + backend service)
+下面我来详细解释一下每一题的考点:
+
+Design URL Shortening Service
+
+这一题是非常经典的System Design题目，可以考的很浅，也可以考的很深。由于特别适合初学者入门，建议每个想学习System Design的同学都要把这道题的可能的条件和解法过一遍。比如说:
+
+If your website is the top URL shortening service in the world(i.e. handling 70% of world URL shortening traffic) How do you handle it?
+How do you handle URL customization?
+What if you have very hot URLs? How do you handle it?
+How do you track the top N popular URLs?
+Design SQS
+
+这一题是非常geeky的一道题，完全深度考察distributed system的各种知识。难度比URL Shortening Service高，原因在于后者已经成为常规考题，变种变来变去就那么几个，所以你死记硬背也能过关。而前者是非常见题 考查点对于没有系统学习过System Design的同学来讲难以琢磨。
+
+同时这道题也是道好题，因为如果你有realtime backend system经验，多半可能会用到queue service。那考察的就是你有没有抽出自己的spare time去理解queue service的具体原理呢?
+
+Design Uber
+
+这是一道极其抽象的题，难易全凭面试官把握。
+
+我被问到的具体情形是，根据手机app上的view transition design出整个后台service群以及互相交互的情况。我当时在白板上一口气写了10+个service的交互图，最后临走前还专门拍照留念，现在想来还是很自豪...
+
+100个人会design出100个Uber，没有谁对谁错，只要能自圆其说就可以。
+
+System Design积木的例子
+
+System design的另一大块是我前面所谈到的“积木”，也就是别人已经搭好的framework或product。
+
+业界的Framework非常之多，你并不需要每个都掌握。只要可以做到知道某方面的几个option，并在需要用到的时候快速ramp up就可以了。下面做一个小分类供大家参考:
+
+In-memory Cache: Guava cache
+Standalone Cache: Memcached, Redis
+Database: DynamoDB, Cassandra
+Queue: ActiveMQ, RabbitMQ, SQS, Kafka
+Data Processing: Hadoop, Spark, EMR
+Stream Processing: Samza, Storm
+
+***Questions in Interview***
+```
+1. What size of data are you dealing with?
+
+2. Do you need to be able to serve predictions in real time? 
+
+3. How often do you expect to update your models?
+
+4. How large and experienced is your team — including data scientists, engineers and DevOps?
+
+```
+> https://medium.com/acing-ai/machine-learning-system-design-c3a35c7df07d
+
+> https://medium.com/acing-ai/machine-learning-system-design-models-as-a-service-32666eba0e6
+
+> https://www.1point3acres.com/bbs/thread-490321-1-1.html
+
