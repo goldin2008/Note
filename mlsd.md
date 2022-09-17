@@ -3,7 +3,12 @@ Background:
 I am a Software Engineer with ~5 years of Machine Learning Engineering (MLE) and Data Scientist (DS) experience working at Fintech Company. Seeing the recent requirements in big tech companies for MLE roles and our confusion around it, I decided to create a framework for solving any ML System Design problem during the interview. Depending on your expertise and interviewers guide, you might want to emphasize on one section vs. the other (e.g. Data Engineering vs Modeling).
 I would love your feedback, specially around the scaling. Also if any interviewer from FANG is looking into this, please provide your feedback.
 
-### Template
+Machine learning system design discussion
+This discussion focuses on the interviewee’s ability to solve an end-to-end machine learning problem and consists of open-ended questions. This is an integral part of the interview, and not much helping material is available for it. Hence, this course helps in developing the thought pattern required to approach ML system design questions.
+
+![Diagram of deployment.](pic/mlq.png)
+
+### Template/Framework
 machine learning design的问题一般都是问设计一个推荐系统，广告排序，还有一般的监督学习的系统。所以准备起来要了解各类的推荐系统的优缺点，以及最新的embeding的方法, 可以看一下这个博客
 > https://medium.com/the-graph/applying-deep-learning-to-related-pins-a6fee3c92f5e。 
 现在为止，面的两家pinterest和facebook都是围绕着推荐系统展开的，中间会问到各种小问题，比如feature提取，model不够好怎么办。
@@ -18,13 +23,26 @@ machine learning design的问题一般都是问设计一个推荐系统，广告
 6. 画出框图，然后进行优化。
 7. Scaling
 
+![Diagram of deployment.](pic/mlsd.png)
+
+***overview***
+Key steps in ML system setup
+1. `Setting up the problem`
+2. `Understanding scale and latency requirements`
+3. `Defining metrics`
+4. `Architecture discussion`
+5. `Offline model building and evaluation`
+6. `Online model execution and evaluation`
+
+
+
 ***Details***
 1. Clarify Requirements/`Setting up the problem`
     - What is the goal? Any secondary goal?
       - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
     - Ask questions about the scale of the system - how many users, how much content?
     - This will help you narrow down the scope of the problem and ensure your system’s requirements closely match the interviewer’s.
-    - Prediction/Classification problem? Supervise Learning/Unsupervise Learning, Recommendation System
+    - Prediction/Classification problem? Supervised Learning/Unsupervised Learning, Recommendation System
     - Your conversation should also include questions about performance/speed and capacity considerations of the system.
       Performance and Capacity Considerations
       - Training time: How much training data and capacity is needed to build our predictor?
@@ -529,6 +547,10 @@ neural network-based models are also really good at capturing non-linear, comple
 So, let’s combine the above two ideas together:
 - We train additive trees and neural network to predict non-linear complex relationships among our features. We then use these models to generate features.
 - We use raw features and features generated in the previous step to train a logic regression model.
+
+***5. Self-Driving Car: Image Segmentation***
+
+***6. Entity Linking System***
 
 
 ## MLE Interview Questions

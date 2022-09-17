@@ -1,330 +1,6 @@
 ## DS Interview
-### Amazon DS
-去年面热带雨林的ds position汇总了一个ml question list，此处分享给大家，祝大家逢面必过。
-1. Explain Xgboost, how it is different from GBM?2. What's the difference from random forest to GBM?
-3. LASSO, how to selection variable, loss function.
-4. What's the difference of LASSO vs Ridge and what situations are they preferred?
-5. How do you interpret ML models and their features?
-6. Assumptions of linear regression
-7. How to deal with categorical features
-8. formular of logistic regression and the loss function
-10. Explain how Kmeans is working
-11. If the linear regression dataset is duplicated, how would all the parameter change in your model?
-12. In linear regression, how will multicollinearit‍‌‌‍‌‍‌‍‍‌y impact the cofficients and variance?
-13. If the correlated features should be excluded in random forest model?
-14. what is bias-variance trade-off
-15. how to deal with overfitting
-16. how to deal with imbalanced dataset
-17. How to deal with missing data
-
-- 考了Bert概念，
-- recommendation SVD 函数，每一列 每一行有意义么？矩阵相乘
-- 还有stratified sampling 算法处理imbalanced data
-- a/b 问的是：, a/b testing 情景问题:
-他们做了两个 recommedation system , 怎么比较？如果有些用户不会划到下面，所以我们没有足够sample 怎么解决
-- 解释了什么是 words encoding
-- 解释了bert 和albert 的区别（我不知道ALbert 拼的对不对。。）好像这么读
--如果视频中的text 没办法很好extract 做training data 怎么办
-- 想要看一个新的feature 的影响，但没办法加在我们系统上，怎么评价影响？
-
-解释confidence interval
-解释 linear regression 有哪些assumption
-讲讲 random forest/gbdt
-讲讲 kmeans
-讲讲dl里的 normalization
-sql很常规，题不记得了，就是写个group by 那种
-python 用pandas高一些groupby， filter, count_values之类的也很基本
-
-- examples about regression and classification problems
-- Regression
-    - cost function
-    - multicollinearity
-    - performance metrics
-- Logistic regression
-    - How to estimate the coefficient
-- Statistics
-    - What is significance level alpha, p value, beta
-- AB testing
-    - How to determine sample size
-
-1. Bias-Variance trade off
-2. How to optimize and find better solution. （他想让你说Gradient Descent）
-
-Amazon Onsite一共五轮前后加上休息时间一共7个小时, 之所以是没完全挂，是面试结束之后不打算move forward to DS role but recommend to comtinue as BIE...
-1. Data Science Breath + LP: 概率统计快问快答+ Small Case Study + 2 LP questions
-2. Information talk: 不算在面试里
-3. Application + Problem Solving + LP: 之前说是会有case但是大概只聊了简历以及大概4个LP questions
-4. 一开始说是纯LP，实际面试大概3-4个LP question + case study
-6. Coding + LP: Leetcode easy/medium难度的SQL + 2 LP questions.
-5. Data Science Depth + LP: 简历project + case study + 2个LP
-
-全程一小时，由ML和Coding两部分组成 最后有五分钟提问时间。根据职位要求，ML部分面试侧重general ML，decision tree的理论和实践, including the following:
-* decision tree training -- how decision stumps are decided，
-* how to prevent, identify and resolve overfitting, including both principles and practice of data augumentation, feature selection, regularization and cross validation.
-* how to resolve data imbalance, including resampling and weighting, as well as how to adapt the related metrics (precision/recall/F1/etc).
-* how random forest and gradient boosting work, including their implications in model bias-variance tradeoff,
-* how to resolve multicolinearity
-* how to use/transform categorical features.
-* some scratch on CNN and SGD
-Coding 部分考了如何find the median of a numeric stream. including
-* how the candidate communicate and clarify the requirements
-* how the problem was solved.
-* how to code (Python) and documentation were written.
-(我当时很紧张，忘了heapq，就跟面试官说我放一个placeholder用来implement a heap，但最后也没有时间implement，不过不影响算法的正确性）
-准备经验
-----------
-* job description 一般比较general，建议面试者了解组里正真常用的techniques，不是所有ML都是DL。上手解决问题一般都要从logistic/linear regression 开始，其次xgboost，最后才想着CNN/LSTM/etc。
-* 细读 ISLR / python 书，上一门本科高年级的Machine learning课。
-* 建议多问问题澄清题目要求，同时练习边写边说，哪怕自觉很naive也要把想法说出来。
-
-一小时店面，三个部分。
-先是ML breath。 都是常见题，阐述logistic regression, gradient decent, trees, xgboost and gradient boost, boost and bagging, l1 l2 regularization.
-第二部分是project walkthrough.详细说个自己简历上的project。 我选的是和我科研文章相关的一个， 需要一定的domian knowledge 才能理解，所以面试官问了很多背景方面的问题，真正ML 的问题比较少。
-最后是coding.给两个list, 其中一个是target，另一个是数值，写class要可以给一个target，能得到对应的平均值。但时间有限，他说把大概过程写出来就行。楼主有点紧张，但最后还是完成了大概思路。面试官说get到我的idea了，不需要继续写了。
-
-面热带雨林昂赛时有两轮system design，觉得很有意思，分享给大家。
-1） 每个产品都会有很多label，比如 教育，健康etc。怎么predict一个产品的label。可以用所有网站上我们能看到的所有信息。
-2） fraud detection：怎么预测fraud，需要哪些data？当我们已知的label不是100%确定时对的时候怎么办？
-
-过简历，讲讲项目，说一个modeling的项目全程。楼主把这些准备地滚瓜烂熟了，全程也有各种follow-up，关于模型的，比如random forest v.s. boosting区别，优缺点。怎么做feature selection，楼主各种方法都说了，descriptive的， model-based的。还有
-performance metrics有哪些：Area Under ROC Curve, F1 score, 把sensitivity, specicific和precision顺便也解释了。
-后面有专门的问题：linear regression vs logistic regression, overfitting vs underfitting, neural network activation functions。
-
-大家要review一下一些统计和machine learning的基本概念:
-1. Tell me about yourself?
-2. Tell me about your most recent project and what you learned from it?
-3. Some follow-up questions about my project - mainly asking what’s the usefulness/meaning of the output from above project? What kind of metrics do you use to measure the outcome? How do you do downsampling; How do you do up-sampling
-4. How do you compare the means of two samples
-5. What’s the assumptions in linear regression?
-6. What’s p value, what’s the meaning of p value, how do you use p value to compare two sample means
-7. What’s central limit theorem and what’s the meaning of it?
-8. What’s the bias variance trade off
-9. What’s under-fitting?
-10. What’s the differences between bagged tree and boosted tree?
-Living code problem: read in a Json structured data 50,000 rows and find out the majority of the ‘label’ (categorical 3 classes) - 15 mins 这个题居然卡在了一开始，因为对Json file不熟悉工作中很少用，但是Amazon的data scientist很常用。 另外没有考SQL（有点意外）。
-
-亚麻内部 DS如何快速转AS呢？
-否则的话需要找到一个好的老板可以帮你要到AS scope的项目，同时建立起能够support你换title的人脉。比如经常跟Sr AS review你的项目。有AS/SDE review你的code。然后就是顺其自然的事了。
-
-
-### Amazon AS
-微软AS面试更取决于组。。每个组可以自己决定面试的侧重点。。我面了一个组是4轮coding.微软AS面试一半engineering一半ML。但ML不会这么细致，engineering bar更高一点。微软升职不错啊，但工资的确不行.
-亚麻AS虽然也是组面 但是一轮AS coding三轮ML （breath depth applicatoin）不会变。。
-年初要relocate面了其他几家的senior MLE Google就是coding + ML design
-Meta差不多 可以选system design + ML design或者两轮ML design
-Linkedin两轮coding其中一轮data coding 就是Leetcode上比较数学的coding基本都是面经题 一轮data science （ML八股文和统计基础）一轮ML design
-Tiktok基本上每轮都是ML基础 （类似Amazon的breadth + 一部分depth）+ 一道题coding。。当然Tiktok可能也比较看组。。
-
-介绍
-关于ml depth方面，在传统机器学习中，除了手推lr还有其他的知识点吗，例如树和svm，adaboost, xgboost会考到什么程度
-熟悉到你能够写出伪代码的程度,em算法
-我个人觉得search, Aws AI, personalization, amazon video的有些组, Alexa的有些组, product graph等等感觉都还不错
-
-presentation:
-建议讲工业界的项目。不一定说一定需要很多science的innovation。更多的是自己遇到的challenges，而这种challenges 可能有很多方面，像没有high quality labeling data, 很多legacy system，太多上下游team需要communication，或者latency/scalability/robustness要求很高，或者不容易formulate business problems等等等。更多的是你需要展示你能很好的解决这些challenges。你可能需要尽量隐藏key business numbers (比如只展示relative的提升)，避开一些还没有open to general public的产品等等
-
-AS的核心是 你首先是一个scientist，能合理的把biz problem转化成model problem，还能比较sciency地把你的理论基础，考虑了哪些candidate model，他们的优劣以及你选择的依据写清楚 （到这里为止也是DS/RS的要求），最后你要比DS/RS更能落地product，能构建一套pipeline啥的部署到aws上。注意，这里完全没人要求你的model一定要用ML或者DL，或者一定要用aws。用不用要具体问题具体分析。
-
-senior AS的scope/工作内容
-一般是会负责一到两套核心算法模块在生产环境的落地，一般是要对算法在产品上的体验负责的。核心任务一般是derisk and deliver science product。. 1point3acres.com
-项目早期会比较hands on，一般是做一些demo或者feasibility study性质的工作，目的是为了团队争取资源或者推进新feature的priority。项目后期会比较focus在mentor组里更junior的deliverable上，通常会influence从2-10个人的产出和规划。
-当然cross team的science合作通常也都是senior AS牵头，这类工作通常更senior SDE类似。
-
-AS@Amazon整体来说的定义是要求你能够理解business问题，然后把business问题转化成一个ML的问题，然后提出并且implement ML solutions，从而improve business metrics的目的。它整体的定义有点类似于别的公司的half MLE + half Research Scientist的定义：
-由于amazon本身没有centralized ML Research team，所以amazon基本上没有纯ML research (research for resolving general ML problems)，而只会在每个product组有Applied Research (research for resolving ML problems under a specific business domain/application)。而amazon并没有类似于google research scientist的role，所以Applied ML Research是applied scientist重要工作内容之一。BTW， amazon本身有research scientist的title，但本质上是弱化版本的AS或者非ML domain的researcher。
-同时amazon没有MLE的job family (有的engineer会把business title改成这个，但实际上并不存在)。所以基本上传统意义上的MLE的工作会一部分会分到别的job family：比如ML infra和实际的ux/customer-facing product可能有engineering team做，data pipeline可能有BI engineer/Data Scientist/Data Engineer来负责。而AS会主要负责模型数据的preprocessing, post-processing, ML model training/inference。然后AS可以创建一个模型inference的endpoint从而跟engineering team来interact。
-. Waral dи,
-整体来说AS在amazon是个非常prestigious的job family，常常会是一个大的ML project的主要lead，从而跟其他job family的人共同推进ML产品的开发维护。所以好的优势是：
-项目的scope常常比较大，从而有着比SDE更快的promotion速度。一般一个L4的AS能够在1-2年到L5 (PhD hire也有可能进来就是L5)，而一个L5 AS能够在2-4年到Sr. level。
-据我所知，AS的total compensation在同样level的ic job families中也是最高的。L4有二十多万刀。而Sr. 40w+ 到 60w+。
-
-面试
-常常一个职位的面试跟这个职位所需要的人的skills是高度契合的。AS的面试主要分成三块：
-一轮coding。基本上是leetcode easy - medium的题目。虽然内部要求AS达到entry level SDE的coding bar，而我的体验是很多都没有。很多AS面试的coding往往非常简单，会比很多公司的MLE的coding面试简单很多。这也使得很多非CS background的人有着更低的coding门槛。
-三轮ML面试：ML breadth (类似于别的公司的ML knowledge) + ML depth + ML application (类似于别的公司的ML design，但相对更注重ML problem formulation rather than MLE八股文）。AS对ML的要求往往会比别的公司的MLE的ML要求更高更广。因为它需要你不但是个engineer也是个researcher。希望你有很好的ML基础同时有实际解决问题的能力。sample question比如说：
-ML breadth: 有哪些做feature selection的方法。
-ML depth: in details, transformer模型比RNN family的优势在什么地方; BERT集体的模型结构是什么；为什么需要multi-head attention。能不能写一下logistic regression的loss并且计算gradient。
-ML application: 如果说现在amazon search bar只支持general retail products，然后我现在也想同时支持amazon fresh的搜索，你会怎么设计。(面试题一般非常取决于面试组的problem domain)
-3. 一轮behavior questions (BQ)。常常是bar raiser面这一轮。熟悉leadership principles会非常重要。同时在其它四轮中也会有一到两个BQ. ..
-research presentation。我不确定是不是每个组都需要。但如果有不错的research background是属于一轮bonus轮。
-所以在准备面试过程中，你需要非常in detailed的准备常用的ML算法。同时针对面试组的domain problem有一个基本解决问题的方法。
-
-
-roc curve是什么，以及项目中F-score，precision，recall怎么计算
-BERT model 包含什么，mask的作用，input是什么，为什么用attention
-word2vec input是什么怎么训练
-bq大概是：Time when you went above and beyond your job responsibilities.和Tell me about a time when you went way beyond the scope of the project and delivered
-
-报一个上周的店面recruiters给我找的一个AWS Applied Scientist的职位虽然我觉得背景不符，但是还是给了店面
-店面有两个面试官
-1. 聊了一下我research 做的东西（我research做的和ML无关）
-2. 简单的概率题
-3. 写逻辑回归，损失函数，以及gradient descent的递推公式 （这个没写出了，我说公式记不得了，但是知道怎么算偏导数）
-4. 解释随机森林，决策树
-5. 解释L1, L2正则化，两者除了公式不同外结果上会有什么区别
-6. 解释简历上项目做的具体内容
-7. Imbalanced data set 怎么处理
-8. 介绍几种unsupervised learning 的方法
-9. BQ: tight deadline, 追问: 再做一次，有什么地方可以做得更好
-大概就是这些，还有些ML相关的小问题，记不起来了，总体感觉基础知识很重要，具体的公式和细节都要知道
-
-ml：针对一个实际的例子来做设计，比如给一个场景，来询问是什么类型的问题？比如是reg还是classification？用什么样的模型去预测结果如何预测结果？中间穿插着对每一个回答的细致追问。
-coding：这道题没做好。欢迎大家讨论下思路。给了一个数组有正有负，代表客户对不同产品的分数，然后选出最大满意度的组合。满意度的定义是，选出的不同产品组合的分数乘以在组合里的位置。比如 分数是[-2,0,0,3,2], 选的组合如果是[0,3,2],满意度就是0*1+3*2+2*3=12。问题是要找出给定产品分数的数组，满意度最大的组合。
-
-总共5轮， 每轮至少30分钟军规， 大概2-3个题目。有的会直接告诉你是哪条军规。science depth就自行在简历里选一个项目，然后问模型的具体方法，为什么选这个模型，会问到公式，所以要对模型熟悉。scicen breath就是很random问模型，基本都是ML 常见问题。 science application就是给你一个想解决的问题，问你怎么用数据进行分析。我这次没有强调建模，更是对数据的处理。coding问了三道题。首先interviewer感觉很不supportive， 是个senior。 就把题扔给你，自己看，没有解释，基本上就是不说话。没有conversation，就只有我自己自言自述。说是用什么写都行，但第一题明显是个sql题。我没想到AS 会考sql,所以没准备。好在题本身不难，结构应该没错，但某个build in名字可能不是很准备，毕竟我很久没用sql了。第二天是个迭代题，没做出来。他给了一点提示，但也听不太清。还是我自己algorithm这里基本功不好吧。第三题是一个GMM, 不难，但要知道具体package的名字，我觉得其实这种题只要把function名字格式记住就行，实际操作中网上一查就知道怎么用了，放在interview中，我觉得考察不出什么来。总之coding题很怪，要不就是unexpected,要不就是感觉比较难。BR 就是纯军规，没什么特别的。
-
-通过内推拿到了面试。前面两轮店面都是秒过。店面内容差不多，都是ML八股文+一道算法题。为了VO准备了好多BQ，但是感觉最终还是挂在了这上面。
-VO六轮：Presentation, Science Breadth, Science Application, Science Depth, BQ, Algorithm. 但实际面完了觉得这些topic其实根本没用，除了算法和BQ基本都没按剧本走。然后这两轮还在VO前一天对换了，结果也没人通知我。比如Science Depth照理说是deep dive项目经历，结果只是问了一堆面试官觉得和这个职位相关的知识点，我觉得更像是Science Breadth。Science Application倒是反复地问我之前的research topic。我不知道这是不是因为刚开始就没打算要我所以就胡乱问，还是亚麻的VO就是那么disorganized。最终我追问具体的反馈也搞不清楚在技术问题上我的回答到底有什么问题，因为根本就没有按照预设的程序走。
-Algorithm的问法和利口不大一样。是给了一个非常模糊的问题，然后一步一步和面试官沟通来clarify，最后确定API和实现一部分功能。这其实更像是Science Application。
-我想最终还是因为LP的问题所以挂了。地理强调面亚麻时BQ的重要性，面完以后觉得说得太对啦！每轮一小时的面试至少有30分钟在讲LP。我觉得把VO说成是五轮BQ也不为过。我现在在一个中等银行做DS，感觉整个组织的leadership style可能和亚麻不匹配，所以对项目的处理态度没能说到他们期望的点上。
-加一句：在VO之前的prep call尽量抓住recruiter问每个interviewer被assign到什么LP，这样能更有针对性地准备。
-
-1. presentation of previous work 1 hour
-2. behavior question + coding 找到f1 score的最好的probability 的临界点
-3. behavior question + system design，related to nlp
-4. behavior question from other team
-5. behavior question + system design(nlp problem)
-6. behavior question + my own project(detail ask from my project: technical: overfitting, how to train model, how to select model, deploy model, )
-
-Aplied scientist phone
-国人美眉放水，问了 知道的各种sort 及复杂度。2 分钟默默的背出了quick sort ，解释了一下原理move on。
-还问了一个如何找95% quantile， stat 101的题
-ML related：
-1. 如何 design。LZ 如滔滔江水，吐沫横飞的把知道的全说了。 面试官答：you said a lot。
-2. 比较logistc regress 和 各种 tree methods。
-3. A/b testing 的 performance matric。
-3. 如何feature selection/engineering
-没有问具体的数学公式。有点像 口述小作文
-
-AWS AI Applied Scientist岗位，NLP相关。共6轮session。5轮interview+1 tech talk。
-5轮interviews:
-1. Machine Learning Depth: 面试官从简历中随机选择一篇自己的一作paper，给研究员讲明白。
-2. Machine Learning Knowledge：比较基础的Machine Learning问题。被问到：(1) difference between gradient booting tree and random forest (这个早忘记了。。直接跪) (2) difference between Adam and other optimizers, (3) Describe BART and BERT (4)Batch Norm + Layer Norm (5) Explain why RNN has vanishing gradients and why LSTMs could mitigate this issue.
-3. Machine Learning Design：之前没有面过ML Design，还蛮有意思的，面试官会根据面试者的背景来选择一个面试者了解但不是非常精通的问题（被问到一个可以用NLP解决的CV问题），然后要propose一个可以解决该问题的产品，如何采集数据，不同的模型，evaluation （engineering metric + business metric）
-4&5： 两轮coding面，不是LeetCode原题，都是在实际NLP落地场景里面抽象出的题目（被问到implement一个很简单的beam search）。还蛮有意思的
-以上5轮中会穿插问巨多BQ问题，强烈推荐多多准备下故事模板，不同的面试官会分到Leadership Principle的不同i‍‌‌‍‌‍‌‍‍‌tems，然后会根据具体的items来设置问题。感觉对于没有项目经验的fresh PhD grad，面试官会启发从平时的科研经历找素材（被问到不喜欢老板安排的项目怎么办，有没有从事过自己不熟悉的科研领域的问题之类的）。
-
-phone interview
-Amazon的applied scientist， NLP方向。 这个面试很舒服，华人，很nice。
-1.What is your work/project?
-2.What are the metrics for measuring a classification model. What are micro-F1 and macro-F1? What are the differences?
-3.How does attention work? Give an example
-4.hat are regularization methods in deep learning?
-5.Explain Dropout in training and inference?
-6.How do you solve the problem when something is not in your programming tools? (I talked about the Pytorch loss function, restful api data storage
-有几个问题是我的盲点，平时工作没有用到。后来没有过，跟我解释是我的经验不足。
-
-第一面一小时，自我介绍项目+codin(树， 层序) + ML问题。
-1. 谈过拟合，如何解决， 正则化
-2. 线性回归，解， 什么时候有唯一解等。如果矩阵不可逆怎么办
-3. dropout
-4. batch norm
-
-
-
-
-
-`Data Science is about extracting insights; machine learning is about generalizing from data.`
-
-1. what is 95% CI ， 给了个例子how to get the population response rate from sample given the 95% ci.
-2. 给了个例子，age~ height+weight 问了multicollinearity的问题，要求解释，完了问一般情况下怎么detect
-3. 给了个 fund raising 例子，5000 alumni，1000 variables build a model to see the probability to make the donation, 这个case 还问了包括 variables selection and model vailidation的问题
-4. missing value problem. 有些applicants 没有透露 income， 然后他们用average income做了填充，问这样好不好，或者你有别的什么办法吗
-
-一些别处找来的面经，自己面试前用来准备的
-what is p value, what is significance level, what is mean and variance
-what is mean by strongly postitively related
-how to select variables from thousands of them
-一些case
-1. 之前response rate 10% 现在变成18% 设计hypothesis test 来确定新的电话营销方案是真的提高而不是偶然发生的。
-2. 怎样在不增加cost的情况下使得response rate 升高。
-3. prsidential poll obama52% Romney49% margin error 3%， what is your conclusion.
-
-被问到不同model为什么learning curve不同，multi-correlation怎么处理。主要是针对你用的model和feature提问。建议大家弄清自己为什么用某个方法以及用它的目的。
-
----Evaluation
-一定要区分statistical metric和business metric
-前者是你训练模型时候定义的metric，主要用来tune hyperparameter的，比如accuracy, F1-score...
-后者定义你的模型是否有意义的metric，比如推荐歌单平均听的时长
-一般后者意义更大，更会被问。因为是无法直接直接optimize的，只能通过ab testing才测试，所以也有可能会被问到一点点experiment design的知识
-
-个基础知识点是几乎肯定会被问的
-1. unbalanced data set
-2. eval metric, e.g. precision and recall
-3. model a vs model b
-4. hyperparameter tuning
-5. bias variance tradeoff
-
-你也提到了几点DS不需要担心的问题，下面抛砖引玉再加几点：
-数据获取和清理：online serving的时候，features从哪里来，是不是需要做一些处理？例如NLP问题，raw text进来，怎么转变成 feature？production 里面如果不能调python包，一行搞定的情况下，java/C++/别的语言怎么搞定？
-deployment：要不要考虑serving latency的问题？太慢的情况怎么办？infra还没有支持到你的use case的时候，怎么办？你需要做 ab testing，那么serving的时候怎么做来实现区分 control 和 treatment
-
-比方说hadoop和spark的区别和原理
-***Hadoop and Spark*** 
-Apache Spark is a fast and powerful framework that provides an API to perform massive distributed processing over resilient sets of data. The main abstraction Spark provides is a resilient distributed dataset (RDD), which is the fundamental and backbone data type of this engine. Spark SQL is Apache Spark's module for working with structured data and MLlib is Apache Spark's scalable machine learning library. Apache Spark is written in Scala programming language. To support Python with Spark, Apache Spark community released a tool, PySpark. PySpark has similar computation speed and power as Scala. PySpark is a parallel and distributed engine for running big data applications. Using PySpark, you can work with RDDs in Python programming language.
-
-> https://zhuanlan.zhihu.com/p/95016937
-
-> https://logz.io/blog/hadoop-vs-spark
-
-> https://www.gigaspaces.com/blog/hadoop-vs-spark/
-
-> https://phoenixnap.com/kb/hadoop-vs-spark
-
-> https://www.educba.com/hadoop-vs-spark/
-
-> https://developer.ibm.com/tutorials/getting-started-with-pyspark/
-
-问我map reduce的工作流程， spark跟map reduce的区别？
-```python
-map (String key, String value):  
-  // key: document name
-  // value: document contents
-
-  for each word in value:
-    EmitIntermediate (w, "1");
-
-reduce (String key, Iterator values):
-  // key: a word
-  // value: a list of counts
-  int result = 0;
-  for each v in values:
-    result += ParseInt(v);
-  Emit (AsString(result));
-```
-***Map Reduce***
-> http://snap.stanford.edu/class/cs246-2016/finals/final_2013.pdf
-
-> http://salsahpc.indiana.edu/tutorial/hadoopwc1.html
-
-> https://cseweb.ucsd.edu/classes/sp16/cse291-e/applications/ln/lecture14.html
-
-> http://www.ugr.es/~essir2013/slides/ESSIR_MapReduce_for_Indexing.pdf
-
-> https://en.wikipedia.org/wiki/MapReduce
-
-gradient descent 的pesudo
-
-How do you handle really large datasets, over a billion rows? (Think cloud here and be able able to explain what vendor you’d use and how you get that data up there. This is the hardest part of that process)
-
-What are gradient boosters?
-
-What’s your favorite gradient booster and why? (Gradient booster reign supreme on structured datasets. )
-
-What are a few metrics you use when modeling?
-
-What’s overfitting? What’s the easiest way to reduce it.
-
-What’s K-Fold Cross Val?
-
-Given a 1 TB data set on disk with around 1 KB per data record, how can I find duplicates using 512 MB RAM and infinite disk space? Answer is ***Bloom Filter***  
-> https://blog.csdn.net/jiaomeng/article/details/1495500
-
-> https://blog.csdn.net/hguisu/article/details/7866173
-
-> https://zhuanlan.zhihu.com/p/50587308
-
-> https://stackoverflow.com/questions/2573653/given-a-1-tb-data-set-on-disk-with-around-1-kb-per-data-record-how-can-i-find-d
+Machine learning understanding
+This area generally focuses on individual understanding of basic ML concepts such as supervised vs. unsupervised learning, reinforcement learning, classification vs. regression, deep learning, optimization functions, and the learning process of various ML algorithms. There are many courses and books that go over these fundamental concepts. They facilitate the learning of ML basics and help candidates prepare for the interview.
 
 ## DS
 Let’s take a ***Supervised Learning Process***. The process starts with receiving a static data file with labels in it as the input file, perform ***Exploratory Data Analysis***, scale and perform ***Feature Engineering***, ***Split the Data*** records into train, test and validation set. ***Train the Model*** using the training data records, ***Fine Tune the model Parameters*** using the test data records and perform ***Model Selection*** based on the ***Performance Metrics*** on the validation data records. The well-trained model is then ***Deployed to Production*** to make a prediction/classification on unknown data records. The model is limited to the patterns it has observed in the static input file and cannot adapt to the real-time behavioural changes. Every time there is a new training data is made available, the entire process of training the model has to start from scratch.
@@ -684,8 +360,337 @@ for i in range(num_epochs):
 ***A/B testing*** 
 > https://medium.com/capital-one-tech/the-role-of-a-b-testing-in-the-machine-learning-future-3d2ba035daeb
 
-### References
 
+## DS Interview Questions
+### Amazon DS
+去年面热带雨林的ds position汇总了一个ml question list，此处分享给大家，祝大家逢面必过。
+1. Explain Xgboost, how it is different from GBM?2. What's the difference from random forest to GBM?
+3. LASSO, how to selection variable, loss function.
+4. What's the difference of LASSO vs Ridge and what situations are they preferred?
+5. How do you interpret ML models and their features?
+6. Assumptions of linear regression
+7. How to deal with categorical features
+8. formular of logistic regression and the loss function
+10. Explain how Kmeans is working
+11. If the linear regression dataset is duplicated, how would all the parameter change in your model?
+12. In linear regression, how will multicollinearit‍‌‌‍‌‍‌‍‍‌y impact the cofficients and variance?
+13. If the correlated features should be excluded in random forest model?
+14. what is bias-variance trade-off
+15. how to deal with overfitting
+16. how to deal with imbalanced dataset
+17. How to deal with missing data
+
+- 考了Bert概念，
+- recommendation SVD 函数，每一列 每一行有意义么？矩阵相乘
+- 还有stratified sampling 算法处理imbalanced data
+- a/b 问的是：, a/b testing 情景问题:
+他们做了两个 recommedation system , 怎么比较？如果有些用户不会划到下面，所以我们没有足够sample 怎么解决
+- 解释了什么是 words encoding
+- 解释了bert 和albert 的区别（我不知道ALbert 拼的对不对。。）好像这么读
+-如果视频中的text 没办法很好extract 做training data 怎么办
+- 想要看一个新的feature 的影响，但没办法加在我们系统上，怎么评价影响？
+
+解释confidence interval
+解释 linear regression 有哪些assumption
+讲讲 random forest/gbdt
+讲讲 kmeans
+讲讲dl里的 normalization
+sql很常规，题不记得了，就是写个group by 那种
+python 用pandas高一些groupby， filter, count_values之类的也很基本
+
+- examples about regression and classification problems
+- Regression
+    - cost function
+    - multicollinearity
+    - performance metrics
+- Logistic regression
+    - How to estimate the coefficient
+- Statistics
+    - What is significance level alpha, p value, beta
+- AB testing
+    - How to determine sample size
+
+1. Bias-Variance trade off
+2. How to optimize and find better solution. （他想让你说Gradient Descent）
+
+Amazon Onsite一共五轮前后加上休息时间一共7个小时, 之所以是没完全挂，是面试结束之后不打算move forward to DS role but recommend to comtinue as BIE...
+1. Data Science Breath + LP: 概率统计快问快答+ Small Case Study + 2 LP questions
+2. Information talk: 不算在面试里
+3. Application + Problem Solving + LP: 之前说是会有case但是大概只聊了简历以及大概4个LP questions
+4. 一开始说是纯LP，实际面试大概3-4个LP question + case study
+6. Coding + LP: Leetcode easy/medium难度的SQL + 2 LP questions.
+5. Data Science Depth + LP: 简历project + case study + 2个LP
+
+全程一小时，由ML和Coding两部分组成 最后有五分钟提问时间。根据职位要求，ML部分面试侧重general ML，decision tree的理论和实践, including the following:
+* decision tree training -- how decision stumps are decided，
+* how to prevent, identify and resolve overfitting, including both principles and practice of data augumentation, feature selection, regularization and cross validation.
+* how to resolve data imbalance, including resampling and weighting, as well as how to adapt the related metrics (precision/recall/F1/etc).
+* how random forest and gradient boosting work, including their implications in model bias-variance tradeoff,
+* how to resolve multicolinearity
+* how to use/transform categorical features.
+* some scratch on CNN and SGD
+Coding 部分考了如何find the median of a numeric stream. including
+* how the candidate communicate and clarify the requirements
+* how the problem was solved.
+* how to code (Python) and documentation were written.
+(我当时很紧张，忘了heapq，就跟面试官说我放一个placeholder用来implement a heap，但最后也没有时间implement，不过不影响算法的正确性）
+准备经验
+----------
+* job description 一般比较general，建议面试者了解组里正真常用的techniques，不是所有ML都是DL。上手解决问题一般都要从logistic/linear regression 开始，其次xgboost，最后才想着CNN/LSTM/etc。
+* 细读 ISLR / python 书，上一门本科高年级的Machine learning课。
+* 建议多问问题澄清题目要求，同时练习边写边说，哪怕自觉很naive也要把想法说出来。
+
+一小时店面，三个部分。
+先是ML breath。 都是常见题，阐述logistic regression, gradient decent, trees, xgboost and gradient boost, boost and bagging, l1 l2 regularization.
+第二部分是project walkthrough.详细说个自己简历上的project。 我选的是和我科研文章相关的一个， 需要一定的domian knowledge 才能理解，所以面试官问了很多背景方面的问题，真正ML 的问题比较少。
+最后是coding.给两个list, 其中一个是target，另一个是数值，写class要可以给一个target，能得到对应的平均值。但时间有限，他说把大概过程写出来就行。楼主有点紧张，但最后还是完成了大概思路。面试官说get到我的idea了，不需要继续写了。
+
+面热带雨林昂赛时有两轮system design，觉得很有意思，分享给大家。
+1） 每个产品都会有很多label，比如 教育，健康etc。怎么predict一个产品的label。可以用所有网站上我们能看到的所有信息。
+2） fraud detection：怎么预测fraud，需要哪些data？当我们已知的label不是100%确定时对的时候怎么办？
+
+过简历，讲讲项目，说一个modeling的项目全程。楼主把这些准备地滚瓜烂熟了，全程也有各种follow-up，关于模型的，比如random forest v.s. boosting区别，优缺点。怎么做feature selection，楼主各种方法都说了，descriptive的， model-based的。还有
+performance metrics有哪些：Area Under ROC Curve, F1 score, 把sensitivity, specicific和precision顺便也解释了。
+后面有专门的问题：linear regression vs logistic regression, overfitting vs underfitting, neural network activation functions。
+
+大家要review一下一些统计和machine learning的基本概念:
+1. Tell me about yourself?
+2. Tell me about your most recent project and what you learned from it?
+3. Some follow-up questions about my project - mainly asking what’s the usefulness/meaning of the output from above project? What kind of metrics do you use to measure the outcome? How do you do downsampling; How do you do up-sampling
+4. How do you compare the means of two samples
+5. What’s the assumptions in linear regression?
+6. What’s p value, what’s the meaning of p value, how do you use p value to compare two sample means
+7. What’s central limit theorem and what’s the meaning of it?
+8. What’s the bias variance trade off
+9. What’s under-fitting?
+10. What’s the differences between bagged tree and boosted tree?
+Living code problem: read in a Json structured data 50,000 rows and find out the majority of the ‘label’ (categorical 3 classes) - 15 mins 这个题居然卡在了一开始，因为对Json file不熟悉工作中很少用，但是Amazon的data scientist很常用。 另外没有考SQL（有点意外）。
+
+亚麻内部 DS如何快速转AS呢？
+否则的话需要找到一个好的老板可以帮你要到AS scope的项目，同时建立起能够support你换title的人脉。比如经常跟Sr AS review你的项目。有AS/SDE review你的code。然后就是顺其自然的事了。
+
+
+### Amazon AS
+微软AS面试更取决于组。。每个组可以自己决定面试的侧重点。。我面了一个组是4轮coding.微软AS面试一半engineering一半ML。但ML不会这么细致，engineering bar更高一点。微软升职不错啊，但工资的确不行.
+亚麻AS虽然也是组面 但是一轮AS coding三轮ML （breath depth applicatoin）不会变。。
+年初要relocate面了其他几家的senior MLE Google就是coding + ML design
+Meta差不多 可以选system design + ML design或者两轮ML design
+Linkedin两轮coding其中一轮data coding 就是Leetcode上比较数学的coding基本都是面经题 一轮data science （ML八股文和统计基础）一轮ML design
+Tiktok基本上每轮都是ML基础 （类似Amazon的breadth + 一部分depth）+ 一道题coding。。当然Tiktok可能也比较看组。。
+
+介绍
+关于ml depth方面，在传统机器学习中，除了手推lr还有其他的知识点吗，例如树和svm，adaboost, xgboost会考到什么程度
+熟悉到你能够写出伪代码的程度,em算法
+我个人觉得search, Aws AI, personalization, amazon video的有些组, Alexa的有些组, product graph等等感觉都还不错
+
+presentation:
+建议讲工业界的项目。不一定说一定需要很多science的innovation。更多的是自己遇到的challenges，而这种challenges 可能有很多方面，像没有high quality labeling data, 很多legacy system，太多上下游team需要communication，或者latency/scalability/robustness要求很高，或者不容易formulate business problems等等等。更多的是你需要展示你能很好的解决这些challenges。你可能需要尽量隐藏key business numbers (比如只展示relative的提升)，避开一些还没有open to general public的产品等等
+
+AS的核心是 你首先是一个scientist，能合理的把biz problem转化成model problem，还能比较sciency地把你的理论基础，考虑了哪些candidate model，他们的优劣以及你选择的依据写清楚 （到这里为止也是DS/RS的要求），最后你要比DS/RS更能落地product，能构建一套pipeline啥的部署到aws上。注意，这里完全没人要求你的model一定要用ML或者DL，或者一定要用aws。用不用要具体问题具体分析。
+
+senior AS的scope/工作内容
+一般是会负责一到两套核心算法模块在生产环境的落地，一般是要对算法在产品上的体验负责的。核心任务一般是derisk and deliver science product。. 1point3acres.com
+项目早期会比较hands on，一般是做一些demo或者feasibility study性质的工作，目的是为了团队争取资源或者推进新feature的priority。项目后期会比较focus在mentor组里更junior的deliverable上，通常会influence从2-10个人的产出和规划。
+当然cross team的science合作通常也都是senior AS牵头，这类工作通常更senior SDE类似。
+
+AS@Amazon整体来说的定义是要求你能够理解business问题，然后把business问题转化成一个ML的问题，然后提出并且implement ML solutions，从而improve business metrics的目的。它整体的定义有点类似于别的公司的half MLE + half Research Scientist的定义：
+由于amazon本身没有centralized ML Research team，所以amazon基本上没有纯ML research (research for resolving general ML problems)，而只会在每个product组有Applied Research (research for resolving ML problems under a specific business domain/application)。而amazon并没有类似于google research scientist的role，所以Applied ML Research是applied scientist重要工作内容之一。BTW， amazon本身有research scientist的title，但本质上是弱化版本的AS或者非ML domain的researcher。
+同时amazon没有MLE的job family (有的engineer会把business title改成这个，但实际上并不存在)。所以基本上传统意义上的MLE的工作会一部分会分到别的job family：比如ML infra和实际的ux/customer-facing product可能有engineering team做，data pipeline可能有BI engineer/Data Scientist/Data Engineer来负责。而AS会主要负责模型数据的preprocessing, post-processing, ML model training/inference。然后AS可以创建一个模型inference的endpoint从而跟engineering team来interact。
+. Waral dи,
+整体来说AS在amazon是个非常prestigious的job family，常常会是一个大的ML project的主要lead，从而跟其他job family的人共同推进ML产品的开发维护。所以好的优势是：
+项目的scope常常比较大，从而有着比SDE更快的promotion速度。一般一个L4的AS能够在1-2年到L5 (PhD hire也有可能进来就是L5)，而一个L5 AS能够在2-4年到Sr. level。
+据我所知，AS的total compensation在同样level的ic job families中也是最高的。L4有二十多万刀。而Sr. 40w+ 到 60w+。
+
+面试
+常常一个职位的面试跟这个职位所需要的人的skills是高度契合的。AS的面试主要分成三块：
+一轮coding。基本上是leetcode easy - medium的题目。虽然内部要求AS达到entry level SDE的coding bar，而我的体验是很多都没有。很多AS面试的coding往往非常简单，会比很多公司的MLE的coding面试简单很多。这也使得很多非CS background的人有着更低的coding门槛。
+三轮ML面试：ML breadth (类似于别的公司的ML knowledge) + ML depth + ML application (类似于别的公司的ML design，但相对更注重ML problem formulation rather than MLE八股文）。AS对ML的要求往往会比别的公司的MLE的ML要求更高更广。因为它需要你不但是个engineer也是个researcher。希望你有很好的ML基础同时有实际解决问题的能力。sample question比如说：
+ML breadth: 有哪些做feature selection的方法。
+ML depth: in details, transformer模型比RNN family的优势在什么地方; BERT集体的模型结构是什么；为什么需要multi-head attention。能不能写一下logistic regression的loss并且计算gradient。
+ML application: 如果说现在amazon search bar只支持general retail products，然后我现在也想同时支持amazon fresh的搜索，你会怎么设计。(面试题一般非常取决于面试组的problem domain)
+3. 一轮behavior questions (BQ)。常常是bar raiser面这一轮。熟悉leadership principles会非常重要。同时在其它四轮中也会有一到两个BQ. ..
+research presentation。我不确定是不是每个组都需要。但如果有不错的research background是属于一轮bonus轮。
+所以在准备面试过程中，你需要非常in detailed的准备常用的ML算法。同时针对面试组的domain problem有一个基本解决问题的方法。
+
+
+roc curve是什么，以及项目中F-score，precision，recall怎么计算
+BERT model 包含什么，mask的作用，input是什么，为什么用attention
+word2vec input是什么怎么训练
+bq大概是：Time when you went above and beyond your job responsibilities.和Tell me about a time when you went way beyond the scope of the project and delivered
+
+报一个上周的店面recruiters给我找的一个AWS Applied Scientist的职位虽然我觉得背景不符，但是还是给了店面
+店面有两个面试官
+1. 聊了一下我research 做的东西（我research做的和ML无关）
+2. 简单的概率题
+3. 写逻辑回归，损失函数，以及gradient descent的递推公式 （这个没写出了，我说公式记不得了，但是知道怎么算偏导数）
+4. 解释随机森林，决策树
+5. 解释L1, L2正则化，两者除了公式不同外结果上会有什么区别
+6. 解释简历上项目做的具体内容
+7. Imbalanced data set 怎么处理
+8. 介绍几种unsupervised learning 的方法
+9. BQ: tight deadline, 追问: 再做一次，有什么地方可以做得更好
+大概就是这些，还有些ML相关的小问题，记不起来了，总体感觉基础知识很重要，具体的公式和细节都要知道
+
+ml：针对一个实际的例子来做设计，比如给一个场景，来询问是什么类型的问题？比如是reg还是classification？用什么样的模型去预测结果如何预测结果？中间穿插着对每一个回答的细致追问。
+coding：这道题没做好。欢迎大家讨论下思路。给了一个数组有正有负，代表客户对不同产品的分数，然后选出最大满意度的组合。满意度的定义是，选出的不同产品组合的分数乘以在组合里的位置。比如 分数是[-2,0,0,3,2], 选的组合如果是[0,3,2],满意度就是0*1+3*2+2*3=12。问题是要找出给定产品分数的数组，满意度最大的组合。
+
+总共5轮， 每轮至少30分钟军规， 大概2-3个题目。有的会直接告诉你是哪条军规。science depth就自行在简历里选一个项目，然后问模型的具体方法，为什么选这个模型，会问到公式，所以要对模型熟悉。scicen breath就是很random问模型，基本都是ML 常见问题。 science application就是给你一个想解决的问题，问你怎么用数据进行分析。我这次没有强调建模，更是对数据的处理。coding问了三道题。首先interviewer感觉很不supportive， 是个senior。 就把题扔给你，自己看，没有解释，基本上就是不说话。没有conversation，就只有我自己自言自述。说是用什么写都行，但第一题明显是个sql题。我没想到AS 会考sql,所以没准备。好在题本身不难，结构应该没错，但某个build in名字可能不是很准备，毕竟我很久没用sql了。第二天是个迭代题，没做出来。他给了一点提示，但也听不太清。还是我自己algorithm这里基本功不好吧。第三题是一个GMM, 不难，但要知道具体package的名字，我觉得其实这种题只要把function名字格式记住就行，实际操作中网上一查就知道怎么用了，放在interview中，我觉得考察不出什么来。总之coding题很怪，要不就是unexpected,要不就是感觉比较难。BR 就是纯军规，没什么特别的。
+
+通过内推拿到了面试。前面两轮店面都是秒过。店面内容差不多，都是ML八股文+一道算法题。为了VO准备了好多BQ，但是感觉最终还是挂在了这上面。
+VO六轮：Presentation, Science Breadth, Science Application, Science Depth, BQ, Algorithm. 但实际面完了觉得这些topic其实根本没用，除了算法和BQ基本都没按剧本走。然后这两轮还在VO前一天对换了，结果也没人通知我。比如Science Depth照理说是deep dive项目经历，结果只是问了一堆面试官觉得和这个职位相关的知识点，我觉得更像是Science Breadth。Science Application倒是反复地问我之前的research topic。我不知道这是不是因为刚开始就没打算要我所以就胡乱问，还是亚麻的VO就是那么disorganized。最终我追问具体的反馈也搞不清楚在技术问题上我的回答到底有什么问题，因为根本就没有按照预设的程序走。
+Algorithm的问法和利口不大一样。是给了一个非常模糊的问题，然后一步一步和面试官沟通来clarify，最后确定API和实现一部分功能。这其实更像是Science Application。
+我想最终还是因为LP的问题所以挂了。地理强调面亚麻时BQ的重要性，面完以后觉得说得太对啦！每轮一小时的面试至少有30分钟在讲LP。我觉得把VO说成是五轮BQ也不为过。我现在在一个中等银行做DS，感觉整个组织的leadership style可能和亚麻不匹配，所以对项目的处理态度没能说到他们期望的点上。
+加一句：在VO之前的prep call尽量抓住recruiter问每个interviewer被assign到什么LP，这样能更有针对性地准备。
+
+1. presentation of previous work 1 hour
+2. behavior question + coding 找到f1 score的最好的probability 的临界点
+3. behavior question + system design，related to nlp
+4. behavior question from other team
+5. behavior question + system design(nlp problem)
+6. behavior question + my own project(detail ask from my project: technical: overfitting, how to train model, how to select model, deploy model, )
+
+Aplied scientist phone
+国人美眉放水，问了 知道的各种sort 及复杂度。2 分钟默默的背出了quick sort ，解释了一下原理move on。
+还问了一个如何找95% quantile， stat 101的题
+ML related：
+1. 如何 design。LZ 如滔滔江水，吐沫横飞的把知道的全说了。 面试官答：you said a lot。
+2. 比较logistc regress 和 各种 tree methods。
+3. A/b testing 的 performance matric。
+3. 如何feature selection/engineering
+没有问具体的数学公式。有点像 口述小作文
+
+AWS AI Applied Scientist岗位，NLP相关。共6轮session。5轮interview+1 tech talk。
+5轮interviews:
+1. Machine Learning Depth: 面试官从简历中随机选择一篇自己的一作paper，给研究员讲明白。
+2. Machine Learning Knowledge：比较基础的Machine Learning问题。被问到：(1) difference between gradient booting tree and random forest (这个早忘记了。。直接跪) (2) difference between Adam and other optimizers, (3) Describe BART and BERT (4)Batch Norm + Layer Norm (5) Explain why RNN has vanishing gradients and why LSTMs could mitigate this issue.
+3. Machine Learning Design：之前没有面过ML Design，还蛮有意思的，面试官会根据面试者的背景来选择一个面试者了解但不是非常精通的问题（被问到一个可以用NLP解决的CV问题），然后要propose一个可以解决该问题的产品，如何采集数据，不同的模型，evaluation （engineering metric + business metric）
+4&5： 两轮coding面，不是LeetCode原题，都是在实际NLP落地场景里面抽象出的题目（被问到implement一个很简单的beam search）。还蛮有意思的
+以上5轮中会穿插问巨多BQ问题，强烈推荐多多准备下故事模板，不同的面试官会分到Leadership Principle的不同i‍‌‌‍‌‍‌‍‍‌tems，然后会根据具体的items来设置问题。感觉对于没有项目经验的fresh PhD grad，面试官会启发从平时的科研经历找素材（被问到不喜欢老板安排的项目怎么办，有没有从事过自己不熟悉的科研领域的问题之类的）。
+
+phone interview
+Amazon的applied scientist， NLP方向。 这个面试很舒服，华人，很nice。
+1.What is your work/project?
+2.What are the metrics for measuring a classification model. What are micro-F1 and macro-F1? What are the differences?
+3.How does attention work? Give an example
+4.hat are regularization methods in deep learning?
+5.Explain Dropout in training and inference?
+6.How do you solve the problem when something is not in your programming tools? (I talked about the Pytorch loss function, restful api data storage
+有几个问题是我的盲点，平时工作没有用到。后来没有过，跟我解释是我的经验不足。
+
+第一面一小时，自我介绍项目+codin(树， 层序) + ML问题。
+1. 谈过拟合，如何解决， 正则化
+2. 线性回归，解， 什么时候有唯一解等。如果矩阵不可逆怎么办
+3. dropout
+4. batch norm
+
+
+
+
+
+`Data Science is about extracting insights; machine learning is about generalizing from data.`
+
+1. what is 95% CI ， 给了个例子how to get the population response rate from sample given the 95% ci.
+2. 给了个例子，age~ height+weight 问了multicollinearity的问题，要求解释，完了问一般情况下怎么detect
+3. 给了个 fund raising 例子，5000 alumni，1000 variables build a model to see the probability to make the donation, 这个case 还问了包括 variables selection and model vailidation的问题
+4. missing value problem. 有些applicants 没有透露 income， 然后他们用average income做了填充，问这样好不好，或者你有别的什么办法吗
+
+一些别处找来的面经，自己面试前用来准备的
+what is p value, what is significance level, what is mean and variance
+what is mean by strongly postitively related
+how to select variables from thousands of them
+一些case
+1. 之前response rate 10% 现在变成18% 设计hypothesis test 来确定新的电话营销方案是真的提高而不是偶然发生的。
+2. 怎样在不增加cost的情况下使得response rate 升高。
+3. prsidential poll obama52% Romney49% margin error 3%， what is your conclusion.
+
+被问到不同model为什么learning curve不同，multi-correlation怎么处理。主要是针对你用的model和feature提问。建议大家弄清自己为什么用某个方法以及用它的目的。
+
+---Evaluation
+一定要区分statistical metric和business metric
+前者是你训练模型时候定义的metric，主要用来tune hyperparameter的，比如accuracy, F1-score...
+后者定义你的模型是否有意义的metric，比如推荐歌单平均听的时长
+一般后者意义更大，更会被问。因为是无法直接直接optimize的，只能通过ab testing才测试，所以也有可能会被问到一点点experiment design的知识
+
+个基础知识点是几乎肯定会被问的
+1. unbalanced data set
+2. eval metric, e.g. precision and recall
+3. model a vs model b
+4. hyperparameter tuning
+5. bias variance tradeoff
+
+你也提到了几点DS不需要担心的问题，下面抛砖引玉再加几点：
+数据获取和清理：online serving的时候，features从哪里来，是不是需要做一些处理？例如NLP问题，raw text进来，怎么转变成 feature？production 里面如果不能调python包，一行搞定的情况下，java/C++/别的语言怎么搞定？
+deployment：要不要考虑serving latency的问题？太慢的情况怎么办？infra还没有支持到你的use case的时候，怎么办？你需要做 ab testing，那么serving的时候怎么做来实现区分 control 和 treatment
+
+比方说hadoop和spark的区别和原理
+***Hadoop and Spark*** 
+Apache Spark is a fast and powerful framework that provides an API to perform massive distributed processing over resilient sets of data. The main abstraction Spark provides is a resilient distributed dataset (RDD), which is the fundamental and backbone data type of this engine. Spark SQL is Apache Spark's module for working with structured data and MLlib is Apache Spark's scalable machine learning library. Apache Spark is written in Scala programming language. To support Python with Spark, Apache Spark community released a tool, PySpark. PySpark has similar computation speed and power as Scala. PySpark is a parallel and distributed engine for running big data applications. Using PySpark, you can work with RDDs in Python programming language.
+
+> https://zhuanlan.zhihu.com/p/95016937
+
+> https://logz.io/blog/hadoop-vs-spark
+
+> https://www.gigaspaces.com/blog/hadoop-vs-spark/
+
+> https://phoenixnap.com/kb/hadoop-vs-spark
+
+> https://www.educba.com/hadoop-vs-spark/
+
+> https://developer.ibm.com/tutorials/getting-started-with-pyspark/
+
+问我map reduce的工作流程， spark跟map reduce的区别？
+```python
+map (String key, String value):  
+  // key: document name
+  // value: document contents
+
+  for each word in value:
+    EmitIntermediate (w, "1");
+
+reduce (String key, Iterator values):
+  // key: a word
+  // value: a list of counts
+  int result = 0;
+  for each v in values:
+    result += ParseInt(v);
+  Emit (AsString(result));
+```
+***Map Reduce***
+> http://snap.stanford.edu/class/cs246-2016/finals/final_2013.pdf
+
+> http://salsahpc.indiana.edu/tutorial/hadoopwc1.html
+
+> https://cseweb.ucsd.edu/classes/sp16/cse291-e/applications/ln/lecture14.html
+
+> http://www.ugr.es/~essir2013/slides/ESSIR_MapReduce_for_Indexing.pdf
+
+> https://en.wikipedia.org/wiki/MapReduce
+
+gradient descent 的pesudo
+
+How do you handle really large datasets, over a billion rows? (Think cloud here and be able able to explain what vendor you’d use and how you get that data up there. This is the hardest part of that process)
+
+What are gradient boosters?
+
+What’s your favorite gradient booster and why? (Gradient booster reign supreme on structured datasets. )
+
+What are a few metrics you use when modeling?
+
+What’s overfitting? What’s the easiest way to reduce it.
+
+What’s K-Fold Cross Val?
+
+Given a 1 TB data set on disk with around 1 KB per data record, how can I find duplicates using 512 MB RAM and infinite disk space? Answer is ***Bloom Filter***  
+> https://blog.csdn.net/jiaomeng/article/details/1495500
+
+> https://blog.csdn.net/hguisu/article/details/7866173
+
+> https://zhuanlan.zhihu.com/p/50587308
+
+> https://stackoverflow.com/questions/2573653/given-a-1-tb-data-set-on-disk-with-around-1-kb-per-data-record-how-can-i-find-d
+
+
+### References
 #### Machine Learning Algorithms In Layman’s Terms
 > https://towardsdatascience.com/machine-learning-algorithms-in-laymans-terms-part-1-d0368d769a7b
 
@@ -732,10 +737,8 @@ for i in range(num_epochs):
 
 > https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/
 
-
 ## Data Challenge
 > https://www.1point3acres.com/bbs/thread-326201-1-1.html
-
 
 ## Projects in Resume
 1. Data Engineering: A really intense data cleaning project (multiple datasets, missing data that requires imputation)

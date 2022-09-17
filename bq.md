@@ -1,8 +1,7 @@
-### Behavior Questions
-https://www.indeed.com/hire/c/info/behavioral-interview-questions-to-ask-candidates
+## Behavior Questions
+> https://www.indeed.com/hire/c/info/behavioral-interview-questions-to-ask-candidates
 
-https://www.amazon.jobs/en/principles
-
+> https://www.amazon.jobs/en/principles
 
 #### Amazon LP
 1. Earn Trust 不自傲自满,自我批判,敢于承认错误
@@ -40,8 +39,6 @@ Balance modeling and engineering.
 14. Success and Scale Bring Broad Responsibility
 15. Hire and Develop the Best
 16. Think Big
-
-
 
 
 15 top behavioral interview questions
