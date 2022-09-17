@@ -74,7 +74,8 @@ Now that you have selected the top-performing models, you will test them in an o
   - Iterative model improvement
     - Your model may perform well during offline testing, but the same increase in performance may not be observed during an online test. Here, you need to think about debugging the model to find out what exactly is causing this behavior. Is a particular component not working correctly? Is the features’ distribution different during training and testing time? For instance, a feature called “user’s top five interest” may show a difference in distribution during training and testing, when plotted. This can help you to identify that the routines used to provide the top five user interests were significantly different during training and testing time. Moreover, after the first version of your model has been built and deployed, you still need to monitor its performance. If the model is not performing as expected, you need to go towards debugging. You may observe a general failure from a decrease in AUC. Or, you may note that the model is failing in particular scenarios. For instance, by analysing the video recording of the self-driving car, you may find out that the image segmentation fails in rushy areas. The problem areas identified during model debugging will guide you in building successive iterations of your model.
 
-a. `Data Related Activites`
+a, b, c
+1. a `Data Related Activites`
     - Data Explore - whats the dataset looks like?
     - Understand different features and their relationship with the target
         - Is the data balanced? If not do you need oversampling/undersampling?
@@ -84,7 +85,7 @@ a. `Data Related Activites`
     - (ML Pipeline: Data Ingestion) Think of Data ingestion services/storage
     - (ML Pipeline: Data Preparation) Feature Engineering - encoding categorical features, embedding generation etc.
     - (ML Pipeline - Data Segregation) Data split - train set, validation set, test set
-b. `Model Related Activities`
+2. b `Model Related Activities`
 Now, you can finally decide on the ML models that you should use for the given tasks, keeping the performance and capacity considerations in mind. We can also try out different hyperparameter values to see what works best. If you are using the funnel approach, you may select simpler models for the top of the funnel where data size is huge and more complex neural networks or trees based models for successive parts of the funnel. We also have the option of utilizing pre-trained SOTA (state of the art) models to leverage the power of transfer learning (you don’t need to reinvent the wheel completely each time).
     - (ML Pipeline - Model Train and Evaluation) Build a simple model (XGBoost or NN)
         - How to select a model? Assuming its a Neural Network
@@ -104,7 +105,7 @@ Now, you can finally decide on the ML models that you should use for the given t
     - (ML Pipeline: Performance Monitoring) Metrics
     - AUC, F1, MSE, Accuracy, NDCG for ranking problems etc.
     - When to use which metrics?
-c. `Evaluation`
+3. c `Evaluation`
 Offline learning is very beneficial, as it allows us to quickly test many different models so that we can select the best one for online testing, which is a slow process.
     - A/B testing
     In an A/B experiment, a webpage or screen is modified to create a second version of it. The original version is known as the control, and the modified version is the variation. From here, we can formulate two hypothesis:
