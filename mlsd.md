@@ -23,9 +23,9 @@ machine learning design的问题一般都是问设计一个推荐系统，广告
       - Training time: How much training data and capacity is needed to build our predictor?
       - Evaluation time: What are the SLA that we have to meet while serving the model and capacity needs?
 2. `Defining the metrics of the problem`
-- The next step is to carefully choose your system’s performance metrics for both online and offline testing. The metrics you choose will depend on the problem your system is trying to solve.
-- How the ML system fits into the overall product backend
-  - Think/draw a very simple diagram with input/output line between system backend and ML system
+    - The next step is to carefully choose your system’s performance metrics for both online and offline testing. The metrics you choose will depend on the problem your system is trying to solve.
+    - How the ML system fits into the overall product backend
+      - Think/draw a very simple diagram with input/output line between system backend and ML system
 3. Data Related Activites
     - Data Explore - whats the dataset looks like?
     - Understand different features and their relationship with the target
