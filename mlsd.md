@@ -1,4 +1,8 @@
 ## ML System Design
+Background:
+I am a Software Engineer with ~5 years of Machine Learning Engineering (MLE) and Data Scientist (DS) experience working at Fintech Company. Seeing the recent requirements in big tech companies for MLE roles and our confusion around it, I decided to create a framework for solving any ML System Design problem during the interview. Depending on your expertise and interviewers guide, you might want to emphasize on one section vs. the other (e.g. Data Engineering vs Modeling).
+I would love your feedback, specially around the scaling. Also if any interviewer from FANG is looking into this, please provide your feedback.
+
 ### Template
 machine learning design的问题一般都是问设计一个推荐系统，广告排序，还有一般的监督学习的系统。所以准备起来要了解各类的推荐系统的优缺点，以及最新的embeding的方法, 可以看一下这个博客
 > https://medium.com/the-graph/applying-deep-learning-to-related-pins-a6fee3c92f5e。 
@@ -6,11 +10,13 @@ machine learning design的问题一般都是问设计一个推荐系统，广告
 另外ML的问题，建议最好按照sd一样，按照逻辑点进行回答。
 1. 厘清问题，该问题属于什么类型的machine learning问题，比如监督性学习，比如推荐系统。
 2. 明确输出目标，明白该问题的目标是什么
-3. 数据收集，了解一下都有哪些数据可以给我们利用
-4. 数据特征提取，把你想到的特征进行分类，都有哪些domain的特征可以进行提取。
-5. 模型，有哪些模型可以使用，然后点出各个模型的优缺点是哪些
-6. 评估，你怎么进行模型的评估好坏，评价指标是什么，还有怎么改进。
-7. 画出框图，然后进行优化。
+3. 数据:
+   数据收集，了解一下都有哪些数据可以给我们利用
+   数据特征提取，把你想到的特征进行分类，都有哪些domain的特征可以进行提取。
+4. 模型，有哪些模型可以使用，然后点出各个模型的优缺点是哪些
+5. 评估，你怎么进行模型的评估好坏，评价指标是什么，还有怎么改进。
+6. 画出框图，然后进行优化。
+7. Scaling
 
 ***Details***
 1. Clarify Requirements/`Setting up the problem`
@@ -18,6 +24,7 @@ machine learning design的问题一般都是问设计一个推荐系统，广告
       - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
     - Ask questions about the scale of the system - how many users, how much content?
     - This will help you narrow down the scope of the problem and ensure your system’s requirements closely match the interviewer’s.
+    - Prediction/Classification problem? Supervise Learning/Unsupervise Learning, Recommendation System
     - Your conversation should also include questions about performance/speed and capacity considerations of the system.
       Performance and Capacity Considerations
       - Training time: How much training data and capacity is needed to build our predictor?
@@ -55,19 +62,16 @@ machine learning design的问题一般都是问设计一个推荐系统，广告
     - (ML Pipeline: Performance Monitoring) Metrics
     - AUC, F1, MSE, Accuracy, NDCG for ranking problems etc.
     - When to use which metrics?
-5. `Architecture discussion`
-    - The next step is to design your system’s architecture. You need to think about the components of the system and how the data will flow through those components. In this step, you need to be careful to design a model that can scale easily.
-    - Online experimentation
+5. Evaluation
+    - Batch
+    - Online
       - A/B testing
       In an A/B experiment, a webpage or screen is modified to create a second version of it. The original version is known as the control, and the modified version is the variation. From here, we can formulate two hypothesis:
       - The null hypothesis
       - The alternative hypothesis
-6. Scaling
-
-
-Background:
-I am a Software Engineer with ~4 years of Machine Learning Engineering (MLE) and Data Scientist (DS) experience working at Fintech Company. Seeing the recent requirements in big tech companies for MLE roles and our confusion around it, I decided to create a framework for solving any ML System Design problem during the interview. Depending on your expertise and interviewers guide, you might want to emphasize on one section vs. the other (e.g. Data Engineering vs Modeling).
-I would love your feedback, specially around the scaling. Also if any interviewer from FANG is looking into this, please provide your feedback.
+6. `Architecture discussion`
+    - The next step is to design your system’s architecture. You need to think about the components of the system and how the data will flow through those components. In this step, you need to be careful to design a model that can scale easily.
+7. Scaling
 
 ***1. Search Ranking***
 ![Diagram of deployment.](pic/search_rank.png)
