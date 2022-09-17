@@ -55,15 +55,14 @@ machine learning design的问题一般都是问设计一个推荐系统，广告
     - (ML Pipeline: Performance Monitoring) Metrics
     - AUC, F1, MSE, Accuracy, NDCG for ranking problems etc.
     - When to use which metrics?
-3. `Architecture discussion`
-- The next step is to design your system’s architecture. You need to think about the components of the system and how the data will flow through those components. In this step, you need to be careful to design a model that can scale easily.
-5. Scaling
-
-Online experimentation
-- A/B testing
-In an A/B experiment, a webpage or screen is modified to create a second version of it. The original version is known as the control, and the modified version is the variation. From here, we can formulate two hypothesis:
-- The null hypothesis
-- The alternative hypothesis
+5. `Architecture discussion`
+    - The next step is to design your system’s architecture. You need to think about the components of the system and how the data will flow through those components. In this step, you need to be careful to design a model that can scale easily.
+    - Online experimentation
+      - A/B testing
+      In an A/B experiment, a webpage or screen is modified to create a second version of it. The original version is known as the control, and the modified version is the variation. From here, we can formulate two hypothesis:
+      - The null hypothesis
+      - The alternative hypothesis
+6. Scaling
 
 
 Background:
