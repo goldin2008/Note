@@ -14,14 +14,14 @@ machine learning design的问题一般都是问设计一个推荐系统，广告
 
 ***Details***
 1. Clarify Requirements/`Setting up the problem`
-- What is the goal? Any secondary goal?
-  - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
-- Ask questions about the scale of the system - how many users, how much content?
-- This will help you narrow down the scope of the problem and ensure your system’s requirements closely match the interviewer’s.
-- Your conversation should also include questions about performance/speed and capacity considerations of the system.
-  Performance and Capacity Considerations
-  - Training time: How much training data and capacity is needed to build our predictor?
-  - Evaluation time: What are the SLA that we have to meet while serving the model and capacity needs?
+  - What is the goal? Any secondary goal?
+    - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
+  - Ask questions about the scale of the system - how many users, how much content?
+  - This will help you narrow down the scope of the problem and ensure your system’s requirements closely match the interviewer’s.
+  - Your conversation should also include questions about performance/speed and capacity considerations of the system.
+    Performance and Capacity Considerations
+    - Training time: How much training data and capacity is needed to build our predictor?
+    - Evaluation time: What are the SLA that we have to meet while serving the model and capacity needs?
 2. `Defining the metrics of the problem`
 - The next step is to carefully choose your system’s performance metrics for both online and offline testing. The metrics you choose will depend on the problem your system is trying to solve.
 - How the ML system fits into the overall product backend
