@@ -12,19 +12,11 @@ machine learning design的问题一般都是问设计一个推荐系统，广告
 6. 评估，你怎么进行模型的评估好坏，评价指标是什么，还有怎么改进。
 7. 画出框图，然后进行优化。
 
-***Overview***
-- Clarify Requirements
-- How the ML system fits into the overal product backend
-- Data Related Activites
-- Model Related Activities
-- Scaling
-
 ***Details***
-1. Clarify Requirements
-    - What is the goal? Any secondary goal?
-        - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
-    - Ask questions about the scale of the system - how many users, how much content?
-1. `Setting up the problem`
+1. Clarify Requirements/`Setting up the problem`
+- What is the goal? Any secondary goal?
+  - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
+- Ask questions about the scale of the system - how many users, how much content?
 - This will help you narrow down the scope of the problem and ensure your system’s requirements closely match the interviewer’s.
 - Your conversation should also include questions about performance/speed and capacity considerations of the system.
   Performance and Capacity Considerations
@@ -32,9 +24,8 @@ machine learning design的问题一般都是问设计一个推荐系统，广告
   - Evaluation time: What are the SLA that we have to meet while serving the model and capacity needs?
 2. `Defining the metrics of the problem`
 - The next step is to carefully choose your system’s performance metrics for both online and offline testing. The metrics you choose will depend on the problem your system is trying to solve.
-
-2. How the ML system fits into the overall product backend
-    - Think/draw a very simple diagram with input/output line between system backend and ML system
+- How the ML system fits into the overall product backend
+  - Think/draw a very simple diagram with input/output line between system backend and ML system
 3. Data Related Activites
     - Data Explore - whats the dataset looks like?
     - Understand different features and their relationship with the target
