@@ -34,24 +34,47 @@ Key steps in ML system setup
 5. `Offline model building and evaluation`
 6. `Online model execution and evaluation`
 
-
-
 ***Details***
-1. Clarify Requirements/`Setting up the problem`
+1. `Setting up the problem`/`Clarify Requirements`
 The interviewer’s question is generally very broad. So, the first thing you need to do is ask questions. Asking questions will close the gap between your understanding of the question and the interviewer’s expectations from your answer. You will be able to narrow down your problem space, chalk out the requirements of the system, and finally arrive at a precise machine learning problem statement.
-    - What is the goal? Any secondary goal?
+    - What is the goal? Any secondary goal? Business Sense, Customer Experience
       - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
+    - Define your ML problem statement, Prediction/Classification problem?
+      - Supervised Learning/Unsupervised Learning, Recommendation System like Netflix, Twitter
+2. `Understanding scale and latency requirements`/`Clarify Requirements`
+Your conversation should also include questions about performance/speed and capacity considerations of the system. The answers to these questions will guide you when you come up with the architecture of the system. Knowing that you need to return results quickly will influence the depth and complexity of your models. Having huge amounts of data to process, you will design the system with scalability in mind. Find more on this in the architecture discussion section.
     - Ask questions about the scale of the system - how many users, how much content?
-    - Prediction/Classification problem? Supervised Learning/Unsupervised Learning, Recommendation System
-    - Your conversation should also include questions about performance/speed and capacity considerations of the system.
-      Performance and Capacity Considerations
-      - Training time: How much training data and capacity is needed to build our predictor?
-      - Evaluation time: What are the SLA that we have to meet while serving the model and capacity needs?
-2. `Defining the metrics of the problem`
-    - The next step is to carefully choose your system’s performance metrics for both online and offline testing. The metrics you choose will depend on the problem your system is trying to solve.
+    - Latency requirements: Do we want to return the search result in 100 milliseconds or 500 milliseconds?
+    - Scale of the data: How many requests per second do we anticipate to handle?
+    - Training time: How much training data and capacity is needed to build our predictor?
+    - Evaluation time: What are the SLA that we have to meet while serving the model and capacity needs?
+3. `Defining the metrics of the problem`
+Now that you have figured out what machine learning problem you want to solve, the next step is to come up with metrics. Metrics will help you to see if your system is performing well. Knowing our success criteria helps in understanding the problem and in selecting key architectural components. This is why it’s important to discuss metrics early in our design discussions. The next step is to carefully choose your system’s performance metrics for both online and offline testing. The metrics you choose will depend on the problem your system is trying to solve.
+    - Metrics for offline testing
+      - test the models’ performance during the development phase. binary classification, AUC, log loss, precision, recall, and F1-score. In other cases, you might have to come up with specific metrics for a certain problem. For instance, for the search ranking problem, you would use NDCG as a metric.
+    - Metrics for online testing
+      - you will use online metrics to test them in the production environment. While coming up with online metrics, you may need both component-wise/component level metrics (NDCG to measure the performance of your model online) and end-to-end metrics (users’ engagement and retention rate).
+4. `Architecture discussion`
+The next step is to design your system’s architecture. You need to think about the components of the system and how the data will flow through those components. In this step, you need to be careful to design a model that can scale easily.
     - How the ML system fits into the overall product backend
       - Think/draw a very simple diagram with input/output line between system backend and ML system
-3. Data Related Activites
+    - Architecting for scale
+      - As we mentioned previously, the requirements gathered during problem setup help you in chalking out the architecture. For instance, you are tasked with building an ML system that displays relevant ads to users. During its problem setup, you ask questions and realize that the number of users and ads in the system is huge and ever-increasing. Thus, you need a scalable system that quickly figures out the relevant ads for all users despite the increase in data. Hence, you can’t just build a complex ML model and run it for all ads in the system because it would take up a lot of time and resources. The solution is to use the funnel approach, where each stage will have fewer ads to process. This way, you can safely use complex models in later stages.
+5. `Offline model building and evaluation`
+  - Training data generation
+    - Human labeled data
+      - This is an expensive way to gather data. So we need to supplement it with in-house labelers or open-source datasets.
+    - Data collection through a user’s interaction with the pre-existing system
+      - using an existing ML-based system or a rule-based system
+  - Feature engineering -> a
+  - Model training -> b
+  - Offline evaluation -> c
+6. `Online model execution and evaluation`
+Now that you have selected the top-performing models, you will test them in an online environment. Online testing heavily influences the decision of deploying the model. This is where online metrics come into play. Depending on the type of problem, you may use both component level and end-to-end metrics. As mentioned before, for the search engine task, the component-wise metric will be NDCG in online testing. However, this alone is not enough. You also need an end-to-end metric as well, like session success rate, to see if the system’s (search engine’s) performance has increased by using your new search ranking ML model. If you see a substantial increase in system performance during the online test, you can deploy it on production.
+  - Iterative model improvement
+    - Your model may perform well during offline testing, but the same increase in performance may not be observed during an online test. Here, you need to think about debugging the model to find out what exactly is causing this behavior. Is a particular component not working correctly? Is the features’ distribution different during training and testing time? For instance, a feature called “user’s top five interest” may show a difference in distribution during training and testing, when plotted. This can help you to identify that the routines used to provide the top five user interests were significantly different during training and testing time. Moreover, after the first version of your model has been built and deployed, you still need to monitor its performance. If the model is not performing as expected, you need to go towards debugging. You may observe a general failure from a decrease in AUC. Or, you may note that the model is failing in particular scenarios. For instance, by analysing the video recording of the self-driving car, you may find out that the image segmentation fails in rushy areas. The problem areas identified during model debugging will guide you in building successive iterations of your model.
+
+a. `Data Related Activites`
     - Data Explore - whats the dataset looks like?
     - Understand different features and their relationship with the target
         - Is the data balanced? If not do you need oversampling/undersampling?
@@ -61,7 +84,8 @@ The interviewer’s question is generally very broad. So, the first thing you ne
     - (ML Pipeline: Data Ingestion) Think of Data ingestion services/storage
     - (ML Pipeline: Data Preparation) Feature Engineering - encoding categorical features, embedding generation etc.
     - (ML Pipeline - Data Segregation) Data split - train set, validation set, test set
-4. Model Related Activities
+b. `Model Related Activities`
+Now, you can finally decide on the ML models that you should use for the given tasks, keeping the performance and capacity considerations in mind. We can also try out different hyperparameter values to see what works best. If you are using the funnel approach, you may select simpler models for the top of the funnel where data size is huge and more complex neural networks or trees based models for successive parts of the funnel. We also have the option of utilizing pre-trained SOTA (state of the art) models to leverage the power of transfer learning (you don’t need to reinvent the wheel completely each time).
     - (ML Pipeline - Model Train and Evaluation) Build a simple model (XGBoost or NN)
         - How to select a model? Assuming its a Neural Network
             1. NLP/Sequence Model
@@ -80,16 +104,13 @@ The interviewer’s question is generally very broad. So, the first thing you ne
     - (ML Pipeline: Performance Monitoring) Metrics
     - AUC, F1, MSE, Accuracy, NDCG for ranking problems etc.
     - When to use which metrics?
-5. Evaluation
-    - Batch
-    - Online
-      - A/B testing
-      In an A/B experiment, a webpage or screen is modified to create a second version of it. The original version is known as the control, and the modified version is the variation. From here, we can formulate two hypothesis:
-      - The null hypothesis
-      - The alternative hypothesis
-6. `Architecture discussion`
-    - The next step is to design your system’s architecture. You need to think about the components of the system and how the data will flow through those components. In this step, you need to be careful to design a model that can scale easily.
-7. Scaling
+c. `Evaluation`
+Offline learning is very beneficial, as it allows us to quickly test many different models so that we can select the best one for online testing, which is a slow process.
+    - A/B testing
+    In an A/B experiment, a webpage or screen is modified to create a second version of it. The original version is known as the control, and the modified version is the variation. From here, we can formulate two hypothesis:
+    - The null hypothesis
+    - The alternative hypothesis
+
 
 ***1. Search Ranking***
 ![Diagram of deployment.](pic/search_rank.png)
