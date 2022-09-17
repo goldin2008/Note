@@ -38,10 +38,10 @@ Key steps in ML system setup
 
 ***Details***
 1. Clarify Requirements/`Setting up the problem`
+The interviewer’s question is generally very broad. So, the first thing you need to do is ask questions. Asking questions will close the gap between your understanding of the question and the interviewer’s expectations from your answer. You will be able to narrow down your problem space, chalk out the requirements of the system, and finally arrive at a precise machine learning problem statement.
     - What is the goal? Any secondary goal?
       - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
     - Ask questions about the scale of the system - how many users, how much content?
-    - This will help you narrow down the scope of the problem and ensure your system’s requirements closely match the interviewer’s.
     - Prediction/Classification problem? Supervised Learning/Unsupervised Learning, Recommendation System
     - Your conversation should also include questions about performance/speed and capacity considerations of the system.
       Performance and Capacity Considerations
