@@ -103,7 +103,7 @@ The next step is to design your system’s architecture. You need to think about
         We can expand training data using creative ways. Assume that we are building a system that detects logos in images (object detection) and we have some images containing the logos we want to detect. We can expand/enhance the training data by manually placing those logos on a different set of images as well. This logo placement can be done in different positions and sizes. The enhanced training data will enable us to build a more robust logo detector model, which will be able to identify logos of all sizes at different positions and from various kinds of images.
         - Data expansion using GANs
         When working with systems that use visual data, such as object detectors or image segmenters, we can use GANs (generative adversarial networks) to enhance the training data. For instance, consider that we are building an object detector. There are a lot of training images of sunny weather conditions but less of rainy weather. A model trained on this training data may not work well for images with rainy conditions. Here, we can utilize GANs to convert images with sunny weather conditions to rainy weather conditions. This will increase our training data for rainy conditions, resulting in a more robust model.
-  - `Train, test, & validation splits`
+  - `Train, test, & validation splits -> a`
     - The size of each split will depend on your particular scenario.
     - While splitting training data, you need to ensure that you are capturing all kinds of patterns in each split.
     - Most of the time, we are building models with the intent to forecast the future. Therefore, you need your splits to reflect this intent as well.
@@ -115,15 +115,15 @@ The next step is to design your system’s architecture. You need to think about
       The model hence trained, will continue considering the previous top recommendation to be the top recommendation this time too. Hence, the “rich getting richer” cycle will continue. In order to break this cycle, we need to employ an exploration technique that explores the whole content pool (all movies available on Netflix). Therefore, we show “randomized” recommendations instead of “popular first” for a small portion of traffic for gathering training data. The users’ engagement with the randomized recommendations provides us with unbiased training data. This data really helps in removing the current positional and engagement bias of the system.
       - Bootstrapping new items
       Sometimes we are dealing with systems in which new items are added frequently. The new items may not garner a lot of attention, so we need to boost them to increase their visibility. For example, in the movie recommendation system, new movies face the cold start problem. We can boost new movies by recommending them based on their similarity with the user’s already watched movies, instead of waiting for the new movies to catch the attention of a user by themselves. Similarly, we may be building a system to display ads, and the new ads face the cold start problem. We can boost them by increasing their relevance scores a little, thereby artificially increasing their chance of being viewed by a person.
-  - `Feature: Feature engineering -> a`
-  - `Model: Model training -> b`
-  - `Evaluation: Offline evaluation -> c`
+  - `Feature: Feature engineering -> b`
+  - `Model: Model training -> c`
+  - `Evaluation: Offline evaluation -> d`
 
 6. `Online model execution and evaluation`
 Now that you have selected the top-performing models, you will test them in an online environment. Online testing heavily influences the decision of deploying the model. This is where online metrics come into play. Depending on the type of problem, you may use both component level and end-to-end metrics. As mentioned before, for the search engine task, the component-wise metric will be NDCG in online testing. However, this alone is not enough. You also need an end-to-end metric as well, like session success rate, to see if the system’s (search engine’s) performance has increased by using your new search ranking ML model. If you see a substantial increase in system performance during the online test, you can deploy it on production.
-  - Iterative model improvement
+  - `Iterative model improvement`
     - Your model may perform well during offline testing, but the same increase in performance may not be observed during an online test. Here, you need to think about debugging the model to find out what exactly is causing this behavior. Is a particular component not working correctly? Is the features’ distribution different during training and testing time? For instance, a feature called “user’s top five interest” may show a difference in distribution during training and testing, when plotted. This can help you to identify that the routines used to provide the top five user interests were significantly different during training and testing time. Moreover, after the first version of your model has been built and deployed, you still need to monitor its performance. If the model is not performing as expected, you need to go towards debugging. You may observe a general failure from a decrease in AUC. Or, you may note that the model is failing in particular scenarios. For instance, by analysing the video recording of the self-driving car, you may find out that the image segmentation fails in rushy areas. The problem areas identified during model debugging will guide you in building successive iterations of your model.
-  - Running an online experiment
+  - `Running an online experiment`
     - A/B testing
       As visitors are served with either the control or variation/test version of the app, and their engagement with each experience is measured and analyzed through statistical analysis testing. Note that unless the tests are statistically significant, we cannot back up the claims of one version winning over another.
     - Measuring long term effects
@@ -132,7 +132,8 @@ Now that you have selected the top-performing models, you will test them in an o
         Do we lose gains? Is the gain caused by an A/B experiment equal to the loss by B/A experiment? Assume that the A/B experiment gave a gain of 5% and B/A experiment gave a loss of 5%. This will ensure that the changes made in the system improved performance.
       - Long-running A/B tests
         For example, suppose that for the ad prediction system, the revenue went up by 5% when we started showing more ads to users but this had no effect on user retention. Will users start leaving the platform if we show them significantly more ads over a longer period of time? To answer this question, we might want to have a long-running A/B experiment to understand the impact. The long-running experiment, which measures long-term behaviors, can also be done via a backtest. We can launch the experiment based on initial positive results while continuing to run a long-running backtest to measure any potential long term effects. If we can notice any significant negative behavior, we can revert the changes from the launched experiment.
-a, b, c
+
+a, b, c, d
 1. a `Data Related Activites`
     - Data Explore - whats the dataset looks like?
     - Understand different features and their relationship with the target
@@ -143,7 +144,36 @@ a, b, c
     - (ML Pipeline: Data Ingestion) Think of Data ingestion services/storage
     - (ML Pipeline: Data Preparation) Feature Engineering - encoding categorical features, embedding generation etc.
     - (ML Pipeline - Data Segregation) Data split - train set, validation set, test set
-2. b `Model Related Activities`
+3. b `Feature Related Activities`
+    - Embeddings
+          Embeddings enable the encoding of entities (e.g., words, docs, images, person, ad, etc.) in a low dimensional vector space such that it captures their semantic information. Capturing semantic information helps to identify related entities that occur close to each other in the vector space. Usually, they are generated using neural networks. A neural network architectures can be set up easily to learn a dense representation of entities. We will go over a few of such architectures later in this lesson.
+        - Text embeddings: Word2vec
+          Word2vec is self-supervised as it trains a model by predicting words from other words that appear in the sentence(context). Representing words with a dense vector is critical for the majority of Natural language processing (NLP) tasks. Word2vec uses a simple but powerful idea to use neighboring words to predict the current word and in the process, generates word embeddings. Any machine learning task that wants to utilize text terms can benefit from this dense embedding vector, which captures word semantic meanings.
+          - CBOW
+          Continuous bag of words (CBOW) tries to predict the current word from its surrounding words by optimizing for loss function.
+          - Skipgram
+          Skipgram: In this architecture, we try to predict surrounding words from the current word.
+        - Context-based embeddings:
+          contextualized information can result in different meanings of the same word, and context-based embeddings look at neighboring terms at embedding generation time. This means that we have to provide contextual information (neighboring terms) to fetch embeddings for a term. In a Word2vec case, we don’t need any context information at the embeddings fetch time as embedding for each term was fixed.
+          - Embeddings from Language Models (ELMo)
+          The idea behind ELMO is to use the bi-directional LSTM model to capture the words that appear before and after the current word.
+          - Bidirectional Encoder Representations from Transformers (BERT)
+          BERT uses an attention mechanism and is able to see all the words in the context, utilizing only the ones (i.e., pay more attention) which help with the prediction.
+        - Visual embedding (image embedding)
+          Once we have trained the model, we only use the encoder (first N network layers) to generate embeddings for images. Auto-encoders are also an example of self-supervised learning, like Word2vec, as we can use an image data set without any label to train the model and generate image embeddings. The input passes through a set of convolution, pooling, and fully connected layers to the last softmax layer for the final classification task. The penultimate layer before softmax captures all image information in a vector such that it can be used to classify the image correctly. So, we can use the penultimate layer value of a pre-trained model as our image embedding.
+        - Network/Relationship-based embedding
+          the retrieval and ranking of results for a particular user (or query) are mostly about predicting how close they are. Therefore, having an embedding model that projects these documents in the same embedding space can vastly help in the retrieval and ranking tasks of recommendation, search, feed-based, and many other ML systems.
+          We can generate embeddings for both the above-discussed pairs of entities in the same space by creating a two-tower neural network model that tries to encode each item using their raw features. The model optimizes the inner product loss such that positive pairs from entity interactions have a higher score and random pairs have a lower score. Let’s say the selected pairs of entities (from a graph or based on interactions) belong to set A. We then select random pairs for negative examples.
+          Two tower model to optimize inner product loss for user and item embeddings
+    - Transfer learning
+      Growth in the ML community and knowledge sharing, This allows people to utilize pre-trained models in a specific area bootstrap quickly.. Another key motivator is that many problems share common sub-problems, e.g., in all visual understanding and prediction areas, tasks such as finding edges, boundaries, and background are common sub-problems. One key advantage of doing transfer learning is that we have the ability to start learning from pre-trained models, and hence, we can utilize the knowledge from similar domains. Transfer learning also optimizes training resources, and it helps teams that don’t have massive computing resources available.
+      - Training data is limited:
+      In case of a limited amount of specialized training data, we can either go with the approach of freezing all the layers and using the pre-trained model for feature generation or fine-tuning only the final layers.  
+      - Training data is plenty:
+      If we have a significant amount of training data (e.g. one million+ examples), we have the choice to play around with multiple ideas. We can start with just freezing the model, fine-tuning only final layers, or we can retrain the whole model to adjust weights for our specialized task.
+      - Similarity of prediction tasks:
+        The similarity of learning tasks can also guide us on whether we can simply use the model as it is or need to fine-tune the model for our new prediction task. For example, if we built a classifier for cars and now we want to use it for trucks, there is a good chance that many of the features are going to be common and we don’t have to fine-tune much. Here, we can utilize the pre-trained model as it is and build our models on top of it (i.e., utilizing the output of pre-trained models as features).
+3. c `Model Related Activities`
 Now, you can finally decide on the ML models that you should use for the given tasks, keeping the performance and capacity considerations in mind. We can also try out different hyperparameter values to see what works best. If you are using the funnel approach, you may select simpler models for the top of the funnel where data size is huge and more complex neural networks or trees based models for successive parts of the funnel. We also have the option of utilizing pre-trained SOTA (state of the art) models to leverage the power of transfer learning (you don’t need to reinvent the wheel completely each time).
     - (ML Pipeline - Model Train and Evaluation) Build a simple model (XGBoost or NN)
         - How to select a model? Assuming its a Neural Network
@@ -163,7 +193,7 @@ Now, you can finally decide on the ML models that you should use for the given t
     - (ML Pipeline: Performance Monitoring) Metrics
     - AUC, F1, MSE, Accuracy, NDCG for ranking problems etc.
     - When to use which metrics?
-3. c `Evaluation`
+4. d `Evaluation`
 Offline learning is very beneficial, as it allows us to quickly test many different models so that we can select the best one for online testing, which is a slow process.
     - A/B testing
     In an A/B experiment, a webpage or screen is modified to create a second version of it. The original version is known as the control, and the modified version is the variation. From here, we can formulate two hypothesis:
