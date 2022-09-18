@@ -41,34 +41,44 @@ The interviewer’s question is generally very broad. So, the first thing you ne
       - e.g. for CTR - maximizing the number of clicks is the primary goal. A secondary goal might be the quality of the ads/content
     - Define your ML problem statement, Prediction/Classification problem?
       - Supervised Learning/Unsupervised Learning, Recommendation System like Netflix, Twitter
+
 2. `Understanding scale and latency requirements`/`Clarify Requirements`
 Your conversation should also include questions about performance/speed and capacity considerations of the system. The answers to these questions will guide you when you come up with the architecture of the system. Knowing that you need to return results quickly will influence the depth and complexity of your models. Having huge amounts of data to process, you will design the system with scalability in mind. Find more on this in the architecture discussion section.
     - Ask questions about the scale of the system - how many users, how much content?
     - Latency requirements: Do we want to return the search result in 100 milliseconds or 500 milliseconds?
     - Scale of the data: How many requests per second do we anticipate to handle?
+As we work on a machine learning-based system, our goal is generally to improve our metrics (engagement rate, etc.) while ensuring that we meet the capacity and performance requirements. Major performance and capacity discussions come in during the following two phases of building a machine learning system:
     - Training time: How much training data and capacity is needed to build our predictor?
-    - Evaluation time: What are the SLA that we have to meet while serving the model and capacity needs?
+    - Evaluation time: What are the Service level agreement(SLA) that we have to meet while serving the model and capacity needs?
+We need to consider the performance and capacity along with optimization for the ML task at hand, i.e., measure the complexity of the ML system at the training and evaluation time and use it in the decision process of building our ML system architecture as well as in the selection of the ML modeling technique.
+  linear regression (single-layer neural network-based) algorithm < Tree-based algorithms < deep neural network
 3. `Defining the metrics of the problem`
 Now that you have figured out what machine learning problem you want to solve, the next step is to come up with metrics. Metrics will help you to see if your system is performing well. Knowing our success criteria helps in understanding the problem and in selecting key architectural components. This is why it’s important to discuss metrics early in our design discussions. The next step is to carefully choose your system’s performance metrics for both online and offline testing. The metrics you choose will depend on the problem your system is trying to solve.
     - Metrics for offline testing
       - test the models’ performance during the development phase. binary classification, AUC, log loss, precision, recall, and F1-score. In other cases, you might have to come up with specific metrics for a certain problem. For instance, for the search ranking problem, you would use NDCG as a metric.
     - Metrics for online testing
       - you will use online metrics to test them in the production environment. While coming up with online metrics, you may need both component-wise/component level metrics (NDCG to measure the performance of your model online) and end-to-end metrics (users’ engagement and retention rate).
+
 4. `Architecture discussion`
 The next step is to design your system’s architecture. You need to think about the components of the system and how the data will flow through those components. In this step, you need to be careful to design a model that can scale easily.
     - How the ML system fits into the overall product backend
       - Think/draw a very simple diagram with input/output line between system backend and ML system
     - Architecting for scale
       - As we mentioned previously, the requirements gathered during problem setup help you in chalking out the architecture. For instance, you are tasked with building an ML system that displays relevant ads to users. During its problem setup, you ask questions and realize that the number of users and ads in the system is huge and ever-increasing. Thus, you need a scalable system that quickly figures out the relevant ads for all users despite the increase in data. Hence, you can’t just build a complex ML model and run it for all ads in the system because it would take up a lot of time and resources. The solution is to use the funnel approach, where each stage will have fewer ads to process. This way, you can safely use complex models in later stages.
+
 5. `Offline model building and evaluation`
   - Training data generation
-    - Human labeled data
+    - Human labeled data (offline)
       - This is an expensive way to gather data. So we need to supplement it with in-house labelers or open-source datasets.
-    - Data collection through a user’s interaction with the pre-existing system
+      - Crowdsourcing
+      - Specialized labelers
+      - Open-source datasets
+    - Data collection through a user’s interaction with the pre-existing system (online)
       - using an existing ML-based system or a rule-based system
   - Feature engineering -> a
   - Model training -> b
   - Offline evaluation -> c
+
 6. `Online model execution and evaluation`
 Now that you have selected the top-performing models, you will test them in an online environment. Online testing heavily influences the decision of deploying the model. This is where online metrics come into play. Depending on the type of problem, you may use both component level and end-to-end metrics. As mentioned before, for the search engine task, the component-wise metric will be NDCG in online testing. However, this alone is not enough. You also need an end-to-end metric as well, like session success rate, to see if the system’s (search engine’s) performance has increased by using your new search ranking ML model. If you see a substantial increase in system performance during the online test, you can deploy it on production.
   - Iterative model improvement
