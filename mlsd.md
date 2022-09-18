@@ -79,22 +79,56 @@ The next step is to design your system’s architecture. You need to think about
       - As we mentioned previously, the requirements gathered during problem setup help you in chalking out the architecture. For instance, you are tasked with building an ML system that displays relevant ads to users. During its problem setup, you ask questions and realize that the number of users and ads in the system is huge and ever-increasing. Thus, you need a scalable system that quickly figures out the relevant ads for all users despite the increase in data. Hence, you can’t just build a complex ML model and run it for all ads in the system because it would take up a lot of time and resources. The solution is to use the funnel approach, where each stage will have fewer ads to process. This way, you can safely use complex models in later stages.
 
 5. `Offline model building and evaluation`
-  - Training data generation
+  - `Data: Training data generation`
+  The quality and quantity of training data are a big factor in determining how far you can go in our machine learning optimization task.
     - Human labeled data (offline)
-      - This is an expensive way to gather data. So we need to supplement it with in-house labelers or open-source datasets.
+      This is an expensive way to gather data. So we need to supplement it with in-house labelers or open-source datasets.
       - Crowdsourcing
+      Crowdsourcing can be used to collect training data for relatively simpler tasks. For instance, if you are building an email spam detection system, you would need to label emails as spam or real. This is a simple task that crowd workers can easily do without requiring any special training.
       - Specialized labelers
+      We can hire specialized/trained labelers who can label data for us according to the given ML task. The trained labelers will use software, such as Label box, to mark the boundaries of different objects in the driving images.
       - Open-source datasets
     - Data collection through a user’s interaction with the pre-existing system (online)
       - using an existing ML-based system or a rule-based system
-  - Feature engineering -> a
-  - Model training -> b
-  - Offline evaluation -> c
+    - Targeted data gathering
+      Offline training data collection is expensive. So, you need to identify what kind of training data is more important and then target its collection more. To do this, you should see where the system is failing, i.e., areas where the system is unable to predict accurately. Your focus should be to collect training data for these areas.
+    - Additional creative collection techniques
+        - Build the product in a way that it collects data from user
+        We can tweak the functionality of our product in a way that it starts generating training data for our model.
+        This can be done by tweaking the system in the following way:
+            - Ask users to name the board (collection) to which they save each pin. The name of the board will help to categorize the pins according to their content.
+            - Ask new users to choose their interests in terms of the board names specified by existing users.
+        The first step will help you to build content profiles. Whereas, the second step will help you build user profiles. The model can utilize these to show pins that would interest the user, personalizing the experience.
+        - Creative manual expansion
+        We can expand training data using creative ways. Assume that we are building a system that detects logos in images (object detection) and we have some images containing the logos we want to detect. We can expand/enhance the training data by manually placing those logos on a different set of images as well. This logo placement can be done in different positions and sizes. The enhanced training data will enable us to build a more robust logo detector model, which will be able to identify logos of all sizes at different positions and from various kinds of images.
+        - Data expansion using GANs
+        When working with systems that use visual data, such as object detectors or image segmenters, we can use GANs (generative adversarial networks) to enhance the training data. For instance, consider that we are building an object detector. There are a lot of training images of sunny weather conditions but less of rainy weather. A model trained on this training data may not work well for images with rainy conditions. Here, we can utilize GANs to convert images with sunny weather conditions to rainy weather conditions. This will increase our training data for rainy conditions, resulting in a more robust model.
+  - `Train, test, & validation splits`
+    - The size of each split will depend on your particular scenario.
+    - While splitting training data, you need to ensure that you are capturing all kinds of patterns in each split.
+    - Most of the time, we are building models with the intent to forecast the future. Therefore, you need your splits to reflect this intent as well.
+    - Quantity of training data
+    - Training data filtering
+      - Cleaning up data
+      You might see that the training data consist of a lot of bot traffic apart from the real user interactions. Bot traffic would just contain impressions and no clicks. This would introduce a lot of wrong negative examples. So we need to exclude them from the training data so that our model doesn’t learn from wrong examples.
+      - Removing bias
+      The model hence trained, will continue considering the previous top recommendation to be the top recommendation this time too. Hence, the “rich getting richer” cycle will continue. In order to break this cycle, we need to employ an exploration technique that explores the whole content pool (all movies available on Netflix). Therefore, we show “randomized” recommendations instead of “popular first” for a small portion of traffic for gathering training data. The users’ engagement with the randomized recommendations provides us with unbiased training data. This data really helps in removing the current positional and engagement bias of the system.
+      - Bootstrapping new items
+      Sometimes we are dealing with systems in which new items are added frequently. The new items may not garner a lot of attention, so we need to boost them to increase their visibility. For example, in the movie recommendation system, new movies face the cold start problem. We can boost new movies by recommending them based on their similarity with the user’s already watched movies, instead of waiting for the new movies to catch the attention of a user by themselves. Similarly, we may be building a system to display ads, and the new ads face the cold start problem. We can boost them by increasing their relevance scores a little, thereby artificially increasing their chance of being viewed by a person.
+  - `Feature: Feature engineering -> a`
+  - `Model: Model training -> b`
+  - `Evaluation: Offline evaluation -> c`
 
 6. `Online model execution and evaluation`
 Now that you have selected the top-performing models, you will test them in an online environment. Online testing heavily influences the decision of deploying the model. This is where online metrics come into play. Depending on the type of problem, you may use both component level and end-to-end metrics. As mentioned before, for the search engine task, the component-wise metric will be NDCG in online testing. However, this alone is not enough. You also need an end-to-end metric as well, like session success rate, to see if the system’s (search engine’s) performance has increased by using your new search ranking ML model. If you see a substantial increase in system performance during the online test, you can deploy it on production.
   - Iterative model improvement
     - Your model may perform well during offline testing, but the same increase in performance may not be observed during an online test. Here, you need to think about debugging the model to find out what exactly is causing this behavior. Is a particular component not working correctly? Is the features’ distribution different during training and testing time? For instance, a feature called “user’s top five interest” may show a difference in distribution during training and testing, when plotted. This can help you to identify that the routines used to provide the top five user interests were significantly different during training and testing time. Moreover, after the first version of your model has been built and deployed, you still need to monitor its performance. If the model is not performing as expected, you need to go towards debugging. You may observe a general failure from a decrease in AUC. Or, you may note that the model is failing in particular scenarios. For instance, by analysing the video recording of the self-driving car, you may find out that the image segmentation fails in rushy areas. The problem areas identified during model debugging will guide you in building successive iterations of your model.
+  - Running an online experiment
+    - A/B testing
+    - Measuring long term effects
+      In some cases, we need to be more confident about the result of an A/B experiment when it is overly optimistic.
+      - Back Testing
+      - Long-running A/B tests
 
 a, b, c
 1. a `Data Related Activites`
