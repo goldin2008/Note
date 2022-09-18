@@ -50,8 +50,20 @@ Your conversation should also include questions about performance/speed and capa
 As we work on a machine learning-based system, our goal is generally to improve our metrics (engagement rate, etc.) while ensuring that we meet the capacity and performance requirements. Major performance and capacity discussions come in during the following two phases of building a machine learning system:
     - Training time: How much training data and capacity is needed to build our predictor?
     - Evaluation time: What are the Service level agreement(SLA) that we have to meet while serving the model and capacity needs?
+`Relatively simiple algorithm/model`:
 We need to consider the performance and capacity along with optimization for the ML task at hand, i.e., measure the complexity of the ML system at the training and evaluation time and use it in the decision process of building our ML system architecture as well as in the selection of the ML modeling technique.
-  linear regression (single-layer neural network-based) algorithm < Tree-based algorithms < deep neural network
+  linear regression (single-layer neural network-based) algorithm 
+  < Tree-based algorithms 
+  < deep neural network
+  Performance based SLA ensures that we return the results back within a given time frame (e.g. 500ms) for 99% of queries. Capacity refers to the load that our system can handle, e.g., the system can support 1000 QPS (queries per second).
+`Add shards/More machines`:
+If we evaluate every document using a relatively fast model such as tree-based or linear regression and it takes 1\mu
+μs, our simple model would still take 100s to run for 100 million documents that matched the query “computer science”. This is where distributed systems come in handy; we will distribute the load of a single query among multiple shards, e.g., we can divide the load among 1000 machines and can still execute our fast model on 100 million documents in 100ms (100s/1000).
+a tree-based or linear regression takes 1μs for an exmaple -> 100s for 100million exmaples -> add 1000 machines takes 100ms(100s/1000) 
+deep learning model for search ranking takes 1ms to evaluate an example -> add 1000 shards will still take 100s for 100million (1ms * 100mill/1000) -> continue to add more shards and bring the number down -> using a funnel-based approach when designing ML systems for performance and limited capacity
+`Layered/funnel based modeling approach`: 
+To manage both the performance and capacity of a system, one reasonable approach that’s commonly used is to start with a relatively fast model when you have the most number of documents e.g. 100 million documents in case of the query “computer science” for search. In every later stage, we continue to increase the complexity (i.e. more optimized model in prediction) and execution time but now the model needs to run on a reduce number of documents e.g. our first stage could use a linear model and final stage can use a deep neural network. If we apply deep neural network for only top 500 documents, with 1ms evaluation time per document, we would need 500ms on a single machine. With 5 shards we can do it in around 100ms.
+
 3. `Defining the metrics of the problem`
 Now that you have figured out what machine learning problem you want to solve, the next step is to come up with metrics. Metrics will help you to see if your system is performing well. Knowing our success criteria helps in understanding the problem and in selecting key architectural components. This is why it’s important to discuss metrics early in our design discussions. The next step is to carefully choose your system’s performance metrics for both online and offline testing. The metrics you choose will depend on the problem your system is trying to solve.
     - Metrics for offline testing
