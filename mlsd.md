@@ -33,6 +33,7 @@ Key steps in ML system setup
 4. `Architecture discussion`
 5. `Offline model building and evaluation`
 6. `Online model execution and evaluation`
+7. `Model Debugging and Testing`
 
 ***Details***
 1. `Setting up the problem`/`Clarify Requirements`
@@ -117,7 +118,7 @@ The next step is to design your system’s architecture. You need to think about
       Sometimes we are dealing with systems in which new items are added frequently. The new items may not garner a lot of attention, so we need to boost them to increase their visibility. For example, in the movie recommendation system, new movies face the cold start problem. We can boost new movies by recommending them based on their similarity with the user’s already watched movies, instead of waiting for the new movies to catch the attention of a user by themselves. Similarly, we may be building a system to display ads, and the new ads face the cold start problem. We can boost them by increasing their relevance scores a little, thereby artificially increasing their chance of being viewed by a person.
   - `Feature: Feature engineering -> b`
   - `Model: Model training -> c`
-  - `Evaluation: Offline evaluation -> d`
+  - `Evaluation: Offline evaluation`
 
 6. `Online model execution and evaluation`
 Now that you have selected the top-performing models, you will test them in an online environment. Online testing heavily influences the decision of deploying the model. This is where online metrics come into play. Depending on the type of problem, you may use both component level and end-to-end metrics. As mentioned before, for the search engine task, the component-wise metric will be NDCG in online testing. However, this alone is not enough. You also need an end-to-end metric as well, like session success rate, to see if the system’s (search engine’s) performance has increased by using your new search ranking ML model. If you see a substantial increase in system performance during the online test, you can deploy it on production.
@@ -133,7 +134,45 @@ Now that you have selected the top-performing models, you will test them in an o
       - Long-running A/B tests
         For example, suppose that for the ad prediction system, the revenue went up by 5% when we started showing more ads to users but this had no effect on user retention. Will users start leaving the platform if we show them significantly more ads over a longer period of time? To answer this question, we might want to have a long-running A/B experiment to understand the impact. The long-running experiment, which measures long-term behaviors, can also be done via a backtest. We can launch the experiment based on initial positive results while continuing to run a long-running backtest to measure any potential long term effects. If we can notice any significant negative behavior, we can revert the changes from the launched experiment.
 
-a, b, c, d
+7. `Model Debugging and Testing`
+Let’s go over different phases in the development of a machine learning system, potential issues that we can face, and how to debug and fix them.
+There are two main phases in terms of the development of a model that we will go over:
+  - Building the first version of the model and the ML system.
+    The goal in this phase is to build the 1st version of the model. Few important steps in this stage are:
+    - We begin by identifying a business problem in the first phase and mapping it to a machine learning problem.
+    - We then go onto explore the training data and machine learning techniques that will work best on this problem.
+    - Then we train the model given the available data and features, play around with hyper-parameters.
+    - Once the model has been set up and we have early offline metrics like accuracy, precision/recall, AUC, etc., we continue to play around with the various     features and training data strategies to improve our offline metrics.
+    - If there is already a heuristics or rule-based system in place, our objective from the offline model would be to perform at least as good as the current system, e.g., for ads prediction problem, we would want our ML model AUC to be better than the current rule-based ads prediction based on only historical engagement rate.
+    It’s important to get version 1 launched to the real system quickly rather than spending too much time trying to optimize it. For example, if our AUC is 0.7 and it’s better than the current system with AUC 0.68, it’s generally a better idea to take model online and then continue to iterate to improve the quality. The reason is primarily that model improvement is an iterative process and we want validation from real traffic and data along with offline validation. We will look at various ideas that can help in that iterative development in the following sections.
+  - Deploying and debugging v1 model
+    Some ML-based systems only operate in an offline setting, for example, detect objects from a large set of images. But, most systems have an online component as well, for example, building a search ranking ML model will have to run online to service incoming queries and ranking the documents that match the query. In our first attempt to take the model online, i.e., enable live traffic, might not work as expected and results don’t look as good as we anticipated offline. Let’s look at a few failure scenarios that can happen at this stage and how to debug them.
+    - Change in feature distribution
+      The change in the feature distribution of training and evaluation set can negatively affect the model performance. Let’s consider an example of an Entity linking system that is trained using a readily available Wikipedia dataset. As we start using the system for real traffic, the traffic that we are now getting for finding entities is a mix of Wikipedia articles as well as research papers. Given the model wasn’t trained on that data, its feature distribution would be a lot different than what it was trained on. Hence it is not performing as well on the research articles entity detection. 
+      Another scenario could be a significant change in incoming traffic because of seasonality. Let’s consider an example of a search system trained using data for the last 2 weeks of December, i.e., mostly holiday traffic. If we deploy this system in January, the queries that it will see will be vastly different than what it was trained on and hence not performing as well as we observed in our offline validation.
+    - Feature logging issues
+      When the model is trained offline, there is an assumption that features of the model generated offline would exactly be the same when the model is taken online. However, this might not be true as the way we generated features for our online system might not exactly be the same. It’s a common practice to append features offline to our training data for offline training and then add them later to the online model serving part. So, if the model doesn’t perform as well as we anticipated online, it would be good to see if feature generation logic is the same for offline training as well as online serving part of model evaluation. 
+      Suppose we build an ads click prediction model. The model is trained on historical ad engagement. We then deploy it to predict the ads engagement rate. Now the assumption is that the features generated for the model offline would exactly be the same for run-time evaluation. Let’s assume that we have one important feature/signal for our model that’s based on historical advertiser ad impressions. During training, we compute this feature by using the last 7 days’ impression. But, the logic to compute this feature at model evaluation time uses the last 30 days of data to compute advertiser impressions. Because of this feature computed differently at training time and evaluation time, it will result in the model not performing well during online serving. It would be worth comparing the features used for training and evaluation to see if there is any such discrepancy.
+    - Overfitting
+      Overfitting happens when a model learns the intrinsic details in the training data to the extent that it negatively impacts the performance of the model on new or unseen data.
+      One good way of ensuring that we don’t get into this problem is to use a hidden test set which is not used for tuning hyperparameters and only use it for final model quality measurement.
+      Another important part is to have a comprehensive and large test set to cover all possible scenarios in a fairly similar distribution to how we anticipate them in live traffic.
+    - Under-fitting
+      One indication from training the model could be that the model is unable to learn complex feature interactions especially if we are using a simplistic model. So, this might indicate to us that using slightly higher-order features, introduce more feature interactions, or use a more complex /expensive model such as a neural network.
+  - Iterative improvements on top of the first version as well as debugging issues in large scale ML systems.  
+    The best way to iterative improve model quality is to start looking at failure cases of our model prediction and using that come up with the ideas that will help in improving model performance in those cases.
+    - Missing important feature
+    Digging deeper into failures examples can identify missing features that can help us perform better in failures cases.
+    - Insufficient training examples
+    We may also find that we are lacking training examples in cases where the model isn’t performing well. We will cater to all possible scenarios where the model is not performing well and update the training data accordingly.
+  - Debugging large scale systems
+    In the case of debugging large scale systems with multiple components(or models), we need to see which part of the overall system is not working correctly. It could be done for one failure example or over a set of examples to see where the opportunity lies to improve the metrics.
+    The following are a few key steps to think about iterative model improvement for large scale end to end ML systems:
+    - Identify the component
+    This accounts for finding the architectural component resulting in a high number of failures in our failure set.
+    - Improve the quality of component
+
+a, b, c
 1. a `Data Related Activites`
     - Data Explore - whats the dataset looks like?
     - Understand different features and their relationship with the target
@@ -193,12 +232,6 @@ Now, you can finally decide on the ML models that you should use for the given t
     - (ML Pipeline: Performance Monitoring) Metrics
     - AUC, F1, MSE, Accuracy, NDCG for ranking problems etc.
     - When to use which metrics?
-4. d `Evaluation`
-Offline learning is very beneficial, as it allows us to quickly test many different models so that we can select the best one for online testing, which is a slow process.
-    - A/B testing
-    In an A/B experiment, a webpage or screen is modified to create a second version of it. The original version is known as the control, and the modified version is the variation. From here, we can formulate two hypothesis:
-    - The null hypothesis
-    - The alternative hypothesis
 
 
 ***1. Search Ranking***
