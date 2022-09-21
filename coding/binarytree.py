@@ -308,9 +308,22 @@ class solution:
 #5 111.二叉树的最小深度
 # 给定一个二叉树，找出其最小深度。
 # 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
+class Solution:
+    def minDepth(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+        if not root.left and not root.right:
+            return 1
+
+        min_depth = 10**9
+        if root.left:
+            min_depth = min(self.minDepth(root.left), min_depth) # 获得左子树的最小高度
+        if root.right:
+            min_depth = min(self.minDepth(root.right), min_depth) # 获得右子树的最小高度
+        return min_depth + 1
 
 
-# 222.完全二叉树的节点个数
+#6 222.完全二叉树的节点个数
 # 递归法
 class Solution:
     def countNodes(self, root: TreeNode) -> int:
