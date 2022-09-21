@@ -40,6 +40,10 @@ NOTE:
 二叉树中深度优先和广度优先遍历实现方式，我们做二叉树相关题目，经常会使用递归的方式来实现深度优先遍历，也就是实现前中后序遍历，使用递归是比较方便的。
 栈其实就是递归的一种是实现结构，也就说前中后序遍历的逻辑其实都是可以借助栈使用递归的方式来实现的。
 广度优先遍历的实现一般使用队列来实现，这也是队列先进先出的特点所决定的，因为需要先进先出的结构，才能一层一层的来遍历二叉树。
+
+有同学会把红黑树和二叉平衡搜索树弄分开了，其实红黑树就是一种二叉平衡搜索树，这两个树不是独立的，所以C++中map、multimap、set、multiset的底层实现机制是二叉平衡搜索树，再具体一点是红黑树。
+
+morris遍历是二叉树遍历算法的超强进阶算法，morris遍历可以将非递归遍历中的空间复杂度降为O(1)，感兴趣大家就去查一查学习学习，比较小众，面试几乎不会考。我其实也没有研究过，就不做过多介绍了。
 """
 
 # 二叉树节点定义
@@ -207,7 +211,7 @@ class Solution:
         return results
 
 
-# 226.翻转二叉树
+#1 226.翻转二叉树
 ## 递归法：前序遍历：
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
@@ -251,16 +255,57 @@ class Solution:
         return root
 
 
-# 101. 对称二叉树
+#2 101. 对称二叉树
 # 给定一个二叉树，检查它是否是镜像对称的。
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        if not root:
+            return True
+        return self.compare(root.left, root.right)
+        
+    def compare(self, left, right):
+        #首先排除空节点的情况
+        if left == None and right != None: return False
+        elif left != None and right == None: return False
+        elif left == None and right == None: return True
+        #排除了空节点，再排除数值不相同的情况
+        elif left.val != right.val: return False
+        
+        #此时就是：左右节点都不为空，且数值相同的情况
+        #此时才做递归，做下一层的判断
+        outside = self.compare(left.left, right.right) #左子树：左、 右子树：右
+        inside = self.compare(left.right, right.left) #左子树：右、 右子树：左
+        isSame = outside and inside #左子树：中、 右子树：中 （逻辑处理）
+        return isSame
 
 
-# 104.二叉树的最大深度
+#3 104.二叉树的最大深度
 # 给定一个二叉树，找出其最大深度。
 # 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
+#4 559.n叉树的最大深度
+class solution:
+    def maxdepth(self, root: treenode) -> int:
+        return self.getdepth(root)
+        
+    def getdepth(self, node):
+        if not node:
+            return 0
+        leftdepth = self.getdepth(node.left) #左
+        rightdepth = self.getdepth(node.right) #右
+        depth = 1 + max(leftdepth, rightdepth) #中
+        return depth
+
+class solution:
+    def maxdepth(self, root: 'node') -> int:
+        if not root:
+            return 0
+        depth = 0
+        for i in range(len(root.children)):
+            depth = max(depth, self.maxdepth(root.children[i]))
+        return depth + 1
 
 
-# 111.二叉树的最小深度
+#5 111.二叉树的最小深度
 # 给定一个二叉树，找出其最小深度。
 # 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
 
