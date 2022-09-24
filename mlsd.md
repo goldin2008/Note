@@ -239,7 +239,9 @@ Now, you can finally decide on the ML models that you should use for the given t
 ### ***1. Search Ranking***
 ![Diagram of deployment.](pic/search_rank.png)
 
-Query rewriting -> Spell checker -> Query expansion/query relaxation -> Query understanding -> Document selection -> Ranker -> Blender -> Training data generation
+This is just an example configuration, and it’s important to point out that the number of stages and documents ranked at each stage should be selected based on capacity requirements as well as experimentation to see the impact on relevance based on documents scored at each layer.
+
+Query rewriting -> Spell checker -> Query expansion/Query relaxation -> Query understanding -> Document selection -> Ranker -> Blender -> Training data generation
 
 ![Diagram of deployment.](pic/layered_model.png)
 
@@ -259,17 +261,26 @@ Zero-click searches
 Time to success
 `Offline metrics`
 normalized discounted cumulative gain (NDCG) in detail as it’s a critical evaluation metric for any ranking problem
-NDCG:
-In contrast to cumulative gain, discounted cumulative gain (DCG) allows us to penalize the search engine’s ranking if highly relevant documents (as per ground truth) appear lower in the result list.
+NDCG: In contrast to cumulative gain, discounted cumulative gain (DCG) allows us to penalize the search engine’s ranking if highly relevant documents (as per ground truth) appear lower in the result list.
 
-`Ranker`
-The ranker will actively utilize machine learning to find the best order of documents (this is also called learning to rank).
-In stage one, you can use fast (nanoseconds) linear ML models to rank them. In stage two, you can utilise computationally expensive models (like deep learning models) to find the most optimized order of top 500 documents given by stage one. `When choosing an algorithm, remember to consider the model execution time. Cost vs benefit tradeoff is always an important consideration in large scale ML systems.`
+`Document Selection`
+Inverted Index, Relevance scoring scheme
+One basic scoring scheme is to utilize a simple weighted linear combination of the factors involved. The weight of each factor depends on its importance in determining the relevance score. Some of these factors are:
+  - Terms match
+  - Document popularity
+  - Query intent match
+  - Personalization match
 
-`Blender`
-Blender gives relevant results from various search verticals, like, images, videos, news, local results, and blog posts. The blender finally outputs a search engine result page (SERP) in response to the searcher’s query.
+`Feature Engineering`
+The knowledge of feature engineering is highly significant from an interview perspective.
+  - Searcher-specific features
+  - Query-specific features
+  - Document-specific features
+  - Context-specific features
+  - Searcher-document features
+  - Query-document features
 
-`Training data generation`
+`Training data generation` for the search ranking problem
 This component displays the cyclic manner of using machine learning to make a search engine ranking system. It takes online user engagement data from the SERP displayed in response to queries and generates positive and negative training examples. The training data generated is then fed to the machine learning models trained to rank search engine results.
 
 Training data generation for pointwise approach
@@ -280,28 +291,18 @@ Human raters (offline method)
 
 User-engagement (online method)
 
-`Document Selection`
-Inverted Index, Relevance scoring scheme
+`Blender`
+Blender gives relevant results from various search verticals, like, images, videos, news, local results, and blog posts. The blender finally outputs a search engine result page (SERP) in response to the searcher’s query.
 
-`Feature Engineering`
-Searcher-specific features
-Query-specific features
-Document-specific features
-Context-specific features
-Searcher-document features
-Query-document features
+`Ranker`
+The ranker will actively utilize machine learning to find the best order of documents (this is also called learning to rank). In stage one, you can use fast (nanoseconds) linear ML models to rank them. In stage two, you can utilise computationally expensive models (like deep learning models) to find the most optimized order of top 500 documents given by stage one. `When choosing an algorithm, remember to consider the model execution time. Cost vs benefit tradeoff is always an important consideration in large scale ML systems.`
 
 `Ranking`
 Learning to Rank (LTR): A class of techniques that applies supervised machine learning (ML) to solve ranking problems. The pointwise and pairwise techniques that we will apply fall under this class.
-
 for a large scale search engine, it makes sense to adopt a multi-layer funnel approach. The top layer of the funnel looks at a large number of documents and uses simpler and faster algorithms for ranking. The bottom layer ranks a small number of documents with complex machine-learned models.
-
 The configuration shown above assumes that the first stage will receive one-hundred thousand relevant documents from the document selection component. You then reduce this number to five-hundred after ranking in this layer, ensuring that the topmost relevant results are forwarded to the second stage (also referred to as `the recall of the documents`).
-
 It will then be the responsibility of the second stage to rank the documents such that topmost relevant results are placed in the correct order (also referred to as `the precision of the documents`).
-
 First stage model will focus on the `recall` of the top five to ten relevant documents in the first five-hundred results while the second stage will ensure `precision` of the top five to ten relevant documents.
-
 This is achieved by changing the objective function from a `single pointwise objective` (click, session success) to a pairwise objective. `Pairwise optimization for learning to rank` means that the model is not trying to minimize the classification error but rather trying to get as many pairs of documents in the right order as possible.
 
 From RankNet to LambdaRank to LambdaMART: An Overview
