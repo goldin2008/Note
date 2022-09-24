@@ -121,7 +121,7 @@ The next step is to design your system’s architecture. You need to think about
   - `Evaluation: Offline evaluation`
 
 6. `Online model execution and evaluation`
-Now that you have selected the top-performing models, you will test them in an online environment. Online testing heavily influences the decision of deploying the model. This is where online metrics come into play. Depending on the type of problem, you may use both component level and end-to-end metrics. As mentioned before, for the search engine task, the component-wise metric will be NDCG in online testing. However, this alone is not enough. You also need an end-to-end metric as well, like session success rate, to see if the system’s (search engine’s) performance has increased by using your new search ranking ML model. If you see a substantial increase in system performance during the online test, you can deploy it on production.
+Now that you have selected the top-performing models, you will test them in an online environment. Online testing heavily influences the decision of deploying the model. This is where online metrics come into play. Depending on the type of problem, you may use both component level and end-to-end metrics. As mentioned before, for the search engine task, the `component-wise metric` will be NDCG in online testing. However, this alone is not enough. You also need an `end-to-end metric` as well, like session success rate, to see if the system’s (search engine’s) performance has increased by using your new search ranking ML model. If you see a substantial increase in system performance during the online test, you can deploy it on production.
   - `Iterative model improvement`
     - Your model may perform well during offline testing, but the same increase in performance may not be observed during an online test. Here, you need to think about debugging the model to find out what exactly is causing this behavior. Is a particular component not working correctly? Is the features’ distribution different during training and testing time? For instance, a feature called “user’s top five interest” may show a difference in distribution during training and testing, when plotted. This can help you to identify that the routines used to provide the top five user interests were significantly different during training and testing time. Moreover, after the first version of your model has been built and deployed, you still need to monitor its performance. If the model is not performing as expected, you need to go towards debugging. You may observe a general failure from a decrease in AUC. Or, you may note that the model is failing in particular scenarios. For instance, by analysing the video recording of the self-driving car, you may find out that the image segmentation fails in rushy areas. The problem areas identified during model debugging will guide you in building successive iterations of your model.
   - `Running an online experiment`
@@ -142,22 +142,22 @@ There are two main phases in terms of the development of a model that we will go
     - We begin by identifying a business problem in the first phase and mapping it to a machine learning problem.
     - We then go onto explore the training data and machine learning techniques that will work best on this problem.
     - Then we train the model given the available data and features, play around with hyper-parameters.
-    - Once the model has been set up and we have early offline metrics like accuracy, precision/recall, AUC, etc., we continue to play around with the various     features and training data strategies to improve our offline metrics.
+    - Once the model has been set up and we have early offline metrics like accuracy, precision/recall, AUC, etc., we continue to play around with the various features and training data strategies to improve our offline metrics.
     - If there is already a heuristics or rule-based system in place, our objective from the offline model would be to perform at least as good as the current system, e.g., for ads prediction problem, we would want our ML model AUC to be better than the current rule-based ads prediction based on only historical engagement rate.
     It’s important to get version 1 launched to the real system quickly rather than spending too much time trying to optimize it. For example, if our AUC is 0.7 and it’s better than the current system with AUC 0.68, it’s generally a better idea to take model online and then continue to iterate to improve the quality. The reason is primarily that model improvement is an iterative process and we want validation from real traffic and data along with offline validation. We will look at various ideas that can help in that iterative development in the following sections.
-  - Deploying and debugging v1 model
+  - `Deploying and debugging v1 model`
     Some ML-based systems only operate in an offline setting, for example, detect objects from a large set of images. But, most systems have an online component as well, for example, building a search ranking ML model will have to run online to service incoming queries and ranking the documents that match the query. In our first attempt to take the model online, i.e., enable live traffic, might not work as expected and results don’t look as good as we anticipated offline. Let’s look at a few failure scenarios that can happen at this stage and how to debug them.
-    - Change in feature distribution
+    - `Change in feature distribution`
       The change in the feature distribution of training and evaluation set can negatively affect the model performance. Let’s consider an example of an Entity linking system that is trained using a readily available Wikipedia dataset. As we start using the system for real traffic, the traffic that we are now getting for finding entities is a mix of Wikipedia articles as well as research papers. Given the model wasn’t trained on that data, its feature distribution would be a lot different than what it was trained on. Hence it is not performing as well on the research articles entity detection. 
       Another scenario could be a significant change in incoming traffic because of seasonality. Let’s consider an example of a search system trained using data for the last 2 weeks of December, i.e., mostly holiday traffic. If we deploy this system in January, the queries that it will see will be vastly different than what it was trained on and hence not performing as well as we observed in our offline validation.
-    - Feature logging issues
+    - `Feature logging issues`
       When the model is trained offline, there is an assumption that features of the model generated offline would exactly be the same when the model is taken online. However, this might not be true as the way we generated features for our online system might not exactly be the same. It’s a common practice to append features offline to our training data for offline training and then add them later to the online model serving part. So, if the model doesn’t perform as well as we anticipated online, it would be good to see if feature generation logic is the same for offline training as well as online serving part of model evaluation. 
       Suppose we build an ads click prediction model. The model is trained on historical ad engagement. We then deploy it to predict the ads engagement rate. Now the assumption is that the features generated for the model offline would exactly be the same for run-time evaluation. Let’s assume that we have one important feature/signal for our model that’s based on historical advertiser ad impressions. During training, we compute this feature by using the last 7 days’ impression. But, the logic to compute this feature at model evaluation time uses the last 30 days of data to compute advertiser impressions. Because of this feature computed differently at training time and evaluation time, it will result in the model not performing well during online serving. It would be worth comparing the features used for training and evaluation to see if there is any such discrepancy.
-    - Overfitting
+    - `Overfitting`
       Overfitting happens when a model learns the intrinsic details in the training data to the extent that it negatively impacts the performance of the model on new or unseen data.
       One good way of ensuring that we don’t get into this problem is to use a hidden test set which is not used for tuning hyperparameters and only use it for final model quality measurement.
       Another important part is to have a comprehensive and large test set to cover all possible scenarios in a fairly similar distribution to how we anticipate them in live traffic.
-    - Under-fitting
+    - `Under-fitting`
       One indication from training the model could be that the model is unable to learn complex feature interactions especially if we are using a simplistic model. So, this might indicate to us that using slightly higher-order features, introduce more feature interactions, or use a more complex /expensive model such as a neural network.
   - Iterative improvements on top of the first version as well as debugging issues in large scale ML systems.  
     The best way to iterative improve model quality is to start looking at failure cases of our model prediction and using that come up with the ideas that will help in improving model performance in those cases.
@@ -165,7 +165,7 @@ There are two main phases in terms of the development of a model that we will go
     Digging deeper into failures examples can identify missing features that can help us perform better in failures cases.
     - Insufficient training examples
     We may also find that we are lacking training examples in cases where the model isn’t performing well. We will cater to all possible scenarios where the model is not performing well and update the training data accordingly.
-  - Debugging large scale systems
+  - `Debugging large scale systems`
     In the case of debugging large scale systems with multiple components(or models), we need to see which part of the overall system is not working correctly. It could be done for one failure example or over a set of examples to see where the opportunity lies to improve the metrics.
     The following are a few key steps to think about iterative model improvement for large scale end to end ML systems:
     - Identify the component
@@ -214,24 +214,24 @@ a, b, c
         The similarity of learning tasks can also guide us on whether we can simply use the model as it is or need to fine-tune the model for our new prediction task. For example, if we built a classifier for cars and now we want to use it for trucks, there is a good chance that many of the features are going to be common and we don’t have to fine-tune much. Here, we can utilize the pre-trained model as it is and build our models on top of it (i.e., utilizing the output of pre-trained models as features).
 3. c `Model Related Activities`
 Now, you can finally decide on the ML models that you should use for the given tasks, keeping the performance and capacity considerations in mind. We can also try out different hyperparameter values to see what works best. If you are using the funnel approach, you may select simpler models for the top of the funnel where data size is huge and more complex neural networks or trees based models for successive parts of the funnel. We also have the option of utilizing pre-trained SOTA (state of the art) models to leverage the power of transfer learning (you don’t need to reinvent the wheel completely each time).
-    - (ML Pipeline - Model Train and Evaluation) Build a simple model (XGBoost or NN)
-        - How to select a model? Assuming its a Neural Network
-            1. NLP/Sequence Model
-                - start: LSTM with 2 hidden layers
-                - see if 3 layers help,
-                - improve: check if Attention based model can help
-            2. Image Models - (Don't care right now)
-            3. Other
-                - start: Fully connected NN with 2 hidden layers
-                - Improve: problem specific
-    - (ML Pipeline - Model Train and Evaluation) What are the different hyperparameters (HPO) in the model that you chose and why?
-    - (ML Pipeline - Model Train and Evaluation) Once the simple model is built, do a bias-variance tradeoff, it will give you an idea of overfitting vs underfitting and based on whether overfit or underfit, you need different approaches to make you model better.
-    - Draw the ML pipeline (reference #3)
-    - Model Debug (reference #1)
-    - Model Deployment (reference#3)
-    - (ML Pipeline: Performance Monitoring) Metrics
-    - AUC, F1, MSE, Accuracy, NDCG for ranking problems etc.
-    - When to use which metrics?
+  - (ML Pipeline - Model Train and Evaluation) Build a simple model (XGBoost or NN)
+      - How to select a model? Assuming its a Neural Network
+          1. NLP/Sequence Model
+              - start: LSTM with 2 hidden layers
+              - see if 3 layers help,
+              - improve: check if Attention based model can help
+          2. Image Models - (Don't care right now)
+          3. Other
+              - start: Fully connected NN with 2 hidden layers
+              - Improve: problem specific
+  - (ML Pipeline - Model Train and Evaluation) What are the different hyperparameters (HPO) in the model that you chose and why?
+  - (ML Pipeline - Model Train and Evaluation) Once the simple model is built, do a bias-variance tradeoff, it will give you an idea of overfitting vs underfitting and based on whether overfit or underfit, you need different approaches to make you model better.
+  - Draw the ML pipeline (reference #3)
+  - Model Debug (reference #1)
+  - Model Deployment (reference#3)
+  - (ML Pipeline: Performance Monitoring) Metrics
+  - AUC, F1, MSE, Accuracy, NDCG for ranking problems etc.
+  - When to use which metrics?
 
 
 ***1. Search Ranking***
