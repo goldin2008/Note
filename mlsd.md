@@ -44,7 +44,7 @@ The interviewer’s question is generally very broad. So, the first thing you ne
     - Supervised Learning/Unsupervised Learning, Recommendation System like Netflix, Twitter
 
 2. `Understanding scale and latency requirements`/`Clarify Requirements`
-Your conversation should also include questions about performance/speed and capacity considerations of the system. The answers to these questions will guide you when you come up with the architecture of the system. Knowing that you need to return results quickly will influence the depth and complexity of your models. Having huge amounts of data to process, you will design the system with scalability in mind. Find more on this in the architecture discussion section.
+Your conversation should also include questions about performance/speed and capacity considerations of the system. The answers to these questions will guide you when you come up with the architecture of the system. Knowing that you need to return results quickly will influence the depth and complexity of your models. Having huge amounts of data to process, you will design the system with scalability in mind. Find more on this in the architecture discussion section. Let’s clarify the problem statement by specifying three aspects: scope, scale, and personalization.
   - Ask questions about the scale of the system - how many users, how much content?
   - Scale of the data: How many requests per second do we anticipate to handle?
   - Latency requirements: Do we want to return the search result in 100 milliseconds or 500 milliseconds?
