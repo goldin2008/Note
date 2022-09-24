@@ -241,7 +241,17 @@ Now, you can finally decide on the ML models that you should use for the given t
 
 This is just an example configuration, and it’s important to point out that the number of stages and documents ranked at each stage should be selected based on capacity requirements as well as experimentation to see the impact on relevance based on documents scored at each layer.
 
-Query rewriting -> Spell checker -> Query expansion/Query relaxation -> Query understanding -> Document selection -> Ranker -> Blender -> Training data generation
+Query rewriting -> Spell checker -> Query expansion/Query relaxation -> Query understanding -> Document selection(100k) -> Ranker(500) -> Blender -> Training data generation
+
+Ranker: 
+Document Selection (100k out of 100m) ->
+Ranker Stage 1 (500 out of 100k) recall of the top five to ten relevant documents (A relatively less complex linear algorithm, like logistic regression or small MART(Multiple additive regression trees) model) pointwise approach ->
+Ranker Stage 2 (500 in correct order) precision of the top five to ten relevant documents (LambdaMART is a variation of MART where we change the objective to improve pairwise ranking, LambdaRank is a neural network-based approach utilizing pairwise loss to rank the documents.) pairwise learning algorithms
+
+From RankNet to LambdaRank to LambdaMART: An Overview
+> https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/MSR-TR-2010-82.pdf
+
+We can calculate the NDCG score of the ranked results to compare the performance of different models.
 
 ![Diagram of deployment.](pic/layered_model.png)
 
@@ -290,8 +300,8 @@ The knowledge of feature engineering is highly significant from an interview per
 This component displays the cyclic manner of using machine learning to make a search engine ranking system. It takes online user engagement data from the SERP displayed in response to queries and generates positive and negative training examples. The training data generated is then fed to the machine learning models trained to rank search engine results.
   - Training data generation for pointwise approach
   - Training data generation for pairwise approach
-  - Human raters (offline method)
-  - User-engagement (online method)
+    - Human raters (offline method)
+    - User-engagement (online method)
 
 `Blender`
 Blender gives relevant results from various search verticals, like, images, videos, news, local results, and blog posts. The blender finally outputs a search engine result page (SERP) in response to the searcher’s query.
