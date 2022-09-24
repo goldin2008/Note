@@ -282,14 +282,10 @@ The knowledge of feature engineering is highly significant from an interview per
 
 `Training data generation` for the search ranking problem
 This component displays the cyclic manner of using machine learning to make a search engine ranking system. It takes online user engagement data from the SERP displayed in response to queries and generates positive and negative training examples. The training data generated is then fed to the machine learning models trained to rank search engine results.
-
-Training data generation for pointwise approach
-
-Training data generation for pairwise approach
-
-Human raters (offline method)
-
-User-engagement (online method)
+  - Training data generation for pointwise approach
+  - Training data generation for pairwise approach
+  - Human raters (offline method)
+  - User-engagement (online method)
 
 `Blender`
 Blender gives relevant results from various search verticals, like, images, videos, news, local results, and blog posts. The blender finally outputs a search engine result page (SERP) in response to the searcher’s query.
@@ -315,6 +311,8 @@ Result set after ranking, These results are inappropriate despite having good us
 - are trying to spread hatred
 - are not appropriate for children
 - are inconsiderate towards a particular group
+- features: There are maybe a few particular features that we might want to add specifically for our filtering model. For example, website historical report rate, sexually explicit terms used, domain name, website description, images used on the website, etc.
+- Classifier: Once you have built the training data with the right features, you can utilize classification algorithms like logistic regression, MART(Boosted trees or Random Forest), or a Deep neural network to classify a result as inappropriate.
 
 
 ### ***2. Feed Ranking System***
