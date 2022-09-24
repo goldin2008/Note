@@ -323,7 +323,7 @@ class Solution:
         return min_depth + 1
 
 
-#6 222.完全二叉树的节点个数
+#6 ??? 222.完全二叉树的节点个数
 # 递归法
 class Solution:
     def countNodes(self, root: TreeNode) -> int:
@@ -360,10 +360,6 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
         return result
-
-
-# 222.完全二叉树的节点个数
-# 给出一个完全二叉树，求出该树的节点个数。
 
 
 # 110.平衡二叉树
