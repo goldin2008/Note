@@ -172,6 +172,8 @@ There are two main phases in terms of the development of a model that we will go
     This accounts for finding the architectural component resulting in a high number of failures in our failure set.
     - Improve the quality of component
 
+![Diagram of deployment.](pic/ab_test.png)
+
 a, b, c
 1. a `Data Related Activites`
     - Data Explore - whats the dataset looks like?
