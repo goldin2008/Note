@@ -274,11 +274,17 @@ One basic scoring scheme is to utilize a simple weighted linear combination of t
 `Feature Engineering`
 The knowledge of feature engineering is highly significant from an interview perspective.
   - Searcher-specific features
+    - age, gender and interests
   - Query-specific features
+    - Query historical engagement, Query intent (A few examples of query intent are news, local, commerce, etc.)
   - Document-specific features
+    - Page rank, Document engagement radius
   - Context-specific features
+    - Time of search, Recent events
   - Searcher-document features
+    - Distance, Historical engagement
   - Query-document features
+    - Text Match, Unigram or bigram, Query-document historical engagement, Embeddings(represent the query and documents in the form of vectors)
 
 `Training data generation` for the search ranking problem
 This component displays the cyclic manner of using machine learning to make a search engine ranking system. It takes online user engagement data from the SERP displayed in response to queries and generates positive and negative training examples. The training data generated is then fed to the machine learning models trained to rank search engine results.
