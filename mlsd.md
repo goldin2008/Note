@@ -394,6 +394,7 @@ Dense features
       - topic_similarity
       - tweet_content_embedding_similarity
       - [x] social_embedding_similarity
+
   - Author features
     - Author’s degree of influence
       - is_verified
@@ -403,9 +404,11 @@ Dense features
     - Historical trend of interactions on the author’s Tweets
       - author_engagement_rate_3months
       - author_topic_engagement_rate_3months
+
   - User-Tweet features
     - topic_similarity
     - embedding_similarity
+
   - Tweet features
     - Features based on Tweet’s content
       - Tweet_length
