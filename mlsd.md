@@ -528,6 +528,76 @@ Sparse features
 3. Ins Story推荐，每条Story是独一无二的并且是有时间性的
 4. Spotify音乐推荐，怎么把音乐做个embedding
 
+1. `Setting up the problem`
+The prime factor that led to Netflix’s success was its recommendation system. The algorithm does a great job of bringing the right kind of content to the right users. Unlike Netflix’s recommendation system, a simple recommendation system would have simply recommended the trending movies/shows with little regard for the particular user’s preferences. At most, it would look at the viewer’s past watches and recommend movies/shows of the same genre.
+
+Another key aspect of Netflix’s approach is that they have found ways to recommend content that seemed different from the user’s regular choices. However, Netflix’s recommendations are not based on wild guesses, but they are based on other users’ watch histories, these users share some common patterns with the concerned user. This way, customers got to discover new content that they wouldn’t have found otherwise.
+
+The task at hand is to create such a recommendation system that keeps the viewers hooked and introduces them to varied content that expands their horizons.
+
+2. `Understanding scale and latency requirements`
+Now that you know the problem at hand, let’s define the scope of the problem:
+The total number of subscribers on the platform as of 2019 is 163.5 million.
+There are 53 million international daily active users.
+Hence, you have to build a system for a large number of users who require good recommendations on a daily basis.
+
+One common way to set up the recommendation system in the machine learning world is to pose it as a classification problem with the aim to predict the probability of user engagement with the content. So, the problem statement would be:
+“Given a user and context (time, location, and season), predict the probability of engagement for each movie and order movies using that score.”
+
+3. `Defining metrics`
+Online metrics
+  - Engagement rate = sessions with clicks/total number of sessions
+  However, the user might click on a recommended movie but does not find it interesting enough to complete watching it. Therefore, only measuring the engagement rate with the recommendations provides an incomplete picture.
+  - Videos watched
+  To take into account the unsuccessful clicks on the movie/show recommendations, we can also consider the average number of videos that the user has watched. We should only count videos that the user has spent at least a significant time watching (e.g., more than two minutes).
+  However, this metric can be problematic when it comes to the user starting to watch movie/series recommendations but not finding them interesting enough to finish them.
+  Series generally have several seasons and episodes, so watching one episode and then not continuing is also an indication of the user not finding the content interesting. So, just measuring the average number of videos watched might miss out on overall user satisfaction with the recommended content.
+  - Session watch time
+  Session watch time measures the overall time a user spends watching content based on recommendations in a session. The key measurement aspect here is that the user is able to find a meaningful recommendation in a session such that they spend significant time watching it.
+  Therefore, measuring session watch time, which is indicative of the session success, is a good metric to track online for the movie recommendation system.
+
+Offline metrics
+  Can we build an ideal set of documents that will allow us to measure recommendation set quality? One way of doing this could be to look at the movies/series that the user has completely watched and see if your recommendation system gets it right using historical data.
+  Once we have the set of movies/series that we can confidently say should be on the user’s recommendation list, we can use the following offline metrics to measure the quality of your recommendation system.
+
+![Diagram of deployment.](pic/map.png)
+
+  - mAP @ N : Mean Average Precision
+  N = length of the recommendation list
+  Precision measures the ratio between the relevant recommendations and total recommendations in the movie recommendation list. It will be calculated as follows:
+  P = number of relevant recommendations/total number of recommendations
+
+  The movie recommendation list and precisions at each cutoff “k” (1 to 5) can be represented as follows.
+  Note that a true positive (1), down the recommendation list, leads to low a mAP compared to the one that is high up in the list. This is important because we want the best recommendations to be at the start of the recommendation set.
+  Lastly, the “mean” in mAP means that we will calculate the AP with respect to each user’s ratings and take their mean. So, mAP computes the metric for a large set of users to see how the system performs overall on a large set.
+
+![Diagram of deployment.](pic/mar.png)
+
+  - mAR @ N : Mean Average Recall
+  Recall for your recommendation list is the ratio between the number of relevant recommendations in the list and the number of all possible relevant items(shows/movies). It is calculated as:
+  r = number of relevant recommendations/number of all possible relevant items
+
+  Lastly, the “mean” in mAR means that we will calculate AR with respect to each user’s ratings and then take their mean.
+  So, mAR at a high-level, measures how many of the top recommendations (based on historical data) we are able to get in the recommendation set.
+
+  - F1 score
+  mAP @ N focuses on how relevant the top recommendations are, whereas mAR @ N shows how well the recommender recalls all the items with positive feedback, especially in its top recommendations. You want to consider both of these metrics for the recommender.
+  If you want to give equal importance to precision and recall, you need to look for a score that conveys the balance between precision and recall.
+  F1 score = 2 * mAR∗mAP/(mAP+mAR)
+
+  So, the F1 score based on mAP and mAR will be a fairly good offline way to measure the quality of your models. Remember that we selected our recommendation set size to be five, but it can be differ based on the recommendation viewport or the number of recommendations that users on the platform generally engage with.
+
+![Diagram of deployment.](pic/mrse.png)
+
+  - Offline metric for optimizing ratings
+  root mean squared error (RMSE)
+
+
+4. `Architecture discussion`
+5. `Offline model building and evaluation`
+6. `Online model execution and evaluation`
+7. `Model Debugging and Testing`
+
 `Feature Engineering`
 
 ![Diagram of deployment.](pic/rec_feat.png)
@@ -611,6 +681,15 @@ If you are also considering past watches for the media recommendations, then re-
 
 
 ### ***4. Ad Prediction System***
+
+1. `Setting up the problem`
+2. `Understanding scale and latency requirements`
+3. `Defining metrics`
+4. `Architecture discussion`
+5. `Offline model building and evaluation`
+6. `Online model execution and evaluation`
+7. `Model Debugging and Testing`
+
 `Problem Statement`
 Predict the probability of engagement of an ad for a given user and context(query, device, etc.)
 
@@ -749,9 +828,23 @@ So, let’s combine the above two ideas together:
 - We train additive trees and neural network to predict non-linear complex relationships among our features. We then use these models to generate features.
 - We use raw features and features generated in the previous step to train a logic regression model.
 
-***5. Self-Driving Car: Image Segmentation***
+### ***5. Self-Driving Car: Image Segmentation***
+1. `Setting up the problem`
+2. `Understanding scale and latency requirements`
+3. `Defining metrics`
+4. `Architecture discussion`
+5. `Offline model building and evaluation`
+6. `Online model execution and evaluation`
+7. `Model Debugging and Testing`
 
-***6. Entity Linking System***
+### ***6. Entity Linking System***
+1. `Setting up the problem`
+2. `Understanding scale and latency requirements`
+3. `Defining metrics`
+4. `Architecture discussion`
+5. `Offline model building and evaluation`
+6. `Online model execution and evaluation`
+7. `Model Debugging and Testing`
 
 
 ## MLE Interview Questions
