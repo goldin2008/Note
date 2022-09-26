@@ -477,11 +477,14 @@ Sparse features
   Given the training time is slow for neural networks, training one model (shared layers) would make the overall training time much faster. Moreover, this will also allow us to share all the engagement data across each learning task.
 
   - Stacking models and online learning
+  Pros:
   To summarize, this stacking model setup will still give us all the learning power of deep neural networks and tree-based models along with the flexibility of training logistic regressions model, while keeping it almost real-time refreshed with online learning.
 
   Another advantage of using real-time online learning with logistic regression is that you can also utilize sparse features to learn the interaction, e.g., features like user_id and tweet_id can be used to memorize the interaction with each individual user and Tweet.
 
   Given that features like tweet_id and user_id are extremely sparse, training and evaluation of the model must be done in a distributed environment because the data won’t fit on one machine.
+  Cons:
+  To Do
 
 ![Diagram of deployment.](pic/multi_network.png)
 
