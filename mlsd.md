@@ -456,31 +456,34 @@ Sparse features
 
 `Ranking`
   - Logistic regression
+  Pros:
+  A key advantage of using logistic regression is that it is reasonably fast to train. This enables you to test new features fairly quickly to see if they make an impact on the AUC or validation error. Also, it’s extremely easy to understand the model. You can see from the feature weights which features have turned out to be more important than others.
+  Cons:
   A major limitation of the linear model is that it assumes linearity exists between the input features and prediction. Therefore, you have to manually model feature interactions. For example, if you believe that the day of the week before a major holiday will have a major impact on your engagement prediction, you will have to create this feature in your training data manually. Other models like tree-based and neural networks are able to learn these feature interactions and utilize them effectively for predictions.
 
-  - MART: multiple additive regression trees
-  Trees are inherently able to utilize non-linear relations between features that aren’t readily available to logistic regression.
-
+  - MART: multiple additive regression trees (Boosted Decision Trees and Random Forest)
+  Pros:
+  Trees are inherently able to utilize non-linear relations between features that aren’t readily available to logistic regression. 
   Tree-based models also don’t require a large amount of data as they are able to generalize well quickly. So, a few million examples should be good enough to give us an optimized model.
+  Cons:
+  To Do
 
   Consider a scenario, where a person reshares a Tweet but does not click the like button. Even though the user didn’t actually click on the like button, retweeting generally implies that the user likes the Tweet. The positive training example for the retweet model may prove useful for the like model as well. Hence, you can reuse all positive training examples across every model.
-
   One way to utilize the overall engagement data among each individual predictor of P(like), P(comment) and P(retweet) is to build one common predictor, i.e., P(engagement) and share its output as input into all of your predictors.
 
   - Multi-task neural networks
-
   total_loss = like_loss + comment_loss + retweet_loss
 
   Given the training time is slow for neural networks, training one model (shared layers) would make the overall training time much faster. Moreover, this will also allow us to share all the engagement data across each learning task.
 
+  - Stacking models and online learning
+  To summarize, this stacking model setup will still give us all the learning power of deep neural networks and tree-based models along with the flexibility of training logistic regressions model, while keeping it almost real-time refreshed with online learning.
+
+  Another advantage of using real-time online learning with logistic regression is that you can also utilize sparse features to learn the interaction, e.g., features like user_id and tweet_id can be used to memorize the interaction with each individual user and Tweet.
+
+  Given that features like tweet_id and user_id are extremely sparse, training and evaluation of the model must be done in a distributed environment because the data won’t fit on one machine.
+
 ![Diagram of deployment.](pic/multi_network.png)
-
-- Stacking models and online learning
-To summarize, this stacking model setup will still give us all the learning power of deep neural networks and tree-based models along with the flexibility of training logistic regressions model, while keeping it almost real-time refreshed with online learning.
-
-Another advantage of using real-time online learning with logistic regression is that you can also utilize sparse features to learn the interaction, e.g., features like user_id and tweet_id can be used to memorize the interaction with each individual user and Tweet.
-
-Given that features like tweet_id and user_id are extremely sparse, training and evaluation of the model must be done in a distributed environment because the data won’t fit on one machine.
 
 `Diversity`
   - Diversity in Tweets’ authors
