@@ -416,17 +416,20 @@ Dense features
       - is_image_video
       - is_URL
     - Features based on Tweet’s interaction
-      - num_total_interactions (Time decay can be used in all features where there is a decline in the value of a quantity over time.)
+      - num_total_interactions
+      (Time decay can be used in all features where there is a decline in the value of a quantity over time.)
       - use different time windows to capture the recency of interactions
-      - interactions_in_last_1_hour
-      - interactions_in_last_1_day
-    - Separate features for different engagements
-      - likes_in_last_3_days
-      - comments_in_last_1_day
-      - reshares_in_last_2_hours
-      - likes_in_last_3_days_user’s_network_only
-      - comments_in_last_1_day_user’s_network_only
-      - reshares_in_last_2_hours_user’s_network_only
+        - interactions_in_last_1_hour
+        - interactions_in_last_1_day
+        - interactions_in_last_3_days
+        - interactions_in_last_week
+      - Separate features for different engagements
+        - likes_in_last_3_days
+        - comments_in_last_1_day
+        - reshares_in_last_2_hours
+        - likes_in_last_3_days_user’s_network_only
+        - comments_in_last_1_day_user’s_network_only
+        - reshares_in_last_2_hours_user’s_network_only
     - Context-based features
       - day_of_week
       - time_of_day
@@ -445,6 +448,8 @@ Sparse features
   The users’ online engagement with Tweets can give us positive and negative training examples. For instance, if you are training a single model to predict user engagement, then all the Tweets that received user engagement would be labeled as positive training examples. Similarly, the Tweets that only have impressions would be labeled as negative training examples.
 
   Impression: If a Tweet is displayed on a user’s Twitter feed, it counts as an impression. It is not necessary that the user reads it or engages with it, scrolling past it also counts as an impression.
+  
+  Given that the model’s scores are only going to be used to rank Tweets among themselves, poor model calibration doesn’t matter much in this scenario. We will discuss this in the ads system chapter, where calibrated scores are important, and we need to be mindful of such a sampling technique.
 
   - Balancing positive and negative training examples
   - Train test split
