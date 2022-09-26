@@ -587,7 +587,7 @@ Offline metrics
 
   So, the F1 score based on mAP and mAR will be a fairly good offline way to measure the quality of your models. Remember that we selected our recommendation set size to be five, but it can be differ based on the recommendation viewport or the number of recommendations that users on the platform generally engage with.
 
-![Diagram of deployment.](pic/mrse.png)
+![Diagram of deployment.](pic/rmse.png)
 
   - Offline metric for optimizing ratings
   root mean squared error (RMSE)
