@@ -593,11 +593,6 @@ Offline metrics
   root mean squared error (RMSE)
 
 
-4. `Architecture discussion`
-5. `Offline model building and evaluation`
-6. `Online model execution and evaluation`
-7. `Model Debugging and Testing`
-
 `Feature Engineering`
 
 ![Diagram of deployment.](pic/rec_feat.png)
@@ -660,7 +655,15 @@ Media-user cross features
     - music_composer
     - actors
 
+
+4. `Architecture discussion`
+We have a huge number of movies to choose from. Also, we require complex models to make great, personalized recommendations. However, if we try to run a complex model on the whole corpus, it would be inefficient in terms of execution time and computing resources usage.
+Therefore, we split the recommendation task into two stages.
+Stage 1: Candidate generation
+Stage 2: Ranking of generated candidates
+
 `Candidate Generation`
+This component focuses on `higher recall`, meaning it focuses on gathering movies that might interest the user from all perspectives, e.g., media that is relevant based on historical user interests, trending locally, etc.
 1. Collaborative filtering
 - Nearest neighborhood
 - [x] Matrix factorization
@@ -675,10 +678,14 @@ weaknesses of the approaches for candidate generation discussed above
 - Content-based filtering is superior in such scenarios. It does require some initial input from the user regarding their preferences to start generating candidates, though. This input is obtained as a part of the onboarding process, where a new user is asked to share their preferences. Once we have the initial input, it can create and then match the user’s profile with media profiles. Moreover, new medias’ profiles can be built immediately as their description is provided manually.
 
 `Ranking`
+This component focuses on `higher precision`, i.e., it will focus on the ranking of the top k recommendations.
 Re-ranking is done for various reasons, such as bringing diversity to the recommendations. Consider a scenario where all the top ten recommended movies are comedy. You might decide to keep only two of each genre in the top ten recommendations. This way, you would have five different genres for the user in the top recommendations.
 
 If you are also considering past watches for the media recommendations, then re-ranking can help you. It prevents the recommendation list from being overwhelmed by previous watches by moving some previously watched media down the list of recommendations.
 
+5. `Offline model building and evaluation`
+6. `Online model execution and evaluation`
+7. `Model Debugging and Testing`
 
 ### ***4. Ad Prediction System***
 
