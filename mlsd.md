@@ -663,6 +663,18 @@ Stage 1: Candidate generation
 Stage 2: Ranking of generated candidates
 
 ![Diagram of deployment.](pic/rec01.png)
+![Diagram of deployment.](pic/rec02.png)
+![Diagram of deployment.](pic/rec03.png)
+![Diagram of deployment.](pic/rec04.png)
+![Diagram of deployment.](pic/rec05.png)
+![Diagram of deployment.](pic/rec06.png)
+![Diagram of deployment.](pic/rec07.png)
+![Diagram of deployment.](pic/rec08.png)
+![Diagram of deployment.](pic/rec09.png)
+![Diagram of deployment.](pic/rec10.png)
+![Diagram of deployment.](pic/rec11.png)
+![Diagram of deployment.](pic/rec12.png)
+![Diagram of deployment.](pic/rec13.png)
 
 `Candidate Generation`
 This component focuses on `higher recall`, meaning it focuses on gathering movies that might interest the user from all perspectives, e.g., media that is relevant based on historical user interests, trending locally, etc.
