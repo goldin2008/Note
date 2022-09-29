@@ -885,13 +885,14 @@ Let’s go over an example to see how these components will interact for the sea
   - user_age_advertiser_histogram
 
 `Ad Selection`
-- Phase 1: Quick selection of ads for the given query and user context according to selection criteria
-The first key requirement to be able to achieve the quick selection objective is to have the ads stored in a system that is fast and enables complex selection criteria. This is where building an in-memory index to store the ads will be massively helpful.
-- Phase 2: Rank these selected ads based on a simple and fast algorithm to trim ads.
-The number of ads selected in phase 1 can be quite large depending on the query and the user, e.g., we can have millions of ads targeted for a sports fan. So, running a complex ML model to predict engagement on all these selected ads will be slow and expensive. At this point, it makes sense to narrow down the space using a simplistic approach before we start running complex models.
-- Phase 3: Apply the machine learning model on the trimmed ads to select the top ones.
-As the ranking in phase 2 is super simplistic, we should still select a sizable ads(e.g., ten thousand) by running a better model as we work towards reducing the ad set. We can run a simplistic and efficient model on ads selected in phase 2 to further narrow it down. The top ads from this phase will be passed to our ad prediction stage to run more complex and accurate models for better user engagement prediction.
-We can use either logistic regression or additive trees based models (such as random forest or boosted decision trees) as they are quite efficient. Neural network-based models need more capacity and time so they might not be the best choice at this stage.
+  - `Phase 1`: Quick selection of ads for the given query and user context according to selection criteria
+  The first key requirement to be able to achieve the quick selection objective is to have the ads stored in a system that is fast and enables complex selection criteria. This is where building an in-memory index to store the ads will be massively helpful.
+  So, the above selection criteria in phase 1 will reduce our space set from all active ads to ads that are targeted for the current user.
+  - `Phase 2`: Rank these selected ads based on a simple and fast algorithm to trim ads.
+  The number of ads selected in phase 1 can be quite large depending on the query and the user, e.g., we can have millions of ads targeted for a sports fan. So, running a complex ML model to predict engagement on all these selected ads will be slow and expensive. At this point, it makes sense to narrow down the space using a simplistic approach before we start running complex models.
+  - `Phase 3`: Apply the machine learning model on the trimmed ads to select the top ones.
+  As the ranking in phase 2 is super simplistic, we should still select a sizable ads(e.g., ten thousand) by running a better model as we work towards reducing the ad set. We can run a simplistic and efficient model on ads selected in phase 2 to further narrow it down. The top ads from this phase will be passed to our ad prediction stage to run more complex and accurate models for better user engagement prediction.
+  We can use either logistic regression or additive trees based models (such as random forest or boosted decision trees) as they are quite efficient. Neural network-based models need more capacity and time so they might not be the best choice at this stage.
 
 ![Diagram of deployment.](pic/ads_pred.png)
 
@@ -899,6 +900,14 @@ We can use either logistic regression or additive trees based models (such as ra
 The following figure shows some key components that are critical for enabling online learning. We need a mechanism that generates the latest training examples via an online joiner. Our training data generator will take these examples and generate the right feature set for them. The model trainer will then receive these new examples to refresh the model using stochastic gradient descent. This forms a tightly closed loop where changes in the feature distribution or model output can be detected, learned on, and improved in short successions. Note that the refresh of the model doesn’t have to be instantaneous, and we can do it in same batches at a certain frequency, e.g., every 30 mins, 60 mins etc.
 
 5. `Offline model building and evaluation`
+`Model recalibration`
+Negative downsampling can accelerate training while enabling us to learn from both positive and negative examples. However, our predicted model output will now be in the downsampling space. For instance, consider that if our engagement rate is 5% and we select only 10% negative samples, our average predicted engagement rate will be near 50%. Auction uses this predicted rate to determine order and pricing; therefore it’s critical that we recalibrate our score before sending them to auction. The recalibration can be done using:
+q = p/(p+(1-p)/w)
+Here,
+q is the re-calibrated prediction score,
+p is the prediction in downsampling space, and
+w is the negative downsampling rate.
+
 6. `Online model execution and evaluation`
 7. `Model Debugging and Testing`
 
