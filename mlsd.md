@@ -662,6 +662,25 @@ Therefore, we split the recommendation task into two stages.
 Stage 1: Candidate generation
 Stage 2: Ranking of generated candidates
 
+`Candidate Generation`
+This component focuses on `higher recall`, meaning it focuses on gathering movies that might interest the user from all perspectives, e.g., media that is relevant based on historical user interests, trending locally, etc.
+1. Collaborative filtering
+In this technique, you find users similar to the active user based on the intersection of their historical watches. You, then, collaborate with similar users to generate candidate media for the active user, as shown below.
+  - Nearest neighborhood
+  To generate recommendations for user i, you need to predict their feedback for all the movies they haven’t watched. You will collaborate with users similar to user i for this process. Their ratings for a movie, not seen by user i, would give us a good idea of how user i would like it.
+  It is evident that this process will be computationally expensive with the increase in numbers of users and movies. The sparsity of this matrix also poses a problem when a movie has not been rated by any user or a new user has not watched many movies.
+  - [x] Matrix factorization
+2. Content-based filtering
+Content-based filtering allows us to make recommendations to users based on the characteristics or attributes of the media they have already interacted with.
+  - Similarity with historical interactions
+  - Similarity between media and user profiles
+3. Embedding-based similarity
+
+weaknesses of the approaches for candidate generation discussed above
+  - Collaborative filtering can suggest candidates based solely on the historical interaction of the users. Unlike content-based filtering, it does not require domain knowledge to create user and media profiles. It may also be able to capture data aspects that are often elusive and difficult to profile using content-based filtering. However, collaborative filtering suffers from the cold start problem. It is difficult to find users similar to a new user in the system because they have less historical interaction. Also, new media can’t be recommended immediately as no users have given feedback on it.
+  - The neural network technique also suffers from the cold start problem. The embedding vectors of media and users are updated in the training process of the neural networks. However, if a movie is new or if a user is new, both would have fewer instances of feedback received and feedback given, respectively. By extension, this means there is a lack of sufficient training examples to update their embedding vectors accordingly. Hence, the cold start problem.
+  - Content-based filtering is superior in such scenarios. It does require some initial input from the user regarding their preferences to start generating candidates, though. This input is obtained as a part of the onboarding process, where a new user is asked to share their preferences. Once we have the initial input, it can create and then match the user’s profile with media profiles. Moreover, new medias’ profiles can be built immediately as their description is provided manually.
+
 ![Diagram of deployment.](pic/rec01.png)
 ![Diagram of deployment.](pic/rec02.png)
 ![Diagram of deployment.](pic/rec03.png)
@@ -676,23 +695,6 @@ Stage 2: Ranking of generated candidates
 ![Diagram of deployment.](pic/rec12.png)
 ![Diagram of deployment.](pic/rec13.png)
 
-`Candidate Generation`
-This component focuses on `higher recall`, meaning it focuses on gathering movies that might interest the user from all perspectives, e.g., media that is relevant based on historical user interests, trending locally, etc.
-1. Collaborative filtering
-  - Nearest neighborhood
-  To generate recommendations for user i, you need to predict their feedback for all the movies they haven’t watched. You will collaborate with users similar to user i for this process. Their ratings for a movie, not seen by user i, would give us a good idea of how user i would like it.
-  It is evident that this process will be computationally expensive with the increase in numbers of users and movies. The sparsity of this matrix also poses a problem when a movie has not been rated by any user or a new user has not watched many movies.
-  - [x] Matrix factorization
-2. Content-based filtering
-  - Similarity with historical interactions
-  - Similarity between media and user profiles
-3. Embedding-based similarity
-
-weaknesses of the approaches for candidate generation discussed above
-  - Collaborative filtering can suggest candidates based solely on the historical interaction of the users. Unlike content-based filtering, it does not require domain knowledge to create user and media profiles. It may also be able to capture data aspects that are often elusive and difficult to profile using content-based filtering. However, collaborative filtering suffers from the cold start problem. It is difficult to find users similar to a new user in the system because they have less historical interaction. Also, new media can’t be recommended immediately as no users have given feedback on it.
-  - The neural network technique also suffers from the cold start problem. The embedding vectors of media and users are updated in the training process of the neural networks. However, if a movie is new or if a user is new, both would have fewer instances of feedback received and feedback given, respectively. By extension, this means there is a lack of sufficient training examples to update their embedding vectors accordingly. Hence, the cold start problem.
-  - Content-based filtering is superior in such scenarios. It does require some initial input from the user regarding their preferences to start generating candidates, though. This input is obtained as a part of the onboarding process, where a new user is asked to share their preferences. Once we have the initial input, it can create and then match the user’s profile with media profiles. Moreover, new medias’ profiles can be built immediately as their description is provided manually.
-
 `Ranking`
 This component focuses on `higher precision`, i.e., it will focus on the ranking of the top k recommendations.
 Re-ranking is done for various reasons, such as bringing diversity to the recommendations. Consider a scenario where all the top ten recommended movies are comedy. You might decide to keep only two of each genre in the top ten recommendations. This way, you would have five different genres for the user in the top recommendations.
@@ -700,6 +702,17 @@ Re-ranking is done for various reasons, such as bringing diversity to the recomm
 If you are also considering past watches for the media recommendations, then re-ranking can help you. It prevents the recommendation list from being overwhelmed by previous watches by moving some previously watched media down the list of recommendations.
 
 5. `Offline model building and evaluation`
+  - Generating training examples
+  One way of interpreting user actions as positive and negative training examples is based on the duration for which the user watched a particular show/movie. You take positive examples as ones where the user ended up watching most of a recommended movie/show, i.e., watched 80% or more. You take negative examples, again where we are confident that the user ignored a movie/show, i.e., watched 10% or less.
+  If the percentage of a movie/show watched by the user falls between 10% and 80%, you will put it in the uncertainty bucket. This percentage is not clearly indicative of a user’s like or dislike, so you ignore such examples. For instance, let’s say a user watched 55% of a movie. This could be considered a positive example considering that they liked it enough to watch it midway. However, it could be that a lot of people had recommended it to them, so they wanted to see what all the hype was about by at least watching it halfway through. However, they, ultimately, decided that it was not according to their liking.
+  Hence, to avoid these kinds of misinterpretations, you label examples as positive and negative only when you are certain about it to a higher degree.
+  - Balancing positive and negative training examples
+  randomly downsample the negative examples
+  - Weighting training examples
+
+![Diagram of deployment.](pic/rec_train.png)
+
+
 6. `Online model execution and evaluation`
 7. `Model Debugging and Testing`
 
