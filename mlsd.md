@@ -700,6 +700,30 @@ This component focuses on `higher precision`, i.e., it will focus on the ranking
 Re-ranking is done for various reasons, such as bringing diversity to the recommendations. Consider a scenario where all the top ten recommended movies are comedy. You might decide to keep only two of each genre in the top ten recommendations. This way, you would have five different genres for the user in the top recommendations.
 
 If you are also considering past watches for the media recommendations, then re-ranking can help you. It prevents the recommendation list from being overwhelmed by previous watches by moving some previously watched media down the list of recommendations.
+  - Approach 1: Logistic regression or random forest
+  There are multiple reasons that training a simplistic model might be the way to go. They are as follows:
+    - Training data is limited
+    - You have limited training and model evaluation capacity
+    - You want model explainability to really understand how the ML model is making its decision and show that to the end-user
+    - You require an initial baseline to see how far you can go in reducing our test set loss before you try more complex approaches
+  - Approach 2: Deep NN with sparse and dense features
+  Another way to model this problem is to set up a deep NN. Some of the factors that were discussed in Approach 1 are now key requirements for training this deep NN model. They are as follows:
+    - Hundreds of millions of training examples should be available
+    - Having the capacity to evaluate these models in terms of capacity and model interpretability is not that critical.
+  Since the idea is that you want to predict whether the user will watch the media or not, you train a deep NN with sparse and dense features for this learning task. Two extremely powerful sparse features fed into such a network can be videos that the user has previously watched and the user’s search terms. For these sparse features, you can set up the network to also learn media and search term embeddings as part of the learning task. These specialized embeddings for historical watches and search terms can be very powerful in predicting the next watch idea for a user. They will allow the model to personalize the recommendation ranking based on the user’s recent interaction with media content on the platform.
+
+  An important aspect here is that both search terms and historical watched content are list-wise features. You need to think about how to feed them in the network given that the size of the layers is fixed. You can use an approach similar to pooling layers in CNN (convolution neural networks) and simply average the historical watch id and search text term embeddings before feeding it into the network.
+
+
+![Diagram of deployment.](pic/rec_ranker.png)
+![Diagram of deployment.](pic/rec_ranker01.png)
+![Diagram of deployment.](pic/rec_ranker02.png)
+
+`Re-ranking`
+The top ten recommendations on the user’s page are of great importance. After your system has given the watch probabilities and you have ranked the results accordingly, you may re-rank the results.
+Re-ranking is done for various reasons, such as bringing diversity to the recommendations. Consider a scenario where all the top ten recommended movies are comedy. You might decide to keep only two of each genre in the top ten recommendations. This way, you would have five different genres for the user in the top recommendations.
+If you are also considering past watches for the media recommendations, then re-ranking can help you. It prevents the recommendation list from being overwhelmed by previous watches by moving some previously watched media down the list of recommendations.
+
 
 5. `Offline model building and evaluation`
   - Generating training examples
@@ -709,6 +733,7 @@ If you are also considering past watches for the media recommendations, then re-
   - Balancing positive and negative training examples
   randomly downsample the negative examples
   - Weighting training examples
+  - How many layers should you setup? How many activation units should be used in each layer? The best answer to these questions is that you should start with 2-3 hidden layers with a RELU based activation unit and then play around with the numbers to see how this helps us reduce the test error. Generally, adding more layers and units helps initially, but its usefulness tapers off quickly. The computation and time cost would be higher relative to the drop in error rate.
 
 ![Diagram of deployment.](pic/rec_train.png)
 
@@ -717,7 +742,6 @@ If you are also considering past watches for the media recommendations, then re-
 7. `Model Debugging and Testing`
 
 ### ***4. Ad Prediction System***
-
 1. `Setting up the problem`
 2. `Understanding scale and latency requirements`
 3. `Defining metrics`
