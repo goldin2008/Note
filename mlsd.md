@@ -743,50 +743,68 @@ If you are also considering past watches for the media recommendations, then re-
 
 ### ***4. Ad Prediction System***
 1. `Setting up the problem`
-2. `Understanding scale and latency requirements`
-3. `Defining metrics`
-4. `Architecture discussion`
-5. `Offline model building and evaluation`
-6. `Online model execution and evaluation`
-7. `Model Debugging and Testing`
-
 `Problem Statement`
 Predict the probability of engagement of an ad for a given user and context(query, device, etc.)
+Note that the context can be different depending on the type of application in which we are displaying the advertisement.
+There are two categories of applications:
+- Search engine: Here, the query will be part of the context along with the searcher. The system will display ads based on the search query issued by the searcher.
+- Social media platforms: Here, we do not have a query, but the user information (such as location, demographics, and interests hierarchy) will be part of the context and used to select ads. The system will automatically detect user interest based on the user’s historical interactions (using machine learning algorithms) and display ads accordingly.
 
-`metrics`
-Offline metrics are mainly used to compare the models offline quickly and see which one gives the best result. Online metrics are used to validate the model for an end-to-end system to see how the revenue and engagement rate improve before making the final decision to launch the model.
+Most components will be the same for the above two discussed platforms with the main difference being the context that is used to select and predict ad engagement.
+
+2. `Understanding scale and latency requirements`
+
+3. `Defining metrics`
+The metrics used in our ad prediction system will help select the best machine-learned models to show relevant ads to the user. They should also ensure that these models help the overall improvement of the platform, increase revenue, and provide value for the advertisers.
+
+`Why are both online and offline metrics important?`
+Offline metrics are mainly used to compare the models offline quickly and see which one gives the best result.
+Online metrics are used to validate the model for an end-to-end system to see how the revenue and engagement rate improve before making the final decision to launch the model.
+
 They should also ensure that these models help the overall improvement of the platform, increase revenue, and provide value for the advertisers.
 - Offline metrics
   - area under the receiver operator curve (AUC)
-    1. However, given that the system needs well-calibrated prediction scores, AUC, has the following shortcomings in this ad prediction scenario.
-    2. AUC does not penalize for “how far off” predicted score is from the actual label. For example, let’s take two positive examples (i.e., with actual label 1) that have the predicted scores of 0.51 and 0.7 at threshold 0.5. These scores will contribute equally to our loss even though one is much closer to our predicted value.
-    3. AUC is insensitive to well-calibrated probabilities.
-  - Log Loss (or more precisely cross-entropy loss) is the measure of our predictive error.
+  However, given that the system needs well-calibrated prediction scores, AUC, has the following shortcomings in this ad prediction scenario.
+    1. AUC does not penalize for “how far off” predicted score is from the actual label. For example, let’s take two positive examples (i.e., with actual label 1) that have the predicted scores of 0.51 and 0.7 at threshold 0.5. These scores will contribute equally to our loss even though one is much closer to our predicted value.
+    2. AUC is insensitive to well-calibrated probabilities.
+  - `Log Loss` (or more precisely cross-entropy loss) is the measure of our predictive error.
     1. This metric captures to what degree expected probabilities diverge from class labels. As such, it is an absolute measure of quality, which accounts for generating well-calibrated, probabilistic output.
     2. Let’s consider a scenario that differentiates why log loss gives a better output compared to AUC. If we multiply all the predicted scores by a factor of 2 and our average prediction rate is double than the empirical rate, AUC won’t change but log loss will go down.
 
 - Online metrics
-  - Overall revenue
-  - Overall ads engagement rate
+  - `Overall revenue`
+  It’s important to call out that just measuring revenue is a very short term approach, as we may not provide enough value to advertisers and they will move away from the system. However, revenue is definitely one critical metric to track.
+  - `Overall ads engagement rate`
     - Click rate
+    This will measure the ratio of user clicks to ads.
     - Downstream action rate
-  - Counter metrics
-  It’s important to track counter metrics to see if the ads are negatively impacting the platform.
-  There is a risk that users can leave the platform if ads degrade the experience significantly.
+    This will measure the action rate of a particular action targeted by the advertiser e.g. add to cart rate, purchase rate, message rate etc.
+  - `Counter metrics`
+  It’s important to track counter metrics to see if the ads are negatively impacting the platform. There is a risk that users can leave the platform if ads degrade the experience significantly. Along with top metrics, it’s important to track direct negative feedback by the user on the ad such as providing following feedback on the ad:
+    - Hide ad
+    - Never see this ad
+    - Report ad as inappropriate
 
 ![Diagram of deployment.](pic/ads_sys.png)
 
+4. `Architecture discussion`
 `Architectural Components`
 
 `Advertiser flow`
-- Query-based targeting
-- User-based targeting
-- Interest-based targeting
-- Set-based targeting
+Advertisers create ads containing their content as well as targeting, i.e., scenarios in which they want to trigger their ads.
+  - Query-based targeting
+  This method shows ads to the user based on the query terms.
+  - User-based targeting
+  The ads will be subjective to the user based on a specific region, demographic, gender, age, etc.
+  - Interest-based targeting
+  This method shows interest-based ads.
+  - Set-based targeting
+  This type shows ads to a set of users selected by the advertisers.
 
 `User flow`
-- Advertisers create ads providing targeting information, and the ads are stored in the ads index
-- When a user queries the platform, ads can be selected from the index based on their information (e.g., demographics, interests, etc.) and run through our ads prediction system.
+As the platform user queries the system, it will look for all the potential ads that can be shown to this user based on different targeting criteria used by the advertiser.
+  - Advertisers create ads providing targeting information, and the ads are stored in the ads index
+  - When a user queries the platform, ads can be selected from the index based on their information (e.g., demographics, interests, etc.) and run through our ads prediction system.
 
 - `Ad selection`
 The ad selection component will fetch the top k ads based on relevance (subject to the user context) and bid from the ads index.
@@ -795,10 +813,18 @@ The main goal of the ads selection component is to narrow down the set of ads th
 The ad prediction component will predict user engagement with the ad (the probability that an action will be taken on the ad if it is shown), given the ad, advertiser, user, and context. Then, it will rank ads based on relevance score and bid.
 - `Auction`
 The auction mechanism then determines whether these top K relevant ads are shown to the user, the order in which they are shown, and the price the advertisers pay if an action is taken on the ad. For every ad request, an auction takes place to determine which ads to show. The top relevant ads selected by the ad prediction system are given as input to Auction. Auction then looks at total value based on an ad’s bid as well as its relevance score. An ad with the highest total value is the winner of the auction. The total value depends on the following factors:
-- Bid
-- User engagement rate
-- Ad quality score
-- Budget
+  - Bid
+  The bid an advertiser places for that ad. In other words, the amount the advertiser is willing to pay for a given action such as click or purchase.
+  - User engagement rate
+  An estimate of user engagement with the ad.
+  - Ad quality score
+  An assessment of the quality of the ad by taking into account feedback from people viewing or hiding the ad.
+  - Budget
+  The advertiser’s budget for an ad
+The estimated user engagement and ad quality rates combined results in the ad relevance score. They can be combined based on different weights as selected by the platform, e.g., if it’s important to keep positive feedback high, the ad quality rate will get a higher weight.
+
+`Pacing`
+Pacing an ad means evenly spending the ad budget over the selected time period rather than trying to spend all of it at the start of the campaign.
 
 ![Diagram of deployment.](pic/ads_funnel.png)
 
@@ -807,10 +833,10 @@ As we go down the funnel (as shown in the diagram), the complexity of the models
 
 Let’s go over an example to see how these components will interact for the search scenario.
 - A thirty-year old male user issues a query “machine learning”.
-- The `ads selection` component selects all the ads that match the targeting criteria ( user demographics and query) and uses a simple model to predict the ad’s relevance score.
-- The `ads selection` component ranks the ads according to r, where r = bid * relevance and sends the top ads to our ads prediction system.
-- The `ads prediction` component will go over the selected ads and uses a highly optimized ML model to predict a precise calibrated score.
-- The `ads auction` component then runs the auction algorithm based on the bid and predicted ads score to select the top most relevant ads that are shown to the user.
+- The `ads selection` component `selects all the ads` that match the targeting criteria ( user demographics and query) and uses a simple model to predict the ad’s relevance score.
+- The `ads selection` component `ranks the ads` according to r, where r = bid * relevance and sends the top ads to our ads prediction system.
+- The `ads prediction` component will go over the selected ads and uses a highly optimized ML model to `predict a precise calibrated score`.
+- The `ads auction` component then runs the auction algorithm based on the bid and predicted ads score to select the `top most relevant ads` that are shown to the user.
 
 ![Diagram of deployment.](pic/ads_feat.png)
 
@@ -871,6 +897,10 @@ We can use either logistic regression or additive trees based models (such as ra
 
 `Ad Prediction`
 The following figure shows some key components that are critical for enabling online learning. We need a mechanism that generates the latest training examples via an online joiner. Our training data generator will take these examples and generate the right feature set for them. The model trainer will then receive these new examples to refresh the model using stochastic gradient descent. This forms a tightly closed loop where changes in the feature distribution or model output can be detected, learned on, and improved in short successions. Note that the refresh of the model doesn’t have to be instantaneous, and we can do it in same batches at a certain frequency, e.g., every 30 mins, 60 mins etc.
+
+5. `Offline model building and evaluation`
+6. `Online model execution and evaluation`
+7. `Model Debugging and Testing`
 
 Model for online learning:
 One model that easily supports online learning and has the ability to update it using stochastic gradient descent using mini-batches is logistic regression.
