@@ -662,20 +662,24 @@ Therefore, we split the recommendation task into two stages.
 Stage 1: Candidate generation
 Stage 2: Ranking of generated candidates
 
+![Diagram of deployment.](pic/rec01.png)
+
 `Candidate Generation`
 This component focuses on `higher recall`, meaning it focuses on gathering movies that might interest the user from all perspectives, e.g., media that is relevant based on historical user interests, trending locally, etc.
 1. Collaborative filtering
-- Nearest neighborhood
-- [x] Matrix factorization
+  - Nearest neighborhood
+  To generate recommendations for user i, you need to predict their feedback for all the movies they haven’t watched. You will collaborate with users similar to user i for this process. Their ratings for a movie, not seen by user i, would give us a good idea of how user i would like it.
+  It is evident that this process will be computationally expensive with the increase in numbers of users and movies. The sparsity of this matrix also poses a problem when a movie has not been rated by any user or a new user has not watched many movies.
+  - [x] Matrix factorization
 2. Content-based filtering
-- Similarity with historical interactions
-- Similarity between media and user profiles
+  - Similarity with historical interactions
+  - Similarity between media and user profiles
 3. Embedding-based similarity
 
 weaknesses of the approaches for candidate generation discussed above
-- Collaborative filtering can suggest candidates based solely on the historical interaction of the users. Unlike content-based filtering, it does not require domain knowledge to create user and media profiles. It may also be able to capture data aspects that are often elusive and difficult to profile using content-based filtering. However, collaborative filtering suffers from the cold start problem. It is difficult to find users similar to a new user in the system because they have less historical interaction. Also, new media can’t be recommended immediately as no users have given feedback on it.
-- The neural network technique also suffers from the cold start problem. The embedding vectors of media and users are updated in the training process of the neural networks. However, if a movie is new or if a user is new, both would have fewer instances of feedback received and feedback given, respectively. By extension, this means there is a lack of sufficient training examples to update their embedding vectors accordingly. Hence, the cold start problem.
-- Content-based filtering is superior in such scenarios. It does require some initial input from the user regarding their preferences to start generating candidates, though. This input is obtained as a part of the onboarding process, where a new user is asked to share their preferences. Once we have the initial input, it can create and then match the user’s profile with media profiles. Moreover, new medias’ profiles can be built immediately as their description is provided manually.
+  - Collaborative filtering can suggest candidates based solely on the historical interaction of the users. Unlike content-based filtering, it does not require domain knowledge to create user and media profiles. It may also be able to capture data aspects that are often elusive and difficult to profile using content-based filtering. However, collaborative filtering suffers from the cold start problem. It is difficult to find users similar to a new user in the system because they have less historical interaction. Also, new media can’t be recommended immediately as no users have given feedback on it.
+  - The neural network technique also suffers from the cold start problem. The embedding vectors of media and users are updated in the training process of the neural networks. However, if a movie is new or if a user is new, both would have fewer instances of feedback received and feedback given, respectively. By extension, this means there is a lack of sufficient training examples to update their embedding vectors accordingly. Hence, the cold start problem.
+  - Content-based filtering is superior in such scenarios. It does require some initial input from the user regarding their preferences to start generating candidates, though. This input is obtained as a part of the onboarding process, where a new user is asked to share their preferences. Once we have the initial input, it can create and then match the user’s profile with media profiles. Moreover, new medias’ profiles can be built immediately as their description is provided manually.
 
 `Ranking`
 This component focuses on `higher precision`, i.e., it will focus on the ranking of the top k recommendations.
