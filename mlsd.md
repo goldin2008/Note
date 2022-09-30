@@ -905,6 +905,15 @@ As discussed earlier in the architectural components lessons, the ad set in each
 
 ![Diagram of deployment.](pic/ads_pred.png)
 
+`How does the system scale?`
+Note that our index is sharded, i.e., it runs on multiple machines and every machine selects the top k ads based on the prior score. Each machine then runs a simplistic logistic regression model built on dense features (there are no sparse features to keep the model size small) to rank ads.
+The number of partitions (shards) depends on the size of the index. A large index results in more partitions as compared to a smaller index. Also, the system load measured in queries per second (QPS) decides how many times the partition is replicated.
+
+![Diagram of deployment.](pic/ads_scale.png)
+
+The ad set returned from the ad selection component is further ranked by the ad prediction component.
+
+
 `Ad Prediction`
 The following figure shows some key components that are critical for enabling online learning. We need a mechanism that generates the latest training examples via an online joiner. Our training data generator will take these examples and generate the right feature set for them. The model trainer will then receive these new examples to refresh the model using stochastic gradient descent. This forms a tightly closed loop where changes in the feature distribution or model output can be detected, learned on, and improved in short successions. Note that the refresh of the model doesn’t have to be instantaneous, and we can do it in same batches at a certain frequency, e.g., every 30 mins, 60 mins etc.
 
