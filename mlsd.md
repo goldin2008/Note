@@ -885,14 +885,23 @@ Let’s go over an example to see how these components will interact for the sea
   - user_age_advertiser_histogram
 
 `Ad Selection`
-  - `Phase 1`: Quick selection of ads for the given query and user context according to selection criteria
+  - `Phase 1: Selection of ads`
+  Quick selection of ads for the given query and user context according to selection criteria
   The first key requirement to be able to achieve the quick selection objective is to have the ads stored in a system that is fast and enables complex selection criteria. This is where building an in-memory index to store the ads will be massively helpful.
   So, the above selection criteria in phase 1 will reduce our space set from all active ads to ads that are targeted for the current user.
-  - `Phase 2`: Rank these selected ads based on a simple and fast algorithm to trim ads.
+  - `Phase 2: Narrow down selection set to top relevant ads`
   The number of ads selected in phase 1 can be quite large depending on the query and the user, e.g., we can have millions of ads targeted for a sports fan. So, running a complex ML model to predict engagement on all these selected ads will be slow and expensive. At this point, it makes sense to narrow down the space using a simplistic approach before we start running complex models.
+  The eventual ranking of ads is going to be based on (bid * predicted score). We already know the bid at this point and can use the prior engagement score (CPE - cost per engagement) based on the ad, advertiser, ad type, etc. as our predicted score.
+
+  ![Diagram of deployment.](pic/ads_phase2.png)
+
   - `Phase 3`: Apply the machine learning model on the trimmed ads to select the top ones.
   As the ranking in phase 2 is super simplistic, we should still select a sizable ads(e.g., ten thousand) by running a better model as we work towards reducing the ad set. We can run a simplistic and efficient model on ads selected in phase 2 to further narrow it down. The top ads from this phase will be passed to our ad prediction stage to run more complex and accurate models for better user engagement prediction.
   We can use either logistic regression or additive trees based models (such as random forest or boosted decision trees) as they are quite efficient. Neural network-based models need more capacity and time so they might not be the best choice at this stage.
+
+  ![Diagram of deployment.](pic/ads_phase3.png)
+
+As discussed earlier in the architectural components lessons, the ad set in each phase is narrowed down for the phase below it, thus making it a funnel-based approach. As we progress down the funnel, the complexity of the models increases, and the number of results decrease. Within the ad selection component, we adopt the same funnel based approach. First, we select ads in phase 1, then rank them based on prior scores in phase 2. Finally, we rank them using an efficient model in phase 3 to come up with the top ads that we want to send to the ad prediction stage.
 
 ![Diagram of deployment.](pic/ads_pred.png)
 
