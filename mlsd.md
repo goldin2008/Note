@@ -992,9 +992,39 @@ Interview questions
 - Given multiple disambiguators/recognizers/linkers, how would you figure out which is the best one?
 
 2. `Understanding scale and latency requirements`
+
+
 3. `Defining metrics`
+Offline metrics will be aimed at improving/measuring the performance of the entity linking component. Online metrics will be aimed at improving/measuring the performance of the larger system by using a certain entity linking model as its component.
+
+`Offline metrics`
+  - Named entity recognition
+  - Disambiguation
+  - Named-entity linking component
+    - Micro-averaged metrics
+    - Macro-averaged metrics
+
+`Online metrics`
+  - A/B testing
+
 4. `Architecture discussion`
+
+![Diagram of deployment.](pic/link_arch.png)
+
+The architectural components diagram for entity linking is shown below. It consists of two paths:
+  - Model generation path (training flow)
+  - Model execution path (prediction flow)
+
 5. `Offline model building and evaluation`
+There are two approaches you can adopt to gather training data for the entity linking problem.
+  - Open-source datasets
+    - open-source dataset CoNLL-2003 for named-entity recognition.
+    - For named-entity disambiguation, you can utilize the AIDA CoNLL-YAGO Dataset, which contains assignments of entities to the mentions of named entities annotated for the CoNLL-2003 dataset. The entity mentions are assigned to YAGO (database), Wikipedia and Freebase (database) entities as shown in the slide below.
+  - Manual labeling
+    - Once you have utilized the open-source datasets, we may want to enhance the data and increase its size through manual labelers. The manual labelers will generate training data similar to the open-source datasets, by annotating named entities in text and linking them to corresponding entities in the knowledge base.
+    - Another case where you would generate data through manual labelers is when you require a highly specialized dataset for a specific problem. For example, assume that the problem is related to the medical field; this requires identifying certain domain-specific entities. In such situations, you need to understand the domain in which you want to perform entity linking. What are the kind of entities you want to recognize and link? When the manual labelers are given hospital data, they will mark doctor names, symptoms, diseases, patient names, types of surgeries, and so on. Hence, you would have tags that are related to the domain of the task.
+  After labeling the entities the labelers will also link them to the entities in the knowledge base (database) that is being used.
+
 6. `Online model execution and evaluation`
 7. `Model Debugging and Testing`
 
