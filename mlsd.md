@@ -971,6 +971,26 @@ This concludes our course on machine learning system design! Hopefully, you are 
 
 ### ***6. Entity Linking System***
 1. `Setting up the problem`
+Named entity linking (NEL) is the process of detecting and linking entity mentions in a given text to corresponding entities in a target knowledge base.
+There are two parts to entity linking:
+- Named-entity recognition
+  Named-entity recognition (NER) detects and classifies potential named entities in the text into predefined categories such as a person, organization, location, medical code, time expression, etc. (multi-class prediction).
+- Disambiguation
+  Next, disambiguation disambiguates each detected entity by linking it to its corresponding entity in the knowledge base.
+
+Applications
+- Semantic search
+- Content analysis
+- Question answering systems/chatbots/virtual assistants, like Alexa, Siri, and Google assistant
+
+Interview questions
+- These are some of the questions that an interviewer can put forth.
+- How would you build an entity recognizer system?
+- How would you build a disambiguation system?
+- Given a piece of text, how would you extract all persons, countries, and businesses mentioned in it?
+- How would you measure the performance of a disambiguator/entity recognizer/entity linker?
+- Given multiple disambiguators/recognizers/linkers, how would you figure out which is the best one?
+
 2. `Understanding scale and latency requirements`
 3. `Defining metrics`
 4. `Architecture discussion`
