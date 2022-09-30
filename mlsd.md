@@ -1025,6 +1025,27 @@ There are two approaches you can adopt to gather training data for the entity li
     - Another case where you would generate data through manual labelers is when you require a highly specialized dataset for a specific problem. For example, assume that the problem is related to the medical field; this requires identifying certain domain-specific entities. In such situations, you need to understand the domain in which you want to perform entity linking. What are the kind of entities you want to recognize and link? When the manual labelers are given hospital data, they will mark doctor names, symptoms, diseases, patient names, types of surgeries, and so on. Hence, you would have tags that are related to the domain of the task.
   After labeling the entities the labelers will also link them to the entities in the knowledge base (database) that is being used.
 
+`Modeling`
+  - Contextualized text representation
+  It is often observed that the same words may refer to a different entity. The context (i.e., other terms in the sentence) in which the words occur helps us figure out which entity is being referred to. Similarly, the NER and NED models require context to correctly recognize entity type and disambiguate, respectively. Therefore, the representation of terms must take contextual information into account. One way to represent text is in the form of embeddings. Notice that, in the first sentence, the context that helps to identify the person comes after the mention. Whereas, in the second sentence, the helpful context comes before the mention. Therefore, the embedding model needs to be bi-directional, i.e., it should look at the context in both the backward direction and the forward direction.
+    - ELMo (Embeddings from Language Models)
+    - BERT (bidirectional encoder representations from transformers)
+  - NER modelling
+    - Contextual embedding as features
+    - Fine-tuning embeddings
+  - Disambiguation modeling
+    - Candidate generation
+    - Linking
+
+![Diagram of deployment.](pic/link_emlo1.png)
+![Diagram of deployment.](pic/link_emlo2.png)
+
+![Diagram of deployment.](pic/link_bert.png)
+![Diagram of deployment.](pic/link_self.png)
+
+![Diagram of deployment.](pic/link_ner.png)
+![Diagram of deployment.](pic/link_link.png)
+
 6. `Online model execution and evaluation`
 7. `Model Debugging and Testing`
 
