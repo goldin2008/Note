@@ -913,9 +913,16 @@ The number of partitions (shards) depends on the size of the index. A large inde
 
 The ad set returned from the ad selection component is further ranked by the ad prediction component.
 
-
 `Ad Prediction`
-The following figure shows some key components that are critical for enabling online learning. We need a mechanism that generates the latest training examples via an online joiner. Our training data generator will take these examples and generate the right feature set for them. The model trainer will then receive these new examples to refresh the model using stochastic gradient descent. This forms a tightly closed loop where changes in the feature distribution or model output can be detected, learned on, and improved in short successions. Note that the refresh of the model doesn’t have to be instantaneous, and we can do it in same batches at a certain frequency, e.g., every 30 mins, 60 mins etc.
+The ad prediction component has to make predictions for the final set of candidate selected ads. It needs to be robust and adaptive and should be able to learn from massive data volume.
+
+`Modeling approach`
+Ads are generally short-lived. So, our predictive model is going to be deployed in a dynamic environment where the ad set is continuously changing over time.
+Given this change in an ad set, keeping the model up to date on the latest ads is important. In other words, model performance will degrade with each passing day if it isn’t refreshed frequently.
+
+![Diagram of deployment.](pic/ads_online1.png)
+![Diagram of deployment.](pic/ads_online2.png)
+
 
 5. `Offline model building and evaluation`
 `Model recalibration`
@@ -927,23 +934,31 @@ p is the prediction in downsampling space, and
 w is the negative downsampling rate.
 
 6. `Online model execution and evaluation`
-7. `Model Debugging and Testing`
-
-Model for online learning:
+`Model for online learning`
 One model that easily supports online learning and has the ability to update it using stochastic gradient descent using mini-batches is logistic regression.
+  - Auto non-linear feature generation
+  `Cons:`
+  One potential drawback is that simple logistic regression (generalized linear model) relies on manual effort to create complex feature crosses and generating non-linear features. Manually creating such features is cumbersome and will mostly be restricted to modeling the relationship between two or three features. On the other hand, tree and neural network-based models are really good at generating complex relationships among features when optimizing the model.
+  `Pros:`
+  To overcome this, we can use additive trees and neural networks to find such complex feature crosses and non-linear feature relationships in data, and then these features are input to our logistic regression model.
+    - Additive trees
+    - Neural Network
+    neural network-based models are also really good at capturing non-linear, complex relationships between features.
 
-Auto non-linear feature generation:
-One potential drawback is that simple logistic regression (generalized linear model) relies on manual effort to create complex feature crosses and generating non-linear features. Manually creating such features is cumbersome and will mostly be restricted to modeling the relationship between two or three features. On the other hand, tree and neural network-based models are really good at generating complex relationships among features when optimizing the model.
-To overcome this, we can use additive trees and neural networks to find such complex feature crosses and non-linear feature relationships in data, and then these features are input to our logistic regression model.
-- Additive trees
-- Neural Network
-neural network-based models are also really good at capturing non-linear, complex relationships between features.
+![Diagram of deployment.](pic/ads_additive.png)
+![Diagram of deployment.](pic/ads_network.png)
+
+So, let’s combine the above two ideas together:
+  - We train additive trees and neural network to predict non-linear complex relationships among our features. We then use these models to generate features.
+  - We use raw features and features generated in the previous step to train a logic regression model.
+
+The above two steps together solve both of our problems to capture complex non-linear relationships and also enable us to use online learning to refresh the model frequently for ads that are fast-changing and dynamic in nature.
 
 ![Diagram of deployment.](pic/ads_new_feat.png)
 
-So, let’s combine the above two ideas together:
-- We train additive trees and neural network to predict non-linear complex relationships among our features. We then use these models to generate features.
-- We use raw features and features generated in the previous step to train a logic regression model.
+7. `Model Debugging and Testing`
+
+This concludes our course on machine learning system design! Hopefully, you are now confident in your ability to answer machine learning design interview questions in an effective and systematic way.
 
 ### ***5. Self-Driving Car: Image Segmentation***
 1. `Setting up the problem`
