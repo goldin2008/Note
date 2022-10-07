@@ -6,7 +6,8 @@ I would love your feedback, specially around the scaling. Also if any interviewe
 Machine learning system design discussion
 This discussion focuses on the interviewee’s ability to solve an end-to-end machine learning problem and consists of open-ended questions. This is an integral part of the interview, and not much helping material is available for it. Hence, this course helps in developing the thought pattern required to approach ML system design questions.
 
-![Diagram of deployment.](pic/mlq.png)
+<!-- <img src="pic/mlq.png" width=50% height=50%>(pic/mlq.png) -->
+<img src="pic/mlq.png" width=50% height=50%>
 
 ### Template/Framework
 machine learning design的问题一般都是问设计一个推荐系统，广告排序，还有一般的监督学习的系统。所以准备起来要了解各类的推荐系统的优缺点，以及最新的embeding的方法, 可以看一下这个博客
@@ -23,7 +24,7 @@ machine learning design的问题一般都是问设计一个推荐系统，广告
 6. 画出框图，然后进行优化。
 7. Scaling
 
-![Diagram of deployment.](pic/mlsd.png)
+<img src="pic/mlsd.png" width=50% height=50%>
 
 ***overview***
 Key steps in ML system setup
@@ -172,7 +173,7 @@ There are two main phases in terms of the development of a model that we will go
     This accounts for finding the architectural component resulting in a high number of failures in our failure set.
     - Improve the quality of component
 
-![Diagram of deployment.](pic/ab_test.png)
+<img src="pic/ab_test.png" width=50% height=50%>
 
 a, b, c
 1. a `Data Related Activites`
@@ -237,7 +238,7 @@ Now, you can finally decide on the ML models that you should use for the given t
 
 
 ### ***1. Search Ranking***
-![Diagram of deployment.](pic/search_rank.png)
+<img src="pic/search_rank.png" width=50% height=50%>
 
 This is just an example configuration, and it’s important to point out that the number of stages and documents ranked at each stage should be selected based on capacity requirements as well as experimentation to see the impact on relevance based on documents scored at each layer.
 
@@ -253,7 +254,7 @@ From RankNet to LambdaRank to LambdaMART: An Overview
 
 We can calculate the NDCG score of the ranked results to compare the performance of different models.
 
-![Diagram of deployment.](pic/layered_model.png)
+<img src="pic/layered_model.png" width=50% height=50%>
 
 The above example configuration assumes that you are first selecting one-hundred thousand documents for the searcher’s query from the index, then using two-stage ranking, with the first one reducing from one-hundred thousand to five-hundred documents and the second stage is then ranking these five-hundred documents. The blender can then blend results from different search verticals, and the filter will further screen irrelevant or offensive results to get good user engagement.
 
@@ -332,7 +333,7 @@ Result set after ranking, These results are inappropriate despite having good us
 
 
 ### ***2. Feed Ranking System***
-![Diagram of deployment.](pic/feed_system.png)
+<img src="pic/feed_system.png" width=50% height=50%>
 
 1. `Setting up the problem`
 Given a list of tweets, train an ML model that predicts the probability of engagement of tweets and orders them based on that score
@@ -356,7 +357,7 @@ When it comes to interpretation, a higher score equates to higher user engagemen
 Train separate models. Each model can focus on predicting the occurrence probability of a certain user action for the tweet. There will be a separate predictor for like, comment, time spent, share, hide, and report. The results of these models can be merged, each having a different weight/importance, to generate a rank score. The Tweets will then be ranked according to this score.
 Separately predicting each user action allows us to have greater control over the importance we want to give to each action when calculating the rank of the Tweet. We can tweak the weights to display Tweets in such a manner that would align with our current business objectives, i.e., give certain user actions higher/lower weight according to the business needs.
 
-![Diagram of deployment.](pic/tweet_selection.png)
+<img src="pic/tweet_selection.png" width=50% height=50%>
 
 `Tweet selection schemes`
   - A not-so-new Tweet
@@ -373,13 +374,13 @@ Separately predicting each user action allows us to have greater control over th
   The user has recently joined the platform and follows only a few others. As such, their small network is not able to generate a sufficient number of Tweets for the Tweet selection component (known as the Bootstrap problem).
   2. The user likes a Tweet from a person outside of his network and decides to add them to their network. This would increase the discoverability on the platform and help grow the user’s network.
 
-![Diagram of deployment.](pic/tweet_network.png)
+<img src="pic/tweet_network.png" width=50% height=50%>
 
 Selecting these Tweets can prove to be very beneficial in two cases:
 - The user has recently joined the platform and follows only a few others. As such, their small network is not able to generate a sufficient number of Tweets for the Tweet selection component (known as the Bootstrap problem).
 - The user likes a Tweet from a person outside of his network and decides to add them to their network. This would increase the discoverability on the platform and help grow the user’s network.
 
-![Diagram of deployment.](pic/tweet_feature.png)
+<img src="pic/tweet_feature.png" width=50% height=50%>
 
 5. `Offline model building and evaluation`
 
@@ -471,7 +472,7 @@ Sparse features
   Consider a scenario, where a person reshares a Tweet but does not click the like button. Even though the user didn’t actually click on the like button, retweeting generally implies that the user likes the Tweet. The positive training example for the retweet model may prove useful for the like model as well. Hence, you can reuse all positive training examples across every model.
   One way to utilize the overall engagement data among each individual predictor of P(like), P(comment) and P(retweet) is to build one common predictor, i.e., P(engagement) and share its output as input into all of your predictors.
 
-![Diagram of deployment.](pic/multi_network.png)
+<img src="pic/multi_network.png" width=50% height=50%>
 
   - `Multi-task neural networks`
   having a simpler model for stage one ranking and use complex stage two model to obtain the most relevant Tweets ranked at the top of the user’s Twitter feed.
@@ -484,9 +485,9 @@ Sparse features
   Given the training time is slow for neural networks, training one model (shared layers) would make the overall training time much faster. Moreover, this will also allow us to share all the engagement data across each learning task.
   This approach should be able to perform at least as effective as training separate networks for each task. It should be able to outperform in most cases as we use the shared data and use it across each predictor. Also, one key advantage of using shared layers is that models would be much faster to train than training completely separate deep neural networks for each task.
 
-![Diagram of deployment.](pic/stacking1.png)
-![Diagram of deployment.](pic/stacking2.png)
-![Diagram of deployment.](pic/stacking3.png)
+<img src="pic/stacking1.png" width=50% height=50%>
+<img src="pic/stacking2.png" width=50% height=50%>
+<img src="pic/stacking3.png" width=50% height=50%>
 
   - `Stacking models and online learning`
   One way to outperform the “single model technique approach” is to use multiple models to utilize the power of different techniques by stacking models on top of each other. Let’s go over one such stacking setup that should work out very well for the feed problem.
@@ -560,7 +561,7 @@ Offline metrics
   Can we build an ideal set of documents that will allow us to measure recommendation set quality? One way of doing this could be to look at the movies/series that the user has completely watched and see if your recommendation system gets it right using historical data.
   Once we have the set of movies/series that we can confidently say should be on the user’s recommendation list, we can use the following offline metrics to measure the quality of your recommendation system.
 
-![Diagram of deployment.](pic/map.png)
+<img src="pic/map.png" width=50% height=50%>
 
   - mAP @ N : Mean Average Precision
   N = length of the recommendation list
@@ -571,7 +572,7 @@ Offline metrics
   Note that a true positive (1), down the recommendation list, leads to low a mAP compared to the one that is high up in the list. This is important because we want the best recommendations to be at the start of the recommendation set.
   Lastly, the “mean” in mAP means that we will calculate the AP with respect to each user’s ratings and take their mean. So, mAP computes the metric for a large set of users to see how the system performs overall on a large set.
 
-![Diagram of deployment.](pic/mar.png)
+<img src="pic/mar.png" width=50% height=50%>
 
   - mAR @ N : Mean Average Recall
   Recall for your recommendation list is the ratio between the number of relevant recommendations in the list and the number of all possible relevant items(shows/movies). It is calculated as:
@@ -587,7 +588,7 @@ Offline metrics
 
   So, the F1 score based on mAP and mAR will be a fairly good offline way to measure the quality of your models. Remember that we selected our recommendation set size to be five, but it can be differ based on the recommendation viewport or the number of recommendations that users on the platform generally engage with.
 
-![Diagram of deployment.](pic/rmse.png)
+<img src="pic/rmse.png" width=50% height=50%>
 
   - Offline metric for optimizing ratings
   root mean squared error (RMSE)
@@ -595,7 +596,7 @@ Offline metrics
 
 `Feature Engineering`
 
-![Diagram of deployment.](pic/rec_feat.png)
+<img src="pic/rec_feat.png" width=50% height=50%>
 
 User-based features
   - age
@@ -681,19 +682,19 @@ weaknesses of the approaches for candidate generation discussed above
   - The neural network technique also suffers from the cold start problem. The embedding vectors of media and users are updated in the training process of the neural networks. However, if a movie is new or if a user is new, both would have fewer instances of feedback received and feedback given, respectively. By extension, this means there is a lack of sufficient training examples to update their embedding vectors accordingly. Hence, the cold start problem.
   - Content-based filtering is superior in such scenarios. It does require some initial input from the user regarding their preferences to start generating candidates, though. This input is obtained as a part of the onboarding process, where a new user is asked to share their preferences. Once we have the initial input, it can create and then match the user’s profile with media profiles. Moreover, new medias’ profiles can be built immediately as their description is provided manually.
 
-![Diagram of deployment.](pic/rec01.png)
-![Diagram of deployment.](pic/rec02.png)
-![Diagram of deployment.](pic/rec03.png)
-![Diagram of deployment.](pic/rec04.png)
-![Diagram of deployment.](pic/rec05.png)
-![Diagram of deployment.](pic/rec06.png)
-![Diagram of deployment.](pic/rec07.png)
-![Diagram of deployment.](pic/rec08.png)
-![Diagram of deployment.](pic/rec09.png)
-![Diagram of deployment.](pic/rec10.png)
-![Diagram of deployment.](pic/rec11.png)
-![Diagram of deployment.](pic/rec12.png)
-![Diagram of deployment.](pic/rec13.png)
+<img src="pic/rec01.png" width=50% height=50%>
+<img src="pic/rec02.png" width=50% height=50%>
+<img src="pic/rec03.png" width=50% height=50%>
+<img src="pic/rec04.png" width=50% height=50%>
+<img src="pic/rec05.png" width=50% height=50%>
+<img src="pic/rec06.png" width=50% height=50%>
+<img src="pic/rec07.png" width=50% height=50%>
+<img src="pic/rec08.png" width=50% height=50%>
+<img src="pic/rec09.png" width=50% height=50%>
+<img src="pic/rec10.png" width=50% height=50%>
+<img src="pic/rec11.png" width=50% height=50%>
+<img src="pic/rec12.png" width=50% height=50%>
+<img src="pic/rec13.png" width=50% height=50%>
 
 `Ranking`
 This component focuses on `higher precision`, i.e., it will focus on the ranking of the top k recommendations.
@@ -715,9 +716,9 @@ If you are also considering past watches for the media recommendations, then re-
   An important aspect here is that both search terms and historical watched content are list-wise features. You need to think about how to feed them in the network given that the size of the layers is fixed. You can use an approach similar to pooling layers in CNN (convolution neural networks) and simply average the historical watch id and search text term embeddings before feeding it into the network.
 
 
-![Diagram of deployment.](pic/rec_ranker.png)
-![Diagram of deployment.](pic/rec_ranker01.png)
-![Diagram of deployment.](pic/rec_ranker02.png)
+<img src="pic/rec_ranker.png" width=50% height=50%>
+<img src="pic/rec_ranker01.png" width=50% height=50%>
+<img src="pic/rec_ranker02.png" width=50% height=50%>
 
 `Re-ranking`
 The top ten recommendations on the user’s page are of great importance. After your system has given the watch probabilities and you have ranked the results accordingly, you may re-rank the results.
@@ -735,7 +736,7 @@ If you are also considering past watches for the media recommendations, then re-
   - Weighting training examples
   - How many layers should you setup? How many activation units should be used in each layer? The best answer to these questions is that you should start with 2-3 hidden layers with a RELU based activation unit and then play around with the numbers to see how this helps us reduce the test error. Generally, adding more layers and units helps initially, but its usefulness tapers off quickly. The computation and time cost would be higher relative to the drop in error rate.
 
-![Diagram of deployment.](pic/rec_train.png)
+<img src="pic/rec_train.png" width=50% height=50%>
 
 
 6. `Online model execution and evaluation`
@@ -785,7 +786,7 @@ They should also ensure that these models help the overall improvement of the pl
     - Never see this ad
     - Report ad as inappropriate
 
-![Diagram of deployment.](pic/ads_sys.png)
+<img src="pic/ads_sys.png" width=50% height=50%>
 
 4. `Architecture discussion`
 `Architectural Components`
@@ -826,7 +827,7 @@ The estimated user engagement and ad quality rates combined results in the ad re
 `Pacing`
 Pacing an ad means evenly spending the ad budget over the selected time period rather than trying to spend all of it at the start of the campaign.
 
-![Diagram of deployment.](pic/ads_funnel.png)
+<img src="pic/ads_funnel.png" width=50% height=50%>
 
 `Funnel model approach`
 As we go down the funnel (as shown in the diagram), the complexity of the models becomes higher and the set of ads that they run on becomes smaller. It’s also important to note that the initial layers are mostly responsible for ads selection. On the other hand, ads prediction is responsible for predicting a well-calibrated engagement and quality score for ads. This predicted score is going to be utilized in the auction as well.
@@ -838,7 +839,7 @@ Let’s go over an example to see how these components will interact for the sea
 - The `ads prediction` component will go over the selected ads and uses a highly optimized ML model to `predict a precise calibrated score`.
 - The `ads auction` component then runs the auction algorithm based on the bid and predicted ads score to select the `top most relevant ads` that are shown to the user.
 
-![Diagram of deployment.](pic/ads_feat.png)
+<img src="pic/ads_feat.png" width=50% height=50%>
 
 `Feature Engineering`
 1. Ad specific features
@@ -893,23 +894,23 @@ Let’s go over an example to see how these components will interact for the sea
   The number of ads selected in phase 1 can be quite large depending on the query and the user, e.g., we can have millions of ads targeted for a sports fan. So, running a complex ML model to predict engagement on all these selected ads will be slow and expensive. At this point, it makes sense to narrow down the space using a simplistic approach before we start running complex models.
   The eventual ranking of ads is going to be based on (bid * predicted score). We already know the bid at this point and can use the prior engagement score (CPE - cost per engagement) based on the ad, advertiser, ad type, etc. as our predicted score.
 
-  ![Diagram of deployment.](pic/ads_phase2.png)
+  <img src="pic/ads_phase2.png" width=50% height=50%>
 
   - `Phase 3`: Apply the machine learning model on the trimmed ads to select the top ones.
   As the ranking in phase 2 is super simplistic, we should still select a sizable ads(e.g., ten thousand) by running a better model as we work towards reducing the ad set. We can run a simplistic and efficient model on ads selected in phase 2 to further narrow it down. The top ads from this phase will be passed to our ad prediction stage to run more complex and accurate models for better user engagement prediction.
   We can use either logistic regression or additive trees based models (such as random forest or boosted decision trees) as they are quite efficient. Neural network-based models need more capacity and time so they might not be the best choice at this stage.
 
-  ![Diagram of deployment.](pic/ads_phase3.png)
+  <img src="pic/ads_phase3.png" width=50% height=50%>
 
 As discussed earlier in the architectural components lessons, the ad set in each phase is narrowed down for the phase below it, thus making it a funnel-based approach. As we progress down the funnel, the complexity of the models increases, and the number of results decrease. Within the ad selection component, we adopt the same funnel based approach. First, we select ads in phase 1, then rank them based on prior scores in phase 2. Finally, we rank them using an efficient model in phase 3 to come up with the top ads that we want to send to the ad prediction stage.
 
-![Diagram of deployment.](pic/ads_pred.png)
+<img src="pic/ads_pred.png" width=50% height=50%>
 
 `How does the system scale?`
 Note that our index is sharded, i.e., it runs on multiple machines and every machine selects the top k ads based on the prior score. Each machine then runs a simplistic logistic regression model built on dense features (there are no sparse features to keep the model size small) to rank ads.
 The number of partitions (shards) depends on the size of the index. A large index results in more partitions as compared to a smaller index. Also, the system load measured in queries per second (QPS) decides how many times the partition is replicated.
 
-![Diagram of deployment.](pic/ads_scale.png)
+<img src="pic/ads_scale.png" width=50% height=50%>
 
 The ad set returned from the ad selection component is further ranked by the ad prediction component.
 
@@ -920,8 +921,8 @@ The ad prediction component has to make predictions for the final set of candida
 Ads are generally short-lived. So, our predictive model is going to be deployed in a dynamic environment where the ad set is continuously changing over time.
 Given this change in an ad set, keeping the model up to date on the latest ads is important. In other words, model performance will degrade with each passing day if it isn’t refreshed frequently.
 
-![Diagram of deployment.](pic/ads_online1.png)
-![Diagram of deployment.](pic/ads_online2.png)
+<img src="pic/ads_online1.png" width=50% height=50%>
+<img src="pic/ads_online2.png" width=50% height=50%>
 
 
 5. `Offline model building and evaluation`
@@ -945,8 +946,8 @@ One model that easily supports online learning and has the ability to update it 
     - Neural Network
     neural network-based models are also really good at capturing non-linear, complex relationships between features.
 
-![Diagram of deployment.](pic/ads_additive.png)
-![Diagram of deployment.](pic/ads_network.png)
+<img src="pic/ads_additive.png" width=50% height=50%>
+<img src="pic/ads_network.png" width=50% height=50%>
 
 So, let’s combine the above two ideas together:
   - We train additive trees and neural network to predict non-linear complex relationships among our features. We then use these models to generate features.
@@ -954,7 +955,7 @@ So, let’s combine the above two ideas together:
 
 The above two steps together solve both of our problems to capture complex non-linear relationships and also enable us to use online learning to refresh the model frequently for ads that are fast-changing and dynamic in nature.
 
-![Diagram of deployment.](pic/ads_new_feat.png)
+<img src="pic/ads_new_feat.png" width=50% height=50%>
 
 7. `Model Debugging and Testing`
 
@@ -1009,7 +1010,7 @@ Offline metrics will be aimed at improving/measuring the performance of the enti
 
 4. `Architecture discussion`
 
-![Diagram of deployment.](pic/link_arch.png)
+<img src="pic/link_arch.png" width=50% height=50%>
 
 The architectural components diagram for entity linking is shown below. It consists of two paths:
   - Model generation path (training flow)
@@ -1037,14 +1038,14 @@ There are two approaches you can adopt to gather training data for the entity li
     - Candidate generation
     - Linking
 
-![Diagram of deployment.](pic/link_emlo1.png)
-![Diagram of deployment.](pic/link_emlo2.png)
+<img src="pic/link_emlo1.png" width=50% height=50%>
+<img src="pic/link_emlo2.png" width=50% height=50%>
 
-![Diagram of deployment.](pic/link_bert.png)
-![Diagram of deployment.](pic/link_self.png)
+<img src="pic/link_bert.png" width=50% height=50%>
+<img src="pic/link_self.png" width=50% height=50%>
 
-![Diagram of deployment.](pic/link_ner.png)
-![Diagram of deployment.](pic/link_link.png)
+<img src="pic/link_ner.png" width=50% height=50%>
+<img src="pic/link_link.png" width=50% height=50%>
 
 6. `Online model execution and evaluation`
 7. `Model Debugging and Testing`
