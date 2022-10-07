@@ -17,7 +17,8 @@
 额外 | 35
 总数 | 220
 
-![Diagram of deployment.](pic/sorting.png|width=100)
+<!-- ![Diagram of deployment.](pic/sorting.png) -->
+<img src="pic/sorting.png" width=50% height=50%>
 
 ![Diagram of deployment.](pic/binarytree.png)
 
