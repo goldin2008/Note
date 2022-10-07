@@ -1,3 +1,9 @@
+"""
+Sorting
+> https://realpython.com/sorting-algorithms-python/
+> https://www.geeksforgeeks.org/selection-sort/
+> https://www.geeksforgeeks.org/python-program-for-heap-sort/
+"""
 from random import randint
 from timeit import repeat
 
@@ -12,16 +18,15 @@ def run_sorting_algorithm(algorithm, array):
 
     # Execute the code ten different times and return the time
     # in seconds that each execution took
+    # stmt: This will take the code you want to measure the execution time
+    # setup: This will have setup details that need to be executed before stmt
+    # number: The stmt will execute as per the number is given here.
     times = repeat(setup=setup_code, stmt=stmt, repeat=3, number=10)
 
     # Finally, display the name of the algorithm and the
     # minimum time it took to run
     print(f"Algorithm: {algorithm}. Minimum execution time: {min(times)}")
 
-"""
-Sorting
-https://realpython.com/sorting-algorithms-python/
-"""
 
 """
 Bubble Sort
@@ -326,11 +331,105 @@ def selection_sort(arr):
     for i in range(n):
         min_idx = i
         for j in range(i+1, n):
-            if arr[min_idx] > arr[j]:
+            if arr[j] < arr[min_idx]:
                 min_idx = j
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
 
     return array
+
+"""
+Radix Sort
+"""
+# Python program for implementation of Radix Sort
+# A function to do counting sort of arr[] according to
+# the digit represented by exp.
+def countingSort(arr, exp1):
+ 
+    n = len(arr)
+ 
+    # The output array elements that will have sorted arr
+    output = [0] * (n)
+ 
+    # initialize count array as 0
+    count = [0] * (10)
+ 
+    # Store count of occurrences in count[]
+    for i in range(0, n):
+        index = arr[i] // exp1
+        count[index % 10] += 1
+ 
+    # Change count[i] so that count[i] now contains actual
+    # position of this digit in output array
+    for i in range(1, 10):
+        count[i] += count[i - 1]
+ 
+    # Build the output array
+    i = n - 1
+    while i >= 0:
+        index = arr[i] // exp1
+        output[count[index % 10] - 1] = arr[i]
+        count[index % 10] -= 1
+        i -= 1
+ 
+    # Copying the output array to arr[],
+    # so that arr now contains sorted numbers
+    i = 0
+    for i in range(0, len(arr)):
+        arr[i] = output[i]
+ 
+# Method to do Radix Sort
+def radix_sort(arr):
+ 
+    # Find the maximum number to know number of digits
+    max1 = max(arr)
+ 
+    # Do counting sort for every digit. Note that instead
+    # of passing digit number, exp is passed. exp is 10^i
+    # where i is current digit number
+    exp = 1
+    while max1 / exp >= 1:
+        countingSort(arr, exp)
+        exp *= 10
+
+"""
+Counting Sort
+"""
+# Python program for counting sort
+# The main function that sort the given string arr[] in 
+# alphabetical order
+def countSort(arr):
+  
+    # The output character array that will have sorted arr
+    output = [0 for i in range(len(arr))]
+  
+    # Create a count array to store count of individual
+    # characters and initialize count array as 0
+    count = [0 for i in range(256)]
+  
+    # For storing the resulting answer since the 
+    # string is immutable
+    ans = ["" for _ in arr]
+  
+    # Store count of each character
+    for i in arr:
+        count[ord(i)] += 1
+  
+    # Change count[i] so that count[i] now contains actual
+    # position of this character in output array
+    for i in range(256):
+        count[i] += count[i-1]
+  
+    # Build the output character array
+    for i in range(len(arr)):
+        output[count[ord(arr[i])]-1] = arr[i]
+        count[ord(arr[i])] -= 1
+  
+    # Copy the output array to arr, so that arr now
+    # contains sorted characters
+    for i in range(len(arr)):
+        ans[i] = output[i]
+    return ans
+
 
 ARRAY_LENGTH = 10000
 
@@ -349,11 +448,17 @@ if __name__ == "__main__":
     run_sorting_algorithm(algorithm="bubble_sort", array=array)
 # Algorithm: bubble_sort. Minimum execution time: 73.21720498399998
 
+    run_sorting_algorithm(algorithm="selection_sort", array=array)
+# Algorithm: selection_sort. Minimum execution time: 31.74471645899996
+
     run_sorting_algorithm(algorithm="insertion_sort", array=array)
 # Algorithm: insertion_sort. Minimum execution time: 56.71029764299999
 
     run_sorting_algorithm(algorithm="merge_sort", array=array)
 # Algorithm: merge_sort. Minimum execution time: 0.6195857160000173
+
+    run_sorting_algorithm(algorithm="heapsort", array=array)
+# Algorithm: heapsort. Minimum execution time: 0.48962458400001196
 
     run_sorting_algorithm(algorithm="quicksort", array=array)
 # Algorithm: quicksort. Minimum execution time: 0.11675417600002902
@@ -361,9 +466,5 @@ if __name__ == "__main__":
     run_sorting_algorithm(algorithm="timsort", array=array)
 # Algorithm: timsort. Minimum execution time: 0.39657199999999193
 
-    run_sorting_algorithm(algorithm="heapsort", array=array)
-# Algorithm: heapsort. Minimum execution time: 0.48962458400001196
-
-    run_sorting_algorithm(algorithm="selection_sort", array=array)
-# Algorithm: selection_sort. Minimum execution time: 31.74471645899996
-
+    run_sorting_algorithm(algorithm="radix_sort", array=array)
+# Algorithm: radix_sort. Minimum execution time: 0.39657199999999193

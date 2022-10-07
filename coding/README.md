@@ -17,6 +17,8 @@
 额外 | 35
 总数 | 220
 
+![Diagram of deployment.](pic/sorting.png)
+
 ![Diagram of deployment.](pic/binarytree.png)
 
 ![Diagram of deployment.](pic/backtracking.png)
