@@ -20,11 +20,11 @@
 <!-- ![Diagram of deployment.](pic/sorting.png) -->
 <img src="pic/sorting.png" width=50% height=50%>
 
-![Diagram of deployment.](pic/binarytree.png)
+<img src="pic/binarytree.png" width=50% height=50%>
 
-![Diagram of deployment.](pic/backtracking.png)
+<img src="pic/backtracking.png" width=50% height=50%>
 
-![Diagram of deployment.](pic/backtracking1.png)
+<img src="pic/backtracking1.png" width=50% height=50%>
 
 
 转码时要注意：学东西要多花时间学“根”，少花时间学“叶”
