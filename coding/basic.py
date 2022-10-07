@@ -305,7 +305,7 @@ def heapify(arr, n, i):
         heapify(arr, n, largest)
 
 # The main function to sort an array of given size
-def heapSort(arr):
+def heapsort(arr):
     n = len(arr)
  # Build a maxheap.
  # Since last parent will be at ((n//2)-1) we can start at that location.
@@ -316,6 +316,21 @@ def heapSort(arr):
     for i in range(n - 1, 0, -1):
         (arr[i], arr[0]) = (arr[0], arr[i])  # swap
         heapify(arr, i, 0)
+
+"""
+Selection Sort
+"""
+def selection_sort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1, n):
+            if arr[min_idx] > arr[j]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+    return array
 
 ARRAY_LENGTH = 10000
 
@@ -329,6 +344,7 @@ if __name__ == "__main__":
     # Call the function using the name of the sorting algorithm
     # and the array you just created
     run_sorting_algorithm(algorithm="sorted", array=array)
+
     # Call each of the functions
     run_sorting_algorithm(algorithm="bubble_sort", array=array)
 # Algorithm: bubble_sort. Minimum execution time: 73.21720498399998
@@ -343,4 +359,11 @@ if __name__ == "__main__":
 # Algorithm: quicksort. Minimum execution time: 0.11675417600002902
 
     run_sorting_algorithm(algorithm="timsort", array=array)
-# Algorithm: timsort. Minimum execution time: 0.5121690789999998
+# Algorithm: timsort. Minimum execution time: 0.39657199999999193
+
+    run_sorting_algorithm(algorithm="heapsort", array=array)
+# Algorithm: heapsort. Minimum execution time: 0.48962458400001196
+
+    run_sorting_algorithm(algorithm="selection_sort", array=array)
+# Algorithm: selection_sort. Minimum execution time: 31.74471645899996
+
