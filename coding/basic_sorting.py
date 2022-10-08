@@ -1,5 +1,6 @@
 """
 Sorting
+> https://www.geeksforgeeks.org/analysis-of-different-sorting-techniques/
 > https://realpython.com/sorting-algorithms-python/
 > https://www.geeksforgeeks.org/selection-sort/
 > https://www.geeksforgeeks.org/python-program-for-heap-sort/
@@ -112,6 +113,7 @@ Cons: Both bubble sort and insertion sort beat merge sort when sorting a ten-ele
 merge sort use much more memory than bubble sort and insertion sort, which are both able
 to sort the list in place. Due to this limitation, you may not want to use merge sort 
 to sort large lists in memory-constrained hardware.
+> https://www.programiz.com/dsa/merge-sort
 """
 def merge(left, right):
     # If the first array is empty, then nothing needs
@@ -171,6 +173,7 @@ def merge_sort(array):
 """
 Quicksort
 O(n log2n)
+> https://www.programiz.com/dsa/quick-sort
 """
 from random import randint
 
@@ -286,41 +289,47 @@ def timsort(array):
 
 """
 Heapsort
+The time complexity of heapify is O(log(n)).
+Time complexity of createAndBuildHeap() is O(n).
+And, hence the overall time complexity of Heap Sort is O(n*log(n)).
+Auxiliary Space: O(log(n))
+> https://www.programiz.com/dsa/heap-sort
 """
 def heapify(arr, n, i):
+    # Find largest among root and children
     largest = i  # Initialize largest as root
     l = 2 * i + 1  # left = 2*i + 1
     r = 2 * i + 2  # right = 2*i + 2
  
- # See if left child of root exists and is
- # greater than root
+    # See if left child of root exists and is
+    # greater than root
     if l < n and arr[i] < arr[l]:
         largest = l
  
- # See if right child of root exists and is
- # greater than root
+    # See if right child of root exists and is
+    # greater than root
     if r < n and arr[largest] < arr[r]:
         largest = r
  
- # Change root, if needed
+    # If root is not largest, swap with largest and continue heapifying
+    # Change root, if needed
     if largest != i:
         (arr[i], arr[largest]) = (arr[largest], arr[i])  # swap
- 
-  # Heapify the root.
+        # Heapify the root.
         heapify(arr, n, largest)
 
 # The main function to sort an array of given size
 def heapsort(arr):
     n = len(arr)
- # Build a maxheap.
- # Since last parent will be at ((n//2)-1) we can start at that location.
+    # Build a maxheap.
+    # Since last parent will be at ((n//2)-1) we can start at that location.
     for i in range(n // 2 - 1, -1, -1):
         heapify(arr, n, i)
  
- # One by one extract elements
+    # One by one extract elements
     for i in range(n - 1, 0, -1):
         (arr[i], arr[0]) = (arr[0], arr[i])  # swap
-        heapify(arr, i, 0)
+        heapify(arr, i, 0) # Heapify root element
 
 """
 Selection Sort
@@ -339,12 +348,13 @@ def selection_sort(arr):
 
 """
 Radix Sort
+Counting sort is a linear time sorting algorithm that sort in O(n+k) time when elements are in the range from 1 to k.
+> https://www.geeksforgeeks.org/radix-sort/
 """
 # Python program for implementation of Radix Sort
 # A function to do counting sort of arr[] according to
 # the digit represented by exp.
 def countingSort(arr, exp1):
- 
     n = len(arr)
  
     # The output array elements that will have sorted arr
@@ -393,45 +403,47 @@ def radix_sort(arr):
 
 """
 Counting Sort
+Time Complexity: O(n+k) 
+Auxiliary Space: O(n+k)
+> https://www.geeksforgeeks.org/counting-sort/
 """
 # Python program for counting sort
 # The main function that sort the given string arr[] in 
 # alphabetical order
 def count_sort(arr):
-  
-    # The output character array that will have sorted arr
-    output = [0 for i in range(len(arr))]
-  
+    max_element = int(max(arr))
+    min_element = int(min(arr))
+    range_of_elements = max_element - min_element + 1
     # Create a count array to store count of individual
-    # characters and initialize count array as 0
-    count = [0 for i in range(256)]
-  
-    # For storing the resulting answer since the 
-    # string is immutable
-    ans = ["" for _ in arr]
+    # elements and initialize count array as 0
+    count_arr = [0 for _ in range(range_of_elements)]
+    output_arr = [0 for _ in range(len(arr))]
   
     # Store count of each character
-    for i in arr:
-        count[ord(i)] += 1
+    for i in range(0, len(arr)):
+        count_arr[arr[i]-min_element] += 1
   
-    # Change count[i] so that count[i] now contains actual
-    # position of this character in output array
-    for i in range(256):
-        count[i] += count[i-1]
+    # Change count_arr[i] so that count_arr[i] now contains actual
+    # position of this element in output array
+    for i in range(1, len(count_arr)):
+        count_arr[i] += count_arr[i-1]
   
     # Build the output character array
-    for i in range(len(arr)):
-        output[count[ord(arr[i])]-1] = arr[i]
-        count[ord(arr[i])] -= 1
+    for i in range(len(arr)-1, -1, -1):
+        output_arr[count_arr[arr[i] - min_element] - 1] = arr[i]
+        count_arr[arr[i] - min_element] -= 1
   
     # Copy the output array to arr, so that arr now
     # contains sorted characters
-    for i in range(len(arr)):
-        ans[i] = output[i]
-    return ans
+    for i in range(0, len(arr)):
+        arr[i] = output_arr[i]
+  
+    return arr
 
 """
 Bucket Sort
+
+> https://www.geeksforgeeks.org/bucket-sort-2/
 """
 def insertionSort(b):
     for i in range(1, len(b)):
@@ -504,10 +516,10 @@ if __name__ == "__main__":
 # Algorithm: timsort. Minimum execution time: 0.39657199999999193
 
     run_sorting_algorithm(algorithm="radix_sort", array=array)
-# Algorithm: radix_sort. Minimum execution time: 0.39657199999999193
+# Algorithm: radix_sort. Minimum execution time: 0.15927529199996115
 
     run_sorting_algorithm(algorithm="count_sort", array=array)
-# Algorithm: count_sort. Minimum execution time: 0.39657199999999193
+# Algorithm: count_sort. Minimum execution time: 0.04350587499999392
 
-    run_sorting_algorithm(algorithm="bucket_sort", array=array)
-# Algorithm: bucket_sort. Minimum execution time: 0.39657199999999193
+    # run_sorting_algorithm(algorithm="bucket_sort", array=array)
+# Algorithm: bucket_sort. Minimum execution time: 0.1
