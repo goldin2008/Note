@@ -172,7 +172,8 @@ def merge_sort(array):
 
 """
 Quicksort
-O(n log2n)
+Time Complexity Average: O(n*log n)
+Space Complexity: O(log n)
 > https://www.programiz.com/dsa/quick-sort
 """
 from random import randint
@@ -203,6 +204,47 @@ def quicksort(array):
     # The final result combines the sorted `low` list
     # with the `same` list and the sorted `high` list
     return quicksort(low) + same + quicksort(high)
+
+# Quick Sort Solution 2
+# function to find the partition position
+def partition(array, low, high):
+
+  # choose the rightmost element as pivot
+  pivot = array[high]
+
+  # pointer for greater element
+  i = low - 1
+
+  # traverse through all elements
+  # compare each element with pivot
+  for j in range(low, high):
+    if array[j] <= pivot:
+      # if element smaller than pivot is found
+      # swap it with the greater element pointed by i
+      i = i + 1
+
+      # swapping element at i with element at j
+      array[i], array[j] = array[j], array[i]
+
+  # swap the pivot element with the greater element specified by i
+  array[i + 1], array[high] = array[high], array[i + 1]
+
+  # return the position from where partition is done
+  return i + 1
+
+# function to perform quicksort
+def quickSort(array, low, high):
+  if low < high:
+    # find pivot element such that
+    # element smaller than pivot are on the left
+    # element greater than pivot are on the right
+    pi = partition(array, low, high)
+
+    # recursive call on the left of pivot
+    quickSort(array, low, pi - 1)
+
+    # recursive call on the right of pivot
+    quickSort(array, pi + 1, high)
 
 """
 Timsort
@@ -292,30 +334,31 @@ Heapsort
 The time complexity of heapify is O(log(n)).
 Time complexity of createAndBuildHeap() is O(n).
 And, hence the overall time complexity of Heap Sort is O(n*log(n)).
-Auxiliary Space: O(log(n))
+Space Complexity: O(1)
 > https://www.programiz.com/dsa/heap-sort
 """
 def heapify(arr, n, i):
-    # Find largest among root and children
+    # 1. Find largest among root and children
+    
     largest = i  # Initialize largest as root
     l = 2 * i + 1  # left = 2*i + 1
     r = 2 * i + 2  # right = 2*i + 2
  
     # See if left child of root exists and is
     # greater than root
-    if l < n and arr[i] < arr[l]:
+    if l < n and arr[l] > arr[i]:
         largest = l
  
     # See if right child of root exists and is
     # greater than root
-    if r < n and arr[largest] < arr[r]:
+    if r < n and arr[r] > arr[largest]:
         largest = r
- 
-    # If root is not largest, swap with largest and continue heapifying
+    
+    # 2. If root is not largest, swap with largest and continue heapifying
     # Change root, if needed
     if largest != i:
-        (arr[i], arr[largest]) = (arr[largest], arr[i])  # swap
-        # Heapify the root.
+        arr[i], arr[largest] = arr[largest], arr[i] # swap
+        # 3. Heapify the root.
         heapify(arr, n, largest)
 
 # The main function to sort an array of given size
@@ -328,7 +371,7 @@ def heapsort(arr):
  
     # One by one extract elements
     for i in range(n - 1, 0, -1):
-        (arr[i], arr[0]) = (arr[0], arr[i])  # swap
+        arr[i], arr[0] = arr[0], arr[i]  # swap
         heapify(arr, i, 0) # Heapify root element
 
 """
@@ -442,7 +485,9 @@ def count_sort(arr):
 
 """
 Bucket Sort
-
+Average	O(n)
+Space Complexity: O(n+k)
+> https://www.programiz.com/dsa/bucket-sort
 > https://www.geeksforgeeks.org/bucket-sort-2/
 """
 def insertionSort(b):

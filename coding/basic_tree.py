@@ -50,6 +50,7 @@ else:
 
 # Max-Heap data structure in Python
 def heapify(arr, n, i):
+    # Find largest among root, left child and right child
     largest = i
     l = 2 * i + 1
     r = 2 * i + 2 
@@ -70,6 +71,7 @@ def insert(array, newNum):
         array.append(newNum)
     else:
         array.append(newNum)
+        # Build heap (rearrange array)
         for i in range((size//2)-1, -1, -1):
             heapify(array, size, i)
 
@@ -81,9 +83,8 @@ def deleteNode(array, num):
             break
         
     array[i], array[size-1] = array[size-1], array[i]
-
     array.remove(num)
-    
+    # Build heap (rearrange array)
     for i in range((len(array)//2)-1, -1, -1):
         heapify(array, len(array), i)
     
