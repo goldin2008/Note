@@ -113,6 +113,8 @@ Cons: Both bubble sort and insertion sort beat merge sort when sorting a ten-ele
 merge sort use much more memory than bubble sort and insertion sort, which are both able
 to sort the list in place. Due to this limitation, you may not want to use merge sort 
 to sort large lists in memory-constrained hardware.
+Time Complexity Average: O(n*log n)
+Space Complexity: O(n)
 > https://www.programiz.com/dsa/merge-sort
 """
 def merge(left, right):
