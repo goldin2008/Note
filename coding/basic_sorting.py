@@ -31,6 +31,8 @@ def run_sorting_algorithm(algorithm, array):
 
 
 """
+Comparison based sorting
+
 Bubble Sort
 Time complexity O(n2)
 Space complexity O(n)
@@ -99,6 +101,21 @@ def insertion_sort(array):
         # When you finish shifting the elements, you can position
         # `key_item` in its correct location
         array[j + 1] = key_item
+
+    return array
+
+"""
+Selection Sort
+"""
+def selection_sort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
 
     return array
 
@@ -416,21 +433,8 @@ def heapsort(arr):
         heapify(arr, i, 0) # Heapify root element
 
 """
-Selection Sort
-"""
-def selection_sort(arr):
-    n = len(arr)
+Non-comparison based sorting
 
-    for i in range(n):
-        min_idx = i
-        for j in range(i+1, n):
-            if arr[j] < arr[min_idx]:
-                min_idx = j
-        arr[i], arr[min_idx] = arr[min_idx], arr[i]
-
-    return array
-
-"""
 Radix Sort
 Counting sort is a linear time sorting algorithm that sort in O(n+k) time when elements are in the range from 1 to k.
 > https://www.geeksforgeeks.org/radix-sort/
