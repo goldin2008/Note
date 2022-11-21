@@ -7,10 +7,11 @@ ROC曲线全称是受试者工作特征曲线(Receiver Operating Characteristic 
 
 横轴是负正类率(false positive rate aka. FPR)即划分的例子中所有负例占所有负例的比例，其实就是特异度。
 纵轴是真正类率(True postive rate aka. TPR)也叫灵敏度。
-TPR=TP/(TP+FN) 也称Sensitivity
-FPR=FP/(FP+TN) 也称误诊率
+Y: TPR=TP/(TP+FN) 也称Sensitivity
+X: FPR=FP/(FP+TN) 也称误诊率
 
-
+Y: Precision=TP/(TP+FP)
+X: Recall=TP/(TP+FN)
 
 ## DS
 Let’s take a ***Supervised Learning Process***. The process starts with receiving a static data file with labels in it as the input file, perform ***Exploratory Data Analysis***, scale and perform ***Feature Engineering***, ***Split the Data*** records into train, test and validation set. ***Train the Model*** using the training data records, ***Fine Tune the model Parameters*** using the test data records and perform ***Model Selection*** based on the ***Performance Metrics*** on the validation data records. The well-trained model is then ***Deployed to Production*** to make a prediction/classification on unknown data records. The model is limited to the patterns it has observed in the static input file and cannot adapt to the real-time behavioural changes. Every time there is a new training data is made available, the entire process of training the model has to start from scratch.
