@@ -5,6 +5,8 @@ This area generally focuses on individual understanding of basic ML concepts suc
 #### ROC AUC
 ROC曲线全称是受试者工作特征曲线(Receiver Operating Characteristic curve). ROC 曲线上的每个点都反映着对同一信号刺激的感受性。需要注意的是，ROC的定义仅对于二分类，如果需要多分类，需要进行转换
 
+AUC值是一个概率值，当你随机挑选一个正样本以及一个负样本，当前的分类算法根据计算得到的Score值将这个正样本排在负样本前面的概率就是AUC值。AUC值越大，当前的分类算法越有可能将正样本排在负样本前面，即能够更好的分类。
+
 横轴是负正类率(false positive rate aka. FPR)即划分的例子中所有负例占所有负例的比例，其实就是特异度。
 纵轴是真正类率(True postive rate aka. TPR)也叫灵敏度。
 Y: TPR=TP/(TP+FN) 也称Sensitivity
