@@ -5,9 +5,18 @@ This area generally focuses on individual understanding of basic ML concepts suc
 #### ROC AUC
 > https://www.analyticsvidhya.com/blog/2020/06/auc-roc-curve-machine-learning/
 
+> https://www.cnblogs.com/dlml/p/4403482.html
+
+> https://www.jianshu.com/p/c61ae11cc5f6
+
+> https://wulc.me/2018/06/16/ROC%20%E6%9B%B2%E7%BA%BF%E4%B8%8E%20PR%20%E6%9B%B2%E7%BA%BF/
+
+> https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5
+
 ROC曲线全称是受试者工作特征曲线(Receiver Operating Characteristic curve). ROC 曲线上的每个点都反映着对同一信号刺激的感受性。需要注意的是，ROC的定义仅对于二分类，如果需要多分类，需要进行转换
 
-AUC值是一个概率值，当你随机挑选一个正样本以及一个负样本，当前的分类算法根据计算得到的Score值将这个正样本排在负样本前面的概率就是AUC值。AUC值越大，当前的分类算法越有可能将正样本排在负样本前面，即能够更好的分类。
+AUC(Area under Curve)：Roc曲线下的面积，介于0.1和1之间。Auc作为数值可以直观的评价分类器的好坏，值越大越好。
+首先AUC值是一个概率值，当你随机挑选一个正样本以及负样本，当前的分类算法根据计算得到的Score值将这个正样本排在负样本前面的概率就是AUC值，AUC值越大，当前分类算法越有可能将正样本排在负样本前面，从而能够更好地分类。
 
 The Receiver Operator Characteristic (ROC) curve is an evaluation metric for binary classification problems. It is a probability curve that plots the TPR against FPR at various threshold values and essentially separates the ‘signal’ from the ‘noise’. The Area Under the Curve (AUC) is the measure of the ability of a classifier to distinguish between classes and is used as a summary of the ROC curve.
 The higher the AUC, the better the performance of the model at distinguishing between the positive and negative classes.
@@ -33,6 +42,14 @@ False Negative Rate (FNR) tells us what proportion of the positive class got inc
 
 Y: Precision=TP/(TP+FP)
 X: Recall=TP/(TP+FN)
+
+ROC曲线由于兼顾正例与负例，所以适用于评估分类器的整体性能(通常是会计算AUC，表示模型的rank性能)，相比而言PR曲线完全聚焦于正例。
+
+如果有多份数据且存在不同的类别分布。比如信用卡欺诈问题中每个月正例和负例的比例可能都不相同，这时候如果只想单纯地比较分类器的性能且剔除类别分布改变的影响，则ROC曲线比较适合，因为类别分布改变可能使得PR曲线发生变化时好时坏，这种时候难以进行模型比较；反之，如果想测试不同类别分布下对分类器的性能的影响，则PR曲线比较适合。
+
+如果想要评估在相同的类别分布下正例的预测情况，则宜选PR曲线。类别不平衡问题中，ROC曲线通常会给出一个乐观的效果估计，所以大部分时候还是PR曲线更好。(参考上面 Quora 的例子)
+
+最后可以根据具体的应用，在曲线上找到最优的点，得到相对应的precision，recall，f1 score等指标，去调整模型的阈值，从而得到一个符合具体应用的模型。
 
 ## DS
 Let’s take a ***Supervised Learning Process***. The process starts with receiving a static data file with labels in it as the input file, perform ***Exploratory Data Analysis***, scale and perform ***Feature Engineering***, ***Split the Data*** records into train, test and validation set. ***Train the Model*** using the training data records, ***Fine Tune the model Parameters*** using the test data records and perform ***Model Selection*** based on the ***Performance Metrics*** on the validation data records. The well-trained model is then ***Deployed to Production*** to make a prediction/classification on unknown data records. The model is limited to the patterns it has observed in the static input file and cannot adapt to the real-time behavioural changes. Every time there is a new training data is made available, the entire process of training the model has to start from scratch.
