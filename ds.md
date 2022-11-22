@@ -9,8 +9,17 @@ AUC值是一个概率值，当你随机挑选一个正样本以及一个负样�
 
 横轴是负正类率(false positive rate aka. FPR)即划分的例子中所有负例占所有负例的比例，其实就是特异度。
 纵轴是真正类率(True postive rate aka. TPR)也叫灵敏度。
-Y: TPR=TP/(TP+FN) 也称Sensitivity
+
+Y: TPR=TP/(TP+FN) 也称Sensitivity / True Positive Rate / Recall
+Sensitivity tells us what proportion of the positive class got correctly classified.
+
 X: FPR=FP/(FP+TN) 也称误诊率
+FPR tells us what proportion of the negative class got incorrectly classified by the classifier.
+
+False Negative Rate (FNR) tells us what proportion of the positive class got incorrectly classified by the classifier.
+
+Specificity / True Negative Rate
+Specificity tells us what proportion of the negative class got correctly classified.
 
 Y: Precision=TP/(TP+FP)
 X: Recall=TP/(TP+FN)
