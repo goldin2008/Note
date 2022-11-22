@@ -3,23 +3,33 @@ Machine learning understanding
 This area generally focuses on individual understanding of basic ML concepts such as supervised vs. unsupervised learning, reinforcement learning, classification vs. regression, deep learning, optimization functions, and the learning process of various ML algorithms. There are many courses and books that go over these fundamental concepts. They facilitate the learning of ML basics and help candidates prepare for the interview.
 
 #### ROC AUC
+> https://www.analyticsvidhya.com/blog/2020/06/auc-roc-curve-machine-learning/
+
 ROC曲线全称是受试者工作特征曲线(Receiver Operating Characteristic curve). ROC 曲线上的每个点都反映着对同一信号刺激的感受性。需要注意的是，ROC的定义仅对于二分类，如果需要多分类，需要进行转换
 
 AUC值是一个概率值，当你随机挑选一个正样本以及一个负样本，当前的分类算法根据计算得到的Score值将这个正样本排在负样本前面的概率就是AUC值。AUC值越大，当前的分类算法越有可能将正样本排在负样本前面，即能够更好的分类。
 
+The Receiver Operator Characteristic (ROC) curve is an evaluation metric for binary classification problems. It is a probability curve that plots the TPR against FPR at various threshold values and essentially separates the ‘signal’ from the ‘noise’. The Area Under the Curve (AUC) is the measure of the ability of a classifier to distinguish between classes and is used as a summary of the ROC curve.
+The higher the AUC, the better the performance of the model at distinguishing between the positive and negative classes.
+So, the higher the AUC value for a classifier, the better its ability to distinguish between positive and negative classes.
+
 横轴是负正类率(false positive rate aka. FPR)即划分的例子中所有负例占所有负例的比例，其实就是特异度。
 纵轴是真正类率(True postive rate aka. TPR)也叫灵敏度。
 
-Y: TPR=TP/(TP+FN) 也称Sensitivity / True Positive Rate / Recall
+Y: TPR=TP/(TP+FN)
+True Positive Rate 也称Sensitivity / Recall
 Sensitivity tells us what proportion of the positive class got correctly classified.
 
-X: FPR=FP/(FP+TN) 也称误诊率
+X: FPR=FP/(FP+TN)
+False Positive Rate 也称误诊率
 FPR tells us what proportion of the negative class got incorrectly classified by the classifier.
 
-False Negative Rate (FNR) tells us what proportion of the positive class got incorrectly classified by the classifier.
-
-Specificity / True Negative Rate
+TNR=TN/(TN+FP)
+True Negative Rate / Specificity
 Specificity tells us what proportion of the negative class got correctly classified.
+
+FNR=FN/(FN+TP)
+False Negative Rate (FNR) tells us what proportion of the positive class got incorrectly classified by the classifier.
 
 Y: Precision=TP/(TP+FP)
 X: Recall=TP/(TP+FN)
