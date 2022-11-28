@@ -5,15 +5,16 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-     def postorderTraversal(self, root: TreeNode) -> List[int]:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
+        # 保存结果
         result = []
-
+        
         def traversal(root: TreeNode):
             if root == None:
                 return
+            result.append(root.val) # 前序
             traversal(root.left)    # 左
             traversal(root.right)   # 右
-            result.append(root.val) # 后序
 
         traversal(root)
         return result
