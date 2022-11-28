@@ -4,8 +4,10 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# 中序遍历-递归-LC94_二叉树的中序遍历
 class Solution:
-     def inorderTraversal(self, root: TreeNode) -> List[int]:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
         result = []
 
         def traversal(root: TreeNode):

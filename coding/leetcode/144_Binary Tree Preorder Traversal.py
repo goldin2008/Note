@@ -4,6 +4,8 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# 前序遍历-递归-LC144_二叉树的前序遍历
 class Solution:
     def preorderTraversal(self, root: TreeNode) -> List[int]:
         # 保存结果

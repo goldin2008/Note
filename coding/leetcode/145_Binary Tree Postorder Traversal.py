@@ -4,8 +4,10 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# 后序遍历-递归-LC145_二叉树的后序遍历
 class Solution:
-     def postorderTraversal(self, root: TreeNode) -> List[int]:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
         result = []
 
         def traversal(root: TreeNode):
