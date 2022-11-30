@@ -31,3 +31,17 @@ class Solution:
             results.append(result)
 
         return results
+
+
+# 递归法
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        res = []
+        def helper(root, depth):
+            if not root: return []
+            if len(res) == depth: res.append([]) # start the current depth
+            res[depth].append(root.val) # fulfil the current depth
+            if  root.left: helper(root.left, depth + 1) # process child nodes for the next depth
+            if  root.right: helper(root.right, depth + 1)
+        helper(root, 0)
+        return res
