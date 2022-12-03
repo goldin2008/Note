@@ -43,21 +43,22 @@ class Solution:
 
 class Solution:
     def postorderTraversal(self, root: TreeNode) -> List[int]:
+        if not root:
+            return []        
         result = []
-        st = []
-        if root:
-            st.append(root)
+        st = [root]
         while st:
             node = st.pop()
-            if node != None:
-                st.append(node) #中
-                st.append(None)
-                
-                if node.right: #右
-                    st.append(node.right)
-                if node.left: #左
-                    st.append(node.left)
-            else:
+            if node is None: #只有遇到空节点的时候，才将下一个节点放进结果集
                 node = st.pop()
                 result.append(node.val)
+            else:
+                st.append(node) #添加中节点
+                st.append(None) #中节点访问过，但是还没有处理，加入空节点做为标记。
+
+                if node.right: #添加右节点（空节点不入栈）
+                    st.append(node.right)
+
+                if node.left: #添加左节点（空节点不入栈）
+                    st.append(node.left)
         return result
