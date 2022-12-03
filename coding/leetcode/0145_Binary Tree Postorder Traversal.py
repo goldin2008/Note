@@ -11,7 +11,7 @@ class Solution:
         result = []
 
         def traversal(root: TreeNode):
-            if root == None:
+            if root is None:
                 return
             traversal(root.left)    # 左
             traversal(root.right)   # 右

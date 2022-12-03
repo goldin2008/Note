@@ -12,7 +12,7 @@ class Solution:
         result = []
         
         def traversal(root: TreeNode):
-            if root == None:
+            if root is None:
                 return
             result.append(root.val) # 前序
             traversal(root.left)    # 左
