@@ -44,13 +44,16 @@ class Solution:
 
 class Solution:
     def inorderTraversal(self, root: TreeNode) -> List[int]:
+        if not root:
+            return []        
         result = []
-        st = []
-        if root:
-            st.append(root)
+        st = [root]
         while st:
             node = st.pop()
-            if node != None:
+            if node is None: #只有遇到空节点的时候，才将下一个节点放进结果集
+                node = st.pop()
+                result.append(node.val)
+            else:
                 if node.right: #添加右节点（空节点不入栈）
                     st.append(node.right)
                 
@@ -59,7 +62,4 @@ class Solution:
                 
                 if node.left: #添加左节点（空节点不入栈）
                     st.append(node.left)
-            else: #只有遇到空节点的时候，才将下一个节点放进结果集
-                node = st.pop() #重新取出栈中元素
-                result.append(node.val) #加入到结果集
         return result
