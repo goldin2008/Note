@@ -36,15 +36,15 @@ class Solution:
         que = deque([root])
         
         while que:
-            size = len(que)
+            length = len(que)
             sum_ = 0
-            for _ in range(size):
+            for _ in range(length):
                 cur = que.popleft()
                 sum_ += cur.val
                 if cur.left:
                     que.append(cur.left)
                 if cur.right:
                     que.append(cur.right)
-            results.append(sum_ / size)
+            results.append(sum_ / length)
 
         return results

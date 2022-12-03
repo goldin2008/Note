@@ -11,8 +11,8 @@ class Solution:
             return count
         que = [root]
         while que:
-            size = len(que)
-            for _ in range(size):
+            length = len(que)
+            for _ in range(length):
                 cur = que.pop(0)
                 if cur.left:
                     que.append(cur.left)

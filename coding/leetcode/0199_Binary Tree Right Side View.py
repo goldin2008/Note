@@ -13,10 +13,10 @@ class Solution:
         que = deque([root])
         while que:
             count = 1
-            size = len(que)
-            for _ in range(size):
+            length = len(que)
+            for _ in range(length):
                 cur = que.popleft()
-                if count == size:
+                if count == length:
                     res.append(cur.val)
                 if cur.left:
                     que.append(cur.left)

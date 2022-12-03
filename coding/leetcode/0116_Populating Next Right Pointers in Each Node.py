@@ -15,8 +15,8 @@ class Solution:
         from collections import deque
         que = deque([root])
         while que:
-            size = len(que)
-            for i in range(size):
+            length = len(que)
+            for i in range(length):
                 cur = que.popleft()
                 if cur.left:
                     que.append(cur.left)
@@ -24,7 +24,7 @@ class Solution:
                     que.append(cur.right)
                 # if cur.left and cur.right:
                 #     cur.left.next = cur.right
-                if i == size-1:
+                if i == length-1:
                     break
                 cur.next = que[0]
         return root                    

@@ -19,9 +19,9 @@ class Solution:
         que = deque([root])
         
         while que:
-            size = len(que)
+            length = len(que)
             result = []
-            for _ in range(size):
+            for _ in range(length):
                 cur = que.popleft()
                 result.append(cur.val)
                 if cur.left:

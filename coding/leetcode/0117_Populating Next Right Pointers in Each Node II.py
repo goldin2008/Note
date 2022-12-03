@@ -14,14 +14,14 @@ class Solution:
             return None
         que = [root]
         while que:
-            size = len(que)
-            for i in range(size):
+            length = len(que)
+            for i in range(length):
                 cur = que.pop(0)
                 if cur.left:
                     que.append(cur.left)
                 if cur.right:
                     que.append(cur.right)
-                if i == size-1:
+                if i == length-1:
                     break
                 cur.next = que[0]
         return root

@@ -17,7 +17,8 @@ class Solution:
         
         while que:
             result = []
-            for _ in range(len(que)):
+            length = len(que)
+            for _ in range(length):
                 cur = que.popleft()
                 result.append(cur.val)
                 # cur.children 是 Node 对象组成的列表，也可能为 None

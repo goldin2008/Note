@@ -11,9 +11,9 @@ class Solution:
             return count
         que = [root]
         while que:
-            size = len(que)
+            length = len(que)
             count += 1
-            for _ in range(size):
+            for _ in range(length):
                 cur = que.pop(0)
                 if (not cur.left) and (not cur.right):
                     return count

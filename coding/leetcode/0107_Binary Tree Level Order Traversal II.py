@@ -13,7 +13,8 @@ class Solution:
         que = deque([root])
         while que:
             result = []
-            for _ in range(len(que)):
+            length = len(que)
+            for _ in range(length):
                 cur = que.popleft()
                 result.append(cur.val)
                 if cur.left:
