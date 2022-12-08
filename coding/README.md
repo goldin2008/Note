@@ -26,9 +26,24 @@
 
 <img src="pic/backtracking1.png" width=50% height=50%>
 
+## Note
 
-### Note
 
+## Coding Interview
+#### JPMC
+(2022-11-24) 912, 1356, 1328, 392, game winner, array reduction
+
+https://www.geeksforgeeks.org/minimum-number-of-distinct-elements-after-removing-m-items/?ref=gcse
+
+https://www.geeksforgeeks.org/maximum-index-a-pointer-can-reach-in-n-steps-by-avoiding-a-given-index-b/
+
+https://www.geeksforgeeks.org/minimize-cost-to-reduce-the-array-to-a-single-element-by-given-operations/
+
+https://leetcode.com/discuss/interview-question/528041/mathworks-edg-new-grad-oa-2020&#8205;&#8204;&#8204;&#8205;&#8204;&#8205;&#8204;&#8205;&#8205;&#8204;-ideal-numbers-in-a-range
+
+https://www.1point3acres.com/bbs/thread-944933-1-1.html
+
+https://www.1point3acres.com/bbs/thread-943018-1-1.html
 
 
 
