@@ -1,22 +1,25 @@
-# Array Reduction
+# 1. Array Reduction
 
 
-# Break a Palindrome
+# 2. Break a Palindrome
 
 
-# Factors of 3 and 5
+# 3. Factors of 3 and 5
 
 
-# Selling Products
+# 4. Selling Products
 
 
-# Longest Even Length Word
+# 5. Longest Even Length Word
 
 
-# Missing Words
+# 6. Missing Words
 
 
-# Highly Profitable Months
+# 7. Highly Profitable Months
 
 
-# Subarray Sum
+# 8. Subarray Sum
+
+
+# 9. Maximum Index
