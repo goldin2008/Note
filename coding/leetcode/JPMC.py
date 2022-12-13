@@ -36,6 +36,46 @@ class Solution:
             return N
         return self.fib(N - 1) + self.fib(N - 2)
 
+# Bottom-Up Approach using Tabulation
+class Solution:
+    def fib(self, N: int) -> int:
+        if N <= 1:
+            return N
+        
+        cache = [0] * (N + 1)
+        cache[1] = 1
+        for i in range(2, N + 1):
+            cache[i] = cache[i - 1] + cache[i - 2]
+
+        return cache[N]
+
+# Top-Down Approach using Memoization
+class Solution:
+    cache = {0: 0, 1: 1}
+
+    def fib(self, N: int) -> int:
+        if N in self.cache:
+            return self.cache[N]
+        self.cache[N] = self.fib(N - 1) + self.fib(N - 2)
+        return self.cache[N]
+
+# Iterative Bottom-Up Approach
+class Solution:
+    def fib(self, N: int) -> int:
+        if (N <= 1):
+            return N
+
+        current = 0
+        prev1 = 1
+        prev2 = 0
+
+        # Since range is exclusive and we want to include N, we need to put N+1.
+        for i in range(2, N + 1):
+            current = prev1 + prev2
+            prev2 = prev1
+            prev1 = current
+        return current
+
 
 
 # 11. Game Winner
