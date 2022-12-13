@@ -28,7 +28,14 @@
 # 9. Maximum Index
 
 
-# 10. 计算Fibonachi number，我用的带golden ratio的数学公式，时间复杂度是O(log n), 空间复杂度是O(1)
+# 10. 计算Fibonachi number (509)
+# 我用的带golden ratio的数学公式，时间复杂度是O(log n), 空间复杂度是O(1)
+class Solution:
+    def fib(self, N: int) -> int:
+        if N <= 1:
+            return N
+        return self.fib(N - 1) + self.fib(N - 2)
+
 
 
 # 11. Game Winner
@@ -36,6 +43,32 @@
 
 # 12. Cardinality Sorting (1356)
 # https://www.geeksforgeeks.org/sort-array-according-count-set-bits/
+
+class Solution:
+    def sortByBits(self, arr: List[int]) -> List[int]:
+        return sorted(arr, key = lambda num : (sum((num >> i) & 1 for i in range(32)), num))
+
+# Function to count setbits
+def setBitCount(num):
+    count = 0
+    while (num):
+        if (num & 1):
+            count += 1
+        num = num >> 1          
+    return count
+
+# Function to count setbits
+def countSetBits(val):
+    cnt = 0
+    while val:
+        cnt += val % 2
+        val = val//2
+    return cnt
+
+sorted_arr = sorted(arr, key=lambda val: (
+    countSetBits(val[0]), n-val[1]), reverse=True)
+sorted_arr = [val[0] for val in sorted_arr]
+
 
 # 13. Is Possible (780)
 
