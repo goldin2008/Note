@@ -115,8 +115,34 @@ So `docker run` creates and starts our container and then executes the command p
 We’ll start by pushing the freshly created Docker image to Amazon Elastic Container Registry (ECR) which will store our image. Once the image is uploaded, open the AWS console and go to ECR and click on Repositories in the left pane. Then select the image you just uploaded and copy the Repository URI at the top of the page.
 - Upload Model Artifacts to S3
 As discussed before, the Docker image only contains the inference environment and code, not the trained serialized model. The serialized trained model files, called model artifacts on Sagemaker, will be stored in a separate S3 bucket.
-- Configure and create a Sagemaker endpoint
+- Setting Up the Image in Sagemaker
+Model Creation (IAM role, ECR URI and S3 URL)
+Endpoint configuration
+Endpoint creation
 - Create an API endpoint with Chalice
+Once the Sagemaker endpoint is created, you can access the model from within your AWS account by using the AWS CLI or, for example, the AWS Python SDK (Boto3). This is fine if you want to perform some internal testing, but we want to make it available to the outside world, so we’ll have to create an API. This can be easily achieved using Amazon’s Chalice library. It’s a microframework that allows quick creation and deployment of apps on AWS lambda and simplifies the creation of an API. The main function of this code is to invoke your Sagemaker endpoint when a POST request with data is sent to your API, and return the response. You can now use that endpoint URL to perform requests.
+
+<!-- https://towardsdatascience.com/simple-way-to-deploy-machine-learning-models-to-cloud-fd58b771fdcf -->
+- `Wrapping the inference logic into a flask web service`
+- `Using docker to containerize the flask service (app, requirement, model files)`
+```Dockerfile
+FROM python:3.6-slim
+COPY ./app.py /deploy/
+COPY ./requirements.txt /deploy/
+COPY ./iris_trained_model.pkl /deploy/
+WORKDIR /deploy/
+RUN pip install -r requirements.txt
+EXPOSE 80
+ENTRYPOINT ["python", "app.py"]
+```
+build docker image
+run docker
+- `Hosting the docker container on an AWS ec2 instance`
+What happens if we need to build an architectural ecosystem around the service that needs to be available, automated and scalable?
+We will now ssh into the ec2 machine from our local system terminal using the command with the field public-dns-name replaced with your ec2 instance name and the path of the key pair pem file you saved earlier.
+we will build the docker image within the ec2 instance
+copy the files we need to build the docker image within the ec2 instance.
+
 
 
 #### Kubernetes / Kubeflow
@@ -162,3 +188,6 @@ The deployment can be carried out in 2 ways.
 - Post the file to the API server.
 - Verify the configuration YAML file.
 - Scheduler deploys the POD in the cluster.
+
+<!-- https://towardsdatascience.com/machine-learning-with-docker-and-kubernetes-training-models-cbe33a08c999 -->
+
