@@ -82,6 +82,7 @@ They talk of launching a AWS EC2 instance to host our own Flask App and ML model
 
 push your image to `Docker Hub` (container registry) -> Setting up `AWS EC2` -> Run the `Docker Image` on the `EC2`
 <!-- https://www.machinelearningplus.com/deployment/deploy-ml-model-aws-ec2-instance/ -->
+<!-- https://blog.dataiku.com/how-to-perform-basic-ml-serving-with-python-docker-kubernetes -->
 - Setting up `AWS EC2`
 - Create a Key Pair
 A key pair is a file that is needed to connect to your AWS instance.
@@ -92,9 +93,9 @@ The SSH allows me to connect to my instance on my machine and the HTTP routes my
 - Move your files (project folder) to AWS Ec2 using Secure Copy (scp)
 - Install the necessary packages and run app.py to start the app
 - Run app
-Once the packages are installed, cd to the flask_classification directory and run python app.py. This should start the app and make it run from Amazon EC2 instance.
+Once the packages are installed, cd to the flask_classification directory and run python app.py. This should start the app and make it run from Amazon EC2 instance. Below is an intermediate example of just loading the model in the Flask App. If you want to learn a little bit more about Flask, try this out. If you just want to get to the Docker and Kubernetes goodness, skip ahead.
 `OR`
-Wrapping the inference logic into a flask application. Using docker to containerize the flask application. Hosting the docker container on an AWS ec2 instance and consuming the web-service.
+Wrapping the inference logic into a `flask` application. Using `docker` to containerize the flask application. Hosting the docker container on an AWS ec2 instance and consuming the web-service.
 - Run the `Docker Image` on the `EC2` instance
 SSH to your EC2 instance on your machine
 update your instance packages
@@ -102,7 +103,11 @@ Install Docker
 After installation, pull the docker image we pushed to the repository.
 sudo service docker start to docker daemon running
 Then pull the image again
+`python
+$ docker run -it -p 5000:8080 serve-sklearn:0.1 python3 app.py
+`
 
+So `docker run` creates and starts our container and then executes the command python3 app.py which starts our Flask application. 
 
 #### Kubernetes / Kubeflow
 we used a saved version of our model to score records. We created a batch job to get predictions periodically. Now, we want to return predictions in real time. In order to do that, we will deploy our model as a REST API. 
