@@ -110,8 +110,32 @@ $ docker run -it -p 5000:8080 serve-sklearn:0.1 python3 app.py
 
 So `docker run` creates and starts our container and then executes the command python3 app.py which starts our Flask application. 
 
+- Push your Docker image to ECR
+We’ll start by pushing the freshly created Docker image to Amazon Elastic Container Registry (ECR) which will store our image. Once the image is uploaded, open the AWS console and go to ECR and click on Repositories in the left pane. Then select the image you just uploaded and copy the Repository URI at the top of the page.
+- Upload Model Artifacts to S3
+As discussed before, the Docker image only contains the inference environment and code, not the trained serialized model. The serialized trained model files, called model artifacts on Sagemaker, will be stored in a separate S3 bucket.
+- Configure and create a Sagemaker endpoint
+- Create an API endpoint with Chalice
+
+
 #### Kubernetes / Kubeflow
+<!-- https://opensource.com/article/20/9/deep-learning-model-kubernetes -->
 we used a saved version of our model to score records. We created a batch job to get predictions periodically. Now, we want to return predictions in real time. In order to do that, we will deploy our model as a REST API. 
 Enterprise computing is moving to Kubernetes, and Kubeflow has long been talked about as the platform to solve MLOps at scale.
 
-you created a deep learning model to be served as a REST API using Flask. It put the application inside a Docker container, uploaded the container to Docker Hub, and deployed it with Kubernetes. Then, with just a few commands, Kubermatic Kubernetes Platform deployed the app and exposed it to the world.
+you created a deep learning model to be served as a REST API using Flask. It put the application inside a Docker container, uploaded the container to Docker Hub, and deployed it with Kubernetes. Then, with just a few commands, Kubermatic Kubernetes Platform deployed the app and exposed it to the world. deploying machine learning (ML) models into production environments is to expose these models as `RESTful API microservices`, hosted from within `Docker containers`. These `microservices` can then be deployed to a `cloud environment` for handling everything required for maintaining continuous availability. `Kubernetes` is a `container orchestration` platform that provides a mechanism for defining entire microservice-based application deployment topologies and their service-level requirements for maintaining continuous availability.
+
+py-flask-ml-rest-api/
+ | Dockerfile
+ | api.py ## Needs to be altered according to your requirements and ML model
+
+| api.py
+| base
+  | namespace.yaml
+  | deployment.yaml
+  | service.yaml
+  | kustomize.yaml
+| Dockerfile
+
+ Pushing the Docker Image to Container Registry.
+ When your Docker file is built and pushed to Container Registry, you are done with containerizing the ML model.
