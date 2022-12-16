@@ -103,9 +103,10 @@ Install Docker
 After installation, pull the docker image we pushed to the repository.
 sudo service docker start to docker daemon running
 Then pull the image again
-`python
+
+```python
 $ docker run -it -p 5000:8080 serve-sklearn:0.1 python3 app.py
-`
+```
 
 So `docker run` creates and starts our container and then executes the command python3 app.py which starts our Flask application. 
 
