@@ -65,6 +65,7 @@ We chose a serverless architecture so that we don’t have to provision, run and
 Create `Dockerfile` (txt file) -> Build `Docker Image` (docker build) -> Create `Docker Container` (docker run/docker ps) -> Serve as containers for your application
 `Docker` is a tool that makes it easier to create, deploy, and run any application by using what is called a container. It’s also a software platform, which is used to create Docker images that will be referred to as a Docker container once it’s been deployed.
 A `Docker Container` is an isolated environment which contains all the required dependencies for your application to run, it is often referred to as a running instance of a Docker image.
+a Docker Image is a read-only file that contains our application along with the dependencies (like a blueprint) and a Docker container is a running image (we can run a number of containers using one image)
 A `Docker Image` is a file(read-only), comprised of multiple layers, that is used to execute code in a Docker container. Docker images are found in a large hub which is referred to as Docker Hub. So you pull images from the hub or you build a custom image from a base image and when these images are being executed they serve as containers for your application.
 So combining the pieces together we can simply define `Docker` as:
 A Software platform which makes it easier to create and deploy any application by creating a Docker image which will then be a Docker container which contains all the dependencies and packages we need for our application to work once it’s been deployed.
@@ -80,8 +81,20 @@ Deploy that dockerized image to the cloud with AWS using `AWS EC2` instance
 They talk of launching a AWS EC2 instance to host our own Flask App and ML model; where a client (browser) would be used to send the test data to the flask server hosted on EC2, which in turn invokes the model hosted on the same EC2 to get the prediction and then sends the prediction result to the client.
 
 push your image to `Docker Hub` (container registry) -> Setting up `AWS EC2` -> Run the `Docker Image` on the `EC2`
+<!-- https://www.machinelearningplus.com/deployment/deploy-ml-model-aws-ec2-instance/ -->
 - Setting up `AWS EC2`
-Also in the Configure Security Group section, I created a new security group. The SSH allows me to connect to my instance on my machine and the HTTP routes my server IP to the DNS for me to make the DNS accessible anywhere.
+- Create a Key Pair
+A key pair is a file that is needed to connect to your AWS instance.
+- Create a new security group in the Configure Security Group section.
+A security group lets us control who can send requests to the server (instance).
+- Connect to AWS EC2 instance using ssh
+The SSH allows me to connect to my instance on my machine and the HTTP routes my server IP to the DNS for me to make the DNS accessible anywhere.
+- Move your files (project folder) to AWS Ec2 using Secure Copy (scp)
+- Install the necessary packages and run app.py to start the app
+- Run app
+Once the packages are installed, cd to the flask_classification directory and run python app.py. This should start the app and make it run from Amazon EC2 instance.
+`OR`
+Wrapping the inference logic into a flask application. Using docker to containerize the flask application. Hosting the docker container on an AWS ec2 instance and consuming the web-service.
 - Run the `Docker Image` on the `EC2` instance
 SSH to your EC2 instance on your machine
 update your instance packages
@@ -90,3 +103,9 @@ After installation, pull the docker image we pushed to the repository.
 sudo service docker start to docker daemon running
 Then pull the image again
 
+
+#### Kubernetes / Kubeflow
+we used a saved version of our model to score records. We created a batch job to get predictions periodically. Now, we want to return predictions in real time. In order to do that, we will deploy our model as a REST API. 
+Enterprise computing is moving to Kubernetes, and Kubeflow has long been talked about as the platform to solve MLOps at scale.
+
+you created a deep learning model to be served as a REST API using Flask. It put the application inside a Docker container, uploaded the container to Docker Hub, and deployed it with Kubernetes. Then, with just a few commands, Kubermatic Kubernetes Platform deployed the app and exposed it to the world.
