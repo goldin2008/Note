@@ -190,4 +190,3 @@ The deployment can be carried out in 2 ways.
 - Scheduler deploys the POD in the cluster.
 
 <!-- https://towardsdatascience.com/machine-learning-with-docker-and-kubernetes-training-models-cbe33a08c999 -->
-
