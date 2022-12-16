@@ -363,6 +363,10 @@ def minCoins(coins, m, V):
 
 
 # 19. Balanced or Not
+# To balance a string, any > character can be replaced with <>.
+# Given an expression and a maximum number of replacements, 
+# determine whether the string can be balanced.
+
 
 
 # 20. Fun with Anagrams
