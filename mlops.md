@@ -83,6 +83,7 @@ They talk of launching a AWS EC2 instance to host our own Flask App and ML model
 push your image to `Docker Hub` (container registry) -> Setting up `AWS EC2` -> Run the `Docker Image` on the `EC2`
 <!-- https://www.machinelearningplus.com/deployment/deploy-ml-model-aws-ec2-instance/ -->
 <!-- https://blog.dataiku.com/how-to-perform-basic-ml-serving-with-python-docker-kubernetes -->
+<!-- https://levelup.gitconnected.com/deploy-your-machine-learning-model-as-a-rest-api-on-aws-english-dcb1a0db3110 -->
 - Setting up `AWS EC2`
 - Create a Key Pair
 A key pair is a file that is needed to connect to your AWS instance.
@@ -119,6 +120,8 @@ As discussed before, the Docker image only contains the inference environment an
 
 
 #### Kubernetes / Kubeflow
+- `Docker` (and containers in general) solve the problem of packaging an application and its dependencies. This makes it easy to ship and run everywhere.
+- `Kubernetes` is one layer of abstraction above containers. It is a distributed system that controls/manages containers.
 <!-- https://opensource.com/article/20/9/deep-learning-model-kubernetes -->
 we used a saved version of our model to score records. We created a batch job to get predictions periodically. Now, we want to return predictions in real time. In order to do that, we will deploy our model as a REST API. 
 Enterprise computing is moving to Kubernetes, and Kubeflow has long been talked about as the platform to solve MLOps at scale.
@@ -139,3 +142,23 @@ py-flask-ml-rest-api/
 
  Pushing the Docker Image to Container Registry.
  When your Docker file is built and pushed to Container Registry, you are done with containerizing the ML model.
+
+<!-- https://medium.com/analytics-vidhya/mlops-dockers-and-kubernetes-essentials-for-a-data-scientist-8bc7b5866957 -->
+`Deploy the ML App in the Kubernetes Cluster`
+Here are the overall steps again:
+- Create the machine learning model using Tensorflow.
+- Create an ML app using Streamlit framework.
+- Create a docker file and the image.
+- Push the image to a registry.
+- In Kubernetes create a pod. The pod is a just a wrapper which contains the container.
+- Deploy the pod and expose the service port.
+
+The deployment can be carried out in 2 ways.
+- Declarative approach-Using YAML
+- Imperative approach-CLI — Kubectl
+
+`How to deploy a pod in a Kubernetes cluster?`
+- Create the configuration file in YAML.
+- Post the file to the API server.
+- Verify the configuration YAML file.
+- Scheduler deploys the POD in the cluster.
