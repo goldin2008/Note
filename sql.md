@@ -3,6 +3,8 @@ Which Modern Database Is Right for Your Use Case? How to choose the right databa
 
 > https://aws.plainenglish.io/how-to-choose-the-right-database-31af8b0260d3
 
+> https://medium.com/wix-engineering/how-to-choose-the-right-database-for-your-service-97b1670c5632
+
 `Relational DBs` (SQL based)
 This DB consists of a collection of tables (like CSV tables), that are connected. Each row in a table represents a record.
 Why is it called relational? What are the ‘relations’ that exist in this DB?
