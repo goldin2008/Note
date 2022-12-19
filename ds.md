@@ -56,6 +56,7 @@ ROC曲线由于兼顾正例与负例，所以适用于评估分类器的整体�
 <img src="pic/pdp01.png" width=50% height=50%>
 <img src="pic/pdp02.png" width=50% height=50%>
 <img src="pic/pdp03.png" width=50% height=50%>
+
 `Partial Dependence Plot (PDP)`
 The partial dependence plot (short PDP or PD plot) shows the marginal effect one or two features have on the predicted outcome of a machine learning model (J. H. Friedman 200130). A partial dependence plot can show whether the relationship between the target and a feature is linear, monotonic or more complex. For example, when applied to a linear regression model, partial dependence plots always show a linear relationship.
 - Advantages
