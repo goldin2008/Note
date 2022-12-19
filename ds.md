@@ -109,6 +109,12 @@ Another really big problem is the instability of the explanations. In an article
 LIME explanations can be manipulated by the data scientist to hide biases 52. The possibility of manipulation makes it more difficult to trust explanations generated with LIME.
 Conclusion: Local surrogate models, with LIME as a concrete implementation, are very promising. But the method is still in development phase and many problems need to be solved before it can be safely applied.
 
+<img src="pic/shap01.png" width=50% height=50%>
+<img src="pic/shap02.png" width=50% height=50%>
+<img src="pic/shap03.png" width=50% height=50%>
+<img src="pic/shap04.png" width=50% height=50%>
+<img src="pic/shap05.png" width=50% height=50%>
+
 `Shapley Values`
 A prediction can be explained by assuming that each feature value of the instance is a “player” in a game where the prediction is the payout. Shapley values – a method from coalitional game theory – tells us how to fairly distribute the “payout” among the features.
 - Advantages
