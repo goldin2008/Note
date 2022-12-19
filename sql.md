@@ -74,3 +74,4 @@ Why is it a disadvantage? since there is a limit for the computing power machine
 `NoSQL DB — disadvantages`
 - `Updating the data is a slow` process in Document DB since the data can be divided between machines and can be duplicated.
 - `Atomic transactions are not inherently supported`. you can add it yourself in code by using verification and revert mechanism, but since the records are divided between machines it cannot be an atomic process and race conditions can occur.
+

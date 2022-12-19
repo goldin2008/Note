@@ -417,4 +417,3 @@ class Solution:
 
 # 22. Minimum flips required to form given binary string where every flip changes all bits to its right as well
 # https://www.geeksforgeeks.org/minimum-flips-required-to-form-given-binary-string-where-every-flip-changes-all-bits-to-its-right-as-well/
-
