@@ -4,6 +4,14 @@ APIs are simply endpoints that accept some sort of input and return some sort of
 REST API. We’ll use the library Flask. Flask is a web framework, which is a fancy way of saying a library with a bunch of helper tools for building web applications.
 I will go over how to productionize a Machine Learning model by building a normal website using the Flask web micro-framework.
 
+<img src="pic/mlops01.png" width=50% height=50%>
+<img src="pic/mlops02.png" width=50% height=50%>
+<img src="pic/mlops03.png" width=50% height=50%>
+<img src="pic/mlops04.png" width=50% height=50%>
+<img src="pic/mlops05.png" width=50% height=50%>
+<img src="pic/mlops06.png" width=50% height=50%>
+<img src="pic/mlops07.png" width=50% height=50%>
+
 #### Sagemaker
 <!-- https://www.analyticsvidhya.com/blog/2020/11/deployment-of-ml-models-in-cloud-aws-sagemaker%E2%80%8Ain-built-algorithms/ -->
 Creating a Notebook Instance: The whole process kicks start by creating a notebook instance where a virtual machine(EC2—Elastic cloud) and storage(EBS volume) get allocated for our objective. It is the user’s choice to pick the type & size of the EC2 as well as the capacity of EBS volume. Amazon Elastic Block Store (Amazon EBS) provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices. You can mount these volumes as devices on your instances.
