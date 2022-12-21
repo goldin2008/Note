@@ -27,7 +27,15 @@ class Solution:
         isSame = outside and inside #左子树：中、 右子树：中 （逻辑处理）
         return isSame
 
+# deque.popleft() is O(1) -- a constant time operation.
+# While list.pop(0) is O(n) -- linear time operation: the larger the list the longer
+# CPython list implementation is array-based.
+# pop(0) removes the first item from the list and it requires to shift left len(lst) - 1 items to fill the gap.
+# deque() implementation uses a doubly linked list.
+# No matter how large the deque, deque.popleft() requires a constant (limited above) number of operations.
+
 # 迭代法： 使用队列
+# deque
 import collections
 class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:
@@ -52,6 +60,7 @@ class Solution:
         return True
 
 # 迭代法：使用栈
+# stack []
 class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:
         if not root:
@@ -73,6 +82,7 @@ class Solution:
         return True
 
 # 层次遍历
+# I don't think this is a good way.
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
         if not root:
