@@ -4,6 +4,9 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# 因为求深度可以从上到下去查 所以需要前序遍历（中左右），而高度只能从下到上去查
+# 所以只能后序遍历（左右中）
 # 迭代法
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
