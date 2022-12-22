@@ -41,7 +41,7 @@ class Solution:
             cur = stack.pop()
             path = path_st.pop()
             # 如果当前节点为叶子节点，添加路径到结果中
-            if not (cur.left or cur.right):
+            if not cur.left and not cur.right:
                 result.append(path)
             if cur.right:
                 stack.append(cur.right)
