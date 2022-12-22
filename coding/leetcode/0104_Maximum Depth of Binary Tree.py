@@ -4,6 +4,7 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+# 迭代法
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         count = 0
@@ -20,3 +21,23 @@ class Solution:
                     que.append(cur.right)
             count +=1
         return count
+
+# 递归法
+class solution:
+    def maxdepth(self, root: treenode) -> int:
+        return self.getdepth(root)
+        
+    def getdepth(self, node):
+        if not node:
+            return 0
+        leftdepth = self.getdepth(node.left) #左
+        rightdepth = self.getdepth(node.right) #右
+        depth = 1 + max(leftdepth, rightdepth) #中
+        return depth
+
+# 递归法：精简代码
+class solution:
+    def maxdepth(self, root: treenode) -> int:
+        if not root:
+            return 0
+        return 1 + max(self.maxdepth(root.left), self.maxdepth(root.right))
