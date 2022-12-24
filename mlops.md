@@ -180,6 +180,15 @@ copy the files we need to build the docker image within the ec2 instance.
 
 
 ## Kubernetes / Kubeflow
+`What can Kubernetes do for you?`
+- With modern web services, users expect applications to be available 24/7, and developers expect to deploy new versions of those applications several times a day. Containerization helps package software to serve these goals, enabling applications to be released and updated without downtime. Kubernetes helps you make sure those containerized applications run where and when you want, and helps them find the resources and tools they need to work. Kubernetes is a production-ready, open source platform designed with Google's accumulated experience in container orchestration, combined with best-of-breed ideas from the community.
+
+`What is Kubeflow?`
+- The Kubeflow project is dedicated to making deployments of machine learning (ML) workflows on Kubernetes simple, portable and scalable. Our goal is not to recreate other services, but to provide a straightforward way to deploy best-of-breed open-source systems for ML to diverse infrastructures. Anywhere you are running Kubernetes, you should be able to run Kubeflow.
+- `Kubeflow Pipelines` is a comprehensive solution for deploying and managing end-to-end ML workflows. Use Kubeflow Pipelines for rapid and reliable experimentation. You can schedule and compare runs, and examine detailed reports on each run.
+
+
+
 - `Docker` (and containers in general) solve the problem of packaging an application and its dependencies. This makes it easy to ship and run everywhere.
 - `Kubernetes` is one layer of abstraction above containers. It is a distributed system that controls/manages containers.
 <!-- https://opensource.com/article/20/9/deep-learning-model-kubernetes -->
