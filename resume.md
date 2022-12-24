@@ -1,13 +1,11 @@
 # Projects
 
-## Container/Kubernetes/Kubeflow/fastAPI
+## Container/Kubernetes/fastAPI
 <!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/tree/main/course4/week2-ungraded-labs/C4_W2_Lab_2_Intro_to_Kubernetes -->
 
 <!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week2-ungraded-labs/C4_W2_Lab_1_FastAPI_Docker/README.md -->
 
 <!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week2-ungraded-labs/C4_W2_Lab_3_Latency_Test_Compose/README.md -->
-
-<!-- https://colab.research.google.com/github/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week3-ungraded-labs/C4_W3_Lab_1_Intro_to_KFP/C4_W3_Lab_1_Kubeflow_Pipelines.ipynb#scrollTo=BE97DJ2_2gYM -->
 
 `Architecture`
 You will create a deployment that spins up containers that runs a model server. In this case, that will be from the tensorflow/serving image you already used in the previous labs. The deployment can be accessed by external terminals (i.e. your users) through an exposed service. This brings inference requests to the model servers and responds with predictions from your model.
@@ -34,9 +32,33 @@ As mentioned in the lectures, one of the great advantages of container orchestra
 `Stress Test`
 To test the autoscaling capability of your deployment, we provided a short bash script (request.sh) that will just persistently send requests to your application.
 
-## Fraud Detection
+`Why and how to use Docker Compose`
+In this lab you saw how to use Docker Compose to run multiple-container applications by setting a configuration file in YAML format. This is a much better alternative than spinning and linking the containers manually as it handles most of this for you. You also were exposed to Locust and how it can be leveraged to perform load testing on your servers.
+You could manually spin up the 5 containers but you will need to find a way to link them together via a network. This can be achieved using regular Docker commands but it is much easier to accomplish using Docker Compose.
+Instead of running each container in a separate terminal window you can simply define a configuration file in YAML format and use the docker-compose up command to run your multi-container application. In case you haven't worked with YAML files, these are usually for configuration and they work in a similar fashion to Python, by using indentation to specify scope.
+
+`Understanding Locust`
+By convention the file that handles the locust logic is named locustfile.py. Unlike Dockerfiles, this file is a regular python script. Remember you can take a look at the complete file in this repo.
+The way locust works is by simulating users that will constantly send requests to your services. By doing this you can measure things like RPS (requests per second) or the average time each request is taking. This is great to understand the limitations of your servers and to test if they will work under the circumstances they will be exposed once they are launched into production.
+Now you should have a clearer understanding of how to use these tools to create production-ready services that will endure the conditions they will be exposed to once deployed to the outside world.
+
+
+## Fraud Detection/Kubeflow
 <!-- https://shap.readthedocs.io/en/latest/index.html -->
 
+<!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week1-ungraded-labs/C4_W1_Optional_Lab_1_XGBoost_CAIP/C4_W1_Optional_Lab_1.md -->
+
+<!-- https://colab.research.google.com/github/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week3-ungraded-labs/C4_W3_Lab_1_Intro_to_KFP/C4_W3_Lab_1_Kubeflow_Pipelines.ipynb#scrollTo=BE97DJ2_2gYM -->
+
+In this lab, you will have some hands-on practice with `Kubeflow Pipelines`. As mentioned in the lectures, modern ML engineering is moving towards pipeline automation for rapid iteration and experiment tracking. This is especially useful in production deployments where models need to be frequently retrained to catch trends in newer data.
+`Kubeflow Pipelines` is one component of the Kubeflow suite of tools for machine learning workflows. It is deployed on top of a `Kubernetes cluster` and builds an infrastructure for orchestrating ML pipelines and monitoring inputs and outputs of each component.
+Platforms such as Kubeflow helps you to build ML pipelines that can be automated, reproducible, and easily monitored.
+This lab demonstrated how you can use Kubeflow Pipelines to build and orchestrate your ML workflows. Having automated, shareable, and modular pipelines is a very useful feature in production deployments so you and your team can monitor and maintain your system more effectively.
+
+`Docker` - platform for building and running containerized applications.
+`kubectl` - tool for running commands on Kubernetes clusters.
+`kind` - a Kubernetes distribution for running local clusters using Docker.
+`Kubeflow Pipelines` (KFP) - a platform for building and deploying portable, scalable machine learning (ML) workflows based on Docker containers.
 
 
 ## Converse Quality Assurance
