@@ -1,6 +1,6 @@
 # Projects
 
-## Container/Kubernetes/fastAPI
+## 1. Container/Kubernetes/fastAPI
 <!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/tree/main/course4/week2-ungraded-labs/C4_W2_Lab_2_Intro_to_Kubernetes -->
 
 <!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week2-ungraded-labs/C4_W2_Lab_1_FastAPI_Docker/README.md -->
@@ -42,6 +42,24 @@ By convention the file that handles the locust logic is named locustfile.py. Unl
 The way locust works is by simulating users that will constantly send requests to your services. By doing this you can measure things like RPS (requests per second) or the average time each request is taking. This is great to understand the limitations of your servers and to test if they will work under the circumstances they will be exposed once they are launched into production.
 Now you should have a clearer understanding of how to use these tools to create production-ready services that will endure the conditions they will be exposed to once deployed to the outside world.
 
+
+## 2. Fraud Detection/Kubeflow
+<!-- https://shap.readthedocs.io/en/latest/index.html -->
+
+<!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week1-ungraded-labs/C4_W1_Optional_Lab_1_XGBoost_CAIP/C4_W1_Optional_Lab_1.md -->
+
+<!-- https://colab.research.google.com/github/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week3-ungraded-labs/C4_W3_Lab_1_Intro_to_KFP/C4_W3_Lab_1_Kubeflow_Pipelines.ipynb#scrollTo=BE97DJ2_2gYM -->
+
+In this lab, you will have some hands-on practice with `Kubeflow Pipelines`. As mentioned in the lectures, modern ML engineering is moving towards pipeline automation for rapid iteration and experiment tracking. This is especially useful in production deployments where models need to be frequently retrained to catch trends in newer data.
+`Kubeflow Pipelines` is one component of the Kubeflow suite of tools for machine learning workflows. It is deployed on top of a `Kubernetes cluster` and builds an infrastructure for orchestrating ML pipelines and monitoring inputs and outputs of each component.
+Platforms such as Kubeflow helps you to build ML pipelines that can be automated, reproducible, and easily monitored.
+This lab demonstrated how you can use Kubeflow Pipelines to build and orchestrate your ML workflows. Having automated, shareable, and modular pipelines is a very useful feature in production deployments so you and your team can monitor and maintain your system more effectively.
+
+`Docker` - platform for building and running containerized applications.
+`kubectl` - tool for running commands on Kubernetes clusters.
+`kind` - a Kubernetes distribution for running local clusters using Docker.
+`Kubeflow Pipelines` (KFP) - a platform for building and deploying portable, scalable machine learning (ML) workflows based on Docker containers.
+
 `One prediction per request`
 - `Coding the server`
 Begin by importing the necessary dependencies. You will be using pickle for loading the pre-trained model saved in the app/wine.pkl file, numpy for tensor manipulation, and the rest for developing the web server with FastAPI.
@@ -63,26 +81,13 @@ Now that the server is listening to requests on port 80, you can send POST reque
 `Adding batching to the server`
 <!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week2-ungraded-labs/C4_W2_Lab_1_FastAPI_Docker/with-batch/README.md -->
 
-
-## Fraud Detection/Kubeflow
-<!-- https://shap.readthedocs.io/en/latest/index.html -->
-
-<!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week1-ungraded-labs/C4_W1_Optional_Lab_1_XGBoost_CAIP/C4_W1_Optional_Lab_1.md -->
-
-<!-- https://colab.research.google.com/github/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week3-ungraded-labs/C4_W3_Lab_1_Intro_to_KFP/C4_W3_Lab_1_Kubeflow_Pipelines.ipynb#scrollTo=BE97DJ2_2gYM -->
-
-In this lab, you will have some hands-on practice with `Kubeflow Pipelines`. As mentioned in the lectures, modern ML engineering is moving towards pipeline automation for rapid iteration and experiment tracking. This is especially useful in production deployments where models need to be frequently retrained to catch trends in newer data.
-`Kubeflow Pipelines` is one component of the Kubeflow suite of tools for machine learning workflows. It is deployed on top of a `Kubernetes cluster` and builds an infrastructure for orchestrating ML pipelines and monitoring inputs and outputs of each component.
-Platforms such as Kubeflow helps you to build ML pipelines that can be automated, reproducible, and easily monitored.
-This lab demonstrated how you can use Kubeflow Pipelines to build and orchestrate your ML workflows. Having automated, shareable, and modular pipelines is a very useful feature in production deployments so you and your team can monitor and maintain your system more effectively.
-
-`Docker` - platform for building and running containerized applications.
-`kubectl` - tool for running commands on Kubernetes clusters.
-`kind` - a Kubernetes distribution for running local clusters using Docker.
-`Kubeflow Pipelines` (KFP) - a platform for building and deploying portable, scalable machine learning (ML) workflows based on Docker containers.
+`Online prediction` is also known as `synchronous prediction`: predictions are generated in `synchronization` with requests, or on-demand prediction: predictions are generated after requests for these predictions, not before.
+Traditionally, when doing online prediction, requests are sent to the prediction service via RESTful APIs
+`Batch prediction` is also known as `asynchronous prediction`: predictions are generated `asynchronously` with requests arrive
+The terms online prediction and batch prediction can be confusing. Both can make predictions for multiple samples (in batch) or one sample at a time. To avoid this confusion, people sometimes prefer the terms `synchronous prediction` and `asynchronous prediction`.
 
 
-## Converse Quality Assurance
+## 3. Converse Quality Assurance
 There are some problems we encountered in our qa converse project, and those pain points are actually for all NLP related tasks due to lack of existing platform and support.
 1. data and model storage and security issue due to github capacity limit
 2. experiments, data and model versioning
