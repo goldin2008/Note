@@ -1,6 +1,18 @@
-## Project
+# Projects
 
-### Work
+## Work
+#### container/kubernetes
+You will create a deployment that spins up containers that runs a model server. In this case, that will be from the tensorflow/serving image you already used in the previous labs. The deployment can be accessed by external terminals (i.e. your users) through an exposed service. This brings inference requests to the model servers and responds with predictions from your model.
+
+Lastly, the deployment will spin up or spin down pods based on CPU utilization. It will start with one pod but when the load exceeds a pre-defined point, it will spin up additional pods to share the load.
+
+#### fraud detection
+
+
+
+
+
+
 #### Converse Quality Assurance
 There are some problems we encountered in our qa converse project, and those pain points are actually for all NLP related tasks due to lack of existing platform and support.
 1. data and model storage and security issue due to github capacity limit
