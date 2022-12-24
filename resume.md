@@ -1,8 +1,13 @@
 # Projects
 
-## Work
-#### Container/Kubernetes
+## Container/Kubernetes/Kubeflow/fastAPI
 <!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/tree/main/course4/week2-ungraded-labs/C4_W2_Lab_2_Intro_to_Kubernetes -->
+
+<!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week2-ungraded-labs/C4_W2_Lab_1_FastAPI_Docker/README.md -->
+
+<!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week2-ungraded-labs/C4_W2_Lab_3_Latency_Test_Compose/README.md -->
+
+<!-- https://colab.research.google.com/github/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week3-ungraded-labs/C4_W3_Lab_1_Intro_to_KFP/C4_W3_Lab_1_Kubeflow_Pipelines.ipynb#scrollTo=BE97DJ2_2gYM -->
 
 `Architecture`
 You will create a deployment that spins up containers that runs a model server. In this case, that will be from the tensorflow/serving image you already used in the previous labs. The deployment can be accessed by external terminals (i.e. your users) through an exposed service. This brings inference requests to the model servers and responds with predictions from your model.
@@ -29,11 +34,12 @@ As mentioned in the lectures, one of the great advantages of container orchestra
 `Stress Test`
 To test the autoscaling capability of your deployment, we provided a short bash script (request.sh) that will just persistently send requests to your application.
 
-#### Fraud Detection
+## Fraud Detection
 <!-- https://shap.readthedocs.io/en/latest/index.html -->
 
 
-#### Converse Quality Assurance
+
+## Converse Quality Assurance
 There are some problems we encountered in our qa converse project, and those pain points are actually for all NLP related tasks due to lack of existing platform and support.
 1. data and model storage and security issue due to github capacity limit
 2. experiments, data and model versioning
@@ -56,3 +62,6 @@ We use Fastapi and built an API to make inference and test model and make sure i
 
 4. Automatic Reporting
 EDA, model performance, environments(ibraries and dependencies) and business value.
+
+## XGBoost model on Cloud AI Platform
+<!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week1-ungraded-labs/C4_W1_Optional_Lab_1_XGBoost_CAIP/C4_W1_Optional_Lab_1.md -->
