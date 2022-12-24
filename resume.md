@@ -42,6 +42,27 @@ By convention the file that handles the locust logic is named locustfile.py. Unl
 The way locust works is by simulating users that will constantly send requests to your services. By doing this you can measure things like RPS (requests per second) or the average time each request is taking. This is great to understand the limitations of your servers and to test if they will work under the circumstances they will be exposed once they are launched into production.
 Now you should have a clearer understanding of how to use these tools to create production-ready services that will endure the conditions they will be exposed to once deployed to the outside world.
 
+`One prediction per request`
+- `Coding the server`
+Begin by importing the necessary dependencies. You will be using pickle for loading the pre-trained model saved in the app/wine.pkl file, numpy for tensor manipulation, and the rest for developing the web server with FastAPI.
+Now it is time to load the classifier into memory so it can be used for prediction. This can be done in the global scope of the script but here it is done inside a function to show you a cool feature of FastAPI.
+Finally you need to create the function that will handle the prediction. This function will be run when you visit the /predict endpoint of the server and it expects a Wine data point.
+Now the server's code is ready for inference, although you still need to spin it up. If you want to try it locally (given that you have the required dependencies installed) you can do so by using the command uvicorn main:app --reload while on the same directory as the main.py file. However this is not required as you will be dockerizing this server next.
+- `Dockerizing the server`
+Also you should create a directory called app and place main.py (the server) and its dependencies (wine.pkl) there as explained on the official FastAPI docs on how to deploy with Docker.
+- `Create the Dockerfile`
+The Dockerfile is made up of all the instructions required to build your image. 
+Base Image, Installing dependencies, Exposing the port, Copying your server into the imag, Spinning up the server
+- `Build the image`
+Now that the Dockerfile is ready and you understand its contents, it is time to build the image. To do so, double check that you are within the no-batch directory and use the docker build command.
+- `Run the container`
+Now that the image has been successfully built it is time to run a container out of it.
+- `Make requests to the server`
+Now that the server is listening to requests on port 80, you can send POST requests to it for predicting classes of wine.
+
+`Adding batching to the server`
+<!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week2-ungraded-labs/C4_W2_Lab_1_FastAPI_Docker/with-batch/README.md -->
+
 
 ## Fraud Detection/Kubeflow
 <!-- https://shap.readthedocs.io/en/latest/index.html -->
