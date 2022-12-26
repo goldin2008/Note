@@ -111,5 +111,9 @@ We use Fastapi and built an API to make inference and test model and make sure i
 4. Automatic Reporting
 EDA, model performance, environments(ibraries and dependencies) and business value.
 
+## 4. Fishing Email Detection
+
+
+
 ## XGBoost model on Cloud AI Platform
 <!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week1-ungraded-labs/C4_W1_Optional_Lab_1_XGBoost_CAIP/C4_W1_Optional_Lab_1.md -->
