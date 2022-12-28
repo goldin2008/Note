@@ -271,3 +271,10 @@ The deployment can be carried out in 2 ways.
 > https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week3-ungraded-labs/C4_W3_Lab_4_Github_Actions/README.md
 
 > https://towardsdatascience.com/machine-learning-experiment-tracking-93b796e501b0
+
+
+> https://lynnlangit.medium.com/scaling-custom-machine-learning-on-aws-d9dc7edfbff9
+
+> https://lynnlangit.medium.com/scaling-custom-machine-learning-on-aws-part-2-emr-6dfc3cd91a1f
+
+> https://lynnlangit.medium.com/scaling-custom-machine-learning-on-aws-part-3-kubernetes-5427d96f825b
