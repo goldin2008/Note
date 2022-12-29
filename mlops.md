@@ -272,6 +272,9 @@ The deployment can be carried out in 2 ways.
 
 > https://towardsdatascience.com/machine-learning-experiment-tracking-93b796e501b0
 
+> https://towardsdatascience.com/kubernetes-application-deployment-with-aws-eks-and-ecr-4600e11b2d3c
+
+
 
 > https://lynnlangit.medium.com/scaling-custom-machine-learning-on-aws-d9dc7edfbff9
 
