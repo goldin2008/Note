@@ -5,7 +5,14 @@
 #         self.left = None
 #         self.right = None
 
-"""二叉树的最近公共祖先 递归法"""
+"""二叉树的最近公共祖先 递归法
+
+在递归函数有返回值的情况下: 
+如果要搜索一条边，递归函数返回值不为空的时候，立刻返回，
+如果搜索整个树，直接用一个变量left、right接住返回值，这个left、right后序还有逻辑处理的需要，
+也就是后序遍历中处理中间节点的逻辑（也是回溯）
+
+"""
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         if not root or root == p or root == q:
