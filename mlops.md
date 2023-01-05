@@ -1,6 +1,6 @@
 ## MLOps interview prep
 
-<img src="pic/prod_ml.png" width=50% height=50%>
+<img src="pic/prod_ml.png" width=80% height=80%>
 
 APIs are simply endpoints that accept some sort of input and return some sort of output. Computers just want to share data. And so that’s what an API provides.
 
