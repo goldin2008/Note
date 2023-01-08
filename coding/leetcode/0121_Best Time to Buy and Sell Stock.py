@@ -1,5 +1,4 @@
-贪心法：
-
+# 贪心法：
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         low = float("inf")
@@ -8,8 +7,8 @@ class Solution:
             low = min(low, prices[i]) #取最左最小价格
             result = max(result, prices[i] - low) #直接取最大区间利润
         return result
-动态规划：版本一
 
+# 动态规划：版本一
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         length = len(prices)
@@ -22,8 +21,8 @@ class Solution:
             dp[i][0] = max(dp[i-1][0], -prices[i])
             dp[i][1] = max(dp[i-1][1], prices[i] + dp[i-1][0])
         return dp[-1][1]
-动态规划：版本二
 
+# 动态规划：版本二
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         length = len(prices)
@@ -34,8 +33,8 @@ class Solution:
             dp[i % 2][0] = max(dp[(i-1) % 2][0], -prices[i])
             dp[i % 2][1] = max(dp[(i-1) % 2][1], prices[i] + dp[(i-1) % 2][0])
         return dp[(length-1) % 2][1]
-动态规划：版本三
 
+# 动态规划：版本三
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         length = len(prices)
