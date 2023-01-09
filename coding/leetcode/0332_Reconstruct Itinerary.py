@@ -21,6 +21,11 @@ class Solution:
                 end_point = tickets_dict[start_point].pop(0)
                 path.append(end_point)
                 # 只要找到一个就可以返回了
+                '''
+                如果找到一条path，就会一直return True，不会到下一个statement, path.pop()
+                如果在一条枝上没找到一条path,就会return None，那么就会运行下一个statement，path.pop()
+                然后回溯，来换到另一个枝上测试是不是能找到一条path
+                '''
                 if backtracking(end_point):
                     return True
                 path.pop()
