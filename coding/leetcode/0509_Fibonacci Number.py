@@ -4,7 +4,7 @@ class Solution:
         if n < 2:
             return n
         a, b, c = 0, 1, 0
-        for i in range(1, n):
+        for _ in range(1, n):
             c = a + b
             a, b = b, c
         return c
