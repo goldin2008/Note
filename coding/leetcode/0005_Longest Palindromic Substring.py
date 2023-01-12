@@ -15,8 +15,7 @@ class Solution:
                     right = j
         return s[left:right + 1]
 
-双指针：
-
+# 双指针：
 class Solution:
     def longestPalindrome(self, s: str) -> str:
 
