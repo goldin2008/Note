@@ -37,19 +37,19 @@ def count_file(files):
     
     print('Total: ', tot)
 
-# 数组 AR | 6 ?
-# 链表 LL | 8 ?
-# 哈希表 HM | 9 ?
-# 字符串 ST | 7 ?
-# 双指针 PP | 10 ?
-# 栈和队列 QU | 8 ?
-# 二叉树 BS| 34 ?
-# 回溯 BT | 21 ?
-# 贪心 GD | 24 ?
+# 数组 AR | 5
+# 链表 LL | 7
+# 哈希表 HM | 8
+# 字符串 ST | 5
+# 双指针 PP | 9
+# 栈和队列 QU | 7
+# 二叉树 BS| 28
+# 回溯 BT | 16
+# 贪心 GD | 19
 # 单调栈 DD | 5
 # 动态规划 DP | 38
 # 额外 EX | 35
-# 总数 | 205
+# 总数 | 182
 
 if __name__ == "__main__":
     files = get_file_list()
