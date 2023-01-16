@@ -5,6 +5,138 @@
 4. 确定遍历顺序
 5. 举例推导dp数组
 """
+
+"""
+01背包: 每件物品只能用一次
+完全背包: 商品可以重复多次放入
+多重背包
+分组背包
+
+对于背包问题其实状态都是可以压缩的。
+在使用二维数组的时候，递推公式: 
+dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i]);
+其实可以发现如果把dp[i - 1]那一层拷贝到dp[i]上，表达式完全可以是: 
+dp[i][j] = max(dp[i][j], dp[i][j - weight[i]] + value[i]);
+与其把dp[i - 1]这一层拷贝到dp[i]上，不如只用一个一维数组了，只用dp[j]（一维数组，也可以理解是一个滚动数组）。
+这就是滚动数组的由来，需要满足的条件是上一层可以重复利用，直接拷贝到当前层。
+读到这里估计大家都忘了 dp[i][j]里的i和j表达的是什么了，i是物品，j是背包容量。
+dp[i][j] 表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少
+
+dp[j]可以通过dp[j - weight[i]]推导出来，dp[j - weight[i]]表示容量为j - weight[i]的背包所背的最大价值。
+dp[j - weight[i]] + value[i] 表示 容量为 j - 物品i重量 的背包 加上 物品i的价值。
+也就是容量为j的背包，放入物品i了之后的价值即:dp[j]）、
+此时dp[j]有两个选择，一个是取自己dp[j] 相当于 二维dp数组中的dp[i-1][j]，即不放物品i
+一个是取dp[j - weight[i]] + value[i]，即放物品i，指定是取最大的，毕竟是求最大价值，
+dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+
+
+01背包二维dp数组在遍历顺序上，外层遍历物品 ，内层遍历背包容量 和 外层遍历背包容量 ，内层遍历物品 都是可以的!
+如果使用一维dp数组，物品遍历的for循环放在外层，遍历背包的for循环放在内层，且内层for循环倒序遍历!
+二维dp遍历的时候，背包容量是从小到大，而一维dp遍历的时候，背包是从大到小。
+
+1. 倒序遍历是为了保证物品i只被放入一次!
+2. 为什么二维dp数组历的时候不用倒序呢？
+因为对于二维dp，dp[i][j]都是通过上一层即dp[i - 1][j]计算而来，本层的dp[i][j]并不会被覆盖!
+3. 对于一维dp，倒序遍历的原因是，本质上还是一个对二维数组的遍历，并且右下角的值依赖上一层左上角的值，
+因此需要保证左边的值仍然是上一层的，从右向左覆盖。
+4. 两个嵌套for循环的顺序，代码中是先遍历物品嵌套遍历背包容量，那可不可以先遍历背包容量嵌套遍历物品呢？不可以!
+因为一维dp的写法，背包容量一定是要倒序遍历，如果遍历背包容量放在上一层，那么每个dp[j]就只会放入一个物品，即:背包里只放入了一个物品。
+5. 一维dp数组在推导的时候一定是取价值最大的数, 首先dp[0]一定是0
+如果题目给的价值都是正整数那么非0下标都初始化为0就可以了，如果题目给的价值有负数，那么非0下标就要初始化为负无穷。
+因为重量都不会是负数，所以dp[j]都初始化为0就可以了，
+这样在递归公式dp[j] = max(dp[j], dp[j - weights[i]] + values[i])中dp[j]才不会初始值所覆盖。
+因为如果按照二维dp数组那样来初始化第一row，那么背包容量后序遍历的时候，同一个物品i会放两次。
+"""
+# 二维dp
+def test_2_wei_bag_problem1(bag_size, weight, value) -> int: 
+	rows, cols = len(weight), bag_size + 1
+	dp = [[0 for _ in range(cols)] for _ in range(rows)]
+    
+	# 初始化dp数组. 
+	for i in range(rows): 
+		dp[i][0] = 0
+	first_item_weight, first_item_value = weight[0], value[0]
+	for j in range(1, cols): 	
+		if first_item_weight <= j: 
+			dp[0][j] = first_item_value
+
+	# 更新dp数组: 先遍历物品, 再遍历背包. 
+	for i in range(1, len(weight)): 
+		cur_weight, cur_val = weight[i], value[i]
+		for j in range(1, cols): 
+			if cur_weight > j: # 说明背包装不下当前物品. 
+				dp[i][j] = dp[i - 1][j] # 所以不装当前物品. 
+			else: 
+				# 定义dp数组: dp[i][j] 前i个物品里，放进容量为j的背包，价值总和最大是多少。
+				dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - cur_weight]+ cur_val)
+
+	print(dp)
+
+if __name__ == "__main__": 
+	bag_size = 4
+	weight = [1, 3, 4]
+	value = [15, 20, 30]
+	test_2_wei_bag_problem1(bag_size, weight, value)
+
+# 一维dp
+def test_1_wei_bag_problem():
+    weight = [1, 3, 4]
+    value = [15, 20, 30]
+    bag_weight = 4
+    # 初始化: 全为0
+    dp = [0] * (bag_weight + 1)
+
+    # 先遍历物品, 再遍历背包容量
+    for i in range(len(weight)):
+        for j in range(bag_weight, weight[i] - 1, -1):
+            # 递归公式
+            dp[j] = max(dp[j], dp[j - weight[i]] + value[i])
+
+    print(dp)
+
+test_1_wei_bag_problem()
+
+
+"""
+01背包中二维dp数组的两个for遍历的先后循序是可以颠倒了，
+一维dp数组的两个for循环先后循序一定是先遍历物品，再遍历背包容量。
+在完全背包中，对于一维dp数组来说，其实两个for循环嵌套顺序是无所谓的!
+"""
+# 先遍历物品，再遍历背包
+def test_complete_pack1():
+    weight = [1, 3, 4]
+    value = [15, 20, 30]
+    bag_weight = 4
+
+    dp = [0]*(bag_weight + 1)
+
+    for i in range(len(weight)):
+        for j in range(weight[i], bag_weight + 1):
+            dp[j] = max(dp[j], dp[j - weight[i]] + value[i])
+    
+    print(dp[bag_weight])
+
+# 先遍历背包，再遍历物品
+def test_complete_pack2():
+    weight = [1, 3, 4]
+    value = [15, 20, 30]
+    bag_weight = 4
+
+    dp = [0]*(bag_weight + 1)
+
+    for j in range(bag_weight + 1):
+        for i in range(len(weight)):
+            if j >= weight[i]: dp[j] = max(dp[j], dp[j - weight[i]] + value[i])
+    
+    print(dp[bag_weight])
+
+if __name__ == '__main__':
+    test_complete_pack1()
+    test_complete_pack2()
+
+
+
+
 #1 509. 斐波那契数
 # 斐波那契数，通常用 F(n) 表示，形成的序列称为 斐波那契数列 。该数列由 0 和 1 开始，后面的每一项数字都是前面两项数字的和。也就是： F(0) = 0，F(1) = 1 F(n) = F(n - 1) + F(n - 2)，其中 n > 1 给你n ，请计算 F(n) 。
 class Solution:
