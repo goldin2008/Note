@@ -135,6 +135,42 @@ if __name__ == '__main__':
     test_complete_pack2()
 
 
+"""
+完全背包和01背包问题唯一不同的地方就是，每种物品有无限件。
+我们知道01背包内嵌的循环是从大到小遍历，为了保证每个物品仅被添加一次。
+而完全背包的物品是可以添加多次的，所以要从小到大去遍历
+
+内外循环遍历顺序:
+01背包中: 二维dp数组的两个for遍历的先后循序是可以颠倒了，一维dp数组的两个for循环先后循序一定是先遍历物品，再遍历背包容量。
+完全背包中: 对于一维dp数组来说，其实两个for循环嵌套顺序是无所谓的!
+
+又可以出一道面试题了，就是纯完全背包，要求先用二维dp数组实现，然后再用一维dp数组实现，
+最后在问，两个for循环的先后是否可以颠倒？为什么？ 这个简单的完全背包问题，估计就可以难住不少候选人了。
+"""
+# 01背包的核心代码
+for (int i = 0; i < weight.size(); i++) { // 遍历物品
+    for(int j = bagWeight; j >= weight[i]; j--) { // 遍历背包容量
+        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+    }
+}
+
+# 完全背包核心代码
+# // 先遍历物品，再遍历背包
+for(int i = 0; i < weight.size(); i++) { // 遍历物品
+    for(int j = weight[i]; j <= bagWeight ; j++) { // 遍历背包容量
+        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+
+    }
+}
+
+# // 先遍历背包，再遍历物品
+for(int j = 0; j <= bagWeight; j++) { // 遍历背包容量
+    for(int i = 0; i < weight.size(); i++) { // 遍历物品
+        if (j - weight[i] >= 0) dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+    }
+    cout << endl;
+}
+
 
 
 #1 509. 斐波那契数
