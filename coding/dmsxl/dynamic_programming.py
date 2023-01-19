@@ -30,6 +30,7 @@
 问装满背包有几种方法: dp[j] += dp[j - nums[i]]
 """
 
+
 """
 01背包: 每件物品只能用一次
 完全背包: 商品可以重复多次放入
@@ -71,6 +72,7 @@ dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
 这样在递归公式dp[j] = max(dp[j], dp[j - weights[i]] + values[i])中dp[j]才不会初始值所覆盖。
 因为如果按照二维dp数组那样来初始化第一row，那么背包容量后序遍历的时候，同一个物品i会放两次。
 """
+
 
 # 二维dp
 def test_2_wei_bag_problem1(bag_size, weight, value) -> int: 
