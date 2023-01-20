@@ -1,3 +1,7 @@
+"""
+
+"""
+
 class Solution:
     #1.去除多余的空格
     def trim_spaces(self, s):     
