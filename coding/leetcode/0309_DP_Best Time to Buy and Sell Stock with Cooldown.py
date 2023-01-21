@@ -1,3 +1,7 @@
+"""
+注意这里的每一个状态，例如状态一，是持有股票股票状态并不是说今天一定就买入股票，
+而是说保持买入股票的状态即: 可能是前几天买入的，之后一直没操作，所以保持买入股票的状态。
+"""
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         n = len(prices)
