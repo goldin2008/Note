@@ -1,57 +1,4 @@
-暴力递归
-
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def rob(self, root: TreeNode) -> int:
-        if root is None:
-            return 0
-        if root.left is None and root.right  is None:
-            return root.val
-        # 偷父节点
-        val1 = root.val
-        if root.left:
-            val1 += self.rob(root.left.left) + self.rob(root.left.right)
-        if root.right:
-            val1 += self.rob(root.right.left) + self.rob(root.right.right)
-        # 不偷父节点
-        val2 = self.rob(root.left) + self.rob(root.right)
-        return max(val1, val2)
-记忆化递归
-
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    memory = {}
-    def rob(self, root: TreeNode) -> int:
-        if root is None:
-            return 0
-        if root.left is None and root.right  is None:
-            return root.val
-        if self.memory.get(root) is not None:
-            return self.memory[root]
-        # 偷父节点
-        val1 = root.val
-        if root.left:
-            val1 += self.rob(root.left.left) + self.rob(root.left.right)
-        if root.right:
-            val1 += self.rob(root.right.left) + self.rob(root.right.right)
-        # 不偷父节点
-        val2 = self.rob(root.left) + self.rob(root.right)
-        self.memory[root] = max(val1, val2)
-        return max(val1, val2)
-动态规划
-
+# 动态规划
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -83,3 +30,53 @@ class Solution:
         val_1 = node.val + left[0] + right[0]
 
         return (val_0, val_1)
+
+# 暴力递归
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def rob(self, root: TreeNode) -> int:
+        if root is None:
+            return 0
+        if root.left is None and root.right  is None:
+            return root.val
+        # 偷父节点
+        val1 = root.val
+        if root.left:
+            val1 += self.rob(root.left.left) + self.rob(root.left.right)
+        if root.right:
+            val1 += self.rob(root.right.left) + self.rob(root.right.right)
+        # 不偷父节点
+        val2 = self.rob(root.left) + self.rob(root.right)
+        return max(val1, val2)
+
+# 记忆化递归
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    memory = {}
+    def rob(self, root: TreeNode) -> int:
+        if root is None:
+            return 0
+        if root.left is None and root.right  is None:
+            return root.val
+        if self.memory.get(root) is not None:
+            return self.memory[root]
+        # 偷父节点
+        val1 = root.val
+        if root.left:
+            val1 += self.rob(root.left.left) + self.rob(root.left.right)
+        if root.right:
+            val1 += self.rob(root.right.left) + self.rob(root.right.right)
+        # 不偷父节点
+        val2 = self.rob(root.left) + self.rob(root.right)
+        self.memory[root] = max(val1, val2)
+        return max(val1, val2)
