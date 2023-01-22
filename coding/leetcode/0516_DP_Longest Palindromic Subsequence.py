@@ -1,3 +1,7 @@
+"""
+回文子串是要连续的，回文子序列可不是连续的!
+Subsequence is 不连续的
+"""
 class Solution:
     def longestPalindromeSubseq(self, s: str) -> int:
         dp = [[0] * len(s) for _ in range(len(s))]
