@@ -24,7 +24,7 @@ import re
 def count_file(files):
     patterns = ['_AR_', '_LL_', '_HM_', '_ST_',
                '_PP_', '_QU_', '_BS_', '_BT_',
-               '_GD_', '_DD_', '_DP_', '_EX_']
+               '_GD_', '_MS_', '_DP_', '_EX_']
 
     # result = re.match(pattern, test_string)
     # indices = [i for i, x in enumerate(files) if re.search(pattern, x)]
@@ -46,7 +46,7 @@ def count_file(files):
 # 二叉树 BS| 28
 # 回溯 BT | 16
 # 贪心 GD | 19
-# 单调栈 DD | 5
+# 单调栈 MS | 5
 # 动态规划 DP | 38
 # 额外 EX | 35
 # 总数 | 182
