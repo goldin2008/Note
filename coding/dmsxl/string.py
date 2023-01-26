@@ -1,5 +1,7 @@
 """
 python的string为不可变，需要开辟同样大小的list空间来修改
+res = list(s)
+return ''.join(res)
 
 344.反转字符串 (opens new window):
 第一次讲到反转一个字符串应该怎么做，使用了双指针法。
