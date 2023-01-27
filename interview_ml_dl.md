@@ -7,7 +7,7 @@
 
 > https://towardsdatascience.com/how-to-answer-any-machine-learning-system-design-interview-question-a98656bb7ff0
 
-`What are activation functions?`
+1. `What are activation functions?`
 - Activation Functions help in keeping the value of the output from the neuron restricted to a certain limit as per the requirement. If the limit is not set then the output will reach very high magnitudes. Most activation functions convert the output to -1 to 1 or to 0 to 1.
 - The most important role of the activation function is the ability to add non-linearity to the neural network. Most of the models in real-life is non-linear so the activation functions help to create a non-linear model.
 - The activation function is responsible for deciding whether a neuron should be activated or not.
