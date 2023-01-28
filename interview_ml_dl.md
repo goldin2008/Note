@@ -155,7 +155,7 @@ Vanishing gradient is a scenario that occurs when we use RNNs. Since RNNs make u
 - Model weights shrink exponentially and become very small when training the model.
 - The model weights become 0 in the training phase.
 
-27. `What is exploding gradient descent in Deep Learning?`
+27. ??? `What is exploding gradient descent in Deep Learning?`
 Exploding gradients are an issue causing a scenario that clumps up the gradients. This creates a large number of updates of the weights in the model when training.
 The working of gradient descent is based on the condition that the updates are small and controlled. Controlling the updates will directly affect the efficiency of the model.
 Exploding gradient problem is a problem in a neural network where a large error gradient accumulates which results in very large updates to the neural network model weights during training.
