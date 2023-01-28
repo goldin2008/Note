@@ -243,6 +243,12 @@ The deployment can be carried out in 2 ways.
 
 ## References
 
+AWS:
+> https://medium.com/swlh/deploying-a-machine-learning-model-on-aws-432fd5e13507
+
+
+
+
 > https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week1-ungraded-labs/C4_W1_Optional_Lab_1_XGBoost_CAIP/C4_W1_Optional_Lab_1.md
 
 > https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week1-ungraded-labs/C4_W1_Lab_2_TFS_Docker.md
