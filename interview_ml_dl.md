@@ -11,8 +11,7 @@
 - Activation Functions help in keeping the value of the output from the neuron restricted to a certain limit as per the requirement. If the limit is not set then the output will reach very high magnitudes. Most activation functions convert the output to -1 to 1 or to 0 to 1.
 - The most important role of the activation function is the ability to add non-linearity to the neural network. Most of the models in real-life is non-linear so the activation functions help to create a non-linear model.
 - The activation function is responsible for deciding whether a neuron should be activated or not.
-Activation functions are entities in Deep Learning that are used to translate inputs into a usable output parameter. It is a function that decides if a neuron needs activation or not by calculating the weighted sum on it with the bias.\
-Using an activation function makes the model output to be non-linear. There are many types of activation functions:
+Activation functions are entities in Deep Learning that are used to translate inputs into a usable output parameter. It is a function that decides if a neuron needs activation or not by calculating the weighted sum on it with the bias. Using an activation function makes the model output to be non-linear. There are many types of activation functions:
 ReLU
 Softmax
 Sigmoid
@@ -50,14 +49,14 @@ Multiple iterations to determine the best weights for efficient working
 7. `What is forward propagation?`
 Forward propagation is the scenario where inputs are passed to the hidden layer with weights. In every single hidden layer, the output of the activation function is calculated until the next layer can be processed. It is called forward propagation as the process begins from the input layer and moves toward the final output layer.
 
-8. `What is backpropagation?`
+8. ??? `What is backpropagation?`
 Backpropagation is used to minimize the cost function by first seeing how the value changes when weights and biases are tweaked in the neural network. This change is easily calculated by understanding the gradient at every hidden layer. It is called backpropagation as the process begins from the output layer, moving backward to the input layers.
 This is one of the most frequently asked deep learning interview questions. Backpropagation is a technique to improve the performance of the network. It backpropagates the error and updates the weights to reduce the error.
 
 9. `What are hyperparameters in Deep Learning?`
 Hyperparameters are variables used to determine the structure of a neural network. They are also used to understand parameters, such as the learning rate and the number of hidden layers, and more, present in the neural network.
 
-10. `How can hyperparameters be trained in neural networks?`
+10. ??? `How can hyperparameters be trained in neural networks?`
 Hyperparameters can be trained using four components as shown below:
 Batch size: This is used to denote the size of the input chunk. Batch sizes can be varied and cut into sub-batches based on the requirement.
 Epochs: An epoch denotes the number of times the training data is visible to the neural network so that it can train. Since the process is iterative, the number of epochs will vary based on the data.
@@ -67,7 +66,7 @@ Learning rate: Learning rate is used as a parameter to denote the time required 
 11. `What is the meaning of dropout in Deep Learning?`
 Dropout is a technique that is used to avoid overfitting a model in Deep Learning. If the dropout value is too low, then it will have minimal effect on learning. If it is too high, then the model can under-learn, thereby, causing lower efficiency.
 
-12. `What Is Dropout and Batch Normalization?`
+12. ??? `What Is Dropout and Batch Normalization?`
 Dropout is a technique of dropping out hidden and visible units of a network randomly to prevent overfitting of data (typically dropping 20 percent of the nodes). It doubles the number of iterations needed to converge the network.
 Batch normalization is the technique to improve the performance and stability of neural networks by normalizing the inputs in every layer so that they have mean output activation of zero and standard deviation of one.
 
@@ -78,7 +77,7 @@ A strong linear correlation between the new feature and the predicted variable i
 If the new feature was manually constructed from a combination of existing features, consider leaving it out. The beauty of neural networks is that little feature engineering and preprocessing are required - features are instead learned by intermediate layers.
 Whenever possible, prefer learning features to engineering them.
 
-14. `What is a CNN?`
+14. ??? `What is a CNN?`
 CNNs are convolutional neural networks that are used to perform analysis on images and visuals. These classes of neural networks can input a multi-channel image and work on it easily. These Deep Learning questions must be answered in a concise way. So make sure to understand them and revisit them if necessary.
 
 15. `What are the various layers present in a CNN?`
@@ -98,12 +97,12 @@ Fully Connected Layer - this layer recognizes and classifies the objects in the 
 17. `What is Pooling on CNN, and How Does It Work?`
 Pooling is used to reduce the spatial dimensions of a CNN. It performs down-sampling operations to reduce the dimensionality and creates a pooled feature map by sliding a filter matrix over the input matrix.
 
-18. `Why is a convolutional neural network preferred over a dense neural network for an image classification task?`
+18. ??? `Why is a convolutional neural network preferred over a dense neural network for an image classification task?`
 The number of parameters in a convolutional neural network is much more diminutive than that of a Dense Neural Network. Hence, a CNN is less likely to overfit.
 CNN allows you to look at the weights of a filter and visualize what the network learned. So, this gives a better understanding of the model.
 CNN trains models in a hierarchical way, i.e., it learns the patterns by explaining complex patterns using simpler ones.
 
-19. `How can you convert a Dense Layer of a CNN into a Fully Convolutional Layer?`
+19. ??? `How can you convert a Dense Layer of a CNN into a Fully Convolutional Layer?`
 If you have a CNN with some dense layers on top, you can convert these dense layers to convolutional layers to create an FCN in the following way:
 - Replace the lowest dense layer with a convolutional layer with a kernel size equal to the layer's input size, with one filter per neuron in the dense layer, and use valid padding.
 - Generally, the stride should be 1, but you can set it to a higher value if you want.
