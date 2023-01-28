@@ -126,7 +126,7 @@ Recurrent neural nets are neural networks that keep state between input samples.
 They are most useful when the order of your data is important. So for instance in speech (previous words do help identify the current word), video (frames are ordered) and also text processing.
 Generally speaking, problems related to time-series data (data with a timestamp on them) are good candidates to be solved well with recurrent neural nets.
 
-23. `How Does an LSTM Network Work?`
+23. ??? `How Does an LSTM Network Work?`
 Long-Short-Term Memory (LSTM) is a special kind of recurrent neural network capable of learning long-term dependencies, remembering information for long periods as its default behavior. There are three steps in an LSTM network:
 Step 1: The network decides what to forget and what to remember.
 Step 2: It selectively updates cell state values.
@@ -137,8 +137,7 @@ While training an RNN, your slope can become either too small or too large; this
 
 The vanishing gradient problem is encountered in artificial neural networks with gradient-based learning methods and backpropagation.
 In these learning methods, each of the neural networks weights receives an update proportional to the partial derivative of the error function with respect to the current weight in each iteration of training. Sometimes when gradients become vanishingly small, this prevents the weight to change value.
-If the neural network has many hidden layers, the gradients in the earlier layers will become very low as we multiply the derivatives of each layer. As a result, learning in the earlier layers becomes very slow.
-This can cause the neural network to stop learning.
+If the neural network has many hidden layers, the gradients in the earlier layers will become very low as we multiply the derivatives of each layer. As a result, learning in the earlier layers becomes very slow. This can cause the neural network to stop learning.
 This problem of vanishing gradient descent happens when training neural networks with many layers because the gradient diminishes dramatically as it propagates backwards through the network.
 Many fixes and workarounds have been proposed and investigated to fix the vanishing gradient problem, such as
 alternate weight initialization schemes,
@@ -196,7 +195,7 @@ Stochastic Gradient Descent
 The stochastic gradient computes the gradient using a single sample.
 It converges much faster than the batch gradient because it updates weight more frequently.
 
-33. `Why is mini-batch gradient descent so popular?`
+33. ??? `Why is mini-batch gradient descent so popular?`
 Mini-batch gradient descent is popular as:
 It is more efficient when compared to stochastic gradient descent.
 Generalization is done by finding the flat minima.
@@ -206,7 +205,7 @@ It lets you attain generalization by finding the flat minima.
 Mini-batch gradient helps avoid local minima to allow gradient approximation for the whole dataset.
 
 34. `Can we initialize the weights of a network to start from zero?`
-Yes, it is possible to begin with zero initialization. However, it is not recommended to use because setting up the weights to zero initially will cause all of the neurons to produce the same output and the same gradients when performing backpropagation. This means that the network will not have the ability to learn at all due to the absence of asymmetry between each of the neurons.
+Yes, it is possible to begin with zero initialization. However, it is not recommended to use because setting up the weights to zero initially will cause all of the neurons to produce the same output and the same gradients when performing backpropagation. This means that the network will not have the ability to learn at all due to the `absence of asymmetry between each of the neurons`.
 There are two methods here: we can either initialize the weights to zero or assign them randomly.
 Initializing all weights to 0: This makes your model similar to a linear model. All the neurons and every layer perform the same operation, giving the same output and making the deep net useless.
 Initializing all weights randomly: Here, the weights are assigned randomly by initializing them very close to 0. It gives better accuracy to the model since every neuron performs different computations. This is the most commonly used method.
@@ -231,14 +230,14 @@ Data augmentation
 Early stopping
 Answer: b) Pooling - It’s a layer in CNN that performs a downsampling operation.
 
-38. `Explain two ways to deal with the vanishing gradient problem in a deep neural network.`
+38. ??? `Explain two ways to deal with the vanishing gradient problem in a deep neural network.`
 Use the ReLU activation function instead of the sigmoid function
 Initialize neural networks using Xavier initialization that works with tanh activation.
 
 39. `Why is a deep neural network better than a shallow neural network?`
 Both deep and shallow neural networks can approximate the values of a function. But the deep neural network is more efficient as it learns something new in every layer. A shallow neural network has only one hidden layer. But a deep neural network has several hidden layers that create a deeper representation and computation capability.
 
-40. `What are Generative Adversarial Networks?`
+40. ??? `What are Generative Adversarial Networks?`
 A Generative Adversarial Network (GAN) is a type of neural network architecture for generative modeling.
 GAN has the capability to generate examples for image datasets, photographs, characters, etc.
 Generative adversarial networks are a model of data generation that can create a generative model of a base data set by using an adversarial game between two players. The two players correspond to a generator and a discriminator.

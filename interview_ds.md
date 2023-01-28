@@ -463,7 +463,7 @@ for i in range(num_epochs):
         params = params — learning_rate * grad
 ```
 
-> https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3
+> https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3  *****
 
 > https://sebastianraschka.com/faq/docs/sgd-methods.html
 
