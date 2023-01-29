@@ -440,6 +440,9 @@ Practical Implementation: ***Kibana*** is an open-source analytics and visualiza
 
 
 ***Gradient Descent***
+
+> https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3
+
 `Batch Gradient Descent`
 ```python
 for i in range(num_epochs):
