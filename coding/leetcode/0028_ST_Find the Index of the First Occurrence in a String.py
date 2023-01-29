@@ -4,7 +4,67 @@ https://www.xdull.cn/kmp.html
 
 
 """
-# //暴力解法：
+# 暴力解法：
+class Solution:
+    def strStr(self, text: str, pattern: str) -> int:
+        n1,n2=len(text),len(pattern)
+        if n2==0:
+            return 0
+        i,j=0,0
+        while i<n1:
+            if text[i]==pattern[j]:  #相等时同时移动
+                i+=1
+                j+=1
+            else:
+                i-=j   #回到最开始匹配的位置
+                i+=1   #向右移动一格
+                j=0    #j回到位置0
+            if j==n2:          #到达字符串末尾，说明匹配成功，返回结果
+                return i-n2
+        return -1
+    
+# KMP
+class Solution:
+    def strStr(self, text: str, patten: str) -> int:
+        next=self.KMP(patten)       #获取next数组
+        n1,n2=len(text),len(patten)
+        if n2==0:
+            return 0
+        i,j=0,0
+        while i<n1:
+            if text[i]==patten[j]:
+                i+=1
+                j+=1
+            else:
+                if j>0:
+                    j=next[j-1]
+                else:
+                    i+=1
+            if j==n2:
+                return i-n2
+        return -1
+
+    def KMP(self, patten):
+        if not patten:
+            return []
+        n=len(patten)
+        next=[0]*n
+        i,j=1,0
+        while i<n:
+            if patten[i]==patten[j]:
+                next[i]=j+1
+                i+=1
+                j+=1
+            else:
+                if j>0:
+                    j=next[j-1]
+                else:
+                    next[i]=0
+                    i+=1
+        return next
+
+# From dmslx
+# 暴力解法：
 class Solution(object):
     def strStr(self, haystack, needle):
         """
@@ -19,7 +79,7 @@ class Solution(object):
         return -1   
 
 
-# // 方法一
+# 方法一
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         a = len(needle)
@@ -50,7 +110,7 @@ class Solution:
         return next
 
 
-# // 方法二
+# 方法二
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         a = len(needle)
