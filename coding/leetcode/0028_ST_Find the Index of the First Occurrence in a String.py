@@ -1,8 +1,13 @@
 """
 https://www.xdull.cn/kmp.html
 
-
-
+https://binary-baba.medium.com/string-matching-kmp-algorithm-27c182efa387
+https://www.zhihu.com/question/21923021
+https://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html
+https://juejin.cn/post/7061562409202221092
+https://writings.sh/post/algorithm-string-searching-kmp
+https://doc.yonyoucloud.com/doc/wiki/project/kmp-algorithm/define.html
+https://towardsdatascience.com/pattern-search-with-the-knuth-morris-pratt-kmp-algorithm-8562407dba5b
 """
 # 暴力解法：
 class Solution:
