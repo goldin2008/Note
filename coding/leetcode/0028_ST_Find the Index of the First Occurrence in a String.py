@@ -1,4 +1,10 @@
-//暴力解法：
+"""
+https://www.xdull.cn/kmp.html
+
+
+
+"""
+# //暴力解法：
 class Solution(object):
     def strStr(self, haystack, needle):
         """
@@ -13,7 +19,7 @@ class Solution(object):
         return -1   
 
 
-// 方法一
+# // 方法一
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         a = len(needle)
@@ -44,7 +50,7 @@ class Solution:
         return next
 
 
-// 方法二
+# // 方法二
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         a = len(needle)
