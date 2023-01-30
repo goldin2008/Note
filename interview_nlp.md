@@ -16,11 +16,12 @@ Cons: Like RNN, LSTM fails to solve the parallelization problem of RNN, as each 
 Both RNN and LSTM have described one direction: from left to right. This means we lack the context of words we have not seen yet
 
 `-> Add an Attention Layer to LSTM`
-
+Pros: the use of transformers can outperform previous models. This is likely to be the case because of the standardized importance of each word.
 
 `-> CNN`
-Pros:
-Cons:
+Pros: although the simple CNN static model has little fine-tuning of its parameters, it can perform well even compared to more complex deep learning models (including some RNN models).
+Parallel processing becomes possible. This is a more agile and efficient model than RNN.
+Cons: Padding is required before the first word and after the last word or the model to accept all words.
 
 
 ### NLP Pipeline ### 
