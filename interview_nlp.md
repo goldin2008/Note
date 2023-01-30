@@ -1,7 +1,7 @@
 ## Natural Language Processing
 
 ### Intuitive Comparison of Four NLP Models - Neural Network, RNN, CNN, and LSTM
-> alibabacloud.com/blog/599283
+> https://alibabacloud.com/blog/599283
 
 `Neural Network`
 Cons: The fixed window may be too small. we will ignore the context in the rest of the sentence.
