@@ -440,7 +440,6 @@ Practical Implementation: ***Kibana*** is an open-source analytics and visualiza
 
 
 ***Gradient Descent***
-
 > https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3
 
 Gradient Descent is the most common optimization algorithm in machine learning and deep learning. It is a first-order optimization algorithm. This means it only takes into account the first derivative when performing the updates on the parameters. On each iteration, we update the parameters in the opposite direction of the gradient of the objective function J(w) w.r.t the parameters where the gradient gives the direction of the steepest ascent. The size of the step we take on each iteration to reach the local minimum is determined by the learning rate α. Therefore, we follow the direction of the slope downhill until we reach a local minimum.
