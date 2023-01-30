@@ -51,6 +51,12 @@ ROC曲线由于兼顾正例与负例，所以适用于评估分类器的整体�
 
 最后可以根据具体的应用，在曲线上找到最优的点，得到相对应的precision，recall，f1 score等指标，去调整模型的阈值，从而得到一个符合具体应用的模型。
 
+## Bayes' theorem
+> https://www.mlstack.cafe/blog/naive-bayes-interview-questions
+
+> https://medium.com/codex/data-science-interview-preparation-series-part-2-naive-bayes-9b93b1bef16e
+
+
 ## Explainable AI
 
 <img src="pic/pdp01.png" width=50% height=50%>
