@@ -1,7 +1,15 @@
 ## Natural Language Processing
 
-### Intuitive Comparison of Four NLP Models - Neural Network, RNN, CNN, and LSTM
+*** Intuitive Comparison of Four NLP Models - Neural Network, RNN, CNN, and LSTM ***
 > https://alibabacloud.com/blog/599283
+
+*** How LSTM networks solve the problem of vanishing gradients ***
+> https://medium.datadriveninvestor.com/how-do-lstm-networks-solve-the-problem-of-vanishing-gradients-a6784971a577
+
+*** Exploding and Vanishing Gradients ***
+https://www.cs.toronto.edu/~rgrosse/courses/csc321_2017/readings/L15%20Exploding%20and%20Vanishing%20Gradients.pdf
+
+https://towardsdatascience.com/the-exploding-and-vanishing-gradients-problem-in-time-series-6b87d558d22
 
 `Neural Network`
 Cons: The fixed window may be too small. we will ignore the context in the rest of the sentence.
