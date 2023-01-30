@@ -1,4 +1,28 @@
 ## Natural Language Processing
+
+### Intuitive Comparison of Four NLP Models - Neural Network, RNN, CNN, and LSTM
+> alibabacloud.com/blog/599283
+
+`Neural Network`
+Cons: The fixed window may be too small. we will ignore the context in the rest of the sentence.
+
+`-> RNN`
+Pros: It can handle any length of the input, which solves the problem of the fixed window size of the neural network.
+Cons: Vanishing Gradient Problem: Vanishing gradient problem refers to the phenomenon that the earlier hidden state has less influence on the final hidden state, thus weakening the influence of the earlier word on the whole context.
+
+`-> LSTM`
+Pros: choose the information to forget from the previous state and what information to remember from the current state. All this information is stored in a new state called the cell state, which serves to carry past information since it should be remembered.
+Cons: Like RNN, LSTM fails to solve the parallelization problem of RNN, as each hidden state and cell state must be calculated before the next hidden state and cell state are calculated. This also means LSTM takes longer to train and requires more memory.
+Both RNN and LSTM have described one direction: from left to right. This means we lack the context of words we have not seen yet
+
+`-> Add an Attention Layer to LSTM`
+
+
+`-> CNN`
+Pros:
+Cons:
+
+
 ### NLP Pipeline ### 
 This step-by-step processing of text is known as a pipeline. Note that, in the real world, the process may not always be linear as it’s shown in the pipeline in Figure 2-1; it often involves going back and forth between individual steps (e.g., between feature extraction and modeling, modeling and evaluation, and so on). Also, there are loops in between, most commonly going from evaluation to pre-processing, feature engineering, modeling, and back to evaluation. There is also an overall loop that goes from monitoring to data acquisition, but this loop happens at the project level.
 
