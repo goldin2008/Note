@@ -11,6 +11,10 @@ https://www.cs.toronto.edu/~rgrosse/courses/csc321_2017/readings/L15%20Exploding
 
 https://towardsdatascience.com/the-exploding-and-vanishing-gradients-problem-in-time-series-6b87d558d22
 
+*** Recommendation Systems ***
+> https://towardsdatascience.com/recommendation-systems-in-the-real-world-51e3948772f3
+
+
 `Neural Network`
 Cons: The fixed window may be too small. we will ignore the context in the rest of the sentence.
 
