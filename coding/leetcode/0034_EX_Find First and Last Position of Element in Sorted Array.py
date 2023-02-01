@@ -5,6 +5,44 @@ If target is not found in the array, return [-1, -1].
 
 You must write an algorithm with O(log n) runtime complexity.
 """
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        def getRightBorder(nums:List[int], target:int) -> int:
+            left, right = 0, len(nums)-1
+            rightBoder = -2 # 记录一下rightBorder没有被赋值的情况
+            while left <= right:
+                middle = left + (right-left) // 2
+                if nums[middle] > target:
+                    right = middle - 1
+                else: # 寻找右边界，nums[middle] == target的时候更新left
+                    left = middle + 1
+                    # 这里把left给rightBorder的原因是找到target以后，还要右移1位，所以是相同target串里面的rightBoarder
+                    rightBoder = left
+    
+            return rightBoder
+        
+        def getLeftBorder(nums:List[int], target:int) -> int:
+            left, right = 0, len(nums)-1 
+            leftBoder = -2 # 记录一下leftBorder没有被赋值的情况
+            while left <= right:
+                middle = left + (right-left) // 2
+                if nums[middle] >= target: #  寻找左边界，nums[middle] == target的时候更新right
+                    right = middle - 1;
+                    # 这里把right给leftBorder的原因是找到target以后，还要左移1位，所以是相同target串里面的leftBoarder
+                    leftBoder = right;
+                else:
+                    left = middle + 1
+            return leftBoder
+        leftBoder = getLeftBorder(nums, target)
+        rightBoder = getRightBorder(nums, target)
+        # 情况一
+        if leftBoder == -2 or rightBoder == -2: return [-1, -1]
+        # 情况三
+        if rightBoder -leftBoder >1: return [leftBoder + 1, rightBoder - 1]
+        # 情况二
+        return [-1, -1]
+
+
 # 解法4
 # 1、首先，在 nums 数组中二分查找得到第一个大于等于 target的下标leftBorder；
 # 2、在 nums 数组中二分查找得到第一个大于等于 target+1的下标， 减1则得到rightBorder；
@@ -71,40 +109,6 @@ class Solution:
         
         return -1
 
-class Solution:
-    def searchRange(self, nums: List[int], target: int) -> List[int]:
-        def getRightBorder(nums:List[int], target:int) -> int:
-            left, right = 0, len(nums)-1
-            rightBoder = -2 # 记录一下rightBorder没有被赋值的情况
-            while left <= right:
-                middle = left + (right-left) // 2
-                if nums[middle] > target:
-                    right = middle - 1
-                else: # 寻找右边界，nums[middle] == target的时候更新left
-                    left = middle + 1
-                    rightBoder = left
-    
-            return rightBoder
-        
-        def getLeftBorder(nums:List[int], target:int) -> int:
-            left, right = 0, len(nums)-1 
-            leftBoder = -2 # 记录一下leftBorder没有被赋值的情况
-            while left <= right:
-                middle = left + (right-left) // 2
-                if nums[middle] >= target: #  寻找左边界，nums[middle] == target的时候更新right
-                    right = middle - 1;
-                    leftBoder = right;
-                else:
-                    left = middle + 1
-            return leftBoder
-        leftBoder = getLeftBorder(nums, target)
-        rightBoder = getRightBorder(nums, target)
-        # 情况一
-        if leftBoder == -2 or rightBoder == -2: return [-1, -1]
-        # 情况三
-        if rightBoder -leftBoder >1: return [leftBoder + 1, rightBoder - 1]
-        # 情况二
-        return [-1, -1]
 # 解法2
 # 1、首先，在 nums 数组中二分查找 target；
 # 2、如果二分查找失败，则 binarySearch 返回 -1，表明 nums 中没有 target。此时，searchRange 直接返回 {-1, -1}；
