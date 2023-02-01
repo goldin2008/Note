@@ -5,6 +5,29 @@ If target is not found in the array, return [-1, -1].
 
 You must write an algorithm with O(log n) runtime complexity.
 """
+# 解法4
+# 1、首先，在 nums 数组中二分查找得到第一个大于等于 target的下标leftBorder；
+# 2、在 nums 数组中二分查找得到第一个大于等于 target+1的下标， 减1则得到rightBorder；
+# 3、如果开始位置在数组的右边或者不存在target，则返回[-1, -1] 。否则返回[leftBorder, rightBorder]
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        def binarySearch(nums:List[int], target:int) -> int:
+            left, right = 0, len(nums)-1
+            while left<=right: # 不变量：左闭右闭区间
+                middle = left + (right-left) //2 
+                if nums[middle] >= target: 
+                    right = middle - 1
+                else: 
+                    left = middle + 1
+            return left  # 若存在target，则返回第一个等于target的值 
+
+        leftBorder = binarySearch(nums, target) # 搜索左边界
+        rightBorder = binarySearch(nums, target+1) -1  # 搜索右边界
+        if leftBorder == len(nums) or nums[leftBorder]!= target: # 情况一和情况二
+            return [-1, -1]
+        return [leftBorder, rightBorder]
+
+
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         
@@ -131,24 +154,3 @@ class Solution:
         if leftBorder<= rightBorder and rightBorder< len(nums) and nums[leftBorder] == target and  nums[rightBorder] == target:
             return [leftBorder, rightBorder]
         return [-1, -1]
-# 解法4
-# 1、首先，在 nums 数组中二分查找得到第一个大于等于 target的下标leftBorder；
-# 2、在 nums 数组中二分查找得到第一个大于等于 target+1的下标， 减1则得到rightBorder；
-# 3、如果开始位置在数组的右边或者不存在target，则返回[-1, -1] 。否则返回[leftBorder, rightBorder]
-class Solution:
-    def searchRange(self, nums: List[int], target: int) -> List[int]:
-        def binarySearch(nums:List[int], target:int) -> int:
-            left, right = 0, len(nums)-1
-            while left<=right: # 不变量：左闭右闭区间
-                middle = left + (right-left) //2 
-                if nums[middle] >= target: 
-                    right = middle - 1
-                else: 
-                    left = middle + 1
-            return left  # 若存在target，则返回第一个等于target的值 
-
-        leftBorder = binarySearch(nums, target) # 搜索左边界
-        rightBorder = binarySearch(nums, target+1) -1  # 搜索右边界
-        if leftBorder == len(nums) or nums[leftBorder]!= target: # 情况一和情况二
-            return [-1, -1]
-        return [leftBorder, rightBorder]
