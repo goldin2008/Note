@@ -12,7 +12,11 @@ class Solution:
         cur = dummy_head
         while(cur.next!=None):
             if(cur.next.val == val):
+                # 如果找到了对应值,就跳过next到下一个next.next
+                # 本来应该是cur.next = cur.next
                 cur.next = cur.next.next #删除cur.next节点
             else:
+                # 如果没有找到对应值,就遍历下一个node
                 cur = cur.next
+                # return到dummy节点的next node
         return dummy_head.next
