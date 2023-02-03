@@ -1,6 +1,7 @@
 """
 设置一个虚拟头结点在进行删除操作
 """
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
