@@ -1,5 +1,15 @@
 """
 设置一个虚拟头结点在进行删除操作
+
+while fast.next and fast.next.next:
+    fast = fast.next.next
+    slow = slow.next
+
+while fast and fast.next:
+    slow = slow.next
+    fast = fast.next.next
+
+区别在slow停在的位置，第1个要从slow.next断，第2个要从slow断!!!
 """
 
 # Definition for singly-linked list.
