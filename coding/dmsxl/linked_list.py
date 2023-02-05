@@ -1,15 +1,20 @@
 """
 设置一个虚拟头结点在进行删除操作
 
+双指针遍历linked list,用slow来定位中间位置
+方法1
 while fast.next and fast.next.next:
     fast = fast.next.next
     slow = slow.next
 
+方法2
 while fast and fast.next:
     slow = slow.next
     fast = fast.next.next
 
 区别在slow停在的位置，第1个要从slow.next断，第2个要从slow断!!!
+两种方法区别在linked list中node数目为偶数时slow的停留点不一样，这时分割的时候要注意是用slow还是slow.next来分
+node数目为奇数的时候,用两种方法slow的停留点都一样，没有影响
 """
 
 # Definition for singly-linked list.
