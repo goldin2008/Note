@@ -24,11 +24,19 @@ class Solution:
         if head == None or head.next == None:
             return True
         slow, fast = head, head
+
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
+
+        # 两种走法都可以，区别就是linked list的node是偶数时slow的停留地点不一样，但是为奇数时结果一样
+        # while fast.next and fast.next.next:
+        #     slow = slow.next
+        #     fast = fast.next.next
+
         right = slow.next # 分割右半边
         slow.next = None # 切断
+
         right = self.reverseList(right) #反转右半边
         left = head
         # 左半边一定比右半边长, 因此判断右半边即可
@@ -40,7 +48,6 @@ class Solution:
             curRight = right.next
             right.next = left
             right = curRight
-
 
     def reverseList(self, head: ListNode) -> ListNode:
         cur = head   
