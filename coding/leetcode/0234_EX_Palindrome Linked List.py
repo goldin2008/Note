@@ -28,11 +28,11 @@ class Solution:
         return slow
 
     def reverse_list(self, head):
-        pre = None # dummy head
-        cur = head
-        while cur:
-            temp = cur.next
-            cur.next = pre
+        cur = head   
+        pre = None
+        while(cur!=None):
+            temp = cur.next # 保存一下cur的下一个节点
+            cur.next = pre # 反转
             pre = cur
             cur = temp
         return pre
