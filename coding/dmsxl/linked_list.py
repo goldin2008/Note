@@ -21,3 +21,17 @@ class Solution:
                 cur = cur.next
                 # return到dummy节点的next node
         return dummy_head.next
+
+
+# 206. Reverse Linked List
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        cur = head   
+        pre = None
+        while(cur!=None):
+            temp = cur.next # 保存一下 cur的下一个节点，因为接下来要改变cur->next
+            cur.next = pre #反转
+            #更新pre、cur指针
+            pre = cur
+            cur = temp
+        return pre
