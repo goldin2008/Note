@@ -15,4 +15,3 @@ class Solution:
             else:
                 return False
         return i == len(name) and j==len(typed)
-
