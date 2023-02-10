@@ -16,7 +16,6 @@ while fast and fast.next:
 两种方法区别在linked list中node数目为偶数时slow的停留点不一样，这时分割的时候要注意是用slow还是slow.next来分
 node数目为奇数的时候,用两种方法slow的停留点都一样，没有影响
 """
-
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
