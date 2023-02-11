@@ -202,6 +202,27 @@ for(int j = 0; j <= bagWeight; j++) { // 遍历背包容量
 
 
 
+
+"""
+5.最长回文子串 Longest Palindromic Substring
+647. 回文子串
+132. 分割回文串 II
+
+115. Distinct Subsequences
+392. Is Subsequence
+516. Longest Palindromic Subsequence
+673. Number of Longest Increasing Subsequence
+2407. Longest Increasing Subsequence II
+
+53. Maximum Subarray
+209. Minimum Size Subarray Sum
+560. Subarray Sum Equals K
+
+1162. As Far from Land as Possible
+
+72. Edit Distance
+"""
+
 #1 509. 斐波那契数
 # 斐波那契数，通常用 F(n) 表示，形成的序列称为 斐波那契数列 。该数列由 0 和 1 开始，后面的每一项数字都是前面两项数字的和。也就是： F(0) = 0，F(1) = 1 F(n) = F(n - 1) + F(n - 2)，其中 n > 1 给你n ，请计算 F(n) 。
 class Solution:
