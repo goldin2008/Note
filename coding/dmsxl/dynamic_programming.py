@@ -206,7 +206,7 @@ for(int j = 0; j <= bagWeight; j++) { // 遍历背包容量
 """
 5.最长回文子串 Longest Palindromic Substring
 132. 分割回文串 II
-300.最长上升子序列 (opens new window)
+300.最长上升子序列
 647. 回文子串
 673.最长递增子序列的个数
 
