@@ -3,7 +3,6 @@ KNN
 
 https://towardsdatascience.com/k-nearest-neighbours-knn-algorithm-common-questions-and-python-implementation-14377e45b738
 """
-
 class KNN():
   def __init__(self,k):
     self.k=k
