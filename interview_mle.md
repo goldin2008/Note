@@ -14,6 +14,12 @@
 
 ![Diagram of deployment.](pic/update.png)
 
+Random forest and gradient boosting machines (GBM) are both ensemble methods that combine multiple weak learners (decision trees) to create a stronger model. Both methods aim to reduce bias and variance in the model, but they achieve this in different ways. 
+- Random forest reduces variance by creating multiple decision trees with random subsets of the training data and features. Each tree is trained independently, so the randomness introduced helps to reduce overfitting and improves the model's generalization ability. The final prediction is made by taking the average or majority vote of the predictions of all the trees. 
+- GBM, on the other hand, reduces bias by creating a sequence of decision trees where each tree tries to correct the errors of the previous tree. The algorithm starts with a simple model and then iteratively adds new trees, with each tree focusing on the residuals of the previous trees. This sequential process helps to reduce bias and improve the model's accuracy. 
+- In terms of bias-variance trade-off, Random Forest tends to have lower variance and higher bias compared to GBM, while GBM tends to have lower bias and higher variance compared to Random Forest. This is because Random Forest creates multiple independent trees with random subsets of the data, which helps to reduce overfitting and improve generalization, but also reduces the model's ability to capture complex relationships in the data. GBM, on the other hand, creates a sequence of trees that sequentially correct errors, which helps to capture complex relationships in the data but also increases the risk of overfitting. Overall, the choice between Random Forest and GBM depends on the specific problem, the size and quality of the data, and the desired trade-off between bias and variance. It is often recommended to try both methods and compare their performance on the specific task at hand.
+
+
 ### Amazon
 #### 1st Interview
 1. Talk about linear regression, why it is called linear?
