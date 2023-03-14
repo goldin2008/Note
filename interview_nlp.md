@@ -35,6 +35,19 @@ Pros: although the simple CNN static model has little fine-tuning of its paramet
 Parallel processing becomes possible. This is a more agile and efficient model than RNN.
 Cons: Padding is required before the first word and after the last word or the model to accept all words.
 
+`activation function`
+In neural networks, an activation function is a non-linear function applied to the output of a neuron or a set of neurons. It allows the neural network to learn and model non-linear relationships between inputs and outputs.
+
+Sigmoid Function: This function is often used in the output layer of a neural network for binary classification tasks because it maps any input to a value between 0 and 1. It can also be used in the hidden layers of a neural network, but its use is less common because it can suffer from the "vanishing gradient" problem, where the gradient becomes very small for large or small input values, leading to slow convergence during training.
+
+ReLU (Rectified Linear Unit) Function: This function is commonly used in the hidden layers of a neural network because it is computationally efficient and can help avoid the vanishing gradient problem. However, it can suffer from the "dying ReLU" problem where neurons can become permanently inactive if the input is negative.
+
+Tanh (Hyperbolic Tangent) Function: This function is similar to the sigmoid function but is centered at 0, which can make training more efficient. It can be used in the hidden layers of a neural network, but its use is less common than ReLU because it is computationally more expensive.
+
+Softmax Function: This function is used in the output layer of a neural network for multiclass classification tasks. It maps the inputs to a probability distribution over the classes.
+
+Leaky ReLU Function: This function is a modified version of the ReLU function that avoids the "dying ReLU" problem where neurons can become permanently inactive. It allows for a small negative output for negative inputs.
+
 
 ### NLP Pipeline ### 
 This step-by-step processing of text is known as a pipeline. Note that, in the real world, the process may not always be linear as it’s shown in the pipeline in Figure 2-1; it often involves going back and forth between individual steps (e.g., between feature extraction and modeling, modeling and evaluation, and so on). Also, there are loops in between, most commonly going from evaluation to pre-processing, feature engineering, modeling, and back to evaluation. There is also an overall loop that goes from monitoring to data acquisition, but this loop happens at the project level.
