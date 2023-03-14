@@ -48,6 +48,14 @@ Softmax Function: This function is used in the output layer of a neural network 
 
 Leaky ReLU Function: This function is a modified version of the ReLU function that avoids the "dying ReLU" problem where neurons can become permanently inactive. It allows for a small negative output for negative inputs.
 
+`Gradient vanishing and exploding`
+Gradient vanishing and exploding are two common problems that can occur during the process of training deep neural networks.
+
+Gradient vanishing occurs when the gradients of the loss function with respect to the parameters of the network become very small as they are propagated backwards through the network. This can happen when the network is very deep, and the gradients become smaller and smaller as they are multiplied by the weights of each layer. When the gradients become too small, it becomes difficult to update the weights, and the network can become stuck in a suboptimal solution.
+
+Gradient exploding, on the other hand, occurs when the gradients become very large and unstable during backpropagation. This can happen when the weights of the network are initialized to very large values or when the learning rate is too high. When the gradients become too large, the network can overshoot the optimal solution and become unstable, making it difficult to train.
+
+Both of these problems can make it difficult to train deep neural networks effectively, and researchers have developed various techniques to mitigate them. For example, gradient clipping can be used to limit the magnitude of the gradients during training, while initialization techniques such as Xavier initialization can help to prevent gradient exploding.
 
 ### NLP Pipeline ### 
 This step-by-step processing of text is known as a pipeline. Note that, in the real world, the process may not always be linear as it’s shown in the pipeline in Figure 2-1; it often involves going back and forth between individual steps (e.g., between feature extraction and modeling, modeling and evaluation, and so on). Also, there are loops in between, most commonly going from evaluation to pre-processing, feature engineering, modeling, and back to evaluation. There is also an overall loop that goes from monitoring to data acquisition, but this loop happens at the project level.
