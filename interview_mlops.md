@@ -1,4 +1,11 @@
 ## MLOps interview prep
+#### git
+
+> https://xosh.org/explain-git-in-simple-words/
+
+> https://eagain.net/articles/git-for-computer-scientists/
+
+
 
 <img src="pic/prod_ml.png" width=90% height=90%>
 

@@ -1,5 +1,4 @@
 # Projects
-
 ## 1. Container/Kubernetes/fastAPI
 <!-- https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/tree/main/course4/week2-ungraded-labs/C4_W2_Lab_2_Intro_to_Kubernetes -->
 
