@@ -8,6 +8,16 @@
 > https://learngitbranching.js.org/
 
 
+```
+* git merge feature: on main branch, merge feature onto main
+
+git merge main: on feature branch, move feature to the same commit main was attached to, since feature was an ancestor of main. 
+
+* git rebase main : on feature branch, rebase feature on top of main
+
+git rebase feature: on main branch, move main branch ref forward to feature in history, since main was an ancestor of feature.
+```
+
 
 <img src="pic/prod_ml.png" width=90% height=90%>
 
