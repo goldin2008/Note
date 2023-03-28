@@ -8,6 +8,7 @@
 > https://learngitbranching.js.org/
 
 
+
 <img src="pic/prod_ml.png" width=90% height=90%>
 
 APIs are simply endpoints that accept some sort of input and return some sort of output. Computers just want to share data. And so that’s what an API provides.
