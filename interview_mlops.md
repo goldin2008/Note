@@ -5,6 +5,7 @@
 
 > https://eagain.net/articles/git-for-computer-scientists/
 
+> https://learngitbranching.js.org/
 
 
 <img src="pic/prod_ml.png" width=90% height=90%>
