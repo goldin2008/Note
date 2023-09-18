@@ -915,3 +915,11 @@ Bayesian optimization
 code/memory profiling找到整个pipeline的bottleneck，framework化以上的步骤能让更多人同时develop
 
 matrix factorization可能会问你怎么加进user and item metadata
+
+`Cruise Applied Scientist`
+从sensor要怎么搭，输入输出要什么格式开始。最后主要就是针对sensor的选择怎么设计object detection system了。具体还会到loss 怎么设计，model怎么train，怎么解决long tail problem。 还有楼主碰到的面试官挺抓细节的。就是说的各种点都有可能继续细问具体是要怎么干。建议大家面试前扎实地好好看看perception，object detection的东西。
+
+`Roblox`
+最后又问了一些常见的基础问题，online vs offline data consistency，evaluation metrics
+
+然后画了system design的图。问到了database option 和model serving的option。也问到了如何handle large traffic （load balancer， cache 等等都可以考虑加）
