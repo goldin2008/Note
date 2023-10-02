@@ -168,7 +168,6 @@ Practical Data Science Specialization on Coursera contains three courses:
       - Text summarization: Sequence to Sequence   
       - Speech to text: Sequence to Sequence   
       - Text classification: Blazing Text       
-  
 
 ---
 	
