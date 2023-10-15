@@ -1,3 +1,19 @@
+### Travel
+
+- Vilnius, Lithuania
+- Riga, Latvia
+- Tallinn, Estonia
+
+- Budapest, Hungary
+- Prague, Czech Republic
+- Zagreb, Croatia
+- Ljubljana, Slovenia
+- Warsaw, Poland
+
+- Sofia, Bulgaria
+- Bucharest, Romania
+
+
 # Presentation and Note
 
 > https://www.datainnovation.org/2020/07/5-qs-for-priscilla-alexander-vice-president-of-engineering-at-arthurai/
