@@ -1,5 +1,20 @@
 ### Travel
 
+Travel Plan in Portugal and Spain
+
+Days 1: Porto
+Days 2: Coimbra
+Days 3: Lisbon
+Days 4: Algarve, Portugal
+Days 5: Seville, Spain
+Days 6: Granada
+Days 7: Toledo
+Days 8: Madrid
+Days 9: Valencia
+Days 10: Barcelona
+Days 11: Catalonia
+
+
 - Vilnius, Lithuania
 - Riga, Latvia
 - Tallinn, Estonia
