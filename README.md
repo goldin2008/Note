@@ -1,7 +1,5 @@
 ### Travel
-
 Travel Plan in Portugal and Spain
-
 Days 1: Porto
 Days 2: Coimbra
 Days 3: Lisbon
