@@ -1,3 +1,22 @@
+End Year Evaluation
+
+How does this colleague deliver the goals of our team, business/function and the company? (e.g., thinks and acts strategically, drives results, innovates)
+XXX's insights and forward-thinking approach have allowed our team to navigate complex challenges and opportunities with clarity and efficiency. XXX's not only identified problems but have also provided innovative solutions, ensuring our DevOps processes align with our long-term business objectives. Whether it's improving deployment pipelines, automating critical processes, or optimizing our infrastructure, XXX's contributions have directly translated into time and cost savings for the firm. 
+
+XXX's proactive approach to exploring new tools and methodologies has kept our team on the cutting edge of DevOps technology. XXX's willingness to experiment with new approaches and your capacity to adapt to evolving industry standards has been invaluable to our continuous improvement.
+
+How does this colleague identify and deliver appropriate solutions that address the needs of
+clients/customers/stakeholders? (e.g., builds relationships, delivers for the firm) Note: do not include confidential information on clients/customers/deals.
+XXX has shown a deep understanding of stakeholders' objectives, pain points, and expectations, which has allowed us to tailor our DevOps solutions to meet their specific requirements. XXX's exceptional talent for building strong relationships with clients and stakeholders has not only fostered trust but has also led to successful collaborations. XXX has a unique ability to listen actively, understand their concerns, and provide effective solutions that directly address their needs. XXX's willingness to go the extra mile to ensure their satisfaction has created a positive and lasting impact.
+
+How does this colleague drive a robust risk & controls environment? (e.g., exercises sound judgement, acts with integrity, demonstrates expected behaviors, identifies, escalates and remediates issues)
+XXX's ability to exercise sound judgment in complex situations has been an invaluable asset to our team. Whether it's evaluating the potential risks associated with a project or making crucial decisions that impact our processes, XXX's thoughtful and analytical approach has consistently guided us toward the best possible outcomes. XXX's vigilance in identifying and promptly escalating potential issues has played a pivotal role in our risk and controls environment. XXX's attention to detail and ability to foresee potential problems has allowed us to address issues proactively, preventing them from escalating into more significant concerns. XXX's dedication to issue remediation has ensured that challenges are addressed efficiently and effectively. XXX take ownership of problems, collaborate with colleagues, and provide actionable solutions that result in long-term improvements.
+
+How does this colleague foster a collaborative and inclusive environment that supports growth and development? (communicates, partners, fosters continuous learning and growth)
+XXX's ability to communicate clearly and openly has been a cornerstone of our team's success. XXX's willingness to actively listen, express your thoughts, and provide constructive feedback has improved our team's ability to collaborate and achieve common goals. XXX's communication skills have created a culture of transparency and open dialogue, which benefits everyone. XXX's dedication to building strong partnerships with colleagues and team members has strengthened our collective capabilities. XXX consistently reach out to others, offering XXX's expertise and support, and actively seek opportunities for collaboration. XXX's willingness to work across boundaries and disciplines has been a key driver of our team's success. XXX's inclusive mindset ensures that every team member feels valued and respected. XXX's ability to create an inclusive environment allows individuals from diverse backgrounds to thrive. XXX's respect for different perspectives and experiences has enriched our team's dynamic and promoted a culture of belonging.
+
+For Managers: What are this colleague's management strengths and development areas?
+
 ### Travel
 Travel Plan in Portugal and Spain
 Days 1: Porto
