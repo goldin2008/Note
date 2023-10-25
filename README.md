@@ -17,7 +17,6 @@ XXX's ability to communicate clearly and openly has been a cornerstone of our te
 
 For Managers: What are this colleague's management strengths and development areas?
 
-
 ### Travel
 Travel Plan in Portugal and Spain
 Days 1: Porto
