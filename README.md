@@ -135,6 +135,20 @@ Promotes Continuous Learning and Growth
 • Demonstrates an openness to feedback and willingness to learn from mistakes or when given guidance; aware of own impact on others to address own biases and those of others
 
 
+RISK, CONTROLS, AND CONDUCT
+Exercise sound judgment; act with integrity; protect our company, clients and customers Promotes a Robust Risk and Control Environment
+• Remains current on role and regulatory requirements
+• Follows procedures to strengthen the control framework and meets risk and compliance obligations including on time completion of required training, compliance with communication policies including use of approved communication channels and other policies such as Personal Account Dealing (PAD), etc.
+• Protects confidential information (i.e. Data Loss Prevention policy)
+Demonstrates Expected Behaviors
+• Holds self and others accountable to "How We do Business Principles" and
+"Code of Conduct" its policies and related laws/regulations
+• Recognizes risks related to the role and operates within established risk parameters
+• Pursues root-cause analysis of risk and compliance issues and client/customer/stakeholder complaints
+Identifies, Escalates and Remediates Issues
+• Identifies concerns, escalates early and assists in mitigating risks in a timely manner to prevent recurrence
+* Stakeholder refers to internal and external groups that functions like Risk, Compliance and Audit engage with to perform their role
+
 ### Travel
 Travel Plan in Portugal and Spain
 Days 1: Porto
