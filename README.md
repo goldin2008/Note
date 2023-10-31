@@ -73,36 +73,14 @@ Visit go/PerformanceDevelopment > Complete Your Self-Evaluation
 
 Gather feedback from my manager and my team and check in frequently to track progress.
 
+
+
+
+Below are the firmwide expectationsfor VP5/603 and Associates/601-602 and equivalent employees. They highlight examples of what is expected of employees as they carry out their day-to-day responsibilities, are displayed in me@upme, and should be considered when setting Performance Goals and completing the Annual Review.
+
 1 - Business Results
 Deliver the goals of your team, business/ function and the company
 Describe accomplishments and delivery for the full year. Be specific with facts and examples on both results ("what") and behaviors ("how") on how it was achieved against expectations for your level. Include any additional considerations or factors in the context of the environment this year.
-
-
-2 - Client / Customer / Stakeholder
-Identify and deliver appropriate solutions that address the needs of clients / customers/ stakeholders
-Describe the solutions identified and delivered that addressed the needs of your clients/customers/stakeholders while balancing the needs of the firm. Do not include confidential information on clients/customers/deals.
-
-
-3 - Teamwork and Leadership
-Foster a collaborative and inclusive environment that supports growth and development
-Describe actions taken to foster a collaborative and inclusive environment and support the firm's Diversity, Equity and Inclusion initiatives, including BRG involvement, mentoring, etc.
-(For All MANAGERS, refer to the assigned Manager Performance Goal.
-Reflect how you demonstrated the Manager Capabilities in leading your team (including actively attracting, hiring and retaining diverse talent), and if a manager reports to you, how you held them accountable for demonstrating the Manager Capabilities.
-MANAGERS OF MANAGERS: When writing Manager Evaluations, include how the managers on your team demonstrated the Manager
-Capabilities.)
-
-
-4 - Risk, Controls, and Conduct
-Exercise sound judgment; act with integrity; protect our company, clients and customers
-Note: VP and Below employees do not write Self-Evaluation commentary in this dimension. If a Code of Conduct Written Warning(s) was received throughout this performance year, factor into your self-evaluation.
-Managers: Select the appropriate Yes or No response to the question below which should be based on the firm's Performance Expectations for the employee's role.
-By selecting "No", you are confirming that the employee did not exhibit behaviors in line with the firm's Risk, Controls, and Conduct expectations on a significant matter and you are selecting the most appropriate reason.
-If the employee did not meet expectations for multiple reasons, note additional Risk, Controls, and Conduct expectations that the employee did not meet in the Overall Summary. If your employee received a Code of Conduct Written Warning throughout this performance year, you should factor into your rating decision (as appropriate) and include commentary addressing the issue raised. Note in the Overall Summary if there is anything to add. Standard text displays on Annual Review print view.
-Your response displays to the employee and should be noted in your performance message. Refer to the manager toolkit for guidance, particularly if there is a risk, controls, and conduct issue(s) or Code of Conduct Written Warning(s).
-Identifies, Escalates and Remediates Issues
-• Identifies concerns, escalates early and assists in mitigating risks in a timely manner to prevent recurrence
-Stakeholder refers to internal and external groups that functions like Risk, Compliance and Audit engage with to perform their role
-
 
 BUSINESS RESULTS
 Deliver the goals of your team, business/function and the company
@@ -114,12 +92,23 @@ Deliver the goals of your team, business/function and the company
 • Runs disciplined meetings with a specific purpose/agenda, the right individuals and clear outcomes/next steps
 
 
+2 - Client / Customer / Stakeholder
+Identify and deliver appropriate solutions that address the needs of clients / customers/ stakeholders
+Describe the solutions identified and delivered that addressed the needs of your clients/customers/stakeholders while balancing the needs of the firm. Do not include confidential information on clients/customers/deals.
+
 CLIENT/CUSTOMER/STAKEHOLDER*
 Identify and deliver appropriate solutions that address the needs of clients/customers/stakeholders
 • Anticipates and promptly addresses client/customer/stakeholder needs
 • Collaborates across teams to leverage expertise, products and services to meet client/customer/stakeholder needs
 • Delivers solutions to meet client/customer/stakeholder needs which are aligned with firm priorities
 
+3 - Teamwork and Leadership
+Foster a collaborative and inclusive environment that supports growth and development
+Describe actions taken to foster a collaborative and inclusive environment and support the firm's Diversity, Equity and Inclusion initiatives, including BRG involvement, mentoring, etc.
+(For All MANAGERS, refer to the assigned Manager Performance Goal.
+Reflect how you demonstrated the Manager Capabilities in leading your team (including actively attracting, hiring and retaining diverse talent), and if a manager reports to you, how you held them accountable for demonstrating the Manager Capabilities.
+MANAGERS OF MANAGERS: When writing Manager Evaluations, include how the managers on your team demonstrated the Manager
+Capabilities.)
 
 TEAMWORK AND LEADERSHIP
 Foster a collaborative and inclusive environment that supports growth and development
@@ -134,6 +123,17 @@ Promotes Continuous Learning and Growth
 • Asks for and gives honest and constructive feedback across teams; seeks ways to continually develop self and supports others in their own development
 • Demonstrates an openness to feedback and willingness to learn from mistakes or when given guidance; aware of own impact on others to address own biases and those of others
 
+
+4 - Risk, Controls, and Conduct
+Exercise sound judgment; act with integrity; protect our company, clients and customers
+Note: VP and Below employees do not write Self-Evaluation commentary in this dimension. If a Code of Conduct Written Warning(s) was received throughout this performance year, factor into your self-evaluation.
+Managers: Select the appropriate Yes or No response to the question below which should be based on the firm's Performance Expectations for the employee's role.
+By selecting "No", you are confirming that the employee did not exhibit behaviors in line with the firm's Risk, Controls, and Conduct expectations on a significant matter and you are selecting the most appropriate reason.
+If the employee did not meet expectations for multiple reasons, note additional Risk, Controls, and Conduct expectations that the employee did not meet in the Overall Summary. If your employee received a Code of Conduct Written Warning throughout this performance year, you should factor into your rating decision (as appropriate) and include commentary addressing the issue raised. Note in the Overall Summary if there is anything to add. Standard text displays on Annual Review print view.
+Your response displays to the employee and should be noted in your performance message. Refer to the manager toolkit for guidance, particularly if there is a risk, controls, and conduct issue(s) or Code of Conduct Written Warning(s).
+Identifies, Escalates and Remediates Issues
+• Identifies concerns, escalates early and assists in mitigating risks in a timely manner to prevent recurrence
+Stakeholder refers to internal and external groups that functions like Risk, Compliance and Audit engage with to perform their role
 
 RISK, CONTROLS, AND CONDUCT
 Exercise sound judgment; act with integrity; protect our company, clients and customers Promotes a Robust Risk and Control Environment
