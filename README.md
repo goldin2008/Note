@@ -18,6 +18,52 @@ XXX's ability to communicate clearly and openly has been a cornerstone of our te
 For Managers: What are this colleague's management strengths and development areas?
 
 
+The 8 Manager Capabilities & Proficiency Levels
+1.SET CLEAR DIRECTION
+Communicate a clear vision and the direction to get there
+I speak with my team openly, honestly and positively so they know where they stand. 
+
+2.DRIVE PERFORMANCE
+Drive high performance
+I regularly check in and track progress, recognizing successes and mistakes in a constructive, timely way.
+
+3.BUILD TEAM
+Build a high-performing team
+I help my team build strong relationships with partners and each other to create unity and spark new ideas.
+I am self-aware, and I check myself and others for bias so I can model inclusivity for my team.
+I encourage my team to learn and try new things together so we can grow and continually improve.
+
+4.EMPOWER TEAM
+Empower the team to take ownership and deliver results
+I openly trust my team members to make key decisions so we can act quickly and deliver on our commitments.
+I recognize and reduce friction points and roadblocks so we have a clear path to success.
+I support a balance between speed of execution and the time we need to make thoughtful decisions.
+
+5.PRIORITIZE DIVERSITY, EQUITY & INCLUSION
+Make all team members feel welcome, equally valued and able to contribute
+• I build a culture of trust and create a safe environment so my team can share diverse perspectives.
+• I create awareness and accountability for inclusive behaviors so all can participate in the firm's success.
+• I prioritize diverse representation to help increase innovation and generate outstanding results.
+
+6.COACH FOR IMPACT
+Coach to help others learn, grow and achieve
+I actively listen to each team members to understand their unique experience, challenges and goals
+• I ask personalized, meaningful questions that help team members including managers- reflect, make a plan and take action.
+
+7.FOSTER FEEDBACK
+Foster feedback to help myself and others improve
+• I ask for real-time feedback from a broad range of individuals to get fair and balanced perspectives.
+• I listen and integrate feedback to develop myself and the team so together we can achieve stronger results.
+
+8.GUIDE CAREERS
+Guide and support career growth
+I collaborate with each team member to help them set and pursue career goals; I nurture ture leaders and develop talent.
+I guide each team member to develop the skills and capabilities they need to achieve their goals.
+I advocate for each team member and help them network and navigate the firm.
+• I distribute assignments and opportunities fairly so all team members can expand their talents.
+
+
+
 ### Travel
 Travel Plan in Portugal and Spain
 Days 1: Porto
