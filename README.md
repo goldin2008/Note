@@ -1,5 +1,17 @@
 End Year Evaluation
 
+In this year-end self-evaluation, I've highlighted my achievements and contributions across various facets of my role, demonstrating a consistent commitment to excellence and alignment with the firm's strategic priorities. I have proactively identified and addressed the needs of our clients, customers, and stakeholders, while fostering cross-team collaboration and adhering to firm priorities.
+
+During my rapid onboarding, I took on modeling responsibilities to ensure the readiness of our projects for deployment, and I engaged in rigorous engineering work to optimize our workflow. My diligence in aligning my work with our firm's strategic goals is reflected in projects such as "Access Insights" and "New Hire Onboarding," which are making substantial contributions to our efficiency and cost savings.
+
+I have been a vigilant steward of resources, eliminating bureaucracy and swiftly addressing issues as they arise. My efforts have led to process improvements that have enhanced our project quality and productivity.
+
+Disciplined meetings with clear agendas have been a hallmark of my communication style, ensuring productive discussions and efficient use of time.
+
+In conclusion, my year has been marked by a dedication to excellence, efficiency, and a firm commitment to aligning my work with our company's strategic priorities. I look forward to building on these achievements in the coming year and continuing to contribute to the growth and success of our team and the firm as a whole. Thank you for your continued support and guidance.
+
+
+
 How does this colleague deliver the goals of our team, business/function and the company? (e.g., thinks and acts strategically, drives results, innovates)
 XXX's insights and forward-thinking approach have allowed our team to navigate complex challenges and opportunities with clarity and efficiency. XXX's not only identified problems but have also provided innovative solutions, ensuring our DevOps processes align with our long-term business objectives. Whether it's improving deployment pipelines, automating critical processes, or optimizing our infrastructure, XXX's contributions have directly translated into time and cost savings for the firm. 
 
