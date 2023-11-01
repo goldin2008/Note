@@ -91,28 +91,52 @@ Deliver the goals of your team, business/function and the company
 • Identifies ways to improve processes/procedures to enhance quality and/or productivity
 • Runs disciplined meetings with a specific purpose/agenda, the right individuals and clear outcomes/next steps
 
+I joined the team in May, 2023. During my onboarding, I get familiar with the tools and platform in the firm as quickly as possible. Since some team member left the team pretty soon after I joined the team, I took over the responsibility of the modeling and made it ready for deployment. Meanwhile, I also spent time and effort in engineering such as using postman, EMR cluster to build model and generate inferences in DEV, UAT and PROD environment and document the details about implementation and model results analysis to make other team members to understand the entire workflow easily.
+
+
 Aligning Priorities with Business Strategy:
-Throughout the year, I have diligently aligned my work priorities with the broader business strategy. I have consistently stayed informed about the company's goals and objectives, ensuring that my data science and machine learning projects are well-aligned with these strategic goals. The access insights project will improve privileged access management across the firm, while new hire onboarding project makes new hire over the company easier to begin their journey as easily and quickly as possible. These projects will save a lot of time and effort in reviewing and managing access and reduce the cost in cloud storage.
+From I joined the team, I have diligently aligned my work priorities with the broader business strategy. I have consistently stayed informed about the firm's goals and objectives, ensuring that our data science and machine learning projects are well-aligned with these strategic goals. The access insights project will improve privileged access management across the firm, while new hire onboarding project makes new hire over the company easier to begin their journey as easily and quickly as possible. These projects can save a lot of time and effort in reviewing and managing access and reduce the cost in cloud storage, which will not only saved the company valuable resources but also ensured that we use our assets efficiently.
+
+Managing Costs and Resources Effectively:
+
 
 Prioritizing and Delivering Results:
 I have prioritized my responsibilities effectively and delivered results that have contributed to achieving our business objectives. This includes developing and implementing machine learning models that have improved decision-making, customer experiences, and operational efficiency, directly impacting the bottom line.
-I prioritized the new hire onboarding project to optimize our onboarding process by using machine learning models.
+I prioritized the knowledge transfer when team member left during my onboarding to make sure there is no gap or blocker in our road to the production. I spent a lot of time and effort, even in my spare time, to make our project go to production in a relatively short term. So far, the access insights project already went to production and the new hire onboarding project is during the good progress.
+
+
 
 Eliminating Bureaucracy and Issue Identification:
 When faced with obstacles, I have been proactive in identifying issues and escalating them as needed. This approach has been vital in resolving challenges swiftly, thus preventing potential bottlenecks and ensuring the smooth progress of our projects.
-During a critical project, I identified a data quality issue that had the potential to undermine the accuracy of our machine learning models. I promptly escalated the issue, leading to a resolution that prevented significant data-related errors in our predictions. The swift resolution of the data quality issue prevented potential losses and maintained the trustworthiness of our models.
+During the backlog refinement and sprint planning meetings, I identified a data quality issue that had the potential to undermine the accuracy of our machine learning models. I promptly escalated the issue, leading to a resolution that prevented significant data-related errors in our predictions. The swift resolution of the data quality issue prevented potential losses and maintained the trustworthiness of our models.
 
-Managing Costs and Resources Effectively:
-I have managed costs and resources effectively by optimizing resource allocation and proposing cost-saving measures. This has not only saved the company valuable resources but also ensured that we use our assets efficiently.
 
 Process Improvement:
-I have consistently identified opportunities to enhance the quality and productivity of our projects. By implementing process improvements, we have achieved higher quality outcomes and increased efficiency in our data-driven initiatives.
-I identified a bottleneck in our data preprocessing pipeline that was slowing down model development. By optimizing this process, we reduced the time required for model training by 30%, increasing our productivity and enabling faster model deployment. The time saved in model training facilitated quicker decision-making and model deployment.
+I have consistently identified opportunities to enhance the quality and productivity of our projects. 
+I identified a model and metrics selection issue that will affect the model performance. By sharing another advanced model option which could handle with more informative data, we can make model performance better. The advacned model can also build our team's reputation across the firm and provide our solution to more potential internal users.
 
 Running Disciplined Meetings:
 I have conducted disciplined meetings with clear purposes and agendas, involving the right individuals. These meetings have been highly productive, resulting in clear outcomes and next steps, which has minimized wasted time and improved collaboration within the team.
-I consistently organized and led project meetings with a clear agenda and specific goals. This disciplined approach led to more efficient discussions, reduced meeting times by 20%, and allowed the team to focus on implementation.
+When we encountered the OmniAI platform issue, I organized and led meetings with a clear agenda and specific goals. This disciplined approach led to more efficient discussions, reduced meeting times, and allowed the team to focus on implementation. This allows our team to proactively plan and mitigate the risk in model development.
 
+
+Rapid Onboarding and Taking on Modeling Responsibilities:
+During my onboarding, I quickly familiarized myself with the firm's tools and platforms. Given the unexpected departure of team members soon after my arrival, I took on the critical responsibility of modeling, ensuring its readiness for deployment. Simultaneously, I invested time and effort in engineering tasks, leveraging tools like Postman and EMR clusters to build and deploy models across DEV, UAT, and PROD environments. I also meticulously documented the implementation details and model results analysis to facilitate easy understanding for other team members.
+
+Aligning Priorities with Business Strategy:
+Since my arrival, I've diligently aligned my work priorities with the broader business strategy. This commitment is evident in projects such as "Access Insights," which enhances privileged access management, and the "New Hire Onboarding" project, streamlining the onboarding process for new hires. These projects not only improve operational efficiency but also contribute to significant cost savings in cloud storage, optimizing our resource utilization.
+
+Managing Costs and Resources Effectively:
+My proactive approach to knowledge transfer and relentless efforts in my spare time have expedited project deployment. "Access Insights" has successfully transitioned to production, and the "New Hire Onboarding" project is making substantial progress, ensuring swift achievement of our objectives.
+
+Eliminating Bureaucracy and Issue Identification:
+Identifying and addressing data quality issues during backlog refinement and sprint planning meetings has been a priority. These proactive efforts have maintained the trustworthiness of our models and prevented potential losses, reinforcing our commitment to quality and reliability.
+
+Process Improvement:
+I consistently seek opportunities to enhance the quality and productivity of our projects. My efforts in identifying model and metrics selection issues and introducing advanced models have not only improved model performance but also enhanced our team's reputation within the firm, opening doors to more potential internal users.
+
+Running Disciplined Meetings:
+In the face of challenges, I have consistently organized and led meetings with clear purposes and agendas. These disciplined meetings have resulted in more efficient discussions, reduced meeting times, and an increased focus on implementation. This approach has allowed our team to proactively address issues and mitigate risks in model development.
 
 2 - Client / Customer / Stakeholder
 Identify and deliver appropriate solutions that address the needs of clients / customers/ stakeholders
@@ -124,13 +148,23 @@ Identify and deliver appropriate solutions that address the needs of clients/cus
 • Collaborates across teams to leverage expertise, products and services to meet client/customer/stakeholder needs
 • Delivers solutions to meet client/customer/stakeholder needs which are aligned with firm priorities
 
-Anticipating and Addressing Needs: Throughout the year, I have consistently demonstrated my ability to anticipate and promptly address the needs of our clients, customers, and stakeholders. By staying attuned to their requirements and proactively seeking feedback, I have been able to deliver solutions that are tailored to their expectations.
+Anticipating and Addressing Needs: I have consistently demonstrated my ability to anticipate and promptly address the needs of our clients, customers, and stakeholders. 
+In the access insights project, I anticipated the needs from our internal user and discussed options with team members and manager to address customers' needs and improve the user experience.
 
-Cross-Team Collaboration: I have actively collaborated across teams to leverage expertise, products, and services that are essential in meeting client, customer, and stakeholder needs. By working closely with colleagues from various departments, I have ensured that we can collectively provide well-rounded and comprehensive solutions.
+Cross-Team Collaboration: I have actively collaborated across teams to leverage expertise, products, and services that are essential in meeting client, customer, and stakeholder needs. By working closely with colleagues from HR DS team, I have done a lot of research and analysis on their model and provide my findings, concerns and suggestions to ensure that we can collectively provide well-rounded and comprehensive solutions.
 
 Alignment with Firm Priorities: My solutions have consistently aligned with firm priorities. I have made it a priority to understand our company's strategic goals and ensure that the projects and solutions I develop directly support these objectives. This alignment has been critical in delivering value to our clients, customers, and stakeholders that is in line with our firm's overarching mission.
-In response to the firm's strategic priority of sustainability, I led the development of a machine learning system that optimized energy consumption in our production facilities. This solution aligned with our firm's commitment to sustainability and reduced energy costs by 20%.
+In response to the firm's strategic priority of sustainability, I led the development of a machine learning model that optimized privilleged access management. This solution aligned with our firm's commitment to sustainability and reduced costs in cloud compute and storage.
 
+
+Anticipating and Addressing Needs:
+My consistent ability to anticipate and promptly address the needs of our clients, customers, and stakeholders has been a cornerstone of my contributions. In the "Access Insights" project, I proactively identified and addressed the needs of our internal users. Engaging in thoughtful discussions with my team members and our manager, we explored various options to cater to our customers' requirements and enhance the overall user experience. This proactive approach has not only improved user satisfaction but also reinforced our project's success.
+
+Cross-Team Collaboration:
+I have been a proactive advocate for cross-team collaboration, actively engaging with colleagues from the HR Data Science team to leverage their expertise, products, and services. I've invested significant time and effort into researching and analyzing their models, and my findings, concerns, and suggestions have played a pivotal role in shaping our collective solutions. This collaboration ensures that our projects are comprehensive and well-rounded, enriched by diverse perspectives and expertise.
+
+Alignment with Firm Priorities:
+My solutions have consistently aligned with our firm's strategic priorities. I have made it a personal mission to understand our company's goals and to ensure that the projects and solutions I lead are in direct support of these objectives. This alignment has been paramount in delivering value to our clients, customers, and stakeholders that resonates with our firm's overarching mission. In direct response to the firm's strategic priority of sustainability, I spearheaded the development of a machine learning model that optimized privileged access management. This solution not only upheld our firm's sustainability commitment but also resulted in substantial cost reductions in cloud compute and storage, contributing to our financial well-being.
 
 3 - Teamwork and Leadership
 Foster a collaborative and inclusive environment that supports growth and development
@@ -154,12 +188,12 @@ Promotes Continuous Learning and Growth
 • Demonstrates an openness to feedback and willingness to learn from mistakes or when given guidance; aware of own impact on others to address own biases and those of others
 
 Establishing Trust and Collaboration:
-I initiated a cross-functional project to improve customer engagement by using machine learning. By collaborating with teams from marketing, sales, and customer support, we successfully implemented a recommendation system that increased customer satisfaction by 20%.
-I have consistently worked to establish trust among team members and create inclusive environments where all voices are heard and valued. By cultivating collaborative partnerships across various teams, I have fostered an atmosphere of cooperation and mutual support.
+I have consistently worked to establish trust among team members and create inclusive environments where all voices are heard and valued. By cultivating collaborative partnership across the team, I have fostered an atmosphere of cooperation and mutual support. I led model development in project, meanwhile I collaborated with Shakeel, Nelisa and Michael to contribute to engineering work. I partnered with the new PO in delivery of any Jira's I have within the sprint and shared my knowledge about ML and onboarding experience with him. I actively provide KTs and Demos and answer questions to help team members and customers to understand our project's objective and advantage.
 
 Effective Communication:
-In a complex project meeting, I presented our data science findings to a non-technical executive team. I adapted my message to their level of understanding, facilitating a productive discussion that led to unanimous approval for project funding.
-I have adapted my communication style to different audiences, ensuring that messages are clear and accessible to all. I have also actively encouraged diverse perspectives and constructive debate, which has led to more inclusive decision-making processes.
+In a complex project meeting, I presented our data science findings to a non-technical executive team. I adapted my message to their level of understanding, facilitating a productive discussion.
+I have adapted my communication style to different audiences, ensuring that messages are clear and accessible to all. I partnered with new PO, discussed the new hire onboarding work and explained my plan and stories to him without getting too much into the technical details.
+I have also actively encouraged diverse perspectives and constructive debate, which has led to more inclusive decision-making processes.
 
 Advocating for Diversity and Inclusion:
 I actively participated in our firm's diversity and inclusion committee, which organized a series of workshops and events to raise awareness and educate employees. 
@@ -169,12 +203,33 @@ Refining Priorities and Developmental Goals:
 I have maintained regular check-ins with my manager to refine my priorities and developmental goals. This ongoing dialogue has helped me stay aligned with the changing needs of the organization and my own growth.
 
 Challenging Assumptions and Providing Feedback:
-During a project review, I challenged the assumption that a particular approach was the best one. Through open and constructive debate, we discovered a more efficient method that saved the team three months of work.
-I have actively spoken up and challenged assumptions when necessary to contribute to improving the firm's culture. Additionally, I have asked for and given honest and constructive feedback across teams, seeking ways to continually develop myself and supporting others in their development.
+I have actively spoken up and challenged assumptions when necessary to contribute to improving the firm's culture. Additionally, I have asked for and given honest and constructive feedback across the team, seeking ways to continually develop myself and supporting others in their development.
+During some refinement meetings, I challenged the assumption that a particular approach was the best one. Through open and constructive debate, I shared a better method that increases model performance. I also take the tradeoff into account, and make an agreement on results delivery speed and advanced solution.
 
 Openness to Feedback and Learning:
-I have consistently demonstrated an openness to feedback and a willingness to learn from mistakes or guidance. I am aware of my own impact on others and have made efforts to address my own biases and those of others to create a more inclusive and equitable environment.
+I have consistently demonstrated an openness to feedback and a willingness to learn from mistakes or guidance. I am aware of my own impact on others and have made efforts to address my own biases and those of others to create a more inclusive and equitable environment. I check in with team members and manager regularly to learn and get feedback from them to make myself better. I also seek for innovation opportunities in the firm like collaboration with other teams and LLM use cases to make our team open to more intereting and cutting edge use cases.
 
+
+
+
+Establishing Trust and Collaboration:
+I've been steadfast in building trust and fostering collaboration within our team. I've led the model development in our projects, working closely with Shakeel, Nelisa, and Michael on engineering tasks. In addition, I've established a productive partnership with our new Product Owner (PO), offering guidance on Jira management and sharing my expertise on machine learning and onboarding. I've been a strong advocate for knowledge transfer (KT) and conducted regular demos, ensuring our team and customers fully grasp the project's objectives and advantages.
+
+Effective Communication:
+I've consistently tailored my communication style to suit diverse audiences, ensuring clarity and accessibility to all team members. An example of this was during a complex project meeting, where I effectively presented our data science findings to non-technical executives, sparking a productive discussion. I've also maintained open channels of communication with our new PO, discussing onboarding processes and project plans without delving too deeply into technical jargon. My commitment to encouraging diverse perspectives and constructive debates has led to more inclusive decision-making processes, ultimately enriching our team dynamics.
+
+Advocating for Diversity and Inclusion:
+I actively participated in our firm's diversity and inclusion committee, which organized a series of workshops and events to raise awareness and educate employees. 
+I have consistently advocated for and valued a culture of transparency, diversity, inclusion, equity, and respect among teams. I have actively participated in diversity initiatives and promoted the firm's commitment to diversity, equity, and inclusion.
+
+Refining Priorities and Developmental Goals:
+I've maintained a consistent dialogue with my manager to refine my priorities and developmental goals. This ongoing communication has allowed me to remain aligned with the changing needs of our organization, ensuring my professional growth is in harmony with the company's evolving vision.
+
+Challenging Assumptions and Providing Feedback:
+I've actively voiced my perspective and challenged assumptions when necessary, making meaningful contributions to improving our firm's culture. During refinement meetings, I offered alternative approaches that have enhanced model performance and speed of results delivery. I've been diligent in considering trade-offs and reaching agreements that benefit our projects and the team's progress.
+
+Openness to Feedback and Learning:
+I've consistently demonstrated my openness to feedback and a willingness to learn from mistakes or guidance. I regularly seek input from team members and my manager to refine my skills and contribute to a more inclusive and equitable working environment. I've actively explored innovation opportunities, including collaborating with other teams and exploring cutting-edge use cases like LLM use cases, to keep our team open to exciting and forward-thinking initiatives.
 
 
 4 - Risk, Controls, and Conduct
