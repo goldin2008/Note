@@ -10,7 +10,7 @@ Disciplined meetings with clear agendas have been a hallmark of my communication
 
 In conclusion, my year has been marked by a dedication to excellence, efficiency, and a firm commitment to aligning my work with our company's strategic priorities. I look forward to building on these achievements in the coming year and continuing to contribute to the growth and success of our team and the firm as a whole. Thank you for your continued support and guidance.
 
-
+Feedback for others:
 How does this colleague deliver the goals of our team, business/function and the company? (e.g., thinks and acts strategically, drives results, innovates)
 XXX's insights and forward-thinking approach have allowed our team to navigate complex challenges and opportunities with clarity and efficiency. XXX's not only identified problems but have also provided innovative solutions, ensuring our DevOps processes align with our long-term business objectives. Whether it's improving deployment pipelines, automating critical processes, or optimizing our infrastructure, XXX's contributions have directly translated into time and cost savings for the firm. 
 
