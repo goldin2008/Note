@@ -9,9 +9,16 @@ This discussion focuses on the interviewee’s ability to solve an end-to-end ma
 <!-- <img src="pic/mlq.png" width=50% height=50%>(pic/mlq.png) -->
 <img src="pic/mlq.png" width=50% height=50%>
 
+#### Meta
+detect fraud information
+我感觉和面试官不断clarify很重要。每一个小的定义和他的hint，一定不要我自己觉得我明白了，而是要问对方是不是这个意思。
+我用alex xu和youtube的shusenwang的那个课准备的。
+
+
+
 ### Template/Framework
 machine learning design的问题一般都是问设计一个推荐系统，广告排序，还有一般的监督学习的系统。所以准备起来要了解各类的推荐系统的优缺点，以及最新的embeding的方法, 可以看一下这个博客
-> https://medium.com/the-graph/applying-deep-learning-to-related-pins-a6fee3c92f5e。 
+> https://medium.com/the-graph/applying-deep-learning-to-related-pins-a6fee3c92f5e。
 现在为止，面的两家pinterest和facebook都是围绕着推荐系统展开的，中间会问到各种小问题，比如feature提取，model不够好怎么办。
 另外ML的问题，建议最好按照sd一样，按照逻辑点进行回答。
 1. 厘清问题，该问题属于什么类型的machine learning问题，比如监督性学习，比如推荐系统。
@@ -54,16 +61,16 @@ As we work on a machine learning-based system, our goal is generally to improve 
   - Evaluation time: What are the Service level agreement(SLA) that we have to meet while serving the model and capacity needs?
 `Relatively simiple algorithm/model`:
 We need to consider the performance and capacity along with optimization for the ML task at hand, i.e., measure the complexity of the ML system at the training and evaluation time and use it in the decision process of building our ML system architecture as well as in the selection of the ML modeling technique.
-  linear regression (single-layer neural network-based) algorithm 
-  < Tree-based algorithms 
+  linear regression (single-layer neural network-based) algorithm
+  < Tree-based algorithms
   < deep neural network
   Performance based SLA ensures that we return the results back within a given time frame (e.g. 500ms) for 99% of queries. Capacity refers to the load that our system can handle, e.g., the system can support 1000 QPS (queries per second).
 `Add shards/More machines`:
 If we evaluate every document using a relatively fast model such as tree-based or linear regression and it takes 1\mu
 μs, our simple model would still take 100s to run for 100 million documents that matched the query “computer science”. This is where distributed systems come in handy; we will distribute the load of a single query among multiple shards, e.g., we can divide the load among 1000 machines and can still execute our fast model on 100 million documents in 100ms (100s/1000).
-a tree-based or linear regression takes 1μs for an exmaple -> 100s for 100million exmaples -> add 1000 machines takes 100ms(100s/1000) 
+a tree-based or linear regression takes 1μs for an exmaple -> 100s for 100million exmaples -> add 1000 machines takes 100ms(100s/1000)
 deep learning model for search ranking takes 1ms to evaluate an example -> add 1000 shards will still take 100s for 100million (1ms * 100mill/1000) -> continue to add more shards and bring the number down -> using a funnel-based approach when designing ML systems for performance and limited capacity
-`Layered/funnel based modeling approach`: 
+`Layered/funnel based modeling approach`:
 To manage both the performance and capacity of a system, one reasonable approach that’s commonly used is to start with a relatively fast model when you have the most number of documents e.g. 100 million documents in case of the query “computer science” for search. In every later stage, we continue to increase the complexity (i.e. more optimized model in prediction) and execution time but now the model needs to run on a reduce number of documents e.g. our first stage could use a linear model and final stage can use a deep neural network. If we apply deep neural network for only top 500 documents, with 1ms evaluation time per document, we would need 500ms on a single machine. With 5 shards we can do it in around 100ms.
 
 3. `Defining the metrics of the problem`
@@ -149,10 +156,10 @@ There are two main phases in terms of the development of a model that we will go
   - `Deploying and debugging v1 model`
     Some ML-based systems only operate in an offline setting, for example, detect objects from a large set of images. But, most systems have an online component as well, for example, building a search ranking ML model will have to run online to service incoming queries and ranking the documents that match the query. In our first attempt to take the model online, i.e., enable live traffic, might not work as expected and results don’t look as good as we anticipated offline. Let’s look at a few failure scenarios that can happen at this stage and how to debug them.
     - `Change in feature distribution`
-      The change in the feature distribution of training and evaluation set can negatively affect the model performance. Let’s consider an example of an Entity linking system that is trained using a readily available Wikipedia dataset. As we start using the system for real traffic, the traffic that we are now getting for finding entities is a mix of Wikipedia articles as well as research papers. Given the model wasn’t trained on that data, its feature distribution would be a lot different than what it was trained on. Hence it is not performing as well on the research articles entity detection. 
+      The change in the feature distribution of training and evaluation set can negatively affect the model performance. Let’s consider an example of an Entity linking system that is trained using a readily available Wikipedia dataset. As we start using the system for real traffic, the traffic that we are now getting for finding entities is a mix of Wikipedia articles as well as research papers. Given the model wasn’t trained on that data, its feature distribution would be a lot different than what it was trained on. Hence it is not performing as well on the research articles entity detection.
       Another scenario could be a significant change in incoming traffic because of seasonality. Let’s consider an example of a search system trained using data for the last 2 weeks of December, i.e., mostly holiday traffic. If we deploy this system in January, the queries that it will see will be vastly different than what it was trained on and hence not performing as well as we observed in our offline validation.
     - `Feature logging issues`
-      When the model is trained offline, there is an assumption that features of the model generated offline would exactly be the same when the model is taken online. However, this might not be true as the way we generated features for our online system might not exactly be the same. It’s a common practice to append features offline to our training data for offline training and then add them later to the online model serving part. So, if the model doesn’t perform as well as we anticipated online, it would be good to see if feature generation logic is the same for offline training as well as online serving part of model evaluation. 
+      When the model is trained offline, there is an assumption that features of the model generated offline would exactly be the same when the model is taken online. However, this might not be true as the way we generated features for our online system might not exactly be the same. It’s a common practice to append features offline to our training data for offline training and then add them later to the online model serving part. So, if the model doesn’t perform as well as we anticipated online, it would be good to see if feature generation logic is the same for offline training as well as online serving part of model evaluation.
       Suppose we build an ads click prediction model. The model is trained on historical ad engagement. We then deploy it to predict the ads engagement rate. Now the assumption is that the features generated for the model offline would exactly be the same for run-time evaluation. Let’s assume that we have one important feature/signal for our model that’s based on historical advertiser ad impressions. During training, we compute this feature by using the last 7 days’ impression. But, the logic to compute this feature at model evaluation time uses the last 30 days of data to compute advertiser impressions. Because of this feature computed differently at training time and evaluation time, it will result in the model not performing well during online serving. It would be worth comparing the features used for training and evaluation to see if there is any such discrepancy.
     - `Overfitting`
       Overfitting happens when a model learns the intrinsic details in the training data to the extent that it negatively impacts the performance of the model on new or unseen data.
@@ -244,7 +251,7 @@ This is just an example configuration, and it’s important to point out that th
 
 Query rewriting -> Spell checker -> Query expansion/Query relaxation -> Query understanding -> Document selection(100k) -> Ranker(500) -> Blender -> Training data generation
 
-Ranker: 
+Ranker:
 Document Selection (100k out of 100m) ->
 Ranker Stage 1 (500 out of 100k) recall of the top five to ten relevant documents (A relatively less complex linear algorithm, like logistic regression or small MART(Multiple additive regression trees) model) pointwise approach ->
 Ranker Stage 2 (500 in correct order) precision of the top five to ten relevant documents (LambdaMART is a variation of MART where we change the objective to improve pairwise ranking, LambdaRank is a neural network-based approach utilizing pairwise loss to rank the documents.) pairwise learning algorithms
@@ -259,7 +266,7 @@ We can calculate the NDCG score of the ranked results to compare the performance
 The above example configuration assumes that you are first selecting one-hundred thousand documents for the searcher’s query from the index, then using two-stage ranking, with the first one reducing from one-hundred thousand to five-hundred documents and the second stage is then ranking these five-hundred documents. The blender can then blend results from different search verticals, and the filter will further screen irrelevant or offensive results to get good user engagement.
 
 > Clarifying questions
-`Problem scope`: 
+`Problem scope`:
 `Scale`: How many websites exist that you want to enable through this search engine? How many requests per second do you anticipate to handle? the search engine is getting around 10K queries per second (QPS).
 Personalization: have access to their profile as well as their historical search data
 
@@ -449,7 +456,7 @@ Sparse features
   The users’ online engagement with Tweets can give us positive and negative training examples. For instance, if you are training a single model to predict user engagement, then all the Tweets that received user engagement would be labeled as positive training examples. Similarly, the Tweets that only have impressions would be labeled as negative training examples.
 
   Impression: If a Tweet is displayed on a user’s Twitter feed, it counts as an impression. It is not necessary that the user reads it or engages with it, scrolling past it also counts as an impression.
-  
+
   Given that the model’s scores are only going to be used to rank Tweets among themselves, poor model calibration doesn’t matter much in this scenario. We will discuss this in the ads system chapter, where calibrated scores are important, and we need to be mindful of such a sampling technique.
 
   - Balancing positive and negative training examples
@@ -464,7 +471,7 @@ Sparse features
 
   - `MART`: multiple additive regression trees (Boosted Decision Trees and Random Forest)
   `Pros`:
-  Trees are inherently able to utilize non-linear relations between features that aren’t readily available to logistic regression. 
+  Trees are inherently able to utilize non-linear relations between features that aren’t readily available to logistic regression.
   Tree-based models also don’t require a large amount of data as they are able to generalize well quickly. So, a few million examples should be good enough to give us an optimized model.
   Cons:
   To Do
@@ -1090,14 +1097,14 @@ print(check_ordering(list(word), ordering))
 How would you build, train, and deploy a system to detect if multimedia and/or ads contents being posted violate terms or contains offensive materials?
 How you test your ML models for production scale?
 
-Variation of the number of islands LC question. You have a House, Well & Tree arranged in a large grid with empty spaces in between to show 
+Variation of the number of islands LC question. You have a House, Well & Tree arranged in a large grid with empty spaces in between to show
 where you can go. How will you go from house to nearest well without hitting a tree? Assume you can only go up.down/left/right and not diagonally and cannot hit a tree else you backtrack.  
 Given an infinite chessboard, find shortest distance for a knight to move from position A to position B  
 given a binary image, count the number of 4-directional connected components.  
 Serialize and de-serialize a binary tree  
-Given two sparse matrices, how would you compute the dot product? 
-Given a DAG, write a function to return the length of the longest path. 
-Given a tree, write a function to return the sum of the max-sum path which goes through the root node. 
+Given two sparse matrices, how would you compute the dot product?
+Given a DAG, write a function to return the length of the longest path.
+Given a tree, write a function to return the sum of the max-sum path which goes through the root node.
 implement functions of constructing binary tree
 One problem is implement a trie tree.
 

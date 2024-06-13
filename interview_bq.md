@@ -41,16 +41,14 @@ Balance modeling and engineering.
 16. Think Big
 
 
+### Meta
+BQ：conflict， feedback， initiatives
 
 
 
 ### JPMC
 BQ: Describe a time when you have worked as part of a successful team. What role did you play and what were the challenges you encountered?
 Discuss a time in which you were a member of a successful team. What was your role and what were the challenges that you faced?
-
-
-### Meta
-
 
 
 ### 15 top behavioral interview questions
