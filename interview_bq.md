@@ -5,41 +5,56 @@
 
 #### Amazon LP
 1. Earn Trust 不自傲自满,自我批判,敢于承认错误
+Leaders listen attentively, speak candidly, and treat others respectfully. They are vocally self-critical, even when doing so is awkward or embarrassing. Leaders do not believe their or their team’s body odor smells of perfume. They benchmark themselves and their teams against the best.
 Earn trust可以通过很多不同的方式: Fail了勇于承担错误和责任, 接受来自同事老板的批评建议努力改进, 帮助同事(完成一项工作, 或者帮助改善工作表现)，勇于提出建议和坚持自己意见改善组里的效率, 衡量利弊后顺从组里其他人或者多数人的意见，加入一个新组但迅速通过工作获得信任。所以应该按问题准备故事, 而不是按照LP。上面的问题同样的color code其实可以用同一个故事来回答, 当然你有很多经验apply的话一类问题准备多个故事当然最好, 因为他们问的问题很多overlap, 能给每个人讲不一样的故事当然最好咯。
 
 2. Dive Deep 愿意刨根问底,有能力troubleshoot到根本问题,解决问题
+Leaders operate at all levels, stay connected to the details, audit frequently, and are skeptical when metrics and anecdote differ. No task is beneath them.
 CNN, RNN, LSTM to improve NLP model in Call Center.
 
 3. Customer Obsession 顾客至上, do the best for customers and the rest will come
+Leaders start with the customer and work backwards. They work vigorously to earn and keep customer trust. Although leaders pay attention to competitors, they obsess over customers.
 Fraud Risk Model to improve customer experience. make customer life easier
 
 4. Bias for Action 速度很重要, 数据不足的时候，衡量利弊，想好backup plan，敢于冒险
+Speed matters in business. Many decisions and actions are reversible and do not need extensive study. We value calculated risk taking.
 5. Invent and Simplify 创新,简化, 多research借鉴别人已有的方法提高效率也很好
+Leaders expect and require innovation and invention from their teams and always find ways to simplify. They are externally aware, look for new ideas from everywhere, and are not limited by “not invented here.” As we do new things, we accept that we may be misunderstood for long periods of time.
 Built pipeline to simplify retrain and refit cycle. solve complex problem in simple way
 
 6. Are right, A Lot 大多数时候正确，努力证明自己正确, 说服别人
+Leaders are right a lot. They have strong judgment and good instincts. They seek diverse perspectives and work to disconfirm their beliefs.
 7. Have Backbone; Disagree and Commit 不趋附大众,敢于提出自己的意见
-Use ML based solution to replace current heuristc.
+Leaders are obligated to respectfully challenge decisions when they disagree, even when doing so is uncomfortable or exhausting. Leaders have conviction and are tenacious. They do not compromise for the sake of social cohesion. Once a decision is determined, they commit wholly.
+Use ML based solution to replace current heuristic.
 
 8. Deliver Results 排除万难,最后完成任务, 或者最终失败学到了什么
+Leaders focus on the key inputs for their business and deliver them with the right quality and in a timely fashion. Despite setbacks, they rise to the occasion and never settle.
 我的项目launch A/B test发现performance不好。然后我dive deep into it，首先check 有没有engineering bugs；然后check 模型performance是不是和offline metrics match；然后check feature distribution有没有shift。然后我发现了问题所在。然后我做了这几个change，然后重新上线了，performance improve x%
 显示出一个系统性逻辑性的解决问题方法。而高级的回答显示出了面试者quantitative and critical thinking的mindset
 
 9. Insist on the Highest Standards 不妥协自己的高要求
+Leaders have relentlessly high standards — many people may think these standards are unreasonably high. Leaders are continually raising the bar and drive their teams to deliver high quality products, services, and processes. Leaders ensure that defects do not get sent down the line and that problems are fixed so they stay fixed.
 In DS team, insist the code quality and standards even it will take some time to implement and trade-off balance.
 
 10. Learn and Be Curious 学习工作外的事情
+Leaders are never done learning and always seek to improve themselves. They are curious about new possibilities and act to explore them.
 Learn a lot engineering and cloud knowledge to understand the entire ml life cycle and make it easier to collaborate with tech and business teams.
 
 11. Ownership 不只顾着自己的一亩三分地, 为了长期利益履行工作分外的职责; sacrifice short-term profit for long-term gain
+Leaders are owners. They think long term and don’t sacrifice long-term value for short-term results. They act on behalf of the entire company, beyond just their own team. They never say “that’s not my job.”
 Balance modeling and engineering.
 
 12. Frugality
+Accomplish more with less. Constraints breed resourcefulness, self-sufficiency, and invention. There are no extra points for growing headcount, budget size, or fixed expense.
 13. Strive to be Earth's Best Employer
+Leaders work every day to create a safer, more productive, higher performing, more diverse, and more just work environment. They lead with empathy, have fun at work, and make it easy for others to have fun. Leaders ask themselves: Are my fellow employees growing? Are they empowered? Are they ready for what’s next? Leaders have a vision for and commitment to their employees’ personal success, whether that be at Amazon or elsewhere.
 14. Success and Scale Bring Broad Responsibility
+We started in a garage, but we’re not there anymore. We are big, we impact the world, and we are far from perfect. We must be humble and thoughtful about even the secondary effects of our actions. Our local communities, planet, and future generations need us to be better every day. We must begin each day with a determination to make better, do better, and be better for our customers, our employees, our partners, and the world at large. And we must end every day knowing we can do even more tomorrow. Leaders create more than they consume and always leave things better than how they found them.
 15. Hire and Develop the Best
+Leaders raise the performance bar with every hire and promotion. They recognize exceptional talent, and willingly move them throughout the organization. Leaders develop leaders and take seriously their role in coaching others. We work on behalf of our people to invent mechanisms for development like Career Choice.
 16. Think Big
-
+Thinking small is a self-fulfilling prophecy. Leaders create and communicate a bold direction that inspires results. They think differently and look around corners for ways to serve customers.
 
 ### Meta
 BQ：conflict， feedback， initiatives
