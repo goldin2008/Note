@@ -14,6 +14,16 @@ detect fraud information
 我感觉和面试官不断clarify很重要。每一个小的定义和他的hint，一定不要我自己觉得我明白了，而是要问对方是不是这个意思。
 我用alex xu和youtube的shusenwang的那个课准备的。
 
+设计一个live comment system for live streaming apps such as YouTube. 感觉system design 就是这样，一问细节就能看出来你的实力。deep dive 可能看面试官的背景和偏好，我的问了how are data stored cross regions? how were data synced cross regions? Can US users sees comments from European users? how to handle peak scenario, such as some live stream event?
+Live comment
+* Leetcode coding contest website
+* Presence indicator
+* Ins bidding
+* News feed
+* Dropbox
+* Ads click aggregation
+* Proximity
+* Youtube
 
 
 ### Template/Framework
