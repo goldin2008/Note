@@ -20,7 +20,7 @@ Fraud Risk Model to improve customer experience. make customer life easier
 Speed matters in business. Many decisions and actions are reversible and do not need extensive study. We value calculated risk taking.
 5. Invent and Simplify 创新,简化, 多research借鉴别人已有的方法提高效率也很好
 Leaders expect and require innovation and invention from their teams and always find ways to simplify. They are externally aware, look for new ideas from everywhere, and are not limited by “not invented here.” As we do new things, we accept that we may be misunderstood for long periods of time.
-Built pipeline to simplify retrain and refit cycle. solve complex problem in simple way
+Built pipeline to simplify retrain and refit cycle. solve complex problem in a simple way
 
 6. Are right, A Lot 大多数时候正确，努力证明自己正确, 说服别人
 Leaders are right a lot. They have strong judgment and good instincts. They seek diverse perspectives and work to disconfirm their beliefs.
@@ -39,7 +39,7 @@ In DS team, insist the code quality and standards even it will take some time to
 
 10. Learn and Be Curious 学习工作外的事情
 Leaders are never done learning and always seek to improve themselves. They are curious about new possibilities and act to explore them.
-Learn a lot engineering and cloud knowledge to understand the entire ml life cycle and make it easier to collaborate with tech and business teams.
+Learn a lot engineering and cloud knowledge to understand the entire ml life cycle and make it easier to collaborate with tech and business teams. Study and get AWS solution architecture and ML certificates.
 
 11. Ownership 不只顾着自己的一亩三分地, 为了长期利益履行工作分外的职责; sacrifice short-term profit for long-term gain
 Leaders are owners. They think long term and don’t sacrifice long-term value for short-term results. They act on behalf of the entire company, beyond just their own team. They never say “that’s not my job.”
