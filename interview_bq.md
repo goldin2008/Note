@@ -60,7 +60,6 @@ Thinking small is a self-fulfilling prophecy. Leaders create and communicate a b
 BQ：conflict， feedback， initiatives
 
 
-
 ### JPMC
 BQ: Describe a time when you have worked as part of a successful team. What role did you play and what were the challenges you encountered?
 
