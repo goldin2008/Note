@@ -22,6 +22,26 @@ FastAPI is a modern, fast, and high-performance web framework for building APIs 
   - Is not well-optimized for running ML models.
   - Struggles with handling multiple ML requests simultaneously.
 
+FLASK
+
+Flask is a Python-based framework that has become a popular choice for building small to medium-sized web applications as it is designed to be simple and flexible.
+
+- Features:
+  - Lightweight and flexible: it is highly customizable and can be used for a wide range of applications.
+  - Built-in development server and debugger: makes it easy to test and debug your application.
+  - Extensible through a wide range of plugins and extensions: they can be used to extend the functionality of the framework.
+  - Supports various templating engines: it will be easy to render dynamic content in your application.
+- Pros:
+  - Easy to use: has simple API and documentation.
+  - Flexible and customizable: suitable for a wide range of applications.
+  - Good for small to medium-sized applications: because of its simplicity, Flask is a great choice for building small to medium-sized applications.
+  - Great for rapid prototyping and development.
+- Cons:
+  - Not suitable for large-scale applications: due to its nature, Flask is unsuitable for building large and complex projects.
+  - Limited functionality compared to other frameworks: because of its simplicity, Flask may not have as much built-in functionality as other frameworks.
+  - Requires additional setup for larger applications.
+
+
 
 #### git
 
