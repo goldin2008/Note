@@ -44,7 +44,6 @@ Flask is a Python-based framework that has become a popular choice for building 
   - Requires additional setup for larger applications.
 
 `Containerize with docker`
-
 Docker is a platform for building, running and shipping applications in a consistent manner. Any application can be run on docker. It basically encapsulates your application and all its dependencies, making it able to run consistently across different environments. This is why it is called containerization.
 - Create Docker File
 - Create a requirements.txt file
@@ -54,7 +53,6 @@ Docker is a platform for building, running and shipping applications in a consis
 
 
 `TENSORFLOW SERVING`
-
 TensorFlow Serving is an open-source serving system for machine learning models developed by Google. It is designed to serve machine learning models in production environments, allowing them to be easily deployed and scaled.
 - Features:
   - High-performance serving: the framework is optimized for serving machine learning models in production environments, with high performance and low latency.
@@ -93,7 +91,6 @@ By following these steps, you can ensure that your model is ready to be served a
 By deploying your API, you make it accessible to users and allow it to be used in production environments. This can provide significant benefits such as increased efficiency, scalability, and accessibility.
 
 `MONITORING THE API`
-
 Monitoring the API is an important step that will help you ensure that the whole system performs well and meets your requirements. Here are some of the key things you should monitor:
 - API performance
 - Error rates
