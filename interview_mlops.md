@@ -4,8 +4,7 @@ Serving machine learning models as an API is a common approach for integrating M
 
 If a frontend developer needs to use your ML Model to create an ML powered web application, they would just need to get the URL Endpoint from where the API is being served. These endpoints are URLs that accept HTTP requests and return responses, often in a standardized data format such as JSON or XML. Machine learning models can be consumed as restful APIs. Building API’s has never been easier, thanks to Python and Fast API. We will explore an end-to-end machine learning project, create a restful API for the model and finally containerize the application with Docker.
 
-FASTAPI
-
+`FASTAPI`
 FastAPI is a modern, fast, and high-performance web framework for building APIs with Python 3.7+ based on standard Python-type hints. It is designed to be easy to use, high-performance, and provide automatic documentation.
 
 - Features:
@@ -26,8 +25,7 @@ FastAPI is a modern, fast, and high-performance web framework for building APIs 
   - Is not well-optimized for running ML models.
   - Struggles with handling multiple ML requests simultaneously.
 
-FLASK
-
+`FLASK`
 Flask is a Python-based framework that has become a popular choice for building small to medium-sized web applications as it is designed to be simple and flexible.
 
 - Features:
@@ -55,7 +53,7 @@ Docker is a platform for building, running and shipping applications in a consis
 - Push image to docker hub
 
 
-TENSORFLOW SERVING
+`TENSORFLOW SERVING`
 
 TensorFlow Serving is an open-source serving system for machine learning models developed by Google. It is designed to serve machine learning models in production environments, allowing them to be easily deployed and scaled.
 - Features:
@@ -94,7 +92,7 @@ By following these steps, you can ensure that your model is ready to be served a
   - Monitor and maintain the API: Once the API is deployed, monitor it to ensure that it is performing well and that it is meeting the required service level agreements (SLAs). You may need to update and maintain the API over time as new features are added or as the underlying technology changes.
 By deploying your API, you make it accessible to users and allow it to be used in production environments. This can provide significant benefits such as increased efficiency, scalability, and accessibility.
 
-MONITORING THE API
+`MONITORING THE API`
 
 Monitoring the API is an important step that will help you ensure that the whole system performs well and meets your requirements. Here are some of the key things you should monitor:
 - API performance
