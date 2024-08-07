@@ -2,6 +2,8 @@
 ### Model Deployment
 Serving machine learning models as an API is a common approach for integrating ML capabilities into modern software applications. This process helps to simplify the development of applications and has multiple benefits, such as scalability, efficiency, flexibility, and accessibility. Basically, the aim of such an API is to integrate machine learning models into other components of the application, which enables using the predictive power of machine learning in real-time. So, this process allows systems to use the model’s predictions and insights without having to replicate the entire architecture and infrastructure of the model.
 
+If a frontend developer needs to use your ML Model to create an ML powered web application, they would just need to get the URL Endpoint from where the API is being served. These endpoints are URLs that accept HTTP requests and return responses, often in a standardized data format such as JSON or XML. Machine learning models can be consumed as restful APIs. Building API’s has never been easier, thanks to Python and Fast API. We will explore an end-to-end machine learning project, create a restful API for the model and finally containerize the application with Docker.
+
 FASTAPI
 
 FastAPI is a modern, fast, and high-performance web framework for building APIs with Python 3.7+ based on standard Python-type hints. It is designed to be easy to use, high-performance, and provide automatic documentation.
@@ -42,6 +44,16 @@ Flask is a Python-based framework that has become a popular choice for building 
   - Not suitable for large-scale applications: due to its nature, Flask is unsuitable for building large and complex projects.
   - Limited functionality compared to other frameworks: because of its simplicity, Flask may not have as much built-in functionality as other frameworks.
   - Requires additional setup for larger applications.
+
+Containerize with docker
+
+Docker is a platform for building, running and shipping applications in a consistent manner. Any application can be run on docker. It basically encapsulates your application and all its dependencies, making it able to run consistently across different environments. This is why it is called containerization.
+- Create Docker File
+- Create a requirements.txt file
+- Build the docker image
+- Run the docker container
+- Push image to docker hub
+
 
 TENSORFLOW SERVING
 
