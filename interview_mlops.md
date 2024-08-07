@@ -1,5 +1,7 @@
 ## MLOps interview prep
 ### Model Deployment
+Serving machine learning models as an API is a common approach for integrating ML capabilities into modern software applications. This process helps to simplify the development of applications and has multiple benefits, such as scalability, efficiency, flexibility, and accessibility. Basically, the aim of such an API is to integrate machine learning models into other components of the application, which enables using the predictive power of machine learning in real-time. So, this process allows systems to use the model’s predictions and insights without having to replicate the entire architecture and infrastructure of the model.
+
 FASTAPI
 
 FastAPI is a modern, fast, and high-performance web framework for building APIs with Python 3.7+ based on standard Python-type hints. It is designed to be easy to use, high-performance, and provide automatic documentation.
@@ -41,6 +43,24 @@ Flask is a Python-based framework that has become a popular choice for building 
   - Limited functionality compared to other frameworks: because of its simplicity, Flask may not have as much built-in functionality as other frameworks.
   - Requires additional setup for larger applications.
 
+TENSORFLOW SERVING
+
+TensorFlow Serving is an open-source serving system for machine learning models developed by Google. It is designed to serve machine learning models in production environments, allowing them to be easily deployed and scaled.
+- Features:
+  - High-performance serving: the framework is optimized for serving machine learning models in production environments, with high performance and low latency.
+  - Flexible deployment options: supports a wide range of deployment options, including serving models as a REST API or gRPC service.
+  - Built-in model management and versioning: includes built-in model management and versioning, making it easy to manage and deploy different versions of your models.
+  - Integration with TensorFlow: integrates seamlessly with TensorFlow, making it easy to serve TensorFlow models in production environments.
+- Pros:
+  - High performance and low latency: TensorFlow Serving’s performance is optimized for serving machine learning models in production environments, with low latency and high results.
+  - Flexible deployment options: TensorFlow Serving supports a wide range of deployment options, making it easy to integrate with existing systems.
+  - Built-in model management and versioning: TensorFlow Serving’s built-in model management and versioning make it easy to manage and deploy different versions of your models.
+  - Seamless Library Management: you can access domain-specific application packages that extend TensorFlow and look through libraries to build complex models or methodologies.
+  - Scalability.
+- Cons:
+  - Limited to serving machine learning models: TensorFlow Serving is designed specifically for serving machine learning models, so it may not be suitable for other types of applications.
+  - Requires more setup and configuration than other frameworks: TensorFlow Serving requires more setup and configuration than other frameworks, which may make it less suitable for small-scale applications.
+  - Focused on serving only TensorFlow models.
 
 
 #### git
