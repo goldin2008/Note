@@ -1,6 +1,7 @@
 ## MLOps interview prep
-### deployment
+### Model Deployment
 FASTAPI
+
 FastAPI is a modern, fast, and high-performance web framework for building APIs with Python 3.7+ based on standard Python-type hints. It is designed to be easy to use, high-performance, and provide automatic documentation.
 
 - Features:
