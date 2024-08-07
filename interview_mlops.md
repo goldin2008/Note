@@ -45,7 +45,7 @@ Flask is a Python-based framework that has become a popular choice for building 
   - Limited functionality compared to other frameworks: because of its simplicity, Flask may not have as much built-in functionality as other frameworks.
   - Requires additional setup for larger applications.
 
-Containerize with docker
+`Containerize with docker`
 
 Docker is a platform for building, running and shipping applications in a consistent manner. Any application can be run on docker. It basically encapsulates your application and all its dependencies, making it able to run consistently across different environments. This is why it is called containerization.
 - Create Docker File
