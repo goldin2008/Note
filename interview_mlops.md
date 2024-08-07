@@ -62,6 +62,40 @@ TensorFlow Serving is an open-source serving system for machine learning models 
   - Requires more setup and configuration than other frameworks: TensorFlow Serving requires more setup and configuration than other frameworks, which may make it less suitable for small-scale applications.
   - Focused on serving only TensorFlow models.
 
+Prior to serving your ML model as an API, you will need to ensure that it’s trained, tested, and ready to use. This process includes training your model on a suitable dataset, evaluating the performance, and saving it in the right format.
+- Train and test your model: Before serving your model, you will need to train and test it on a suitable dataset. This includes choosing a suitable ML algorithm, selecting appropriate features, and tuning hyperparameters. Once the model is trained, you’ll need to evaluate the performance on a test dataset, which will allow you to ensure that the model is accurate and reliable.
+- Save your model in a compatible format: After your model is trained and tested, you can save it in a format that can be loaded by your chosen framework. This may involve converting your model to a specific file format. For example, the SavedModel format is required for TensorFlow models and the ONNX format for models that can be used with FastAPI.
+- Prepare any necessary pre-processing and post-processing steps: Depending on your particular case, you may need to perform additional pre-processing or post-processing steps on your input or output data. For example, you may need to normalize input data or convert output probabilities to class labels.
+- Test your model in the chosen framework: Before deploying the model, the step of testing it on the chosen framework is a must. This will allow ensuring that everything loads and works properly and that your model can make accurate predictions. In a few minutes, we will explain this aspect in more detail.
+
+By following these steps, you can ensure that your model is ready to be served as an API and that it will work reliably in a production environment.
+- DEFINING YOUR API ENDPOINTS: An API endpoint is a URL that your application uses to access your model. Basically, it is the code that allows two software programs to communicate with each other. This works by the following principle: when a user sends a request to your API endpoint, the server processes the request and sends the response back to the client. Along with outlining the details of your input and output parameters, it may be necessary to indicate any authentication or security protocols that your API requires. This could involve a requirement for a valid API key or OAuth token to gain access to your API.
+
+- TESTING YOUR API: As was mentioned earlier, it is crucially important to test the API during the development process to ensure that it functions correctly and behaves as expected in various situations. To accomplish this, developers can use different tools such as Postman, Apigee, or the Katalon Platform to submit HTTP requests to the API endpoints and review the corresponding responses. By testing your API thoroughly, you can identify and fix any issues before deploying it for use. This will help you ensure that your API is reliable and efficient and provides functionality that meets your needs and requirements.
+
+- DEPLOYMENT OF YOUR API: When the API is developed and tested, it can be deployed to a server or a cloud-based platform. Deploying your API makes it accessible to users and allows it to be used in production environments. Here are some general steps to follow when deploying your API:
+  - Choose a deployment platform: You can choose to deploy your API to a server or a cloud-based platform such as Amazon Web Services, Google Cloud Platform, or Microsoft Azure. Consider factors such as scalability, cost, and ease of use when choosing a deployment platform.
+  - Set up the environment: Once you’ve chosen a deployment platform, set up the environment by installing any required dependencies and configuring the server or cloud-based platform.
+  - Upload your API code: Upload your API code to the server or cloud-based platform. This can be done by copying the code files to the server or by using a version control system such as Git to push the code to a repository.
+  - Configure the API endpoint: Configure the API endpoint on the server or cloud-based platform. This involves specifying the URL for the API endpoint, any required parameters, and any security settings such as authentication and authorization.
+  - Test the deployed API: After deploying the API, test it to ensure that it works as expected. You can use the same testing tools, such as Postman that you used during the development phase.
+  - Monitor and maintain the API: Once the API is deployed, monitor it to ensure that it is performing well and that it is meeting the required service level agreements (SLAs). You may need to update and maintain the API over time as new features are added or as the underlying technology changes.
+By deploying your API, you make it accessible to users and allow it to be used in production environments. This can provide significant benefits such as increased efficiency, scalability, and accessibility.
+
+MONITORING THE API
+
+Monitoring the API is an important step that will help you ensure that the whole system performs well and meets your requirements. Here are some of the key things you should monitor:
+- API performance
+- Error rates
+- Resource utilization
+- Security
+- User behavior
+By monitoring the API, you can identify any issues and aspects that need to be improved. Thus, you will ensure that the API provides a smooth and high-quality user experience.
+Here you can see the tools that we commonly use at Sciforce:
+- Prometheus — is an open-source monitoring solution that with multiple features such as precise alerting, simple operation, efficient storage, and many more.
+- Grafana — a tool for data visualіsation with multiple functions that allow sharing insights.
+- Sentry — a platform that allows developers to diagnose, fix, and optimize the performance of their code.
+- Graphite — an enterprise-ready monitoring tool that allows to store of numeric time-series data and rendering graphs of this data on demand.
 
 #### git
 
