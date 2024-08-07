@@ -1,4 +1,27 @@
 ## MLOps interview prep
+### deployment
+FASTAPI
+FastAPI is a modern, fast, and high-performance web framework for building APIs with Python 3.7+ based on standard Python-type hints. It is designed to be easy to use, high-performance, and provide automatic documentation.
+
+- Features:
+  - Fast performance: the framework is built on top of Starlette for the web parts and Pydantic for the data parts, making it one of the fastest Python web frameworks available.
+  - Automatic API documentation: automatically generates interactive API documentation based on the type annotations and validation rules defined in your code.
+  - Built-in async support: supports asynchronous code out of the box, making it easy to build high-performance and scalable applications.
+  - Simple and intuitive API: makes it easy to get started and build APIs quickly.
+  - Dependency injection system: simplifies sharing code and data between different parts of your application.
+- Pros:
+  - Fast and efficient, and has excellent performance.
+  - Supports async code out of the box: built-in async support makes it easy to build scalable and high-performance applications.
+  - Fewer bugs: allows to reduce about 40% of developer-induced errors.
+  - Robust: has automatic interactive documentation.
+- Cons:
+  - Limited community and ecosystem: FastAPI is a relatively new framework, so its community and ecosystem are still developing.
+  - Requires Python 3.7 or later.
+  - Limited built-in functionality: the focus on performance means that it may not have as much built-in functionality as other frameworks.
+  - Is not well-optimized for running ML models.
+  - Struggles with handling multiple ML requests simultaneously.
+
+
 #### git
 
 > https://xosh.org/explain-git-in-simple-words/
@@ -11,7 +34,7 @@
 ```
 * git merge feature: on main branch, merge feature onto main
 
-git merge main: on feature branch, move feature to the same commit main was attached to, since feature was an ancestor of main. 
+git merge main: on feature branch, move feature to the same commit main was attached to, since feature was an ancestor of main.
 
 * git rebase main : on feature branch, rebase feature on top of main
 
@@ -92,16 +115,16 @@ We chose a serverless architecture so that we don’t have to provision, run and
 ## Docker
 > https://github.com/https-deeplearning-ai/machine-learning-engineering-for-production-public/blob/main/course4/week1-ungraded-labs/C4_W1_Lab_1_Docker_Intro.md
 
-These ungraded labs will be using [Docker](https://www.docker.com/) extensively. As a result of this, most of them will **require you to run the code in your local machine as Coursera currently has no support for Docker**. 
+These ungraded labs will be using [Docker](https://www.docker.com/) extensively. As a result of this, most of them will **require you to run the code in your local machine as Coursera currently has no support for Docker**.
 
 ### Why Docker?
-Docker is an amazing tool that allows you to **ship your software along with all of its dependencies**. This is great because it enables you to run software even without installing the required interpreters or compilers for it to run. 
+Docker is an amazing tool that allows you to **ship your software along with all of its dependencies**. This is great because it enables you to run software even without installing the required interpreters or compilers for it to run.
 
-Let's use an example to explain this better: 
+Let's use an example to explain this better:
 
-Suppose you trained a Deep Learning model using Python along with some libraries such as Tensorflow or JAX. For this you created a virtual environment in your local machine. Everything works fine but now you want to share this model with a colleague of yours who does not have Python installed, much less any of the required libraries. 
+Suppose you trained a Deep Learning model using Python along with some libraries such as Tensorflow or JAX. For this you created a virtual environment in your local machine. Everything works fine but now you want to share this model with a colleague of yours who does not have Python installed, much less any of the required libraries.
 
-In a pre-Docker world your 
+In a pre-Docker world your
 colleague would have to install all of this software just to run your model. Instead by installing Docker you can share a Docker image that includes all of your software and that will be all that is needed.
 
 ### Some key concepts
@@ -167,7 +190,7 @@ Then pull the image again
 $ docker run -it -p 5000:8080 serve-sklearn:0.1 python3 app.py
 ```
 
-So `docker run` creates and starts our container and then executes the command python3 app.py which starts our Flask application. 
+So `docker run` creates and starts our container and then executes the command python3 app.py which starts our Flask application.
 
 - Push your Docker image to ECR
 We’ll start by pushing the freshly created Docker image to Amazon Elastic Container Registry (ECR) which will store our image. Once the image is uploaded, open the AWS console and go to ECR and click on Repositories in the left pane. Then select the image you just uploaded and copy the Repository URI at the top of the page.
@@ -217,7 +240,7 @@ copy the files we need to build the docker image within the ec2 instance.
 - `Docker` (and containers in general) solve the problem of packaging an application and its dependencies. This makes it easy to ship and run everywhere.
 - `Kubernetes` is one layer of abstraction above containers. It is a distributed system that controls/manages containers.
 <!-- https://opensource.com/article/20/9/deep-learning-model-kubernetes -->
-we used a saved version of our model to score records. We created a batch job to get predictions periodically. Now, we want to return predictions in real time. In order to do that, we will deploy our model as a REST API. 
+we used a saved version of our model to score records. We created a batch job to get predictions periodically. Now, we want to return predictions in real time. In order to do that, we will deploy our model as a REST API.
 Enterprise computing is moving to Kubernetes, and Kubeflow has long been talked about as the platform to solve MLOps at scale.
 
 you created a deep learning model to be served as a REST API using Flask. It put the application inside a Docker container, uploaded the container to Docker Hub, and deployed it with Kubernetes. Then, with just a few commands, Kubermatic Kubernetes Platform deployed the app and exposed it to the world. deploying machine learning (ML) models into production environments is to expose these models as `RESTful API microservices`, hosted from within `Docker containers`. These `microservices` can then be deployed to a `cloud environment` for handling everything required for maintaining continuous availability. `Kubernetes` is a `container orchestration` platform that provides a mechanism for defining entire microservice-based application deployment topologies and their service-level requirements for maintaining continuous availability.
