@@ -104,6 +104,10 @@ Here you can see the tools that we commonly use at Sciforce:
 - Sentry — a platform that allows developers to diagnose, fix, and optimize the performance of their code.
 - Graphite — an enterprise-ready monitoring tool that allows to store of numeric time-series data and rendering graphs of this data on demand.
 
+### LLM based application
+
+
+
 #### git
 
 > https://xosh.org/explain-git-in-simple-words/
