@@ -4,8 +4,33 @@
 Besides just building our LLM application, we’re also going to be focused on scaling and serving it in production. Unlike traditional machine learning, or even supervised deep learning, scale is a bottleneck for LLM applications from the very beginning. Large datasets, models, compute intensive workloads, serving requirements, etc. We’ll develop our application to be able to handle any scale as the world around us continues to grow. We’re also going to be focused on evaluation and performance. Our application involves many moving pieces: embedding models, chunking logic, the LLM itself, etc. and so it's important that we experiment with different configurations to optimize for the best quality responses. However, it's non-trivial to evaluate and quantitatively compare different configurations for a generative task. We’re going to break down evaluation of individual parts of our application (retrieval given query, generation given source), also assess the overall performance (end-to-end generation) and share findings towards an optimized configuration.
 With large data sources, models and application serving needs, scale is a day-1 priority for LLM applications. We want to build our applications in such a way that they can scale as our needs grow without us having to change our code later.
 
-#### evaluating Large language models
+### evaluating Large language models
+#### Evaluator
+We're going to start by determining our evaluator. Given a response to a query and relevant context, our evaluator should be a trusted way to score/assess the quality of the response. But before we can determine our evaluator, we need a dataset of questions and the source where the answer comes from. We can use this dataset to ask our different evaluators to provide an answer and then rate their answer (ex. score between 1-5). We can then inspect this dataset to determine if our evaluator is unbiased and has sound reasoning for the scores that are assigned.
 
+We’re evaluating the ability of our LLM to generate a response given the relevant context. This is a component-level evaluation (quality_score (LLM)) because we aren’t using retrieval to fetch the relevant context.
+
+We'll start by manually creating our dataset (keep reading if you can’t manually create a dataset). We have a list of user queries and the ideal source to answer the query datasets/eval-dataset-v1.jsonl. We will use our LLM app above to generate reference answers for each query/source pair using gpt-4.
+
+Each data point has a question and the labeled source that has the precise context with the answer to the question.
+We can extract the text from this context and pass it to our LLM to generate a response to the question. We’re also going to ask it to score the quality of its response for the query.
+
+We can now create a dataset with question, source, answer, score and reasoning. We can inspect this to determine if our evaluator is of high quality.
+- question:"I’m struggling a bit with Ray Data type conversions when I do map_batches.
+Any advice?"
+- source:"https://docs.ray.io/en/master/data/transforming-data.html#configuring-batch-format"
+- answer:"You can configure the batch type in Ray Data by specifying the 'batch_format' in the 'map_batches()' function. If you're working with NumPy ndarrays, your function should return a dict of ndarrays. If you're working with pandas DataFrames, your function should return a DataFrame. Make sure your function is returning the correct type based on your specified 'batch_format'."
+- score:5
+- reasoning:"The context provides clear instructions on how to configure the batch type in Ray Data and how to use the 'map_batches()' function. It also provides examples for both NumPy and pandas, which directly answers the query."
+
+We found that gpt-4 was a high quality evaluator based on the scores and reasonings it provided. We performed the same evaluation with other LLMs (ex. Llama-2-70b) and we found that they lacked the appropriate reasoning and were very generous with responses from themselves.
+
+### Cold Start
+We may not always have `a prepared dataset of questions and the best source to answer that question readily` available. To address this cold start problem, we could use an LLM to look at our `text chunks` and `generate questions that the specific chunk would answer`. This provides us with `quality questions` and `the exact source the answer is in`. However, this dataset generation method could be a bit noisy. `The generated questions may not always have high alignment to what our users may ask`. And `the specific chunk we say is the best source may also have that exact information in other chunks`. Nonetheless, this is a great way to start our development process while we `collect + manually label` a high quality dataset.
+
+
+
+### Evaluation
 `Evaluation metrics`
 Evaluation metrics for LLM can be broadly classified into traditional and nontraditional metrics. Traditional evaluation metrics rely on the arrangement and order of words and phrases in the text and are used in combination where a reference text (ground truth) exists to compare the predictions against. Nontraditional metrics make use of semantic structure and capabilities of language models for evaluating generated text. These techniques can be used with and without a reference text.
 
