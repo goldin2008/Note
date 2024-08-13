@@ -116,6 +116,11 @@ We'll be using MultipleNegativesRankingLoss as our loss function. It will use th
 `Resize tokenizer`
 While our tokenizer can represent new subtokens that are part of the vocabulary, it might be very helpful to explicitly add new tokens to our base model (BertModel) in our cast to our transformer. And then we can use resize_token_embeddings to adjust the model's embedding layer prior to fine-tuning. This can be very useful for contextual use cases, especially if many tokens are new or existing tokens have a very different meaning in our context.
 
+`Optimization techniques for fine-tuning`
+For fine-tuning, the combination of appropriate optimizations and an orchestrator lays the foundation for constructing large language models for production.
+- Parameter-efficient fine-tuning: Parameter-efficient fine-tuning, or PEFT, focuses on fine-tuning only a small subset of additional model parameters, resulting in substantial reductions in both computational and storage costs. Remarkably, these techniques achieve performance levels that are comparable to full fine-tuning approaches. A widely used PEFT technique is Low Rank Adaptation, or LoRA. LoRA is an approach that trims down model size and computational needs by approximating large matrices through low-rank decomposition.
+- Quantization: Quantization is the process of reducing the precision of numerical data so it consumes less memory and increases processing speed. One library that may be of interest to fine-tuners is the bitsandbytes library, which uses 8-bit optimizers to significantly reduce the memory footprint during model training.
+- Zero-redundancy optimization: Zero Redundancy Optimizer, commonly known as ZeRO, harnesses the collective computational and memory capabilities of data parallelism. This approach minimizes the memory and computational demands on each device (GPU) utilized during model training. ZeRO accomplishes this by distributing the model training states (weights, gradients and optimizer states) across the available devices (GPUs and CPUs) within the distributed training hardware, thereby decreasing the memory consumption of each GPU.
 
 
 #### Prompt engineering
@@ -157,7 +162,37 @@ Although there are other prompting techniques like TreeOfThought (ToT), Self-con
 We're going to now supplement our vector embedding based search with traditional lexical search, which searches for exact token matches between our query and document chunks. Our intuition here is that lexical search can help identify chunks with exact keyword matches where semantic representation may fail to capture. Especially for tokens that are out-of-vocabulary (and so represented via subtokens) with our embedding model. But our embeddings based approach is still very advantageous for capturing implicit meaning, and so we're going to combine several retrieval chunks from both vector embeddings based search and lexical search.
 
 #### Reranking
+So far with all of our approaches, we've used an embedding model (+ lexical search) to identify the top k relevant chunks in our dataset. The number of chunks (k) has been a small number because we found that adding too many chunks did not help and our LLMs have restricted context lengths. However, this was all under the assumption that the top k retrieved chunks were truly the most relevant chunks and that their order was correct as well. What if increasing the number of chunks didn't help because some relevant chunks were much lower in the ordered list. And, semantic representations, while very rich, were not trained for this specific task.
 
+In this section, we implement reranking so that we can use our semantic and lexical search methods to cast a much wider net over our dataset (retrieve many chunks) and then rerank the order based on the user's query. The intuition here is that we can account for gaps in our semantic representations with ranking specific to our use case. We'll train a supervised model that predicts which part of our documentation is most relevant for a given user's query. We'll use this prediction to then rerank the relevant chunks so that chunks from this part of our documentation are moved to the top of the list.
+
+Note: we didn't omnisciently know to create these unique preprocessing functions! This is all a result of methodical iteration. We train a model → view incorrect data points → view how the data was represented (ex. subtokenization) → update preprocessing → iterate ↺
+
+Now we’re going to train a simple logistic regression model that will predict the tag given the input text.
+Note: we also trained a BERT classifier and while performance was better than our logistic classifier, these large networks suffer from overconfidence and we can't use a threshold based approach as we do below. And without the threshold approach (where we only rerank when the reranker is truly confident), then the quality score of our application does not improve.
+
+- Reranking experiments
+Now we're ready to apply our reranking model post retrieval using these steps:
+ - Increase the retrieved context (can experiment with this) so that we can apply reranking to yield a smaller subset (num_chunks). The intuition here is that we'll use semantic and lexical search to retrieve N chunks (N > k) and then we'll use reranking to reorder the retrieved results (top k).
+ - If the predicted tag is above the threshold, then we will move all retrieved sources from that tag to the top. If the predicted tag is below the threshold, then no reranking will be performed. The intuition here is that, unless we are confident about which parts of our documentation a specific query pertains to (or if it happens to involve multiple parts), then we will not incorrectly rerank the results.
+ - Perform generation using the top k retrieved chunks.
+
+### Cost analysis
+Besides just performance, we also want to evaluate the cost of our configurations (especially given the high price points of larger LLMs). We’re going to break this down into prompt and sampled pricing. The prompt size is the number of characters in our system, assistant and user contents (which includes the retrieved contexts). And the sampled size is the number of characters the LLM generated in its response.
+
+### Routing
+It seems that the most performant LLM, gpt-4-turbo, is also very expensive. While our OSS LLM (mixtral-8x7b-instruct-v0.1) is very close in quality but ~25X more cost-effective. However, we want to be able to serve the most performant and cost-effective solution. We can close this gap in performance between open source and proprietary models by routing queries to the right LLM according to the complexity or topic of the query. For example, in our application, open source models perform really well on simple queries where the answer can be easily inferred from the retrieved context. However, the OSS models fall short for queries that involve reasoning, numbers or code examples. To identify the appropriate LLM to use, we can train a classifier that takes the query and routes it to the best LLM.
+
+In order to implement this, we hand-annotated a dataset of 1.8k queries according to which model (gpt-4 (label=0) or OSS LLM (label=1)) would be appropriate -- by default we route to OSS LLM and only if the query needs more advanced capabilities do we send the query to gpt-4. We then evaluate the performance of the model on a test dataset that has been scored with an evaluator.
+
+Note: For our dataset, a small logistic regression model is good enough to perform the routing. But if your use case is more complex, consider training a more complex model, like a BERT-based classifier to perform the classification. These models are still small enough that wouldn’t introduce too much latency. Be sure to check out this guide if you want to learn how to train and deploy supervised deep learning models.
+
+### Impact
+`Products and productivity`
+Building an LLM application like this has had a tremendous impact on our products and company. There were expected 1st order impacts in overall developer and user adoption for our products. The capability to interact and solve problems that our users experience in a self-serve and immediate manner is the type of feature that would improve the experience of any product. It makes it significantly easier for people to succeed and it elevated the perception around LLM applications from a nice-to-have to a must-have.
+
+`Foundational agents`
+However, there were also some 2nd order impacts that we didn’t immediately realize. For example, when we further inspected user queries that yielded poor scores, often the issue existed because of a gap in our documentation. When we made the fix (ex. added the appropriate section to our docs), this improved our product and the LLM application itself — creating a very valuable feedback flywheel. Furthermore, when internal teams learned of the capabilities of our LLM application, this generated the development of highly valuable LLM applications that depend on this Ray docs LLM application as one of its foundational agents that it uses to perform its tasks.
 
 ## References
 
@@ -173,3 +208,7 @@ RAG:
 > https://jalammar.github.io/illustrated-transformer/
 
 > https://www.linkedin.com/posts/sagarg55_what-are-some-good-starting-points-for-diving-activity-7180054059981164544-2qq-/?utm_source=share&utm_medium=member_desktop
+
+> https://www.anyscale.com/blog/end-to-end-llm-workflows-guide?__hstc=218704582.00f159e343060f6b070803af47ca3180.1723166370722.1723166370722.1723166370722.1&__hssc=218704582.3.1723166370722&__hsfp=4274120786
+
+> https://www.union.ai/blog-post/large-language-models-in-production
