@@ -25,12 +25,38 @@ Any advice?"
 
 We found that gpt-4 was a high quality evaluator based on the scores and reasonings it provided. We performed the same evaluation with other LLMs (ex. Llama-2-70b) and we found that they lacked the appropriate reasoning and were very generous with responses from themselves.
 
-### Cold Start
+#### Cold Start
 We may not always have `a prepared dataset of questions and the best source to answer that question readily` available. To address this cold start problem, we could use an LLM to look at our `text chunks` and `generate questions that the specific chunk would answer`. This provides us with `quality questions` and `the exact source the answer is in`. However, this dataset generation method could be a bit noisy. `The generated questions may not always have high alignment to what our users may ask`. And `the specific chunk we say is the best source may also have that exact information in other chunks`. Nonetheless, this is a great way to start our development process while we `collect + manually label` a high quality dataset.
 
 
 
-### Evaluation
+#### Evaluation
+Our evaluation workflow will use our evaluator to assess the end-to-end quality (quality_score (overall)) of our application since the response depends on the retrieved context and the LLM. But we’ll also include a retrieval_score to measure the quality of our retrieval process (chunking + embedding). Our logic for determining the retrieval_score registers a success if the best source is anywhere in our retrieved num_chunks sources. We don't account for order, exact page section, etc. but we could add those constraints to have a more conservative retrieval score.
+
+Regardless of what configuration(s) we want to evaluate, we’ll need to first generate responses using that configuration and then evaluate those responses using our evaluator.
+- Context: without-context vs. with-context
+- Chunk size
+- Number of chunks
+- Embedding models
+  - gte-base
+  - gte-large
+  - bge-large-en
+  - text-embedding-ada-002
+- OSS vs. closed LLMs
+Open-Source LLM vs Closed Source LLM
+  - llms = ["gpt-3.5-turbo",
+        "gpt-4",
+        "gpt-4-1106-preview",
+        "meta-llama/Llama-2-7b-chat-hf",
+        "meta-llama/Llama-2-13b-chat-hf",
+        "meta-llama/Llama-2-70b-chat-hf",
+        "codellama/CodeLlama-34b-Instruct-hf",
+        "mistralai/Mistral-7B-Instruct-v0.1",
+        "mistralai/Mixtral-8x7B-Instruct-v0.1"]
+- MoEs without context
+Curious how well these mixture of experts (MoE) fare without any context.
+
+
 `Evaluation metrics`
 Evaluation metrics for LLM can be broadly classified into traditional and nontraditional metrics. Traditional evaluation metrics rely on the arrangement and order of words and phrases in the text and are used in combination where a reference text (ground truth) exists to compare the predictions against. Nontraditional metrics make use of semantic structure and capabilities of language models for evaluating generated text. These techniques can be used with and without a reference text.
 
@@ -66,6 +92,11 @@ As the name indicates the methods discussed in this section make use of large la
   - Ragas
   Ragas is a framework that helps you evaluate your Retrieval Augmented Generation (RAG) pipelines. RAG denotes a class of LLM applications that use external data to augment the LLM’s context. There are existing tools and frameworks that help you build these pipelines but evaluating it and quantifying your pipeline performance can be hard. This is where Ragas (RAG Assessment) comes in.
   Ragas provides you with the tools based on the latest research for evaluating LLM-generated text to give you insights about your RAG pipeline. Ragas can be integrated with your CI/CD to provide continuous checks to ensure performance.
+
+#### Fine-tuning
+Everything we have explored so far involves optimizing for how our data is preprocessed and using our models (embedding, LLM, etc.) as is. However, it's also worth exploring fine-tuning our models with data unique to our use case. This could help us better represent our data and ultimately increase our retrieval and quality scores. In this section, we're going to fine-tune our embedding model. The intuition here is that it may be worth it to learn a more contextual representation of our tokens than the default embedding models can. This can especially be impactful if we have a lot of:
+- new tokens that the default tokenization process creates subtokens out of that lose the significance of the token
+- existing tokens that have contextually different meanings in our use case
 
 
 #### Prompt engineering
