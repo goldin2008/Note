@@ -1,6 +1,6 @@
 ## RecSys powered by LLMs interview prep
 
-### a movie recommender application powered by LLMs
+### LLM-powered recommendation system
 In this chapter, we explored how LLMs could change the way we approach a recommendation system task. We started from the analysis of the current strategies and algorithms for building recommendation applications, differentiating between various scenarios (collaborative filtering, content-based, cold start, etc.) as well as different techniques (KNN, matrix factorization, and NNs).
 
 We then moved to the new, emerging field of research into how to apply the power of LLMs to this field, and explored the various experiments that have been done in recent months.
@@ -40,9 +40,27 @@ NNs are used in recommendation systems to improve the accuracy and personalizati
 - Sequential models: In scenarios where user interactions have a temporal sequence, such as clickstreams or browsing history, RNNs or variants such as long short-term memory (LSTM) networks can capture temporal dependencies in the user behavior and make sequential recommendations.
 - Autoencoders and variational autoencoders (VAEs) can be used to learn low-dimensional representations of users and items.
 
+Even though relevant advancements have been made in recent years, the aforementioned techniques still suffer from some pitfalls, primarily their being task-specific. For example, a rating-prediction recommendation system will not be able to tackle a task where we need to recommend the top k items that likely match the user’s taste. Actually, if we extend this limitation to other “pre-LLMs” AI solutions, we might see some similarities: it is indeed the task-specific situation that LLMs and, more generally, Large Foundation Models are revolutionizing, being highly generalized and adaptable to various tasks, depending on user’s prompts and instructions. Henceforth, extensive research in the field of recommendation systems is being done into what extent LLMs can enhance the current models. In the following sections, we will cover the theory behind these new approaches referring to recent papers and blogs about this emerging domain.
+
+`How LLMs are changing recommendation systems`
+- Pre-training: Pre-training LLMs for recommender systems is an important step to enable LLMs to acquire extensive world knowledge and user preferences, and to adapt to different recommendation tasks with zero or few shots.
+- Fine-tuning: Training an LLM from scratch is a highly computational-intensive activity. An alternative and less intrusive approach to customize an LLM for recommendation systems might be fine-tuning.
+More specifically, the authors of the paper review two main strategies for fine-tuning LLMs:
+  - Full-model fine-tuning involves changing the entire model’s weights based on task-specific recommendation datasets.
+  - Parameter-efficient fine-tuning aims to change only a small part of weights or develop trainable adapters to fit specific tasks.
+- Prompting: The third and “lightest” way of tailoring LLMs to be recommender systems is prompting. According to the authors, there are three main techniques for prompting LLMs:
+  - Conventional prompting aims to unify downstream tasks into language generation tasks by designing text templates or providing a few input-output examples.
+  - In-context learning enables LLMs to learn new tasks based on contextual information without fine-tuning.
+  - Chain-of-thought enhances the reasoning abilities of LLMs by providing multiple demonstrations to describe the chain of thought as examples within the prompt. The authors also discuss the advantages and challenges of each technique and provide some examples of existing methods that adopt them.
+
+
 
 
 ## References
 
-RAG:
->
+Eval:
+> https://arxiv.org/pdf/2302.04166
+
+> https://arxiv.org/pdf/2303.16634
+
+> https://medium.com/@dan_43009/can-you-use-llms-as-evaluators-an-llm-evaluation-framework-8681b400b110
