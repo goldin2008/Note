@@ -97,6 +97,25 @@ As the name indicates the methods discussed in this section make use of large la
 Everything we have explored so far involves optimizing for how our data is preprocessed and using our models (embedding, LLM, etc.) as is. However, it's also worth exploring fine-tuning our models with data unique to our use case. This could help us better represent our data and ultimately increase our retrieval and quality scores. In this section, we're going to fine-tune our embedding model. The intuition here is that it may be worth it to learn a more contextual representation of our tokens than the default embedding models can. This can especially be impactful if we have a lot of:
 - new tokens that the default tokenization process creates subtokens out of that lose the significance of the token
 - existing tokens that have contextually different meanings in our use case
+When it comes to fine-tuning our embedding model, we will exploring two approaches:
+- full parameter: including the embedding layer and all subsequent encoder layers (transformer blocks)
+- embedding layer: to better represent our unique subtokens and avoid overfitting (version of linear adapter)
+
+`Synthetic dataset`
+Our first step will be to create a dataset to fine-tune our embedding model on. Our current embedding models have been trained via self-supervised learning (word2vec, GloVe, next/masked token prediction, etc.) and so we will continue fine-tuning with a self-supervised workflow. We're going to reuse a very similar approach as our cold start QA dataset section earlier so that we can map sections in our data to questions. The fine-tuning task here will be for the model to determine which sections in our dataset maps best to the input query. This optimization task will allow our embedding model to learn better representations of tokens in our dataset.
+
+Note: While we could create a dataset mapping section titles with section text, we are creating a synthetic Q&A dataset because it will be most representative of the types of data we want to learn how to embed.
+
+Our prompt is going to be a bit different because we want to generate a variety of different questions and we're going to use llama-70b here so that we can scale this QA generation process (and avoid any rate limits). To be thorough, we're going to generate one question from every section in our dataset so that we can try to capture as many unique tokens as possible.
+
+`Validation`
+While our dataset may have multiple valid sections for a particular query, we will treat all other sections besides the one used to generate the query, as negative samples. This isn't an ideal scenario but the noise introduced is minimal, especially since we are using this to tune a representation layer (and not for a classification task).
+
+We'll be using MultipleNegativesRankingLoss as our loss function. It will use the data points (InputExample(texts=[query, source_text]) in our training data as positive pairs and all other combinations as negative pairs. And the objective will be to increase the cosine similarity (default similarity_fct) for our positive pair and decrease it for the other pairs.
+
+`Resize tokenizer`
+While our tokenizer can represent new subtokens that are part of the vocabulary, it might be very helpful to explicitly add new tokens to our base model (BertModel) in our cast to our transformer. And then we can use resize_token_embeddings to adjust the model's embedding layer prior to fine-tuning. This can be very useful for contextual use cases, especially if many tokens are new or existing tokens have a very different meaning in our context.
+
 
 
 #### Prompt engineering
@@ -134,11 +153,17 @@ Therefore, in order to implement ReAct, you need:
 Langchain provides a mechanism to implement ReAct through framework like Agents and Tools. We will cover these in details in upcoming editions where I’ll demonstrate these concepts in action through developing LLM powered applications.
 Although there are other prompting techniques like TreeOfThought (ToT), Self-consistency, and Automatic Prompt Engineer (APE), the above method lays a foundational ground for building more complex LLM applications.
 
+#### Lexical search
+We're going to now supplement our vector embedding based search with traditional lexical search, which searches for exact token matches between our query and document chunks. Our intuition here is that lexical search can help identify chunks with exact keyword matches where semantic representation may fail to capture. Especially for tokens that are out-of-vocabulary (and so represented via subtokens) with our embedding model. But our embeddings based approach is still very advantageous for capturing implicit meaning, and so we're going to combine several retrieval chunks from both vector embeddings based search and lexical search.
+
+#### Reranking
 
 
 ## References
 
 RAG:
+*** > https://www.anyscale.com/blog/a-comprehensive-guide-for-building-rag-based-llm-applications-part-1#response-generation
+
 > https://mindfulmatrix.substack.com/p/build-a-simple-llm-application-with
 
 > https://mindfulmatrix.substack.com/p/prompting-in-the-age-of-llms
