@@ -271,9 +271,9 @@ However, there were also some 2nd order impacts that we didn’t immediately rea
 ## References
 
 RAG:
-***> https://www.anyscale.com/blog/a-comprehensive-guide-for-building-rag-based-llm-applications-part-1#response-generation
+*** > https://www.anyscale.com/blog/a-comprehensive-guide-for-building-rag-based-llm-applications-part-1#response-generation
 
-***> https://www.promptingguide.ai/research/rag
+*** > https://www.promptingguide.ai/research/rag
 
 
 > https://mindfulmatrix.substack.com/p/build-a-simple-llm-application-with
