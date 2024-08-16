@@ -150,6 +150,71 @@ Answers contain redundant information.
 A high answer relevancy score indicates that an answer is concise and does not contain "fluff" (i.e., irrelevant information).
 The score is calculated by asking an LLM to generate multiple questions for a generated answer and then calculating the cosine similarity between the original and generated questions. Naturally, if we have a concise answer that answers a specific question, we should find that the generated question will have a high cosine similarity to the original question.
 
+
+#### General Techniques for Building Production-Grade RAG
+- `Decoupling Chunks Used for Retrieval vs. Chunks Used for Synthesis`
+A key technique for better retrieval is to decouple chunks used for retrieval with those that are used for synthesis.
+
+Motivation#
+The optimal chunk representation for retrieval might be different than the optimal consideration used for synthesis. For instance, a raw text chunk may contain needed details for the LLM to synthesize a more detailed answer given a query. However, it may contain filler words/info that may bias the embedding representation, or it may lack global context and not be retrieved at all when a relevant query comes in.
+
+Key Techniques#
+There’s two main ways to take advantage of this idea:
+1. Embed a document summary, which links to chunks associated with the document.
+This can help retrieve relevant documents at a high-level before retrieving chunks vs. retrieving chunks directly (that might be in irrelevant documents).
+
+2. Embed a sentence, which then links to a window around the sentence.
+This allows for finer-grained retrieval of relevant context (embedding giant chunks leads to “lost in the middle” problems), but also ensures enough context for LLM synthesis.
+
+- `Structured Retrieval for Larger Document Sets`
+Motivation#
+A big issue with the standard RAG stack (top-k retrieval + basic text splitting) is that it doesn’t do well as the number of documents scales up - e.g. if you have 100 different PDFs. In this setting, given a query you may want to use structured information to help with more precise retrieval; for instance, if you ask a question that's only relevant to two PDFs, using structured information to ensure those two PDFs get returned beyond raw embedding similarity with chunks.
+
+Key Techniques#
+There’s a few ways of performing more structured tagging/retrieval for production-quality RAG systems, each with their own pros/cons.
+1. Metadata Filters + Auto Retrieval Tag each document with metadata and then store in a vector database. During inference time, use the LLM to infer the right metadata filters to query the vector db in addition to the semantic query string.
+
+Pros ✅: Supported in major vector dbs. Can filter document via multiple dimensions.
+Cons 🚫: Can be hard to define the right tags. Tags may not contain enough relevant information for more precise retrieval. Also tags represent keyword search at the document-level, doesn’t allow for semantic lookups.
+
+2. Store Document Hierarchies (summaries -> raw chunks) + Recursive Retrieval Embed document summaries and map to chunks per document. Fetch at the document-level first before chunk level.
+
+Pros ✅: Allows for semantic lookups at the document level.
+Cons 🚫: Doesn’t allow for keyword lookups by structured tags (can be more precise than semantic search). Also autogenerating summaries can be expensive.
+
+- `Dynamically Retrieve Chunks Depending on your Task`
+Motivation#
+RAG isn't just about question-answering about specific facts, which top-k similarity is optimized for. There can be a broad range of queries that a user might ask. Queries that are handled by naive RAG stacks include ones that ask about specific facts e.g. "Tell me about the D&I initiatives for this company in 2023" or "What did the narrator do during his time at Google". But queries can also include summarization e.g. "Can you give me a high-level overview of this document", or comparisons "Can you compare/contrast X and Y". All of these use cases may require different retrieval techniques.
+
+Key Techniques#
+LlamaIndex provides some core abstractions to help you do task-specific retrieval. This includes our router module as well as our data agent module. This also includes some advanced query engine modules. This also include other modules that join structured and unstructured data.
+You can use these modules to do joint question-answering and summarization, or even combine structured queries with unstructured queries.
+
+`Basic Strategies`
+There are many easy things to try, when you need to quickly squeeze out extra performance and optimize your RAG workflow.
+- Prompt Engineering
+- Embeddings
+- Chunk Sizes
+- Hybrid Search
+Hybrid search is a common term for retrieval that involves combining results from both semantic search (i.e. embedding similarity) and keyword search. Embeddings are not perfect, and may fail to return text chunks with matching keywords in the retrieval step.
+  - semantic search (i.e. embedding similarity)
+  - lexical search (keyword search)
+- Metadata Filters
+Before throwing your documents into a vector index, it can be useful to attach metadata to them. While this metadata can be used later on to help track the sources to answers from the response object, it can also be used at query time to filter data before performing the top-k similarity search. Metadata filters can be set manually, so that only nodes with the matching metadata are returned.
+- `*** Multi-Tenancy RAG`
+Multi-Tenancy in RAG systems is crucial for ensuring data security. It enables users to access exclusively their indexed documents, thereby preventing unauthorized sharing and safeguarding data privacy. Search operations are confined to the user's own data, protecting sensitive information. Implementation can be achieved with VectorStoreIndex and VectorDB providers through Metadata Filters.
+
+`Advanced Retrieval Strategies`
+- Reranking
+- Recursive retrieval
+- Embedded tables
+- Small-to-big retrieval
+
+`Query Transformations (Query Decomposition)`
+Multi-step query transformations are a generalization on top of existing single-step query transformation approaches.
+Given an initial, complex query, the query is transformed and executed against an index. The response is retrieved from the query. Given the response (along with prior responses) and the query, follow-up questions may be asked against the index as well. This technique allows a query to be run against a single knowledge source until that query has satisfied all questions.
+
+
 ### evaluating Large language models
 #### Evaluator
 We're going to start by determining our evaluator. Given a response to a query and relevant context, our evaluator should be a trusted way to score/assess the quality of the response. But before we can determine our evaluator, we need a dataset of questions and the source where the answer comes from. We can use this dataset to ask our different evaluators to provide an answer and then rate their answer (ex. score between 1-5). We can then inspect this dataset to determine if our evaluator is unbiased and has sound reasoning for the scores that are assigned.
