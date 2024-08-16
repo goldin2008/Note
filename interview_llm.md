@@ -100,6 +100,55 @@ In addition, there are `four abilities` that help measure the adaptability and e
 - information integration
 - counterfactual robustness
 
+To evaluate our agent using RAGAS, we need a `dataset` containing `questions`, `ideal contexts`, and the `ground truth answers` to those questions. RAGAS does provide utilities for automatically generating these, but these are out of the scope of this article. Nonetheless, we will be using a prebuilt evaluation dataset created using RAGAS.
+
+`Retrieval Metrics`
+Retrieval is the first step in every RAG pipeline, so we will focus on metrics that assess retrieval first. We primarily want to focus on context_recall and context_precision, but we must understand what they measure before diving into these metrics.
+
+Actual vs. Predicted
+When evaluating the performance of retrieval systems, we tend to compare the actual (ground truth) to predicted results. We define these as:
+- Actual condition is the true label of every context in the dataset. These are positive (p) if the context is relevant to our query or negative (n) if the context is irrelevant to our query.
+- Predicted condition is the predicted label determined by our retrieval system. Every context our pipeline returns is a predicted positive, i.e., ^p. If our pipeline does not return a context, it is a predicted negative, i.e., ^n.
+Given these conditions, we can say the following:
+- `p ^p` is a true positive, meaning a relevant result has been returned.
+- `n ^n` is a true negative, meaning an irrelevant result was not returned.
+- `n ^p` is a false positive, meaning an irrelevant result has been returned.
+- `p ^n` is a false negative, meaning a relevant result has not been returned.
+Let's see how these apply to our metrics in RAGAS.
+- `Context Recall`
+Context recall (or just recall) measures how many relevant records in a dataset have been retrieved by the pipeline. We calculate it as follows:
+
+`Recall@K= p ^p / (p ^p + n ^n) = Relevant contexts retrieved / Total number of relevant contexts`
+​
+RAGAS calculates context recall using Recall@K, where the @K represents the number of contexts returned. If we increase the @K value, the recall scores will improve (as the capture size of the retrieval step increases). At its extreme, we could set @K equal to the dataset size to guarantee perfect recall — although this negates the point of RAG in the first place.
+By default, RAGAS uses a @K value of 5.
+
+The recall is a useful metric but easily fooled by simply returning more records, i.e., increasing the @K value. Because of that, it is typically paired with precision.
+
+- `Context Precision`
+Context precision (or just precision) is another popular retrieval metric. We typically see both recall and precision paired together when evaluating retrieval systems.
+
+As with recall, the actual metric here is called Precision@K, where @K represents the number of contexts returned. However, unlike recall, precision focuses on the number of relevant results returned compared to the total results returned, whether relevant or not — this is equal to our chosen @K value.
+
+`Precision@K= p ^p / (p ^p + p ^n) = Relevant contexts retrieved / Number of contexts retrieved`
+
+
+`Generation Metrics`
+- `Faithfulness`
+The faithfulness metric measures (from 0 to 1) the factual consistency of an answer when compared to the retrieved context. A score of 1 means we can find all answer claims in the context. A score of 0 would indicate that we find no answer claims in the context.
+We calculate the faithfulness like so:
+`Faithfulness = Number of claims in answer also found in context / Number of claims in answer`
+
+When calculating faithfulness, RAGAS uses OpenAI LLMs to decide which claims are in the answer and whether they exist in the context. Because of this approach's "generative" nature, we won't always get accurate scores.
+We can see that we get perfect scores for all but our fourth result, which scores 0.0. However, we can see some related claims. Nonetheless, the fourth answer is less grounded in the truth of our context than other responses, indicating justification behind this low score.
+
+- `Answer Relevancy`
+Answer relevancy is our final metric. It focuses on the generation component and is similar to our "context precision" metric as it measures how much of the returned information is relevant to our original question.
+We return a low answer relevancy score when:
+Answers are incomplete.
+Answers contain redundant information.
+A high answer relevancy score indicates that an answer is concise and does not contain "fluff" (i.e., irrelevant information).
+The score is calculated by asking an LLM to generate multiple questions for a generated answer and then calculating the cosine similarity between the original and generated questions. Naturally, if we have a concise answer that answers a specific question, we should find that the generated question will have a high cosine similarity to the original question.
 
 ### evaluating Large language models
 #### Evaluator
@@ -306,6 +355,8 @@ However, there were also some 2nd order impacts that we didn’t immediately rea
 *** > https://www.promptingguide.ai/research/rag
 
 *** > https://www.bentoml.com/blog/building-rag-with-open-source-and-custom-ai-models
+
+*** > https://www.pinecone.io/learn/series/rag/rerankers/
 
 
 > https://mindfulmatrix.substack.com/p/build-a-simple-llm-application-with
