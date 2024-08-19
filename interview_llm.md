@@ -1,5 +1,12 @@
 ## LLMs interview prep
 
+
+- `Retriever`
+retriever = db.as_retriever(search_type="mmr", search_kwargs={'k': 4, 'fetch_k': 20})
+
+- `Prompt`
+
+
 ### LLM based application
 Besides just building our LLM application, we’re also going to be focused on scaling and serving it in production. Unlike traditional machine learning, or even supervised deep learning, scale is a bottleneck for LLM applications from the very beginning. Large datasets, models, compute intensive workloads, serving requirements, etc. We’ll develop our application to be able to handle any scale as the world around us continues to grow. We’re also going to be focused on evaluation and performance. Our application involves many moving pieces: embedding models, chunking logic, the LLM itself, etc. and so it's important that we experiment with different configurations to optimize for the best quality responses. However, it's non-trivial to evaluate and quantitatively compare different configurations for a generative task. We’re going to break down evaluation of individual parts of our application (retrieval given query, generation given source), also assess the overall performance (end-to-end generation) and share findings towards an optimized configuration.
 With large data sources, models and application serving needs, scale is a day-1 priority for LLM applications. We want to build our applications in such a way that they can scale as our needs grow without us having to change our code later.
@@ -422,6 +429,10 @@ However, there were also some 2nd order impacts that we didn’t immediately rea
 *** > https://www.bentoml.com/blog/building-rag-with-open-source-and-custom-ai-models
 
 *** > https://www.pinecone.io/learn/series/rag/rerankers/
+
+*** > https://github.com/langchain-ai/rag-from-scratch
+
+*** > https://medium.com/@mohammed97ashraf/building-a-retrieval-augmented-generation-rag-model-with-gemma-and-langchain-a-step-by-step-f917fc6f753f
 
 
 > https://mindfulmatrix.substack.com/p/build-a-simple-llm-application-with
