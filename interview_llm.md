@@ -1,10 +1,81 @@
 ## LLMs interview prep
 
+`naive RAG`
+- Retrieve: The user query is used to retrieve relevant context from an external knowledge source. For this, the user query is embedded with an embedding model into the same vector space as the additional context in the vector database. This allows to perform a similarity search, and the top k closest data objects from the vector database are returned.
+- Augment: The user query and the retrieved additional context are stuffed into a prompt template.
+- Generate: Finally, the retrieval-augmented prompt is fed to the LLM.
 
-- `Retriever`
+`Implementing Naive RAG with LlamaIndex and Weaviate`
+Step 1: Define the embedding model and LLM
+- Embedding model: used to generate vector embeddings for the document chunks and the query.
+- LLM: used to generate an answer based on the user query and the relevant context.
+Step 2: Load data
+Step 3: Chunk documents into nodes
+Step 4: Build index
+Step 5: Setup query engine
+Step 6: Run a naive RAG query on your data
+Step 7: Preparing the Evaluation Data
+Step 8: Evaluating the RAG application
+
+`Implementing Advanced RAG with LlamaIndex`
+In this section, we will cover some simple adjustments you can make to turn the above naive RAG pipeline into an advanced one. This walkthrough will cover the following selection of advanced RAG techniques:
+- Pre-retrieval optimization: Sentence window retrieval
+It separates the document into single sentences, which will be embedded.
+For each sentence, it creates a context window. If you specify a window_size = 3, the resulting window will be three sentences long, starting at the previous sentence of the embedded sentence and spanning the sentence after. The window will be stored as metadata.
+During retrieval, the sentence that most closely matches the query is returned. After retrieval, you need to replace the sentence with the entire window from the metadata.
+- Retrieval optimization: Hybrid search
+- Post-retrieval optimization: Re-ranking
+
+#### Retrieval
 retriever = db.as_retriever(search_type="mmr", search_kwargs={'k': 4, 'fetch_k': 20})
+- `Pre-retrieval`: Auto-Retrieval (Metadata filtering), `Sentence window retrieval`
+One technique we will implement in this article is sentence window retrieval, which embeds single sentences for retrieval and replaces them with a larger text window at inference time.
+`Pre-retrieval optimizations` focus on `data indexing optimizations` as well as `query optimizations`. Data indexing optimization techniques aim to store the data in a way that helps you improve retrieval efficiency, such as [1]:
+  - Sliding window uses an overlap between chunks and is one of the simplest techniques.
+  - Enhancing data granularity applies data cleaning techniques, such as removing irrelevant information, confirming factual accuracy, updating outdated information, etc.
+  - Adding metadata, such as dates, purposes, or chapters, for filtering purposes.
+  - Optimizing index structures involves different strategies to index data, such as adjusting the chunk sizes or using multi-indexing strategies. One technique we will implement in this article is sentence window retrieval, which embeds single sentences for retrieval and replaces them with a larger text window at inference time.
+Additionally, `pre-retrieval techniques aren’t limited to data indexing and can cover techniques at inference time`, such as `query routing`, `query rewriting`, and `query expansion`.
 
-- `Prompt`
+- `Retrieval`: Hybrid Search (Semantic and Lexical Search)
+  - `Fine-tuning embedding models` customizes embedding models to domain-specific contexts, especially for domains with evolving or rare terms. For example, `BAAI/bge-small-en` is a high-performance embedding model that can be fine-tuned.
+  - `Dynamic Embedding` adapts to the context in which words are used, unlike static embedding, which uses a single vector for each word. For example, `OpenAI’s embeddings-ada-02` is a sophisticated dynamic embedding model that captures contextual understanding.
+
+- `Post-retrieval` techniques: Reranking, Few-Shot prompt engineering
+Additional processing of the retrieved context can help address issues such as exceeding the context window limit or introducing noise, thus hindering the focus on crucial information. Post-retrieval optimization techniques summarized in the RAG survey [1] are:
+  - `Prompt compression` reduces the overall prompt length by removing irrelevant and highlighting important context.
+  - `Re-ranking` uses machine learning models to recalculate the relevance scores of the retrieved contexts.
+
+
+#### `Prompt`
+
+
+#### `Evaluating RAG Applications with RAGAs`
+building a proof of concept for a Retrieval-Augmented Generation (RAG) application is easy, but making it production-ready is very difficult. Getting the RAG pipeline's performance to a satisfying state is especially difficult because of the different components in a RAG pipeline:
+- Retriever component: retrieves additional context from an external database for the LLM to answer the query.
+- Generator component: generates an answer based on a prompt augmented with the retrieved information.
+When evaluating a RAG pipeline, you must evaluate both components separately and together to understand if and where the RAG pipeline still needs improvement. Additionally, to understand whether your RAG application’s performance is improving, you must evaluate it quantitatively. For this, you will need two ingredients: An evaluation metric and an evaluation dataset.
+
+`What is RAGAs`
+RAGAs (Retrieval-Augmented Generation Assessment) is a framework (GitHub, Docs) that provides you with the necessary ingredients to help you evaluate your RAG pipeline on a component level.
+To evaluate the RAG pipeline, RAGAs expects the following information:
+- `question`: The user query that is the input of the RAG pipeline. The input.
+- `answer`: The generated answer from the RAG pipeline. The output.
+- `contexts`: The contexts retrieved from the external knowledge source used to answer the question.
+- `ground_truths`: The `ground truth answer` to the `question`. This is the only human-annotated information. This information is only required for the metric `context_recall` (see Evaluation Metrics).
+
+Note that the framework has expanded to provide metrics and paradigms that require ground truth labels (e.g., `context_recall` and `answer_correctness`, see Evaluation Metrics).
+
+`Evaluation Metrics`
+RAGAs provide you with a few metrics to evaluate a RAG pipeline `component-wise` as well as `end-to-end`.
+On a component level, RAGAs provides you with metrics to evaluate the `retrieval component` (`context_relevancy` and `context_recall`) and the `generative component` (`faithfulness` and `answer_relevancy`) separately [2]:
+- `Context precision` measures the signal-to-noise ratio of the retrieved context. This metric is computed using the `question` and the `contexts`.
+- `Context recall` measures if all the relevant information required to answer the question was retrieved. This metric is computed based on the `ground_truth` (this is the only metric in the framework that relies on human-annotated ground truth labels) and the `contexts`.
+- `Faithfulness` measures the factual accuracy of the generated answer. The number of correct statements from the given contexts is divided by the total number of statements in the generated answer. This metric uses the `question`, `contexts` and the `answer`.
+- `Answer relevancy` measures how relevant the generated answer is to the question. This metric is computed using the `question` and the `answer`. For example, the answer “France is in western Europe.” to the question “Where is France and what is it’s capital?” would achieve a low answer relevancy because it only answers half of the question.
+All metrics are scaled to the `range [0, 1]`, with higher values indicating a better performance.
+
+RAGAs also provides you with metrics to evaluate the RAG pipeline end-to-end, such as `answer semantic similarity` and `answer correctness`. This article focuses on the component-level metrics.
 
 
 ### LLM based application
@@ -433,6 +504,12 @@ However, there were also some 2nd order impacts that we didn’t immediately rea
 *** > https://github.com/langchain-ai/rag-from-scratch
 
 *** > https://medium.com/@mohammed97ashraf/building-a-retrieval-augmented-generation-rag-model-with-gemma-and-langchain-a-step-by-step-f917fc6f753f
+
+*** > https://towardsdatascience.com/retrieval-augmented-generation-rag-from-theory-to-langchain-implementation-4e9bd5f6a4f2
+
+*** > https://towardsdatascience.com/advanced-retrieval-augmented-generation-from-theory-to-llamaindex-implementation-4de1464a9930
+
+*** > https://towardsdatascience.com/evaluating-rag-applications-with-ragas-81d67b0ee31a
 
 
 > https://mindfulmatrix.substack.com/p/build-a-simple-llm-application-with
