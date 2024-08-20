@@ -31,15 +31,23 @@ retriever = db.as_retriever(search_type="mmr", search_kwargs={'k': 4, 'fetch_k':
 - `Pre-retrieval`: Auto-Retrieval (Metadata filtering), `Sentence window retrieval`
 One technique we will implement in this article is sentence window retrieval, which embeds single sentences for retrieval and replaces them with a larger text window at inference time.
 `Pre-retrieval optimizations` focus on `data indexing optimizations` as well as `query optimizations`. Data indexing optimization techniques aim to store the data in a way that helps you improve retrieval efficiency, such as [1]:
-  - Sliding window uses an overlap between chunks and is one of the simplest techniques.
-  - Enhancing data granularity applies data cleaning techniques, such as removing irrelevant information, confirming factual accuracy, updating outdated information, etc.
-  - Adding metadata, such as dates, purposes, or chapters, for filtering purposes.
+  - `Sliding window` uses an overlap between chunks and is one of the simplest techniques.
+  - `Enhancing data granularity` applies data cleaning techniques, such as `removing irrelevant information`, `confirming factual accuracy`, `updating outdated information`, etc.
+  - `Adding metadata`, such as dates, purposes, or chapters, for filtering purposes.
+  - `Sub-Queries`: There are different query strategies such as tree queries or sequential querying of chunks that can be used for different scenarios. LlamaIndex offers a sub question query engine that allows a query to be broken down into several questions that use different relevant data sources.
+  - `Hypothetical Document Embeddings`: HyDE generates a hypothetical answer to a query, embeds it, and uses it to retrieve documents similar to the hypothetical answer as opposed to using the query directly.
   - Optimizing index structures involves different strategies to index data, such as adjusting the chunk sizes or using multi-indexing strategies. One technique we will implement in this article is sentence window retrieval, which embeds single sentences for retrieval and replaces them with a larger text window at inference time.
 Additionally, `pre-retrieval techniques aren’t limited to data indexing and can cover techniques at inference time`, such as `query routing`, `query rewriting`, and `query expansion`.
 
 - `Retrieval`: Hybrid Search (Semantic and Lexical Search)
   - `Fine-tuning embedding models` customizes embedding models to domain-specific contexts, especially for domains with evolving or rare terms. For example, `BAAI/bge-small-en` is a high-performance embedding model that can be fine-tuned.
   - `Dynamic Embedding` adapts to the context in which words are used, unlike static embedding, which uses a single vector for each word. For example, `OpenAI’s embeddings-ada-02` is a sophisticated dynamic embedding model that captures contextual understanding.
+  - `Hybrid Search Exploration`: This approach leverages a combination of search techniques like keyword-based search and semantic search to retrieve relevant and context-rich information; this is useful when dealing with different query types and information needs.
+  - `Recursive Retrieval and Query Engine`: Involves a recursive retrieval process that might start with small semantic chunks and subsequently retrieve larger chunks that enrich the context; this is useful to balance efficiency and context-rich information.
+  - `StepBack-prompt`: A prompting technique that enables LLMs to perform abstraction that produces concepts and principles that guide reasoning; this leads to better-grounded responses when adopted to a RAG framework because the LLM moves away from specific instances and is allowed to reason more broadly if needed.
+  - `Iterative retrieval` enables the model to perform multiple retrieval cycles to enhance the depth and relevance of information. Notable approaches that leverage this method include RETRO and GAR-meets-RAG.
+  - `Recursive retrieval` recursively iterates on the output of one retrieval step as the input to another retrieval step; this enables delving deeper into relevant information for complex and multi-step queries (e.g., academic research and legal case analysis). Notable approaches that leverage this method include IRCoT and Tree of Clarifications.
+  - `Adaptive retrieval` tailors the retrieval process to specific demands by determining optimal moments and content for retrieval. Notable approaches that leverage this method include FLARE and Self-RAG.
 
 - `Post-retrieval` techniques: Reranking, Few-Shot prompt engineering
 Additional processing of the retrieved context can help address issues such as exceeding the context window limit or introducing noise, thus hindering the focus on crucial information. Post-retrieval optimization techniques summarized in the RAG survey [1] are:
@@ -53,7 +61,40 @@ In LangChain this is implemented in the Ensemble Retriever class, combining a li
 As vector database, we'll use FAISS, a library developed by Facebook AI. FAISS specializes in the efficient similarity search and clustering of dense vectors, which suits our needs perfectly. Currently, FAISS is among the top libraries for conducting Nearest Neighbor (NN) search in large datasets.
 
 #### `Prompt`
+A prompt may contain the following:
+1. `Instruction`: Task or instruction for the model (eg: classify, summarize, …)
+2. `Input`: Input statement or question for the model to generate a response.
+3. `Context`: Additional relevant information to guide the model’s response (eg: examples to help the model better understand the task.)
+4. `Output Format`: Specific type or format of the output generated by the model.
 
+`General tips for designing prompt`
+1. Be clear and concise - Avoid ambigous language.
+2. Format prompts properly : Separate the input, instruction, context, and output directions. Prompts with the format tends to achieve better results than prompts with random formatting.
+3. Focus on what the model needs to do - Try not to focus on what model should not do. Positive instructions are more effective.
+4. Provide examples to articulate the desired output format
+5. Control the length of output - Explicitly requesting the output length in the prompt helps in faster inference and cost effective as most services charges per token generated.
+
+`Type of Prompting Techniques`
+- `Zero-shot Prompting`
+- `Few-shot Prompting`
+- `Chain-of-Thought Prompting`
+Chain-of-Thought (CoT) prompting is technique that breaks down complex tasks through intermediate reasoning steps. This allows LLMs to overcome difficulties with some reasoning tasks that require logical thinking and multiple steps to solve, such as arithmetic or commonsense reasoning questions.
+This encourages model to explain it’s reasoning process by decomposing the solution into a series of steps, mimicking human-like conversation flow. This behaviour can be facilitated through various strategies (Zero shot, few short, etc).
+- `ReAct Prompting`
+CoT aims to imitate how humans think about problems, but it lack access to the external world or inability to update its knowledge which lead to issues like fact hallucination and error propagation, which is where ReAct Prompting is useful.
+ReAct allows language models to generate verbal reasoning traces and text actions concurrently.
+Actions receive feedback from the external environment ("Env"), while reasoning traces update the model's internal state by reasoning over the context and incorporating useful information for future reasoning and action.
+
+Therefore, in order to implement ReAct, you need:
+1. An environment where a text action is chosen from various options based on the environment's internal state and then generates a text observation in response.
+2. An output parser framework that stops text generation after producing a valid action, executes it in the environment, and returns the observation by appending it to the generated text so far and prompting the LLM.
+3. Human-generated examples of intermixed thoughts, actions, and observations in the environment to use for few-shot learning.
+
+
+#### `Generation`
+The generator in a RAG system is responsible for converting retrieved information into a coherent text that will form the final output of the model. This process involves diverse input data which sometimes require efforts to refine the adaptation of the language model to the input data derived from queries and documents. This can be addressed using post-retrieval process and fine-tuning:
+- `Post-retrieval with Frozen LLM`: Post-retrieval processing leaves the LLM untouched and instead focuses on enhancing the quality of retrieval results through operations like information compression and result reranking. Information compression helps with reducing noise, addressing an LLM's context length restrictions, and enhancing generation effects. Reranking aims at reordering documents to prioritize the most relevant items at the top.
+- `Fine-tuning LLM for RAG`: To improve the RAG system, the generator can be further optimized or fine-tuned to ensure that the generated text is natural and effectively leverages the retrieved documents.
 
 #### `Evaluating RAG Applications with RAGAs`
 building a proof of concept for a Retrieval-Augmented Generation (RAG) application is easy, but making it production-ready is very difficult. Getting the RAG pipeline's performance to a satisfying state is especially difficult because of the different components in a RAG pipeline:
@@ -114,6 +155,7 @@ This article covers the following “hyperparameters” sorted by their relevant
 In the ingestion stage of a RAG pipeline, you can achieve performance improvements by:
 - `Data cleaning`
 - `Chunking`
+One important step is choosing the right chunking strategy which depends on the content you are dealing with and the application you are generating responses for. Different models also display different strengths on varying block sizes. Sentence transformers will perform better on single sentences but text-embedding-ada-002 will perform better with blocks containing 256 or 512 tokens. Other aspects to consider include the length of user questions, application, and token limits but it's common to experiment with different chunking strategies to help optimize retrieval in your RAG system.
 - `Embedding models`
 Massive Text Embedding Benchmark (MTEB) Leaderboard, fine-tune your embedding model
 - `Metadata`
@@ -129,21 +171,28 @@ Since the search query to retrieve additional context in a RAG pipeline is also 
   - `Rephrasing`: Use an LLM to rephrase the query and try again.
   - `Hypothetical Document Embeddings (HyDE)`: Use an LLM to generate a hypothetical response to the search query and use both for retrieval.
   - `Sub-queries`: Break down longer queries into multiple shorter queries.
+  - `Query Rewriting`: Focuses on rewriting queries using a variety of techniques such as Query2Doc, ITER-RETGEN, and HyDE.
+  - `Embedding Transformation`: Optimizes the representation of query embeddings and align them to a latent space that is more closely aligned with a task.
+
 - `Retrieval parameters`
 The retrieval is an essential component of the RAG pipeline. The first consideration is whether `semantic search` will be sufficient for your use case or if you want to experiment with `hybrid search`.
 In the latter case, you need to experiment with weighting the aggregation of sparse and dense retrieval methods in hybrid search [1, 4, 9]. Thus, tuning the parameter alpha, which controls the weighting between semantic (alpha = 1) and keyword-based search (alpha = 0), will become necessary.
 Also, the `number of search results to retrieve` will play an essential role. The number of retrieved contexts will impact the length of the used context window (see Prompt Engineering). Also, if you are using a re-ranking model, you need to consider how many contexts to input to the model (see Re-ranking models).
+
 - `Advanced retrieval strategies`
 The underlying idea of this section is that the chunks for `retrieval shouldn’t necessarily be the same chunks used for the generation`. Ideally, you would embed smaller chunks for retrieval (see Chunking) but retrieve bigger contexts. [7]
   - `Sentence-window retrieval`: Do not just retrieve the relevant sentence, but the window of appropriate sentences before and after the retrieved one.
   - `Auto-merging retrieval`: The documents are organized in a tree-like structure. At query time, separate but related, smaller chunks can be consolidated into a larger context.
+
 - `Re-ranking models`
 While semantic search retrieves context based on its semantic similarity to the search query, `“most similar” doesn’t necessarily mean “most relevant”`. Re-ranking models, such as Cohere’s Rerank model, can help eliminate irrelevant search results by computing a score for the relevance of the query for each retrieved context [1, 9].
 If you are using a re-ranker model, you may need to re-tune the `number of search results for the input of the re-ranker` and `how many of the reranked results you want to feed into the LLM`.
 As with the embedding models, you may want to experiment with `fine-tuning the re-ranker` to your specific use case.
+
 - `LLMs`
 The LLM is the core component for generating the response. Similarly to the embedding models, there is a wide range of LLMs you can choose from depending on your requirements, such as open vs. proprietary models, inferencing costs, context length, etc. [1]
 As with the embedding models or re-ranking models, you may want to experiment with fine-tuning the LLM to your specific use case to incorporate specific wording or tone of voice.
+
 - `Prompt engineering`
 How you phrase or engineer your prompt will significantly impact the LLM’s completion [1, 8, 9].
 Additionally, using few-shot examples in your prompt can improve the quality of the completions.
