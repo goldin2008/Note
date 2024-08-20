@@ -77,6 +77,14 @@ All metrics are scaled to the `range [0, 1]`, with higher values indicating a be
 
 RAGAs also provides you with metrics to evaluate the RAG pipeline end-to-end, such as `answer semantic similarity` and `answer correctness`. This article focuses on the component-level metrics.
 
+We can make the following observations:
+- `context_relevancy` (signal-to-noise ratio of the retrieved context): While the LLM judges all of the context as relevant for the last question, it also judges that most of the retrieved context for the second question is irrelevant. Depending on this metric, you could experiment with different numbers of retrieved contexts to reduce the noise.
+- `context_recall` (if all the relevant information required to answer the question was retrieved): The LLMs evaluate that the retrieved contexts contain the relevant information required to answer the questions correctly.
+- `faithfulness` (factual accuracy of the generated answer): While the LLM judges that the first and last questions are answered correctly, the answer to the second question, which wrongly states that the president did not mention Intel’s CEO, is judged with a faithfulness of 0.5.
+- `answer_relevancy` (how relevant is the generated answer to the question): All of the generated answers are judged as fairly relevant to the questions.
+
+- `answer semantic similarity` The concept of Answer Semantic Similarity pertains to the assessment of the semantic resemblance between the generated answer and the ground truth. This evaluation is based on the ground truth and the answer. Measuring the semantic similarity between answers can offer valuable insights into the quality of the generated response. This evaluation utilizes a cross-encoder model to calculate the semantic similarity score.
+- `Answer Correctness` The assessment of Answer Correctness involves gauging the accuracy of the generated answer when compared to the ground truth. This evaluation relies on the ground truth and the answer. Answer correctness encompasses two critical aspects: semantic similarity between the generated answer and the ground truth, as well as factual similarity. These aspects are combined using a weighted scheme to formulate the answer correctness score. Users also have the option to employ a ‘threshold’ value to round the resulting score to binary, if desired.
 
 ### LLM based application
 Besides just building our LLM application, we’re also going to be focused on scaling and serving it in production. Unlike traditional machine learning, or even supervised deep learning, scale is a bottleneck for LLM applications from the very beginning. Large datasets, models, compute intensive workloads, serving requirements, etc. We’ll develop our application to be able to handle any scale as the world around us continues to grow. We’re also going to be focused on evaluation and performance. Our application involves many moving pieces: embedding models, chunking logic, the LLM itself, etc. and so it's important that we experiment with different configurations to optimize for the best quality responses. However, it's non-trivial to evaluate and quantitatively compare different configurations for a generative task. We’re going to break down evaluation of individual parts of our application (retrieval given query, generation given source), also assess the overall performance (end-to-end generation) and share findings towards an optimized configuration.
@@ -510,6 +518,8 @@ However, there were also some 2nd order impacts that we didn’t immediately rea
 *** > https://towardsdatascience.com/advanced-retrieval-augmented-generation-from-theory-to-llamaindex-implementation-4de1464a9930
 
 *** > https://towardsdatascience.com/evaluating-rag-applications-with-ragas-81d67b0ee31a
+
+*** > https://towardsdatascience.com/a-guide-on-12-tuning-strategies-for-production-ready-rag-applications-7ca646833439
 
 
 > https://mindfulmatrix.substack.com/p/build-a-simple-llm-application-with
