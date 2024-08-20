@@ -86,6 +86,67 @@ We can make the following observations:
 - `answer semantic similarity` The concept of Answer Semantic Similarity pertains to the assessment of the semantic resemblance between the generated answer and the ground truth. This evaluation is based on the ground truth and the answer. Measuring the semantic similarity between answers can offer valuable insights into the quality of the generated response. This evaluation utilizes a cross-encoder model to calculate the semantic similarity score.
 - `Answer Correctness` The assessment of Answer Correctness involves gauging the accuracy of the generated answer when compared to the ground truth. This evaluation relies on the ground truth and the answer. Answer correctness encompasses two critical aspects: semantic similarity between the generated answer and the ground truth, as well as factual similarity. These aspects are combined using a weighted scheme to formulate the answer correctness score. Users also have the option to employ a ‘threshold’ value to round the resulting score to binary, if desired.
 
+#### `A Guide on 12 Tuning Strategies for Production-Ready RAG Applications`
+Data Science is an experimental science. It starts with the “No Free Lunch Theorem,” which states that there is `no one-size-fits-all algorithm` that works best for every problem. And it results in data scientists using experiment tracking systems to help them tune the hyperparameters of their Machine Learning (ML) projects to achieve the best performance.
+This article covers the following “hyperparameters” sorted by their relevant stage.
+
+In the ingestion stage of a RAG pipeline, you can achieve performance improvements by:
+- `Data cleaning`
+- `Chunking`
+- `Embedding models`
+Massive Text Embedding Benchmark (MTEB) Leaderboard, fine-tune your embedding model
+- `Metadata`
+When you store vector embeddings in a vector database, some vector databases let you store them together with metadata (or data that is not vectorized). Annotating vector embeddings with metadata can be helpful for additional post-processing of the search results, such as metadata filtering [1, 3, 8, 9]. For example, you could add metadata, such as the date, chapter, or subchapter reference.
+- `Multi-indexing`
+If the metadata is not sufficient enough to provide additional information to separate different types of context logically, you may want to experiment with multiple indexes [1, 9]. For example, you can use different indexes for different types of documents. Note that you will have to incorporate some index routing at retrieval time [1, 9]. If you are interested in a deeper dive into metadata and separate collections, you might want to learn more about the concept of native multi-tenancy.
+- `Indexing algorithms`
+To enable lightning-fast similarity search at scale, vector databases and vector indexing libraries use an Approximate Nearest Neighbor (ANN) search instead of a k-nearest neighbor (kNN) search. As the name suggests, ANN algorithms approximate the nearest neighbors and thus can be less precise than a kNN algorithm.
+
+And in the inferencing stage (retrieval and generation), you can tune:
+- `Query transformations`
+Since the search query to retrieve additional context in a RAG pipeline is also embedded into the vector space, its phrasing can also impact the search results. Thus, if your search query doesn’t result in satisfactory search results, you can experiment with various query transformation techniques [5, 8, 9], such as:
+  - `Rephrasing`: Use an LLM to rephrase the query and try again.
+  - `Hypothetical Document Embeddings (HyDE)`: Use an LLM to generate a hypothetical response to the search query and use both for retrieval.
+  - `Sub-queries`: Break down longer queries into multiple shorter queries.
+- `Retrieval parameters`
+The retrieval is an essential component of the RAG pipeline. The first consideration is whether `semantic search` will be sufficient for your use case or if you want to experiment with `hybrid search`.
+In the latter case, you need to experiment with weighting the aggregation of sparse and dense retrieval methods in hybrid search [1, 4, 9]. Thus, tuning the parameter alpha, which controls the weighting between semantic (alpha = 1) and keyword-based search (alpha = 0), will become necessary.
+Also, the `number of search results to retrieve` will play an essential role. The number of retrieved contexts will impact the length of the used context window (see Prompt Engineering). Also, if you are using a re-ranking model, you need to consider how many contexts to input to the model (see Re-ranking models).
+- `Advanced retrieval strategies`
+The underlying idea of this section is that the chunks for `retrieval shouldn’t necessarily be the same chunks used for the generation`. Ideally, you would embed smaller chunks for retrieval (see Chunking) but retrieve bigger contexts. [7]
+  - `Sentence-window retrieval`: Do not just retrieve the relevant sentence, but the window of appropriate sentences before and after the retrieved one.
+  - `Auto-merging retrieval`: The documents are organized in a tree-like structure. At query time, separate but related, smaller chunks can be consolidated into a larger context.
+- `Re-ranking models`
+While semantic search retrieves context based on its semantic similarity to the search query, `“most similar” doesn’t necessarily mean “most relevant”`. Re-ranking models, such as Cohere’s Rerank model, can help eliminate irrelevant search results by computing a score for the relevance of the query for each retrieved context [1, 9].
+If you are using a re-ranker model, you may need to re-tune the `number of search results for the input of the re-ranker` and `how many of the reranked results you want to feed into the LLM`.
+As with the embedding models, you may want to experiment with `fine-tuning the re-ranker` to your specific use case.
+- `LLMs`
+The LLM is the core component for generating the response. Similarly to the embedding models, there is a wide range of LLMs you can choose from depending on your requirements, such as open vs. proprietary models, inferencing costs, context length, etc. [1]
+As with the embedding models or re-ranking models, you may want to experiment with fine-tuning the LLM to your specific use case to incorporate specific wording or tone of voice.
+- `Prompt engineering`
+How you phrase or engineer your prompt will significantly impact the LLM’s completion [1, 8, 9].
+Additionally, using few-shot examples in your prompt can improve the quality of the completions.
+As mentioned in Retrieval parameters, the number of contexts fed into the prompt is a parameter you should experiment with [1]. While the performance of your RAG pipeline can improve with increasing relevant context, you can also run into a `“Lost in the Middle”` [6] effect where relevant context is not recognized as such by the LLM if it is placed in the middle of many contexts.
+
+
+
+This article covered the following strategies in the ingestion stage:
+- `Data cleaning`: Ensure data is clean and correct.
+- `Chunking`: Choice of chunking technique, chunk size (chunk_size) and chunk overlap (overlap).
+- `Embedding models`: Choice of the embedding model, incl. dimensionality, and whether to fine-tune it.
+- `Metadata`: Whether to use metadata and choice of metadata.
+- `Multi-indexing`: Decide whether to use multiple indexes for different data collections.
+- `Indexing algorithms`: Choice and tuning of ANN and vector compression algorithms can be tuned but are usually not tuned by practitioners.
+And the following strategies in the inferencing stage (retrieval and generation):
+- `Query transformations`: Experiment with rephrasing, HyDE, or sub-queries.
+- `Retrieval parameters`: Choice of search technique (alpha if you have hybrid search enabled) and the number of retrieved search results.
+- `Advanced retrieval strategies`: Whether to use advanced retrieval strategies, such as sentence-window or auto-merging retrieval.
+- `Re-ranking models`: Whether to use a re-ranking model, choice of re-ranking model, number of search results to input into the re-ranking model, and whether to fine-tune the re-ranking model.
+- `LLMs`: Choice of LLM and whether to fine-tune it.
+- `Prompt engineering`: Experiment with different phrasing and few-shot examples.
+
+
+
 ### LLM based application
 Besides just building our LLM application, we’re also going to be focused on scaling and serving it in production. Unlike traditional machine learning, or even supervised deep learning, scale is a bottleneck for LLM applications from the very beginning. Large datasets, models, compute intensive workloads, serving requirements, etc. We’ll develop our application to be able to handle any scale as the world around us continues to grow. We’re also going to be focused on evaluation and performance. Our application involves many moving pieces: embedding models, chunking logic, the LLM itself, etc. and so it's important that we experiment with different configurations to optimize for the best quality responses. However, it's non-trivial to evaluate and quantitatively compare different configurations for a generative task. We’re going to break down evaluation of individual parts of our application (retrieval given query, generation given source), also assess the overall performance (end-to-end generation) and share findings towards an optimized configuration.
 With large data sources, models and application serving needs, scale is a day-1 priority for LLM applications. We want to build our applications in such a way that they can scale as our needs grow without us having to change our code later.
@@ -512,6 +573,7 @@ However, there were also some 2nd order impacts that we didn’t immediately rea
 *** > https://github.com/langchain-ai/rag-from-scratch
 
 *** > https://medium.com/@mohammed97ashraf/building-a-retrieval-augmented-generation-rag-model-with-gemma-and-langchain-a-step-by-step-f917fc6f753f
+
 
 *** > https://towardsdatascience.com/retrieval-augmented-generation-rag-from-theory-to-langchain-implementation-4e9bd5f6a4f2
 
