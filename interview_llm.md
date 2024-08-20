@@ -46,6 +46,11 @@ Additional processing of the retrieved context can help address issues such as e
   - `Prompt compression` reduces the overall prompt length by removing irrelevant and highlighting important context.
   - `Re-ranking` uses machine learning models to recalculate the relevance scores of the retrieved contexts.
 
+`Fusion retrieval or hybrid search`
+This concept, though not entirely new, involves integrating the strengths of two distinct search methods: traditional keyword-based search, which employs sparse retrieval algorithms such as tf-idf or the search industry standard BM25, and contemporary semantic or vector search.
+The challenge lies in effectively merging the results obtained from these different similarity scoring methods. This issue is typically addressed using the Reciprocal Rank Fusion (RRF) algorithm, which re-ranks the retrieved results to produce the final output.
+In LangChain this is implemented in the Ensemble Retriever class, combining a list of retrievers you define, for example a Faiss vector index and a BM25 based retriever and using RRF for reranking.
+As vector database, we'll use FAISS, a library developed by Facebook AI. FAISS specializes in the efficient similarity search and clustering of dense vectors, which suits our needs perfectly. Currently, FAISS is among the top libraries for conducting Nearest Neighbor (NN) search in large datasets.
 
 #### `Prompt`
 
@@ -85,6 +90,18 @@ We can make the following observations:
 
 - `answer semantic similarity` The concept of Answer Semantic Similarity pertains to the assessment of the semantic resemblance between the generated answer and the ground truth. This evaluation is based on the ground truth and the answer. Measuring the semantic similarity between answers can offer valuable insights into the quality of the generated response. This evaluation utilizes a cross-encoder model to calculate the semantic similarity score.
 - `Answer Correctness` The assessment of Answer Correctness involves gauging the accuracy of the generated answer when compared to the ground truth. This evaluation relies on the ground truth and the answer. Answer correctness encompasses two critical aspects: semantic similarity between the generated answer and the ground truth, as well as factual similarity. These aspects are combined using a weighted scheme to formulate the answer correctness score. Users also have the option to employ a ‘threshold’ value to round the resulting score to binary, if desired.
+
+`Labeled generated metrics`:
+- `answer_correctness` - Is the response correct, based on the ground_truth response.
+`Reference-free generator metrics`:
+- `faithfulness` - Proportion of claims in the response that are grounded in the retrieved context (entailment-based).
+`Reference-free retriever metrics`:
+- `context_relevancy` - Proportion of retrieved sentences that are "relevant" to the user question.
+`Labeled retriever metrics`:
+- `context_recall` - Proportion of the ground truth answer that can be attributed to the docs.
+- `context_precision` - Are the relevant docs (according to the ground truth) ranked higher? Works by scoring each document as useful in deducing the ground truth, computing precision @ K using that score for each K, then averaging over the total number of useful docs.
+
+In reality, you likely won't need to apply all of these metrics at the same time, but each metric can shed a bit of light on the different aspects of your retriever and generator setup.
 
 #### `A Guide on 12 Tuning Strategies for Production-Ready RAG Applications`
 Data Science is an experimental science. It starts with the “No Free Lunch Theorem,” which states that there is `no one-size-fits-all algorithm` that works best for every problem. And it results in data scientists using experiment tracking systems to help them tune the hyperparameters of their Machine Learning (ML) projects to achieve the best performance.
@@ -144,6 +161,17 @@ And the following strategies in the inferencing stage (retrieval and generation)
 - `Re-ranking models`: Whether to use a re-ranking model, choice of re-ranking model, number of search results to input into the re-ranking model, and whether to fine-tune the re-ranking model.
 - `LLMs`: Choice of LLM and whether to fine-tune it.
 - `Prompt engineering`: Experiment with different phrasing and few-shot examples.
+
+#### engineering
+This shows you how effective an LLM can be after we add just a handful of articles. here’s a quick recap on what is happening here:
+- `PromptTemplate Creation`: We initiated the process by creating a PromptTemplate. This template requires two inputs: a context and a question. The context provides background information relevant to the question, while the question is what we want our LLM to answer.
+- `Chain Creation`: Next, we created a chain. This chain is a sequence of operations that allows us to invoke a query.
+- `RunnablePassthrough Usage`: The query is then passed along using RunnablePassthrough(). This function is a part of LangChain’s API and is used to pass the query to the next step in the chain.
+- `Retriever Invocation`: The query is also passed into the retriever. The retriever queries our FAISS index, a database designed for efficient similarity search and clustering of dense vectors, and retrieves the relevant context.
+- `Context Integration`: The retrieved context is then integrated into our prompt. This step is crucial as it provides the necessary background information that aids the LLM in generating a more accurate and context-aware response.
+- `LLM Invocation`: Finally, the enriched prompt is passed into the LLM. In this demonstration, we used a quantized Mistral-7B model, which is a powerful language model capable of generating high-quality text.
+
+
 
 
 
@@ -575,6 +603,7 @@ However, there were also some 2nd order impacts that we didn’t immediately rea
 *** > https://medium.com/@mohammed97ashraf/building-a-retrieval-augmented-generation-rag-model-with-gemma-and-langchain-a-step-by-step-f917fc6f753f
 
 
+
 *** > https://towardsdatascience.com/retrieval-augmented-generation-rag-from-theory-to-langchain-implementation-4e9bd5f6a4f2
 
 *** > https://towardsdatascience.com/advanced-retrieval-augmented-generation-from-theory-to-llamaindex-implementation-4de1464a9930
@@ -582,6 +611,12 @@ However, there were also some 2nd order impacts that we didn’t immediately rea
 *** > https://towardsdatascience.com/evaluating-rag-applications-with-ragas-81d67b0ee31a
 
 *** > https://towardsdatascience.com/a-guide-on-12-tuning-strategies-for-production-ready-rag-applications-7ca646833439
+
+
+
+*** > https://www.kaggle.com/code/gpreda/rag-using-llama-2-langchain-and-chromadb
+*** > https://towardsdatascience.com/local-rag-from-scratch-3afc6d3dea08
+
 
 
 > https://mindfulmatrix.substack.com/p/build-a-simple-llm-application-with
