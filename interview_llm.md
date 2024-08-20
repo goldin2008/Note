@@ -103,6 +103,10 @@ We can make the following observations:
 
 In reality, you likely won't need to apply all of these metrics at the same time, but each metric can shed a bit of light on the different aspects of your retriever and generator setup.
 
+`Generating a Testset`: Ideally, you would use your own product's logs to evaluate using Ragas, but you may want to test out different RAG optimizations prior to your product going live. One option for experimenting in this way is by generating our own testset using language models. Specifically, Ragas offers a way to generate our own testset via language model.
+`Calculating the Metrics`: In the following section, we will very briefly demonstrate how to actually calculate the Ragas metrics. You'll find that they are very easily to generate from a coding perspective!
+`Explaining the Metrics`: After we have derived the metrics via code, we will do a much deeper dive into what each of these metrics are and how they are scored behind the scenes.
+
 #### `A Guide on 12 Tuning Strategies for Production-Ready RAG Applications`
 Data Science is an experimental science. It starts with the “No Free Lunch Theorem,” which states that there is `no one-size-fits-all algorithm` that works best for every problem. And it results in data scientists using experiment tracking systems to help them tune the hyperparameters of their Machine Learning (ML) projects to achieve the best performance.
 This article covers the following “hyperparameters” sorted by their relevant stage.
