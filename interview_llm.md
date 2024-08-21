@@ -1,5 +1,10 @@
 ## LLMs interview prep
 
+#### Pretraining-LLM
+
+
+
+#### RAG overflow
 `naive RAG`
 - Retrieve: The user query is used to retrieve relevant context from an external knowledge source. For this, the user query is embedded with an embedding model into the same vector space as the additional context in the vector database. This allows to perform a similarity search, and the top k closest data objects from the vector database are returned.
 - Augment: The user query and the retrieved additional context are stuffed into a prompt template.
@@ -25,6 +30,27 @@ For each sentence, it creates a context window. If you specify a window_size = 3
 During retrieval, the sentence that most closely matches the query is returned. After retrieval, you need to replace the sentence with the entire window from the metadata.
 - Retrieval optimization: Hybrid search
 - Post-retrieval optimization: Re-ranking
+
+#### Query Translation
+Query transformations are a set of approaches focused on re-writing and / or modifying questions for retrieval.
+https://github.com/langchain-ai/rag-from-scratch/blob/main/rag_from_scratch_5_to_9.ipynb
+- `Multi Query`
+Distance-based vector database retrieval embeds (represents) queries in high-dimensional space and finds similar embedded documents based on "distance". But, retrieval may produce different results with subtle changes in query wording or if the embeddings do not capture the semantics of the data well. Prompt engineering / tuning is sometimes done to manually address these problems, but can be tedious. The MultiQueryRetriever automates the process of `prompt tuning by using an LLM to generate multiple queries from different perspectives for a given user input query`. For each query, it retrieves a set of relevant documents and takes the unique union across all queries to get a larger set of potentially relevant documents. By generating multiple perspectives on the same question, the MultiQueryRetriever might be able to overcome some of the limitations of the distance-based retrieval and get a richer set of results.
+https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/MultiQueryRetriever/
+- `RAG-Fusion`
+RAG-Fusion, a search methodology that aims to bridge the gap between traditional search paradigms and the multifaceted dimensions of human queries. Inspired by the capabilities of Retrieval Augmented Generation (RAG), this project goes a step further by employing multiple query generation and Reciprocal Rank Fusion to re-rank search results.
+https://github.com/langchain-ai/langchain/blob/master/cookbook/rag_fusion.ipynb?ref=blog.langchain.dev
+- `Decomposition`
+  - `Answer recursively`
+  - `Answer individually`
+- `Step Back`
+Sometimes search quality and model generations can be tripped up by the specifics of a question. One way to handle this is to first generate a more abstract, "step back" question and to query based on both the original and step back question.
+For example, if we ask a question of the form "Why does my LangGraph agent astream_events return {LONG_TRACE} instead of {DESIRED_OUTPUT}" we will likely retrieve more relevant documents if we search with the more generic question "How does astream_events work with a LangGraph agent" than if we search with the specific user question.
+https://python.langchain.com/v0.1/docs/use_cases/query_analysis/techniques/step_back/
+- `HyDE`
+At a high level, HyDE is an embedding technique that takes queries, generates a hypothetical answer, and then embeds that generated document and uses that as the final example.
+In order to use HyDE, we therefore need to provide a base embedding model, as well as an LLMChain that can be used to generate those documents. By default, the HyDE class comes with some default prompts to use (see the paper for more details on them), but we can also create our own.
+https://github.com/langchain-ai/langchain/blob/master/cookbook/hypothetical_document_embeddings.ipynb
 
 #### Retrieval
 retriever = db.as_retriever(search_type="mmr", search_kwargs={'k': 4, 'fetch_k': 20})
@@ -53,6 +79,25 @@ Additionally, `pre-retrieval techniques aren’t limited to data indexing and ca
 Additional processing of the retrieved context can help address issues such as exceeding the context window limit or introducing noise, thus hindering the focus on crucial information. Post-retrieval optimization techniques summarized in the RAG survey [1] are:
   - `Prompt compression` reduces the overall prompt length by removing irrelevant and highlighting important context.
   - `Re-ranking` uses machine learning models to recalculate the relevance scores of the retrieved contexts.
+
+`Ensemble Retriever`
+is a sophisticated retrieval algorithm designed to enhance the performance of information retrieval by combining the strengths of multiple individual retrievers. This approach, known as "ensemble retrieval," uses a method called Reciprocal Rank Fusion to rerank and merge the results from different retrievers, thereby providing more accurate and relevant results than any single retriever alone.
+The Ensemble Retriever is particularly effective in scenarios where different types of retrievers can complement each other. For instance, it can combine a sparse retriever, such as BM25 (which is adept at keyword-based searches), with a dense retriever that uses embedding similarity (which excels at finding semantically similar documents). This hybrid approach leverages the precise keyword matching of the sparse retriever and the broader semantic understanding of the dense retriever, resulting in a more robust retrieval system.
+- `Maximal Marginal Relevance (MMR)` is a method used in information retrieval to select documents that are both relevant to the query and diverse with respect to the previously selected documents. This approach helps in reducing redundancy and increasing the coverage of different aspects of the query in the selected documents.
+- `BM25`, or Okapi BM25, is a ranking function used in information retrieval to estimate the relevance of documents to a given search query. It is an enhancement of the traditional TF-IDF method, which considers the frequency of terms within a document (term frequency) and the rarity of terms across all documents (inverse document frequency) to compute relevance scores.
+  `Key Features of BM25`
+  - Relevance Scoring: BM25 improves upon TF-IDF by introducing a term saturation component, which accounts for the diminishing returns of term frequency. This means that after a certain point, additional occurrences of a term in a document contribute less to the document's relevance score. This is controlled by parameters k1 and b, which can be tuned based on empirical observations.
+  - Document Length Normalization: One of BM25's significant advantages is its ability to normalize document length. This prevents longer documents from being unfairly penalized or favored simply due to their length. The parameter b controls the degree of normalization.
+  - Flexibility and Precision: BM25 is particularly effective in handling diverse datasets, including those with noisy or sparse data. It provides more accurate relevance scoring for longer documents compared to traditional TF-IDF.
+  `Practical Applications`
+  - Web Search Engines: BM25 is widely used in search engines to rank web pages based on their relevance to the search query.
+  - Document Retrieval Systems: It is applied in various document retrieval systems where precise relevance scoring is crucial.
+  - Legal Case Retrieval: BM25 serves as a strong baseline for retrieving relevant legal documents due to its robust handling of term frequencies and document length.
+  `Advantages in RAG Framework`
+  - Handling Diverse Queries: BM25's robust handling of term frequencies and document length normalization ensures that it can handle a variety of queries efficiently, providing a good starting point for further processing by generative models.
+  - Scalability: BM25 is lightweight and scalable, making it suitable for large-scale retrieval tasks common in RAG frameworks.
+  By integrating BM25 within a RAG framework, systems can leverage efficient retrieval mechanisms alongside powerful generative models to provide more accurate and contextually relevant responses.
+
 
 `Fusion retrieval or hybrid search`
 This concept, though not entirely new, involves integrating the strengths of two distinct search methods: traditional keyword-based search, which employs sparse retrieval algorithms such as tf-idf or the search industry standard BM25, and contemporary semantic or vector search.
@@ -198,8 +243,6 @@ How you phrase or engineer your prompt will significantly impact the LLM’s com
 Additionally, using few-shot examples in your prompt can improve the quality of the completions.
 As mentioned in Retrieval parameters, the number of contexts fed into the prompt is a parameter you should experiment with [1]. While the performance of your RAG pipeline can improve with increasing relevant context, you can also run into a `“Lost in the Middle”` [6] effect where relevant context is not recognized as such by the LLM if it is placed in the middle of many contexts.
 
-
-
 This article covered the following strategies in the ingestion stage:
 - `Data cleaning`: Ensure data is clean and correct.
 - `Chunking`: Choice of chunking technique, chunk size (chunk_size) and chunk overlap (overlap).
@@ -224,7 +267,10 @@ This shows you how effective an LLM can be after we add just a handful of articl
 - `Context Integration`: The retrieved context is then integrated into our prompt. This step is crucial as it provides the necessary background information that aids the LLM in generating a more accurate and context-aware response.
 - `LLM Invocation`: Finally, the enriched prompt is passed into the LLM. In this demonstration, we used a quantized Mistral-7B model, which is a powerful language model capable of generating high-quality text.
 
-
+`RAG agent`
+- `Routing: Adaptive RAG` (paper). Route questions to different retrieval approaches
+- `Fallback: Corrective RAG` (paper). Fallback to web search if docs are not relevant to query
+- `Self-correction: Self-RAG` (paper). Fix answers w/ hallucinations or don’t address question
 
 
 
