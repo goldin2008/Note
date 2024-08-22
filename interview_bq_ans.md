@@ -187,3 +187,45 @@ Example:
 "This experience reinforced the importance of a data-driven approach to strategy development. It taught me the value of deep diving into data to uncover actionable insights and the impact of continuously iterating on strategies based on real-world feedback. Going forward, I consistently apply these principles to ensure that my decisions are grounded in data and aligned with broader business objectives. I’m excited to bring this data-centric mindset to the AWS team, where strategic decisions can drive innovation and deliver exceptional results."
 
 This response demonstrates your ability to leverage data effectively to develop strategies that lead to impactful results. It highlights your analytical skills, strategic thinking, and alignment with AWS's focus on data-driven decision-making and delivering results.
+
+### Question 6: Tell me about your greatest professional failure and how you recovered.
+When answering the question "Tell me about your greatest professional failure and how you recovered" for an AWS Applied Scientist L6 role, you want to show that you can take responsibility, learn from your mistakes, and bounce back stronger. This response should reflect your resilience, problem-solving skills, and growth mindset, all of which align with AWS's leadership principles like "Learn and Be Curious," "Earn Trust," and "Deliver Results."
+1. Situation:
+Start by briefly describing the context of your failure. Choose a situation where the stakes were high, and the failure had significant consequences. Ensure it's a scenario relevant to your role, such as a machine learning project, deployment issue, or a key decision that didn’t go as planned.
+
+Example:
+"In my previous role as a Machine Learning Engineer at [Company], I was leading a project to develop a predictive analytics model for a critical supply chain optimization system. The goal was to forecast demand accurately to help the company manage inventory more effectively and reduce costs. However, I made a critical mistake in the early stages of the project that had significant consequences."
+
+2. Task:
+Explain what you were trying to achieve and why the project was important. This will provide context for why the failure was impactful.
+
+Example:
+"My task was to build a model that could predict product demand with high accuracy. The success of this project was crucial because the company relied on these forecasts to make key decisions about inventory management and supply chain logistics. A reliable model would lead to cost savings and improved operational efficiency."
+
+3. Action:
+Detail what went wrong and how you contributed to the failure. Be honest about your mistakes, but also explain your thought process at the time. This shows accountability and transparency.
+
+Example:
+"In my eagerness to deliver results quickly, I chose to use a relatively new and untested machine learning algorithm that promised higher accuracy. I bypassed some of the usual rigorous testing and validation steps to meet an aggressive deadline. Unfortunately, when we deployed the model into production, it began generating inaccurate forecasts, leading to overstock in some areas and stockouts in others. This mistake caused significant disruptions in the supply chain and resulted in financial losses."
+
+4. Recovery:
+Describe how you responded to the failure. Focus on the steps you took to rectify the situation, what you learned, and how you involved your team in the recovery process.
+
+Example:
+"Realizing the severity of the situation, I immediately took responsibility and alerted my team and management. We quickly reverted to the previous model while I worked on identifying the root cause of the inaccuracies. I led a post-mortem analysis, where we discovered that I had overlooked some critical assumptions and data biases during the initial model development.
+
+To recover, I re-implemented the project with a more conservative and well-tested algorithm, following all the proper validation protocols this time. I also involved my team in the process, ensuring that we conducted thorough peer reviews and stress tests before any future deployments. Additionally, I implemented new checks and balances in our workflow to prevent similar oversights in the future."
+
+5. Result:
+Discuss the outcome after your recovery efforts. Highlight any improvements or positive changes that resulted from your handling of the failure. Quantify the results if possible.
+
+Example:
+"The revised model, once deployed, performed well, with an accuracy improvement of 15% over the previous version. The disruptions in the supply chain were mitigated, and within a quarter, the company was back on track with optimized inventory levels. This experience also led to the establishment of more rigorous testing protocols, which have since become a standard part of our machine learning deployment process. These changes helped restore trust with stakeholders and ultimately led to more reliable and robust predictive models."
+
+6. Reflection:
+Conclude by reflecting on what you learned from the experience and how it has shaped your approach to your work moving forward.
+
+Example:
+"This failure was a humbling experience, but it taught me the importance of balancing innovation with caution, especially when the stakes are high. I learned that cutting corners in testing and validation can have serious consequences, and since then, I’ve been more diligent in ensuring that all models are thoroughly vetted before deployment. This experience also strengthened my resolve to take ownership of my mistakes and learn from them, which has made me a more careful and resilient engineer. I’m confident that these lessons will be valuable as I take on new challenges at AWS, where high standards and reliability are paramount."
+
+This response showcases your ability to learn from mistakes, take accountability, and improve processes—all critical attributes for an AWS Applied Scientist. It also reflects your growth mindset and commitment to delivering high-quality results, aligning with AWS’s leadership principles.
