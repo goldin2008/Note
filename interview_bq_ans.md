@@ -1,6 +1,6 @@
 ## Behavior Questions Answer
 
-### 1 Question: Tell me about a time when you were faced with a problem that had a number of possible solutions. What was the problem, and how did you determine the course of action? What was the outcome of that choice?
+### Question 1: Tell me about a time when you were faced with a problem that had a number of possible solutions. What was the problem, and how did you determine the course of action? What was the outcome of that choice?
 To excel in answering this behavioral question for an AWS Applied Scientist L6 role, you'll want to structure your response using the STAR method (Situation, Task, Action, Result) and emphasize your problem-solving skills, data-driven decision-making, and ability to innovate while aligning with AWS's core values like customer obsession, ownership, and delivering results.
 
 Here’s how you can structure your response:
@@ -34,7 +34,7 @@ This experience reinforced the importance of balancing technical innovation with
 
 This response showcases your ability to navigate complex problems, make data-driven decisions, and deliver impactful results—all key attributes for an AWS Applied Scientist. It also demonstrates how you think big while focusing on customer satisfaction and operational excellence, aligning with AWS’s leadership principles.
 
-### 2 Question: When did you take a risk, make a mistake, or fail? How did you respond, and how did you grow from that experience?
+### Question 2: When did you take a risk, make a mistake, or fail? How did you respond, and how did you grow from that experience?
 When answering this question for an AWS Applied Scientist L6 role, you’ll want to demonstrate your ability to take calculated risks, learn from mistakes, and grow from failures—all while aligning with AWS leadership principles like "Learn and Be Curious," "Bias for Action," and "Earn Trust." Here’s how you can structure your response:
 1. Situation:
 Begin by describing a scenario where you took a calculated risk or made a decision that didn’t pan out as expected. Choose an example that is relevant to the kind of work you’d do at AWS, such as an ML project, experimentation with a new algorithm, or a system design decision.
