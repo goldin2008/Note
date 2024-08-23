@@ -29,6 +29,9 @@ AS面试
 5. 一轮bar raiser （三个lp）
 除了最后一轮bar raiser，之前的每一轮都会问两个lp
 
+VO先是一个之前项目的presentation+deep dive，然后4轮back to back
+
+
 #### 1st Interview
 1. Talk about linear regression, why it is called linear?
 2. Talk about logistic regression, is it linear?
