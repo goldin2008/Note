@@ -14,13 +14,21 @@
 
 ![Diagram of deployment.](pic/update.png)
 
-Random forest and gradient boosting machines (GBM) are both ensemble methods that combine multiple weak learners (decision trees) to create a stronger model. Both methods aim to reduce bias and variance in the model, but they achieve this in different ways. 
-- Random forest reduces variance by creating multiple decision trees with random subsets of the training data and features. Each tree is trained independently, so the randomness introduced helps to reduce overfitting and improves the model's generalization ability. The final prediction is made by taking the average or majority vote of the predictions of all the trees. 
-- GBM, on the other hand, reduces bias by creating a sequence of decision trees where each tree tries to correct the errors of the previous tree. The algorithm starts with a simple model and then iteratively adds new trees, with each tree focusing on the residuals of the previous trees. This sequential process helps to reduce bias and improve the model's accuracy. 
+Random forest and gradient boosting machines (GBM) are both ensemble methods that combine multiple weak learners (decision trees) to create a stronger model. Both methods aim to reduce bias and variance in the model, but they achieve this in different ways.
+- Random forest reduces variance by creating multiple decision trees with random subsets of the training data and features. Each tree is trained independently, so the randomness introduced helps to reduce overfitting and improves the model's generalization ability. The final prediction is made by taking the average or majority vote of the predictions of all the trees.
+- GBM, on the other hand, reduces bias by creating a sequence of decision trees where each tree tries to correct the errors of the previous tree. The algorithm starts with a simple model and then iteratively adds new trees, with each tree focusing on the residuals of the previous trees. This sequential process helps to reduce bias and improve the model's accuracy.
 - In terms of bias-variance trade-off, Random Forest tends to have lower variance and higher bias compared to GBM, while GBM tends to have lower bias and higher variance compared to Random Forest. This is because Random Forest creates multiple independent trees with random subsets of the data, which helps to reduce overfitting and improve generalization, but also reduces the model's ability to capture complex relationships in the data. GBM, on the other hand, creates a sequence of trees that sequentially correct errors, which helps to capture complex relationships in the data but also increases the risk of overfitting. Overall, the choice between Random Forest and GBM depends on the specific problem, the size and quality of the data, and the desired trade-off between bias and variance. It is often recommended to try both methods and compare their performance on the specific task at hand.
 
 
 ### Amazon
+AS面试
+1. 一轮ml depth (deep dive resume + causal inference/ml的depth）
+2. 一轮ml breadth（各种方法都问问，但是他问完问题是我在drive conversation，说说pros&cons）
+3. 一轮ml application （一个组里会碰到的具体问题，框架类似ml system design）
+4. 一轮coding （medium难度）
+5. 一轮bar raiser （三个lp）
+除了最后一轮bar raiser，之前的每一轮都会问两个lp
+
 #### 1st Interview
 1. Talk about linear regression, why it is called linear?
 2. Talk about logistic regression, is it linear?
@@ -186,7 +194,7 @@ SD. 设计一个系统, 将用户的状态更新推送给该用户的好友.
 ML SD. 向用户推荐某类东西, 很常规了.
 考得完全不一样吧, 可以参考grokking的system design interview以及machine learning interview.
 
-sys design:search/update status 和 search most popular status 
+sys design:search/update status 和 search most popular status
 
 ml design：resolve member complain about bad content
 
@@ -660,8 +668,8 @@ Data generation 这块可能还要考虑下用什么data 做training， label �
 `2. Feature engineering/Preprocessing(why preprocess):`
 Data Preprocessing:
 1. Categorical feature
-2. Date Parse 
-3. Missing value 
+2. Date Parse
+3. Missing value
 4. Outlier detector
 
 Feature Engineering:
@@ -728,7 +736,7 @@ Model Calibration if necessary.
 
 - Online evaluation/Online metrics
     - A/B testing:
-Use A/B testing to compare Click Through Rates, watch time, and Conversion rates. 
+Use A/B testing to compare Click Through Rates, watch time, and Conversion rates.
 Before model deployment, I would do a A/B test to compare existing policy and using new model as recommendation policy. This is where online experimentation comes in handy. It allows us to conduct controlled experiments that provide a valuable way to assess the impact of new features on customer behavior. A/B testing is very beneficial for gauging the impact of new features or changes in the system on the user experience. It is a method of comparing two versions of a webpage or app against each other simultaneously to determine which one performs better. In an A/B experiment, a webpage or app screen is modified to create a second version of the same page. The original version of the page is known as the control and the modified version of the page is known as the variation.
     - Back Testing:
 Assume that the A/B experiment gave a gain of 5% and B/A experiment gave a loss of 5%. This will ensure that the changes made in the system improved performance.
@@ -877,10 +885,10 @@ LZ 加油！关于A/B testing，可以参考下面的视频和书。我以前在
 https://www.youtube.com/watch?v=Eh00PoR76NY
 
 Book
-http://www.amazon.com/Testing-Mo ... eywords=a+b+testing 鏉ユ簮涓€浜�.涓夊垎鍦拌鍧�. 
+http://www.amazon.com/Testing-Mo ... eywords=a+b+testing 鏉ユ簮涓€浜�.涓夊垎鍦拌鍧�.
 视频和书都是一个叫Dan Siroker出的，以前从Google出来创业， 现在是一个网站Optimizely的CEO，这个网站专门帮其他公司做A/B testing，优化他们的网页
 
-（2）Harvard Data Science 有一讲请了Quora 的Data Scientist讲了一些A/B testing 内容 
+（2）Harvard Data Science 有一讲请了Quora 的Data Scientist讲了一些A/B testing 内容
 
 Lecture 22. visit 1point3acres.com for more.
 http://cm.dce.harvard.edu/2014/01/14328/publicationListing.shtml
