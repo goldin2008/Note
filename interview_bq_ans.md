@@ -229,3 +229,77 @@ Example:
 "This failure was a humbling experience, but it taught me the importance of balancing innovation with caution, especially when the stakes are high. I learned that cutting corners in testing and validation can have serious consequences, and since then, I’ve been more diligent in ensuring that all models are thoroughly vetted before deployment. This experience also strengthened my resolve to take ownership of my mistakes and learn from them, which has made me a more careful and resilient engineer. I’m confident that these lessons will be valuable as I take on new challenges at AWS, where high standards and reliability are paramount."
 
 This response showcases your ability to learn from mistakes, take accountability, and improve processes—all critical attributes for an AWS Applied Scientist. It also reflects your growth mindset and commitment to delivering high-quality results, aligning with AWS’s leadership principles.
+
+### Question 7: "Give me an example of a time when you demonstrated customer obsession."
+When answering questions about customer obsession, highlight your deep understanding of customer needs, how you prioritize customer satisfaction, and how you've gone above and beyond to deliver exceptional value to the customer.
+1. Situation:
+Start by describing the context of the situation. Explain who the customer was and why their needs were particularly important.
+
+Example:
+"In my previous role as a Machine Learning Engineer at [Company], we were working with a key client—a large retail company—who relied heavily on our predictive analytics platform to make inventory decisions. They were facing challenges with overstocking and understocking, which was affecting their profitability and customer satisfaction. The accuracy of our predictions was critical to their operations, so their needs were at the forefront of our work."
+
+2. Task:
+Explain what your responsibility was in this situation and why it was crucial to focus on the customer’s needs.
+
+Example:
+"My responsibility was to improve the accuracy of our demand forecasting models to better align with the client’s specific needs. I knew that if we didn’t address their pain points effectively, it could lead to a significant loss of trust and potentially the client’s business."
+
+3. Action:
+Describe the steps you took to address the customer's needs. Focus on how you went above and beyond to ensure the customer’s satisfaction.
+
+Example:
+"To better understand the client’s challenges, I initiated a series of in-depth meetings with their team to gather insights into their specific pain points and how our models could better serve their needs. I discovered that their business had unique seasonal trends that our models weren’t adequately capturing.
+
+I then worked closely with my team to customize the models by incorporating these seasonal factors and adjusting the algorithms to improve accuracy. I also set up a feedback loop where the client could continuously provide input on the model’s performance, allowing us to make real-time adjustments. Additionally, I provided the client with detailed reports and visualizations to help them understand the data and how to use it more effectively."
+
+4. Result:
+Discuss the impact of your actions on the customer. Highlight how your focus on their needs led to positive outcomes. Quantify the results if possible.
+
+Example:
+"As a result of these efforts, the accuracy of our demand forecasts improved by 20%, which significantly reduced the client’s overstock and understock issues. This led to a 15% increase in their overall profitability and a marked improvement in their customer satisfaction scores due to better product availability. The client was extremely satisfied with the customized solution we provided, and it strengthened our partnership, leading to further collaboration on new projects."
+
+5. Reflection:
+Conclude by reflecting on the importance of customer obsession and how this experience has shaped your approach to work.
+
+Example:
+"This experience reinforced the importance of deeply understanding and prioritizing the customer’s needs in every aspect of my work. It showed me that going the extra mile to customize solutions and maintain close communication can have a profound impact on customer satisfaction and business outcomes. At AWS, I’m committed to continuing this customer-first approach, ensuring that every project I work on delivers maximum value to the customer."
+
+This response demonstrates your commitment to understanding and meeting customer needs, a key aspect of customer obsession. It highlights your ability to tailor solutions to the customer’s unique challenges and shows how your efforts led to tangible improvements, aligning with AWS’s core values.
+
+### Question 8: "Tell me about a time when you disagreed with your manager. How did you handle it?"
+When asked about a scenario where you disagreed with your manager, it's important to demonstrate your ability to handle conflict professionally, communicate effectively, and prioritize the best outcome for the team or project. For an AWS Applied Scientist L6 role, the focus should be on how you respectfully voiced your concerns, provided data-driven arguments, and worked collaboratively to reach a resolution. This aligns with Amazon’s leadership principles like "Have Backbone; Disagree and Commit," "Earn Trust," and "Customer Obsession."
+1. Situation:
+Start by providing context for the disagreement. Describe the project or decision at hand, and explain why you had a different perspective.
+
+Example:
+"In a previous role, I was working on a project to develop a machine learning model for predicting customer churn. My manager wanted to prioritize speed over accuracy, pushing for a quicker deployment with a simpler model. However, based on my analysis, I believed that taking the time to refine the model would lead to significantly better predictions, which would ultimately have a greater impact on the business by reducing customer churn more effectively."
+
+2. Task:
+Explain your role in the situation and why it was important for you to voice your disagreement.
+
+Example:
+"My role was to develop and validate the machine learning model. Given the high stakes of this project—potentially saving millions of dollars in lost revenue due to customer churn—I felt it was crucial to ensure that the model was as accurate as possible, even if it meant taking a bit more time. I knew that voicing my concerns was important to ensure we delivered the best possible solution."
+
+3. Action:
+Describe how you approached the disagreement. Focus on how you communicated your concerns, provided evidence, and worked towards a resolution.
+
+Example:
+"To address the disagreement, I first gathered data to support my position. I conducted a series of tests comparing the performance of the quick-turnaround model my manager suggested with a more refined model I had developed. The results clearly showed that the refined model had significantly better predictive accuracy, which would lead to more effective interventions to prevent churn.
+
+I then scheduled a one-on-one meeting with my manager to discuss my findings. I presented the data and explained the long-term benefits of prioritizing accuracy over speed. I acknowledged the importance of meeting deadlines but emphasized that, in this case, the potential impact on the business justified the extra time.
+
+During the conversation, I made sure to listen to my manager’s concerns and understood the pressures to deliver quickly. We had an open and respectful discussion, and I proposed a compromise: we could deploy the simpler model initially to meet the deadline while continuing to refine the model for a subsequent update. This would allow us to balance the need for speed with the importance of accuracy."
+
+4. Result:
+Discuss the outcome of the disagreement and how it benefited the project or team. Highlight any positive changes that resulted from your approach.
+
+Example:
+"My manager appreciated the data-driven approach and agreed to the compromise. We deployed the initial model as planned and continued refining it for a later release. As a result, we were able to deliver an improved model within a few weeks, which ultimately led to a 20% reduction in customer churn. The success of this project reinforced the importance of balancing short-term goals with long-term impact, and it strengthened the trust between my manager and me."
+
+5. Reflection:
+Conclude by reflecting on what you learned from the experience and how it has influenced your approach to working with others, especially in situations where there’s a disagreement.
+
+Example:
+"This experience taught me the value of having a backbone and respectfully voicing my opinions, especially when I believe it’s in the best interest of the project or the customer. It also showed me the importance of being open to compromise and finding solutions that address the concerns of all stakeholders. Moving forward, I’ve continued to apply these lessons, ensuring that I always base my arguments on data and communicate openly and respectfully in any disagreements. This approach has helped me build stronger, more collaborative relationships with my colleagues and leaders."
+
+This response demonstrates your ability to handle disagreements professionally, use data to support your arguments, and work towards a solution that benefits the project and team. It aligns with the values of open communication, respect, and a focus on delivering the best possible outcomes, all of which are important in an AWS Applied Scientist role.
