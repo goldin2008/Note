@@ -1,4 +1,9 @@
 ## Behavior Questions Answer
+STAR method to construct the response:
+-- Situation. Start off your response to the interview question by explaining what the ‘situation’ was and who was involved.
+-- Task. Once you have detailed the situation, explain what the ‘task’ was, or what needed to be done.
+-- Action. Now explain what ‘action’ you took, and what action others took. Also explain why you took this particular course of action.
+-- Result. Explain to the panel what you would do differently if the same situation arose again. It is good to be reflective at the end of your responses. This demonstrates a level of maturity and it will also show the panel that you are willing to learn from every experience.
 
 ### Question 1: Tell me about a time when you were faced with a problem that had a number of possible solutions. What was the problem, and how did you determine the course of action? What was the outcome of that choice?
 To excel in answering this behavioral question for an AWS Applied Scientist L6 role, you'll want to structure your response using the STAR method (Situation, Task, Action, Result) and emphasize your problem-solving skills, data-driven decision-making, and ability to innovate while aligning with AWS's core values like customer obsession, ownership, and delivering results.
@@ -1375,3 +1380,33 @@ Example:
 "This achievement is meaningful to me because it demonstrated my ability to tackle complex problems and deliver impactful results. It reinforced the importance of thorough analysis, collaboration, and continuous improvement. This experience has influenced my approach by highlighting the value of proactive problem-solving and stakeholder engagement, which I continue to apply in my work."
 
 This response highlights your ability to lead complex projects, solve significant challenges, and deliver results that have a positive impact. It aligns with AWS’s leadership principles such as "Deliver Results," "Invent and Simplify," and "Bias for Action," showcasing your achievements and the skills that contributed to your success.
+
+### Question 36: "Can you share a story where you solved a problem in an innovative or unexpected way?"
+When discussing a story of solving problems innovatively or unexpectedly, focus on a situation where you approached a challenge in a creative way that led to a successful outcome. Highlight the problem, the innovative solution, and the impact of your actions.
+1. Situation: Begin by describing the context of the problem, including your role, the challenge you faced, and why it was difficult to solve using conventional methods.
+
+Example: "In a previous role as a Machine Learning Engineer, I was part of a team working on improving the personalization algorithm for a streaming service. The challenge was that the algorithm struggled to provide relevant recommendations for new users, known as the 'cold start' problem, due to the lack of historical data."
+
+2. Task: Explain what needed to be accomplished and why the conventional approaches were insufficient.
+
+Example: "Our goal was to enhance the recommendation system to deliver personalized content even for new users, improving their initial experience with the platform. Traditional collaborative filtering methods were not effective in this scenario due to the lack of user data, and the team was struggling to find a solution."
+
+3. Action: Describe the innovative or unexpected approach you took to solve the problem. Highlight your creative thinking and how you applied it to the situation.
+
+Example: "Recognizing the limitations of traditional approaches, I proposed an innovative solution by leveraging transfer learning and cross-domain data. I suggested using data from other similar platforms where users had shared preferences, which could be applied to our new users.
+
+To implement this, I developed a model that could transfer knowledge from a pre-trained recommendation system on a similar platform and fine-tune it using the minimal data available from new users on our platform. I also incorporated content-based filtering techniques, using metadata from the content itself, such as genres and keywords, to provide more accurate recommendations.
+
+This hybrid approach was unexpected because it combined different methodologies and external data sources, which was a departure from our usual practice of relying solely on internal data."
+
+4. Result: Discuss the outcome of your innovative solution. Highlight the success, any measurable improvements, and the impact on the project or organization.
+
+Example: "The implementation of this innovative solution significantly improved the recommendation accuracy for new users. The personalized content delivery for first-time users increased by 25%, leading to higher user engagement and retention in the critical initial stages.
+
+The approach was not only successful but also sparked new discussions within the team about leveraging external data and transfer learning for other use cases. The solution became a standard part of our recommendation system for new users, and I was recognized for my creative problem-solving."
+
+5. Reflection: Conclude by reflecting on what you learned from the experience and how it has influenced your approach to problem-solving.
+
+Example: "This experience taught me the value of thinking outside the box and exploring unconventional methods to solve complex problems. It reinforced the importance of staying open to new ideas and cross-disciplinary approaches. Since then, I’ve continued to apply innovative thinking to my work, looking for opportunities to combine different techniques and data sources to achieve the best results."
+
+This response demonstrates your ability to approach challenges creatively and deliver innovative solutions that have a positive impact. It aligns with AWS’s leadership principles such as "Invent and Simplify" and "Deliver Results," showcasing your problem-solving skills and willingness to explore new methodologies.
