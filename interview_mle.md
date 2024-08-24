@@ -31,6 +31,12 @@ AS面试
 
 VO先是一个之前项目的presentation+deep dive，然后4轮back to back
 
+电面：项目+ LP
+presentation: 之前做过的业界的项目
+round1: Bar Raiser 全部都是 LP 问题
+round2: Hiring manager LP + coding（📈变形）
+round3: ML depth + LP
+round4: ML design + past project
 
 #### 1st Interview
 1. Talk about linear regression, why it is called linear?
