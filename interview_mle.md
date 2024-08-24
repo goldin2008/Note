@@ -194,6 +194,20 @@ System Design 2
 ### Google
 
 ### Facebook
+最近面了十来家Machine Learning Engineer（有些公司是Data scientist or researcher）职位，总结一下造福后人，另外求米！！
+主要是一下类型：
+1，ML建模design，给一个场景比如news feed ranking, 主要考察模型怎么建，例如优化目标，feature，data，模型结构，评价标准等。有时需要细分，比如retrieval, L1 ranking, L2 ranking等。这种类型的design一般不考太多系统，不过有时会问一些模型serving, data collection，快速retrieval需要支持的系统
+2，ML系统design，和1有点像，给一个场景的design，不过更偏向于系统设计。和system design不同的是，ML system design会偏重于在线serve大模型，feature store, ANN, ETF pipeline, MLOps等
+广告
+PauseUnmute
+Loaded: 7.33%
+Fullscreen
+3，ML coding，实现简单ML 算法比如 kmeans, decision tree, knn, naive bayes, logistic regression等。要对python numpy很熟，要不很难在规定时间内写完
+4，建模coding，比如给一个数据和target，自己做预处理并建模。一般要做一些简单的missing value处理，feature normilization, feature变换, feature selection, 合成新feature等，然后调包建模。要对pandas 和 sklearn / pytouch / tensorflow 很熟
+5，ML知识问答，又‍‌‌‍‌‍‌‍‍‌叫ML八股，各种ML基础问题比如什么是overfitting, 怎么prevent
+6，ML实际经验问答，问一些实际工作中可能出现的问题，比如某某情况下怎么做AB test
+7，概率统计，比如让你讲一下什么是中心极限定理，什么是 t-检验，各种无聊的小球概率。。。 好在这种题现在越来越少了，不过面试官要是年龄很大的（50+）或者统计背景的要特别小心
+
 `一轮ML Design, 一轮System design, 2轮coding`
 细桶射击是个印度大姐，题目就是给一堆机子去爬一个网站，我把sql，nosql，redis，filesystem还有log-message queue这些都说了一大通，还有如何parition和sharding巴拉巴拉，基本都是我在说，我中途问了一下有什么问题对方说没事我知道你说的，然后中间提了一些问题关于data model，我大概说了下怎么做index，我看她也没什么反应。然后又问了一些具体大概爬虫算法是个什么逻辑，还画了个testcase的 bfs 例子。。。最后问还有什么补充的，然后又加了个监控，check point 调度系统，因为机子可能不稳定会挂之类的。。。然后又问bottleneck 答完后就没了。。。也不知道怎么样
 
