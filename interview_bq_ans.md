@@ -1,9 +1,9 @@
 ## Behavior Questions Answer
 STAR method to construct the response:
--- Situation. Start off your response to the interview question by explaining what the ‘situation’ was and who was involved.
--- Task. Once you have detailed the situation, explain what the ‘task’ was, or what needed to be done.
--- Action. Now explain what ‘action’ you took, and what action others took. Also explain why you took this particular course of action.
--- Result. Explain to the panel what you would do differently if the same situation arose again. It is good to be reflective at the end of your responses. This demonstrates a level of maturity and it will also show the panel that you are willing to learn from every experience.
+- Situation. Start off your response to the interview question by explaining what the ‘situation’ was and who was involved.
+- Task. Once you have detailed the situation, explain what the ‘task’ was, or what needed to be done.
+- Action. Now explain what ‘action’ you took, and what action others took. Also explain why you took this particular course of action.
+- Result. Explain to the panel what you would do differently if the same situation arose again. It is good to be reflective at the end of your responses. This demonstrates a level of maturity and it will also show the panel that you are willing to learn from every experience.
 
 ### Question 1: Tell me about a time when you were faced with a problem that had a number of possible solutions. What was the problem, and how did you determine the course of action? What was the outcome of that choice?
 To excel in answering this behavioral question for an AWS Applied Scientist L6 role, you'll want to structure your response using the STAR method (Situation, Task, Action, Result) and emphasize your problem-solving skills, data-driven decision-making, and ability to innovate while aligning with AWS's core values like customer obsession, ownership, and delivering results.
