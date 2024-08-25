@@ -39,7 +39,7 @@ This experience reinforced the importance of balancing technical innovation with
 
 This response showcases your ability to navigate complex problems, make data-driven decisions, and deliver impactful results—all key attributes for an AWS Applied Scientist. It also demonstrates how you think big while focusing on customer satisfaction and operational excellence, aligning with AWS’s leadership principles.
 
-### Question 2: When did you take a risk, make a mistake, or fail? How did you respond, and how did you grow from that experience?
+### ??? Question 2: When did you take a risk, make a mistake, or fail? How did you respond, and how did you grow from that experience?
 When answering this question for an AWS Applied Scientist L6 role, you’ll want to demonstrate your ability to take calculated risks, learn from mistakes, and grow from failures—all while aligning with AWS leadership principles like "Learn and Be Curious," "Bias for Action," and "Earn Trust." Here’s how you can structure your response:
 1. Situation:
 Begin by describing a scenario where you took a calculated risk or made a decision that didn’t pan out as expected. Choose an example that is relevant to the kind of work you’d do at AWS, such as an ML project, experimentation with a new algorithm, or a system design decision.
@@ -193,7 +193,9 @@ Example:
 
 This response demonstrates your ability to leverage data effectively to develop strategies that lead to impactful results. It highlights your analytical skills, strategic thinking, and alignment with AWS's focus on data-driven decision-making and delivering results.
 
-### Question 6: Tell me about your greatest professional failure and how you recovered.
+### ??? Question 6: Tell me about your greatest professional failure and how you recovered.
+`Change it to model risk and governance officer and document prep failure.`
+
 When answering the question "Tell me about your greatest professional failure and how you recovered" for an AWS Applied Scientist L6 role, you want to show that you can take responsibility, learn from your mistakes, and bounce back stronger. This response should reflect your resilience, problem-solving skills, and growth mindset, all of which align with AWS's leadership principles like "Learn and Be Curious," "Earn Trust," and "Deliver Results."
 1. Situation:
 Start by briefly describing the context of your failure. Choose a situation where the stakes were high, and the failure had significant consequences. Ensure it's a scenario relevant to your role, such as a machine learning project, deployment issue, or a key decision that didn’t go as planned.
@@ -235,7 +237,8 @@ Example:
 
 This response showcases your ability to learn from mistakes, take accountability, and improve processes—all critical attributes for an AWS Applied Scientist. It also reflects your growth mindset and commitment to delivering high-quality results, aligning with AWS’s leadership principles.
 
-### Question 7: "Give me an example of a time when you demonstrated customer obsession."
+### ??? Question 7: "Give me an example of a time when you demonstrated customer obsession."
+`Change to company entity merger`
 When answering questions about customer obsession, highlight your deep understanding of customer needs, how you prioritize customer satisfaction, and how you've gone above and beyond to deliver exceptional value to the customer.
 1. Situation:
 Start by describing the context of the situation. Explain who the customer was and why their needs were particularly important.
@@ -271,7 +274,8 @@ Example:
 
 This response demonstrates your commitment to understanding and meeting customer needs, a key aspect of customer obsession. It highlights your ability to tailor solutions to the customer’s unique challenges and shows how your efforts led to tangible improvements, aligning with AWS’s core values.
 
-### Question 8: "Tell me about a time when you disagreed with your manager. How did you handle it?"
+### ??? Question 8: "Tell me about a time when you disagreed with your manager. How did you handle it?"
+`Change to data and ml pipeline instead of one time solution`
 When asked about a scenario where you disagreed with your manager, it's important to demonstrate your ability to handle conflict professionally, communicate effectively, and prioritize the best outcome for the team or project. For an AWS Applied Scientist L6 role, the focus should be on how you respectfully voiced your concerns, provided data-driven arguments, and worked collaboratively to reach a resolution. This aligns with Amazon’s leadership principles like "Have Backbone; Disagree and Commit," "Earn Trust," and "Customer Obsession."
 1. Situation:
 Start by providing context for the disagreement. Describe the project or decision at hand, and explain why you had a different perspective.
@@ -309,7 +313,9 @@ Example:
 
 This response demonstrates your ability to handle disagreements professionally, use data to support your arguments, and work towards a solution that benefits the project and team. It aligns with the values of open communication, respect, and a focus on delivering the best possible outcomes, all of which are important in an AWS Applied Scientist role.
 
-### Question 9: "Describe a time when you had a tight deadline. How did you handle it?"
+### ??? Question 9: "Describe a time when you had a tight deadline. How did you handle it?"
+`Change it to the situation I join the team late and the previous team members delayed the projct long time
+Focus on core functionality and deliver results first and then enhance the product gradually`
 When describing a time where you faced a tight deadline, it’s essential to demonstrate your ability to prioritize tasks, stay calm under pressure, and deliver high-quality results despite time constraints. For an AWS Applied Scientist L6 role, focus on how you efficiently managed your workload, made data-driven decisions, and leveraged teamwork or technology to meet the deadline while maintaining the standards expected at AWS.
 1. Situation:
 Start by setting the context for the situation. Describe the project and why the deadline was tight, and emphasize the importance of the task.
@@ -347,7 +353,8 @@ Example:
 
 This response demonstrates your ability to handle tight deadlines effectively, showcasing your skills in prioritization, resource management, and delivering results under pressure. It aligns with AWS's leadership principles, particularly "Deliver Results" and "Bias for Action," which are critical for success in an AWS Applied Scientist role.
 
-### Question 10: "Describe a time when you learned something in daily life but ended up using it in your study or work."
+### ??? Question 10: "Describe a time when you learned something in daily life but ended up using it in your study or work."
+`Change to fraud detection whose trend change variably`
 When answering a question about applying something you learned in daily life to your work or study, it’s important to showcase your ability to draw insights from everyday experiences and use them to solve problems, innovate, or improve your work. For an AWS Applied Scientist L6 role, emphasize how this learning led to a tangible impact or improvement in your work, demonstrating your curiosity and ability to connect seemingly unrelated experiences to your professional life.
 1. Situation:
 Start by describing the context of your daily life experience. Explain what you learned and how it caught your attention.
@@ -533,7 +540,7 @@ Example:
 
 This response demonstrates your ability to earn trust and convince others, showcasing key skills such as communication, empathy, problem-solving, and collaboration. It aligns with AWS's leadership principles of "Earn Trust" and "Deliver Results," making it a strong example for your interview.
 
-### Question 15: "Describe a time when you had to trade off between deadline and quality. How did you handle it, and what was the outcome?"
+### ??? Question 15: "Describe a time when you had to trade off between deadline and quality. How did you handle it, and what was the outcome?"
 When discussing a situation where you had to trade off between deadline and quality, it’s crucial to show how you balanced the need to deliver on time with maintaining a high standard of work. For an AWS Applied Scientist L6 role, focus on your decision-making process, how you assessed the trade-offs, and the outcome of your choice. Highlight your ability to make informed decisions that align with business objectives while ensuring that the work meets quality standards.
 1. Situation:
 Set the context for the situation by describing your role, the project, and why there was a need to balance deadline and quality.
