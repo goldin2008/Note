@@ -1,9 +1,22 @@
 ## Behavior Questions Answer
 STAR method to construct the response:
 - `Situation`: Start off your response to the interview question by explaining what the ‘situation’ was and who was involved.
+  - What was the context/background for the situation you were in?
+  - Where did it occur, when did it happen?
+  - What was the goal?
 - `Task`: Once you have detailed the situation, explain what the ‘task’ was, or what needed to be done.
+  - What was your role?
+  - What were you trying to achieve? Why was it important?
+  - What were the risks/consequences if nothing happened?
 - `Action`: Now explain what ‘action’ you took, and what action others took. Also explain why you took this particular course of action.
+  - What did you personally own?
+  - How did you do it? How did you influence the outcome? Who else was involved?
+  - What was the most significant obstacle you faced?
 - `Result`: Explain to the panel what you would do differently if the same situation arose again. It is good to be reflective at the end of your responses. This demonstrates a level of maturity and it will also show the panel that you are willing to learn from every experience.
+  - How did you measure success for this project?
+  - What results did you achieve? (e.g., metrics)
+  - What trade-offs did you have to make to achieve this?
+  - What did you learn or would have done differently?
 
 Example:
 - First, I created a customer feedback mechanism on a weekly basis.
@@ -12,7 +25,7 @@ Example:
 As a result, the implementation was delivered with a customer feedback score of 9.5 out of 10, and that's the highest our company has ever seen. The insights report opened another avenue of business with the customer that doubled our revenue.
 Here, and throughout this example, notice how I'm using quantifiable data to show the scale of my impact.
 
-## Leadership Principles
+## 16 Leadership Principles
 - `CUSTOMER OBSESSION`: Walk us through a time when you helped a customer through a difficult process and what that looked like.
 
 - `OWNERSHIP`: Give me a example of when you took a risk and it failed.
