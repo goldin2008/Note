@@ -5,6 +5,13 @@ STAR method to construct the response:
 - `Action`: Now explain what ‘action’ you took, and what action others took. Also explain why you took this particular course of action.
 - `Result`: Explain to the panel what you would do differently if the same situation arose again. It is good to be reflective at the end of your responses. This demonstrates a level of maturity and it will also show the panel that you are willing to learn from every experience.
 
+Example:
+- First, I created a customer feedback mechanism on a weekly basis.
+- Second, I wanted to make sure our users knew the why behind this change,and I took the action of creating a monthly office hours and 12 continued education sessions on the product. In fact, these sessions are now being used as standard practice for all future implemantations, which there have been three of this size so far.
+- And third, a byproduct of the customer feedback actually revealed insights to other opportunities in their organization. I deliver these insights to the executive board in a thorough report, and they were delighted to hear the strengths and opportunities of their organization.
+As a result, the implementation was delivered with a customer feedback score of 9.5 out of 10, and that's the highest our company has ever seen. The insights report opened another avenue of business with the customer that doubled our revenue.
+Here, and throughout this example, notice how I'm using quantifiable data to show the scale of my impact.
+
 ### Question 1: Tell me about a time when you were faced with a problem that had a number of possible solutions. What was the problem, and how did you determine the course of action? What was the outcome of that choice?
 To excel in answering this behavioral question for an AWS Applied Scientist L6 role, you'll want to structure your response using the STAR method (Situation, Task, Action, Result) and emphasize your problem-solving skills, data-driven decision-making, and ability to innovate while aligning with AWS's core values like customer obsession, ownership, and delivering results.
 
