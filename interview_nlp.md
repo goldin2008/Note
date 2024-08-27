@@ -57,7 +57,7 @@ Gradient exploding, on the other hand, occurs when the gradients become very lar
 
 Both of these problems can make it difficult to train deep neural networks effectively, and researchers have developed various techniques to mitigate them. For example, gradient clipping can be used to limit the magnitude of the gradients during training, while initialization techniques such as Xavier initialization can help to prevent gradient exploding.
 
-### NLP Pipeline ### 
+### NLP Pipeline ###
 This step-by-step processing of text is known as a pipeline. Note that, in the real world, the process may not always be linear as it’s shown in the pipeline in Figure 2-1; it often involves going back and forth between individual steps (e.g., between feature extraction and modeling, modeling and evaluation, and so on). Also, there are loops in between, most commonly going from evaluation to pre-processing, feature engineering, modeling, and back to evaluation. There is also an overall loop that goes from monitoring to data acquisition, but this loop happens at the project level.
 
 ![Diagram of rsz_system_monitoring.](pic/pnlp_0201.png)
@@ -73,7 +73,7 @@ This step-by-step processing of text is known as a pipeline. Note that, in the r
     - Say we have a sentence, S1, in English. We use a machine-translation library like Google Translate to translate it into some other language—say, German. Let the corresponding sentence in German be S2. Now, we’ll use the machine-translation library again to translate back to English. Let the output sentence be S3. We’ll find that S1 and S3 are very similar in meaning but are slight variations of each other. Now we can add S3 to our dataset. This trick works beautifully for text classification.
 - Replacing entities
 - Adding noise to data
-    - In many NLP applications, the incoming data contains spelling mistakes. This is primarily due to characteristics of the platform where the data is being generated (for example, Twitter). In such cases, we can add a bit of noise to data to train robust models. 
+    - In many NLP applications, the incoming data contains spelling mistakes. This is primarily due to characteristics of the platform where the data is being generated (for example, Twitter). In such cases, we can add a bit of noise to data to train robust models.
 - Advanced techniques
     - Snorkel
     - Active learning
@@ -111,7 +111,7 @@ Remember that not all of these steps are always necessary, and not all of them a
 For example, POS tagging cannot be preceded by stop word removal, lowercasing, etc., as such processing affects POS tagger output by changing the grammatical structure of the sentence. How a particular pre-processing step is helping a given NLP problem is another question that is specific to the application, and it can only be answered with a lot of experimentation. We’ll discuss more specific pre-processing required for different NLP applications in upcoming chapters.
 
 ***Feature engineering***
-When we use ML methods to perform our modeling step later, we’ll still need a way to feed this pre-processed text into an ML algorithm. Feature engineering refers to the set of methods that will accomplish this task. It’s also referred to as feature extraction. The goal of feature engineering is to capture the characteristics of the text into a numeric vector that can be understood by the ML algorithms. 
+When we use ML methods to perform our modeling step later, we’ll still need a way to feed this pre-processed text into an ML algorithm. Feature engineering refers to the set of methods that will accomplish this task. It’s also referred to as feature extraction. The goal of feature engineering is to capture the characteristics of the text into a numeric vector that can be understood by the ML algorithms.
 
 It’s very hard to explain a DL model’s prediction, which is a disadvantage in a business-driven use case. For example, when identifying an email as ham or spam, it might be worth knowing which word or phrases played the significant role in making the email ham or spam. While this is easy to do with handcrafted features, it’s not easy in the case of DL models.
 
@@ -158,7 +158,7 @@ Ranking tasks like information search and retrieval mostly uses ranking-based me
 `Embedding`: embedding is a mapping between vector space coming from distributional representation to vector space coming from distributed representation.
 - Word Embeddings
     - The Word2vec model is in many ways the dawn of modern-day NLP.
-    - Word2vec ensures that the learned word representations are low dimensional (vectors of dimensions 50–500, instead of several thousands, as with previously studied representations in this chapter) and dense (that is, most values in these vectors are non-zero). 
+    - Word2vec ensures that the learned word representations are low dimensional (vectors of dimensions 50–500, instead of several thousands, as with previously studied representations in this chapter) and dense (that is, most values in these vectors are non-zero).
     - To “derive” the meaning of the word, Word2vec uses distributional similarity and distributional hypothesis. That is, it derives the meaning of a word from its context: words that appear in its neighborhood in the text. So, if two different words (often) occur in similar context, then it’s highly likely that their meanings are also similar. Word2vec operationalizes this by projecting the meaning of the words in a vector space where words with similar meanings will tend to cluster together, and words with very different meanings are far from one another.
     - Conceptually, Word2vec takes a large corpus of text as input and “learns” to represent the words in a common vector space based on the contexts in which they appear in the corpus.
 - PRE-TRAINED WORD EMBEDDINGS
@@ -172,7 +172,7 @@ Ranking tasks like information search and retrieval mostly uses ranking-based me
     - One of the most commonly used implementations is gensim [15].
 - Going Beyond Words
     - A simple approach is to break the text into constituent words, take the embeddings for individual words, and combine them to form the representation for the text. There are various ways to combine them, the most popular being sum, average, etc.
-    - A simple approach that often works is to exclude those words from the feature extraction process so we don’t have to worry about how to get their representations. 
+    - A simple approach that often works is to exclude those words from the feature extraction process so we don’t have to worry about how to get their representations.
     - Another way to deal with the OOV problem for word embeddings is to create vectors that are initialized randomly, where each component is between –0.25 to +0.25, and continue to use these vectors throughout the application we’re building
     - There are also other approaches that handle the OOV problem by modifying the training process by bringing in characters and other subword-level linguistic components.
     - fastText learns embeddings for words and character n-grams together and views a word’s embedding vector as an aggregation of its constituent character n-grams. This makes it possible to generate embeddings even for words that are not present in the vocabulary.
@@ -185,30 +185,30 @@ Ranking tasks like information search and retrieval mostly uses ranking-based me
     - However, based on our experience, here are a few important aspects to keep in mind while using them in your project:
     - All text representations are inherently biased based on what they saw in training data.
     - Unlike the basic vectorization approaches, pre-trained embeddings are generally large-sized files (several gigabytes), which may pose problems in certain deployment scenarios.
-    - Modeling language for a real-world application is more than capturing the information via word and sentence embeddings. 
+    - Modeling language for a real-world application is more than capturing the information via word and sentence embeddings.
     - As we speak, neural text representation is an evolving area in NLP, with rapidly changing state of the art.
 - Handcrafted Feature Representations
     - However, in many cases, we do have some domain-specific knowledge about the given NLP problem, which we would like to incorporate into the model we’re building. In such cases, we resort to handcrafted features.
     - These are all examples of commonly used tools where we often need custom features to incorporate domain knowledge.
 
- For some applications, such as text classification, it’s more common to see vectorization approaches and embeddings as the go-to feature representations for text. For some other applications, such as information extraction, or in the examples we saw in the previous section, it’s more common to look for handcrafted, domain-specific features. Quite often, a hybrid approach that combines both kinds of features are used in practice. 
+ For some applications, such as text classification, it’s more common to see vectorization approaches and embeddings as the go-to feature representations for text. For some other applications, such as information extraction, or in the examples we saw in the previous section, it’s more common to look for handcrafted, domain-specific features. Quite often, a hybrid approach that combines both kinds of features are used in practice.
 
-### Text Classification ### 
-Our aim is to provide an overview of some of the most commonly applied techniques along with practical advice on handling different scenarios and decisions that have to be made when building text classification systems in practice. Let’s briefly discuss some of the popular applications before diving into the different approaches to perform text classification. 
+### Text Classification ###
+Our aim is to provide an overview of some of the most commonly applied techniques along with practical advice on handling different scenarios and decisions that have to be made when building text classification systems in practice. Let’s briefly discuss some of the popular applications before diving into the different approaches to perform text classification.
 
 ![Diagram of rsz_system_monitoring.](pic/pnlp_0403.png)
 
-Steps 3 through 5 are iterated on to explore different variants of features and classification algorithms and their parameters and to tune the hyperparameters before proceeding to Step 6, deploying the optimal model in production. 
+Steps 3 through 5 are iterated on to explore different variants of features and classification algorithms and their parameters and to tune the hyperparameters before proceeding to Step 6, deploying the optimal model in production.
 
-Apart from these, when classification systems are deployed in real-world applications, key performance indicators (KPIs) specific to a given business use case are also used to evaluate their impact and return on investment (ROI). 
+Apart from these, when classification systems are deployed in real-world applications, key performance indicators (KPIs) specific to a given business use case are also used to evaluate their impact and return on investment (ROI).
 
- When we say “good” dataset, we mean a dataset that is a true representation of the data we’re likely to see in production. No single approach is known to work universally well on all kinds of data and all classification problems. In the real world, we experiment with multiple approaches, evaluate them, and choose one final approach to deploy in practice. While there are many different ways to do the pre-processing, let’s say we want to do the following: lowercasing and removal of punctuation, digits and any custom strings, and stop words. CountVectorizer in scikit-learn, which is the implementation of the BoW approach. This is not a far-fetched assumption—in industry, we often don’t have the luxury of collecting more data; we have to work with what we have. Two typical approaches are oversampling the instances belonging to minority classes or undersampling the majority class to create a balanced dataset. Reason 3 in our list was: “Perhaps we need a better learning algorithm.” This gives rise to the question: “What is a better learning algorithm?” A general rule of thumb when working with ML approaches is that there is no one algorithm that learns well on all datasets. A common approach is to experiment with various algorithms and compare them. 
+ When we say “good” dataset, we mean a dataset that is a true representation of the data we’re likely to see in production. No single approach is known to work universally well on all kinds of data and all classification problems. In the real world, we experiment with multiple approaches, evaluate them, and choose one final approach to deploy in practice. While there are many different ways to do the pre-processing, let’s say we want to do the following: lowercasing and removal of punctuation, digits and any custom strings, and stop words. CountVectorizer in scikit-learn, which is the implementation of the BoW approach. This is not a far-fetched assumption—in industry, we often don’t have the luxury of collecting more data; we have to work with what we have. Two typical approaches are oversampling the instances belonging to minority classes or undersampling the majority class to create a balanced dataset. Reason 3 in our list was: “Perhaps we need a better learning algorithm.” This gives rise to the question: “What is a better learning algorithm?” A general rule of thumb when working with ML approaches is that there is no one algorithm that learns well on all datasets. A common approach is to experiment with various algorithms and compare them.
 
 ***Using Neural Embeddings in Text Classification***
-we discussed feature engineering techniques using neural networks, such as word embeddings, character embeddings, and document embeddings. The advantage of using embedding-based features is that they create a dense, low-dimensional feature representation instead of the sparse, high-dimensional structure of BoW/TF-IDF and other such features. 
+we discussed feature engineering techniques using neural networks, such as word embeddings, character embeddings, and document embeddings. The advantage of using embedding-based features is that they create a dense, low-dimensional feature representation instead of the sparse, high-dimensional structure of BoW/TF-IDF and other such features.
 
 1. Word Embeddings
-    - Loading and pre-processing the text data remains a common step. However, instead of vectorizing the texts using BoW-based features, we’ll now rely on neural embedding models. Here, we’ll use the one from Google [15]. The following code snippet shows how to load this model into Python using gensim. This is a large model that can be seen as a dictionary where the keys are words in the vocabulary and the values are their learned embedding representations. A simple approach is just to average the embeddings for individual words in text. Note that it uses embeddings only for the words that are present in the dictionary. It ignores the words for which embeddings are absent. 
+    - Loading and pre-processing the text data remains a common step. However, instead of vectorizing the texts using BoW-based features, we’ll now rely on neural embedding models. Here, we’ll use the one from Google [15]. The following code snippet shows how to load this model into Python using gensim. This is a large model that can be seen as a dictionary where the keys are words in the vocabulary and the values are their learned embedding representations. A simple approach is just to average the embeddings for individual words in text. Note that it uses embeddings only for the words that are present in the dictionary. It ignores the words for which embeddings are absent.
     - there are other pre-trained embedding approaches, such as GloVe, which can be experimented with for this approach. Gensim, which we used in this example, also supports training our own word embeddings if necessary. If we’re working on a custom domain whose vocabulary is remarkably different from that of the pre-trained news embeddings we used here, it would make sense to train our own embeddings to extract features.
     - In order to decide whether to train our own embeddings or use pre-trained embeddings, a good rule of thumb is to compute the vocabulary overlap. If the overlap between the vocabulary of our custom domain and that of pre-trained word embeddings is greater than 80%, pre-trained word embeddings tend to give good results in text classification.
     - An important factor to consider when deploying models with embedding-based feature extraction approaches is that the learned or pre-trained embedding models have to be stored and loaded into memory while using these approaches. If the model itself is bulky (e.g., the pre-trained model we used takes 3.6 GB), we need to factor this into our deployment needs.
@@ -234,16 +234,16 @@ The first step toward training any ML or DL model is to define a feature represe
 2. Pad the text sequences so that all text vectors are of the same length.
 ```Python
 #Vectorize these text samples into a 2D integer tensor using Keras Tokenizer.
-#Tokenizer is fit on training data only, and that is used to tokenize both train 
+#Tokenizer is fit on training data only, and that is used to tokenize both train
 #and test data.
 tokenizer = Tokenizer(num_words=MAX_NUM_WORDS)
 tokenizer.fit_on_texts(train_texts)
-train_sequences = tokenizer.texts_to_sequences(train_texts) 
+train_sequences = tokenizer.texts_to_sequences(train_texts)
 test_sequences = tokenizer.texts_to_sequences(test_texts)
 word_index = tokenizer.word_index
 print('Found %s unique tokens.' % len(word_index))
-#Converting this to sequences to be fed into neural network. Max seq. len is 
-#1000 as set earlier. Initial padding of 0s, until vector is of 
+#Converting this to sequences to be fed into neural network. Max seq. len is
+#1000 as set earlier. Initial padding of 0s, until vector is of
 #size MAX_SEQUENCE_LENGTH
 trainvalid_data = pad_sequences(train_sequences, maxlen=MAX_SEQUENCE_LENGTH)
 test_data = pad_sequences(test_sequences, maxlen=MAX_SEQUENCE_LENGTH)
@@ -279,10 +279,10 @@ print("Preparing of embedding matrix is done")
 ```
 
 ***CNNs for Text Classification***
- In the context of text classification, CNNs can be thought of as learning the most useful bag-of-words/n-grams features instead of taking the entire collection of words/n-grams as features, as we did earlier in this chapter. We’ll define a CNN with three convolution-pooling layers using the Sequential model class in Keras, which allows us to specify DL models as a sequential stack of layers—one after another. training the embedding layer on our own dataset seems to result in better classification on test data. However, if the training data were substantially small, sticking to the pre-trained embeddings, or using the domain adaptation techniques we’ll discuss later in this chapter, would be a better choice.
+In the context of text classification, CNNs can be thought of as learning the most useful bag-of-words/n-grams features instead of taking the entire collection of words/n-grams as features, as we did earlier in this chapter. We’ll define a CNN with three convolution-pooling layers using the Sequential model class in Keras, which allows us to specify DL models as a sequential stack of layers—one after another. training the embedding layer on our own dataset seems to result in better classification on test data. However, if the training data were substantially small, sticking to the pre-trained embeddings, or using the domain adaptation techniques we’ll discuss later in this chapter, would be a better choice.
 
- ***LSTMs for Text Classification***
- LSTMs and other variants of RNNs in general have become the go-to way of doing neural language modeling in the past few years. This is primarily because language is sequential in nature and RNNs are specialized in working with sequential data. The current word in the sentence depends on its context—the words before and after. However, when we model text using CNNs, this crucial fact is not taken into account. RNNs work on the principle of using this context while learning the language representation or a model of language. Hence, they’re known to work well for NLP tasks. There are also CNN variants that can take such context into account, and CNNs versus RNNs is still an open area of debate. While LSTMs are more powerful in utilizing the sequential nature of text, they’re much more data hungry as compared to CNNs. Thus, the relative lower performance of the LSTM on a dataset need not necessarily be interpreted as a shortcoming of the model itself.
+***LSTMs for Text Classification***
+LSTMs and other variants of RNNs in general have become the go-to way of doing neural language modeling in the past few years. This is primarily because language is sequential in nature and RNNs are specialized in working with sequential data. The current word in the sentence depends on its context—the words before and after. However, when we model text using CNNs, this crucial fact is not taken into account. RNNs work on the principle of using this context while learning the language representation or a model of language. Hence, they’re known to work well for NLP tasks. There are also CNN variants that can take such context into account, and CNNs versus RNNs is still an open area of debate. While LSTMs are more powerful in utilizing the sequential nature of text, they’re much more data hungry as compared to CNNs. Thus, the relative lower performance of the LSTM on a dataset need not necessarily be interpreted as a shortcoming of the model itself.
 
 ***Text Classification with Large, Pre-Trained Language Models***
 These representations have been used successfully for text classification in the recent past by fine-tuning the pre-trained models to the given task and dataset. BERT, which was mentioned in Chapter 3, is a popular model used in this way for text classification.

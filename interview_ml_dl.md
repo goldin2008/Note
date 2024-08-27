@@ -219,7 +219,7 @@ The mean of activations should be zero.
 The variance of activations should stay the same across every layer.
 
 36. `Explain the Adam optimization algorithm.`
-Adaptive Moment Estimation or Adam optimization is an extension to the stochastic gradient descent. This algorithm is useful when working with complex problems involving vast amounts of data or parameters. It needs less memory and is efficient. 
+Adaptive Moment Estimation or Adam optimization is an extension to the stochastic gradient descent. This algorithm is useful when working with complex problems involving vast amounts of data or parameters. It needs less memory and is efficient.
 Adam optimization algorithm is a combination of two gradient descent methodologies - Momentum and Root Mean Square Propagation.
 
 37. `Which strategy does not prevent a model from over-fitting to the training data?`
