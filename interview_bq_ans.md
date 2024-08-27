@@ -149,6 +149,7 @@ This experience taught me the importance of empathy and clear communication when
 `The model is used on roughly 17 million authorizations and $1.4B in purchase volume per day.`
 
 ### Question 1: Tell me about a time when you were faced with a problem that had a number of possible solutions. What was the problem, and how did you determine the course of action? What was the outcome of that choice?
+`simple vs. complicate vs. hybrid model`
 To excel in answering this behavioral question for an AWS Applied Scientist L6 role, you'll want to structure your response using the STAR method (Situation, Task, Action, Result) and emphasize your problem-solving skills, data-driven decision-making, and ability to innovate while aligning with AWS's core values like customer obsession, ownership, and delivering results.
 
 Here’s how you can structure your response:
@@ -170,7 +171,7 @@ Detail the process you followed to evaluate the options and decide on the best c
 Example:
 "To determine the best solution, I conducted a thorough analysis of the trade-offs between accuracy, scalability, and complexity for each approach. I started by analyzing the limitations of the existing algorithm and then ran several small-scale experiments with both deep learning and hybrid models to compare their performance. I also considered the long-term maintainability and the potential impact on user experience.
 
-After analyzing the results, I found that the deep learning approach provided the highest accuracy but at the cost of increased latency and complexity. On the other hand, the hybrid model struck a good balance, significantly improving accuracy and scalability without compromising response time. I presented these findings to the team, highlighting how the hybrid model would align with our long-term goals of delivering personalized, fast recommendations to our customers."
+`After analyzing the results, I found that the deep learning approach provided the highest accuracy but at the cost of increased latency and complexity.` `On the other hand, the hybrid model struck a good balance, significantly improving accuracy and scalability without compromising response time. I presented these findings to the team, highlighting how the hybrid model would align with our long-term goals of delivering personalized, fast recommendations to our customers`."
 
 4. Result:
 Describe the outcome of your decision. Quantify the impact where possible, such as improvements in system performance, user satisfaction, or business metrics. Reflect on what you learned and how this experience could be applied in the AWS role.
@@ -182,79 +183,34 @@ This experience reinforced the importance of balancing technical innovation with
 
 This response showcases your ability to navigate complex problems, make data-driven decisions, and deliver impactful results—all key attributes for an AWS Applied Scientist. It also demonstrates how you think big while focusing on customer satisfaction and operational excellence, aligning with AWS’s leadership principles.
 
-### ??? Question 2: When did you take a risk, make a mistake, or fail? How did you respond, and how did you grow from that experience?
-When answering this question for an AWS Applied Scientist L6 role, you’ll want to demonstrate your ability to take calculated risks, learn from mistakes, and grow from failures—all while aligning with AWS leadership principles like "Learn and Be Curious," "Bias for Action," and "Earn Trust." Here’s how you can structure your response:
-1. Situation:
-Begin by describing a scenario where you took a calculated risk or made a decision that didn’t pan out as expected. Choose an example that is relevant to the kind of work you’d do at AWS, such as an ML project, experimentation with a new algorithm, or a system design decision.
+### Question 2: When did you take a risk, make a mistake, or fail? How did you respond, and how did you grow from that experience?
+`complicate model not integrate with existing platform`
 
-Example:
-"In my previous role as a Machine Learning Engineer at [Company], I was leading a project to develop a real-time fraud detection system. The system was critical for the company as it needed to process transactions in real-time while accurately detecting fraudulent activities. Given the urgency and importance of the project, I decided to take a risk by implementing a cutting-edge, yet experimental, unsupervised anomaly detection algorithm that promised high accuracy and low false positives."
+"In my previous role as a Machine Learning Engineer at [Company], I was leading a project to develop a real-time fraud detection system. The system was critical for the company as it needed to `process transactions in real-time` while accurately detecting fraudulent activities. Given the urgency and importance of the project, I decided to take a risk by implementing a cutting-edge, yet experimental, unsupervised anomaly detection algorithm that promised high accuracy and low false positives."
 
-2. Task:
-Explain what was at stake and why you chose to take the risk. Highlight any challenges or uncertainties you faced in making the decision.
-
-Example:
 "The task was to deliver a system that could effectively identify fraud in real-time, without causing unnecessary delays in transaction processing. The experimental algorithm was untested in production environments, but I believed it had the potential to outperform traditional methods. The risk was that if the algorithm didn’t work as expected, it could either miss fraudulent transactions or, worse, flag too many legitimate ones, leading to customer dissatisfaction and potential financial losses."
 
-3. Action:
-Describe the steps you took after realizing the risk wasn’t yielding the desired results. Emphasize your problem-solving skills, how you communicated with stakeholders, and your commitment to delivering results.
-
-Example:
 "After deploying the system, we quickly encountered issues—false positives were higher than expected, causing unnecessary transaction blocks and frustration for our customers. Realizing the severity of the situation, I immediately convened a meeting with the team to discuss the problem. We analyzed the algorithm's performance in detail and compared it to a more traditional supervised learning model we had initially considered.
-
 I acknowledged my mistake in choosing the experimental approach without enough real-world validation and made the decision to roll back to the more reliable supervised model temporarily while we continued to refine the unsupervised algorithm. I also set up a shadow testing environment where we could safely test the experimental model on live data without impacting the customer experience."
 
-4. Result:
-Discuss the outcome of your actions and how you managed to turn the situation around. Quantify the results if possible, and explain what you learned from the experience.
-
-Example:
 "By switching back to the traditional model, we stabilized the system and regained customer trust. In the shadow testing environment, we were able to identify and correct the weaknesses in the unsupervised algorithm, ultimately improving its performance. Six months later, after extensive testing and iteration, we successfully redeployed the refined algorithm, which reduced fraud detection errors by 25% without increasing false positives.
 
 This experience taught me the importance of thoroughly validating experimental approaches in controlled environments before deploying them in critical systems. It also reinforced the value of being transparent with stakeholders when things don’t go as planned and the importance of having contingency plans. I’ve since become more diligent in balancing innovation with caution, ensuring that any risks I take are well-informed and backed by data."
 
-5. Growth:
-Reflect on how the experience helped you grow as a professional and how it will inform your approach in the future.
-
-Example:
 "This experience significantly shaped my approach to risk-taking in machine learning projects. I’ve become more rigorous in my validation processes, and I now prioritize building safety nets when deploying new technologies. Additionally, it enhanced my ability to manage setbacks effectively and reinforced the importance of fostering a culture where learning from mistakes is encouraged. These lessons have made me a more resilient and thoughtful applied scientist, qualities I believe will be invaluable in the fast-paced, innovative environment at AWS."
 
-This response demonstrates your ability to take risks, learn from failures, and turn challenges into opportunities for growth—all while maintaining a focus on delivering results and maintaining trust. These are key attributes for a senior role at AWS.
-
-### Question 3: Describe a time you took the lead on a project.
-When answering the question "Describe a time you took the lead on a project" for an AWS Applied Scientist L6 role, you'll want to highlight your leadership, problem-solving skills, and ability to deliver results in a complex, technical environment. You should also emphasize how your actions aligned with AWS's leadership principles, such as "Ownership," "Invent and Simplify," and "Deliver Results."
-1. Situation:
-Start by providing context about the project. Explain the background, the goals, and why it was important. Choose a project where your leadership made a significant impact.
-
-Example:
+### *** Question 3: Describe a time you took the lead on a project.
+`Background, Value proposition, Objectives, Solution, Feasibility, Risk, Data, Metrics, Evaluation, Modeling, Inference, Feedback, Project timeline and roadmap`
 "In my previous role as a Machine Learning Engineer at [Company], I was tasked with leading a project to develop a personalized recommendation system for our streaming platform. The project was critical as the company was looking to enhance user engagement and increase subscription retention through personalized content recommendations."
 
-2. Task:
-Describe your specific role in the project. Emphasize that you were chosen to lead, outlining the expectations placed on you and the challenges involved.
+"As the lead on this project, `I was responsible for overseeing the end-to-end development` of the recommendation system. `This included gathering and analyzing user data, selecting the appropriate machine learning models, coordinating with cross-functional teams (such as data engineering and product management), and ensuring the project stayed on track to meet our tight deadline.`"
 
-Example:
-"As the lead on this project, I was responsible for overseeing the end-to-end development of the recommendation system. This included gathering and analyzing user data, selecting the appropriate machine learning models, coordinating with cross-functional teams (such as data engineering and product management), and ensuring the project stayed on track to meet our tight deadline."
+"`I began by setting clear objectives and a roadmap for the project, breaking it down into manageable phases. I organized regular meetings with the team to track progress, address any roadblocks, and ensure alignment with the project goals.` To improve efficiency, I introduced a new approach that combined collaborative filtering with deep learning techniques to better capture users’ preferences and behaviors.
+I also took the initiative to integrate A/B testing early in the development process, allowing us to continuously evaluate and fine-tune the recommendation models based on real user feedback. `By maintaining open communication with stakeholders, I ensured that everyone was aligned with the project’s goals and progress, and I was able to quickly pivot our strategy when necessary.`"
 
-3. Action:
-Detail the steps you took to lead the project. Focus on how you coordinated the team, made key decisions, solved problems, and ensured successful execution. Highlight any innovative approaches or strategies you implemented.
+"The project was a success, with the new recommendation system increasing user engagement by 25% and reducing churn by 15% within the first three months of deployment. The system's accuracy in predicting user preferences improved significantly, leading to higher user satisfaction and increased subscription renewals. `My leadership in driving the project forward and implementing innovative techniques played a key role in achieving these results, and the success of this project led to the system being rolled out across multiple platforms within the company.`"
 
-Example:
-"I began by setting clear objectives and a roadmap for the project, breaking it down into manageable phases. I organized regular meetings with the team to track progress, address any roadblocks, and ensure alignment with the project goals. To improve efficiency, I introduced a new approach that combined collaborative filtering with deep learning techniques to better capture users’ preferences and behaviors.
-
-I also took the initiative to integrate A/B testing early in the development process, allowing us to continuously evaluate and fine-tune the recommendation models based on real user feedback. By maintaining open communication with stakeholders, I ensured that everyone was aligned with the project’s goals and progress, and I was able to quickly pivot our strategy when necessary."
-
-4. Result:
-Explain the outcome of the project, focusing on the impact your leadership had on its success. Quantify the results where possible.
-
-Example:
-"The project was a success, with the new recommendation system increasing user engagement by 25% and reducing churn by 15% within the first three months of deployment. The system's accuracy in predicting user preferences improved significantly, leading to higher user satisfaction and increased subscription renewals. My leadership in driving the project forward and implementing innovative techniques played a key role in achieving these results, and the success of this project led to the system being rolled out across multiple platforms within the company."
-
-5. Reflection:
-Conclude by reflecting on what you learned from the experience and how it has influenced your leadership style.
-
-Example:
-"Leading this project taught me the importance of clear communication, adaptability, and the value of leveraging innovative techniques to solve complex problems. It also reinforced my belief in the importance of involving stakeholders throughout the process to ensure that the final product meets business objectives. This experience has strengthened my ability to lead large-scale, high-impact projects, a skill I am eager to bring to the AWS team to drive cutting-edge machine learning initiatives."
-
-This response showcases your leadership abilities, technical expertise, and strategic thinking, all of which are essential for an AWS Applied Scientist role. It also highlights your ability to deliver measurable results, a key expectation at AWS.
+"Leading this project taught me the importance of clear communication, adaptability, and `the value of leveraging innovative techniques to solve complex problems`. It also reinforced my belief in the importance of `involving stakeholders throughout the process to ensure that the final product meets business objectives`. This experience has strengthened my ability to lead large-scale, high-impact projects, a skill I am eager to bring to the AWS team to drive cutting-edge machine learning initiatives."
 
 ### Question 4: What did you do when you needed to motivate a group of individuals or promote collaboration on a particular project?
 When answering the question "What did you do when you needed to motivate a group of individuals or promote collaboration on a particular project?" for an AWS Applied Scientist L6 role, focus on how you fostered teamwork, encouraged collaboration, and leveraged the strengths of your team to achieve a common goal. Highlight your leadership, communication skills, and alignment with AWS’s leadership principles like "Earn Trust," "Insist on the Highest Standards," and "Ownership."
