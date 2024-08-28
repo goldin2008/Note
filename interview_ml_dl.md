@@ -177,7 +177,7 @@ If you have these types of problems, you can dig deeper to see if you have a pro
 LSTM stands for long short-term memory. It is a type of RNN that is used to sequence a string of data. It consists of feedback chains that give it the ability to perform like a general-purpose computational entity.
 
 30. `What Is Gradient Descent?`
-Gradient Descent is an optimal algorithm to minimize the cost function or to minimize an error. The aim is to find the local-global minima of a function. This determines the direction the model should take to reduce the error.
+Gradient Descent is an optimal algorithm to minimize the cost function or to minimize an error. The aim is to find the `local-global minima of a function`. This determines the direction the model should take to reduce the error.
 
 31. `What are the variants of gradient descent?`
 There are three variants of gradient descent as shown below:
