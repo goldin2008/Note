@@ -582,692 +582,337 @@ The project was completed on time and within budget, and the client was highly s
 "This project taught me the importance of thorough analysis, effective collaboration, and iterative testing when dealing with complex systems. I learned that breaking down the problem into manageable components and leveraging the expertise of cross-functional teams are crucial for overcoming challenges. This experience has influenced my approach to handling complex projects by emphasizing the need for detailed planning, clear communication, and flexibility in adapting to evolving requirements."
 
 ### Question 30: "Describe a time when you needed to ask for support from others or another team. What was the situation, how did you approach it, and what was the outcome?"
-"While working on a data-driven project to improve customer segmentation for our marketing campaign, I encountered significant challenges in processing and analyzing a large volume of unstructured data. Despite my efforts, I realized that the complexity of the data and the need for advanced natural language processing (NLP) techniques exceeded my current expertise."
+`Debit Card transaction, learn lessons from Credit Card Transaction Team`
+"While working on a data-driven project to improve customer segmentation for our marketing campaign, `I encountered significant challenges in processing and analyzing a large volume of unstructured data`. Despite my efforts, I realized that the complexity of the data and the need for advanced natural language processing (NLP) techniques exceeded my current expertise."
 
 "My goal was to develop a robust customer segmentation model using NLP techniques to extract meaningful insights from unstructured text data. To achieve this, I needed support from colleagues with expertise in NLP and experience handling large-scale data processing."
 
-"I identified a senior data scientist on our team who had extensive experience with NLP and large-scale data processing. I approached them to discuss the challenges I was facing and the specific areas where I needed their expertise.
-I scheduled a meeting to explain the project’s goals, the difficulties I encountered, and the type of support I required. I also prepared a summary of my progress, including any data samples and preliminary analyses, to provide context.
+"I identified a senior data scientist on our team who had extensive experience with NLP and large-scale data processing. `I approached them to discuss the challenges I was facing and the specific areas where I needed their expertise. I scheduled a meeting to explain the project’s goals, the difficulties I encountered, and the type of support I required. I also prepared a summary of my progress, including any data samples and preliminary analyses, to provide context.`
 During the meeting, I listened to their suggestions and incorporated their feedback into my approach. They helped me refine the data processing pipeline and recommended several advanced NLP techniques that were suitable for our needs. We worked together to implement these techniques and conduct additional analyses."
 
-"With the support of the senior data scientist, we successfully implemented the advanced NLP techniques, which significantly improved the accuracy of our customer segmentation model. The enhanced model provided more granular insights and allowed for more targeted marketing strategies.
+"With the support of the senior data scientist, we successfully implemented the advanced NLP techniques, which significantly improved the accuracy of our customer segmentation model. `The enhanced model provided more granular insights and allowed for more targeted marketing strategies.`
 The project was completed successfully, and the marketing campaign saw a 20% increase in engagement and conversion rates. My collaboration with the senior data scientist not only improved the project outcomes but also strengthened our team’s ability to tackle complex challenges."
 
-"This experience reinforced the value of seeking support from colleagues with specialized expertise when facing complex challenges. I learned that effective communication and collaboration can lead to valuable insights and successful outcomes. Since then, I’ve made it a point to reach out for help when needed and to build strong relationships with team members who can provide support and guidance."
+"This experience reinforced the value of seeking support from colleagues with specialized expertise when facing complex challenges. `I learned that effective communication and collaboration can lead to valuable insights and successful outcomes.` Since then, I’ve made it a point to reach out for help when needed and to build strong relationships with team members who can provide support and guidance."
 
 ### Question 31: "Describe a time when you made a decision without explicit approval. What was the situation, why did you decide to act independently, and what was the outcome?"
-When discussing a time you made a decision without explicit approval, focus on the context, your reasoning for acting independently, how you communicated the decision, and the outcome. Emphasize your judgment, accountability, and the positive impact of your decision.
-1. Situation:
-Start by describing the context of the project or task, your role, and why the decision was necessary.
+"In a previous role as a Machine Learning Engineer, I was leading a project to deploy a new model for real-time customer recommendations. `We were facing a critical issue where the model was experiencing performance degradation due to unexpected data anomalies. The team’s lead was unavailable for immediate approval, and the issue needed urgent resolution to avoid impacting customer experience.`"
 
-Example:
-"In a previous role as a Machine Learning Engineer, I was leading a project to deploy a new model for real-time customer recommendations. We were facing a critical issue where the model was experiencing performance degradation due to unexpected data anomalies. The team’s lead was unavailable for immediate approval, and the issue needed urgent resolution to avoid impacting customer experience."
-
-2. Task:
-Explain what needed to be achieved and why making a decision independently was important.
-
-Example:
 "My task was to address the performance issue quickly to ensure that the recommendation system continued to operate effectively. Given the urgency and the lead’s absence, I needed to make a decision on how to handle the data anomalies and mitigate their impact on the model’s performance."
 
-3. Action:
-Describe the actions you took, how you assessed the situation, and the decision-making process. Highlight how you managed risks and communicated the decision.
+"I analyzed the data anomalies and determined that they were causing significant deviations in the model’s predictions. `To address this, I implemented a temporary data cleaning solution to filter out the anomalies and restore the model’s performance to an acceptable level.`
+I documented the issue and the steps I took to resolve it, and I communicated the decision to the team through a detailed email and a follow-up meeting. I explained the reasoning behind the decision, the temporary nature of the solution, and `the plan to review and address the root cause of the anomalies once the lead returned.`"
 
-Example:
-"I analyzed the data anomalies and determined that they were causing significant deviations in the model’s predictions. To address this, I implemented a temporary data cleaning solution to filter out the anomalies and restore the model’s performance to an acceptable level.
-
-I documented the issue and the steps I took to resolve it, and I communicated the decision to the team through a detailed email and a follow-up meeting. I explained the reasoning behind the decision, the temporary nature of the solution, and the plan to review and address the root cause of the anomalies once the lead returned."
-
-4. Result:
-Discuss the outcome of your decision. Highlight any improvements, feedback, and the impact on the project or team.
-
-Example:
 "The temporary solution successfully mitigated the performance issues, and the recommendation system continued to function effectively without any noticeable disruptions to customers. The team was able to resume normal operations while the lead was away.
-
 Upon their return, the lead appreciated the proactive approach and the thorough documentation I provided. We conducted a review of the data anomalies, implemented a permanent fix, and adjusted our data validation processes to prevent similar issues in the future."
 
-5. Reflection:
-Conclude by reflecting on what you learned from the experience and how it has influenced your approach to decision-making.
-
-Example:
 "This experience taught me the importance of taking initiative and making informed decisions in critical situations. I learned that it’s crucial to act decisively when necessary and to communicate clearly with stakeholders to ensure transparency. This experience has influenced my approach by reinforcing the value of balancing independent decision-making with thorough documentation and communication."
 
-This response demonstrates your ability to make informed decisions independently, manage risks effectively, and communicate clearly. It aligns with AWS’s leadership principles such as "Deliver Results" and "Bias for Action," showcasing your judgment, initiative, and commitment to achieving positive outcomes.
-
 ### Question 32: "Describe a time when your work exceeded expectations. What was the situation, what did you do differently, and what was the outcome?"
-When discussing a time when your work exceeded expectations, focus on the specific project or task, how you went above and beyond, and the impact of your exceptional performance. Highlight your initiative, creativity, and the positive outcomes that resulted from your efforts.
-1. Situation:
-Start by describing the project or task, your role, and the initial expectations set for you.
-
-Example:
 "While working as a Machine Learning Engineer, I was tasked with developing a predictive model to forecast customer demand for a new product line. The initial expectations were to deliver a functional model that could provide accurate forecasts based on historical data within a three-month timeline."
 
-2. Task:
-Explain your responsibilities and the goals you aimed to achieve beyond the initial scope.
-
-Example:
 "My primary task was to build and deploy a model that met the forecasting requirements. However, I saw an opportunity to add value by not only focusing on accuracy but also on improving the model's usability and integrating it into the client’s existing decision-making tools."
 
-3. Action:
-Describe the steps you took that went beyond the original expectations. Highlight any extra effort, creativity, or innovation.
-
-Example:
 "To exceed expectations, I started by conducting a more in-depth analysis of the data, incorporating additional features such as market trends and competitor activity, which were not part of the original scope. I also employed advanced modeling techniques, such as ensemble methods and time-series forecasting, to enhance the model’s accuracy.
-
 Beyond the technical aspects, I took the initiative to develop an interactive dashboard that allowed stakeholders to visualize forecasts and adjust parameters for different scenarios. I provided comprehensive training to the team on how to use the dashboard and interpret the model's results effectively.
-
 I also set up a feedback loop with the stakeholders to continuously refine the model based on their input and real-world performance."
 
-4. Result:
-Discuss the outcome of your efforts and the impact of exceeding expectations. Highlight any positive feedback, improvements, or additional benefits.
-
-Example:
 "The enhanced model and interactive dashboard significantly improved the accuracy of demand forecasts by 15% compared to the initial requirements. The dashboard was well-received by stakeholders and became a valuable tool for their decision-making process.
-
 The project not only met but exceeded the initial goals, leading to more efficient inventory management and better alignment of production schedules. My efforts were recognized by both the client and my team, and I received positive feedback for my proactive approach and the added value delivered."
 
-5. Reflection:
-Conclude by reflecting on what you learned from the experience and how it has influenced your approach to future work.
-
-Example:
 "This experience reinforced the importance of going beyond the minimum requirements to deliver exceptional value. I learned that taking initiative and thinking creatively can lead to more impactful results and greater satisfaction among stakeholders. Since then, I’ve continued to apply this approach by looking for opportunities to add value and exceed expectations in my projects."
 
-This response demonstrates your ability to deliver work that surpasses expectations by taking initiative, employing creativity, and achieving positive outcomes. It aligns with AWS’s leadership principles such as "Deliver Results," "Invent and Simplify," and "Customer Obsession," showcasing your commitment to excellence and impactful contributions.
-
 ### Question 33: "Describe a time when you worked independently on a project or task. What was the situation, how did you manage it on your own, and what was the outcome?"
-When discussing a time you worked independently, focus on how you managed the task or project on your own, the challenges you faced, and the outcomes you achieved. Highlight your ability to take initiative, problem-solve, and deliver results with minimal supervision.
-1. Situation:
-Start by describing the project or task, your role, and why you needed to work independently.
-
-Example:
 "During a project to develop a new recommendation algorithm for our e-commerce platform, my manager was on leave for a critical period. I was tasked with optimizing the algorithm to handle an increased volume of user data and improve recommendation accuracy. The project had tight deadlines, and I had to work independently to ensure timely delivery."
 
-2. Task:
-Explain what needed to be accomplished and how you were expected to handle the task on your own.
-
-Example:
 "My responsibility was to enhance the recommendation algorithm by integrating new features and improving its performance. Without direct supervision, I needed to independently plan the approach, execute the necessary changes, and ensure that the algorithm met the project requirements."
 
-3. Action:
-Describe the steps you took to manage the task independently. Highlight how you organized your work, tackled challenges, and maintained progress.
-
-Example:
 "I began by thoroughly reviewing the existing algorithm and identifying areas for improvement. I set up a clear plan, including specific milestones and deadlines, to guide my work. I conducted research to explore new features and techniques that could enhance the algorithm's performance.
-
 To ensure that I stayed on track, I established a regular self-review process and used version control to manage changes. I also reached out to colleagues for occasional feedback on specific technical challenges, even though I was handling the project independently.
-
 I created a comprehensive testing framework to evaluate the algorithm's performance and document the results. This included implementing unit tests, A/B testing, and performance benchmarks to validate improvements."
 
-4. Result:
-Discuss the outcome of working independently, including any successes, feedback, and impact on the project or organization.
-
-Example:
 "The optimized recommendation algorithm successfully handled the increased data volume and improved recommendation accuracy by 20%. The project was completed on schedule, and the enhancements led to a noticeable increase in user engagement and sales.
-
 My independent work was well-received by the team and management, and the improvements were integrated into the production system. I received positive feedback for my ability to manage the project effectively and deliver results without direct supervision."
 
-5. Reflection:
-Conclude by reflecting on what you learned from the experience and how it has influenced your approach to working independently in the future.
-
-Example:
 "This experience reinforced the importance of self-discipline, organization, and proactive problem-solving when working independently. I learned that setting clear goals and maintaining a structured approach can lead to successful outcomes, even without direct oversight. Since then, I’ve continued to apply these principles to my work, taking initiative and managing projects effectively on my own."
 
-This response demonstrates your ability to work independently, manage tasks effectively, and achieve positive results. It aligns with AWS’s leadership principles such as "Deliver Results" and "Bias for Action," showcasing your initiative, problem-solving skills, and commitment to excellence.
-
 ### Question 34: "Describe a challenging problem you faced and how you dealt with it. What was the situation, what steps did you take, and what was the outcome?"
-When discussing how you dealt with a challenging problem, focus on the problem-solving process, the steps you took, and the outcome. Highlight your analytical skills, creativity, and perseverance in overcoming the challenge.
-1. Situation:
-Start by describing the challenging problem, including the context, your role, and why it was particularly difficult.
-
-Example:
 "While working as a Machine Learning Engineer, I was responsible for developing a predictive model for customer churn. The challenge arose when we encountered an issue with data quality—there were significant missing values and inconsistencies in the dataset that affected the model's performance."
 
-2. Task:
-Explain what needed to be achieved despite the challenging problem and the objectives you aimed to accomplish.
-
-Example:
 "My goal was to build an accurate predictive model for customer churn using the available data. Despite the data quality issues, I needed to ensure that the model could provide reliable predictions and actionable insights for the marketing team."
 
-3. Action:
-Describe the specific steps you took to address the challenge. Highlight your problem-solving approach, the strategies you employed, and how you managed any obstacles.
-
-Example:
 "I began by conducting a thorough data analysis to understand the extent and nature of the data quality issues. I identified patterns in the missing values and inconsistencies and assessed their impact on the model's accuracy.
-
 To address these issues, I implemented several strategies:
-
 Data Cleaning: I applied various data imputation techniques to handle missing values, such as using median or mean imputation for numerical data and mode imputation for categorical data.
 Feature Engineering: I created new features that could provide additional insights and mitigate the impact of missing values.
 Model Robustness: I experimented with different algorithms that were more robust to missing data, such as tree-based methods and ensemble techniques.
 Validation: I set up cross-validation and performance metrics to evaluate the model’s effectiveness and ensure that the improvements were valid.
 I also collaborated with the data engineering team to address some of the underlying data collection issues, which helped improve data quality over time."
 
-4. Result:
-Discuss the outcome of your efforts. Highlight any improvements in performance, feedback received, and the overall impact on the project or organization.
-
-Example:
 "By addressing the data quality issues and refining the predictive model, I was able to achieve a significant improvement in its accuracy—by 15%—and provide more reliable predictions of customer churn. The model was successfully deployed and used by the marketing team to target high-risk customers, resulting in a 20% reduction in churn rate over the next quarter.
-
 The project was well-received by both the marketing team and management, and my approach to solving the data quality issues was recognized as a key factor in the project’s success."
 
-5. Reflection:
-Conclude by reflecting on what you learned from the experience and how it has influenced your approach to handling challenges in the future.
-
-Example:
 "This experience taught me the importance of a systematic approach to problem-solving and the value of persistence in overcoming complex challenges. I learned that addressing underlying issues and collaborating with other teams can lead to successful outcomes, even in difficult situations. This approach has influenced my problem-solving strategy, making me more effective at managing and resolving challenging problems."
 
-This response showcases your ability to tackle challenging problems with a structured approach, creativity, and collaboration. It aligns with AWS’s leadership principles such as "Deliver Results," "Invent and Simplify," and "Bias for Action," highlighting your problem-solving skills and impact on the project.
-
 ### Question 35: "What is your biggest achievement? Describe the situation, the actions you took, and the impact it had."
-When discussing your biggest achievement, focus on a specific project or accomplishment that had a significant impact. Highlight the context, the steps you took, the results you achieved, and why this achievement stands out. Here’s how you might structure your response:
-1. Situation:
-Begin by providing context for the achievement. Describe the project or challenge, your role, and why it was significant.
-
-Example:
 "In my previous role as a Machine Learning Engineer, my biggest achievement was leading a project to develop a real-time fraud detection system for a major financial institution. The project was significant due to the critical nature of fraud prevention and the need to process large volumes of transaction data in real-time."
 
-2. Task:
-Explain your specific responsibilities and the goals you needed to achieve. Outline what you aimed to accomplish and any challenges you faced.
-
-Example:
 "My responsibility was to design and implement a machine learning model capable of detecting fraudulent transactions with high accuracy and minimal false positives. This involved handling large-scale data, developing a robust model, and integrating it into the client’s existing infrastructure."
 
-3. Action:
-Describe the actions you took to achieve the goal. Highlight any innovative approaches, problem-solving techniques, or leadership skills you used.
-
-Example:
 "I started by conducting a comprehensive analysis of historical transaction data to understand patterns of fraudulent activity. I experimented with various machine learning algorithms, including ensemble methods and deep learning approaches, to find the best fit for real-time processing.
-
 I also collaborated closely with the data engineering team to design a scalable data pipeline that could handle high-volume transactions efficiently. I developed a set of APIs for seamless integration with the client’s existing systems and implemented a rigorous testing framework to validate the model’s performance.
-
 To ensure the model met the client’s needs, I set up regular check-ins with stakeholders to gather feedback and make iterative improvements."
 
-4. Result:
-Discuss the outcome of your achievement. Highlight the impact on the project, the organization, or the client, and any positive feedback you received.
-
-Example:
 "The fraud detection system was successfully deployed and achieved a 95% accuracy rate in identifying fraudulent transactions. The system significantly reduced false positives by 30%, leading to a substantial decrease in financial losses due to fraud.
-
 The client was highly satisfied with the results, and the system became an integral part of their fraud prevention strategy. My work on this project was recognized by senior management, and I received praise for my technical expertise and leadership."
 
-5. Reflection:
-Conclude by reflecting on why this achievement is meaningful to you and how it has influenced your approach to future projects.
-
-Example:
 "This achievement is meaningful to me because it demonstrated my ability to tackle complex problems and deliver impactful results. It reinforced the importance of thorough analysis, collaboration, and continuous improvement. This experience has influenced my approach by highlighting the value of proactive problem-solving and stakeholder engagement, which I continue to apply in my work."
 
-This response highlights your ability to lead complex projects, solve significant challenges, and deliver results that have a positive impact. It aligns with AWS’s leadership principles such as "Deliver Results," "Invent and Simplify," and "Bias for Action," showcasing your achievements and the skills that contributed to your success.
-
 ### Question 36: "Can you share a story where you solved a problem in an innovative or unexpected way?"
-When discussing a story of solving problems innovatively or unexpectedly, focus on a situation where you approached a challenge in a creative way that led to a successful outcome. Highlight the problem, the innovative solution, and the impact of your actions.
-1. Situation: Begin by describing the context of the problem, including your role, the challenge you faced, and why it was difficult to solve using conventional methods.
+"In a previous role as a Machine Learning Engineer, I was part of a team working on improving the personalization algorithm for a streaming service. The challenge was that the algorithm struggled to provide relevant recommendations for new users, known as the 'cold start' problem, due to the lack of historical data."
 
-Example: "In a previous role as a Machine Learning Engineer, I was part of a team working on improving the personalization algorithm for a streaming service. The challenge was that the algorithm struggled to provide relevant recommendations for new users, known as the 'cold start' problem, due to the lack of historical data."
+"Our goal was to enhance the recommendation system to deliver personalized content even for new users, improving their initial experience with the platform. Traditional collaborative filtering methods were not effective in this scenario due to the lack of user data, and the team was struggling to find a solution."
 
-2. Task: Explain what needed to be accomplished and why the conventional approaches were insufficient.
-
-Example: "Our goal was to enhance the recommendation system to deliver personalized content even for new users, improving their initial experience with the platform. Traditional collaborative filtering methods were not effective in this scenario due to the lack of user data, and the team was struggling to find a solution."
-
-3. Action: Describe the innovative or unexpected approach you took to solve the problem. Highlight your creative thinking and how you applied it to the situation.
-
-Example: "Recognizing the limitations of traditional approaches, I proposed an innovative solution by leveraging transfer learning and cross-domain data. I suggested using data from other similar platforms where users had shared preferences, which could be applied to our new users.
-
+"Recognizing the limitations of traditional approaches, I proposed an innovative solution by leveraging transfer learning and cross-domain data. I suggested using data from other similar platforms where users had shared preferences, which could be applied to our new users.
 To implement this, I developed a model that could transfer knowledge from a pre-trained recommendation system on a similar platform and fine-tune it using the minimal data available from new users on our platform. I also incorporated content-based filtering techniques, using metadata from the content itself, such as genres and keywords, to provide more accurate recommendations.
-
 This hybrid approach was unexpected because it combined different methodologies and external data sources, which was a departure from our usual practice of relying solely on internal data."
 
-4. Result: Discuss the outcome of your innovative solution. Highlight the success, any measurable improvements, and the impact on the project or organization.
-
-Example: "The implementation of this innovative solution significantly improved the recommendation accuracy for new users. The personalized content delivery for first-time users increased by 25%, leading to higher user engagement and retention in the critical initial stages.
-
+"The implementation of this innovative solution significantly improved the recommendation accuracy for new users. The personalized content delivery for first-time users increased by 25%, leading to higher user engagement and retention in the critical initial stages.
 The approach was not only successful but also sparked new discussions within the team about leveraging external data and transfer learning for other use cases. The solution became a standard part of our recommendation system for new users, and I was recognized for my creative problem-solving."
 
-5. Reflection: Conclude by reflecting on what you learned from the experience and how it has influenced your approach to problem-solving.
-
-Example: "This experience taught me the value of thinking outside the box and exploring unconventional methods to solve complex problems. It reinforced the importance of staying open to new ideas and cross-disciplinary approaches. Since then, I’ve continued to apply innovative thinking to my work, looking for opportunities to combine different techniques and data sources to achieve the best results."
-
-This response demonstrates your ability to approach challenges creatively and deliver innovative solutions that have a positive impact. It aligns with AWS’s leadership principles such as "Invent and Simplify" and "Deliver Results," showcasing your problem-solving skills and willingness to explore new methodologies.
+"This experience taught me the value of thinking outside the box and exploring unconventional methods to solve complex problems. It reinforced the importance of staying open to new ideas and cross-disciplinary approaches. Since then, I’ve continued to apply innovative thinking to my work, looking for opportunities to combine different techniques and data sources to achieve the best results."
 
 ### ??? Question 37: "Tell me about a time when you found a simple solution to a complex problem." (Invent and Simplify)
-When answering a question about finding a simple solution to a complex problem, focus on the complexity of the situation, the approach you took to simplify it, and the positive outcomes. Emphasize how you applied the "Invent and Simplify" principle by streamlining the process and delivering an effective solution.
-1. Situation: Start by describing the complex problem you faced, your role, and why it was challenging.
+"In my role as a Machine Learning Engineer, I was tasked with improving the accuracy of a predictive maintenance model for industrial machinery. The existing model was overly complicated, with numerous features and parameters that made it difficult to maintain and interpret. Additionally, the model’s performance was not meeting the desired accuracy levels, and the complexity made it challenging to optimize."
 
-Example: "In my role as a Machine Learning Engineer, I was tasked with improving the accuracy of a predictive maintenance model for industrial machinery. The existing model was overly complicated, with numerous features and parameters that made it difficult to maintain and interpret. Additionally, the model’s performance was not meeting the desired accuracy levels, and the complexity made it challenging to optimize."
+"My goal was to enhance the model’s performance while simplifying its structure to make it easier to maintain and optimize. The challenge was to identify the key factors contributing to the model's performance and eliminate unnecessary complexity without sacrificing accuracy."
 
-2. Task: Explain what you needed to accomplish and why simplifying the solution was necessary.
-
-Example: "My goal was to enhance the model’s performance while simplifying its structure to make it easier to maintain and optimize. The challenge was to identify the key factors contributing to the model's performance and eliminate unnecessary complexity without sacrificing accuracy."
-
-3. Action: Describe the steps you took to simplify the problem and find a more straightforward solution. Highlight your thought process and the actions that led to simplification.
-
-Example: "I began by conducting a thorough analysis of the existing model to identify which features and parameters were contributing most to its performance. Through this analysis, I discovered that many of the features were redundant or provided little value to the model’s predictive power.
-
+"I began by conducting a thorough analysis of the existing model to identify which features and parameters were contributing most to its performance. Through this analysis, I discovered that many of the features were redundant or provided little value to the model’s predictive power.
 To simplify the model, I decided to focus on a few high-impact features that were strongly correlated with the machinery's failure patterns. I removed unnecessary features and reduced the number of parameters, streamlining the model’s architecture. Additionally, I replaced the complex ensemble method with a simpler, yet highly effective, decision tree-based approach that was easier to interpret and tune.
-
 I also automated the feature selection process, allowing the model to dynamically adjust to the most relevant features over time, further simplifying the maintenance process."
 
-4. Result: Discuss the outcome of your simplification efforts, including any improvements in performance, efficiency, or user satisfaction.
-
-Example: "The simplified model not only improved in accuracy by 10% but also became much easier to maintain and update. The reduction in complexity led to faster training times and quicker deployment, allowing the maintenance team to react more swiftly to potential issues.
-
+"The simplified model not only improved in accuracy by 10% but also became much easier to maintain and update. The reduction in complexity led to faster training times and quicker deployment, allowing the maintenance team to react more swiftly to potential issues.
 The streamlined approach also made it easier for non-technical stakeholders to understand and trust the model’s predictions, leading to broader adoption across the organization. My work on simplifying the model was recognized as a key contribution to the project’s success and was later applied to other predictive models within the company."
 
-5. Reflection: Conclude by reflecting on the importance of simplification and how it has influenced your approach to solving problems.
-
-Example: "This experience reinforced the value of simplifying complex problems to achieve better results. I learned that sometimes, less is more, and that focusing on the essentials can lead to more robust and maintainable solutions. This approach has become a core part of my problem-solving strategy, helping me to deliver effective solutions while reducing unnecessary complexity."
-
-This response highlights your ability to apply the "Invent and Simplify" principle by reducing complexity and delivering a more effective solution. It showcases your problem-solving skills, attention to detail, and ability to streamline processes for better outcomes, aligning well with the expectations for an AWS Applied Scientist role.
+"This experience reinforced the value of simplifying complex problems to achieve better results. I learned that sometimes, less is more, and that focusing on the essentials can lead to more robust and maintainable solutions. This approach has become a core part of my problem-solving strategy, helping me to deliver effective solutions while reducing unnecessary complexity."
 
 `I was in a meeting in my team where the visualizations and plots of different deep learning models for the project were discussed by the team members. Although the model visualization plots look intuitive, there are concerns that the plots are not so good due to the formats are not unified, and everyone needs to put extra time to write their own code to produce the visualization figures. After the meeting, I decided to try and find a solution to this problem. I checked the source code and met up with the individual team members, and it is apparent that they are using different ways to visualize the model outputs and are not familiar with other tools. After some investigation work, I write code to adopt a visualization API to our source code from an open-source tool and provide a standard for the plots. From that day on, the members could easily call the API to output unified visualization plots and do not need to write their own code. It makes the visualizations more intuitive and standard and saves them a lot of time.`
 
 ### ??? Question 38: "Describe a situation when you had to work with incomplete data or information." (Are Right, A Lot)
-When discussing a situation where you had to work with incomplete data or information, focus on how you approached the challenge, made informed decisions, and mitigated risks. Highlight how you used your judgment, intuition, and available data to arrive at the best possible solution, emphasizing the "Are Right, A Lot" leadership principle.
-1. Situation: Start by describing the context of the situation, your role, and why the data or information was incomplete.
+"As a Machine Learning Engineer, I was tasked with developing a demand forecasting model for a retail company. The challenge arose when I discovered that the historical sales data provided was incomplete, missing several key time periods and demographic details. This made it difficult to accurately predict future demand."
 
-Example: "As a Machine Learning Engineer, I was tasked with developing a demand forecasting model for a retail company. The challenge arose when I discovered that the historical sales data provided was incomplete, missing several key time periods and demographic details. This made it difficult to accurately predict future demand."
+"My goal was to create a reliable forecasting model that the retail company could use for inventory planning and management. Despite the gaps in the data, I needed to ensure the model was robust enough to provide actionable insights, as the accuracy of this model would directly impact the company’s supply chain efficiency and profitability."
 
-2. Task: Explain what you needed to accomplish despite the incomplete data and the importance of making the right decision.
-
-Example: "My goal was to create a reliable forecasting model that the retail company could use for inventory planning and management. Despite the gaps in the data, I needed to ensure the model was robust enough to provide actionable insights, as the accuracy of this model would directly impact the company’s supply chain efficiency and profitability."
-
-3. Action: Describe the steps you took to address the situation. Highlight how you used your judgment, leveraged existing information, and took proactive steps to mitigate the risks associated with incomplete data.
-
-Example: "To address the issue, I first conducted a thorough analysis of the available data to understand the extent of the gaps and identify any patterns or anomalies. I then explored external data sources, such as market trends, industry reports, and weather data, to supplement the missing information and enrich the dataset.
-
+"To address the issue, I first conducted a thorough analysis of the available data to understand the extent of the gaps and identify any patterns or anomalies. I then explored external data sources, such as market trends, industry reports, and weather data, to supplement the missing information and enrich the dataset.
 Recognizing the need for a cautious approach, I implemented a robust validation process, using cross-validation and scenario analysis to test the model under various conditions. I also incorporated advanced imputation techniques to estimate missing values based on similar products or regions.
-
 Throughout the process, I maintained close communication with stakeholders, explaining the limitations of the data and the steps I was taking to address them. I provided regular updates on the model’s development and ensured that the business understood the level of confidence we could have in the forecasts."
 
-4. Result: Discuss the outcome of your actions. Highlight how you were able to make informed decisions, the success of the project, and any feedback or recognition you received.
-
-Example: "Despite the challenges, the demand forecasting model I developed proved to be highly effective, achieving a 90% accuracy rate in predicting future sales trends. The model enabled the company to optimize its inventory levels, reducing overstock by 15% and minimizing stockouts by 20%, which led to significant cost savings.
-
+"Despite the challenges, the demand forecasting model I developed proved to be highly effective, achieving a 90% accuracy rate in predicting future sales trends. The model enabled the company to optimize its inventory levels, reducing overstock by 15% and minimizing stockouts by 20%, which led to significant cost savings.
 The stakeholders were impressed with how I managed the situation, particularly my ability to deliver reliable results despite the incomplete data. My approach to handling the gaps and providing transparency throughout the process was recognized as a key factor in the project’s success."
 
-5. Reflection: Conclude by reflecting on what you learned from the experience and how it has influenced your approach to decision-making in the future.
-
-Example: "This experience reinforced the importance of being resourceful and using sound judgment when faced with incomplete information. It taught me to be proactive in seeking out additional data sources and to always validate my assumptions. Moving forward, I’ve become more confident in my ability to make informed decisions, even in uncertain situations, and I’ve continued to prioritize transparency and communication when dealing with similar challenges."
-
-This response illustrates your ability to make informed decisions and deliver results even when faced with incomplete data, aligning with the "Are Right, A Lot" principle. It showcases your resourcefulness, analytical skills, and commitment to achieving the best possible outcomes under challenging circumstances.
+"This experience reinforced the importance of being resourceful and using sound judgment when faced with incomplete information. It taught me to be proactive in seeking out additional data sources and to always validate my assumptions. Moving forward, I’ve become more confident in my ability to make informed decisions, even in uncertain situations, and I’ve continued to prioritize transparency and communication when dealing with similar challenges."
 
 `I was working on a project during one of my previous internships, and the project required me to work closely with another member in other teams. We have been working very well together, and we have different skills and strengths which move the project forward nicely. However, towards the end of the project, my manager says that the team member has to leave for a while due to a home emergency, and I need to finish the rest on my own. The only way for me to finish the project was to use the limited information I had available, which was passed to me before he left. To make sure I could finish the project, I took lots of research to figure out how to complete the other part of the project my collaborators used to be responsible for. I take an online course to learn new skills and also ask for advice and information from other employees and the internet for the struggling part. After many nights of additional work, and by using the limited information, I was able to finish the rest of the project with high quality and high standard on time.`
 
 ### ??? Question 39: "Tell me about a time when you had to take a calculated risk at work." (Bias for Action)
-When answering a question about taking a calculated risk at work, focus on a situation where you made a decision that involved some level of risk but was backed by thoughtful analysis and consideration. Emphasize how you balanced the potential rewards with the risks and how your action led to a positive outcome, highlighting the "Bias for Action" leadership principle.
-1. Situation: Start by describing the context of the situation, your role, and why the situation involved a risk.
+"In my previous role as a Machine Learning Engineer, I was working on a project to improve the accuracy of a recommendation system for an e-commerce platform. The existing model was stable but was not performing as well as it could in terms of predicting customer preferences. I identified an opportunity to significantly improve the model by switching to a new algorithm that was more complex and resource-intensive, but it was untested in our specific context."
 
-Example: "In my previous role as a Machine Learning Engineer, I was working on a project to improve the accuracy of a recommendation system for an e-commerce platform. The existing model was stable but was not performing as well as it could in terms of predicting customer preferences. I identified an opportunity to significantly improve the model by switching to a new algorithm that was more complex and resource-intensive, but it was untested in our specific context."
+"My goal was to enhance the recommendation system's accuracy and, ultimately, increase customer satisfaction and sales. The risk involved implementing a new, untested algorithm that required substantial computational resources and could potentially disrupt the current system if it didn’t perform as expected. However, I believed the potential benefits outweighed the risks."
 
-2. Task: Explain what needed to be accomplished and why the risk was necessary to achieve the desired outcome.
-
-Example: "My goal was to enhance the recommendation system's accuracy and, ultimately, increase customer satisfaction and sales. The risk involved implementing a new, untested algorithm that required substantial computational resources and could potentially disrupt the current system if it didn’t perform as expected. However, I believed the potential benefits outweighed the risks."
-
-3. Action: Describe the steps you took to assess the risk and ensure that it was calculated and not reckless. Highlight your decision-making process and any precautions you took.
-
-Example: "Before making the switch, I conducted a thorough analysis of the new algorithm’s potential impact, including running simulations and A/B testing on a small subset of data. I also benchmarked the new algorithm against the existing one to compare performance metrics such as accuracy, speed, and resource usage.
-
+"Before making the switch, I conducted a thorough analysis of the new algorithm’s potential impact, including running simulations and A/B testing on a small subset of data. I also benchmarked the new algorithm against the existing one to compare performance metrics such as accuracy, speed, and resource usage.
 To mitigate the risk, I proposed implementing the new algorithm in a phased approach. First, I tested it on a small portion of the live traffic to monitor its real-world performance and ensure it wouldn’t negatively impact the user experience. I set up monitoring tools to track key metrics in real time and created a rollback plan in case the new algorithm underperformed.
-
 I communicated the potential risks and benefits to key stakeholders, ensuring they were aware of the calculated nature of the risk and were on board with the plan."
 
-4. Result: Discuss the outcome of your actions. Highlight the success of the risk you took and any positive impact it had on the project or organization.
-
-Example: "The calculated risk paid off. The new algorithm outperformed the existing model by 15% in terms of recommendation accuracy, which led to a noticeable increase in customer engagement and a 10% boost in sales over the following quarter. The phased approach allowed us to safely transition to the new algorithm without any major disruptions.
-
+"The calculated risk paid off. The new algorithm outperformed the existing model by 15% in terms of recommendation accuracy, which led to a noticeable increase in customer engagement and a 10% boost in sales over the following quarter. The phased approach allowed us to safely transition to the new algorithm without any major disruptions.
 The success of this initiative demonstrated the value of taking calculated risks and reinforced the importance of innovation in our approach to improving the platform. The project was recognized internally, and the methodology I used for risk assessment and phased implementation became a template for future upgrades."
 
-5. Reflection: Conclude by reflecting on what you learned from the experience and how it has influenced your approach to taking risks in the future.
-
-Example: "This experience taught me the importance of balancing innovation with careful risk management. It reinforced my belief that taking calculated risks, when done with proper analysis and preparation, can lead to significant improvements and competitive advantages. Moving forward, I’ve continued to apply this approach, ensuring that I weigh the potential rewards against the risks and always have a plan in place to mitigate any downsides."
-
-This response illustrates your ability to take calculated risks that drive innovation and positive outcomes, aligning with the "Bias for Action" principle. It highlights your decision-making skills, ability to manage risks, and commitment to achieving results through thoughtful and proactive actions.
+"This experience taught me the importance of balancing innovation with careful risk management. It reinforced my belief that taking calculated risks, when done with proper analysis and preparation, can lead to significant improvements and competitive advantages. Moving forward, I’ve continued to apply this approach, ensuring that I weigh the potential rewards against the risks and always have a plan in place to mitigate any downsides."
 
 `I was working on a research project and is focused on training deep learning models to recognize user sentiments with limited examples. By chance, I know that some teams in big companies were working on a similar project. I knew that I might be behind them as I do not have enough training resources as big companies, and if they released the work earlier, I would lose many credits and recognitions for my work. So I made a calculated risk, that I decided to mainly focus on the few-shot part, which requires a few examples to train models, and I am also very familiar with this part. Instead, I skip the less familiar zero-shot experimental part where no training examples are available for the models. I quickly trained models and collected the results and analysis into a research paper, and then I released my work. My work turns out to receive lots of attention, and there are several follow-ups and good suggestions. Of course, I received some interest for the zero-shot part results, and I adopted feedbacks and added up the results soon. I think my calculated risk is worth it as my work received lots of attention and many papers follow my work. Besides, the feedbacks make my work better on the following versions.`
 
 ### Question 40: "Tell me how you would complete a project or task if you had limited time or resources?" (Frugality)
-When discussing how you would complete a project or task with limited time or resources, focus on your ability to be resourceful, prioritize effectively, and find creative solutions to achieve the best possible outcome. Emphasize how you apply the "Frugality" principle by making the most of what you have while maintaining high standards.
-1. Situation: Start by describing a specific situation where you were faced with limited time or resources, your role, and why it was challenging.
+"In a previous role as a Machine Learning Engineer, I was assigned to develop a prototype for a new recommendation system. The project had a tight deadline due to an upcoming product launch, and I had limited computational resources and a small team to support the task. The challenge was to deliver a functional and accurate prototype within the constraints."
 
-Example: "In a previous role as a Machine Learning Engineer, I was assigned to develop a prototype for a new recommendation system. The project had a tight deadline due to an upcoming product launch, and I had limited computational resources and a small team to support the task. The challenge was to deliver a functional and accurate prototype within the constraints."
+"The goal was to create a working prototype that could demonstrate the potential of the recommendation system to stakeholders and help secure further investment for full development. Despite the limited resources, it was crucial to deliver a high-quality product that would meet the stakeholders’ expectations."
 
-2. Task: Explain what needed to be accomplished despite the constraints and why completing the project was important.
-
-Example: "The goal was to create a working prototype that could demonstrate the potential of the recommendation system to stakeholders and help secure further investment for full development. Despite the limited resources, it was crucial to deliver a high-quality product that would meet the stakeholders’ expectations."
-
-3. Action: Describe the steps you took to manage the limitations effectively. Highlight how you prioritized tasks, made trade-offs, and used creative solutions to overcome the challenges.
-
-Example: "To manage the constraints, I first prioritized the most critical features of the recommendation system, focusing on delivering the core functionality that would have the most impact. I decided to use a simple yet effective algorithm that could be developed and deployed quickly, rather than a more complex model that would require more time and resources.
-
+"To manage the constraints, I first prioritized the most critical features of the recommendation system, focusing on delivering the core functionality that would have the most impact. I decided to use a simple yet effective algorithm that could be developed and deployed quickly, rather than a more complex model that would require more time and resources.
 To optimize the use of our limited computational resources, I implemented efficient data processing techniques, such as down-sampling the dataset and using approximate algorithms that provided good-enough results with less processing power. I also leveraged open-source tools and pre-built libraries to save time on development.
-
 Given the tight deadline, I adopted an iterative development approach, delivering a basic version of the prototype early on to gather feedback from stakeholders. This allowed me to make adjustments and improvements without spending time on unnecessary features.
-
 I also collaborated closely with my team, delegating tasks based on each member’s strengths and encouraging open communication to quickly address any issues that arose."
 
-4. Result: Discuss the outcome of your actions. Highlight how you successfully delivered the project despite the limitations and any positive impact it had on the project or organization.
-
-Example: "Despite the constraints, I was able to deliver a functional prototype on time that met the key requirements. The prototype successfully demonstrated the potential of the recommendation system, and the stakeholders were impressed with the results, leading to approval for the next phase of development.
-
+"Despite the constraints, I was able to deliver a functional prototype on time that met the key requirements. The prototype successfully demonstrated the potential of the recommendation system, and the stakeholders were impressed with the results, leading to approval for the next phase of development.
 The project was completed within the allocated budget, and the efficient use of resources became a model for similar projects within the organization. My ability to prioritize effectively and make the most of limited resources was recognized by my manager, and the project’s success contributed to the company’s strategic goals."
 
-5. Reflection: Conclude by reflecting on what you learned from the experience and how it has influenced your approach to working with limited resources in the future.
-
-Example: "This experience reinforced the importance of being resourceful and focused when working with limited resources. I learned that by prioritizing the most impactful tasks and finding creative solutions, it’s possible to deliver high-quality results even under constraints. Moving forward, I’ve continued to apply these principles, ensuring that I make the most of what I have while maintaining a high standard of work."
-
-This response highlights your ability to deliver results under constraints, showcasing your resourcefulness, prioritization skills, and ability to apply the "Frugality" principle effectively. It demonstrates that you can achieve significant outcomes even when faced with limited time or resources.
+"This experience reinforced the importance of being resourceful and focused when working with limited resources. I learned that by prioritizing the most impactful tasks and finding creative solutions, it’s possible to deliver high-quality results even under constraints. Moving forward, I’ve continued to apply these principles, ensuring that I make the most of what I have while maintaining a high standard of work."
 
 `I was working on a project with limited resources and time, in which the task required to train neural networks to classify movie reviews. However, due to time and budget limit, I could not use several GPUs to train my model because it would cost a lot if I ran multiple experiments, also multiple experiments will take me a lot of time. To complete the project, I made a good plan with priorities. I first carefully survey online related works and blogs, then design better flows of the model architecture. The pipeline requires light models rather than heavy models with lots of parameters. I also adopt several techniques to accelerate my training process. It turns out my model only needs two GPUs to get a good performance, and previously it usually took eight GPUs to finish the whole training process. Besides, It also takes seven hours to finish the entire training process and is much faster than the previous 15 hours. Hence, I could run all my experiments even with limited time, and I could spend extra time to analyze results and write a good document, and the project was finished with high standards and qualities. I learned that we could invent better ways to reduce our resources or save time.`
 
 ### ??? Question 41: "Tell me about a time when you experienced conflict within a team."
-When answering a question about experiencing conflict within a team, it’s important to demonstrate your ability to handle disagreements professionally, resolve issues constructively, and maintain a positive working environment. Highlight your communication skills, empathy, and focus on collaboration and finding a solution that benefits the team.
-1. Situation: Start by describing the context of the conflict, the team dynamic, and the specific issue that led to the disagreement.
+"In a previous role as a Machine Learning Engineer, I was part of a cross-functional team working on developing a new predictive analytics tool. The team included data scientists, software engineers, and product managers. As we approached the final stages of the project, a conflict arose between the data science team and the software engineering team regarding the implementation of a particular feature. The data scientists believed that the feature was critical for the tool’s accuracy, while the engineers were concerned about the feasibility and potential impact on system performance."
 
-Example: "In a previous role as a Machine Learning Engineer, I was part of a cross-functional team working on developing a new predictive analytics tool. The team included data scientists, software engineers, and product managers. As we approached the final stages of the project, a conflict arose between the data science team and the software engineering team regarding the implementation of a particular feature. The data scientists believed that the feature was critical for the tool’s accuracy, while the engineers were concerned about the feasibility and potential impact on system performance."
+"As a key contributor to both the data science and engineering efforts, I recognized that this conflict needed to be resolved quickly to avoid delays in the project timeline. My task was to facilitate a resolution that would address both teams’ concerns while keeping the project on track."
 
-2. Task: Explain what your role was in addressing the conflict and why it was important to resolve it.
-
-Example: "As a key contributor to both the data science and engineering efforts, I recognized that this conflict needed to be resolved quickly to avoid delays in the project timeline. My task was to facilitate a resolution that would address both teams’ concerns while keeping the project on track."
-
-3. Action: Describe the steps you took to address the conflict. Highlight how you facilitated communication, understood different perspectives, and worked towards a solution.
-
-Example: "I started by organizing a meeting with key members from both teams to discuss the issue in a collaborative environment. I encouraged each side to openly express their concerns and explain their reasoning behind their positions. This helped to ensure that everyone’s perspective was heard and understood.
-
+"I started by organizing a meeting with key members from both teams to discuss the issue in a collaborative environment. I encouraged each side to openly express their concerns and explain their reasoning behind their positions. This helped to ensure that everyone’s perspective was heard and understood.
 After understanding both sides, I proposed a compromise that involved implementing a simplified version of the feature that addressed the data science team’s accuracy concerns without overburdening the system. I also suggested an incremental rollout of the feature, where we could monitor its impact on performance and make adjustments as needed.
-
 To ensure transparency and build trust, I documented the decisions made during the meeting and the rationale behind them, and I shared this with the entire team. I also made it a point to check in regularly with both teams to ensure that the solution was working as intended and to address any further concerns."
 
-4. Result: Discuss the outcome of your actions. Highlight how the conflict was resolved, the impact on the project, and any positive changes in team dynamics.
-
-Example: "The proposed solution was accepted by both teams, and we were able to move forward with the project without significant delays. The incremental rollout of the feature allowed us to maintain system performance while still achieving the desired accuracy improvements.
-
+"The proposed solution was accepted by both teams, and we were able to move forward with the project without significant delays. The incremental rollout of the feature allowed us to maintain system performance while still achieving the desired accuracy improvements.
 The resolution of this conflict not only kept the project on track but also improved collaboration between the data science and engineering teams. Both sides appreciated the balanced approach, and it led to stronger teamwork and communication in subsequent projects. The project was ultimately delivered successfully, and the predictive analytics tool received positive feedback from users."
 
-5. Reflection: Conclude by reflecting on what you learned from the experience and how it has influenced your approach to teamwork and conflict resolution.
-
-Example: "This experience taught me the importance of open communication and empathy in resolving conflicts. I learned that taking the time to understand different perspectives and facilitating constructive dialogue can lead to solutions that benefit everyone involved. Moving forward, I’ve continued to apply these principles, ensuring that I address conflicts early and collaboratively to maintain a positive and productive team environment."
-
-This response demonstrates your ability to handle team conflicts constructively, aligning with key leadership principles such as "Earn Trust" and "Dive Deep." It highlights your communication skills, problem-solving abilities, and focus on maintaining team cohesion while delivering successful outcomes.
+"This experience taught me the importance of open communication and empathy in resolving conflicts. I learned that taking the time to understand different perspectives and facilitating constructive dialogue can lead to solutions that benefit everyone involved. Moving forward, I’ve continued to apply these principles, ensuring that I address conflicts early and collaboratively to maintain a positive and productive team environment."
 
 `I was part of a project team that included five team members. We aimed to participate into a competition, which is important and time-sensitive. During the initial meetings, we got together to discuss and agree upon the pipelines and strategies of the project, and they would also be our action plan. However, two members disagree on their roles and pipeline choices, which causes conflict within the team. I took control of the situation and expressed my concerns that If we cannot all agree to our roles and work closely with each other, we would waste time and all be responsible for the potential failure. After that, the two members knew that they had to sit down and discuss together to put the differences aside. Based on their strengths, I provide suggestions and discussions regarding their roles and concerns. Finally, everyone agrees with the plan and their roles. The project went smoothly according to the plan. We get a good ranking in the competition.`
 
 ### Question 42: "Give me two examples of when you have gone above and beyond what was expected?" (Think Big,  Dive Deep)
-When answering a question about going above and beyond what was expected, it's important to highlight your initiative, commitment to excellence, and ability to exceed expectations by taking ownership of tasks and delivering exceptional results. Emphasize how your actions align with the "Think Big" and "Dive Deep" leadership principles.
-
 Example 1: Enhancing a Predictive Model Beyond the Initial Scope
 
-1. Situation: Example: "In my role as a Machine Learning Engineer, I was tasked with developing a predictive model to forecast customer churn for a subscription-based service. The initial scope of the project was to build a basic model using existing customer data, with the goal of identifying at-risk customers so the marketing team could intervene."
+"In my role as a Machine Learning Engineer, I was tasked with developing a predictive model to forecast customer churn for a subscription-based service. The initial scope of the project was to build a basic model using existing customer data, with the goal of identifying at-risk customers so the marketing team could intervene."
 
-2. Task: Example: "My responsibility was to deliver a model that met the basic requirements of predicting churn with reasonable accuracy. However, I saw an opportunity to significantly enhance the value of the project by diving deeper into the data and expanding the model's capabilities."
+"My responsibility was to deliver a model that met the basic requirements of predicting churn with reasonable accuracy. However, I saw an opportunity to significantly enhance the value of the project by diving deeper into the data and expanding the model's capabilities."
 
-3. Action: Example: "Instead of just focusing on the immediate task, I took the initiative to conduct a more comprehensive analysis of the customer data. I identified additional factors that could influence churn, such as customer engagement metrics and product usage patterns, which were not initially considered.
-
+"Instead of just focusing on the immediate task, I took the initiative to conduct a more comprehensive analysis of the customer data. I identified additional factors that could influence churn, such as customer engagement metrics and product usage patterns, which were not initially considered.
 I also went beyond the standard modeling approach by incorporating advanced techniques like survival analysis and using external data sources to enrich our customer profiles. I worked closely with the data engineering team to integrate these new data streams into our pipeline.
-
 Recognizing the potential impact of these insights, I proactively developed a set of actionable recommendations for the marketing team, including personalized retention strategies based on the model's predictions."
 
-4. Result: Example: "The enhanced model significantly outperformed the initial version, improving the prediction accuracy by 20%. The marketing team was able to implement targeted interventions that reduced churn by 15% in the first quarter. My proactive approach not only exceeded the project's expectations but also established a new standard for data-driven decision-making in the company. The project received high praise from senior leadership, and the approach I developed was later adopted across other departments."
+"The enhanced model significantly outperformed the initial version, improving the prediction accuracy by 20%. The marketing team was able to implement targeted interventions that reduced churn by 15% in the first quarter. My proactive approach not only exceeded the project's expectations but also established a new standard for data-driven decision-making in the company. The project received high praise from senior leadership, and the approach I developed was later adopted across other departments."
 
-Reflection: Example: "This experience reinforced the value of thinking big and diving deep into projects to uncover additional opportunities for impact. It taught me that by going beyond the initial scope, I can deliver outcomes that not only meet but exceed expectations, driving greater value for the organization."
+"This experience reinforced the value of thinking big and diving deep into projects to uncover additional opportunities for impact. It taught me that by going beyond the initial scope, I can deliver outcomes that not only meet but exceed expectations, driving greater value for the organization."
 
 Example 2: Automating a Manual Process to Save Time and Resources
 
-1. Situation: Example: "During a major product launch, I was responsible for generating weekly performance reports that tracked key metrics like sales, customer engagement, and technical issues. The process was highly manual, requiring hours of data extraction, cleaning, and analysis each week. This was especially challenging given the tight timelines and the need for accuracy."
+"During a major product launch, I was responsible for generating weekly performance reports that tracked key metrics like sales, customer engagement, and technical issues. The process was highly manual, requiring hours of data extraction, cleaning, and analysis each week. This was especially challenging given the tight timelines and the need for accuracy."
 
-2. Task: Example: "My primary responsibility was to ensure that the reports were delivered on time and were accurate. However, I realized that the manual process was not only time-consuming but also prone to errors, and it was taking valuable time away from more strategic tasks."
+"My primary responsibility was to ensure that the reports were delivered on time and were accurate. However, I realized that the manual process was not only time-consuming but also prone to errors, and it was taking valuable time away from more strategic tasks."
 
-3. Action: Example: "Recognizing the inefficiency, I took the initiative to automate the entire reporting process. I developed a set of scripts to automatically extract, clean, and analyze the data from various sources. I also created a dashboard that provided real-time insights, allowing stakeholders to access the information they needed without waiting for the weekly reports.
-
+"Recognizing the inefficiency, I took the initiative to automate the entire reporting process. I developed a set of scripts to automatically extract, clean, and analyze the data from various sources. I also created a dashboard that provided real-time insights, allowing stakeholders to access the information they needed without waiting for the weekly reports.
 To ensure the new system was robust, I conducted extensive testing and validation. I also trained the team on how to use the dashboard and provided documentation to support its ongoing use."
 
-4. Result: Example: "The automation reduced the time spent on reporting by 80%, freeing up significant resources for the team to focus on more strategic activities. The real-time dashboard provided stakeholders with instant access to key metrics, improving decision-making speed during the product launch. The project was recognized as a major efficiency improvement, and the automation scripts were later adapted for use in other areas of the company."
+"The automation reduced the time spent on reporting by 80%, freeing up significant resources for the team to focus on more strategic activities. The real-time dashboard provided stakeholders with instant access to key metrics, improving decision-making speed during the product launch. The project was recognized as a major efficiency improvement, and the automation scripts were later adapted for use in other areas of the company."
 
-Reflection: Example: "This experience highlighted the importance of always looking for ways to improve processes and deliver greater value, even when it's not explicitly required. By thinking big and diving deep into the problem, I was able to create a solution that not only met the immediate needs but also provided long-term benefits to the organization."
-
-These examples demonstrate your ability to go above and beyond expectations by thinking big and diving deep into projects, ultimately delivering results that have a significant positive impact on the organization.
+"This experience highlighted the importance of always looking for ways to improve processes and deliver greater value, even when it's not explicitly required. By thinking big and diving deep into the problem, I was able to create a solution that not only met the immediate needs but also provided long-term benefits to the organization."
 
 `In one of my previous internships, I was in charge of a project which aimed to design models to classify sentiments of user queries. To do this, I developed a pipeline to collect and analyze data and trained deep learning models to achieve good performance to detect user queries. After finishing the first version, I received positive feedback from others. However, I continue to think about how to improve the projects. I started redesigning the model architectures to accelerate training and inference time. I also unified the design flow cause it would be helpful to large-scale real user scenarios. Besides, I integrate my model output as an API. Although my initial expectation is to design models to achieve good performance on user data, my further improvements make my projects more attractive and powerful. Several other teams could directly integrate my API into their products without redesigning code to adapt my models, and I received several thanks from them.`
 
 ### Question 43: "When have you had a disagreement at work, either with a work colleague or a manager?" (Have Backbone; Disagree and Commit)
-When answering a question about handling disagreements at work, it's important to demonstrate that you can express your opinions confidently, backed by data or logic, while also showing your ability to commit to the final decision and work collaboratively. The "Have Backbone; Disagree and Commit" principle emphasizes the importance of standing up for your beliefs, even in the face of opposition, but also being a team player once a decision is made.
-1. Situation: Describe the context of the disagreement, the nature of the project, and the roles of the people involved.
+"In a previous role as a Machine Learning Engineer, I was working on a project to develop a new recommendation engine for our platform. I was collaborating closely with a product manager who wanted to prioritize a quick deployment of a basic version of the engine to meet a tight deadline. However, I believed that taking a little extra time to implement a more advanced model would yield significantly better results for the end users and drive higher engagement."
 
-Example: "In a previous role as a Machine Learning Engineer, I was working on a project to develop a new recommendation engine for our platform. I was collaborating closely with a product manager who wanted to prioritize a quick deployment of a basic version of the engine to meet a tight deadline. However, I believed that taking a little extra time to implement a more advanced model would yield significantly better results for the end users and drive higher engagement."
+"My responsibility was to develop the recommendation engine, and I felt strongly that delivering a high-quality product, even if it required a bit more time, was crucial for the long-term success of the platform. The product manager, however, was focused on meeting the immediate deadline and was concerned about the risks of delaying the launch."
 
-2. Task: Explain your specific role in the situation and why the disagreement was important.
-
-Example: "My responsibility was to develop the recommendation engine, and I felt strongly that delivering a high-quality product, even if it required a bit more time, was crucial for the long-term success of the platform. The product manager, however, was focused on meeting the immediate deadline and was concerned about the risks of delaying the launch."
-
-3. Action: Describe how you approached the disagreement, including how you communicated your perspective and how you handled the situation after the decision was made.
-
-Example: "I requested a meeting with the product manager to discuss my concerns. During the meeting, I presented data and projections that showed the potential long-term benefits of implementing the more advanced model. I explained that while the initial deployment might be delayed by a couple of weeks, the improved accuracy of the recommendations could lead to a substantial increase in user satisfaction and retention, which would ultimately justify the delay.
-
+"I requested a meeting with the product manager to discuss my concerns. During the meeting, I presented data and projections that showed the potential long-term benefits of implementing the more advanced model. I explained that while the initial deployment might be delayed by a couple of weeks, the improved accuracy of the recommendations could lead to a substantial increase in user satisfaction and retention, which would ultimately justify the delay.
 The product manager appreciated the data-driven approach but remained concerned about the launch deadline. We had a candid discussion, and although I strongly believed in my position, I understood the business pressures they were facing. After thoroughly discussing the pros and cons, the decision was made to proceed with the simpler model to meet the deadline.
-
 Despite my initial disagreement, I fully committed to the decision. I worked diligently to ensure the basic model was as effective as possible within the time constraints, and I collaborated with the team to ensure a smooth deployment."
 
-4. Result: Discuss the outcome of the situation, including how the decision impacted the project and what happened afterward.
+"The basic version of the recommendation engine was successfully deployed on time, and while it was not as sophisticated as I had initially hoped, it performed adequately and met the immediate business needs. Importantly, the project’s success built trust between myself and the product manager, and they later supported the development of the more advanced model, which was rolled out in a subsequent update. This experience strengthened our working relationship and demonstrated my commitment to the team’s goals, even when the decision didn’t align with my initial preference."
 
-Example: "The basic version of the recommendation engine was successfully deployed on time, and while it was not as sophisticated as I had initially hoped, it performed adequately and met the immediate business needs. Importantly, the project’s success built trust between myself and the product manager, and they later supported the development of the more advanced model, which was rolled out in a subsequent update. This experience strengthened our working relationship and demonstrated my commitment to the team’s goals, even when the decision didn’t align with my initial preference."
-
-5. Reflection: Conclude by reflecting on what you learned from the experience and how it has influenced your approach to disagreements in the future.
-
-Example: "This experience taught me the importance of balancing technical excellence with business needs and the value of clear, respectful communication when disagreements arise. I learned that while it’s essential to advocate for what you believe is right, it’s equally important to support the team once a decision is made. This approach has helped me maintain strong, collaborative relationships with colleagues and managers, even in challenging situations."
-
-This response illustrates your ability to stand up for your beliefs, communicate effectively during disagreements, and commit to the final decision, aligning with the "Have Backbone; Disagree and Commit" principle. It shows that you can handle conflict constructively and prioritize the team’s success over individual preferences.
+"This experience taught me the importance of balancing technical excellence with business needs and the value of clear, respectful communication when disagreements arise. I learned that while it’s essential to advocate for what you believe is right, it’s equally important to support the team once a decision is made. This approach has helped me maintain strong, collaborative relationships with colleagues and managers, even in challenging situations."
 
 `I was working on a project during my internship, and the project aimed to detect user domains with good performance during a interaction with customers. After deploying the project, some users commented that the inference time is slow if there is large-scale test data. I feel it is my responsibility to achieve good performance on user data and think about how to accelerate the inference time. As fast inference time could make models more scalable, it could also save user time and money. I spoke with my manager and suggested optimizing architectures to accelerate the model inference. At first, the manager disagreed because he thought one could use more GPU resources or light and smaller version of the model to make the inference faster than optimizing the model architecture. To convince him, I did experiments to analyze how much money and time we will save, and the performances gap between the light version and the normal version of the model. I also provide simple ways to optimize the model inference structure. After later meetings with figures and numbers, the manager was convinced and agreed to my proposal. As a result, the users are satisfied with the application on large-scale data. My proposed techniques were further used on similar projects.`
 
 ### Question 44: "Tell me about a time when you received criticism from a manager or a work colleague? How did you react to the negative feedback?"
-When answering a question about receiving criticism, it's important to demonstrate your ability to accept feedback constructively, reflect on it, and take steps to improve. This showcases your growth mindset, openness to learning, and professionalism.
-1. Situation: Describe the context in which you received the criticism, including your role, the project or task involved, and the nature of the feedback.
+`Build over complicate model which need more resource and engineering work, tight deadline. Do a lot of things myself as a hero`
+"In a previous role as a Machine Learning Engineer, I was working on a project to develop a predictive model for customer segmentation. I was responsible for selecting and implementing the model, and I chose a complex approach that I believed would provide the most accurate results. `After presenting my initial findings to the team, my manager gave me feedback that the approach I had chosen was overly complex and difficult for the rest of the team to understand and implement.` The manager suggested that I simplify the model to make it more accessible and easier to deploy."
 
-Example: "In a previous role as a Machine Learning Engineer, I was working on a project to develop a predictive model for customer segmentation. I was responsible for selecting and implementing the model, and I chose a complex approach that I believed would provide the most accurate results. After presenting my initial findings to the team, my manager gave me feedback that the approach I had chosen was overly complex and difficult for the rest of the team to understand and implement. The manager suggested that I simplify the model to make it more accessible and easier to deploy."
+"My task was to develop an effective and efficient model that the entire team could work with. The feedback was significant because it highlighted a gap between my technical focus and the practical needs of the team. I realized that while I was prioritizing accuracy, I had overlooked the importance of simplicity and usability, which are critical for collaboration and deployment."
 
-2. Task: Explain your responsibility in the situation and why the feedback was significant.
+"Initially, I felt disappointed because I had invested a lot of time and effort into developing the model. However, I quickly recognized the validity of my manager’s feedback. `I understood that for the project to be successful, it needed to be something that everyone on the team could understand and contribute to.`
+`I took the feedback as an opportunity to improve. I scheduled a follow-up meeting with my manager to gain more clarity on their concerns and to discuss how I could simplify the model without sacrificing too much accuracy.` I also sought input from my colleagues to understand their perspectives and challenges with the current approach.
+Based on the feedback, I revised the model, opting for a simpler algorithm that still met the project’s requirements but was much easier to understand and implement. `I also documented the process and created a user-friendly guide to ensure that the entire team could easily work with the new model.`"
 
-Example: "My task was to develop an effective and efficient model that the entire team could work with. The feedback was significant because it highlighted a gap between my technical focus and the practical needs of the team. I realized that while I was prioritizing accuracy, I had overlooked the importance of simplicity and usability, which are critical for collaboration and deployment."
+"The simplified model was well-received by the team, and it was successfully implemented and deployed without further issues. The project proceeded smoothly, and the model’s performance met our key objectives. My manager appreciated my willingness to adapt based on feedback, and it strengthened our working relationship.
+Additionally, the experience helped me develop a more balanced approach to problem-solving, where I now prioritize not only technical accuracy but also practicality and `ease of use`. `This change in perspective has allowed me to contribute more effectively to collaborative projects and improved my ability to work cross-functionally.`"
 
-3. Action: Describe how you responded to the feedback, both in terms of your immediate reaction and the steps you took to address it.
-
-Example: "Initially, I felt disappointed because I had invested a lot of time and effort into developing the model. However, I quickly recognized the validity of my manager’s feedback. I understood that for the project to be successful, it needed to be something that everyone on the team could understand and contribute to.
-
-I took the feedback as an opportunity to improve. I scheduled a follow-up meeting with my manager to gain more clarity on their concerns and to discuss how I could simplify the model without sacrificing too much accuracy. I also sought input from my colleagues to understand their perspectives and challenges with the current approach.
-
-Based on the feedback, I revised the model, opting for a simpler algorithm that still met the project’s requirements but was much easier to understand and implement. I also documented the process and created a user-friendly guide to ensure that the entire team could easily work with the new model."
-
-4. Result: Discuss the outcome of your actions, including how the revised approach was received and any positive impact it had on the project or team dynamics.
-
-Example: "The simplified model was well-received by the team, and it was successfully implemented and deployed without further issues. The project proceeded smoothly, and the model’s performance met our key objectives. My manager appreciated my willingness to adapt based on feedback, and it strengthened our working relationship.
-
-Additionally, the experience helped me develop a more balanced approach to problem-solving, where I now prioritize not only technical accuracy but also practicality and ease of use. This change in perspective has allowed me to contribute more effectively to collaborative projects and improved my ability to work cross-functionally."
-
-5. Reflection: Conclude by reflecting on what you learned from the experience and how it has influenced your approach to receiving and responding to feedback in the future.
-
-Example: "This experience taught me the importance of being open to feedback and the value of simplicity in technical work, especially in collaborative environments. I’ve learned that constructive criticism is an opportunity for growth, and I now actively seek out feedback to continually improve my work. This mindset has made me a more effective team member and has enhanced my ability to deliver solutions that are both technically sound and widely accessible."
-
-This response shows that you can take criticism in stride, reflect on it constructively, and take meaningful steps to improve, aligning with principles like "Learn and Be Curious" and "Earn Trust." It also demonstrates your ability to balance technical rigor with practical considerations, an essential skill in collaborative and cross-functional environments.
+"This experience taught me the importance of being open to feedback and the value of simplicity in technical work, especially in collaborative environments. I’ve learned that constructive criticism is an opportunity for growth, and I now actively seek out feedback to continually improve my work. This mindset has made me a more effective team member and has enhanced my ability to deliver solutions that are both technically sound and widely accessible."
 
 `I don’t receive criticism often, but when I receive it, I always take it positively and think about how to improve my performance at work. One situation is that in one of my internships, I was working on releasing my project code to other teams. I have provided good results of my model and show some commands to run the code. However, my manager told me that he is not satisfied with the reading documents. Although they are suitable for teams familiar with our model, they are not friendly and straightforward to new beginners. After careful reflection of what he said, the suggestions, and my current documents. I agreed that I should not just improve the quality of code; I should also improve the quality of reading documents. I then go through several online open-source projects to learn how others design and write the document. I adopt some excellent tricks from them. I also optimize my code structure to make it easier to access for beginners. Finally, I released the project, and it received positive feedback from both my manager and the users in other teams. After that, I learned to keep a high standard and think about details and potential needs from the view of users. My following projects have become much better then.`
 
 ### Question 45: "Tell me about your most challenging project or a time you solved a complex problem. How did you handle it, and what was the outcome?" (highest standards etc.)
-When describing your most challenging project or a time you solved a complex problem, it's important to emphasize your ability to tackle difficult issues, uphold high standards, and deliver exceptional results. Highlight your problem-solving skills, innovative thinking, and commitment to quality.
-1. Situation: Start by outlining the context of the project or problem, including the scope, your role, and the specific challenges involved.
+"In my role as a Machine Learning Engineer, I was tasked with developing a real-time fraud detection system for a financial services company. The project was highly complex due to the need for accurate and timely detection of fraudulent transactions amidst vast amounts of data, with very high stakes for both the company and its customers."
 
-Example: "In my role as a Machine Learning Engineer, I was tasked with developing a real-time fraud detection system for a financial services company. The project was highly complex due to the need for accurate and timely detection of fraudulent transactions amidst vast amounts of data, with very high stakes for both the company and its customers."
+"My responsibility was to design and implement a machine learning model that could identify fraudulent activities in real-time. The challenge was compounded by the need to process and analyze large volumes of transaction data quickly and accurately, while minimizing false positives and negatives. Additionally, the system needed to integrate seamlessly with the existing infrastructure and comply with stringent regulatory requirements."
 
-2. Task: Explain your specific responsibilities and why the project was particularly challenging.
-
-Example: "My responsibility was to design and implement a machine learning model that could identify fraudulent activities in real-time. The challenge was compounded by the need to process and analyze large volumes of transaction data quickly and accurately, while minimizing false positives and negatives. Additionally, the system needed to integrate seamlessly with the existing infrastructure and comply with stringent regulatory requirements."
-
-3. Action: Describe the steps you took to address the challenges, including how you approached the problem, the methodologies you used, and any innovative solutions you applied.
-
-Example: "To tackle the complexity, I started by conducting a thorough analysis of historical transaction data to identify patterns and anomalies associated with fraud. I used this analysis to develop a set of features that could effectively capture fraudulent behavior.
-
+"To tackle the complexity, I started by conducting a thorough analysis of historical transaction data to identify patterns and anomalies associated with fraud. I used this analysis to develop a set of features that could effectively capture fraudulent behavior.
 I implemented an ensemble approach combining multiple machine learning algorithms, including Random Forests, Gradient Boosting Machines, and Neural Networks. This allowed the system to leverage the strengths of different models and improve overall accuracy.
-
 To ensure real-time processing, I designed a scalable data pipeline using Apache Kafka and Apache Flink, which allowed us to process and analyze transactions as they occurred. I also implemented a feedback loop where the model continuously learned from new data, improving its performance over time.
-
 Throughout the project, I maintained high standards by conducting rigorous testing and validation to ensure the model's accuracy and reliability. I worked closely with the development team to integrate the system into the existing infrastructure and collaborated with compliance experts to meet regulatory requirements."
 
-4. Result: Discuss the outcome of your actions, including how the project was received, the impact it had, and any recognition or success metrics.
-
-Example: "The fraud detection system was successfully deployed and was able to accurately identify and flag fraudulent transactions in real-time. The system reduced false positives by 30% and increased detection rates by 25%, significantly improving the company’s ability to prevent fraud and protect its customers.
-
+"The fraud detection system was successfully deployed and was able to accurately identify and flag fraudulent transactions in real-time. The system reduced false positives by 30% and increased detection rates by 25%, significantly improving the company’s ability to prevent fraud and protect its customers.
 The project was recognized as a major success by senior leadership, and the system became a critical component of the company’s fraud prevention strategy. My approach and methodologies were later adopted in other areas of the business, and I received commendations for maintaining high standards and delivering exceptional results."
 
-5. Reflection: Conclude by reflecting on what you learned from the experience and how it has influenced your approach to solving complex problems in the future.
-
-Example: "This experience taught me the importance of a rigorous, data-driven approach to solving complex problems and maintaining high standards throughout the project lifecycle. I learned that combining innovative techniques with a focus on practical implementation can lead to impactful solutions. Moving forward, I’ve continued to apply these principles to other challenging projects, always striving for excellence and ensuring that my solutions are both effective and reliable."
-
-This response highlights your ability to handle complex projects with high standards, demonstrating problem-solving skills, technical expertise, and a commitment to quality. It aligns with principles like "Deliver Results" and "Invent and Simplify," showcasing your capability to tackle difficult problems and deliver impactful solutions.
+"This experience taught me the importance of a rigorous, data-driven approach to solving complex problems and maintaining high standards throughout the project lifecycle. I learned that combining innovative techniques with a focus on practical implementation can lead to impactful solutions. Moving forward, I’ve continued to apply these principles to other challenging projects, always striving for excellence and ensuring that my solutions are both effective and reliable."
 
 `The most challenging project is my work on unifying different code models. I was working to build a unified framework to merge various sub-projects together, such that different models could share the same code, and it is thus better to control them. It is pretty challenging that I haven’t done anything related to building underlying frameworks. It also requires me to build the corresponding APIs for the source code and design some visualization tools to interpret model results, and I neither had experiences before. So I started to devote more time to the project and even work in my private time. I made a plan with priorities. First, I googled a lot of papers and checked large open-source projects to learn how others build underlying frameworks. I then learn an online course as quickly as possible for building APIs and python visualization tools. When I come up with my ideas to create them, I will discuss them with my manager and others to make sure my plan is feasible. I implement my ideas and debug the code quickly while maintaining high quality. Finally, I finished the project on time with all the features, and I received positive feedback from the users. I also keep optimizing my code with higher and higher quality to save more user time. Through this process, I learn that it is essential to keep learning new knowledge and optimizing the project with better qualities. Besides, I found that a good schedule with priorities is also important.`
 
 ### Question 46: "Tell me about a time when you missed a deadline. How did you handle the situation, and what did you learn from it?" (customer obsession, Deliver Results)
-When discussing a time you missed a deadline, it's important to address the situation honestly while focusing on how you took responsibility, communicated effectively, and worked towards a solution. Emphasize your commitment to customer satisfaction and your dedication to delivering results, even when faced with challenges.
-1. Situation: Describe the context of the project or task, including the original deadline, your role, and the nature of the work involved.
+"In a previous role as a Machine Learning Engineer, I was leading the development of a new recommendation engine for a key client. The project had a tight deadline because it was critical for an upcoming marketing campaign. Unfortunately, due to unforeseen technical challenges with integrating the engine into the client's existing system, we missed the original deadline."
 
-Example: "In a previous role as a Machine Learning Engineer, I was leading the development of a new recommendation engine for a key client. The project had a tight deadline because it was critical for an upcoming marketing campaign. Unfortunately, due to unforeseen technical challenges with integrating the engine into the client's existing system, we missed the original deadline."
+"My task was to ensure the recommendation engine was delivered on time and met the client’s requirements. The deadline was crucial because the engine was intended to enhance the client’s marketing efforts, and any delay would impact their campaign effectiveness and potentially affect their business outcomes."
 
-2. Task: Explain your responsibilities and why meeting the deadline was important for the project and the client.
-
-Example: "My task was to ensure the recommendation engine was delivered on time and met the client’s requirements. The deadline was crucial because the engine was intended to enhance the client’s marketing efforts, and any delay would impact their campaign effectiveness and potentially affect their business outcomes."
-
-3. Action: Describe how you handled the situation, including how you communicated the delay, managed expectations, and took steps to rectify the issue.
-
-Example: "As soon as it became clear that we were not going to meet the deadline, I promptly informed the client about the delay. I provided a transparent explanation of the issues we were facing and the revised timeline for delivery. I also outlined the steps we were taking to resolve the issues and ensure the quality of the final product.
-
+"As soon as it became clear that we were not going to meet the deadline, I promptly informed the client about the delay. I provided a transparent explanation of the issues we were facing and the revised timeline for delivery. I also outlined the steps we were taking to resolve the issues and ensure the quality of the final product.
 Internally, I reorganized the team’s priorities and resources to focus on resolving the technical challenges as quickly as possible. I set up daily check-ins to monitor progress and address any new issues promptly. I also worked closely with the client to keep them updated and involved in the process, providing them with interim solutions where possible to mitigate the impact of the delay."
 
-4. Result: Discuss the outcome of your actions, including how the situation was ultimately resolved and the impact on the client and the project.
-
-Example: "Despite the initial delay, we were able to deliver the recommendation engine within the revised timeline. The client was appreciative of our transparent communication and the steps we took to address their needs. The engine was successfully integrated into their system and performed as expected, contributing to the success of their marketing campaign.
-
+"Despite the initial delay, we were able to deliver the recommendation engine within the revised timeline. The client was appreciative of our transparent communication and the steps we took to address their needs. The engine was successfully integrated into their system and performed as expected, contributing to the success of their marketing campaign.
 The experience led to improved processes within our team for managing deadlines and handling unexpected challenges. We implemented more robust risk management practices and contingency planning to prevent similar issues in the future."
 
-5. Reflection: Conclude by reflecting on what you learned from the experience and how it has influenced your approach to managing deadlines and client expectations.
-
-Example: "This experience taught me the importance of proactive communication and managing client expectations, especially when facing delays. I learned that while missing a deadline is challenging, maintaining transparency and focusing on delivering high-quality results can help preserve client trust and satisfaction. Moving forward, I’ve applied these lessons by enhancing our project planning and risk management strategies, ensuring we are better prepared to meet deadlines and deliver on our commitments."
-
-This response demonstrates your commitment to customer satisfaction and delivering results, even when faced with setbacks. It shows that you handle challenges responsibly, communicate effectively, and work diligently to rectify issues and meet client needs.
+"This experience taught me the importance of proactive communication and managing client expectations, especially when facing delays. I learned that while missing a deadline is challenging, maintaining transparency and focusing on delivering high-quality results can help preserve client trust and satisfaction. Moving forward, I’ve applied these lessons by enhancing our project planning and risk management strategies, ensuring we are better prepared to meet deadlines and deliver on our commitments."
 
 `I was working on an intern project with a strict deadline. The manager required me to collect new user queries, train models on them, and present a thorough performance analysis in the next meeting which is four days later. The task was very new to my team, and I realized the big magnitude based on the initial information. I put the task as my top-1 priority and started to gather the user queries. But as I was going through it, I realized that the data was much bigger than my expectation, and it was very noisy and complex. I carefully clean the data and analyze the distributions and attributes of the data. I deploy some models on a small scale of data to find the best ones. Due to limited training resources in my department, I also quickly read related papers and learned new skills to optimize my model architectures and save the training time. I put all my extra time on the nights and my whole weekend. However, I still failed to complete all the performance analyses by the meeting, and I presented partial results. My manager was not happy initially, but he is willing to give me more time based on the high-quality summary of my partial results. I then showed my following detailed plans to him, and continue work hard to finish the rest part.  Finally I finished all the parts with high standards.`
 
 ### Question 47: "Tell me about a time when you took on something significant outside your area of responsibility. How did you handle it, and what was the outcome?" (Ownership)
-When discussing a time you took on something significant outside your area of responsibility, it’s important to emphasize your willingness to go above and beyond, demonstrate ownership, and showcase the positive impact of your actions. This not only highlights your initiative but also your commitment to the overall success of the team or organization.
-1. Situation: Describe the context and the nature of the task or project you took on. Include why it was significant and why it fell outside your usual responsibilities.
+"In my role as a Machine Learning Engineer, I was primarily focused on developing predictive models and improving our data analytics capabilities. However, during a critical product launch, our team faced a significant issue with the deployment pipeline. The issue was impacting our ability to release new features on schedule. Although I had no direct responsibility for the deployment process, it was clear that the problem was affecting our project’s timeline and overall success."
 
-Example: "In my role as a Machine Learning Engineer, I was primarily focused on developing predictive models and improving our data analytics capabilities. However, during a critical product launch, our team faced a significant issue with the deployment pipeline. The issue was impacting our ability to release new features on schedule. Although I had no direct responsibility for the deployment process, it was clear that the problem was affecting our project’s timeline and overall success."
+"Recognizing the urgency of the situation, I decided to take ownership of the problem. My task was to troubleshoot the deployment pipeline, even though it was outside my area of expertise. I needed to understand the deployment process, identify the bottlenecks, and work with the DevOps team to resolve the issues."
 
-2. Task: Explain your specific role in the situation and the additional responsibilities you assumed.
-
-Example: "Recognizing the urgency of the situation, I decided to take ownership of the problem. My task was to troubleshoot the deployment pipeline, even though it was outside my area of expertise. I needed to understand the deployment process, identify the bottlenecks, and work with the DevOps team to resolve the issues."
-
-3. Action: Describe the steps you took to address the problem, including how you approached the new task and collaborated with others.
-
-Example: "I started by quickly familiarizing myself with the deployment pipeline and its components. I reviewed the documentation and spoke with the DevOps team to understand the root causes of the issue. I then took a hands-on approach, working closely with the DevOps team to diagnose and resolve the bottlenecks. I also identified areas where improvements could be made to prevent similar issues in the future.
-
+"I started by quickly familiarizing myself with the deployment pipeline and its components. I reviewed the documentation and spoke with the DevOps team to understand the root causes of the issue. I then took a hands-on approach, working closely with the DevOps team to diagnose and resolve the bottlenecks. I also identified areas where improvements could be made to prevent similar issues in the future.
 To ensure that the deployment issue was resolved efficiently, I organized daily stand-up meetings with the team to track progress and address any emerging problems. I also provided updates to the project stakeholders to keep them informed of our progress."
 
-4. Result: Discuss the outcome of your actions, including the impact on the project and any recognition you received.
-
-Example: "By taking ownership of the deployment issue, we were able to resolve the bottlenecks and get the pipeline back on track. This allowed us to meet our product launch deadline and ensure that new features were released as planned. The successful resolution of the issue was recognized by the senior management team, and my initiative was commended for its impact on the project’s success.
-
+"By taking ownership of the deployment issue, we were able to resolve the bottlenecks and get the pipeline back on track. This allowed us to meet our product launch deadline and ensure that new features were released as planned. The successful resolution of the issue was recognized by the senior management team, and my initiative was commended for its impact on the project’s success.
 Additionally, the improvements we implemented to the deployment process helped streamline future releases, leading to increased efficiency and fewer deployment-related issues."
 
-5. Reflection: Conclude by reflecting on what you learned from the experience and how it has influenced your approach to taking ownership of tasks and projects.
-
-Example: "This experience reinforced the importance of taking ownership and being proactive, even when tasks fall outside of my usual responsibilities. I learned that stepping up to address critical issues, regardless of my primary role, can have a significant positive impact on the team and the project. This approach has made me more versatile and collaborative, and I continue to apply these lessons by looking for opportunities to contribute beyond my immediate scope and support the team’s overall goals."
-
-This response demonstrates your ability to take initiative and ownership of significant challenges outside your usual responsibilities, showcasing your commitment to the team’s success and your proactive problem-solving skills.
+"This experience reinforced the importance of taking ownership and being proactive, even when tasks fall outside of my usual responsibilities. I learned that stepping up to address critical issues, regardless of my primary role, can have a significant positive impact on the team and the project. This approach has made me more versatile and collaborative, and I continue to apply these lessons by looking for opportunities to contribute beyond my immediate scope and support the team’s overall goals."
 
 `During my internship, I was working on a project that focused on training models with limited user data. Some internal data augmentation tools from our company could augment and generate more data examples. I then use their tools to generate examples for my case. However, by chance, I found that their source code has a significant flaw that the two techniques used in wrong ways during implementation. I think it is very important to raise the issue as many users may also use these tools, and bad results could negatively impact our company. I then raised the issue to the corresponding team, but they told me that the person in charge had left; thus, it would take them a long time to fix it. I then spent extra time on nights and weekends to analyze their code and fix the problem. I also wrote a document with a better guideline to use the tools. Finally, there are no more issues with their data augmentation tools. I received official thanks from that team, and my manager also praised me.`
 
 ### Question 48: "What is the biggest mistake you made, and what did you learn from it?" (earn trust, customer obsession)
-When discussing your biggest mistake, focus on how you handled the situation, the steps you took to rectify it, and what you learned from the experience. Emphasize your commitment to earning trust and customer satisfaction by showing accountability and demonstrating how you applied the lessons learned to prevent similar mistakes in the future.
-1. Situation: Describe the context of the mistake, including your role, the project or task involved, and the impact of the error.
+"In my role as a Machine Learning Engineer, I was tasked with developing a predictive model for a major client’s marketing campaign. I made the mistake of underestimating the importance of thorough data preprocessing. I rushed through the preprocessing phase to meet a tight deadline, resulting in a model that was trained on incomplete and poorly cleaned data."
 
-Example: "In my role as a Machine Learning Engineer, I was tasked with developing a predictive model for a major client’s marketing campaign. I made the mistake of underestimating the importance of thorough data preprocessing. I rushed through the preprocessing phase to meet a tight deadline, resulting in a model that was trained on incomplete and poorly cleaned data."
+"My responsibility was to ensure the model provided accurate predictions based on the client’s data. The mistake was significant because it led to inaccurate predictions, which affected the client’s campaign performance and led to a loss of trust in our team’s capabilities."
 
-2. Task: Explain your specific responsibilities and why the mistake was significant.
-
-Example: "My responsibility was to ensure the model provided accurate predictions based on the client’s data. The mistake was significant because it led to inaccurate predictions, which affected the client’s campaign performance and led to a loss of trust in our team’s capabilities."
-
-3. Action: Describe the steps you took to address the mistake and rectify the situation, including how you communicated with stakeholders and worked to resolve the issue.
-
-Example: "Once I realized the mistake, I immediately informed the client and my team about the issue. I took full responsibility and apologized for the oversight. I then prioritized correcting the problem by conducting a thorough data cleaning and preprocessing process. I re-trained the model with the corrected data and conducted extensive validation to ensure its accuracy.
-
+"Once I realized the mistake, I immediately informed the client and my team about the issue. I took full responsibility and apologized for the oversight. I then prioritized correcting the problem by conducting a thorough data cleaning and preprocessing process. I re-trained the model with the corrected data and conducted extensive validation to ensure its accuracy.
 To mitigate the impact, I worked closely with the client to provide interim solutions and offered additional support to address any issues caused by the initial errors. I also implemented a more rigorous data preprocessing checklist and review process to prevent similar mistakes in the future."
 
-4. Result: Discuss the outcome of your actions, including how the issue was resolved and any positive feedback or improvements that resulted from the situation.
-
-Example: "After correcting the model, the client was satisfied with the improved results, and the accuracy of the predictions significantly enhanced their campaign performance. Although the initial mistake caused some disruption, the transparent communication and prompt resolution helped rebuild the client’s trust in our team.
-
+"After correcting the model, the client was satisfied with the improved results, and the accuracy of the predictions significantly enhanced their campaign performance. Although the initial mistake caused some disruption, the transparent communication and prompt resolution helped rebuild the client’s trust in our team.
 Additionally, the new data preprocessing procedures and review processes we put in place improved the quality of our work and prevented similar issues in subsequent projects."
 
-5. Reflection: Conclude by reflecting on what you learned from the mistake and how it has influenced your approach to work and interactions with clients.
-
-Example: "This experience taught me the importance of thoroughness and attention to detail, especially under tight deadlines. I learned that rushing through critical tasks can lead to significant errors and impact customer trust. Moving forward, I’ve made a commitment to maintain high standards in all aspects of my work and to communicate transparently with clients when issues arise. This approach has helped me earn and maintain trust and ensure that I deliver high-quality results consistently."
-
-This response highlights your ability to handle mistakes responsibly, emphasize customer satisfaction, and reflect on lessons learned. It demonstrates your commitment to earning trust and improving processes based on past experiences.
+"This experience taught me the importance of thoroughness and attention to detail, especially under tight deadlines. I learned that rushing through critical tasks can lead to significant errors and impact customer trust. Moving forward, I’ve made a commitment to maintain high standards in all aspects of my work and to communicate transparently with clients when issues arise. This approach has helped me earn and maintain trust and ensure that I deliver high-quality results consistently."
 
 `The biggest mistake I made is that when I was working on an intern project. I need to create a demo with live interactions with users where my model could correctly detect the sentiments of user queries. The deadline is very tight, and I need to finish it within one week. At that time, I was building a high-performance classification model, which was an essential part of the demo. I paid too much attention to the details because I wanted to make the system ‍‌‌‍‌‍‌‍‍‌perfect to detect user queries. And I did not notice that I didn’t have enough time to finish all the details. The last day before the deadline, my manager pointed this out. I apologized to him, and I started to figure out a way to keep the demo as we wanted but sacrificing the model inference time that the customer won’t notice because this is just a demo. After presenting the demo, I rewrite the model inference code to meet all the requirements. Finally, the demo has a good influence on users. But from this mistake, I learned that although details are definitely important, I also need to pay attention to the whole project schedule. Besides, I also need to keep good communication and updates with my teammates and managers when I have plans.`
 
 ### Question 49: "What is your greatest strength?"
-When discussing your strengths in an interview, aim to showcase qualities that are relevant to the role and align with the company’s values. Provide specific examples to illustrate how your strengths have positively impacted your work and contributed to your success.
-1. Identify Your Strength: Choose a strength that is pertinent to the position you're applying for. It could be a technical skill, a personal trait, or a professional capability.
+"My greatest strength is my problem-solving ability. I thrive in situations where I need to analyze complex problems and come up with innovative solutions."
 
-Example: "My greatest strength is my problem-solving ability. I thrive in situations where I need to analyze complex problems and come up with innovative solutions."
-
-2. Provide a Specific Example: Describe a particular instance where you demonstrated this strength. Explain the situation, your role, and the outcome.
-
-Example: "In my previous role as a Machine Learning Engineer, I was tasked with optimizing a recommendation algorithm that was underperforming. The challenge was to improve the algorithm’s accuracy while maintaining its efficiency, given the constraints of a large and diverse dataset.
-
+"In my previous role as a Machine Learning Engineer, I was tasked with optimizing a recommendation algorithm that was underperforming. The challenge was to improve the algorithm’s accuracy while maintaining its efficiency, given the constraints of a large and diverse dataset.
 I approached this by breaking down the problem into smaller components and conducting a thorough analysis of each. I implemented several advanced techniques, including feature engineering and hyperparameter tuning, and integrated an ensemble approach to combine the strengths of multiple models. This resulted in a significant improvement in the algorithm’s accuracy and performance.
-
 The enhanced recommendation system led to better user engagement and satisfaction, and the project was recognized as a success by senior management."
 
-3. Explain the Impact: Discuss the impact of your strength on your work, your team, or the organization. Highlight any positive outcomes or recognition you received.
+"My problem-solving skills have consistently enabled me to tackle complex challenges effectively and deliver high-quality results. In this instance, the improved recommendation system contributed to increased user retention and positive feedback from clients. It also demonstrated my ability to deliver impactful solutions, which reinforced my reputation as a reliable and innovative team member."
 
-Example: "My problem-solving skills have consistently enabled me to tackle complex challenges effectively and deliver high-quality results. In this instance, the improved recommendation system contributed to increased user retention and positive feedback from clients. It also demonstrated my ability to deliver impactful solutions, which reinforced my reputation as a reliable and innovative team member."
+"I believe this strength is particularly relevant to the AWS Applied Scientist L6 role, where complex problem-solving is essential for developing and optimizing data-driven solutions. My ability to analyze and address intricate challenges will allow me to contribute effectively to your team and drive impactful results for your clients."
 
-4. Reflect on How It Applies to the Role: Connect your strength to the role you're applying for and explain how it will benefit the company.
-
-Example: "I believe this strength is particularly relevant to the AWS Applied Scientist L6 role, where complex problem-solving is essential for developing and optimizing data-driven solutions. My ability to analyze and address intricate challenges will allow me to contribute effectively to your team and drive impactful results for your clients."
-
-5. Conclusion: Summarize by reaffirming your strength and its relevance to the position.
-
-Example: "Overall, my problem-solving ability has been a key driver of my success in previous roles, and I am confident it will enable me to excel in this position as well. I look forward to applying this strength to tackle the complex challenges and deliver innovative solutions at AWS."
-
-This response effectively communicates your strength, provides a concrete example of how you’ve applied it, and connects it to the role you’re applying for. It demonstrates your self-awareness and ability to leverage your strengths to achieve positive outcomes.
+"Overall, my problem-solving ability has been a key driver of my success in previous roles, and I am confident it will enable me to excel in this position as well. I look forward to applying this strength to tackle the complex challenges and deliver innovative solutions at AWS."
 
 `I am very good at planning and scheduling, I usually make a good plan for my projects and set up milestones for every week.`
 
 ### Question 50: "What is your greatest weakness?"
-When discussing your weaknesses in an interview, it's important to present them honestly while also demonstrating how you are working to improve or mitigate them. Choose a weakness that is genuine but does not undermine your ability to perform the job effectively. Focus on how you’re addressing it and what you’ve learned from the experience.
-1. Identify a Genuine Weakness: Choose a weakness that is real but does not directly undermine your core competencies for the role. Avoid clichés like "I'm a perfectionist" unless you can provide a unique and honest twist.
+"One area where I've identified a need for improvement is `my tendency to become deeply involved in technical details, which can sometimes cause me to lose sight of the broader project goals`."
 
-Example: "One area where I've identified a need for improvement is my tendency to become deeply involved in technical details, which can sometimes cause me to lose sight of the broader project goals."
+"In a previous project, I was focused on optimizing a machine learning model and spent a significant amount of time refining the algorithm. While this attention to detail led to some performance improvements, it also caused delays in delivering the overall project and affected the timeline for other critical components."
 
-2. Provide Context: Explain how this weakness has affected your work or projects in the past. Be specific but concise.
+"To address this, I’ve worked on improving my time management and project oversight skills. I started using project management tools to track progress and set more defined milestones for both technical tasks and overall project objectives. I also regularly review project goals with my team to ensure that my focus aligns with the broader objectives and timelines."
 
-Example: "In a previous project, I was focused on optimizing a machine learning model and spent a significant amount of time refining the algorithm. While this attention to detail led to some performance improvements, it also caused delays in delivering the overall project and affected the timeline for other critical components."
+"As a result of these changes, I’ve been able to balance technical work with project deadlines more effectively. For instance, in a subsequent project, I successfully managed to complete the technical enhancements while meeting the overall project deadlines, which led to positive feedback from both clients and team members."
 
-3. Describe the Actions Taken: Outline the steps you’ve taken to address the weakness and improve in that area. This shows that you’re proactive and committed to personal growth.
+"In the AWS Applied Scientist L6 role, the ability to manage complex projects while maintaining a clear focus on strategic goals is crucial. My efforts to improve my project management and oversight skills will help me contribute effectively to your team, ensuring that I deliver high-quality solutions on time while keeping aligned with broader objectives."
 
-Example: "To address this, I’ve worked on improving my time management and project oversight skills. I started using project management tools to track progress and set more defined milestones for both technical tasks and overall project objectives. I also regularly review project goals with my team to ensure that my focus aligns with the broader objectives and timelines."
-
-4. Highlight Improvements and Results: Discuss how your efforts to address the weakness have led to positive outcomes or improvements in your work.
-
-Example: "As a result of these changes, I’ve been able to balance technical work with project deadlines more effectively. For instance, in a subsequent project, I successfully managed to complete the technical enhancements while meeting the overall project deadlines, which led to positive feedback from both clients and team members."
-
-5. Connect to the Role: Relate your efforts to the role you’re applying for and how your approach to addressing your weakness will benefit the company.
-
-Example: "In the AWS Applied Scientist L6 role, the ability to manage complex projects while maintaining a clear focus on strategic goals is crucial. My efforts to improve my project management and oversight skills will help me contribute effectively to your team, ensuring that I deliver high-quality solutions on time while keeping aligned with broader objectives."
-
-6. Conclusion: Summarize your approach to managing the weakness and reaffirm your commitment to personal development.
-
-Example: "Overall, acknowledging and working on this weakness has made me a more effective and balanced team member. I am committed to ongoing improvement and believe that my enhanced skills in managing both technical details and project objectives will be a valuable asset in this role."
-
-This response provides a balanced view of your weakness, demonstrates self-awareness, and highlights your proactive efforts to address and improve upon it. It shows that you are committed to personal growth and capable of overcoming challenges.
+"Overall, acknowledging and working on this weakness has made me a more effective and balanced team member. I am committed to ongoing improvement and believe that my enhanced skills in managing both technical details and project objectives will be a valuable asset in this role."
 
 `My weakness is that sometimes I would pay more attention to the details of a project and spend too much time analyzing detailed results or findings. One example is designing a multi-modal fusion model to encode different information, including texts and images. I need to get the initial results on the target dataset. While during the experiments, I spent much time analyzing whether different pre-training computer vision models affect the retrieved quality of images. Actually, we can use any pre-training models to get the feature. It takes me extra hours to finish the project. Later, I try to check myself with regular milestones and refocus on the big picture, like first designing a whole model to handle all of them instead of only focusing on small parts. Finally, I finished my work with high quality and submitted it to a top-tier conference before the deadline.`
