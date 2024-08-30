@@ -18,7 +18,7 @@ STAR method to construct the response:
   - What trade-offs did you have to make to achieve this?
   - What did you learn or would have done differently?
 
-Example:
+`Example`:
 - First, I created a customer feedback mechanism on a weekly basis.
 - Second, I wanted to make sure our users knew the why behind this change, and I took the action of creating a monthly office hours and 12 continued education sessions on the product. In fact, these sessions are now being used as standard practice for all future implementations, which there have been three of this size so far.
 - And third, a byproduct of the customer feedback actually revealed insights to other opportunities in their organization. I deliver these insights to the executive board in a thorough report, and they were delighted to hear the strengths and opportunities of their organization.
