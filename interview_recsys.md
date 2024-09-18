@@ -1,5 +1,6 @@
 ## RecSys powered by LLMs interview prep
 
+
 ### LLM-powered recommendation system
 In this chapter, we explored how LLMs could change the way we approach a recommendation system task. We started from the analysis of the current strategies and algorithms for building recommendation applications, differentiating between various scenarios (collaborative filtering, content-based, cold start, etc.) as well as different techniques (KNN, matrix factorization, and NNs).
 
