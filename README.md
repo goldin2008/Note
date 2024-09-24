@@ -1,30 +1,70 @@
 ### Travel
-Travel Plan in Portugal and Spain
-Days 1: Porto
-Days 2: Coimbra
-Days 3: Lisbon
-Days 4: Algarve, Portugal
-Days 5: Seville, Spain
-Days 6: Granada
-Days 7: Toledo
-Days 8: Madrid
-Days 9: Valencia
-Days 10: Barcelona
-Days 11: Catalonia
 
+#### 2020, 12.28-1.20 (23 days)
+- France (5 days)
+  - Paris 12.29-1.4 (6 days), 1.10-1.13 (3 days)
+- Germany 1.4-1.8 (5 days)
+  - Leipzig 1.4-1.5 (1 day)
+  - Berlin 1.5-1.8 (3 days)
+- Austria 1.8-1.10 (2 days)
+  - Vienna
+- Switzerland 1.14-1.15 (1 day)
+  - Zürich
+- Italy 1.15-1.16 (1 day)
+  - Milan
+- Greece 1.16-1.18 (2 days)
+  - Athens
+- Hungary (2 days)
+  - Budapest 1.18-1.20 (2 days)
 
-- Vilnius, Lithuania
-- Riga, Latvia
-- Tallinn, Estonia
+#### 2023, 11.21-1.7 (48 days)
+- Portugal 11.21-11.28 (7 days)
+  - Porto 11.21-11.23 (2 days)
+  - Coimbra 11.23-11.24 (1 day)
+  - Lisbon 11.24-11.26 (2 days)
+  - Evora 11.26-11.27 (1 day)
+  - Lagos 11.27-11.28 (1 day)
+- Spain 11.28-12.13 (16 days)
+  - Seville 11.28-12.1 (3 days)
+  - Granada 12.1-12.4 (3 days)
+  - Ronda 12.4-12.5 (1 day)
+  - Cordoba 12.5-12.6 (1 day)
+  - Madrid, Toledo 12.7-12.9 (2 days)
+  - Valencia 12.9-12.11 (2 days)
+  - Barcelona 12.11-12.13 (2 days)
+- Italy 12.13-12.16 (3 days)
+  - Rome
+- Malta 12.17-12.19 (2 days)
+- Lithuania 12.19-12.22 (3 days)
+  - Vilnius
+- Latvia 12.22-12.24 (2 days)
+  - Riga
+- Estonia 12.24-12.26 (2 days)
+  - Tallinn
+- Germany 12.26-12.31 (5 days)
+  - Berlin
+- Hungary 12.31-1.4 (4 days)
+  - Budapest
+- France 1.4-1.7 (3 days)
+  - Paris
 
-- Budapest, Hungary
-- Prague, Czech Republic
-- Zagreb, Croatia
-- Ljubljana, Slovenia
-- Warsaw, Poland
-
-- Sofia, Bulgaria
-- Bucharest, Romania
+#### 2024, 8.29-9.27 (30 days)
+- France 8.29-9.1 (5 days)
+  - Paris 8.29-9.1 (4 days), 9.26-9.27 (1 day)
+- Greece 9.1-9.4 (3 days)
+  - Athens 9.1-9.3 (2 days)
+  - Crete 9.3-9.4 (1 day)
+- Italy 9.5-9.19 (14 days)
+  - Milan 9.5-9.7 (2 days)
+  - Venice 9.7-9.9 (2 days)
+  - San Marino 9.9-9.10 (1 day)
+  - Florence 9.10-9.14 (4 days)
+  - Pisa and Bologna 9.14-9.16 (2 days)
+  - Roma 9.16-9.19 (3 days)
+- Poland 9.19-9.23 (4 days)
+  - Warsaw
+- Czech Republic 9.23-9.26 (3 days)
+  - Prague
 
 
 ## End Year Evaluation
