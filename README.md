@@ -1,5 +1,33 @@
-End Year Evaluation
+### Travel
+Travel Plan in Portugal and Spain
+Days 1: Porto
+Days 2: Coimbra
+Days 3: Lisbon
+Days 4: Algarve, Portugal
+Days 5: Seville, Spain
+Days 6: Granada
+Days 7: Toledo
+Days 8: Madrid
+Days 9: Valencia
+Days 10: Barcelona
+Days 11: Catalonia
 
+
+- Vilnius, Lithuania
+- Riga, Latvia
+- Tallinn, Estonia
+
+- Budapest, Hungary
+- Prague, Czech Republic
+- Zagreb, Croatia
+- Ljubljana, Slovenia
+- Warsaw, Poland
+
+- Sofia, Bulgaria
+- Bucharest, Romania
+
+
+## End Year Evaluation
 In this year-end self-evaluation, I've highlighted my achievements and contributions across various facets of my role, demonstrating a consistent commitment to excellence and alignment with the firm's strategic priorities. I have proactively identified and addressed the needs of our clients, customers, and stakeholders, while fostering cross-team collaboration and adhering to firm priorities.
 
 During my rapid onboarding, I took on modeling responsibilities to ensure the readiness of our projects for deployment, and I engaged in rigorous engineering work to optimize our workflow. My diligence in aligning my work with our firm's strategic goals is reflected in projects such as "Access Insights" and "New Hire Onboarding," which are making substantial contributions to our efficiency and cost savings.
@@ -12,7 +40,7 @@ In conclusion, my year has been marked by a dedication to excellence, efficiency
 
 Feedback for others:
 How does this colleague deliver the goals of our team, business/function and the company? (e.g., thinks and acts strategically, drives results, innovates)
-XXX's insights and forward-thinking approach have allowed our team to navigate complex challenges and opportunities with clarity and efficiency. XXX's not only identified problems but have also provided innovative solutions, ensuring our DevOps processes align with our long-term business objectives. Whether it's improving deployment pipelines, automating critical processes, or optimizing our infrastructure, XXX's contributions have directly translated into time and cost savings for the firm. 
+XXX's insights and forward-thinking approach have allowed our team to navigate complex challenges and opportunities with clarity and efficiency. XXX's not only identified problems but have also provided innovative solutions, ensuring our DevOps processes align with our long-term business objectives. Whether it's improving deployment pipelines, automating critical processes, or optimizing our infrastructure, XXX's contributions have directly translated into time and cost savings for the firm.
 
 XXX's proactive approach to exploring new tools and methodologies has kept our team on the cutting edge of DevOps technology. XXX's willingness to experiment with new approaches and your capacity to adapt to evolving industry standards has been invaluable to our continuous improvement.
 
@@ -32,7 +60,7 @@ For Managers: What are this colleague's management strengths and development are
 The 8 Manager Capabilities & Proficiency Levels
 1.SET CLEAR DIRECTION
 Communicate a clear vision and the direction to get there
-I speak with my team openly, honestly and positively so they know where they stand. 
+I speak with my team openly, honestly and positively so they know where they stand.
 
 2.DRIVE PERFORMANCE
 Drive high performance
@@ -172,7 +200,7 @@ Effective Communication:
 I've consistently tailored my communication style to suit diverse audiences, ensuring clarity and accessibility to all team members. An example of this was during a complex project meeting, where I effectively presented our data science findings to non-technical executives, sparking a productive discussion. I've also maintained open channels of communication with our new PO, discussing onboarding processes and project plans without delving too deeply into technical jargon. My commitment to encouraging diverse perspectives and constructive debates has led to more inclusive decision-making processes, ultimately enriching our team dynamics.
 
 Advocating for Diversity and Inclusion:
-I actively participated in our firm's diversity and inclusion committee, which organized a series of workshops and events to raise awareness and educate employees. 
+I actively participated in our firm's diversity and inclusion committee, which organized a series of workshops and events to raise awareness and educate employees.
 I have consistently advocated for and valued a culture of transparency, diversity, inclusion, equity, and respect among teams. I have actively participated in diversity initiatives and promoted the firm's commitment to diversity, equity, and inclusion.
 
 Refining Priorities and Developmental Goals:
@@ -210,34 +238,6 @@ Identifies, Escalates and Remediates Issues
 • Identifies concerns, escalates early and assists in mitigating risks in a timely manner to prevent recurrence
 * Stakeholder refers to internal and external groups that functions like Risk, Compliance and Audit engage with to perform their role
 
-### Travel
-Travel Plan in Portugal and Spain
-Days 1: Porto
-Days 2: Coimbra
-Days 3: Lisbon
-Days 4: Algarve, Portugal
-Days 5: Seville, Spain
-Days 6: Granada
-Days 7: Toledo
-Days 8: Madrid
-Days 9: Valencia
-Days 10: Barcelona
-Days 11: Catalonia
-
-
-- Vilnius, Lithuania
-- Riga, Latvia
-- Tallinn, Estonia
-
-- Budapest, Hungary
-- Prague, Czech Republic
-- Zagreb, Croatia
-- Ljubljana, Slovenia
-- Warsaw, Poland
-
-- Sofia, Bulgaria
-- Bucharest, Romania
-
 
 # Presentation and Note
 
@@ -266,10 +266,10 @@ nigama7@gmail.com
 ```
 1. Install env
 2. Install packages
-3. Create requirements.txt 
+3. Create requirements.txt
 ```
 
-Project Command 
+Project Command
 >Install env
 ```
 python3 -m venv env
