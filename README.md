@@ -1,5 +1,4 @@
 ### Travel
-
 #### 2020, 12.28-1.20 (23 days)
 - France (5 days)
   - Paris 12.29-1.4 (6 days), 1.10-1.13 (3 days)
@@ -65,7 +64,6 @@
   - Warsaw
 - Czech Republic 9.23-9.26 (3 days)
   - Prague
-
 
 ## End Year Evaluation
 In this year-end self-evaluation, I've highlighted my achievements and contributions across various facets of my role, demonstrating a consistent commitment to excellence and alignment with the firm's strategic priorities. I have proactively identified and addressed the needs of our clients, customers, and stakeholders, while fostering cross-team collaboration and adhering to firm priorities.
