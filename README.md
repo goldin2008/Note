@@ -1,34 +1,34 @@
 ### Travel
 The Schengen area is made up of 26 European countries, including:
 - [x] Austria
-Belgium
-Bulgaria
-Croatia
-Czech Republic
-Denmark
-Estonia
-Finland
-France
-Germany
-Greece
-Hungary
-Iceland
-Italy
-Latvia
-Liechtenstein
-Lithuania
-Luxembourg
-Malta
-The Netherlands
-Norway
-Poland
-Portugal
-Romania
-Slovakia
-Slovenia
-Spain
-Sweden
-Switzerland
+- [x] Belgium
+- [] Bulgaria
+- [] Croatia
+- [x] Czech Republic
+- [] Denmark
+- [x] Estonia
+- [] Finland
+- [x] France
+- [x] Germany
+- [x] Greece
+- [x] Hungary
+- [] Iceland
+- [x] Italy
+- [x] Latvia
+- [] Liechtenstein
+- [x] Lithuania
+- [] Luxembourg
+- [x] Malta
+- [] The Netherlands
+- [] Norway
+- [x] Poland
+- [x] Portugal
+- [] Romania
+- [] Slovakia
+- [] Slovenia
+- [x] Spain
+- [] Sweden
+- [x] Switzerland
 
 #### 2020, 12.28-1.20 (23 days)
 - France (5 days)
