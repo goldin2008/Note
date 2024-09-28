@@ -1,5 +1,5 @@
 ### Travel
-The Schengen area is made up of 26 European countries, including:
+The Schengen area is made up of (16 )29 European countries, including:
 - [x] Austria
 - [x] Belgium
 - [] Bulgaria
@@ -29,6 +29,11 @@ The Schengen area is made up of 26 European countries, including:
 - [x] Spain
 - [] Sweden
 - [x] Switzerland
+
+- [] Andorra
+- [] Monaco
+- [x] San Marino
+- [x] Vatican City
 
 #### 2020, 12.28-1.20 (23 days)
 - France (5 days)
