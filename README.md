@@ -1,6 +1,6 @@
 ### Travel
 The Schengen area is made up of 26 European countries, including:
-[x] Austria
+- [x] Austria
 Belgium
 Bulgaria
 Croatia
