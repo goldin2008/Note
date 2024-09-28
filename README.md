@@ -1,4 +1,35 @@
 ### Travel
+The Schengen area is made up of 26 European countries, including:
+[x] Austria
+Belgium
+Bulgaria
+Croatia
+Czech Republic
+Denmark
+Estonia
+Finland
+France
+Germany
+Greece
+Hungary
+Iceland
+Italy
+Latvia
+Liechtenstein
+Lithuania
+Luxembourg
+Malta
+The Netherlands
+Norway
+Poland
+Portugal
+Romania
+Slovakia
+Slovenia
+Spain
+Sweden
+Switzerland
+
 #### 2020, 12.28-1.20 (23 days)
 - France (5 days)
   - Paris 12.29-1.4 (6 days), 1.10-1.13 (3 days)
