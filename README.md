@@ -1,5 +1,5 @@
 ### Travel
-The Schengen area is made up of (16 )29 European countries, including:
+The Schengen area is made up of (16)29 European countries, including:
 - [x] Austria
 - [x] Belgium
 - [] Bulgaria
