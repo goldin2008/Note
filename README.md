@@ -35,6 +35,60 @@ The Schengen area is made up of (16)29 European countries, including:
 - [x] San Marino
 - [x] Vatican City
 
+Most visited destinations by international tourist arrivals
+Rank	Destination	International
+- [x] 1	 France	100 million	79.4 million	Increase 25.9	Increase 64
+- [x] 2	 Spain	85.2 million	71.7 million	Increase 18.8	Increase 130
+- [x] 3	 United States	66.5 million	50.9 million	Increase 30.6	Increase 130
+- [x] 4	 Italy	57.2 million	49.8 million	Increase 14.8	Increase 85
+- [] 5	 Turkey	55.2 million	50.5 million	Increase 9.3	Increase 69
+- [] 6	 Mexico	42.2 million	38.3 million	Increase 10.1	Increase 20
+- [] 7	 United Kingdom	37.2 million	30.7 million	Increase 21.1	Increase 389
+- [x] 8	 Germany	34.8 million	28.5 million	Increase 22.1	Increase 144
+- [x] 9	 Greece	32.7 million	27.8 million	Increase 17.6	Increase 89
+- [x] 10	 Austria	30.9 million	26.2 million	Increase 17.9	Increase 106
+
+Africa
+Rank	Destination	International
+- [] 1	 Egypt	13.0 million	11.3 million	Increase 14.8	Increase 36.8
+- [] 2	 Morocco	12.9 million	12.3 million	Increase 5.2	Increase 8.3
+- [] 3	 South Africa	10.2 million	10.5 million	Decrease 2.3	Increase 1.8
+
+Americas
+Rank	Destination	International
+- [x] 1	 United States	50.8 million	22.2 million	Increase 128.8	Increase 15.6
+- [] 2	 Mexico	38.3 million	31.8 million	Increase 20.4	Increase 31.4
+- [] 3	 Canada	12.8 million	3.0 million	Increase 326.6	Increase 3.4
+- [] 6	 Argentina	3.8 million	0.3 million	Increase 1196.6	Decrease 85.6
+- [] 7	 Brazil	3.6 million	0.7 million	Increase 386.5	Decrease 65.2
+
+Asia and the Pacific
+Rank	Destination	International
+- [] 2	 Thailand	28.15 million	39.8 million	38.2 million	Increase 4.3	Increase 7.3
+- [] 3	 Japan	25.07 million	32.2 million	31.2 million	Increase 3.2	Increase 8.7
+- [] 4	 Malaysia		26.1 million	25.8 million	Increase 1.0	Decrease 0.4
+- [] 5	 Hong Kong		23.8 million	29.3 million	Decrease 18.8	Increase 4.9
+- [] 6	 Macau		18.6 million	18.5 million	Increase 0.8	Increase 7.2
+- [] 7	 Vietnam		18.0 million	15.5 million	Increase 16.2	Increase 19.9
+- [] 8	 India		17.9 million	17.4 million	Increase 2.8	Increase 12.1
+- [] 9	 South Korea		17.5 million	15.3 million	Increase 14.0	Increase 15.1
+- [] 10	 Indonesia		15.5 million	13.4 million	Increase 15.4	Increase 3.5
+
+West Asia
+Rank	Destination	International
+- [] 1	 Saudi Arabia	27 million	17.5 million	15.5 million	Increase 13.0	Decrease 3.7
+- [] 2	 United Arab Emirates		16.7 million	15.9 million	Increase 5.1	Increase 0.8
+- [] 3	 Egypt		13.0 million	11.3 million	Increase 14.8	Increase 36.8
+- [] 4	 Iran		9.1 million	7.3 million	Increase 24.4	Increase 49.9
+- [] 5	 Israel		4.6 million	4.1 million	Increase 10.5	Increase 14.1
+- [] 9	 Qatar		2.1 million	1.8 million	Increase 17.4	Decrease 19.4
+
+Europe
+Rank	Destination	International
+- [] 3	 Turkey	50.5 million	29.9 million	15.9 million	51.2 million	Increase 69	Increase 88.3
+- [] 5	 United Kingdom	―	6.3 million	10.7 million	39.4 million	―	Decrease 41.3
+- [] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
+
 #### 2020, 12.28-1.20 (23 days)
 - France (5 days)
   - Paris 12.29-1.4 (6 days), 1.10-1.13 (3 days)
