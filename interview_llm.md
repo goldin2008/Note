@@ -26,6 +26,7 @@ Sequence-to-sequence models, originally designed for `translation`, are also ver
 
 
 
+
 #### RAG overflow
 `naive RAG`
 - Retrieve: The user query is used to retrieve relevant context from an external knowledge source. For this, the user query is embedded with an embedding model into the same vector space as the additional context in the vector database. This allows to perform a similarity search, and the top k closest data objects from the vector database are returned.
