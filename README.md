@@ -97,6 +97,7 @@ Rank	Destination	International
 - [x] 9	 Portugal	―	9.6 million	6.5 million	24.5 million	―	Increase 48.4
 - [] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
 
+
 #### 2020, 12.28-1.20 (23 days)
 - France (5 days)
   - Paris 12.29-1.4 (6 days), 1.10-1.13 (3 days)
