@@ -64,6 +64,7 @@ Rank	Destination	International
 
 Asia and the Pacific
 Rank	Destination	International
+- [x] 1	 China		65.7 million	62.9 million	Increase 4.5	Increase 3.6
 - [] 2	 Thailand	28.15 million	39.8 million	38.2 million	Increase 4.3	Increase 7.3
 - [] 3	 Japan	25.07 million	32.2 million	31.2 million	Increase 3.2	Increase 8.7
 - [] 4	 Malaysia		26.1 million	25.8 million	Increase 1.0	Decrease 0.4
@@ -85,8 +86,15 @@ Rank	Destination	International
 
 Europe
 Rank	Destination	International
+- [x] 1	 France	―	48.4 million	41.7 million	90.9 million	—	Increase 16.1
+- [x] 2	 Spain	71.7 million	31.2 million	18.9 million	83.5 million	Increase 130	Increase 64.7
 - [] 3	 Turkey	50.5 million	29.9 million	15.9 million	51.2 million	Increase 69	Increase 88.3
+- [x] 4	 Italy	49.8 million	26.9 million	25.2 million	64.5 million	Increase 85	Increase 6.7
 - [] 5	 United Kingdom	―	6.3 million	10.7 million	39.4 million	―	Decrease 41.3
+- [x] 6	 Germany	28.5 million	11.7 million	12.4 million	39.6 million	Increase 144	Decrease 6.1
+- [x] 7	 Greece	27.8 million	14.7 million	7.4 million	31.3 million	Increase 89	Increase 99.4
+- [x] 8	 Austria	26.2 million	12.7 million	15.1 million	31.9 million	Increase 106	Decrease 15.7
+- [x] 9	 Portugal	―	9.6 million	6.5 million	24.5 million	―	Increase 48.4
 - [] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
 
 #### 2020, 12.28-1.20 (23 days)
