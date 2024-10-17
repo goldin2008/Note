@@ -97,9 +97,31 @@ Rank	Destination	International
 - [x] 9	 Portugal	―	9.6 million	6.5 million	24.5 million	―	Increase 48.4
 - [] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
 
+#### 2024, 12.25-1.26 (33 days)
+- France (3 days)
+  - Paris
+- Bulgaria
+  - Sofia
+- Croatia
+  - Zagreb
+- Romania
+  - Bucharest
+- Slovakia
+  - Bratislava
+- Slovenia
+  - Ljubljana
+- [] Denmark
+- [] Finland
+- [] Liechtenstein
+- [] Luxembourg
+- [] The Netherlands
+- [] Norway
+- [] Sweden
+- [] Andorra
+- [] Monaco
 
-#### 2020, 12.28-1.20 (23 days)
-- France (5 days)
+#### 2020, 12.28-1.20 (24 days)
+- France (9 days)
   - Paris 12.29-1.4 (6 days), 1.10-1.13 (3 days)
 - Germany 1.4-1.8 (5 days)
   - Leipzig 1.4-1.5 (1 day)
