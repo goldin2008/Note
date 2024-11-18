@@ -1,6 +1,14 @@
 ## LLMs interview prep
 
 ### Evaluate LLM System
+Model evaluation
+  - General-purpose LLM evaluations: We can broadly categorize general-purpose evaluations in three phases: during pre-training, after pre-training, and after fine-tuning.
+  - Domain-specific LLM evaluations
+  - Task-specific LLM evaluations
+
+RAG evaluation
+
+Evaluating TwinLlama-3.1-8B
 
 
 ### Large-Language Foundation Models
