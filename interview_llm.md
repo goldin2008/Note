@@ -5,6 +5,13 @@ Model evaluation
   - General-purpose LLM evaluations: We can broadly categorize general-purpose evaluations in three phases: during pre-training, after pre-training, and after fine-tuning.
   - Domain-specific LLM evaluations
   - Task-specific LLM evaluations
+  For example, a summarization task can leverage the
+  `Recall-Oriented Understudy for Gisting Evaluation (ROUGE)` metric, which measures the overlap between the generated text and reference text using n-grams.
+  Likewise, classification tasks also benefit from it and use the following classic metrics, among others:
+  `Accuracy`: Accuracy refers to the proportion of correctly predicted instances compared to the total instances. It’s particularly useful for tasks with categorical outputs or where there is a clear distinction between right and wrong answers, such as named entity recognition (NER).
+  `Precision`: The ratio of true positive predictions to the total positive predictions made by the model.
+  `Recall`: The ratio of true positive predictions to the total actual positive instances.
+  `F1 Score`: The harmonic mean of precision and recall, used to balance both metrics. These are particularly useful in tasks such as classification or entity extraction.
 
 RAG evaluation
 
