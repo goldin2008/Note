@@ -16,9 +16,9 @@
 `RAG evaluation`
 
 The evaluation of RAG systems goes beyond assessing a standalone LLM. It requires examining the entire system’s performance, including:
-- Retrieval accuracy: How well does the system fetch relevant information?
-- Integration quality: How effectively is the retrieved information incorporated into the generated response?
-- Factuality and relevance: Does the final output address the query appropriately while seamlessly blending retrieved and generated content?
+  - Retrieval accuracy: How well does the system fetch relevant information?
+  - Integration quality: How effectively is the retrieved information incorporated into the generated response?
+  - Factuality and relevance: Does the final output address the query appropriately while seamlessly blending retrieved and generated content?
 
 - `Ragas`: `Retrieval-Augmented Generation Assessment (Ragas)`
   - `Faithfulness`: This metric measures the factual consistency of the generated answer against the given context. It works by breaking down the answer into individual claims and verifying if each claim can be inferred from the provided context. The faithfulness score is calculated as the ratio of verifiable claims to the total number of claims in the answer.
