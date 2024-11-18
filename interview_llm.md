@@ -14,7 +14,6 @@
   `F1 Score`: The harmonic mean of precision and recall, used to balance both metrics. These are particularly useful in tasks such as classification or entity extraction.
 
 `RAG evaluation`
-
 The evaluation of RAG systems goes beyond assessing a standalone LLM. It requires examining the entire system’s performance, including:
   - Retrieval accuracy: How well does the system fetch relevant information?
   - Integration quality: How effectively is the retrieved information incorporated into the generated response?
