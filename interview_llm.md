@@ -1,10 +1,10 @@
 ## LLMs interview prep
 
 ### Evaluate LLM System
-Model evaluation
-  - General-purpose LLM evaluations: We can broadly categorize general-purpose evaluations in three phases: during pre-training, after pre-training, and after fine-tuning.
-  - Domain-specific LLM evaluations
-  - Task-specific LLM evaluations
+`Model evaluation`
+  - `General-purpose LLM evaluations`: We can broadly categorize general-purpose evaluations in three phases: during pre-training, after pre-training, and after fine-tuning.
+  - `Domain-specific LLM evaluations`
+  - `Task-specific LLM evaluations`:
   For example, a summarization task can leverage the
   `Recall-Oriented Understudy for Gisting Evaluation (ROUGE)` metric, which measures the overlap between the generated text and reference text using n-grams.
   Likewise, classification tasks also benefit from it and use the following classic metrics, among others:
@@ -13,9 +13,20 @@ Model evaluation
   `Recall`: The ratio of true positive predictions to the total actual positive instances.
   `F1 Score`: The harmonic mean of precision and recall, used to balance both metrics. These are particularly useful in tasks such as classification or entity extraction.
 
-RAG evaluation
+`RAG evaluation`
 
-Evaluating TwinLlama-3.1-8B
+The evaluation of RAG systems goes beyond assessing a standalone LLM. It requires examining the entire system’s performance, including:
+- Retrieval accuracy: How well does the system fetch relevant information?
+- Integration quality: How effectively is the retrieved information incorporated into the generated response?
+- Factuality and relevance: Does the final output address the query appropriately while seamlessly blending retrieved and generated content?
+
+- `Ragas`: `Retrieval-Augmented Generation Assessment (Ragas)`
+  - `Faithfulness`: This metric measures the factual consistency of the generated answer against the given context. It works by breaking down the answer into individual claims and verifying if each claim can be inferred from the provided context. The faithfulness score is calculated as the ratio of verifiable claims to the total number of claims in the answer.
+  - `Answer relevancy`: This metric evaluates how pertinent the generated answer is to the given prompt. It uses an innovative approach where an LLM is prompted to generate multiple questions based on the answer and then calculates the mean cosine similarity between these generated questions and the original question. This method helps identify answers that may be factually correct but off-topic or incomplete.
+  - `Context precision`: This metric evaluates whether all the ground-truth relevant items present in the contexts are ranked appropriately. It considers the position of relevant information within the retrieved context, rewarding systems that place the most pertinent information at the top.
+  - `Context recall`: This metric measures the extent to which the retrieved context aligns with the annotated answer (ground truth). It analyzes each claim in the ground truth answer to determine whether it can be attributed to the retrieved context, providing insights into the completeness of the retrieved information.
+- `ARES`:
+  `ARES (an automated evaluation framework for RAG systems)` is a comprehensive tool designed to evaluate RAG systems. It offers an automated process that combines synthetic data generation with fine-tuned classifiers to assess various aspects of RAG performance, including context relevance, answer faithfulness, and answer relevance.
 
 
 ### Large-Language Foundation Models
