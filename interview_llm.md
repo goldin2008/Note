@@ -14,6 +14,7 @@
   `F1 Score`: The harmonic mean of precision and recall, used to balance both metrics. These are particularly useful in tasks such as classification or entity extraction.
 
 `RAG evaluation`
+
 The evaluation of RAG systems goes beyond assessing a standalone LLM. It requires examining the entire system’s performance, including:
   - Retrieval accuracy: How well does the system fetch relevant information?
   - Integration quality: How effectively is the retrieved information incorporated into the generated response?
@@ -25,7 +26,8 @@ The evaluation of RAG systems goes beyond assessing a standalone LLM. It require
   - `Context precision`: This metric evaluates whether all the ground-truth relevant items present in the contexts are ranked appropriately. It considers the position of relevant information within the retrieved context, rewarding systems that place the most pertinent information at the top.
   - `Context recall`: This metric measures the extent to which the retrieved context aligns with the annotated answer (ground truth). It analyzes each claim in the ground truth answer to determine whether it can be attributed to the retrieved context, providing insights into the completeness of the retrieved information.
 - `ARES`:
-  `ARES (an automated evaluation framework for RAG systems)` is a comprehensive tool designed to evaluate RAG systems. It offers an automated process that combines synthetic data generation with fine-tuned classifiers to assess various aspects of RAG performance, including context relevance, answer faithfulness, and answer relevance.
+  `ARES (an automated evaluation framework for RAG systems)` is a comprehensive tool designed to evaluate RAG systems. It offers an automated process that combines synthetic data generation with fine-tuned classifiers to assess various aspects of RAG performance, including `context relevance`, `answer faithfulness`, and `answer relevance`.
+  The ARES framework operates in three main stages: `synthetic data generation`, `classifier training`, and `RAG evaluation`. Each stage is configurable, allowing users to tailor the evaluation process to their specific needs and datasets.
 
 
 ### Large-Language Foundation Models
