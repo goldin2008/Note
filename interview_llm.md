@@ -1,4 +1,16 @@
 ## LLMs interview prep
+### LLMOps
+We will implement a `continuous integration and continuous deployment (CI/CD)` pipeline to test the integrity of our code and automate the deployment process, a `continuous training (CT)` pipeline to automate our training, and a monitoring pipeline to track all our prompts and generated answers. This is a natural progression in any ML project, regardless of whether you use LLMs.
+
+ We will implement a `CI/CD pipeline using GitHub Actions`, a `CT and alerting pipeline using ZenML`, and a `monitoring pipeline using Opik from Comet ML`.
+
+let’s look over the core flow of running a pipeline in the cloud that we will learn to implement, presented in Figure 11.5:
+- Build a Docker image that contains all the system dependencies, the project dependencies, and the LLM Twin application.
+- Push the Docker image to ECR, where SageMaker can access it.
+- Now, we can trigger any pipeline implemented during this book either from the CLI of our local machine or ZenML’s dashboard.
+- Each step from ZenML’s pipeline will be mapped to a SageMaker job that runs on an AWS EC2 virtual machine (VM). Based on the dependencies between the directed acyclic graph (DAG) steps, some will run in parallel and others sequentially.
+- When running a step, SageMaker pulls the Docker image from ECR, defined in step 2. Based on the pulled image, it creates a Docker container that executes the pipeline step.
+- As the job is executed, it can access the S3 artifact storage, MongoDB, and Qdrant vector DB to query or push data. The ZenML dashboard is a key tool, providing real-time updates on the pipeline’s progress and ensuring a clear view of the process.
 
 ### Evaluate LLM System
 `Model evaluation`
