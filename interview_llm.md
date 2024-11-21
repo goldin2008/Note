@@ -1,6 +1,13 @@
 ## LLMs interview prep
 
 ### LLMOps workflow
+- Data collection
+- Data preprocessing
+- Data storage, versioning, and retrieval
+- LLM fine-tuning
+- RAG
+- Content generation evaluation
+
 We will implement a `continuous integration and continuous deployment (CI/CD)` pipeline to test the integrity of our code and automate the deployment process, a `continuous training (CT)` pipeline to automate our training, and a monitoring pipeline to track all our prompts and generated answers. This is a natural progression in any ML project, regardless of whether you use LLMs.
 
  We will implement a `CI/CD pipeline using GitHub Actions`, a `CT and alerting pipeline using ZenML`, and a `monitoring pipeline using Opik from Comet ML`.
