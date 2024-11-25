@@ -133,6 +133,91 @@ my_leaf.battery.describe_battery()
 In the ElectricCar class, we now add an attribute called self.battery ❸. This line tells Python to create a new instance of Battery (with a default size of 40, because we’re not specifying a value) and assign that instance to the attribute self.battery.
 ❸ This line tells Python to look at the instance my_leaf, find its battery attribute, and call the method describe_battery() that’s associated with the Battery instance assigned to the attribute.
 
+- `Importing a Single Class`
+
+```python
+❶ from car import Car
+
+my_new_car = Car('audi', 'a4', 2024)
+print(my_new_car.get_descriptive_name())
+
+my_new_car.odometer_reading = 23
+my_new_car.read_odometer()
+```
+The import statement ❶ tells Python to open the car module and import the class Car.
+
+- `Storing Multiple Classes in a Module`
+You can store as many classes as you need in a single module, although each class in a module should be related somehow. The classes Battery and ElectricCar both help represent cars, so let’s add them to the module car.py.
+
+```python
+"""A set of classes used to represent gas and electric cars."""
+
+class Car:
+    --snip--
+
+class Battery:
+    """A simple attempt to model a battery for an electric car."""
+
+    def __init__(self, battery_size=40):
+        """Initialize the battery's attributes."""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+    def get_range(self):
+        """Print a statement about the range this battery provides."""
+        if self.battery_size == 40:
+            range = 150
+        elif self.battery_size == 65:
+            range = 225
+
+        print(f"This car can go about {range} miles on a full charge.")
+class ElectricCar(Car):
+    """Models aspects of a car, specific to electric vehicles."""
+
+    def __init__(self, make, model, year):
+        """
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an electric car.
+        """
+        super().__init__(make, model, year)
+        self.battery = Battery()
+```
+
+- `Importing Multiple Classes from a Module`
+You import multiple classes from a module by separating each class with a comma ❶. Once you’ve imported the necessary classes, you’re free to make as many instances of each class as you need.
+```python
+❶ from car import Car, ElectricCar
+
+❷ my_mustang = Car('ford', 'mustang', 2024)
+print(my_mustang.get_descriptive_name())
+❸ my_leaf = ElectricCar('nissan', 'leaf', 2024)
+print(my_leaf.get_descriptive_name())
+```
+
+- `Importing an Entire Module`
+
+```python
+❶ import car
+
+❷ my_mustang = car.Car('ford', 'mustang', 2024)
+print(my_mustang.get_descriptive_name())
+
+❸ my_leaf = car.ElectricCar('nissan', 'leaf', 2024)
+print(my_leaf.get_descriptive_name())
+```
+
+- `Styling Classes`
+Class names should be written in CamelCase. To do this, capitalize the first letter of each word in the name, and don’t use underscores. Instance and module names should be written in lowercase, with underscores between words.
+Every class should have a docstring immediately following the class definition. The docstring should be a brief description of what the class does, and you should follow the same formatting conventions you used for writing docstrings in functions. Each module should also have a docstring describing what the classes in a module can be used for.
+You can use blank lines to organize code, but don’t use them excessively. Within a class you can use one blank line between methods, and within a module you can use two blank lines to separate classes.
+If you need to import a module from the standard library and a module that you wrote, place the import statement for the standard library module first. Then add a blank line and the import statement for the module you wrote. In programs with multiple import statements, this convention makes it easier to see where the different modules used in the program come from.
+
+
+
+
 
 ## Meta (2021.12 ~ Now)
 8, 987, 133, 1091, 270, 958, 227, 314, 680, 1650, 1762, 1446, 1249, 71, 528, 65, 347, 791, 408, 680, 528, 938, 1249, 4, 1382, 121, 987, 622, 66, 227, 16, 791, 88, 23, 228, 766, 560, 605, 282, 1650, 215, 1249, 523, 938, 23, 1249, 162, 20, 1249, 42, 380, 14, 219, 451, 227, 1762, 50, 31, 138, 987, 162, 560, 314, 987, 528, 1249, 162, 236, 34, 1762, 215, 415, 605, 494, 282, 209, 47, 270, 42, 1249, 938, 88, 211, 939, 963, 1004, 127, 56, 34, 224,
