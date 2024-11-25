@@ -26,6 +26,26 @@ The definition of build_profile() expects a first and last name, and then it all
 If you specify a default value for a parameter, no spaces should be used on either side of the equal sign:
 `def function_name(parameter_0, parameter_1='default value')`
 
+#### Classes
+```python
+❶ class Dog:
+    """A simple attempt to model a dog."""
+
+❷     def __init__(self, name, age):
+        """Initialize name and age attributes."""
+❸         self.name = name
+        self.age = age
+
+❹     def sit(self):
+        """Simulate a dog sitting in response to a command."""
+        print(f"{self.name} is now sitting.")
+
+    def roll_over(self):
+        """Simulate rolling over in response to a command."""
+        print(f"{self.name} rolled over!")
+```
+
+
 
 
 ## Meta (2021.12 ~ Now)
