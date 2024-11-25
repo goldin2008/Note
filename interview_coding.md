@@ -131,7 +131,7 @@ print(my_leaf.get_descriptive_name())
 my_leaf.battery.describe_battery()
 ```
 In the ElectricCar class, we now add an attribute called self.battery ❸. This line tells Python to create a new instance of Battery (with a default size of 40, because we’re not specifying a value) and assign that instance to the attribute self.battery.
-
+❸ This line tells Python to look at the instance my_leaf, find its battery attribute, and call the method describe_battery() that’s associated with the Battery instance assigned to the attribute.
 
 
 ## Meta (2021.12 ~ Now)
