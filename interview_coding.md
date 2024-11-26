@@ -215,6 +215,49 @@ Every class should have a docstring immediately following the class definition. 
 You can use blank lines to organize code, but don’t use them excessively. Within a class you can use one blank line between methods, and within a module you can use two blank lines to separate classes.
 If you need to import a module from the standard library and a module that you wrote, place the import statement for the standard library module first. Then add a blank line and the import statement for the module you wrote. In programs with multiple import statements, this convention makes it easier to see where the different modules used in the program come from.
 
+#### Unit Tests and Test Cases
+A `unit test` verifies that one specific aspect of a function’s behavior is correct. A `test case` is a collection of unit tests that together prove that a function behaves as it’s supposed to, within the full range of situations you expect it to handle.
+A good test case considers all the possible kinds of input a function could receive and includes tests to represent each of these situations. A test case with full coverage includes a full range of unit tests covering all the possible ways you can use a function. Achieving full coverage on a large project can be daunting. It’s often good enough to write tests for your code’s critical behaviors and then aim for full coverage only if the project starts to see widespread use.
+
+```python
+# test_name_function.py
+from name_function import get_formatted_name
+
+❶ def test_first_last_name():
+    """Do names like 'Janis Joplin' work?"""
+❷     formatted_name = get_formatted_name('janis', 'joplin')
+❸     assert formatted_name == 'Janis Joplin'
+```
+
+- `Using Fixtures`
+In testing, a fixture helps set up a test environment. Often, this means creating a resource that’s used by more than one test. We create a fixture in pytest by writing a function with the decorator `@pytest.fixture`. A decorator is a directive placed just before a function definition; Python applies this directive to the function before it runs, to alter how the function code behaves. Don’t worry if this sounds complicated; you can start to use decorators from third-party packages before learning to write them yourself.
+```Python
+import pytest
+from survey import AnonymousSurvey
+
+❶ @pytest.fixture
+❷ def language_survey():
+    """A survey that will be available to all test functions."""
+    question = "What language did you first learn to speak?"
+    language_survey = AnonymousSurvey(question)
+    return language_survey
+
+❸ def test_store_single_response(language_survey):
+    """Test that a single response is stored properly."""
+❹     language_survey.store_response('English')
+    assert 'English' in language_survey.responses
+
+❺ def test_store_three_responses(language_survey):
+    """Test that three individual responses are stored properly."""
+    responses = ['English', 'Spanish', 'Mandarin']
+    for response in responses:
+❻         language_survey.store_response(response)
+
+    for response in responses:
+        assert response in language_survey.responses
+```
+When a parameter in a test function matches the name of a function with the `@pytest.fixture` decorator, the fixture will be run automatically and the return value will be passed to the test function. In this example, the function `language_survey()` supplies both `test_store_single_response()` and `test_store_three_responses()` with a language_survey instance.
+When you want to write a fixture, write a function that generates the resource that’s used by multiple test functions. Add the `@pytest.fixture` decorator to the new function, and add the name of this function as a parameter for each test function that uses this resource. Your tests will be shorter and easier to write and maintain from that point forward.
 
 
 
