@@ -93,6 +93,9 @@ Sequence-to-sequence models, originally designed for `translation`, are also ver
 
 #### Pretraining-LLM
 
+
+
+
 #### Fine Tuning
 - `Creating our own preference dataset`
 Our model can currently write paragraphs about topics related to machine learning, but it doesn’t have the same writing style as the original authors. This is a typical use case for preference alignment, where we want to change the “voice” of the model to closely imitate the source data. It’s important to note that, experimentally, DPO tends to make models more verbose and pushes them to use very formal language. Therefore, the training will need to use DPO surgically to avoid this pitfall and instead adopt the less formal style of these blog articles.
