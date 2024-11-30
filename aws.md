@@ -24,3 +24,13 @@ WebSockets represent a bi-directional persistent connection (full-duplex communi
 The SSE can be a feasible approach in this case as the server is responsible for updating the order status and there is no as such input required from the client’s end.
 The SSE is implemented over a long lived HTTP connection to consume any updates or notifications from the server in text format.
 We mentioned that responses in case of async architectures can be delivered via websockets or SSE.
+
+### AWS Network Services
+
+### AWS Storage Services
+
+### AWS Compute Services
+
+### AWS Orchestration Services
+
+### Big Data, Analytics and Machine Learning Services
