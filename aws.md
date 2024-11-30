@@ -14,3 +14,13 @@
 - `Graph Databases`
   - `Graph databases` are a specialized type of non-relational database designed to handle highly interconnected data and complex relationships. They excel at storing, querying, and traversing graph-like structures, making them ideal for scenarios involving social networks, recommendation systems, fraud detection, and knowledge graphs. In this section, we will explore the architecture and design considerations of graph stores, uncovering their key features and advantages.
   - `Neo4j` is a leading open-source graph database known for its powerful graph processing capabilities and intuitive query language. Neo4j is designed to efficiently store, manage, and traverse highly connected data, making it ideal for applications that heavily rely on complex relationships and interconnections.
+
+### Communication Networks and Protocols
+`Communication Types`
+- `Pull Mechanism: HTTP Polling`
+- `Push Mechanism: WebSockets`
+WebSockets represent a bi-directional persistent connection (full-duplex communication on a single TCP connection) over HTTP where clients and servers communicate with each other.
+- `Push Mechanism: Server Sent Events`
+The SSE can be a feasible approach in this case as the server is responsible for updating the order status and there is no as such input required from the client’s end.
+The SSE is implemented over a long lived HTTP connection to consume any updates or notifications from the server in text format.
+We mentioned that responses in case of async architectures can be delivered via websockets or SSE.
