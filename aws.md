@@ -26,6 +26,64 @@ The SSE is implemented over a long lived HTTP connection to consume any updates 
 We mentioned that responses in case of async architectures can be delivered via websockets or SSE.
 
 ### AWS Network Services
+AWS networking services such as Amazon VPC, Amazon Route 53, Amazon Elastic Load Balancer (ELB), Amazon API Gateway.
+- Complete separation of applications, meaning every application is launched in a new AWS account.
+- Separation of AWS accounts based on business type. All applications related to a single business will operate in a single account.
+- Separation of AWS accounts based on software domains—for example, having separate accounts for networking, monitoring, storage, and security and auditing.
+
+Further, there are some global services such as Amazon S3 or AWS Identity and Access Management (AWS IAM) service where region selection is not a requirement.
+- `AWS Availability Zones`
+You can think of a single region as a cluster of data centers and each individual (or combination of) data center is an availability zone.
+AZ are classified with suffix to region names—for example, us-east-1a or us-east-1b are AZs within the us-east-1 region.
+- `AWS Edge Locations`
+Edge Locations help improve the performance of content delivery by acting as caching and content delivery endpoints for Amazon Cloudfront, thus reducing latency and improving data transfer speeds.
+You can think of AWS Edge locations as data centers which are connected with AWS regions to support fast upload and download of data.
+- `Amazon VPC`
+We can think of Amazon VPC as your personal data center located inside AWS Cloud.
+Amazon VPC enables you to securely launch resources like Amazon EC2 instances, Amazon RDS, and Amazon Elastic Load Balancers within a logically isolated section of the AWS cloud.
+- `Subnets`
+Each subnet is associated with an availability zone (AZ) within an AWS region.
+The subnet can be a public subnet or private subnet depending on its connectivity to the internet.
+The key point is that the direct route to the internet gateway is the only differentiating factor between public and private subnets. A subnet with resources having a public IPv4 address but no direct route to the internet gateway is referred to as a private subnet.
+When setting up your VPCs and subnets inside your AWS account, consider these following best practices:
+  - Use multiple subnets: Create multiple subnets within different availability zones to achieve fault tolerance and high availability.
+  - Isolate resources: Use separate subnets for different types of resources to improve security and network segmentation.
+  - Public and private subnets: Place resources with public access in public subnets and sensitive resources in private subnets.
+
+`Internet Connectivity`
+The routing of traffic and securing of resources is achieved via components such as route tables, internet gateway, security groups
+- `Route Tables`
+Route Tables direct network traffic in and out of a subnet but it doesn’t apply any security filters on this traffic. AWS provides software firewalls, Security Groups(SGs) and Network Access Control Lists(NACLs) to implement traffic filters which are useful in controlling the network traffic permissions.
+- `Security Groups`
+Let’s understand how SGs can help to control the traffic we want to essentially filter out or disallow any unwanted traffic. SGs are created at the VPC level and assigned at an instance level, controlling inbound and outbound traffic at an instance level based on protocols, ports and IP addresses. Your EC2 instance can have one or more SGs. There will always be one SG associated to an instance, and, if not created, a default SG will be associated, which is created at time of VPC creation.
+- `Network Access Control Lists`
+You may think of NACLs as an additional layer of security on top of SGs which ensure to block the traffic if SGs are too flexible.
+Route Tables, SGs and NACLs help to configure the routes and configure network security.
+
+`Amazon VPC To Internet Connectivity`
+- `Internet Gateway`
+Internet Gateway (IGW) is a horizontally scalable and highly available AWS managed VPC software component that provides connection between your VPC and the internet.
+The private subnet to public internet connectivity is achieved via a NAT Gateway.
+- `NAT Gateway`
+You may think of NAT gateway as a bridge between internet gateway and private instances.
+NAT Gateways (Network Address Translation Gateways) are AWS-managed network devices that allow resources within private subnets in a VPC to initiate outbound internet connections while preventing direct inbound access from the internet by hiding their private IP addresses.
+it converts private IP address to NAT device public IP address and is mapped back to private IP address on return of response from internet.
+NAT gateway provides public(default) and private connectivity.
+
+`Amazon VPC to Amazon VPC Connectivity`
+- `AWS Transit Gateways`
+Transit Gateway is a scalable solution to establish connectivity between multiple VPCs, on-premise networks and other AWS services.
+
+- `Amazon Route 53`
+Route 53 is a scalable and highly available Domain Name System(DNS) available in the AWS ecosystem which helps in domain registration, DNS routing and health checking.
+- `Amazon Elastic Load Balancer`
+Load Balancers help improve the availability, scalability, and fault tolerance of applications by distributing traffic across healthy targets. Load balancers can automatically scale based on traffic patterns and health checks, ensuring optimal performance.
+AWS ELB is available as Application Load Balancer (ALB), Network Load Balancer (NLB), Classic Load Balancer(CLB) and Gateway Load Balancer(GWLB).
+- `Amazon API Gateway`
+API Gateway is a fully managed AWS service that helps in creating, publishing, maintaining, monitoring and securing REST, HTTP and WebSocket APIs.
+- `Amazon CloudFront`
+Another cost effective solution is to cache the content near the customer’s location via a Content Delivery Network (CDN), as discussed in Chapter 4. Amazon CloudFront is CDN, a world-wide network of data centers called edge locations which helps to achieve low latency for serving both static and dynamic content in a secure way via AWS Shield, IAM, WAF and TLS certificates.
+In short, Amazon CloudFront allows us to cache the content near our application users and serve the user queries faster.
 
 ### AWS Storage Services
 
