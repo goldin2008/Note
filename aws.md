@@ -87,8 +87,17 @@ In short, Amazon CloudFront allows us to cache the content near our application 
 
 ### AWS Storage Services
 
+
+
 ### AWS Compute Services
 
+
+
+
 ### AWS Orchestration Services
+
+
+
+
 
 ### Big Data, Analytics and Machine Learning Services
