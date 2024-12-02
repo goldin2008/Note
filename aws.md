@@ -86,6 +86,28 @@ Another cost effective solution is to cache the content near the customer’s lo
 In short, Amazon CloudFront allows us to cache the content near our application users and serve the user queries faster.
 
 ### AWS Storage Services
+Amazon Elastic Block Storage (EBS) as block storage service, Amazon Elastic File Storage (EFS) as file storage service and Amazon Simple Storage Service (S3) as object storage service.
+- `Amazon Elastic Block Storage`
+Amazon EBS is a block storage solution which acts similar to any physical hard drive attached to a personal computer.
+- `Amazon Elastic File Storage`
+Amazon EFS is a shared file system which allows storage sharing across multiple servers that are placed in a region or at an on-premise data center. Amazon EFS is a fully managed serverless solution with no management overhead and supports all AWS Compute platforms such as EC2, ECS or Lambda.
+- `Amazon Simple Storage Service`
+AWS Cloud provides Amazon Simple Storage Service(S3) as an unlimited object storage solution. We can use S3 to store and protect data for a wide range of use-cases, such as websites, media storage, backups, big data analytics, etc. S3 allows storage of objects in containers referred to as buckets.
+
+`AWS Databases`
+AWS offers a range of database services, such as Amazon Relational Database Service (RDS), Amazon DynamoDB, Amazon DocumentDB, Amazon ElasticCache, and more, to meet customer requirements for different business use-cases.
+- `Amazon RDS`
+Without Amazon RDS, you have a couple of options when you want to run relational database engines like MySQL or PostgreSQL.
+- `Amazon Aurora`
+Amazon Aurora is up to five times faster than MySQL and up to three times faster than PostgreSQL running on the same hardware and it scales automatically as per application needs.
+- `Amazon DynamoDB`
+AWS provides Amazon DynamoDB (DDB) as a key-value database offering which is designed to provide single-digit millisecond latency for any workload scale. DDB stores data in tables and follows schemaless design.
+- `Amazon DocumentDB`
+Amazon DocumentDB is a document database offered by AWS which is designed to store and query data as JSON-like documents. A document is structured as a collection of nested key-value pairs and can be useful in scenarios such as storing food menu information.
+
+`Amazon ElasticCache`
+In-memory databases are extensively used as caching solutions to improve system performance. Amazon ElasticCache is a managed service offered by AWS as a distributed cache environment and works with both Redis and Memcached engines. Both Redis and Memcached are in-memory key-value caching solutions but there are associated differences and it is important to figure out which caching engine meets your business requirements. You can look at Memcached as a simple key-value caching solution to offload reads from primary data source with multi-threading support whereas Redis comes with functionalities such as persistence for long-lived data, advanced data types such as lists and sets, sorting and ranking datasets in memory, geo-spatial support, message broker, etc.
+
 
 
 
