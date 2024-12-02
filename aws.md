@@ -178,3 +178,25 @@ Amazon Cognito is a fully managed highly scalable Customer Identity and Access M
 AWS AppSync is essentially a single GraphQL endpoint that can be used to query multiple databases, microservices and APIs in a single network call.
 
 ### Big Data, Analytics and Machine Learning Services
+data processing tools such as Amazon EMR and AWS Glue; analytics tools such as Amazon Athena and Amazon Redshift; live streaming ingestion and analytics via Amazon Kinesis offerings; and business intelligence service called Amazon Quicksight.
+- `Amazon Elastic MapReduce`
+Amazon EMR is a managed service useful for execution of data processing frameworks and tools such as Map Reduce, Apache Spark, Apache Hive, Apache HBase, and Presto.
+- `EMRFS`
+EMRFS uses S3 as a file system for our data processing instead of local HDFS, so essentially it’s a connector that links EMR clusters to S3. EMRFS ensures streaming of data directly to S3 and uses HDFS as intermediate storage.
+As a compute option, we can choose to run an EMR cluster on EC2 instances, EKS or go completely Serverless.
+- `AWS Glue`
+AWS Glue is a serverless data integration service helping to make sense of data with different features.
+From the above long list of features, it is evident that AWS Glue is a powerful ETL service and helps a lot to reduce operational overhead and can operate at large scale.
+Feature functionality	Data processing and analytics tool which leverages open-source software.	An end-to-end ETL solution with abstraction over software and it offers AWS customized solutions with focus on data integration, data catalog and running transformations on data sources.
+- `Amazon Athena`
+Amazon Athena is a fully managed serverless big data analysis tool which offers SQL query support on top of data stored in Amazon S3.
+event streams handling in near real time and run analytics on top of it via Amazon Kinesis.
+- `Amazon Kinesis`
+We started our chapter introduction by taking an example of capturing real time user interactions of users on our online food ordering application. Amazon Kinesis offers capabilities to serve similar kinds of use-cases along with analytics and ETL.
+- `Amazon QuickSight`
+Amazon Quicksight is a fully managed serverless business intelligence service offering analytics, visualization and reporting. It can connect to different kinds of datastores and include it in a single dashboard, the data can include AWS data, third-party data, spreadsheet data, SaaS data, and more.
+We mentioned that Amazon Quicksight is helpful to draw insights and it can do it for any data source.
+- `Amazon Redshift`
+In simple terms, Amazon Redshift is a data warehousing tool which can act as a data store for data from multiple sources and allows us to run SQL queries at a single place for data analytics. Amazon Redshift is an AWS managed service and can scale to petabytes of data with an elastic scaling option.
+- `Amazon SageMaker`
+Amazon Sagemaker is an AWS managed service which allows customers to prepare data, build, train and deploy ML models quickly without the worry of managing any infrastructure.
