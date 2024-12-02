@@ -108,13 +108,38 @@ Amazon DocumentDB is a document database offered by AWS which is designed to sto
 `Amazon ElasticCache`
 In-memory databases are extensively used as caching solutions to improve system performance. Amazon ElasticCache is a managed service offered by AWS as a distributed cache environment and works with both Redis and Memcached engines. Both Redis and Memcached are in-memory key-value caching solutions but there are associated differences and it is important to figure out which caching engine meets your business requirements. You can look at Memcached as a simple key-value caching solution to offload reads from primary data source with multi-threading support whereas Redis comes with functionalities such as persistence for long-lived data, advanced data types such as lists and sets, sorting and ranking datasets in memory, geo-spatial support, message broker, etc.
 
-
-
-
 ### AWS Compute Services
+Amazon Elastic Compute Cloud (EC2) machine and then move off towards AWS Lambda and containerization services present in AWS Cloud.
+- `Amazon Elastic Compute Cloud`
+Amazon EC2 is a scalable virtual server hosting service provided by AWS. We can leverage Amazon EC2 service to create virtual machines in AWS Cloud with a required set of configurations such as CPU, memory, storage, networking, etc. These virtual machines or virtual computing environments are referred to as instances.
+- `Amazon Machine Image`
+We launch an Amazon EC2 instance with the different configurations, such as: the Operating System the instance is launched with; storage volumes attached to an instance; install dependencies before instance boot up, custom security configurations, etc. These configurations can be defined via a pre-configured template, referred to as Amazon Machine Image (AMI), which enables easy and efficient provisioning of EC2 instances with desired software stack.
+- `Auto Scaling`
+Auto scaling is an AWS feature that automatically adjusts the number of EC2 instances in the collection in response to changing workload demands.
 
-
-
+- `AWS Lambda`
+AWS Lambda is a fully managed serverless compute service that lets users run code without overhead of server maintenance. The only thing we need in order to run our applications on AWS Lambda is code in our preferred language, referred to as Lambda function.
+  - Deployment Package
+  The Lambda function code can be deployed via deployment package in below two ways:
+    - A .zip file with code and its dependencies stored in Amazon S3 with maximum allowed size of 250MB. Lambda holds responsibility for providing operating system and runtime for function.
+    - A container image stored in Amazon Elastic Container Registry (ECR) with code and its dependencies with maximum allowed size of 10GB.
+  The way Lambda function should be invoked for processing depends on your  use-case—some options include an object addition to S3 bucket or scheduled weekly via Cloudwatch events.
+  - `Synchronous Invocation`
+  Synchronous invocation can be achieved in multiple ways—via  API Gateway, Application Load Balancer, AWS CLI, etc.
+  - `Asynchronous Invocation`
+  Asynchronous invocation can be achieved via S3, Simple Notification Service(SNS), CloudWatch events, etc.
+  - `Polling Invocation`
+  This is the preferred mode for stream or queue based services such as DDB streams, Kinesis, SQS queues or Kafka.
+  We mentioned Lambda provision resources on invocation, which could result in more request processing time due to cold start problems. Cold start refers to the time Lambda takes to provision resources and prepare an execution environment involving function code download from S3 or ECR, creating an environment with memory and runtime configurations and executing any initialization code out of main function code. After this complete set up, Lambda starts serving customer requests.
+- `Containerization Services`
+AWS offers container orchestration service for running Docker containers via two services, referred to as Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS). ECS is a fully managed container orchestration service offered by AWS while EKS is a managed service for running open-source Kubernetes on AWS cloud.
+  - `Amazon Elastic Container Service`
+  Amazon ECS is a fully managed highly available service that helps with deployment, operational management and scaling containerized applications for the required traffic load. ECS integrates with other AWS services, such as EC2, ECR (Elastic Container Registry), and Elastic Load Balancer, to provide a complete container management solution.
+  - `Amazon Elastic Container Registry (ECR)`
+  ECR is an AWS managed container image registry which can be used to push, pull and manage docker or Open Container Initiative (OCI) images.
+  There are two types of launch options available with ECS, the first being ECS EC2 where we manage our containers on a fleet of EC2 machines, and the second being ECS Fargate, a serverless option where we hand over complete operational management responsibility to AWS.
+  - `Amazon Elastic Kubernetes Service`
+  EKS is a fully managed Kubernetes service that simplifies the deployment, management, and scaling of containerized applications using Kubernetes on AWS Cloud. AWS EKS eliminates the need for manual setup and configuration of Kubernetes clusters, allowing developers to focus on their applications rather than the underlying infrastructure. EKS is available with EKS EC2 and Fargate launch types, similar to ECS.
 
 ### AWS Orchestration Services
 
