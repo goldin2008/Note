@@ -142,9 +142,39 @@ AWS offers container orchestration service for running Docker containers via two
   EKS is a fully managed Kubernetes service that simplifies the deployment, management, and scaling of containerized applications using Kubernetes on AWS Cloud. AWS EKS eliminates the need for manual setup and configuration of Kubernetes clusters, allowing developers to focus on their applications rather than the underlying infrastructure. EKS is available with EKS EC2 and Fargate launch types, similar to ECS.
 
 ### AWS Orchestration Services
+For running systems at large scale, multiple components interact and coordinate with each other to perform any task referred to as orchestration.
+why customers might prefer EKS instead of ECS for launching their applications. The similar analogy applies here, Kafka is an open source message broker service which can be used in place of SNS-SQS. The reasons you might choose it are similar as well—you could be migrating your workloads to AWS Cloud or running existing workloads on AWS Cloud, or you just love open-source software with full visibility on development features.
+- `Amazon Simple Queue Service`
+SQS is a fully managed AWS queue service which automatically scales as per customer traffic requirements. It is a highly available service which doesn’t require any maintenance and deployment work from the customer’s end.
+- `Amazon Simple Notification Service`
+SNS is an intermediary service which enables communication between producers and consumers. A producer essentially publishes a message to a SNS topic and then SNS holds the responsibility to forward this message to all the subscriptions (aka consumers) via push mechanism.
+Message Delivery mechanism	Application should poll messages from SQS.	SNS pushes the messages to its subscribers.
+A combination of SQS, Lambda and SNS is widely used for multiple use-cases to support event-driven asynchronous architecture and orchestrate simple workflows.
 
+`Workflow Orchestration`
+- `AWS Step Functions`
+AWS Step Functions (SFn) is an AWS fully managed serverless and visual workflow orchestration service which helps customers to create and run state machines with ease to coordinate among the distributed applications components.
+We should always be prepared for service disruption and to overcome failure scenarios in SFn, we recommend adding error handling, retry mechanisms and alerting mechanisms as applicable for better success of the state machine.
+- `Amazon Managed Workflow for Apache Airflow`
+Apache Airflow is an open-source tool to programmatically create, schedule and monitor workflows. Amazon MWAA uses message queues to orchestrate an arbitrary number of workers to desired scale, but it also comes with setup and operational management cost.
 
+`Amazon CloudWatch`
+CloudWatch helps with storage & search capability on application logs, visualizing application metrics & dashboards and setting up alerts on any unexpected application behavior.
+- `Application Logs`
+As applications run to serve customer requests, there are logs generated—these can be custom logs or language runtime specific logs. These logs are helpful in debugging any issue that has occurred in the system. We can publish logs to CloudWatch in real time for any compute platform we’re using and look for specific error logs via CloudWatch search functionality or CloudWatch Insights feature.
+- `Metrics`
+A metric is essentially a time-ordered set of data points being sent to CloudWatch for visualization.
+- `CloudWatch Events`
+CloudWatch Events can additionally be used to schedule automated actions using cron or rate expressions.
+AWS offers another service similar to CloudWatch Events called Amazon EventBridge.
 
+`AWS Identity and Access Management`
+We touched upon using IAM at multiple places in this book to enable access control and enforce security measures in terms of authentication and authorization for different AWS resources or our overall AWS account.
 
+`Amazon Cognito`
+Amazon Cognito is a fully managed highly scalable Customer Identity and Access Management (CIAM) service which helps customers set up and manage their identity pools for authentication (AuthN) and authorization (AuthZ). Amazon Cognito takes the complete ownership of managing compute and storage for supporting this.
+
+`AWS AppSync`
+AWS AppSync is essentially a single GraphQL endpoint that can be used to query multiple databases, microservices and APIs in a single network call.
 
 ### Big Data, Analytics and Machine Learning Services
