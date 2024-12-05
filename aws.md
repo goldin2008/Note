@@ -200,3 +200,17 @@ We mentioned that Amazon Quicksight is helpful to draw insights and it can do it
 In simple terms, Amazon Redshift is a data warehousing tool which can act as a data store for data from multiple sources and allows us to run SQL queries at a single place for data analytics. Amazon Redshift is an AWS managed service and can scale to petabytes of data with an elastic scaling option.
 - `Amazon SageMaker`
 Amazon Sagemaker is an AWS managed service which allows customers to prepare data, build, train and deploy ML models quickly without the worry of managing any infrastructure.
+
+### Designing a URL Shortener Service
+
+
+### Designing a Web Crawler and Search Engine
+
+
+### Designing a Hotel Reservation System
+
+
+### Designing a Chat Application
+
+
+### Designing a Video Processing Pipeline for a Streaming Service
