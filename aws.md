@@ -211,7 +211,7 @@ Amazon Sagemaker is an AWS managed service which allows customers to prepare dat
 ![Diagram of rsz_system_monitoring.](pic/designing_a_hotel_reservation_system_975024_16.png)
 
 ### Designing a Chat Application
-![Diagram of rsz_system_monitoring.](pic/Chat application day N architecture.png)
+![Diagram of rsz_system_monitoring.](pic/designing_Chat_application.png)
 
 ### Designing a Video Processing Pipeline for a Streaming Service
 ![Diagram of rsz_system_monitoring.](pic/Day N architecture.png)
