@@ -202,15 +202,16 @@ In simple terms, Amazon Redshift is a data warehousing tool which can act as a d
 Amazon Sagemaker is an AWS managed service which allows customers to prepare data, build, train and deploy ML models quickly without the worry of managing any infrastructure.
 
 ### Designing a URL Shortener Service
-
+![Diagram of rsz_system_monitoring.](pic/URL Shortener System.png)
 
 ### Designing a Web Crawler and Search Engine
-
+![Diagram of rsz_system_monitoring.](pic/designing_a_web_crawler_and_search_engine_628782_12.png)
 
 ### Designing a Hotel Reservation System
-
+![Diagram of rsz_system_monitoring.](pic/designing_a_hotel_reservation_system_975024_16.png)
 
 ### Designing a Chat Application
-
+![Diagram of rsz_system_monitoring.](pic/Chat application day N architecture.png)
 
 ### Designing a Video Processing Pipeline for a Streaming Service
+![Diagram of rsz_system_monitoring.](pic/Day N architecture.png)
