@@ -8,10 +8,11 @@
 ### 无氧部分
 - ``胸``:俯卧撑，哑铃卧推，哑铃飞鸟（塑形，防止胸下垂，消除副乳，）
   - 周一：胸肌和三头肌
-  训练部位：胸大肌，三角肌，三头
   - 跪式俯卧撑
+  训练部位：胸大肌，三角肌，三头
   ![Diagram of rsz_system_monitoring.](pic/跪式俯卧撑.webp)
   - 哑铃直腿硬拉
+  训练部位：腘绳肌群，下背阔，竖脊肌，臀大肌
   ![Diagram of rsz_system_monitoring.](pic/哑铃直腿硬拉.webp)
   - 交臂卷腹
   ![Diagram of rsz_system_monitoring.](pic/交臂卷腹.webp)  
