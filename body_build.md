@@ -34,6 +34,7 @@
   - * 哑铃侧平举： 4组 每组10-12次
   ![Diagram of rsz_system_monitoring.](pic/侧平举.webp)
   - * 哑铃前平举： 4组 每组10-12次
+  ![Diagram of rsz_system_monitoring.](pic/哑铃前平举.webp)
   - * 卷腹, 反向卷腹, 转体卷腹
   - 绳索面拉： 4组 每组10-12次
 - 腿:深蹲，弓步蹲，相扑深蹲，臀桥（消除腿部赘肉，臀部塑形）
