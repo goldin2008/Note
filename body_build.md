@@ -20,6 +20,12 @@
 
 - ``背``:哑铃划船（消除背部赘肉，中下斜方训练纠正驼背，你知道纠正驼背就行了）
   - 周二：背部和二头肌
+  - 跪式俯卧撑
+  ![Diagram of rsz_system_monitoring.](pic/跪式俯卧撑.webp)
+  - 哑铃直腿硬拉
+  ![Diagram of rsz_system_monitoring.](pic/哑铃直腿硬拉.webp)
+  - 交臂卷腹
+  ![Diagram of rsz_system_monitoring.](pic/交臂卷腹.webp)  
   - * 杠铃硬拉
   - * 坐姿下拉
   - * 杠铃俯身划船： 4组 每组8-10次
@@ -54,6 +60,11 @@
 - ``手臂``:哑铃弯举，哑铃臂屈伸（消除拜拜肉）
   - 周六
   - 哑铃二头弯举 四组十至十二下
+  ![Diagram of rsz_system_monitoring.](pic/双手哑铃弯举.webp)
+  - 俯身臂屈伸
+  ![Diagram of rsz_system_monitoring.](pic/俯身臂屈伸.webp)
+  - 锤式弯举
+  ![Diagram of rsz_system_monitoring.](pic/锤式弯举.webp)  
   - 器械二头弯举 四组十至十二下
   - cable二头弯举 四组十至十二下
   - 绳索三头下拉 四组十至十二下
