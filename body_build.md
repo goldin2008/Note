@@ -32,6 +32,7 @@
   ![Diagram of rsz_system_monitoring.](pic/哑铃推举.webp)
   - * 杠铃颈前推举
   - * 哑铃侧平举： 4组 每组10-12次
+  ![Diagram of rsz_system_monitoring.](pic/侧平举.webp)
   - * 哑铃前平举： 4组 每组10-12次
   - * 卷腹, 反向卷腹, 转体卷腹
   - 绳索面拉： 4组 每组10-12次
