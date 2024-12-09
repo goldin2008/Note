@@ -8,34 +8,39 @@
 ### 无氧部分
 - ``胸``:俯卧撑，哑铃卧推，哑铃飞鸟（塑形，防止胸下垂，消除副乳，）
   - 周一：胸肌和三头肌
-  - 跪式俯卧撑
+  - * 跪式俯卧撑
   训练部位：胸大肌，三角肌，三头
   ![Diagram of rsz_system_monitoring.](pic/跪式俯卧撑.webp)
-  - 哑铃直腿硬拉
-  训练部位：腘绳肌群，下背阔，竖脊肌，臀大肌
-  ![Diagram of rsz_system_monitoring.](pic/哑铃直腿硬拉.webp)
-  - 交臂卷腹
+  - * 交臂卷腹
   ![Diagram of rsz_system_monitoring.](pic/交臂卷腹.webp)  
   - * 杠铃平板卧推： 4组 每组8-10次
-  杠铃平板卧推
-  - * 凳上反屈伸/双杠臂屈伸： 4组 每组10-12次
+  ![Diagram of rsz_system_monitoring.](pic/杠铃平板卧推.webp)
   - * 绳索下压： 4组 每组10-12次
-  - * 平板哑铃推胸 四组十至十二下
+  ![Diagram of rsz_system_monitoring.](pic/绳索下压.webp)
   - * 哑铃飞鸟 四组十至十二下
-  哑铃飞鸟
+  ![Diagram of rsz_system_monitoring.](pic/哑铃飞鸟.webp)
+
+  - * 凳上反屈伸/双杠臂屈伸： 4组 每组10-12次
+  - * 平板哑铃推胸 四组十至十二下
   - * 拉力器夹胸 四组十至十二下
-  ![Diagram of rsz_system_monitoring.](pic/拉力器夹胸.mp4)  
   - 飞鸟下夹胸 四组十至十二下
   - 上斜哑铃卧推： 4组 每组10-12次
   推的动作其实对胸的刺激更大，对围度的增长最有帮助。夹的动作：蝴蝶机夹胸、钢线夹胸夹的动作是单关节动作，相对更孤立更容易找到胸部发力感。但单关节动作的能找到胸部发力感和练出饱满的胸肌关系并没有很大。基本上我每次都是任选一个上斜的推胸动作，一个平板的推胸动作、一个夹胸动作就搞定，动作最多的时候也不超过四个动作。动作顺序随意，没有非常固定的计划练几个周期，想到什么练什么。
 
 - ``背``:哑铃划船（消除背部赘肉，中下斜方训练纠正驼背，你知道纠正驼背就行了）
   - 周二：背部和二头肌
-  - * 杠铃硬拉
+  - * 哑铃直腿硬拉   训练部位：腘绳肌群，下背阔，竖脊肌，臀大肌
+  ![Diagram of rsz_system_monitoring.](pic/哑铃直腿硬拉.webp)
   - * 坐姿下拉
+  ![Diagram of rsz_system_monitoring.](pic/坐姿下拉.webp)
   - * 杠铃俯身划船： 4组 每组8-10次
-  - * 杠铃弯举： 4组 每组10-12次
+  ![Diagram of rsz_system_monitoring.](pic/杠铃俯身划船.webp)
   - * 站姿哑铃交替弯举
+  ![Diagram of rsz_system_monitoring.](pic/站姿哑铃交替弯举.webp)
+  - 坐姿哑铃集中弯举
+  ![Diagram of rsz_system_monitoring.](pic/坐姿哑铃集中弯举.webp)
+
+  - * 杠铃弯举： 4组 每组10-12次
   - 高位下拉： 4组 每组10-12次
   - 反手引体向上： 4组 每组最大次数
 
@@ -48,7 +53,15 @@
   - * 哑铃前平举： 4组 每组10-12次
   ![Diagram of rsz_system_monitoring.](pic/哑铃前平举.webp)
   - * 杠铃颈前推举
-  - * 卷腹, 反向卷腹, 转体卷腹
+  ![Diagram of rsz_system_monitoring.](pic/杠铃颈前推举.webp)
+  - 哑铃俯身飞鸟
+  ![Diagram of rsz_system_monitoring.](pic/哑铃俯身飞鸟.webp)
+  - * 卷腹
+  ![Diagram of rsz_system_monitoring.](pic/卷腹.webp)
+  - 反向卷腹
+  ![Diagram of rsz_system_monitoring.](pic/反向卷腹.webp)
+  - 转体卷腹
+  ![Diagram of rsz_system_monitoring.](pic/转体卷腹.webp)
   - 绳索面拉： 4组 每组10-12次
 
 - ``腿``:深蹲，弓步蹲，相扑深蹲，臀桥（消除腿部赘肉，臀部塑形）
@@ -57,10 +70,16 @@
   ![Diagram of rsz_system_monitoring.](pic/普通深蹲.webp)
   ![Diagram of rsz_system_monitoring.](pic/相扑式深蹲.webp)
   - * 器械腿屈伸： 4组 每组10-12次
+  ![Diagram of rsz_system_monitoring.](pic/器械腿屈伸.webp)
   - * 腿举机： 4组 每组12-15次
+  ![Diagram of rsz_system_monitoring.](pic/腿举机.webp)
+  - 杠铃箭步蹲
+  ![Diagram of rsz_system_monitoring.](pic/杠铃箭步蹲.webp)
   - * 负重臀桥： 4组 每组10-12次
+  ![Diagram of rsz_system_monitoring.](pic/负重臀桥webp)
   ![Diagram of rsz_system_monitoring.](pic/臀桥.webp)
   - * 提踵
+  ![Diagram of rsz_system_monitoring.](pic/提踵.webp)
 
 - ``手臂``:哑铃弯举，哑铃臂屈伸（消除拜拜肉）
   - 周六
@@ -69,7 +88,8 @@
   - 俯身臂屈伸
   ![Diagram of rsz_system_monitoring.](pic/俯身臂屈伸.webp)
   - 锤式弯举
-  ![Diagram of rsz_system_monitoring.](pic/锤式弯举.webp)  
+  ![Diagram of rsz_system_monitoring.](pic/锤式弯举.webp)
+
   - 器械二头弯举 四组十至十二下
   - cable二头弯举 四组十至十二下
   - 绳索三头下拉 四组十至十二下
