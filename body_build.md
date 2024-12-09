@@ -29,7 +29,7 @@
 - 肩:推举，侧平举，反向飞鸟（塑形，后束训练改善圆肩）
   - 周三：肩部三角肌和腹部
   - * 坐姿哑铃推举： 4组 每组8-10次
-  ![Diagram of rsz_system_monitoring.](pic/哑铃推举.png)
+  ![Diagram of rsz_system_monitoring.](pic/哑铃推举.webp)
   - * 杠铃颈前推举
   - * 哑铃侧平举： 4组 每组10-12次
   - * 哑铃前平举： 4组 每组10-12次
