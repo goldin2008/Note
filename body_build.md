@@ -8,6 +8,13 @@
 ### 无氧部分
 - ``胸``:俯卧撑，哑铃卧推，哑铃飞鸟（塑形，防止胸下垂，消除副乳，）
   - 周一：胸肌和三头肌
+  训练部位：胸大肌，三角肌，三头
+  - 跪式俯卧撑
+  ![Diagram of rsz_system_monitoring.](pic/跪式俯卧撑.webp)
+  - 哑铃直腿硬拉
+  ![Diagram of rsz_system_monitoring.](pic/哑铃直腿硬拉.webp)
+  - 交臂卷腹
+  ![Diagram of rsz_system_monitoring.](pic/交臂卷腹.webp)  
   - * 杠铃平板卧推： 4组 每组8-10次
   - * 凳上反屈伸/双杠臂屈伸： 4组 每组10-12次
   - * 绳索下压： 4组 每组10-12次
@@ -20,12 +27,6 @@
 
 - ``背``:哑铃划船（消除背部赘肉，中下斜方训练纠正驼背，你知道纠正驼背就行了）
   - 周二：背部和二头肌
-  - 跪式俯卧撑
-  ![Diagram of rsz_system_monitoring.](pic/跪式俯卧撑.webp)
-  - 哑铃直腿硬拉
-  ![Diagram of rsz_system_monitoring.](pic/哑铃直腿硬拉.webp)
-  - 交臂卷腹
-  ![Diagram of rsz_system_monitoring.](pic/交臂卷腹.webp)  
   - * 杠铃硬拉
   - * 坐姿下拉
   - * 杠铃俯身划船： 4组 每组8-10次
