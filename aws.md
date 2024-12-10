@@ -204,16 +204,16 @@ Amazon Sagemaker is an AWS managed service which allows customers to prepare dat
 ## System Design on AWS
 The requirements of any system are widely specified in two categories– functional requirements (FR) and non-functional requirements (NFR).
 
-`Designing a URL Shortener Service`
+### `Designing a URL Shortener Service`
 ![Diagram of rsz_system_monitoring.](pic/designing_URL_Shortener_System.png)
 
-### Designing a Web Crawler and Search Engine
+### `Designing a Web Crawler and Search Engine`
 ![Diagram of rsz_system_monitoring.](pic/designing_a_web_crawler_and_search_engine_628782_12.png)
 
-### Designing a Hotel Reservation System
+### `Designing a Hotel Reservation System`
 ![Diagram of rsz_system_monitoring.](pic/designing_a_hotel_reservation_system_975024_16.png)
 
-### Designing a Chat Application
+### `Designing a Chat Application`
 ![Diagram of rsz_system_monitoring.](pic/designing_Chat_application.png)
 
 ### Designing a Video Processing Pipeline for a Streaming Service
