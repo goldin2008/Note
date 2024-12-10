@@ -208,6 +208,7 @@ The requirements of any system are widely specified in two categories– functio
 
 ### `Designing a URL Shortener Service`
 ![Diagram of rsz_system_monitoring.](pic/designing_URL_Shortener_System.png)
+
 functional requirements (FR)
 - Custom URL creation support.
 - Analytics on the URL access patterns such as most popular URLs.
