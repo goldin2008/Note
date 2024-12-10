@@ -216,5 +216,5 @@ The requirements of any system are widely specified in two categories– functio
 ### `Designing a Chat Application`
 ![Diagram of rsz_system_monitoring.](pic/designing_Chat_application.png)
 
-### Designing a Video Processing Pipeline for a Streaming Service
+### `Designing a Video Processing Pipeline for a Streaming Service`
 ![Diagram of rsz_system_monitoring.](pic/designing_architecture.png)
