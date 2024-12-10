@@ -203,9 +203,25 @@ Amazon Sagemaker is an AWS managed service which allows customers to prepare dat
 
 ## System Design on AWS
 The requirements of any system are widely specified in two categories– functional requirements (FR) and non-functional requirements (NFR).
+- Functional requirements mean functionalities or features offered by the system to the end users.
+- Another type of requirements are non-functional requirements, also called NFR. NFR determines constraints the system operates on and don’t directly impact the user feature wise, but are important as they ensure the quality of system operations.
 
 ### `Designing a URL Shortener Service`
 ![Diagram of rsz_system_monitoring.](pic/designing_URL_Shortener_System.png)
+functional requirements (FR)
+- Custom URL creation support.
+- Analytics on the URL access patterns such as most popular URLs.
+- Expiry for a URL so that the URL is auto expired and is no longer accessible after a fixed period of time.
+- The application should be developed as plugin based architecture ensuring extensibility of the architecture. The system has capability to expose APIs to the third party clients to integrate their applications with our system to generate short URLs.
+
+non-functional requirements (NFR)
+- Security, to ensure the system is not exploited by bad actors.
+- High availability of the system, to ensure a high uptime percentage in a year.
+- Observability, to ensure appropriate metrics/alerts are in place for constant monitoring of system health.
+- Low latency for short URL creation and redirection.
+- Datastores should be durable and ensure correctness of the data for the expiry time configured for an URL. The data should reside in the system until the expiry time or explicitly removed by a user.
+- Fault tolerance in the system via mechanisms such as retry handling.
+- Interoperability in the system architecture, as the system operates at high scale and can be broken down into multiple subsystems.How will different subsystems interact with each other?
 
 ### `Designing a Web Crawler and Search Engine`
 ![Diagram of rsz_system_monitoring.](pic/designing_a_web_crawler_and_search_engine_628782_12.png)
