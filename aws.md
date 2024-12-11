@@ -225,7 +225,18 @@ non-functional requirements (NFR)
 - Interoperability in the system architecture, as the system operates at high scale and can be broken down into multiple subsystems.How will different subsystems interact with each other?
 
 ### `Designing a Web Crawler and Search Engine`
+At a high level, the entire system consists of two subsystems, a web crawler and a search engine. A web crawler is essentially a software responsible for crawling the web. The content on the internet is growing exponentially and web crawlers need to ensure the content is regularly crawled to maintain most updated content. The Search Engine sits on top of content accumulated by web crawlers and stores in such a way that it can look for user searched keywords from the content and present the most useful results, as shown in Figure 13-1.
 ![Diagram of rsz_system_monitoring.](pic/designing_a_web_crawler_and_search_engine_628782_12.png)
+
+The functional requirements of the system include:
+- Get top results (title, subtitle, page URL) for user search query.
+- The results are frequently updated and the system should be able to identify the content freshness rate from the web pages on the internet.
+
+And the non-functional requirements include:
+- The system should be highly available (able to serve user queries most of the time) and highly reliable (the queries should be served correctly).
+- Low latency for search queries. Considering the huge number of pages mapping to user query, the system should return the most relevant results within milliseconds of response time.
+- Data freshness—the underlying storage to serve search queries should be regularly updated.
+- Data consistency is not super critical for this use case. A lag in content available on websites and searchable via the search engine is acceptable.
 
 ### `Designing a Hotel Reservation System`
 ![Diagram of rsz_system_monitoring.](pic/designing_a_hotel_reservation_system_975024_16.png)
