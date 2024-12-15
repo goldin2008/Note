@@ -9,6 +9,12 @@ This discussion focuses on the interviewee’s ability to solve an end-to-end ma
 <!-- <img src="pic/mlq.png" width=50% height=50%>(pic/mlq.png) -->
 <img src="pic/mlq.png" width=50% height=50%>
 
+
+### MLE SD Questions
+
+
+
+
 #### Meta
 detect fraud information
 我感觉和面试官不断clarify很重要。每一个小的定义和他的hint，一定不要我自己觉得我明白了，而是要问对方是不是这个意思。
