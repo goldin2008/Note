@@ -11,8 +11,11 @@ This discussion focuses on the interviewee’s ability to solve an end-to-end ma
 
 
 ### MLE SD Questions
+VO2: SD: design a system for serving content recommendation. eg. data storage, feature store, data pipeline and updates period. how to optimize the system, such as in pre-ranking recall, how to build cache for efficient ANN computing
 
+VO3: SD: design ML algorithm or system there to really quickly capture those shifts in user interest, both in short-term and long-term interest ideally. So how would you model the user? So the question is like, how would you model the user interest in a short video recommendation system?
 
+VO6: How do you design a dector for inappropriate contents? How would you use the dector for recommendation policy?
 
 
 #### Meta
