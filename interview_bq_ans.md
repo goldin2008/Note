@@ -25,6 +25,15 @@ STAR method to construct the response:
 As a result, the implementation was delivered with a customer feedback score of 9.5 out of 10, and that's the highest our company has ever seen. The insights report opened another avenue of business with the customer that doubled our revenue.
 Here, and throughout this example, notice how I'm using quantifiable data to show the scale of my impact.
 
+### Interview Questions
+proud project，failure，solve conflict
+
+Why Amazon
+how did you react to critical feedback
+tell me about a time when you did not have enough time and data to make a decision
+
+
+
 ## 16 Leadership Principles
 - `1. CUSTOMER OBSESSION`: Walk us through a time when you helped a customer through a difficult process and what that looked like.
 In my role as a Machine Learning Engineer, I worked closely with a key client who was implementing a new AI-driven recommendation system. `The client was unfamiliar with machine learning technologies and had concerns about how the system would integrate with their existing infrastructure. The process was challenging because it required both technical guidance and clear communication to ensure the client was comfortable with the transition.`
