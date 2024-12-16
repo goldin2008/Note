@@ -21,6 +21,14 @@ VO6: How do you design a dector for inappropriate contents? How would you use th
 
 System design：设计一个ML系统detect一个广告里包不包含weapon。一个印度小哥面的，全程都是我在drive(背模版)，每讲完一个部分问他有没有什么问题他都是“good 继续“这种。我觉得对于NG来说除了自己看看Grokking the ML Interview那个课，提前找人mock interview至关重要，我在网上付费找人mock了两次，提升非常大。我第一次mock的时候甚至不知道要在白板上写什么。甚至我第二次mock的时候题目是detect harmful information很多东西可以直接套上去。
 
+difference between a generative and discriminative model
+difference between MLE and MAP
+difference between bagging and boosting
+explain Bayes theorem
+explain SGD and Adam
+explain cross-entropy and KL divergence
+inductive biases of CNNs, RNNs and transformers
+describe the components of a transformer decoder
 
 
 #### Meta

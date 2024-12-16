@@ -32,7 +32,13 @@ Why Amazon
 how did you react to critical feedback
 tell me about a time when you did not have enough time and data to make a decision
 
+what was the most intellectually challenging project in your career
+tell me about a project where the goals and requirements were vague, and there was insufficient data
 
+disagreement with manager
+most difficult customer
+
+bq: 1.proudest projects->at would you do differently if you do this project again->how do you evaluate the impact ->how you dealt with impact that is different than your expectation. 2. Handle team conflicts.
 
 ## 16 Leadership Principles
 - `1. CUSTOMER OBSESSION`: Walk us through a time when you helped a customer through a difficult process and what that looked like.
