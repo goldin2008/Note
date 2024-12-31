@@ -99,36 +99,41 @@ Rank	Destination	International
 
 #### 2024, 12.25-1.26 (33 days)
 - France (3 days)
-  - Paris
+  - Paris (12.25)
 - Romania 2 days 12.26-12.28
-  - Bucharest
-- Bulgaria 2 days
+  - Bucharest (12.26-12.28)
+  - Brasov (12.29-12.31)
+  - Bucharest (1.1)
+<!-- - Bulgaria 2 days
   - Sofia
 - North Macedonia (China) 2 days
-  - Skopje
+  - Skopje -->
 - Albania (China) 2 days
-  - Tirana
-- Montenegro (GC) 2 days
-  - Podgorica
-- Bosnia and Herzegovina (China) 2 days
-  - Sarajevo
+  - Tirana (1.1)
 - Serbia (China) 2 days
-  - Belgrade
-- Croatia 2 days
-  - Zagreb
-
-- Slovakia
+  - Belgrade (1.2, 1.5)
+<!-- - Montenegro (GC) 2 days
+  - Podgorica -->
+- Bosnia and Herzegovina (China) 2 days
+  - Mostar (1.8)
+  - Sarajevo (1.9)
+- Germany
+  - Hamburg (1.11)
+  - Stuggart ()
+- Croatia 1 days
+  - Dubrovnik
+<!-- - Slovakia
   - Bratislava
 - Slovenia
-  - Ljubljana
-
-- [] Denmark
-- [] Finland
+  - Ljubljana -->
+- [X] Denmark
+  - Copenhagen (1.12)
+- [X] Finland
 - [] Liechtenstein
-- [] Luxembourg
-- [] The Netherlands
-- [] Norway
-- [] Sweden
+- [X] Luxembourg
+- [X] The Netherlands
+- [X] Norway
+- [X] Sweden
 - [] Andorra
 - [] Monaco
 
