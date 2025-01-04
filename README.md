@@ -3,31 +3,31 @@ The Schengen area is made up of (16)29 European countries, including:
 - [x] Austria
 - [x] Belgium
 - [] Bulgaria
-- [] Croatia
+- [X] Croatia
 - [x] Czech Republic
-- [] Denmark
+- [X] Denmark
 - [x] Estonia
-- [] Finland
+- [X] Finland
 - [x] France
 - [x] Germany
 - [x] Greece
 - [x] Hungary
-- [] Iceland
+- [X] Iceland
 - [x] Italy
 - [x] Latvia
 - [] Liechtenstein
 - [x] Lithuania
-- [] Luxembourg
+- [X] Luxembourg
 - [x] Malta
-- [] The Netherlands
-- [] Norway
+- [X] The Netherlands
+- [X] Norway
 - [x] Poland
 - [x] Portugal
-- [] Romania
+- [X] Romania
 - [] Slovakia
 - [] Slovenia
 - [x] Spain
-- [] Sweden
+- [X] Sweden
 - [x] Switzerland
 
 - [] Andorra
@@ -109,19 +109,19 @@ Rank	Destination	International
 - North Macedonia (China) 2 days
   - Skopje -->
 - Albania (China) 2 days
-  - Tirana (1.1)
+  - Tirana (1.2)
 - Serbia (China) 2 days
-  - Belgrade (1.2, 1.5)
+  - Belgrade (1.3-1.5)
 <!-- - Montenegro (GC) 2 days
   - Podgorica -->
 - Bosnia and Herzegovina (China) 2 days
-  - Mostar (1.8)
-  - Sarajevo (1.9)
+  - Mostar (1.6)
+  - Sarajevo (1.8-1.9)
 - Germany
-  - Hamburg (1.11)
+  - Hamburg (1.10-1.11)
   - Stuggart ()
 - Croatia 1 days
-  - Dubrovnik
+  - Dubrovnik (1.7)
 <!-- - Slovakia
   - Bratislava
 - Slovenia
