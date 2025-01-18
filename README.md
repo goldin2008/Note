@@ -121,8 +121,8 @@ Rank	Destination	International
   - Hamburg (1.10-1.11)
   - Stuggart ()
 <!-- - Croatia 1 days
-  - Dubrovnik (1.7) -->
-<!-- - Slovakia
+  - Dubrovnik (1.7)
+- Slovakia
   - Bratislava
 - Slovenia
   - Ljubljana -->
@@ -134,8 +134,8 @@ Rank	Destination	International
   - Oslo (1.16-1.17)
   - Bergen (1.18)
   - Tromso (1.19-1.20)
-- [] Finland
-  <!-- - Rovaniemi (1.19)
+<!-- - [] Finland
+  - Rovaniemi (1.19)
   - Helsinki (1.20) -->
 - [X] The Netherlands
   - Amsterdam (1.21)
@@ -143,8 +143,10 @@ Rank	Destination	International
   - Brussels (1.22)
 <!-- - [] Liechtenstein -->
 - [X] Luxembourg (1.22)
-- [] Andorra
-- [] Monaco
+<!-- - [] Andorra
+- [] Monaco -->
+- France (3 days)
+  - Paris 1.23-1.25
 
 #### 2020, 12.28-1.20 (24 days)
 - France (9 days)
