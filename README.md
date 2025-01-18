@@ -128,19 +128,21 @@ Rank	Destination	International
   - Ljubljana -->
 - [X] Denmark
   - Copenhagen (1.12-1.13)
+- [X] Sweden
+  - Stockholm (1.14-1.15)
+- [X] Norway
+  - Oslo (1.16-1.17)
+  - Bergen (1.18)
+  - Tromso (1.19-1.20)
 - [] Finland
   <!-- - Rovaniemi (1.19)
   - Helsinki (1.20) -->
-- [] Liechtenstein
-- [X] Luxembourg
 - [X] The Netherlands
   - Amsterdam (1.21)
-- [X] Norway
-  - Oslo (1.16)
-  - Bergen (1.17)
-  - Tromso (1.18)
-- [X] Sweden
-  - Stockholm (1.14-1.15)
+- [x] Belgium
+  - Brussels (1.22)
+<!-- - [] Liechtenstein -->
+- [X] Luxembourg (1.22)
 - [] Andorra
 - [] Monaco
 
