@@ -1,5 +1,5 @@
 ### Travel
-The Schengen area is made up of (23)29 European countries, including:
+The Schengen area is made up of (23+2)29 European countries, including:
 - [x] Austria
 - [x] Belgium
 - [] Bulgaria
@@ -42,111 +42,113 @@ Rank	Destination	International
 - [x] 3	 United States	66.5 million	50.9 million	Increase 30.6	Increase 130
 - [x] 4	 Italy	57.2 million	49.8 million	Increase 14.8	Increase 85
 - [?] 5	 Turkey	55.2 million	50.5 million	Increase 9.3	Increase 69
-- [] 6	 Mexico	42.2 million	38.3 million	Increase 10.1	Increase 20
-- [] 7	 United Kingdom	37.2 million	30.7 million	Increase 21.1	Increase 389
+- [?] 6	 Mexico	42.2 million	38.3 million	Increase 10.1	Increase 20
+- [?] 7	 United Kingdom	37.2 million	30.7 million	Increase 21.1	Increase 389
 - [x] 8	 Germany	34.8 million	28.5 million	Increase 22.1	Increase 144
 - [x] 9	 Greece	32.7 million	27.8 million	Increase 17.6	Increase 89
 - [x] 10	 Austria	30.9 million	26.2 million	Increase 17.9	Increase 106
 
 Africa
 Rank	Destination	International
-- [] 1	 Egypt	13.0 million	11.3 million	Increase 14.8	Increase 36.8
-- [] 2	 Morocco	12.9 million	12.3 million	Increase 5.2	Increase 8.3
+- [?] 1	 Egypt	13.0 million	11.3 million	Increase 14.8	Increase 36.8
+- [?] 2	 Morocco	12.9 million	12.3 million	Increase 5.2	Increase 8.3
 - [] 3	 South Africa	10.2 million	10.5 million	Decrease 2.3	Increase 1.8
 
 Americas
 Rank	Destination	International
 - [x] 1	 United States	50.8 million	22.2 million	Increase 128.8	Increase 15.6
-- [] 2	 Mexico	38.3 million	31.8 million	Increase 20.4	Increase 31.4
-- [] 3	 Canada	12.8 million	3.0 million	Increase 326.6	Increase 3.4
-- [] 6	 Argentina	3.8 million	0.3 million	Increase 1196.6	Decrease 85.6
-- [] 7	 Brazil	3.6 million	0.7 million	Increase 386.5	Decrease 65.2
+- [?] 2	 Mexico	38.3 million	31.8 million	Increase 20.4	Increase 31.4
+- [?] 3	 Canada	12.8 million	3.0 million	Increase 326.6	Increase 3.4
+- [?] 6	 Argentina	3.8 million	0.3 million	Increase 1196.6	Decrease 85.6
+- [?] 7	 Brazil	3.6 million	0.7 million	Increase 386.5	Decrease 65.2
 
 Asia and the Pacific
 Rank	Destination	International
 - [x] 1	 China		65.7 million	62.9 million	Increase 4.5	Increase 3.6
-- [] 2	 Thailand	28.15 million	39.8 million	38.2 million	Increase 4.3	Increase 7.3
-- [] 3	 Japan	25.07 million	32.2 million	31.2 million	Increase 3.2	Increase 8.7
-- [] 4	 Malaysia		26.1 million	25.8 million	Increase 1.0	Decrease 0.4
-- [] 5	 Hong Kong		23.8 million	29.3 million	Decrease 18.8	Increase 4.9
-- [] 6	 Macau		18.6 million	18.5 million	Increase 0.8	Increase 7.2
-- [] 7	 Vietnam		18.0 million	15.5 million	Increase 16.2	Increase 19.9
-- [] 8	 India		17.9 million	17.4 million	Increase 2.8	Increase 12.1
-- [] 9	 South Korea		17.5 million	15.3 million	Increase 14.0	Increase 15.1
-- [] 10	 Indonesia		15.5 million	13.4 million	Increase 15.4	Increase 3.5
+- [?] 2	 Thailand	28.15 million	39.8 million	38.2 million	Increase 4.3	Increase 7.3
+- [?] 3	 Japan	25.07 million	32.2 million	31.2 million	Increase 3.2	Increase 8.7
+- [?] 4	 Malaysia		26.1 million	25.8 million	Increase 1.0	Decrease 0.4
+- [?] 5	 Hong Kong		23.8 million	29.3 million	Decrease 18.8	Increase 4.9
+- [?] 6	 Macau		18.6 million	18.5 million	Increase 0.8	Increase 7.2
+- [?] 7	 Vietnam		18.0 million	15.5 million	Increase 16.2	Increase 19.9
+- [?] 8	 India		17.9 million	17.4 million	Increase 2.8	Increase 12.1
+- [?] 9	 South Korea		17.5 million	15.3 million	Increase 14.0	Increase 15.1
+- [?] 10	 Indonesia		15.5 million	13.4 million	Increase 15.4	Increase 3.5
 
 West Asia
 Rank	Destination	International
-- [] 1	 Saudi Arabia	27 million	17.5 million	15.5 million	Increase 13.0	Decrease 3.7
-- [] 2	 United Arab Emirates		16.7 million	15.9 million	Increase 5.1	Increase 0.8
-- [] 3	 Egypt		13.0 million	11.3 million	Increase 14.8	Increase 36.8
-- [] 4	 Iran		9.1 million	7.3 million	Increase 24.4	Increase 49.9
-- [] 5	 Israel		4.6 million	4.1 million	Increase 10.5	Increase 14.1
-- [] 9	 Qatar		2.1 million	1.8 million	Increase 17.4	Decrease 19.4
+- [?] 1	 Saudi Arabia	27 million	17.5 million	15.5 million	Increase 13.0	Decrease 3.7
+- [?] 2	 United Arab Emirates		16.7 million	15.9 million	Increase 5.1	Increase 0.8
+- [?] 3	 Egypt		13.0 million	11.3 million	Increase 14.8	Increase 36.8
+- [?] 4	 Iran		9.1 million	7.3 million	Increase 24.4	Increase 49.9
+- [?] 5	 Israel		4.6 million	4.1 million	Increase 10.5	Increase 14.1
+- [?] 9	 Qatar		2.1 million	1.8 million	Increase 17.4	Decrease 19.4
 
 Europe
 Rank	Destination	International
 - [x] 1	 France	―	48.4 million	41.7 million	90.9 million	—	Increase 16.1
 - [x] 2	 Spain	71.7 million	31.2 million	18.9 million	83.5 million	Increase 130	Increase 64.7
-- [] 3	 Turkey	50.5 million	29.9 million	15.9 million	51.2 million	Increase 69	Increase 88.3
+- [?] 3	 Turkey	50.5 million	29.9 million	15.9 million	51.2 million	Increase 69	Increase 88.3
 - [x] 4	 Italy	49.8 million	26.9 million	25.2 million	64.5 million	Increase 85	Increase 6.7
-- [] 5	 United Kingdom	―	6.3 million	10.7 million	39.4 million	―	Decrease 41.3
+- [?] 5	 United Kingdom	―	6.3 million	10.7 million	39.4 million	―	Decrease 41.3
 - [x] 6	 Germany	28.5 million	11.7 million	12.4 million	39.6 million	Increase 144	Decrease 6.1
 - [x] 7	 Greece	27.8 million	14.7 million	7.4 million	31.3 million	Increase 89	Increase 99.4
 - [x] 8	 Austria	26.2 million	12.7 million	15.1 million	31.9 million	Increase 106	Decrease 15.7
 - [x] 9	 Portugal	―	9.6 million	6.5 million	24.5 million	―	Increase 48.4
-- [] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
+- [x] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
 
+
+#### 2025, - (10 days)
+- Bulgaria 2 days
+  - Sofia
+- North Macedonia (China) 2 days
+  - Skopje
+- Montenegro (GC) 2 days
+  - Podgorica
+- Croatia
+  - Dubrovnik
+- Slovakia
+  - Bratislava
+- Slovenia
+  - Ljubljana
+- Finland
+  - Rovaniemi
+  - Helsinki
+- Liechtenstein
+- Andorra
+- Monaco
 #### 2024, 12.25-1.26 (33 days)
-- France (3 days)
+- France (1 day)
   - Paris (12.25)
 - Romania 2 days 12.26-12.28
   - Bucharest (12.26-12.28)
   - Brasov (12.29-12.31)
   - Bucharest (1.1)
-<!-- - Bulgaria 2 days
-  - Sofia
-- North Macedonia (China) 2 days
-  - Skopje -->
 - Albania (China) 2 days
   - Tirana (1.2)
 - Serbia (China) 2 days
   - Belgrade (1.3-1.5)
-<!-- - Montenegro (GC) 2 days
-  - Podgorica -->
 - Bosnia and Herzegovina (China) 2 days
   - Mostar (1.6-1.7)
   - Sarajevo (1.8-1.9)
 - Germany
   - Hamburg (1.10-1.11)
-  - Stuggart ()
-<!-- - Croatia 1 days
-  - Dubrovnik (1.7)
-- Slovakia
-  - Bratislava
-- Slovenia
-  - Ljubljana -->
-- [X] Denmark
+- Denmark
   - Copenhagen (1.12-1.13)
-- [X] Sweden
+- Sweden
   - Stockholm (1.14-1.15)
-- [X] Norway
+- Norway
   - Oslo (1.16-1.17)
   - Bergen (1.18)
   - Tromso (1.19-1.20)
-<!-- - [] Finland
-  - Rovaniemi (1.19)
-  - Helsinki (1.20) -->
-- [X] The Netherlands
+- The Netherlands
   - Amsterdam (1.21)
-- [x] Belgium
+  - Hague (1.22)
+- Belgium
   - Brussels (1.22)
-<!-- - [] Liechtenstein -->
-- [X] Luxembourg (1.22)
-<!-- - [] Andorra
-- [] Monaco -->
-- France (3 days)
-  - Paris 1.23-1.25
+- Luxembourg (1.23)
+- France (2 days)
+  - Paris 1.24-1.25
 
 #### 2020, 12.28-1.20 (24 days)
 - France (9 days)
