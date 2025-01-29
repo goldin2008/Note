@@ -1,5 +1,5 @@
 ### Travel
-The Schengen area is made up of (16)29 European countries, including:
+The Schengen area is made up of (23)29 European countries, including:
 - [x] Austria
 - [x] Belgium
 - [] Bulgaria
@@ -7,7 +7,7 @@ The Schengen area is made up of (16)29 European countries, including:
 - [x] Czech Republic
 - [X] Denmark
 - [x] Estonia
-- [X] Finland
+- [] Finland
 - [x] France
 - [x] Germany
 - [x] Greece
@@ -41,7 +41,7 @@ Rank	Destination	International
 - [x] 2	 Spain	85.2 million	71.7 million	Increase 18.8	Increase 130
 - [x] 3	 United States	66.5 million	50.9 million	Increase 30.6	Increase 130
 - [x] 4	 Italy	57.2 million	49.8 million	Increase 14.8	Increase 85
-- [] 5	 Turkey	55.2 million	50.5 million	Increase 9.3	Increase 69
+- [?] 5	 Turkey	55.2 million	50.5 million	Increase 9.3	Increase 69
 - [] 6	 Mexico	42.2 million	38.3 million	Increase 10.1	Increase 20
 - [] 7	 United Kingdom	37.2 million	30.7 million	Increase 21.1	Increase 389
 - [x] 8	 Germany	34.8 million	28.5 million	Increase 22.1	Increase 144
