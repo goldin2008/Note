@@ -2,8 +2,8 @@
 The Schengen area is made up of (23+2)29 European countries, including:
 - [x] Austria
 - [x] Belgium
-- [] Bulgaria
-- [] Croatia
+- [?] Bulgaria
+- [?] Croatia
 - [x] Czech Republic
 - [X] Denmark
 - [x] Estonia
@@ -15,7 +15,7 @@ The Schengen area is made up of (23+2)29 European countries, including:
 - [X] Iceland
 - [x] Italy
 - [x] Latvia
-- [] Liechtenstein
+- [?] Liechtenstein
 - [x] Lithuania
 - [X] Luxembourg
 - [x] Malta
@@ -24,14 +24,14 @@ The Schengen area is made up of (23+2)29 European countries, including:
 - [x] Poland
 - [x] Portugal
 - [X] Romania
-- [] Slovakia
-- [] Slovenia
+- [?] Slovakia
+- [?] Slovenia
 - [x] Spain
 - [X] Sweden
 - [x] Switzerland
 
-- [] Andorra
-- [] Monaco
+- [?] Andorra
+- [?] Monaco
 - [x] San Marino
 - [x] Vatican City
 
