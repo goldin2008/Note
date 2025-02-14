@@ -117,7 +117,8 @@ Rank	Destination	International
 - Liechtenstein
 - Andorra
 - Monaco
-#### 2024, 12.25-1.26 (33 days)
+
+#### 2024, 12.25-2025 1.26 (33 days)
 - France (1 day)
   - Paris (12.25)
 - Romania 2 days 12.26-12.28
@@ -150,22 +151,23 @@ Rank	Destination	International
 - France (2 days)
   - Paris 1.24-1.25
 
-#### 2020, 12.28-1.20 (24 days)
-- France (9 days)
-  - Paris 12.29-1.4 (6 days), 1.10-1.13 (3 days)
-- Germany 1.4-1.8 (5 days)
-  - Leipzig 1.4-1.5 (1 day)
-  - Berlin 1.5-1.8 (3 days)
-- Austria 1.8-1.10 (2 days)
-  - Vienna
-- Switzerland 1.14-1.15 (1 day)
-  - Zürich
-- Italy 1.15-1.16 (1 day)
-  - Milan
-- Greece 1.16-1.18 (2 days)
-  - Athens
-- Hungary (2 days)
-  - Budapest 1.18-1.20 (2 days)
+#### 2024, 8.29-9.27 (30 days)
+- France 8.29-9.1 (5 days)
+  - Paris 8.29-9.1 (4 days), 9.26-9.27 (1 day)
+- Greece 9.1-9.4 (3 days)
+  - Athens 9.1-9.3 (2 days)
+  - Crete 9.3-9.4 (1 day)
+- Italy 9.5-9.19 (14 days)
+  - Milan 9.5-9.7 (2 days)
+  - Venice 9.7-9.9 (2 days)
+  - San Marino 9.9-9.10 (1 day)
+  - Florence 9.10-9.14 (4 days)
+  - Pisa and Bologna 9.14-9.16 (2 days)
+  - Roma 9.16-9.19 (3 days)
+- Poland 9.19-9.23 (4 days)
+  - Warsaw
+- Czech Republic 9.23-9.26 (3 days)
+  - Prague
 
 #### 2023, 11.21-1.7 (48 days)
 - Portugal 11.21-11.28 (7 days)
@@ -198,23 +200,22 @@ Rank	Destination	International
 - France 1.4-1.7 (3 days)
   - Paris
 
-#### 2024, 8.29-9.27 (30 days)
-- France 8.29-9.1 (5 days)
-  - Paris 8.29-9.1 (4 days), 9.26-9.27 (1 day)
-- Greece 9.1-9.4 (3 days)
-  - Athens 9.1-9.3 (2 days)
-  - Crete 9.3-9.4 (1 day)
-- Italy 9.5-9.19 (14 days)
-  - Milan 9.5-9.7 (2 days)
-  - Venice 9.7-9.9 (2 days)
-  - San Marino 9.9-9.10 (1 day)
-  - Florence 9.10-9.14 (4 days)
-  - Pisa and Bologna 9.14-9.16 (2 days)
-  - Roma 9.16-9.19 (3 days)
-- Poland 9.19-9.23 (4 days)
-  - Warsaw
-- Czech Republic 9.23-9.26 (3 days)
-  - Prague
+#### 2020, 12.28-1.20 (24 days)
+- France (9 days)
+  - Paris 12.29-1.4 (6 days), 1.10-1.13 (3 days)
+- Germany 1.4-1.8 (5 days)
+  - Leipzig 1.4-1.5 (1 day)
+  - Berlin 1.5-1.8 (3 days)
+- Austria 1.8-1.10 (2 days)
+  - Vienna
+- Switzerland 1.14-1.15 (1 day)
+  - Zürich
+- Italy 1.15-1.16 (1 day)
+  - Milan
+- Greece 1.16-1.18 (2 days)
+  - Athens
+- Hungary (2 days)
+  - Budapest 1.18-1.20 (2 days)
 
 ## End Year Evaluation
 In this year-end self-evaluation, I've highlighted my achievements and contributions across various facets of my role, demonstrating a consistent commitment to excellence and alignment with the firm's strategic priorities. I have proactively identified and addressed the needs of our clients, customers, and stakeholders, while fostering cross-team collaboration and adhering to firm priorities.
