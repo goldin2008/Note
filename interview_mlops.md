@@ -5,10 +5,10 @@ Building Generative AI (GenAI) products on AWS involves a unique set of challeng
 `Problem 1: High Latency in Model Inference`
 - Problem: Generative AI models, especially large language models (LLMs) like GPT, can have high inference latency, making real-time applications challenging.
 Solutions:
-- `Model Optimization`: Use techniques like `model pruning`, `quantization`, and `distillation` to `reduce the size of the model` without significantly sacrificing performance.
-- `Edge Deployment`: Deploy models closer to the end-users using `AWS Outposts or AWS Local Zones` to reduce latency.
-- `Asynchronous Processing`: For non-real-time applications, use `asynchronous` processing with `AWS Lambda` and `SQS` to handle requests.
-- `Caching`: Implement caching mechanisms using `Amazon ElastiCache` to store frequently requested responses.
+  - `Model Optimization`: Use techniques like `model pruning`, `quantization`, and `distillation` to `reduce the size of the model` without significantly sacrificing performance.
+  - `Edge Deployment`: Deploy models closer to the end-users using `AWS Outposts or AWS Local Zones` to reduce latency.
+  - `Asynchronous Processing`: For non-real-time applications, use `asynchronous` processing with `AWS Lambda` and `SQS` to handle requests.
+  - `Caching`: Implement caching mechanisms using `Amazon ElastiCache` to store frequently requested responses.
 
 ### Model Deployment
 Serving machine learning models as an API is a common approach for integrating ML capabilities into modern software applications. This process helps to simplify the development of applications and has multiple benefits, such as scalability, efficiency, flexibility, and accessibility. Basically, the aim of such an API is to integrate machine learning models into other components of the application, which enables using the predictive power of machine learning in real-time. So, this process allows systems to use the model’s predictions and insights without having to replicate the entire architecture and infrastructure of the model.
