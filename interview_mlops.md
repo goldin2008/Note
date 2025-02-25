@@ -1,7 +1,8 @@
 ## MLOps interview prep
 ### Infrastructure and MLOps
 Building Generative AI (GenAI) products on AWS involves a unique set of challenges, particularly around `scalability`, `cost`, `latency`, and managing the `complexity of large models`. Below are some common problems you might encounter and potential solutions to address them:
-Problem 1: High Latency in Model Inference
+
+`Problem 1: High Latency in Model Inference`
 Problem: Generative AI models, especially large language models (LLMs) like GPT, can have high inference latency, making real-time applications challenging.
 
 Solutions:
