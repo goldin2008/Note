@@ -3,9 +3,7 @@
 Building Generative AI (GenAI) products on AWS involves a unique set of challenges, particularly around `scalability`, `cost`, `latency`, and managing the `complexity of large models`. Below are some common problems you might encounter and potential solutions to address them:
 
 `Problem 1: High Latency in Model Inference`
-
-Problem: Generative AI models, especially large language models (LLMs) like GPT, can have high inference latency, making real-time applications challenging.
-
+- Problem: Generative AI models, especially large language models (LLMs) like GPT, can have high inference latency, making real-time applications challenging.
 Solutions:
 - `Model Optimization`: Use techniques like `model pruning`, `quantization`, and `distillation` to `reduce the size of the model` without significantly sacrificing performance.
 - `Edge Deployment`: Deploy models closer to the end-users using `AWS Outposts or AWS Local Zones` to reduce latency.
