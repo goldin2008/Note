@@ -29,7 +29,8 @@ This discussion focuses on the interviewee’s ability to solve an end-to-end ma
 09. Similar Listings on Vacation Rental Platforms
 
 10. Personalized News Feed
-<img src="pic/ml-newsfeed.png" width=50% height=50%>(pic/mlq.png)
+
+<img src="pic/ml-newsfeed.png" width=50% height=50%>
 
 11. People You May Know
 
