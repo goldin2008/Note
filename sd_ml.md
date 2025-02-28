@@ -9,6 +9,29 @@ This discussion focuses on the interviewee’s ability to solve an end-to-end ma
 <!-- <img src="pic/mlq.png" width=50% height=50%>(pic/mlq.png) -->
 <img src="pic/mlq.png" width=50% height=50%>
 
+### Machine Learning System Design Interview
+01. Introduction and Overview
+
+02. Visual Search System
+
+03. Google Street View Blurring System
+
+04. YouTube Video Search
+
+05. Harmful Content Detection
+
+06. Video Recommendation System
+
+07. Event Recommendation System
+
+08. Ad Click Prediction on Social Platforms
+
+09. Similar Listings on Vacation Rental Platforms
+
+10. Personalized News Feed
+
+11. People You May Know
+
 
 ### MLE SD Questions
 VO2: SD: design a system for serving content recommendation. eg. data storage, feature store, data pipeline and updates period. how to optimize the system, such as in pre-ranking recall, how to build cache for efficient ANN computing
