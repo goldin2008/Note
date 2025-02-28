@@ -32,6 +32,29 @@ This discussion focuses on the interviewee’s ability to solve an end-to-end ma
 
 11. People You May Know
 
+### Generative AI System Design Interview
+1. Introduction and Overview
+
+2. Gmail Smart Compose
+
+3. Google Translate
+
+4. ChatGPT: Personal Assistant Chatbot
+
+5. Image Captioning
+
+6. Retrieval-Augmented Generation
+
+7. Realistic Face Generation
+
+8. High-Resolution Image Synthesis
+
+9. Text-to-Image Generation
+
+10. Personalized Headshot Generation
+
+11. Text-to-Video Generation
+
 
 ### MLE SD Questions
 VO2: SD: design a system for serving content recommendation. eg. data storage, feature store, data pipeline and updates period. how to optimize the system, such as in pre-ranking recall, how to build cache for efficient ANN computing
@@ -512,7 +535,7 @@ Sparse features
 
   Impression: If a Tweet is displayed on a user’s Twitter feed, it counts as an impression. It is not necessary that the user reads it or engages with it, scrolling past it also counts as an impression.
 
-  Given that the model’s scores are only going to be used to rank Tweets among themselves, poor model calibration doesn’t matter much in this scenario. We will discuss this in the ads system chapter, where calibrated scores are important, and we need to be mindful of such a sampling technique.
+  Given that the model’s scores are only going to be used to rank Tweets among themselves, poor model calibration doesn’t matter much in this scenario. We will discuss this in the ads system  , where calibrated scores are important, and we need to be mindful of such a sampling technique.
 
   - Balancing positive and negative training examples
   - Train test split
