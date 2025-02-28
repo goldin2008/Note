@@ -92,7 +92,9 @@ Sequence-to-sequence models, originally designed for `translation`, are also ver
 
 #### Pretraining-LLM
 
-
+Cross Entropy Loss Function
+Input to encoder
+shift to right one token, to decoder
 
 
 #### Fine Tuning
