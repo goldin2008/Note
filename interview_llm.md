@@ -214,7 +214,7 @@ The challenge lies in effectively merging the results obtained from these differ
 In LangChain this is implemented in the Ensemble Retriever class, combining a list of retrievers you define, for example a Faiss vector index and a BM25 based retriever and using RRF for reranking.
 As vector database, we'll use FAISS, a library developed by Facebook AI. FAISS specializes in the efficient similarity search and clustering of dense vectors, which suits our needs perfectly. Currently, FAISS is among the top libraries for conducting Nearest Neighbor (NN) search in large datasets.
 
-#### Vector Database
+#### Vector Database search algorithms
 In general, vector databases organize vectors into buckets, trees, or graphs. Vector search algorithms differ based on the heuristics they use to increase the likelihood that similar vectors are close to each other. Vectors can also be quantized (reduced precision) or made sparse. The idea is that quantized and sparse vectors are less computationally intensive to work with. For those wanting to learn more about vector search, Zilliz has an excellent series on it. Here are some significant vector search algorithms:
 - `LSH (locality-sensitive hashing)` (Indyk and Motwani, 1999)
 This is a powerful and versatile algorithm that works with more than just vectors. This involves hashing similar vectors into the same buckets to speed up similarity search, trading some accuracy for efficiency. It’s implemented in FAISS and Annoy.
@@ -226,6 +226,54 @@ This works by reducing each vector into a much simpler, lower-dimensional repres
 IVF uses K-means clustering to organize similar vectors into the same cluster. Depending on the number of vectors in the database, it’s typical to set the number of clusters so that, on average, there are 100 to 10,000 vectors in each cluster. During querying, IVF finds the cluster centroids closest to the query embedding, and the vectors in these clusters become candidate neighbors. Together with product quantization, IVF forms the backbone of FAISS.
 - `Annoy (Approximate Nearest Neighbors Oh Yeah)` (Bernhardsson, 2013)
 Annoy is a tree-based approach. It builds multiple binary trees, where each tree splits the vectors into clusters using random criteria, such as randomly drawing a line and splitting the vectors into two branches using this line. During a search, it traverses these trees to gather candidate neighbors. Spotify has open sourced its implementation.
+
+#### Retrieval algorithms
+`Term-based retrieval` is generally much faster than embedding-based retrieval during both indexing and query. Term extraction is faster than embedding generation, and mapping from a term to the documents that contain it can be less computationally expensive than a nearest-neighbor search.
+
+Term-based retrieval also works well out of the box. Solutions like Elasticsearch and BM25 have successfully powered many search and retrieval applications. However, its simplicity also means that it has fewer components you can tweak to improve its performance.
+
+`Embedding-based retrieval`, on the other hand, can be significantly improved over time to outperform term-based retrieval. You can finetune the embedding model and the retriever, either separately, together, or in conjunction with the generative model.
+
+Combining term-based retrieval and embedding-based retrieval is called `hybrid search`.
+Different algorithms can be used in sequence. First, a cheap, less precise retriever, such as a `term-based system`, fetches candidates. Then, a more precise but more expensive mechanism, such as `k-nearest neighbors`, finds the best of these candidates. This second step is also called `reranking`.
+
+Different algorithms can also be used in parallel as an ensemble. Remember that a retriever works by ranking documents by their relevance scores to the query. You can use multiple retrievers to fetch candidates at the same time, then combine these different rankings together to generate a final ranking.
+
+An algorithm for combining different rankings is called `reciprocal rank fusion (RRF)` (Cormack et al., 2009). It assigns each document a score based on its ranking by a retriever. Intuitively, if it ranks first, its score is 1/1 = 1. If it ranks second, its score is ½ = 0.5. The higher it ranks, the higher its score.
+
+A document’s final score is the sum of its scores with respect to all retrievers. If a document is ranked first by one retriever and second by another retriever, its score is 1 + 0.5 = 1.5. This example is an oversimplification of RRF, but it shows the basics.
+
+#### Evaluate Components in RAG
+`The quality of a retriever` can be evaluated based on the quality of the data it retrieves. Two metrics often used by RAG evaluation frameworks are `context precision` and `context recall`, or precision and recall for short (context precision is also called context relevance):
+- Context precision
+  Out of all the documents retrieved, what percentage is relevant to the query?
+- Context recall
+  Out of all the documents that are relevant to the query, what percentage is retrieved?
+`To compute these metrics`, you curate an evaluation set with a list of test queries and a set of documents. For each test query, you annotate each test document to be relevant or not relevant. The annotation can be done either by humans or AI judges. You then compute the precision and recall score of the retriever on this evaluation set.
+
+If you care about the `ranking` of the retrieved documents, for example, more relevant documents should be ranked first, you can use metrics such as `NDCG (normalized discounted cumulative gain)`, `MAP (Mean Average Precision)`, and `MRR (Mean Reciprocal Rank)`.
+
+For semantic retrieval, you need to also evaluate `the quality of your embeddings`. As discussed in Chapter 3, embeddings can be evaluated independently—they are considered good if more-similar documents have closer embeddings. Embeddings can also be evaluated by how well they work for specific tasks. The `MTEB benchmark` (Muennighoff et al., 2023) evaluates embeddings for a broad range of tasks including `retrievals`, `classification`, and `clustering`.
+
+`The quality of a retriever` should also be evaluated `in the context of the whole RAG system`. Ultimately, a retriever is good if it helps the system generate high-quality answers.
+
+With retrieval systems, you can make certain `trade-offs between indexing and querying`. The more detailed the index is, the more accurate the retrieval process will be, but the `indexing process` will be slower and more memory-consuming. Imagine building an index of potential customers. Adding more details (e.g., name, company, email, phone, interests) makes it easier to find relevant people but takes longer to build and requires more storage.
+
+In general, a `detailed index like HNSW` provides high accuracy and fast query times but requires significant time and memory to build. In contrast, a `simpler index like LSH` is quicker and less memory-intensive to create, but it results in slower and less accurate queries.
+
+To summarize, the quality of a RAG system should be evaluated both component by component and end to end. To do this, you should do the following things:
+- Evaluate the `retrieval quality`.
+- Evaluate the `final RAG outputs`.
+- Evaluate the `embeddings (for embedding-based retrieval)`.
+
+#### Retrieval Optimization
+1. Chunking strategy
+You can also split documents recursively using increasingly smaller units until each chunk fits within your maximum chunk size. For example, you can start by splitting a document into sections. If a section is too long, split it into paragraphs. If a paragraph is still too long, split it into sentences. This reduces the chance of related texts being arbitrarily broken off.
+2. Reranking
+3. Query rewriting
+4. Contextual retrieval
+A simple technique is to augment a chunk with `metadata like tags and keywords`. For ecommerce, a product can be augmented by its description and reviews. Images and videos can be queried by their titles or captions.
+If a document is split into multiple chunks, some chunks might lack the necessary context to help the retriever understand what the chunk is about. To avoid this, you can augment each chunk with the context from the original document, such as the original document’s title and summary.
 
 
 #### Prompt
