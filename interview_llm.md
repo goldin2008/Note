@@ -267,11 +267,11 @@ To summarize, the quality of a RAG system should be evaluated both component by 
 - Evaluate the `embeddings (for embedding-based retrieval)`.
 
 #### Retrieval Optimization
-1. Chunking strategy
+1. `Chunking strategy`
 You can also split documents recursively using increasingly smaller units until each chunk fits within your maximum chunk size. For example, you can start by splitting a document into sections. If a section is too long, split it into paragraphs. If a paragraph is still too long, split it into sentences. This reduces the chance of related texts being arbitrarily broken off.
-2. Reranking
-3. Query rewriting
-4. Contextual retrieval
+2. `Reranking`
+3. `Query rewriting`
+4. `Contextual retrieval`
 A simple technique is to augment a chunk with `metadata like tags and keywords`. For ecommerce, a product can be augmented by its description and reviews. Images and videos can be queried by their titles or captions.
 If a document is split into multiple chunks, some chunks might lack the necessary context to help the retriever understand what the chunk is about. To avoid this, you can augment each chunk with the context from the original document, such as the original document’s title and summary.
 
