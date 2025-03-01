@@ -4,7 +4,13 @@
 Understanding and Coding the Self-Attention Mechanism of Large Language Models From Scratch
 > https://sebastianraschka.com/blog/2023/self-attention-from-scratch.html
 
-### LLMOps workflow
+# Table of Contents
+1. [LLMOps workflow](###LLMOps workflow)
+2. [Getting Started](#getting-started)
+3. [Advanced Topics](#advanced-topics)
+4. [Conclusion](#conclusion)
+
+###LLMOps workflow
 - Data collection
 - Data preprocessing
 - Data storage, versioning, and retrieval
@@ -207,7 +213,21 @@ The challenge lies in effectively merging the results obtained from these differ
 In LangChain this is implemented in the Ensemble Retriever class, combining a list of retrievers you define, for example a Faiss vector index and a BM25 based retriever and using RRF for reranking.
 As vector database, we'll use FAISS, a library developed by Facebook AI. FAISS specializes in the efficient similarity search and clustering of dense vectors, which suits our needs perfectly. Currently, FAISS is among the top libraries for conducting Nearest Neighbor (NN) search in large datasets.
 
-#### `Prompt`
+#### Vector Database
+In general, vector databases organize vectors into buckets, trees, or graphs. Vector search algorithms differ based on the heuristics they use to increase the likelihood that similar vectors are close to each other. Vectors can also be quantized (reduced precision) or made sparse. The idea is that quantized and sparse vectors are less computationally intensive to work with. For those wanting to learn more about vector search, Zilliz has an excellent series on it. Here are some significant vector search algorithms:
+- `LSH (locality-sensitive hashing)` (Indyk and Motwani, 1999)
+This is a powerful and versatile algorithm that works with more than just vectors. This involves hashing similar vectors into the same buckets to speed up similarity search, trading some accuracy for efficiency. It’s implemented in FAISS and Annoy.
+- `HNSW (Hierarchical Navigable Small World)` (Malkov and Yashunin, 2016)
+HNSW constructs a multi-layer graph where nodes represent vectors, and edges connect similar vectors, allowing nearest-neighbor searches by traversing graph edges. Its implementation by the authors is open source, and it’s also implemented in FAISS and Milvus.
+- `Product Quantization` (Jégou et al., 2011)
+This works by reducing each vector into a much simpler, lower-dimensional representation by decomposing each vector into multiple subvectors. The distances are then computed using the lower-dimensional representations, which are much faster to work with. Product quantization is a key component of FAISS and is supported by almost all popular vector search libraries.
+- `IVF (inverted file index)` (Sivic and Zisserman, 2003)
+IVF uses K-means clustering to organize similar vectors into the same cluster. Depending on the number of vectors in the database, it’s typical to set the number of clusters so that, on average, there are 100 to 10,000 vectors in each cluster. During querying, IVF finds the cluster centroids closest to the query embedding, and the vectors in these clusters become candidate neighbors. Together with product quantization, IVF forms the backbone of FAISS.
+- `Annoy (Approximate Nearest Neighbors Oh Yeah)` (Bernhardsson, 2013)
+Annoy is a tree-based approach. It builds multiple binary trees, where each tree splits the vectors into clusters using random criteria, such as randomly drawing a line and splitting the vectors into two branches using this line. During a search, it traverses these trees to gather candidate neighbors. Spotify has open sourced its implementation.
+
+
+#### Prompt
 A prompt may contain the following:
 1. `Instruction`: Task or instruction for the model (eg: classify, summarize, …)
 2. `Input`: Input statement or question for the model to generate a response.
