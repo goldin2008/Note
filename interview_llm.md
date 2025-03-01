@@ -10,22 +10,22 @@ Understanding and Coding the Self-Attention Mechanism of Large Language Models F
 3. [Advanced Topics](#advanced-topics)
 4. [Conclusion](#conclusion)
 
----
+
 
 ## Introduction
 This is the introduction section.
 
----
+
 
 ## Getting Started
 This section explains how to get started.
 
----
+
 
 ## Advanced Topics
 This section covers advanced topics.
 
----
+
 
 ## Conclusion
 This is the conclusion section.
