@@ -8,8 +8,10 @@ Understanding and Coding the Self-Attention Mechanism of Large Language Models F
 1. [LLMOps workflow](#llmops-workflow)
 1. [Evaluate LLM System](#evaluate-llm-system)
 2. [Large-Language Foundation Models](#large-language-foundation-models)
+    - [Pretraining-LLM](#pretraining-llm)
+    <!-- - [Configuration](#configuration)
 3. [Advanced Topics](#advanced-topics)
-4. [Conclusion](#conclusion)
+4. [Conclusion](#conclusion) -->
 
 ### LLMOps workflow
 - Data collection
@@ -259,12 +261,12 @@ Therefore, in order to implement ReAct, you need:
 3. Human-generated examples of intermixed thoughts, actions, and observations in the environment to use for few-shot learning.
 
 
-#### `Generation`
+#### Generation
 The generator in a RAG system is responsible for converting retrieved information into a coherent text that will form the final output of the model. This process involves diverse input data which sometimes require efforts to refine the adaptation of the language model to the input data derived from queries and documents. This can be addressed using post-retrieval process and fine-tuning:
 - `Post-retrieval with Frozen LLM`: Post-retrieval processing leaves the LLM untouched and instead focuses on enhancing the quality of retrieval results through operations like information compression and result reranking. Information compression helps with reducing noise, addressing an LLM's context length restrictions, and enhancing generation effects. Reranking aims at reordering documents to prioritize the most relevant items at the top.
 - `Fine-tuning LLM for RAG`: To improve the RAG system, the generator can be further optimized or fine-tuned to ensure that the generated text is natural and effectively leverages the retrieved documents.
 
-#### `Evaluating RAG Applications with RAGAs`
+#### Evaluating RAG Applications with RAGAs
 building a proof of concept for a Retrieval-Augmented Generation (RAG) application is easy, but making it production-ready is very difficult. Getting the RAG pipeline's performance to a satisfying state is especially difficult because of the different components in a RAG pipeline:
 - Retriever component: retrieves additional context from an external database for the LLM to answer the query.
 - Generator component: generates an answer based on a prompt augmented with the retrieved information.
@@ -316,7 +318,7 @@ In reality, you likely won't need to apply all of these metrics at the same time
 `Calculating the Metrics`: In the following section, we will very briefly demonstrate how to actually calculate the Ragas metrics. You'll find that they are very easily to generate from a coding perspective!
 `Explaining the Metrics`: After we have derived the metrics via code, we will do a much deeper dive into what each of these metrics are and how they are scored behind the scenes.
 
-#### `A Guide on 12 Tuning Strategies for Production-Ready RAG Applications`
+#### A Guide on 12 Tuning Strategies for Production-Ready RAG Applications
 Data Science is an experimental science. It starts with the “No Free Lunch Theorem,” which states that there is `no one-size-fits-all algorithm` that works best for every problem. And it results in data scientists using experiment tracking systems to help them tune the hyperparameters of their Machine Learning (ML) projects to achieve the best performance.
 This article covers the following “hyperparameters” sorted by their relevant stage.
 
