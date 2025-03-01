@@ -9,10 +9,10 @@ Understanding and Coding the Self-Attention Mechanism of Large Language Models F
 2. [Getting Started](#getting-started)
 3. [Advanced Topics](#advanced-topics)
 4. [Conclusion](#conclusion)
-5. [LLMOps workflow](#LLMOps workflow)
+5. [LLMOps workflow](#llmops-workflow)
 
 
-## Introduction
+### Introduction
 This is the introduction section.
 
 
