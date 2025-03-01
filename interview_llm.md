@@ -5,31 +5,11 @@ Understanding and Coding the Self-Attention Mechanism of Large Language Models F
 > https://sebastianraschka.com/blog/2023/self-attention-from-scratch.html
 
 # Table of Contents
-1. [Introduction](#introduction)
+1. [LLMOps workflow](#llmops-workflow)
+1. [Evaluate LLM System](#evaluate-llm-system)
 2. [Getting Started](#getting-started)
 3. [Advanced Topics](#advanced-topics)
 4. [Conclusion](#conclusion)
-5. [LLMOps workflow](#llmops-workflow)
-
-
-### Introduction
-This is the introduction section.
-
-
-
-## Getting Started
-This section explains how to get started.
-
-
-
-## Advanced Topics
-This section covers advanced topics.
-
-
-
-## Conclusion
-This is the conclusion section.
-
 
 ### LLMOps workflow
 - Data collection
