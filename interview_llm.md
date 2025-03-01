@@ -8,10 +8,8 @@ Understanding and Coding the Self-Attention Mechanism of Large Language Models F
 1. [LLMOps workflow](#llmops-workflow)
 1. [Evaluate LLM System](#evaluate-llm-system)
 2. [Large-Language Foundation Models](#large-language-foundation-models)
-    - [Pretraining-LLM](#pretraining-llm)
-    - [Configuration](#configuration)
-3. [Advanced Topics](#advanced-topics)
-4. [Conclusion](#conclusion)
+  - [Pretraining-LLM](#pretraining-llm)
+  - [Fine Tuning](#fine-tuning)
 
 ### LLMOps workflow
 - Data collection
