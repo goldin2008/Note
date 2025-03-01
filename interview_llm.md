@@ -7,7 +7,7 @@ Understanding and Coding the Self-Attention Mechanism of Large Language Models F
 # Table of Contents
 1. [LLMOps workflow](#llmops-workflow)
 1. [Evaluate LLM System](#evaluate-llm-system)
-2. [Getting Started](#getting-started)
+2. [Large-Language Foundation Models](#large-language-foundation-models)
 3. [Advanced Topics](#advanced-topics)
 4. [Conclusion](#conclusion)
 
