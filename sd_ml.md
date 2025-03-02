@@ -17,6 +17,9 @@ This discussion focuses on the interviewee’s ability to solve an end-to-end ma
 <img src="pic/IMG_0406.png" width=50% height=50%>
 
 03. Google Street View Blurring System
+<img src="pic/IMG_0407.png" width=50% height=50%>
+<img src="pic/IMG_0408.png" width=50% height=50%>
+<img src="pic/IMG_0409.png" width=50% height=50%>
 
 04. YouTube Video Search
 
