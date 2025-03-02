@@ -13,6 +13,8 @@ This discussion focuses on the interviewee’s ability to solve an end-to-end ma
 01. Introduction and Overview
 
 02. Visual Search System
+<img src="pic/IMG_0405.png" width=50% height=50%>
+<img src="pic/IMG_0406.png" width=50% height=50%>
 
 03. Google Street View Blurring System
 
