@@ -22,20 +22,45 @@ This discussion focuses on the interviewee’s ability to solve an end-to-end ma
 <img src="pic/IMG_0409.png" width=50% height=50%>
 
 04. YouTube Video Search
+<img src="pic/IMG_0410.png" width=50% height=50%>
+<img src="pic/IMG_0411.png" width=50% height=50%>
 
 05. Harmful Content Detection
+<img src="pic/IMG_0412.png" width=50% height=50%>
+<img src="pic/IMG_0414.png" width=50% height=50%>
+<img src="pic/IMG_0415.png" width=50% height=50%>
 
 06. Video Recommendation System
+<img src="pic/IMG_0416.png" width=50% height=50%>
+<img src="pic/IMG_0417.png" width=50% height=50%>
+<img src="pic/IMG_0418.png" width=50% height=50%>
+<img src="pic/IMG_0419.png" width=50% height=50%>
 
 07. Event Recommendation System
+<img src="pic/IMG_0420.png" width=50% height=50%>
+<img src="pic/IMG_0421.png" width=50% height=50%>
+<img src="pic/IMG_0422.png" width=50% height=50%>
 
 08. Ad Click Prediction on Social Platforms
+<img src="pic/IMG_0423.png" width=50% height=50%>
+<img src="pic/IMG_0424.png" width=50% height=50%>
+<img src="pic/IMG_0425.png" width=50% height=50%>
 
 09. Similar Listings on Vacation Rental Platforms
+<img src="pic/IMG_0426.png" width=50% height=50%>
+<img src="pic/IMG_0427.png" width=50% height=50%>
+<img src="pic/IMG_0428.png" width=50% height=50%>
+<img src="pic/IMG_0429.png" width=50% height=50%>
 
 10. Personalized News Feed
 
 <img src="pic/ml-newsfeed.png" width=50% height=50%>
+<img src="pic/IMG_0430.png" width=50% height=50%>
+<img src="pic/IMG_0431.png" width=50% height=50%>
+<img src="pic/IMG_0432.png" width=50% height=50%>
+<img src="pic/IMG_0433.png" width=50% height=50%>
+<img src="pic/IMG_0434.png" width=50% height=50%>
+<img src="pic/IMG_0436.png" width=50% height=50%>
 
 11. People You May Know
 
