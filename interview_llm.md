@@ -11,6 +11,8 @@ Understanding and Coding the Self-Attention Mechanism of Large Language Models F
     - [Pretraining-LLM](#pretraining-llm)
     - [Fine Tuning](#fine-tuning)
 
+<img src="pic/aien_0603.png" width=50% height=50%>
+
 ### LLMOps workflow
 - Data collection
 - Data preprocessing
