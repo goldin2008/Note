@@ -260,6 +260,62 @@ When a parameter in a test function matches the name of a function with the `@py
 When you want to write a fixture, write a function that generates the resource that’s used by multiple test functions. Add the `@pytest.fixture` decorator to the new function, and add the name of this function as a parameter for each test function that uses this resource. Your tests will be shorter and easier to write and maintain from that point forward.
 
 ## Scale AI
+Tell me a time you made a hard decision, talk about the trade off.
+Tell me a time you failed the project and need to redo it, and the hard work you did.
+What do you see yourself in 3 years?
+
+hiring manager问的behavior轮：问的以前最complex的项目，你的缺点等等
+
+Engineering manager screen - Behavioral screen ("tell me about the hardest project you've worked on", "tell me about a time you faced failure", "tell me the biggest impact you've had")
+
+第一轮系统设计题。外组abc小年轻，老大哥国人shadowing，体验不错。全程不为难你，让你顺着思路讲完。
+设计ml embedding classification system，他们公司就是做这个的，所以不难猜到。
+不需要提供ml的design，focus on pipeline，基本就是八股文: queue, redis, noSQL, batch processing之类的。
+
+1 play card game，有三轮，扑克游戏，52张扑克，属性是类别和数字，第一轮写出随机发牌后四个玩家手上的结果。第二轮四个玩家按照规则play，玩13轮，写出每轮play的结果，第三轮每轮按规则算分，算出每个玩家的总分。最后得出哪个玩家赢得游戏。手牌和每轮结果都是print出来的，所以并不需要考虑复杂的情况。
+这题提供了基础的card class和player class，需要写出play function还有game的逻辑。 题目本身没有涉及到算法，都是数据结构和数据处理。
+
+第一轮，60分钟写出一个卡牌游戏
+有三个sub problem
+有提供basic class 如 player 等等
+卡牌有两种属性，suit and rank，suit and rank都是string
+四人轮流抽牌，抽一张print 一句statement，最后sort和print 所有人手中的牌, 先按照suit, 再按照rank（2最小，A最大）
+轮流出牌，第一个人出什么suit，余下的人都要出那个suit（任何rank都可以），如果手上已经没有该suit的牌，就可以随意出。赢的人（该suit最大的牌）成为下一轮的出牌者。
+每次出牌都要print，例如：
+玩家 1 出 2s
+玩家 2 出 3s
+玩家 3 出 4s
+玩家 4 出 5c
+那么下一轮print的可能长这样：
+玩家 3 出 …
+玩家 4 出 …       
+玩家 1 出 …
+玩家 2 出 …
+算分，每一轮赢的人可得分，分数＝5* 多少张5 + 10*多少张10 or K
+每一轮print出谁赢了, 拿了多少分
+最后print 出每个人的分
+
+第一轮是个 OOP 的店面。 60 分钟，题目是 card game 。一上来给了 suit 和 rank 的定义，也给了 card, deck, player 的 class 。让写三个部分。
+第一部分是每个 player 轮流抽牌。
+第二部分是每个 player 轮流打牌。每个人出牌有一定的规则，每一轮还要比较谁赢了，并作为下一轮的 starter 。
+第三部分是算分。
+
+第三个part是在第二轮的游戏规则上计分的，winner可以把这一轮出了5、10、K牌所对应的点数都加进去，最后打印每个玩家的总得分，和得分最高的玩家
+
+具体问题就是给了六个rule，如果满足其中任意一个rule就是valid的hand。让你判断一个hand是不是valid。六个rule就是我们熟悉的德扑的rule：同花顺，顺子之类的。
+第二问：如果有大小王可以代表任意一个牌的话，怎么做。
+
+店面卡牌游戏： 第一轮实现轮流打牌 第二轮算每轮的赢家 第三轮计分
+
+最后面试官还说player的编号print出来要从1开始不能从0开始
+
+规则有变, 如果有同花顺怎么办, 如果有顺子怎么办, 如果有炸弹怎么办
+
+面试是一个类似桥牌游戏，已经写了Card，Deck，Player，要求implement三个部分。Deck可以draw可以shuffle
+第一部分要求一副牌发给4个玩家，每个玩家根据花色手牌排序
+第二部分每个玩家轮流按花色出牌 牌最大的下一轮先出
+第三部分计分，5 10 K是分 牌最大的得一轮的分 牌全出完算分最多的玩家
+
 OOD是经典卡牌题, 52张扑克牌，给定六条规则（类似于德扑里同花顺、顺子的规则），如果一个手牌（hand）符合其中任意一条规则，就返回True，不valid的情况返回False。Followup是如果有wildcard怎么办。
 
 开始coding 一样也是52张卡但是game像UNO，那么在一小时内完成会给你的CARD 和 DECK 的classes。
@@ -269,12 +325,29 @@ OOD是经典卡牌题, 52张扑克牌，给定六条规则（类似于德扑里�
 Use OOP to code aspects of a poker game. The functions should check for poker patterns like flush, straight, full house, 4-of-a-kind, etc. Input is a list of cards and output is a boolean whether there is a pattern or not. The follow-up is to modify the functions to consider the Joker a wildcard. The wildcard can be used to match any rank and suit.
 part of the problem is checking if the hand has 5 cards. So, the hand may have any number but if the hand does not have 5 cards, it should return False immediately.
 
+Given already set-up code structure(card, hand class)
+Uses python enum
+Need to sort
+Calculate max
+Another card game:(OOP)
+First need to generate 52 cards, 13 ranks in each of the four suits: clubs (♣), diamonds (♦), hearts (♥) and spades (♠), then implement draw cards function and shuffle function。Then create 2 Play/Hand, each player gets 5 cards from the deck, then 2 players compares with each other using their biggest card，who is bigger who wins, otherwise tie
+
 地里提过的card game
 有已经setup的code structrue (card, hand class)
 用到了python enum
 需要sort
 计算max
 
+1. 给一个Card的class，里面有rank和suit。实现一个方法提供5个cards，判断是否符合德扑的一些规则（有6个）。如果符合return True，else return false
+2. 手牌里可以有任意数量的JOKER牌，JOKER牌可以当作wildcard，可以当作任意rank和suit。返回是否valid。2的method同样也要能过1的test cases。
+3. 提供两个人的手牌比大小，提供德扑各种rule的顺序。
+
+还是扑克牌，五张牌，写 checker，用德扑的规则判断是不是 valid，followup 是 joker 当 wild card, 而且wildcard是任意数量
+就是牌里如果有joker的话，joker就是万能牌，然后看能不能组成一个valid hand. 手牌是5张
+
+一种纸牌游戏的模拟，玩家轮流出牌、比较牌面大小以决定每轮胜者。游戏要进行13轮。
+
+首先要生成52张牌，13 ranks in each of the four suits: clubs (♣), diamonds (♦), hearts (♥) and spades (♠) 然后实现抽牌函数 (draw) 以及洗牌函数 (shuffle)。之后，创建2个Player/Hand，每个player从牌堆里抽5张牌，然后2个人用手里牌最大的比，谁更大谁就赢，如果一样就是平局。
 
 ## Meta (2021.12 ~ Now)
 8, 987, 133, 1091, 270, 958, 227, 314, 680, 1650, 1762, 1446, 1249, 71, 528, 65, 347, 791, 408, 680, 528, 938, 1249, 4, 1382, 121, 987, 622, 66, 227, 16, 791, 88, 23, 228, 766, 560, 605, 282, 1650, 215, 1249, 523, 938, 23, 1249, 162, 20, 1249, 42, 380, 14, 219, 451, 227, 1762, 50, 31, 138, 987, 162, 560, 314, 987, 528, 1249, 162, 236, 34, 1762, 215, 415, 605, 494, 282, 209, 47, 270, 42, 1249, 938, 88, 211, 939, 963, 1004, 127, 56, 34, 224,
