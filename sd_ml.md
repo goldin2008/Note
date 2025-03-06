@@ -69,13 +69,23 @@ This discussion focuses on the interviewee’s ability to solve an end-to-end ma
 
 2. Gmail Smart Compose
 
+
+
 3. Google Translate
+
+
 
 4. ChatGPT: Personal Assistant Chatbot
 
+
+
 5. Image Captioning
 
+
+
 6. Retrieval-Augmented Generation
+
+
 
 7. Realistic Face Generation
 
