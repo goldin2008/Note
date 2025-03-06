@@ -82,20 +82,53 @@ This discussion focuses on the interviewee’s ability to solve an end-to-end ma
 <img src="pic/IMG_0451.png" width=50% height=50%>
 
 3. Google Translate
+<img src="pic/IMG_0452.png" width=50% height=50%>
+<img src="pic/IMG_0453.png" width=50% height=50%>
+<img src="pic/IMG_0454.png" width=50% height=50%>
+<img src="pic/IMG_0455.png" width=50% height=50%>
+<img src="pic/IMG_0456.png" width=50% height=50%>
+<img src="pic/IMG_0457.png" width=50% height=50%>
+<img src="pic/IMG_0458.png" width=50% height=50%>
+<img src="pic/IMG_0459.png" width=50% height=50%>
+<img src="pic/IMG_0460.png" width=50% height=50%>
+<img src="pic/IMG_0461.png" width=50% height=50%>
+<img src="pic/IMG_0462.png" width=50% height=50%>
+<img src="pic/IMG_0463.png" width=50% height=50%>
+<img src="pic/IMG_0464.png" width=50% height=50%>
+<img src="pic/IMG_0465.png" width=50% height=50%>
 
-
+<img src="pic/IMG_0488.png" width=50% height=50%>
+<img src="pic/IMG_0489.png" width=50% height=50%>
+<img src="pic/IMG_0490.png" width=50% height=50%>
+<img src="pic/IMG_0491.png" width=50% height=50%>
+<img src="pic/IMG_0492.png" width=50% height=50%>
 
 4. ChatGPT: Personal Assistant Chatbot
-
-
+<img src="pic/IMG_0466.png" width=50% height=50%>
+<img src="pic/IMG_0467.png" width=50% height=50%>
+<img src="pic/IMG_0468.png" width=50% height=50%>
+<img src="pic/IMG_0469.png" width=50% height=50%>
+<img src="pic/IMG_0470.png" width=50% height=50%>
+<img src="pic/IMG_0471.png" width=50% height=50%>
+<img src="pic/IMG_0472.png" width=50% height=50%>
+<img src="pic/IMG_0473.png" width=50% height=50%>
+<img src="pic/IMG_0474.png" width=50% height=50%>
+<img src="pic/IMG_0475.png" width=50% height=50%>
 
 5. Image Captioning
-
-
+<img src="pic/IMG_0476.png" width=50% height=50%>
+<img src="pic/IMG_0477.png" width=50% height=50%>
+<img src="pic/IMG_0478.png" width=50% height=50%>
+<img src="pic/IMG_0479.png" width=50% height=50%>
+<img src="pic/IMG_0480.png" width=50% height=50%>
+<img src="pic/IMG_0481.png" width=50% height=50%>
 
 6. Retrieval-Augmented Generation
-
-
+<img src="pic/IMG_0482.png" width=50% height=50%>
+<img src="pic/IMG_0483.png" width=50% height=50%>
+<img src="pic/IMG_0484.png" width=50% height=50%>
+<img src="pic/IMG_0485.png" width=50% height=50%>
+<img src="pic/IMG_0486.png" width=50% height=50%>
 
 7. Realistic Face Generation
 
