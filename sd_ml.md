@@ -68,8 +68,18 @@ This discussion focuses on the interviewee’s ability to solve an end-to-end ma
 1. Introduction and Overview
 
 2. Gmail Smart Compose
-
-
+<img src="pic/IMG_0440.png" width=50% height=50%>
+<img src="pic/IMG_0441.png" width=50% height=50%>
+<img src="pic/IMG_0442.png" width=50% height=50%>
+<img src="pic/IMG_0443.png" width=50% height=50%>
+<img src="pic/IMG_0444.png" width=50% height=50%>
+<img src="pic/IMG_0445.png" width=50% height=50%>
+<img src="pic/IMG_0446.png" width=50% height=50%>
+<img src="pic/IMG_0447.png" width=50% height=50%>
+<img src="pic/IMG_0448.png" width=50% height=50%>
+<img src="pic/IMG_0449.png" width=50% height=50%>
+<img src="pic/IMG_0450.png" width=50% height=50%>
+<img src="pic/IMG_0451.png" width=50% height=50%>
 
 3. Google Translate
 
