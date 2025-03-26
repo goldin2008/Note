@@ -420,10 +420,100 @@ III的最佳解法应该是state machine，IV也是适用的， 只要保证每�
 第二题用MDP
 
 
+面试官年轻白人小哥刚毕业一年，面试体验很舒服，面试官友善氛围轻松
+一共一小时，一道智力，两道算法，五道bq，一个小时很充实。不过因为题量大算法题没让写代码，口述每一步详细做什么，数据结构和时间空间复杂度
+1. 自我介绍
+2. N marbles, 每次只能秤两个石子，每个石子的重量都不一样，最少需要称多少次，答案N-1
+  a. 想法一：拿两个石子称一次，取最重的和下一个称
+  b. 想法二：binary search，每两个称一次，取最重的下一轮称，N/2+N/4+N/8+… = N-1
+  c. 想法三：每个石子是在一个有向图里的，每称一个新的石子相当于创建一个edge放进有向图里面，需要把所有石子连起来至少要N-1个edge
+3. 一个国际象棋棋盘，骑士从一个角落走到对面角落，刚好20步时到达，有多少条路径
+  a. 想法一：用BFS或者dijkstra，浪费branch因为可以往回走，重复了
+  b. 想法二：用dp记录每个格子有几种走法，循环20次
+4. 如果有一个数据结构，你需要能够查询最近输入的k个数字里最大的一个，怎么设计
+  a. 单调递减队列题型，用大小不超过k的deque储存，力扣耳叁玖变体，这道题正好之前狗家面过，感觉算高频题量
+5. 描述一个你认为很有意思的项目和你采取的design decision
+6. 说一个你需要改变交流方式跟别人合作的情况
+7. 讲一个和合作者有分歧并且解决的情况
+8. 说一个你浪费了很多时间但是事后发现不值得的情况，和你下一次会怎么做
+9. 描述一个你上课学到的概念
+
+D E shaw 面经， 连续两小轮共两小时（之前没有电面）是第一轮
+估计是挂了，因为本来约的是10-13.30，结果12点过后hr和我说面完了，估计是不通过所以没有下午那一轮了
+第一小轮：  面试官感觉是ABC，是做quant的（这家好像quant和software的面试题接近）
+BQ
+技术题目： 1.   给一个数组values和对应的weight，问weighted median是多少
+我问weighted median定义是啥，他让我自己定义。所以只能自己YY一个
+我用了排序方法解出来了，然后他问我能不能不排序
+2. 请证明需要多少次比较才能从N个数中找出最大数
+我说N-1，并且证明了上限是N-1次
+他问我能不能证明下限是小于N-1还是也是N-1，我想了半天只能说下限应该也是N-1次，但不会证
+第二小轮：  印度人面试官，没啥口音，也是做quant的
+BQ
+技术题目（全口述）： 1.  8*8国际象棋棋盘，马从左下走到右上有多少种走法，最多20步
+这题不能直接用bfs，因为走法允许反复到达一个点，
+而直接搜索的复杂度是指数级的
+我想到用dp，在面试官的提醒下，我考虑到把走了多少步也纳入状态，即dp[x][y][k]，做出来了
+然后面试官问我能不能再优化循环次数（本来的是8*8*20*8），他提示了可以用对称性
+答案是把k从1-20优化到1-10，然后用对称性去计算答案（循环次数应该是8*8*10*8）
+就是 res = sum ( dp[i][j][10] * dp[7- i][7-j][10] ) over (i,j)吧， 这样只用计算O(8 * 8 * 10 * 8).
+就是走日的，国际象棋的knight，中国象棋的马
+2.  （非技术题）如果你要投资一些检测疾病的试纸，请问你会问关于这些疾病的什么问题，去决定你怎么投资
+他提示我可以用消费者角度考虑，我说的是  严重而且不明显的疾病，消费者会倾向于购买
+总结：   D E shaw面试难度挺大的，而且会问很多证明，给我的感觉更像《算法导论》而不是leetcode，需要你想办法优化一切可能性，而不仅仅是时间空间复杂度
+
+
 ## Bloomberg
+ML SDE电面，先聊聊做过的ML project，问的挺细的，需要自己准备准备。
+然后大概30mins问ML的问题，问我什么是supervised/unsupervised learning，举几个例子。然后问我logistics regression，问的很细。。要写cost function，然后怎么optimize求parameter，一直要写公式，中间还问我什么是EM和cross entropy，GG了。。
+后面小半个小时coding，利口要斯留原题。
+
+有一陣子很常在LinkedIn上看到的職缺 Bloomberg Law Senior machine Learning Engineer
+網投後大概一週收到HR面，一週後接著電面，再一週通知reject
+1. HR面
+大概問了一下Why Bloomberg跟Do you know Bloomberg Law，樓主算是在相關產業工作所以跟hr聊了5mins就直接安排下一輪電面了
+2. 電面
+ML輪，問了非常多NLP / ML / DL / Resume 的細節
+Random chat
+1. Why BB Law? What’s your interest?
+2. What’s the most recent paper you read and like the most?
+Resume / ML Chat
+1. Describe your most recent project in very high-level statement
+2. How do you explore your dataset? Which dataset are you working on?
+3. How do you pre-process / clean the dataset?
+4. How do you build the vocabulary set?
+5. What's the word vector? How do you use the embedding?
+6. Why do you choose the model you mentioned (LSTM-CRF)?
+7. What's a sequential model?
+8. What’s LSTM? Can you explain that a bit? What problem is solved?
+9. What problem still exists in LSTM compare to vanilla RNN?
+10. How do you do model evaluation?
+11. What metrics do you choose to evaluate the model, name a few (accuracy, F1-score, ......)
+12. How do you compare / testing the results in unseen dataset, while you don’t have labels?
+13. How do you retrain the model in production?
+
+HR在linkedin上勾搭。2轮店面，4轮onsite。
+店面第一轮：过了一遍简历，问了一些基础的BERT问题。
+店面第二轮：不是LC题目，implement a tokenizer，需要识别alphanumeric, whitespace和punctuation。code中提供了判别alphanumeric和whitespace和punctuation的API。
+onsite第一轮：ML design，从文件中识别出法律条款并且linking，基础的NER和entity resolution问题，还问了如何获取labeled data。
+onsite第二轮：现场load一个dataset，用的pandas，需要对数据进行处理，比如说处理label，解决imbalance的问题，解决missing feature的问题，建议提前熟悉下pandas语法，可以google。
+onsite第三轮：Senior HM 聊天，过简历
+onsite第四轮：HM和tech lead聊天，过简历
+
 
 
 ## Intuit
+技术面半小时讲之前做过的项目，从model choice到data pipeline还有deployment都问了。 剩余半小时coding，力扣LRU原题。整体不算太难，能讲清思路就好
+我看DS店面和你的MLE还蛮像的：
+“The first 30 mins is dedicated to  learning about you (relevant experience, projects, etc.) and asking general ML questions which may include fundamental topics such as data sampling, modeling approaches, pros/cons of algorithms, cross-validation, etc. The last 30 minutes is a live coding session, which usually includes a focus on core Python data structures or data manipulation (arrays, dictionaries, Pandas, Numpy, etc.)“
+
+leetcode 124， 一道题
+
+利口咬吴起菱 follow up是1. 写一个unit test 2: How about the corner cases? 3. How should you design the API to handle the corner cases?
+剩下的时间聊一个机器学习的算法，如何实现以及loss function
+
+第三轮：过简历+coding，数据流中求median的问题，以及内存不够怎么处理。写出了第一问，内部不够的问题没有答好
+第四轮：machine learning，讲两个最熟悉的算法，然后比较。还有一个product 问题，如何从银行流水中判断哪些是personal transaction，哪些是busineess transaction
 
 
 ## DataDog
