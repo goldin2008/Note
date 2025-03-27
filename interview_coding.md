@@ -259,106 +259,51 @@ from survey import AnonymousSurvey
 When a parameter in a test function matches the name of a function with the `@pytest.fixture` decorator, the fixture will be run automatically and the return value will be passed to the test function. In this example, the function `language_survey()` supplies both `test_store_single_response()` and `test_store_three_responses()` with a language_survey instance.
 When you want to write a fixture, write a function that generates the resource that’s used by multiple test functions. Add the `@pytest.fixture` decorator to the new function, and add the name of this function as a parameter for each test function that uses this resource. Your tests will be shorter and easier to write and maintain from that point forward.
 
-## Scale AI
-Tell me a time you made a hard decision, talk about the trade off.
-Tell me a time you failed the project and need to redo it, and the hard work you did.
-What do you see yourself in 3 years?
 
-hiring manager问的behavior轮：问的以前最complex的项目，你的缺点等等
-
-Engineering manager screen - Behavioral screen ("tell me about the hardest project you've worked on", "tell me about a time you faced failure", "tell me the biggest impact you've had")
-
-第一轮系统设计题。外组abc小年轻，老大哥国人shadowing，体验不错。全程不为难你，让你顺着思路讲完。
-设计ml embedding classification system，他们公司就是做这个的，所以不难猜到。
-不需要提供ml的design，focus on pipeline，基本就是八股文: queue, redis, noSQL, batch processing之类的。
-
-
-`1 play card game，有三轮，扑克游戏，52张扑克，属性是类别和数字，第一轮写出随机发牌后四个玩家手上的结果。第二轮四个玩家按照规则play，玩13轮，写出每轮play的结果，第三轮每轮按规则算分，算出每个玩家的总分。最后得出哪个玩家赢得游戏。手牌和每轮结果都是print出来的，所以并不需要考虑复杂的情况。
-这题提供了基础的card class和player class，需要写出play function还有game的逻辑。 题目本身没有涉及到算法，都是数据结构和数据处理。
-
-第一轮，60分钟写出一个卡牌游戏
-有三个sub problem
-有提供basic class 如 player 等等
-卡牌有两种属性，suit and rank，suit and rank都是string
-四人轮流抽牌，抽一张print 一句statement，最后sort和print 所有人手中的牌, 先按照suit, 再按照rank（2最小，A最大）
-轮流出牌，第一个人出什么suit，余下的人都要出那个suit（任何rank都可以），如果手上已经没有该suit的牌，就可以随意出。赢的人（该suit最大的牌）成为下一轮的出牌者。
-每次出牌都要print，例如：
-玩家 1 出 2s
-玩家 2 出 3s
-玩家 3 出 4s
-玩家 4 出 5c
-那么下一轮print的可能长这样：
-玩家 3 出 …
-玩家 4 出 …       
-玩家 1 出 …
-玩家 2 出 …
-算分，每一轮赢的人可得分，分数＝5* 多少张5 + 10*多少张10 or K
-每一轮print出谁赢了, 拿了多少分
-最后print 出每个人的分
-
-第一轮是个 OOP 的店面。 60 分钟，题目是 card game 。一上来给了 suit 和 rank 的定义，也给了 card, deck, player 的 class 。让写三个部分。
-第一部分是每个 player 轮流抽牌。
-第二部分是每个 player 轮流打牌。每个人出牌有一定的规则，每一轮还要比较谁赢了，并作为下一轮的 starter 。
-第三部分是算分。
-
-第三个part是在第二轮的游戏规则上计分的，winner可以把这一轮出了5、10、K牌所对应的点数都加进去，最后打印每个玩家的总得分，和得分最高的玩家
-
-店面卡牌游戏： 第一轮实现轮流打牌 第二轮算每轮的赢家 第三轮计分
-最后面试官还说player的编号print出来要从1开始不能从0开始
-
-面试是一个类似桥牌游戏，已经写了Card，Deck，Player，要求implement三个部分。Deck可以draw可以shuffle
-第一部分要求一副牌发给4个玩家，每个玩家根据花色手牌排序
-第二部分每个玩家轮流按花色出牌 牌最大的下一轮先出
-第三部分计分，5 10 K是分 牌最大的得一轮的分 牌全出完算分最多的玩家
-
-开始coding 一样也是52张卡但是game像UNO，那么在一小时内完成会给你的CARD 和 DECK 的classes。
-一开始给你4个玩家，每个玩家可以分到 X牌，然后需要整理卡的 RANK 和SUIT顺序。
-游戏开始会deck出random一张牌，然后每个玩家会照一个指定的顺序打出一样 RANK/SUIT的 combination牌。打出的牌的RANK+SUIT 也有分数需要统计。没有相对的牌需要从DECK抽进HAND里。一旦一个人打完整个牌游戏结束。最后算出赢家。
-
-一种纸牌游戏的模拟，玩家轮流出牌、比较牌面大小以决定每轮胜者。游戏要进行13轮。
-`
-
-
-`具体问题就是给了六个rule，如果满足其中任意一个rule就是valid的hand。让你判断一个hand是不是valid。六个rule就是我们熟悉的德扑的rule：同花顺，顺子之类的。
-第二问：如果有大小王可以代表任意一个牌的话，怎么做。
-
-规则有变, 如果有同花顺怎么办, 如果有顺子怎么办, 如果有炸弹怎么办
-
-OOD是经典卡牌题, 52张扑克牌，给定六条规则（类似于德扑里同花顺、顺子的规则），如果一个手牌（hand）符合其中任意一条规则，就返回True，不valid的情况返回False。Followup是如果有wildcard怎么办。
-
-Use OOP to code aspects of a poker game. The functions should check for poker patterns like flush, straight, full house, 4-of-a-kind, etc. Input is a list of cards and output is a boolean whether there is a pattern or not. The follow-up is to modify the functions to consider the Joker a wildcard. The wildcard can be used to match any rank and suit.
-part of the problem is checking if the hand has 5 cards. So, the hand may have any number but if the hand does not have 5 cards, it should return False immediately.
-
-1. 给一个Card的class，里面有rank和suit。实现一个方法提供5个cards，判断是否符合德扑的一些规则（有6个）。如果符合return True，else return false
-2. 手牌里可以有任意数量的JOKER牌，JOKER牌可以当作wildcard，可以当作任意rank和suit。返回是否valid。2的method同样也要能过1的test cases。
-3. 提供两个人的手牌比大小，提供德扑各种rule的顺序。
-
-还是扑克牌，五张牌，写 checker，用德扑的规则判断是不是 valid，followup 是 joker 当 wild card, 而且wildcard是任意数量
-就是牌里如果有joker的话，joker就是万能牌，然后看能不能组成一个valid hand. 手牌是5张
-`
-
-Given already set-up code structure(card, hand class)
-Uses python enum
-Need to sort
-Calculate max
-Another card game:(OOP)
-First need to generate 52 cards, 13 ranks in each of the four suits: clubs (♣), diamonds (♦), hearts (♥) and spades (♠), then implement draw cards function and shuffle function。Then create 2 Play/Hand, each player gets 5 cards from the deck, then 2 players compares with each other using their biggest card，who is bigger who wins, otherwise tie
-
-地里提过的card game
-有已经setup的code structrue (card, hand class)
-用到了python enum
-需要sort
-计算max
-
-首先要生成52张牌，13 ranks in each of the four suits: clubs (♣), diamonds (♦), hearts (♥) and spades (♠) 然后实现抽牌函数 (draw) 以及洗牌函数 (shuffle)。之后，创建2个Player/Hand，每个player从牌堆里抽5张牌，然后2个人用手里牌最大的比，谁更大谁就赢，如果一样就是平局。
+## Google
 
 ## Meta
 
 
 ## Amazon
+- Example: # Question: Given an array of numbers a and another array of numbers b, # find k nearest elements from a for each element in b. # a = [1, 2, 10, 100, 102, 205] # b = [3, 80] # k = 2 # output = [[1,2], [100, 102]]
 
+## Bloomberg
+ML SDE电面，先聊聊做过的ML project，问的挺细的，需要自己准备准备。
+然后大概30mins问ML的问题，问我什么是supervised/unsupervised learning，举几个例子。然后问我logistics regression，问的很细。。要写cost function，然后怎么optimize求parameter，一直要写公式，中间还问我什么是EM和cross entropy，GG了。。
+后面小半个小时coding，利口要斯留原题。
 
-## Google
+有一陣子很常在LinkedIn上看到的職缺 Bloomberg Law Senior machine Learning Engineer
+網投後大概一週收到HR面，一週後接著電面，再一週通知reject
+1. HR面
+大概問了一下Why Bloomberg跟Do you know Bloomberg Law，樓主算是在相關產業工作所以跟hr聊了5mins就直接安排下一輪電面了
+2. 電面
+ML輪，問了非常多NLP / ML / DL / Resume 的細節
+Random chat
+1. Why BB Law? What’s your interest?
+2. What’s the most recent paper you read and like the most?
+Resume / ML Chat
+1. Describe your most recent project in very high-level statement
+2. How do you explore your dataset? Which dataset are you working on?
+3. How do you pre-process / clean the dataset?
+4. How do you build the vocabulary set?
+5. What's the word vector? How do you use the embedding?
+6. Why do you choose the model you mentioned (LSTM-CRF)?
+7. What's a sequential model?
+8. What’s LSTM? Can you explain that a bit? What problem is solved?
+9. What problem still exists in LSTM compare to vanilla RNN?
+10. How do you do model evaluation?
+11. What metrics do you choose to evaluate the model, name a few (accuracy, F1-score, ......)
+12. How do you compare / testing the results in unseen dataset, while you don’t have labels?
+13. How do you retrain the model in production?
+
+HR在linkedin上勾搭。2轮店面，4轮onsite。
+店面第一轮：过了一遍简历，问了一些基础的BERT问题。
+店面第二轮：不是LC题目，implement a tokenizer，需要识别alphanumeric, whitespace和punctuation。code中提供了判别alphanumeric和whitespace和punctuation的API。
+onsite第一轮：ML design，从文件中识别出法律条款并且linking，基础的NER和entity resolution问题，还问了如何获取labeled data。
+onsite第二轮：现场load一个dataset，用的pandas，需要对数据进行处理，比如说处理label，解决imbalance的问题，解决missing feature的问题，建议提前熟悉下pandas语法，可以google。
+onsite第三轮：Senior HM 聊天，过简历
+onsite第四轮：HM和tech lead聊天，过简历
 
 
 ## DE Shaw
@@ -463,42 +408,6 @@ BQ
 他提示我可以用消费者角度考虑，我说的是  严重而且不明显的疾病，消费者会倾向于购买
 总结：   D E shaw面试难度挺大的，而且会问很多证明，给我的感觉更像《算法导论》而不是leetcode，需要你想办法优化一切可能性，而不仅仅是时间空间复杂度
 
-## Bloomberg
-ML SDE电面，先聊聊做过的ML project，问的挺细的，需要自己准备准备。
-然后大概30mins问ML的问题，问我什么是supervised/unsupervised learning，举几个例子。然后问我logistics regression，问的很细。。要写cost function，然后怎么optimize求parameter，一直要写公式，中间还问我什么是EM和cross entropy，GG了。。
-后面小半个小时coding，利口要斯留原题。
-
-有一陣子很常在LinkedIn上看到的職缺 Bloomberg Law Senior machine Learning Engineer
-網投後大概一週收到HR面，一週後接著電面，再一週通知reject
-1. HR面
-大概問了一下Why Bloomberg跟Do you know Bloomberg Law，樓主算是在相關產業工作所以跟hr聊了5mins就直接安排下一輪電面了
-2. 電面
-ML輪，問了非常多NLP / ML / DL / Resume 的細節
-Random chat
-1. Why BB Law? What’s your interest?
-2. What’s the most recent paper you read and like the most?
-Resume / ML Chat
-1. Describe your most recent project in very high-level statement
-2. How do you explore your dataset? Which dataset are you working on?
-3. How do you pre-process / clean the dataset?
-4. How do you build the vocabulary set?
-5. What's the word vector? How do you use the embedding?
-6. Why do you choose the model you mentioned (LSTM-CRF)?
-7. What's a sequential model?
-8. What’s LSTM? Can you explain that a bit? What problem is solved?
-9. What problem still exists in LSTM compare to vanilla RNN?
-10. How do you do model evaluation?
-11. What metrics do you choose to evaluate the model, name a few (accuracy, F1-score, ......)
-12. How do you compare / testing the results in unseen dataset, while you don’t have labels?
-13. How do you retrain the model in production?
-
-HR在linkedin上勾搭。2轮店面，4轮onsite。
-店面第一轮：过了一遍简历，问了一些基础的BERT问题。
-店面第二轮：不是LC题目，implement a tokenizer，需要识别alphanumeric, whitespace和punctuation。code中提供了判别alphanumeric和whitespace和punctuation的API。
-onsite第一轮：ML design，从文件中识别出法律条款并且linking，基础的NER和entity resolution问题，还问了如何获取labeled data。
-onsite第二轮：现场load一个dataset，用的pandas，需要对数据进行处理，比如说处理label，解决imbalance的问题，解决missing feature的问题，建议提前熟悉下pandas语法，可以google。
-onsite第三轮：Senior HM 聊天，过简历
-onsite第四轮：HM和tech lead聊天，过简历
 
 
 
@@ -849,3 +758,96 @@ coding 两题：
 感觉题都做出来了，聊得还算愉快，并没有冷场或者什么的，但两个小时后收到拒信。
 之前看面经说，这家可以给feedback的，然而我问了recruiter，说不给specific feedback，说综合了两轮考虑，不要。
 第二题求有环有向图最大路径，不确定是否存在正环的算法是spfa。就是写个bfs，记录一个访问过点的最大路径值，如果比之前的大，重新进queue，还得记录一个每个点被更新的次数，如果超过n-1次，则说明有正环，跳出。
+
+## Scale AI
+Tell me a time you made a hard decision, talk about the trade off.
+Tell me a time you failed the project and need to redo it, and the hard work you did.
+What do you see yourself in 3 years?
+
+hiring manager问的behavior轮：问的以前最complex的项目，你的缺点等等
+
+Engineering manager screen - Behavioral screen ("tell me about the hardest project you've worked on", "tell me about a time you faced failure", "tell me the biggest impact you've had")
+
+第一轮系统设计题。外组abc小年轻，老大哥国人shadowing，体验不错。全程不为难你，让你顺着思路讲完。
+设计ml embedding classification system，他们公司就是做这个的，所以不难猜到。
+不需要提供ml的design，focus on pipeline，基本就是八股文: queue, redis, noSQL, batch processing之类的。
+
+
+`1 play card game，有三轮，扑克游戏，52张扑克，属性是类别和数字，第一轮写出随机发牌后四个玩家手上的结果。第二轮四个玩家按照规则play，玩13轮，写出每轮play的结果，第三轮每轮按规则算分，算出每个玩家的总分。最后得出哪个玩家赢得游戏。手牌和每轮结果都是print出来的，所以并不需要考虑复杂的情况。
+这题提供了基础的card class和player class，需要写出play function还有game的逻辑。 题目本身没有涉及到算法，都是数据结构和数据处理。
+
+第一轮，60分钟写出一个卡牌游戏
+有三个sub problem
+有提供basic class 如 player 等等
+卡牌有两种属性，suit and rank，suit and rank都是string
+四人轮流抽牌，抽一张print 一句statement，最后sort和print 所有人手中的牌, 先按照suit, 再按照rank（2最小，A最大）
+轮流出牌，第一个人出什么suit，余下的人都要出那个suit（任何rank都可以），如果手上已经没有该suit的牌，就可以随意出。赢的人（该suit最大的牌）成为下一轮的出牌者。
+每次出牌都要print，例如：
+玩家 1 出 2s
+玩家 2 出 3s
+玩家 3 出 4s
+玩家 4 出 5c
+那么下一轮print的可能长这样：
+玩家 3 出 …
+玩家 4 出 …       
+玩家 1 出 …
+玩家 2 出 …
+算分，每一轮赢的人可得分，分数＝5* 多少张5 + 10*多少张10 or K
+每一轮print出谁赢了, 拿了多少分
+最后print 出每个人的分
+
+第一轮是个 OOP 的店面。 60 分钟，题目是 card game 。一上来给了 suit 和 rank 的定义，也给了 card, deck, player 的 class 。让写三个部分。
+第一部分是每个 player 轮流抽牌。
+第二部分是每个 player 轮流打牌。每个人出牌有一定的规则，每一轮还要比较谁赢了，并作为下一轮的 starter 。
+第三部分是算分。
+
+第三个part是在第二轮的游戏规则上计分的，winner可以把这一轮出了5、10、K牌所对应的点数都加进去，最后打印每个玩家的总得分，和得分最高的玩家
+
+店面卡牌游戏： 第一轮实现轮流打牌 第二轮算每轮的赢家 第三轮计分
+最后面试官还说player的编号print出来要从1开始不能从0开始
+
+面试是一个类似桥牌游戏，已经写了Card，Deck，Player，要求implement三个部分。Deck可以draw可以shuffle
+第一部分要求一副牌发给4个玩家，每个玩家根据花色手牌排序
+第二部分每个玩家轮流按花色出牌 牌最大的下一轮先出
+第三部分计分，5 10 K是分 牌最大的得一轮的分 牌全出完算分最多的玩家
+
+开始coding 一样也是52张卡但是game像UNO，那么在一小时内完成会给你的CARD 和 DECK 的classes。
+一开始给你4个玩家，每个玩家可以分到 X牌，然后需要整理卡的 RANK 和SUIT顺序。
+游戏开始会deck出random一张牌，然后每个玩家会照一个指定的顺序打出一样 RANK/SUIT的 combination牌。打出的牌的RANK+SUIT 也有分数需要统计。没有相对的牌需要从DECK抽进HAND里。一旦一个人打完整个牌游戏结束。最后算出赢家。
+
+一种纸牌游戏的模拟，玩家轮流出牌、比较牌面大小以决定每轮胜者。游戏要进行13轮。
+`
+
+
+`具体问题就是给了六个rule，如果满足其中任意一个rule就是valid的hand。让你判断一个hand是不是valid。六个rule就是我们熟悉的德扑的rule：同花顺，顺子之类的。
+第二问：如果有大小王可以代表任意一个牌的话，怎么做。
+
+规则有变, 如果有同花顺怎么办, 如果有顺子怎么办, 如果有炸弹怎么办
+
+OOD是经典卡牌题, 52张扑克牌，给定六条规则（类似于德扑里同花顺、顺子的规则），如果一个手牌（hand）符合其中任意一条规则，就返回True，不valid的情况返回False。Followup是如果有wildcard怎么办。
+
+Use OOP to code aspects of a poker game. The functions should check for poker patterns like flush, straight, full house, 4-of-a-kind, etc. Input is a list of cards and output is a boolean whether there is a pattern or not. The follow-up is to modify the functions to consider the Joker a wildcard. The wildcard can be used to match any rank and suit.
+part of the problem is checking if the hand has 5 cards. So, the hand may have any number but if the hand does not have 5 cards, it should return False immediately.
+
+1. 给一个Card的class，里面有rank和suit。实现一个方法提供5个cards，判断是否符合德扑的一些规则（有6个）。如果符合return True，else return false
+2. 手牌里可以有任意数量的JOKER牌，JOKER牌可以当作wildcard，可以当作任意rank和suit。返回是否valid。2的method同样也要能过1的test cases。
+3. 提供两个人的手牌比大小，提供德扑各种rule的顺序。
+
+还是扑克牌，五张牌，写 checker，用德扑的规则判断是不是 valid，followup 是 joker 当 wild card, 而且wildcard是任意数量
+就是牌里如果有joker的话，joker就是万能牌，然后看能不能组成一个valid hand. 手牌是5张
+`
+
+Given already set-up code structure(card, hand class)
+Uses python enum
+Need to sort
+Calculate max
+Another card game:(OOP)
+First need to generate 52 cards, 13 ranks in each of the four suits: clubs (♣), diamonds (♦), hearts (♥) and spades (♠), then implement draw cards function and shuffle function。Then create 2 Play/Hand, each player gets 5 cards from the deck, then 2 players compares with each other using their biggest card，who is bigger who wins, otherwise tie
+
+地里提过的card game
+有已经setup的code structrue (card, hand class)
+用到了python enum
+需要sort
+计算max
+
+首先要生成52张牌，13 ranks in each of the four suits: clubs (♣), diamonds (♦), hearts (♥) and spades (♠) 然后实现抽牌函数 (draw) 以及洗牌函数 (shuffle)。之后，创建2个Player/Hand，每个player从牌堆里抽5张牌，然后2个人用手里牌最大的比，谁更大谁就赢，如果一样就是平局。
