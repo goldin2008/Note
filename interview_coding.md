@@ -279,8 +279,9 @@ https://leetcode.com/discuss/post/125301/find-longest-consecutive-path-in-a-matr
 346-follow up：deque是static data structure还是dynamic，what if two threads call this at same time
 162- no n[i]!=n[i+1] assumption, no need strictly greater than
 follow up: what if we need to do strictly greater than, can you still use binary search?
-125, 1249   133, 给两个list of interval，两个都sort过了，把两个merge起来 https://leetcode.com/discuss/post/124616/facebook-merge-two-interval-lists-by-eva-th6a/
-1249, 415    339, 973     528, 270    1004,         938, 71
+125, 1249   133, 给两个list of interval，两个都sort过了，把两个merge起来
+https://leetcode.com/discuss/post/124616/facebook-merge-two-interval-lists-by-eva-th6a/
+1249, 415    339, 973     528, 270    1004,         938, 71     938, 复杂版56（双列）  415,139变形
 打印矩阵对角线
 给定一个整数矩阵，按从 右上到左下 的方向打印其对角线上的值。每条对角线都向 左下 方向移动。每条对角线的输出之间应有换行。[[1,  2,  3,  4],
 [5,  6,  7,  8],
@@ -300,6 +301,34 @@ W = 工作日（Workday）
 你可以最大化的假期长度为 5 天。[W, H, H, W, W, H, W]
     P  P
 1  2  3  4  5
+极简版伊斯刘146，只需要建一个class，可以get，put，remove不要求复杂度
+528 follow-up有没有更快的方法sample
+703 Variant get the larget nubmer from a data stream (call an API) where the the order is messed for at most K steps -> heap
+Create a generator to return in order from a BST -> in order traversal with stack
+第一题是给一个string类似 139依散酒的变形
+s = "catanddog"
+复制代码
+和一个list of str作为dictionary,
+d = ["cat", "and", "dog"]
+复制代码
+，问
+s
+复制代码
+是否能够由
+d
+复制代码
+中的单词表示，可以无限用。总感觉是lc的题，但没搜到，有知道的大神欢迎补充。交流了几种方法，后来决定用backtracking，应该是写得差不多，但后来问复杂度的时候有点发蒙，引导纠正了几次才过去。经提醒第一题应该是依散酒的变形，因为面试的时候其实还要求如果能被拆分，要输出拆分后的结果，所以在DP和backtracking之间选了backtracking，但现在想想DP也行
+第二题是酒气伞973的变种，除了给一堆points
+复制代码
+以外，还给一个
+query
+复制代码
+坐标，问最近的k个。follow up是如果
+points
+复制代码
+的量特别大怎么办。
+62变种，需要返回所有的unique path
+
 
 
 `BQ`
@@ -313,6 +342,8 @@ constructive feedback, conflict time, etc
 constructive feedback; project without enough information
 go beyond your scope, deal with hard people, constructive feedback, how to measure impact
 conflicts/ cosntructive feedback/ do you have failed project
+最骄傲项目，如何合作，被pushback，老板的反馈
+
 
 
 `Coding`
@@ -376,6 +407,26 @@ coding 1: 680, follow up: 1216; 314
 coding 2: 346
 第二题很奇葩, leetcode没有, 叫 compress graph,不过他一直循循善诱, 先问我, 怎么判断要不要merge, 实现一个func来判断给定两个node需不需要merge, 然后写 Merge的code, 然后问,给一个图怎么compress. 要用到前面写的两个function 🔗 leetcode.com 给我直接干蒙了, 写完了前面两个, 写到第三个没写完就到40 分钟了.
 https://leetcode.com/discuss/post/715406/facebook-merge-graph-nodes-by-anonymous_-7qmx/
+88 follow-up n个array怎么merge, 543    253, 往返机票min price问题，总结其他帖子说的，应该是给两个数组，一个代表出发的机票价格，一个代表返回的机票价格，index就是日期，求往返机票最低价格。比如出发：[2,6,1,3]，返程：[2,4,3,5]，输出结果是5，选取第0天出发，第2天返回。有的面试官允许当天往返，那上面的例子结果就是4. There are 2 arrays which denote departing and returning flights with the respective indexes being time and the values of the array being the cost it takes for the flight. Return the minimum cost for a round trip provided the return flight can only be taken at a time post departing flight time (i.e if departing at time i, one can catch a returning flight only from time (i+1) onwards). For eg departing = [1,2,3,4] and returning = [4,3,2,1], the minimum cost for round trip will be 2 i.e departing[0] + returning[3]. Solve this is O(n) time.
+https://leetcode.com/discuss/post/4288566/e4-meta-phone-screen-qs-by-anonymous_use-s6ug/
+987, 43     76, 300 刚收到消息通知挂在第二轮了，因为用了dp，虽然都做出来了但是还是挂
+四个编程题目，第一个是只含有0和1的数组算<仙叙盒 先序和>，
+https://leetcode.com/discuss/post/4392657/meta-phone-screen-e4-by-anonymous_user-e92p/
+第二个是三个<有序数组合并>，第三个是链表交换两个指定index的节点，第四个是<两个二叉树>，同时遍历，按序打印（不需要返回，就是打印）假如两个树的中序遍历分别是(1,3,4,5,7)和(2,5,6,9)，那同时遍历两个的话，打印出来就是(1,2,3,4,5,5,6,7,9)，这个打印出来的东西就是题目想要的输出。 题目给了两个树的根节点。可以想象一下给了两个有序数组，然后同时遍历，按顺序打印。然后把有序数组换成两个树，做同样的事
+1249 created a cache to store left bracket, asked to optimize space complexity, changed to store the number of remaining open left bracket
+return if a tree is complete
+415 variant with demicals there -> 2 pointers
+find a cheese in a maze, you don't have the map but API to tell you if you can move certain direction and if you find the cheese -> backtracking, stucked on how to represent visited without map, get hint on relative indexing and solved it
+力扣 1249 Minimum Remove to Make Valid Parentheses。名义上是中等&实际上简单难度题，用栈来解，O(n) time + O(n) space worst case, 没有太多可以说的。
+力扣 56(Merge Intervals)的变种,给两个已经按start time排好序的interval lists，要求返回一个排序的无重叠的interval list。做过这道题 + 对merge sort实现(双指针combine two sorted lists)熟悉的朋友，将二者结合起来即可。也许有更优的解法，只是当时我写出来的是这种
+没有找到力扣原题，第一题比较简单: Check if 180-degree flip of input number string is the same, return a boolean.
+Example:
+101 → True
+86098 → True
+23 → False
+1668 → False
+解法有很多种了，时间复杂度应该是O(n),空间复杂度O(1)。
+第二题是尧耳舞寺1254(Number of Closed Islands)的变种，不需要计算有多少closed islands，而需要找到最大closed island size。在原有BFS/DFS实现基础上, return local island size + 记住global max即可。
 
 
 
@@ -392,6 +443,8 @@ Classification那轮面得更细节一些（毕竟没什么high level architectu
 6. reels short video recommendation， model部分主要在讨论结构 和方案选型
 7. Research design问了如何设计一个多模态的推荐系统，lz当时alex xu看的不够仔细准备的不好，可能也是挂的主要原因。
 8. news feed in fb reel
+9. Design a notification filtering system -> ranking model by user, notification, time and locale infomration, plus a ruled based layer to filter on push frequencies
+
 
 
 ## Amazon
