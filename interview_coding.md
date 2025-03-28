@@ -262,11 +262,141 @@ When you want to write a fixture, write a function that generates the resource t
 
 ## Google
 
+
 ## Meta
+E7面试总共六轮，两轮ml design, 一轮coding, 一轮behavior, 一轮cross functional collaboration, 一轮tech retrospect.
+Xfn这轮相当于另一轮behavior 重点在和pm以及其他非eng以及跨org eng的合作上
+Tech retrospect讲一个你过去做的项目然后deep dive.
+E5+昂赛五轮，两轮coding+两轮ai design+一轮bq
+
+`店面`
+电面是一轮一小时，40分钟coding(两道题）+20分钟BQ
+第一题是easy版的560，只需要输出有没有可行的sequence （True or False）。首先是有负数的情况下怎么做，写了个presum，然后follow up问全正数的条件下怎么继续优化，提示下用two pointer优化了空间复杂度。
+第二题是这个 梨蔻，但是matrix是正方形。follow up是如果有duplicate number该怎么改算法，对时间空间复杂度有没有影响。
+https://leetcode.com/discuss/post/125301/find-longest-consecutive-path-in-a-matri-vgq9/
+二面 就是利口： 1570 这题到处都看到有人面， 第二道题没见过后来尝试找也没找到， 有点像403。然后条件特别多也记不清了。这道题不太熟悉，只说了个思路，写到一半也没时间了。
+129, 215   19(问能不能不traverse两边list), 1570
+346-follow up：deque是static data structure还是dynamic，what if two threads call this at same time
+162- no n[i]!=n[i+1] assumption, no need strictly greater than
+follow up: what if we need to do strictly greater than, can you still use binary search?
+125, 1249   133, 给两个list of interval，两个都sort过了，把两个merge起来 https://leetcode.com/discuss/post/124616/facebook-merge-two-interval-lists-by-eva-th6a/
+1249, 415    339, 973     528, 270    1004,         938, 71
+打印矩阵对角线
+给定一个整数矩阵，按从 右上到左下 的方向打印其对角线上的值。每条对角线都向 左下 方向移动。每条对角线的输出之间应有换行。[[1,  2,  3,  4],
+[5,  6,  7,  8],
+[9, 10, 11, 12]]
+输出:1  
+2 5
+3 6 9
+4 7 10
+8 11  
+12  
+最大化最长假期
+一个字符数组，其中包含 H 或 W：
+H = 假期（Holiday）
+W = 工作日（Workday）
+有一定数量的个人休假天数，需要尽可能使的最长假期时间最大化。
+例如：arr = [W, H, H, W, W, H, W], PTO = 2  
+你可以最大化的假期长度为 5 天。[W, H, H, W, W, H, W]
+    P  P
+1  2  3  4  5
+
+
+`BQ`
+The worst / best collaboration
+A time when you find others know something you need but you don't know;
+The most challenging experience that you cannot make the deadline
+A time you need to learn something new rapidly
+Why join phd? Why go back to the industry？
+How do you take constructive suggestion
+constructive feedback, conflict time, etc
+constructive feedback; project without enough information
+go beyond your scope, deal with hard people, constructive feedback, how to measure impact
+conflicts/ cosntructive feedback/ do you have failed project
+
+
+`Coding`
+第一题留领悟，感谢高抬贵手。
+第二题没找到原题，island题，给定地图，要求在水上找建立一个新岛，不能和现存的岛四向接触，返回最大的岛的面积。DFS
+跑两遍，第一遍用DFS把每个岛屿的面积算出来，第二遍跑岛屿相邻的0，把这个0的相邻所有的岛的面积相加
+第一题夭柳嘶寺，要求Time O(depth) 空间 O(1)。空间复杂度最优的方案卡了很久在提示下才做出来。刷题的时候就没太注意，果然宰了跟头。幸好在不直接提示解法的情况下想到了。parent pointer的情况下，真的可以Time O(depth) Space O(1)
+第二题简单版计算器，只考虑加减，要求时间O(N) 空间O(1)。空间复杂度最优上出了小小问题，again刷题还是要精才行。
+1. Count how many times a given number shows up in a sorted array.
+countOccurrences(20, {10, 10, 20, 20, 30, 30}) => 2
+2.Given a 2D grid of 0s and 1s, what is the maximum area of an island that can be formed by flipping at most one 0 to 1? An island is formed by connected 1s, where connectivity is horizontal and vertical only (not diagonal) 下面这个example，答案是5[
+  [1, 0],
+  [0, 1],
+  [1, 1]
+]
+1. 236
+2. 一个data storage
+# interface AbstractDataTypeWithLast<K, V> {
+#     void put(K k, V v);
+#     V get(K k);
+#     K last();
+#     void delete(K k);
+# }
+# last() return the most recent accessed key in the store.
+# put("a", 1)
+# put("b", 2)
+# get("a")
+# last() --> "a"
+# delete("a")
+# last() --> "b"
+215, 1570
+227 只有加号乘号，followup：所有符号和有括号时候； 236， 佛咯啊噗：不是Binary树怎么办， 如果有无数children怎么办；721 说思路
+coding 1: baisic calculator & LRU cache; coding 2: valid parenthesis & simplify path;
+coding 3: merge sorted arrays & find local minimum in an array； calculator限制不能用stack诸如此类
+88, 314    95(h), 827    34, 💃陸苓 variant: non-negative input; follow-up: integer input
+record most listened top 3 songs for each user
+left + right side views of binary tree
+121, 1197, 76
+1.一个简单的calculator，只有加号和乘号
+2. 回文，最多删除一个character判断是否是回文
+3. 给几个城市人口，根据人口比例sample 城市 input: cities = [20,30,50]
+call function: sample()
+20% return 0, 30% return 1, 50% return 2
+4. 最小parent
+Coding1: （印度小哥，人狠话不多，原题基础上不停加限制条件，一会不准这个一会不准那个，搞麻了）636， follow up how to deal with multi thread. 1091，follow up 1: print the full path, follow up 2: change to non-binary matrix with ints, each int represent a cost to visit that position. Find the path with minimum cost
+Coding 2: （国人小姐姐人超级nice,感谢放水！！）1644，560
+528, 56   543, 398
+528, 827
+- round1: 215和变种 变种就是实现一个类封装起来(215这个高频题的解法的确不常规，需要一定沟通和验证，尤其是如果使用了3-way partition)注意关键词 3-way partition, 正常的快选用得是2-way.普通的快选都是二分，但215这个题后来可能是新加了个test case，里面有大量的重复值，二分的话会tle，需要用三分.用count sort一般需要知道数值范围，所以正常情况下其实不太考虑用count sort。一般都默认数据量最多是10^5，但数值范围不做限制，比如允许 -10^9~10^9，这时count sort可能就不太方便了。面试时面试官一般也不会告知数值范围是多少。当然感觉可以作为一个讨论点跟面试官聊
+- round2: 346 207
+coding 1 查树直径，合并三个有序数组；
+coding 2 二叉搜索树范围内求和，造一个大岛屿
+Coding的题目很简单，第一道题973，第二道题是IoU求交并比。我不确定题号是啥，可能是面试官自己想的，题目就是输入是2个字符串数组，求2个字符串数组的交集和并集的比例，不能使用额外空间。我的解法很简单，就是用字典计数来做。
+coding 1:
+14
+💃陸苓 variant: non-negative input; follow-up: integer input
+coding 2:
+record most listened top 3 songs for each user
+left + right side views of binary tree
+coding 1: 680, follow up: 1216; 314
+coding 2: 346
+第二题很奇葩, leetcode没有, 叫 compress graph,不过他一直循循善诱, 先问我, 怎么判断要不要merge, 实现一个func来判断给定两个node需不需要merge, 然后写 Merge的code, 然后问,给一个图怎么compress. 要用到前面写的两个function 🔗 leetcode.com 给我直接干蒙了, 写完了前面两个, 写到第三个没写完就到40 分钟了.
+https://leetcode.com/discuss/post/715406/facebook-merge-graph-nodes-by-anonymous_-7qmx/
+
+
+
+`MLSD`
+1. 经典推广搜，在chat app上给用户推广告，给了很多方便条件narrow down问题。十分感谢!
+2. Design a yelp-like system for places recommendation. 设计一个推荐附近event的系统，感觉类似yelp. 推荐一些像是餐厅酒吧活动之类的，一共有6个category，要求两个场景，一个是不分category推，一个是分category推（类似用户可以filter）. design a system to recommend new events for a user.
+Yelp那轮侧重high level design,需要讲怎么做retrieval怎么做ranking。感觉面试官的重点在怎么设计metric和eval/testing去满足business need。模型设计也聊了，但时间所限没有讲太多细节（基本上就是name drop, e.g. 2-tower model,DCN, SENet, Transformer, etc)。
+Classification那轮面得更细节一些（毕竟没什么high level architecture好讲）。few shot learning一般不会用于online serving（太贵），做offline data labeling(+human raters) 可以，但我没聊这个话题（面试官让我assume可以随意获取需要的labeled training data)。主要还是针对metric,多给几个建模方案（从最轻量到最复杂），讲清楚pros/cons, 再讲一讲online learning+unsupervised learning，最后说清楚怎么serving+testing，时间就差不多了.基本都是我在说，面试官没有给什么feedback，也不知道是不是说在他的考点上。serving就是谈一谈模型上线后可能遇到的问题和需要做什么优化（毕竟不是MLops岗，这里聊得很粗浅），testing就是分offline和online讲，说清楚各自怎么做/为什么要做/怎么分析和决策
+3. recommendation 变种hashtag，没见过，问了各种embedding长啥样，loss function什么
+4. video recommendation
+5. 偵測武器 harmful content detection
+请问unsupervised learning 在harmful content detection怎么应用啊？
+可以参考下Contrastive learning, 尤其是BYOL一类的论文用到的的joint predictive embedding方法。meta自己的DINO也是类似的方法去训练图像embedding。最后在提炼的feature上面加相应的prediction heads就行了。因为面试官让我考虑posting里包含image/video的情况，我就顺带聊了聊。当然这类模型普遍需要参数量较大，刚好可以一起把model distillation讲一讲
+6. reels short video recommendation， model部分主要在讨论结构 和方案选型
+7. Research design问了如何设计一个多模态的推荐系统，lz当时alex xu看的不够仔细准备的不好，可能也是挂的主要原因。
+8. news feed in fb reel
 
 
 ## Amazon
 - Example: # Question: Given an array of numbers a and another array of numbers b, # find k nearest elements from a for each element in b. # a = [1, 2, 10, 100, 102, 205] # b = [3, 80] # k = 2 # output = [[1,2], [100, 102]]
+
 
 ## Bloomberg
 ML SDE电面，先聊聊做过的ML project，问的挺细的，需要自己准备准备。
