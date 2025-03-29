@@ -456,6 +456,7 @@ Classification那轮面得更细节一些（毕竟没什么high level architectu
 
 
 ## Bloomberg
+`MLE`
 ML SDE电面，先聊聊做过的ML project，问的挺细的，需要自己准备准备。
 然后大概30mins问ML的问题，问我什么是supervised/unsupervised learning，举几个例子。然后问我logistics regression，问的很细。。要写cost function，然后怎么optimize求parameter，一直要写公式，中间还问我什么是EM和cross entropy，GG了。。
 后面小半个小时coding，利口要斯留原题。
@@ -785,6 +786,228 @@ Follow-up 是问如果每个节点可以有 1-k 个子节点，总共可以构�
 
 
 332, 987, 140, 1679, 642第二轮烙印，给个非tag的hard，还非要我把tire结构先画出来，不用说肯定跪了
+
+`NON MLE`
+第一面前10分鐘自介
+coding 40 分鐘
+Given a class to add price with the company name and get the most recent price by the given number for that company 
+addPrice(Company, Price)
+getPrice(Company , Number)
+Follow Up 
+1)If the limit number with 5 how do you change thing differently 
+2)If you can add the past price 
+Give a start time and end time of the event
+Find the most busiest time of the event
+
+第一轮
+一个 N 叉树，要求找出一条到叶子节点的路径，让路径上的 节点值总和最小。
+第二轮：
+给一个字典和一组单词，需要根据该字典中的字母顺序对单词进行排序。
+第三轮：
+system design 展示 Top N 热门新闻
+
+Senior engineer
+BQ加问了一些experience和相关的project
+第一题 一个array 只有1和0，比如[0 1 0 1 1 1 0 1 1]。如果可以flip一个0变成1，最多有多少个连续的
+follow up：如果可以flip K次0变1，最多有多少个连续的 -》 sliding window
+个人猜测第一问就希望你用滑动窗口做，然后follow-up直接让你稍微改一下原本代码，接着再给你出一题？我最近面别的onsite也遇到过类似情况，感觉倾向于需要你做两题如果原本题目只有lc medium难度的话，因为就这题它还能有follow up比如说在二维空间下怎么做。
+
+然后做题 两道题
+都是lc tag的
+第一道是 给一个string 你可以remove其中的一个char 如果remove了以后所有string的frequency一样的话就true要不然就false
+第二道是lc430原题
+感觉面试官挺nice的 就是做题的时候用了counter()和deque啥的面试官不懂让我解释或者换一种东西用
+
+一面：1/14: 過簡歷，離口：56，102，380
+二面：2/4
+上午：過簡歷，42, 1274
+中午：過簡歷，79，meeting room變種。中間問到了Trie這種data structure. 大部分人大學應該都沒學過。
+下午：HR面：為什麼選擇CS專業，薪水期望，需不需要sponsor，為什麼bloomberg，介紹職位。
+​三面：3/5
+EM面，純聊天，過簡歷。只面了45分鐘，中間一直是我在說話，感覺對方不怎麼搭理我。對我做過的東西好像不是特別感興趣。搞得我很暈。我到底是表現的好還是不好？有人有經驗麼。
+
+力扣 1387变形题，dfs + memorization解决。这题轻松过
+力扣 地铁系统变形题，主要是讨论的想法和数据结构，实现了进站方法。
+
+Bloomberg 25ng 4轮挂经
+vo1: word search + encode str(aabbcc->2a2b2c)
+vo2: Collatz + decode str (2[a2[bc]] -> abcbcabcbc)
+vo3: design browser history + followup（没答好）
+hr: why bb, top priorities of applying for jobs / choosing offer, proud project+ 反问（反问没问够10mins)
+timeline 1月中开始，每个vo隔一周， vo3和hr连一起
+分享挂经攒人品，总结就是题没刷好。最好全部都完美+optimal解出来
+
+BBG superday第一场就挂了，面试官台湾40+男性，开场聊的还行，第一题给了一道一维candy crush，很快就写完了。
+他说你写得很快，给你一道难一点的，题目如下：
+设计一个class ，用来判断stream of characters是否是palindrome。有两函数，track(char)，用于，添加新的char。isPalindrome()，用于判断当前是否是panlindrome，返回True/False。input stream could be Terra bytes.
+例如track(“a”) track(“b”) track(“c”) track(“b”) track(“a”) isPalindrome() should return True.
+时间复杂度要低于O(N).
+我面试时尝试了指针，dp，说实话20分钟真的想不出来。事后查了下网上，有人说rolling hash，但在他给的这个terrabyte语境下collide很严重啊。不知地里各位大佬有没有更好的想法。真的自闭了，tag题3个月的我都会写，对bbg的题印象一直不难，结果面试给了这个飞天大锤😭
+50分钟时说我第一题写的有问题，不是每到三个就crush，而是三个以上一起crush所有连续的。可是我读完题目的时候还跟他确认过，dry run也演示过，最后他改变了他对题目的理解。最后我花五分钟重写了一遍，他说我也不知道你这个对不对，我们没时间了，你有问题问我吗。
+
+Spelling Bee:
+Example Required: N
+Example Optional: V C O D E Y
+Goal: List all words that satisfy the following rules:
+* Minimum 4 letters
+* Required letter appears at least once
+* Optional letters can appear any number of times (repeats allowed)
+* No other letters allowed
+Example valid words: ENCODE, NONCE, DONE, NODE
+Required: O
+Optional: G, L, E, P, T, N
+Example: POLE, TONE, TOLL, GONE
+TROPE
+TON
+# 1. define all necessary letters and possible letter and store them in hashset to reduce time complexity.
+# 2. built in dictory which can be referred, it is dictory.
+# 3. check if they are in dictory.
+    # required = ['N']
+    # Optional = ["V",  "C",  "O", "D", "E", "Y"]
+    # dictionary = {all possible english words}
+
+第一题
+有一个function equiv可以检测两个 input是否同为基/偶数（也可以是别的逻辑面试官说就是一个返回true false的function），是的话返回true不然false
+用这个equiv和一个input array把input分成equiv里都是true的subarray
+基本思路就是有一个 result array 和 flag，loop input 用equiv 检查现在的值与result里每个subarray的第一个值是否相等，相等则加进一个subarray然后break，全找不到则自己建一个subarray，最后return result
+第二题collatz
+输入一个数字n，如果n为偶数则n = n/2,如果n是基数 则 n= 3n+1计算最后到1的时候要多少步
+纯用if else写解，follow up问怎么提升performance，就是要用一个in memory cache (map就行)记住每次结果的步数，还可以用cache记在loop里每次经过的步数，这样在过程中cache查到一个数字也能直接查结果+当前已经走过的步数。。
+follow up 真的挺巧思的，反正是学到了cache还能这么用。
+
+店面 1h 一道colartz number一道design deck of card 第二题没写完 进入vo
+vo
+一轮 1h all path from src to dst+meeting rooms
+二轮 1h 自己出的 encode number 输入1113344 输出312324 要求不能转成string做
+三轮hr 30min why bb 选公司有几个方面 收到的negative feedback
+
+首轮考了三道题
+HR面：為什麼選擇CS專業，薪水期望，需不需要sponsor，為什麼bloomberg，介紹職位。
+
+自創題： Given an input representing each node and its child, for example: NodeID: 1, child: 2; NodeID: 2, child: none; NodeID: 3, child: 1, find the root of the tree.
+
+然后开始coding，给一个矩阵，求从起点到终点的最小cost，途径的weight加起来就是cost。先讲了dfs，然后说了dp的做法，最后实现dp的code，跑了一个case。20min搞定，小哥看时间还多，出了个脑筋急转弯，和位运算相关。题目很长，他自己都clarify了5分钟才说清楚。想了10min，一直交流但还是想不出来。告诉了我解法，大概其实和1000瓶水找出有毒的一瓶的解法有异曲同工。但题目是不一样的，方法类似。
+
+第一轮：技术面 (coding)
+两位面试官，最开始15min问了点简历上的project内容
+后面45min在hackerrank上写两道题（不用跑测试）
+LC 1347, 1209 题目还是很简单滴
+第二轮：技术面 (coding)
+Round 2 (60 min.): This round will focus on your coding skills and knowledge of data structures and algorithms.
+前十分钟问了一些之前实习项目的内容，后面五十分钟做两道题（主题是重叠区间）
+第一题是力扣253（最少meeting room），第二题是第一题的追加问题，计算最大重叠数量
+第三轮：技术面 (project)
+Round 3 (60 min.): Progressing from your previous interview, this one-hour virtual interview will further assess your technical skills. The focus of the interview will be to assess your technical skills through discussion of a real world problem. Your interviewer will be assessing your technical communication skills and problem solving from first principles.
+邮件里说第三轮是further assess your technical skills，我以为是system design，结果问得之前实习项目经历等。主要问的是：
+实习经历（遇到的挑战 有哪些可以改进的地方）
+熟悉的编程语言（面试官提到bloomberg主要以python和c++为主）
+平常如何track new technology
+为什么申请这个岗位
+第四轮：BQ (HR)
+Round 4: This interview will not be technical and instead will focus more on your work and/or academic experience so far, as well as your motivations for becoming a Software Engineer at Bloomberg. For this interview you will meet with one of our recruiters.
+这轮主要是BQ，问了：
+团队合作的例子
+团队发生冲突是如何解决
+得到负反馈是如何对应的
+第五轮：BQ (manager)
+Round 5: This interview will last approx 60 mins and will be with one of our Engineering Managers. They will ask questions to learn more about your previous experiences and project work, with an emphasis on technical decisions and your impact on the project, team, or company as it applies to your background. They may ask you a question to gauge your problem solving and technical communication skills to understand how you leverage your knowledge to approach real-world applications. This will be another opportunity for you to learn about Bloomberg and ask any remaining questions.
+这轮虽说是60min，面试官说面30min差不多了，问了几个问题后就让我自己问想问的问题了
+之前的实习项目中如何处理real-time data的，有没有遇到什么挑战
+未来对工作地点有什么要求
+
+店面 lc: linkedlist 删除倒数第N个Node lc: LRU 秒
+VO1 地里出现过题 BFS (followup dijkstra) 秒
+VO2 easy + 地理的Underground 秒
+HR + EM 全BQ，没准备现场想的，答得不好
+
+两道题，一道类似lc200；还有一道类似lc 443 string compression，但input和output都是integer。
+
+一共4轮
+Coding 1
+写一个Iterator，要求支持next(), hasNext(), reset()，这就是linkedlist 但是另外记录一下head保留着别扔。
+running window medium
+Coding + BQ
+聊简历，聊对他们项目的看法
+写一个统计学校里面成绩的代码，要求给出各科前10
+SD + BQ
+team lead聊简历，culture，然后设计一个挂单竞价系统
+BQ
+team lead 她老板，就聊聊motivation，passion之类的，没聊项目
+感觉金融公司的面试题都是偏简单，可能面试者自己也搞不懂太难的题目。倒是他们很在乎你的motivation，很多问题都是侧重于看你是不是真的想去
+
+Tl:
+9.21 refer
+9.26 apply
+10.3 phone邀请
+10.24 phone interview：
+25分钟简历➕why bloomberg，做了LC445。
+10.28 VO邀请：
+on campus满了，virtual约到了11.7。
+11.7 Back to back：
+两轮VO+一轮HR：考了LC wordbreak minstack还有他们自己出的题
+11.12拒信
+
+都是利口变形 妖妖柳116 么尔斯久1249 伞拔冻380
+还有一题找不到原题 是 grid 上找两点的 shortest path, 可能有 obstacle
+HR 面 30min 主要是 bq 和介绍入职后的 training program
+self intro, proudest project, why bloomberg, constructive feedback, top 3 priority choosing an offer
+感觉对方在我回答时没什么兴趣听, 我也就尽快讲完重点
+
+第一题很像舞遛零560，但是多了一个里面数值大于零的条件。如果所有数值大于零，挪动 right pointer guarantees increament in subarray sum, 挪动 left pointer vice versa
+当 subarray < k，++right 直到 subarray sum >= k, 当 subarray sum > k, ++left. 标准解法用prefix sum 如果有大于零条件，可以用two pointers
+第二题是腰零九109，要求不能用额外的资料结构。
+
+经典题目LRU cache，只存value，最后return前K个values即可
+
+面试一共五轮
+前三轮都是lc technical，第四轮recruiter，第五轮em
+sliding window
+妻舅妻797
+叁霸妻387
+binary tree traversal
+还有两题不记得了，都是easy-medium难度
+em简单问了一下过去的project和简单的design。
+
+2. You need to count the overlapping intervals. I put each start and end time in a list,
+and then counted the maximum number of overlapping intervals, which was very similar to meeting rooms ii
+
+第一道是霰妖司314变种，题目一样只是把数字换成了character，最后输出一个单词
+第二道题是幺洱司酒1249原题
+
+一面：齐救齐797、幺尔私酒1249
+二面：给一系列股票操作，比如[[9.1, BUY, 100 (shares), $50], [9.3, SELL, 50 (shares), $80]，但是30天内sell不能超过buy price（不能赚钱）问怎么判断是否valid；先假设只有buy，followup是如果有的有sell怎么判断
+三面：
+1. 给一些fail的节点，每个节点知道自己的children，找到最开始fail的那个节点
+2. 类似 耳零零200，但是找number of lakes
+
+店面
+coins 无线数量 【1,5,10,25】
+给定一个target
+按照给定格式
+返回最小硬币数量的所有组合
+散酒39
+要求优化 好像意思是memorization 没搞出来
+
+输入 stream of data, 有id, value 和 时间，
+id       value  time
+--------------------
+5149，agru,  4
+4349,   sret,   12
+5663，t46u,  7
+1549，a4y5, 13
+依次输出 id       value  time其实就是留舞流656 和 药散就榴 的合体
+但是是分成两个部分问的，千万不要被第一个迷惑了
+
+分别是这两题：
+1. 利口 two city scheduling
+这题压中题了，轻松过
+2. 药饵丝丝 1244, 要你设计一个解决方案 - input是股票的名字和交易数量，设计一个方程来储存这个input，会不停地被call到；然后设计另一个方程输出所有股票的名字和总交易数量，按交易量从大到小排序
+这题我用一个priority queue做的，但是不是最优解，估计没有过
+
+
+1249, 26, 399, 200, 314, 56, 102, 380, 42, 1274, 1347, 1209, 33, 443, 445, 116, 560, 109, 797, 387, 103, 146, 1472, 39, 656, 1396, 91, 1656, 428, 1244, 1029, 253(meeting room II)
+
+
 
 
 ## DE Shaw
