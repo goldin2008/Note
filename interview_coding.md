@@ -328,6 +328,10 @@ points
 复制代码
 的量特别大怎么办。
 62变种，需要返回所有的unique path
+第一题很像560，但是多了一个里面数值大于零的条件。
+如果所有数值大于零，挪动 right pointer guarantees increament in subarray sum, 挪动 left pointer vice versa
+当 subarray < k，++right 直到 subarray sum >= k, 当 subarray sum > k, ++left 标准解法用prefix sum 如果有大于零条件，可以用two pointers
+第二题是109，要求不能用额外的资料结构。
 
 
 
@@ -487,6 +491,300 @@ onsite第一轮：ML design，从文件中识别出法律条款并且linking，�
 onsite第二轮：现场load一个dataset，用的pandas，需要对数据进行处理，比如说处理label，解决imbalance的问题，解决missing feature的问题，建议提前熟悉下pandas语法，可以google。
 onsite第三轮：Senior HM 聊天，过简历
 onsite第四轮：HM和tech lead聊天，过简历
+
+ML position
+1) CODING题•            im_stream: A stream (generator) that produces IMPosts. Calling next(im_stream) will yield a new post.
+•            target_sender_id: a string, the sender_id of the user we want to get a context for
+•            window_size: The number of posts before and after the target post that should be included
+•             in the context.
+•            
+•            Returns: An iterable (anything we can iterate over) containing the posts from the first conversational context found in im_stream.
+•            A context consists of an "target post" sent by target_sender_id, plus the window_size posts immediately
+•            before and after the anchor post that were made in the same chatroom.
+2) ML 题
+Consider an equity trader who chats with other traders on an instant messaging app:
+- She is in several chatrooms, exposed to various kinds of chatter:
+news about the market (e.g, "Oil prices are spiking")
+trade negotiations (e.g, "I want to buy Tesla stock")
+relationship building (e.g., "Lovely weather!")
+- When flooded with unread messages (e.g., after stepping away from her desk or if the incoming message volume is high):
+she'd like an automated way to discover actionable unread posts
+i.e., posts in which people have indicated interest in buying/selling equities
+
+面的是Bloomberg MLE.
+phone screen(两轮)
+第1轮 简历和ml knowledge，
+面试第一轮问了简历(没有coding)，深挖了一个NER的项目(LSTM + CRF)，貌似这个team很多工作都有NER的使用，所有面试官问了整个build NER 的细节: 怎么采集数据，怎么验证你收集的数据，包括你在哪个平台上用什么样的格式收集tagged data，以至于到后来network architecture， CRF 的input和output是啥, 很具体.
+第2轮coding，
+写一个tokenizer，不用包写一个tokenizer把一句话分成三种tag的token(word, punctuation, 还有一个啥忘了)
+VO(4轮):
+VO1: 设计NER 一个具体case， 也是从头到尾设计一套NER， 和两个engineer一起讨论.
+VO2:  codepad上面的一个jupyternotebook, 数据都load好了，你要先做EDA，数据里面各种问题， category 太多， data unbalanced, 有的column全是空，有的column只有几个有值，你一边写pandas code 一边和面试官讨论，允许查api但是感觉最好不要太频繁，所有pandas的语法最好熟悉。 最后写一个model 做classificatiion，我最后都没写model的code， 描述了一下要干啥，怎么evaluation， code要写的话估计我要去查scikit-learn的api了.
+HM: 然后半小时后hiring manager: 两个人，就是问简历，各种深挖简历项目，没有特别technical, 但是沟通和对简历的熟悉比较重要。
+vo1一行代码都没写，纯说话.
+vo2写了pandas的code。 比如说你说你要看下某一个column是不是都是0， 然后你就写一点点code， 验证一下，解释清楚了之后，然后就接着讨论。然后你又想把某一个categorical feature转成one-hot encoding， 你又写一行代码，看看对不对，然后再接着讨论。
+
+随手海投被recruiter捞了，2轮电面
+第一轮是个国人小哥，问了基础的ML知识，外加一个coding，是sparse vector/matrix multiplication。 写得很一般但是他很nice地给了很多hints帮忙
+第二轮是个白人EM，问了一个ML design是如何给群聊里面的会话分类：如果在time t 有人说了句“good”，这个good是接前面哪一个对话的，或者这是又开了一个新对话。我这一轮回答的很不好，把这个问题想偏了。
+然后10分钟让我快速写了个personalized Pagerank类似的random walk统计，我写了个乱七八糟😂
+两天后居然通知过了，让我进VO
+VO每一轮改成两个人，而且每组俩人好像是随机搭配的。
+第一轮，混血华裔+天竺： 问ML design，题目具体忘记了，但很常规。
+第二轮，俩ABC面coding，又是sparse vec/mat multiplication那个题目。但是这次要求详细写class，exception，各种意外的处理等等。果断写得不好。而且这种coding被俩人盯着写很不爽，俩人都七嘴八舌各种问你问题挑战你。我到后面各种typo，打错函数什么的。
+第三轮， 这一轮好像不评分，俩EMs陪你聊天，随便你问问题。
+第四轮， 又是俩EMs好像。给了一个dictionary，里面的词建立一个trie/prefix trie然后用这个trie去试图match一个string里面所有可能的词。开写后我也是脑残想着优化一下提前terminate。结果俩面试官里有一个好像不太coding的就看不懂了，问了一堆问题让我解释了十分钟到底怎么回事。另外一个面试官最后试图帮我就写了个例子，然后让我拿着例子解释。最后也干脆说你别优化了就用最straight forward的办法写吧。最后写完时间也基本用完。
+
+VO1 应该是两个RS 都是phd 问了个open end的ML question: 如何实现一个只有integer precision的ML model，提了KNN和SVM 但trap在SVM的details上所以最后都没时间work on这个问题 大概率无了 当时答了类似mixed precision但可能不是想要的方向 现在感觉可能是想问类似mixed integer programming的问题 不过也不确定 希望有大神能解答下 ORZ
+VO2 偏engineering 实现一个 instant chat message context retriver API 给定人名然后需要返回不同chat room里面的k-lines context 然后需要考虑是stream data 很快就写完了然后follow up问了下如果OOM怎么处理 也不太确定这轮是想问什么
+HR 大概问了下experience 以及package range 很迷 HR还一直在打哈欠
+VO3 感觉是infra team 先做了个简单的coding 给一段no space string 和 一个vocabulary dict 要做space parsing 然后问适不适合用ML来解决这个问题 感觉是个ML design 从data collection到model training，deployment，performance tracking。不过是个NLP task 不太熟悉感觉design有点失败。这轮interviewer很nice 但LZ不是很熟这一套所以估计两边都比较suffer
+
+这周四三轮onsite
+第一轮: ML modeling, 直接给你个dataframe的数据集，让你分析数据，设计模型，模型不用写出来，给思路就好
+由于我最近没怎么写pandas, syntax又忘光了，面试官允许网上搜pandas的一些function
+感觉整个面试都在纠结这个。。。
+第二轮: ML modeling
+直接给你他们目前在解决的问题，深入问了data annotation,
+为什么选这个模型还有一些edge case问题
+这轮感觉答得最好
+第三轮 HM
+deep dive了之前做的和开花堡这个组类似的项目，这轮很神奇是两个HM
+中间还让设计了一个推荐系统
+第二天recruiter说positive feedback, 又让约了一轮30分钟和大Boss的meeting
+
+热乎乎的店面，面的是MLE职位；recruiter说phone screen有两轮，说这一轮是coding
+结果面试聊了80分钟，全程无coding，然后被告知是ML model轮。。。。
+面试官三哥哥人很nice，上来问项目，深入问项目的model，这里简单聊了transformer和 bert 介绍下model structure
+没有问loss之类的
+重点是model deployment 和evaluation
+就evaluation又拓展问了evalution metrics 和 edge case，和benchmark
+全是项目相关的问题
+因为面的组和我目前做的很类似，所以聊的很开心，后面就是俩人一起吐槽data processing的问题，也是醉醉哒
+
+第一面
+面试官一个印度小哥，没有coding，问的是deep learning相关的问题：
+1) 在train neural networks的时候，如果可以同时选 a) full-batch training; b) mini-batch training。 优先选哪个？
+答案是b)。原因是mini-batch training带来的随机性可以：1. 在优化陷入saddle point的时候帮助跳出saddle point；2.一定程度上能加速training convergence（这点是小哥说的，我不是特别清楚）。
+2) 解释一下train graph neural networks的时候有哪些hyper-parameters可以调。
+3) Deep neural networks(DNN)有很多参数特别复杂。按照传统机器学习理论它应该过拟合，然后在测试集上表现不好。但是为什么在实际中DNN表现得不错？
+我其实也不知道为啥。。。随便答了一个说可能data有low-dimensional structure。
+4) Train graph neural networks (GNN) 的时候， 做aggregation可以用什么？
+   答案是：max, mean, 或者用一个MLP。 然后有一个follow-up：有人用RNN来做aggregation，这有什么缺点？ 答案是：RNN的输出和输入的order有关; 如果用RNN做aggregation的话，aggregation的结果和nodes的labeling有关，这违反了我们希望GNN是permutation invariant的初衷。
+5） GNN的hidden layer的维数一般倾向去选“比较大的维数”还是“比较小的维数”。我答的是"比较小"。原因是数据里可能有low-dimensional structures, 选比较小的维数能促使GNN去学这些low-dimensional structures.
+6) Train GNN的时候，如果内存放不下一整个graph怎么办？回答是：可以采用mini-batch training，也就是每个epoch从graph中选a subset of nodes, 然在这个subset产生的小图(the graph induced from the subset) 上训练。
+7) 解释一下GNN的工作原理。
+就是把每个node的embedding怎么产生的简单描述一下。
+8）解释一下Adam optimizer；  Adam在记录gradient的哪些信息（答案：一阶和二阶gradient信息）；Adam怎么发挥作用（答案：可以adaptively调整learning rate）。
+     解释一下Batch normalization和Layer normalization。我答的是：batch normalization是通过(在每个mini batch上)减均值除方差的方式稳定training; layer normalization就不懂了。
+9） 如果把batch size从128变成256， 那么learning rate应该怎么调？我答的是：batch size变大，那么在这个mini batch上的variance就变小了，相应地learning rate可以稍微增大一些。但具体应该增大多少没答出来。
+第二面
+同胞小哥，没有coding。问的是简历上的项目，以及两道机器学习和统计的题。
+1） 推导一下ridge regression的weight estimator怎么算？这里第一步要记得说bias term单独估计; 第二步说loss function是convex的，所以可以求导以后通过让导数为0来求estimator; 第三步是推导weight estimator； 最后得到的estimator里有个矩阵求逆，小哥问了这个矩阵一定可逆吗？答案是“一定可逆”，原因是那个矩阵是个正定矩阵。
+2） 假设X是一个服从标准正太分布的随机变量 (X ~ N(0, 1))， 写一个小程序计算P(X > 5)。 这题我用一个简单的蒙特卡洛来算，但是因为 X>5这个事件概率太小了，即使采样一百万次所有的样本都是小于5，所以最后错误地算出 P(X>5)=0...  正确答案是用 importance sampling来算。
+第三面
+同胞姐。没有coding，简历问了一点。
+1） 手推Bias-Variance Tradeoff的公式。这题稍微有点无语没答出来。一般面试就是让解释一下Bias-Variance Tradeoff， 但这里要求精确地写出公式。。。面试官让考虑一个带高斯白噪声的linear regression model，基于这个model来推Bias-Variance Tradeoff。其实最后她要的就是这本书(https://hastie.su.domains/ElemSt ... LII_print12_toc.pdf)   242页的公式(7.9)的第二行。
+这里吐槽一下这个姐讲话不清楚，然后用电脑上的手写板通过鼠标写公式给我看，根本看不懂她写的啥。。。。
+2） 解释一下什么是Central Limit Theorem。给N个random samples：X_1, ..., X_N，它们的sample average （(X_1+...+X_N) / N）的variance是多少 (答案：Var(X_1) / N)。
+
+2月中旬 猎头 linkedin 联系 职位是Sr MLE 应该是组招
+2月末 店面邀请
+3.月初 第一轮店面 是一个很有好的国人小哥哥 准备之前以为只有coding 没想到 其实是half ML half coding， 是1D candy crush 用的是一二零酒的逻辑 第一部分也是比较偏向设计 关于从文档中提取表格的metrics 之类的
+两天之后 约第二轮
+前几天 第二轮店面 是manager Level 的人walk through 一个具体的case （吐槽一下 我是真的没想到一整轮都是walk through 和recruiter联系 他感觉也不是很清楚 他说的是有coding和ML theory 和design
+从句子里面提取NER相关信息 会比较发散的问比较多的细节 比如你会怎么设计， 如果结果不好了怎么办？ 提取的数据其实是不同的类型 还有什么其他方法 我一直很不安等待他问coding 结果没有问 中间突然说从英文转成数字用什么算法 我当时直接愣住了 我想的就是直接brute force转
+
+突然想起来了，还有一个系统设计的题目，如何实时更新logging系统， logs在不同的cluster，怎么让user能pull log是chronic order。。。。
+
+先说一下Timeline:
+10/06 -- 内推+网申
+10/15 -- recruiter电话聊天
+10/20 -- 电面
+10/25 -- 电面
+11/04 -- VO
+11/8 -- recruiter口头通知pass
+11/9 -- 约team matching
+VO一共4轮，每轮2个面试官，耗时1h。整个VO持续4.5hs。
+第1轮：
+Introduction, 从简历里扣research interest的一个方向问细节。然后开始ML design。假设你有一些house的信息（地理位置，price等），需要设计一个ML model，给定一个house，预测对应的price。
+Follow up:  1) 怎么设计feature，预处理，high dimensional怎么办，怎么处理地址信息，怎么获得更多feature，怎么更好利用feature，还有什么实际情况需要考虑;  2) 用什么Model，lz举了linear regression和GBDT，于是针对两个model的细节都问了不少。比如convexity, gradient descent, regularization和GBDT的概念和参数等;  3) 怎么train，怎么evaluate。
+第2轮：
+Introduction，问实习project details，扣了下feature和model细节，why use A instead of B，model的最终performance如何。完了开始代码
+面试官1问了下popular clustering model有哪些，都有什么联系和差别，然后implement Kmeans from scratch。可以用numpy。边实现边回答细节问题，比如怎么initialize centers和怎么choose k。码完后让自己写一个test case测试一下运行结果。
+面试官2紧接着来了个经典的利口药尔灵舅，把题目的fixed k换成 k>=3。码完跑test case测试运行结果
+前2轮结束后休息了30分钟，接着开始3-4轮。
+第3轮：
+Introduction，问了与DNN相关的project，然后让解释什么是NN，常见的NN strcuture有哪些，能否并行，怎么参数怎么更新等等，接下来又是一道ML design
+bloomberg有很多document谈论某个公司的信息，设计ML model分类article的sentiment。Follow up: feature提取feature，RNN是什么，怎么定义，GRU和LSTM有什么区别，NN structure细节，结果怎么evaluate，label 不balanced怎么处理等等。
+第4轮，HM面:
+2个HM轮流介绍自己team的工作，然后让lz发问。lz针对hm的介绍问了两个具体问题，HM于是开始滔滔不绝，互问互答吹了30分钟。其后HM开始BQ。1) why BB, how does ur background fit BB。 2) what do you think about going from academia to industry。完了之后其中一个HM开溜了，另一个HM问我还有没有关于BB的其他问题。lz随口问了一下WLB和Internal mobility。完了后相互感谢商业互吹结束。
+VO完了第2天（周五）发邮件给recruiter要feedback，recuriter说最早要周一才能给。于是约了周一phone catch up。周一通知pass。稍微说了一下lz整个过程的表现。特别需要mention的是面试时lz的coding part有些小bug以及需要面试官给hint，但过程中他们很看重collaborative problem solving skills。所以不要一味coding，该打嘴炮商业互吹时一定不要沉默不语。
+
+bloomberg article有很多entity。需要写一个 data structure，输入text，累计每个entity出现次数，返回top-k frequently mentioned entity.
+用hashmap counting + heapsort 秒了。问了下时空复杂度
+Follow up: 如果经常访问top-k，能不能有更好解法。一开始没什么好思路，小哥给了个hint之后勉强搞了个O(n)解法，时间比较紧但刚好写完
+
+一个support ticket system，用户写ticket主题内容后需要填分类，每个分类都有相应specialist处理。ticket按FIFO处理。如果分类错specialist需要按自己理解纠正分类，然后重新排期。设计一个ML系统降低用户和specialist的等待时间。
+整个过程不停的扣细节，从特征到model到evaluation问得非常细。
+
+上周面了VO
+第一轮 两个题 一个是auto complete（应该用Trie 的 但是楼主当时概念不熟 没写出来
+第二题就是coin change2的题， 只不过用了不同的题目问题（什么加油站之类的
+（感觉这也不是Bloomberg高频题 = =
+看到第一个题 心态就不稳了 导致这场coding其实表现的很不好 而且我一开始的时候是想和面试官说我的思路 我要怎么写 但是面试官就说这是你的代码 你就写呗 （没表现好
+第二轮 是design的问题 给一堆没有空格的str 你怎么把空格复原 我觉得我答的算还行吧 主要是面试官很nice 一直沟通就感觉蛮好的
+第三轮 是hiring manager面的 前面一部分是BQ 不知道为什么我觉得沟通起来也不是很顺畅 后面部分是relation extraction的design的问题 问的题比较发散
+
+问题是level order traversal of binary tree
+基本上树中的每个节点都是一个字符，我们必须打印字符串 by level order traversal of binary tree。我用了BFS，然后用hashmap保存每个level的字符as list.
+Follow up:
+1. 为什么在哈希图中使用列表而不是字符串？ 速度会如何变化？ 我回答说速度不会改变。 Asymptotically,它是相同的复杂性
+2. 为什么要使用哈希图？ 你可以用orderedMap代替吗？ 我对orderedMAp 了解不多，但我告诉过hashmap 的插入时间为O(1)，所以我们可能无法做得更高效。
+
+four rounds
+第一 round
+    a. 妖恶灵酒
+    b. basic ML problem, starting from my previous project
+第二 round
+    a. 衣遛柒遛
+    b. design a API to de-duplicate the same news article generated daily (There are 2M articles/day; same article: same title and same body)
+第三 round
+    a. design a ML system to identify different threads in a discussion log.
+第四 round
+    a. talking with HM
+2b -> 类似leetcode 的 design 标籤题目 可以参考，大致要求就是要你写出interface 然后实作，因为这个例子规模小，不用任何distributed system setup.
+3a -> deep-dive into a specific ML problem. 主要用叙述，pseudo-code表达自己意思，很随性。
+重点在于从 data collection -> feature engineering -> data cleaning/preprocessing -> model choosing -> model training (tuning) -> model evaluation 都要能提出几个方案和自证这个方案是最可行的。
+会需要大量互动，因为是open-ended question，他们也不一定有标准答案。我认为这就是典型的ML design interview，不过他们面试不包括model deployment 和 distributed system setup.
+
+猎头主动找的, 面的是Senior Software Engineer (in AI/Machine learning)总共有两轮电面+4轮 virtual onsite
+1. 电面1：
+一个看起来很拽的年轻面试官，面了一个ML system design的问题，具体是怎么设计Named Entity Recognition system. 如果做过相关问题应该不难
+因为楼主之前没怎么准备过，所以感觉答的不好，另外面试官有点盛气凌人，所以以为要挂了
+结果还是过了，所以面试的感觉有时候不太准。。
+2.电面2:
+一个很和气的senior，design一个基于文本的fraud detection ML system. 因为是简单的supervised learning system, 所以答得还可以，可以看出来面试官也很高兴
+3.Virtual onsite:
+总共5轮，其中三轮是technical的，从早面到晚，因为是virtual onsite，所以连午饭时间都基本没有:(，因为还要自己赶快找点吃的。。。
+1. 简单的coding+design NER; 这次楼主准备好了感觉答的还不错
+2. ML design：search ranking
+3. 吃饭+HR聊天
+4. coding/design: 给定一个stream，要求写一个method，返回top k frequent elements, 有点类似leetcode 347, 不过因为要对stream经常调用这个method，所以需要设计一个比较好update的，时间complexity也比较好的；
+这一轮楼主先打答了brute force的方法，然后讲了一个用heap的方法，method complexity 是 NlogK的；但是面试官不满意，一定要求想出kLogN的，在面试官提示下，最后写了一个dictionary+heap， 然后heap是从底层开始实现，需要有heap udpate （bubble up)的方法，花费了好大功夫。。。
+不知道这题是不是曾经出现过在哪里？虽然最后写出来了，但感觉面这个题好像是烙印面试官在坑楼主一样的。。如果大家有什么想法或者知道leetcode题号可以跟大家说一下
+5. director聊天，一个很年轻的director，一直在讲bloomberg onboarding process怎么好，对new grad怎么友善，话说我面的senior为什么要给我讲这个。。
+
+回报地里报一个bloomberg ai 的面经
+总共两轮技术电面 五轮onsite（包含三轮技术）
+每轮技术面都是1-2道lc 和 ml/dl concepts 和 case study
+遇到的题目有利口 1396 1029 146 380 （时间有点久了就记得这么多了）
+还有implement 一些简单的ml算法
+concept部分很简单 ex. l1l2 的区别 ， gradient boosting 和 random forest区别； pca的原理； 描述svm
+case 部分 问了multi label classification （news topic）； sequential data ；
+
+店面：两个天竺友人。现实聊了半小时简历+经验。然后问了一道tree的题。不在lc上。他们自己想的。但是dfs，recursion基本可以解决。
+当天就通知VO。先面3轮，顺利的话再安排senior leader。
+VO 前一天才prep call。也不告诉我面试官名字。
+VO当天coordinator 跟我说了名字，发现全是友人。原来这是个5人组，4个烙印。
+1. 两个人。第一个问了bipartite graph。但是input比较模糊。lz clarify了一阵子。写完之后，看了半天。总说不懂，手动run了4-5个test case。还是说confused。期间，第二个友人插过嘴，态度差。做了35分钟，开始第二题。类似word index count。第二个面试官态度很差，总是打断我说话，不想看code。这题主要问如何distribute，如何实现mapreduce
+2. 店面的两个烙印。第一题 OO design online prediction service。第二题 system design bbg tv scale up。讨论了cdn，api。没仔细问partition，replication。
+3. 一个白人小哥。冷脸。主要简历+system design process large logs。还是mapreduce。没任何引导，也不知道他想deep dive 啥。
+
+9月16日第一轮电面
+怎么选feature，怎么做prediction？linear regression，feature correlation怎么办？regularization 有哪些？L1 的作用是什么？如果有个变量range特别大怎么办？会发生什么？L1对这个情况有什么影响？怎么sample你的训练集，如果是time series的怎么办？
+coding：就是飞机票打印那题Reconstruct Itinerary
+9月30日第二轮电面
+236, 235 + 时空复杂度，最坏情况？
+Logistic Regression是什么？怎么做？怎么迭代更新？怎么split你的data，什么是cross validation？你的这种data split 什么情况下是无效的？那要怎么处理？
+
+新鲜的开花堡电面加onsite
+第一轮电面 基本过简历以及相关的dl知识，像是batchnormalizaion 什么的，给了一个case study ：news multi-topic怎么设计.就是有好多news，每个news有多个topic label，如何设计一个learning system来完成。
+第二轮电面 coding，国人老哥，人很nice，没的说，乐扣 Add Strings 和 Multiply Strings
+virtual onsite 六轮
+第一轮 ml + case study, name entity
+第二轮 coding topk
+第三轮 两人闲聊半个小时
+第四轮 hr聊半个小时
+第五轮 ml + case study credit card fraud detection
+第六轮 面见大boss Anju
+
+电面1：ML project dive deep 然后问了一些ML基础相关的然后20分钟写道题，给个API
+class LegacyDate:
+    def isBizDay():
+        return True/False
+    def addDays(numDays):
+然后实现
+def nextMonday(d : LegacyDate):
+    # d = Tuesday
+    # return d.addDays(6)
+电面2：
+1. 乐扣雾医霸 需要输出最少硬币得到target的组合
+2. 一个多叉树，每个节点有一个值，输出从跟节点到叶节点的max path sum。
+
+1,  原题，longest substring without repeating characters
+2, Trie, autocomplete
+
+ML Eng, 第一轮店面，好像有两轮店面，国人小弟，挺友好
+开始是ML的问题，问熟悉的classical classifier models, 具体问了logistic regression 和 random forest,  lost fuction, gradient descent, regularization.
+后来进入深度学习，问了RNN, CNN
+后半部分写程序，类似于word break, 不要求syntax correct, 后来扩展到如果 字典里的word有权重，要结果最大化平均权重怎么做，没有要求code
+
+BB 家的AI research scientist， title是sales intelligient。九月份的时候就找人内推了，当时HR说只招2019/12 入职的，就搁置了，过了一个月HR又来联系说HC开了。大致流程是两轮店面，各一小时，35-40分钟ML剩下时间coding和问问题。
+面试大哥是london打过来的，一开始问了ML基础：
+evaluation metrics L1/L2 区别 data不balance怎么办，聊到decision tree和random forest 又问了training时候的区别。为什么data不imbalance也可以。我当时说是因为train的时候cosset function是totalloss， 所以即使有class很大也没关系
+又问了logistic regression和SVM的区别。
+提到了PCA但没细问，估计可能看出我不太熟PCA了。。。
+最后问了为什么LSTM比RNN好之类的
+感觉ML面就是很杂，但都不深，可能想general了解一下吧
+coding是一道palindrom的题，太简单不太记得，目测easy难度
+
+ML SDE电面，先聊聊做过的ML project，问的挺细的，需要自己准备准备。
+然后大概30mins问ML的问题，问我什么是supervised/unsupervised learning，举几个例子。然后问我logistics regression，问的很细。。要写cost function，然后怎么optimize求parameter，一直要写公式，中间还问我什么是EM和cross entropy，GG了。。
+后面小半个小时coding，利口要斯留原题。
+
+Generative model & Discriminative model 区别
+Decision tree & logistic regression区别
+介绍常见的无监督算法，KMeans算法原理
+对于Fraud transaction detection 设计feature和model
+公交路线给定(swipe_in time, car_id,station_id), (swipe_out time, car_id,station_id), O(N)计算平均trip的时间
+
+面的是腐国的AI组，聊ML细节，做过的project，问的比较细致，譬如怎么train embedding，w2v loss function是什么，input和output looks like，如何防止overfitting，和一道coding，一个sampler，大意就是给一个p vector（对应一个distribution）， 如何做一个符合这个distribution的sampler，如何优化，时间复杂度等等
+第二轮从头开始implement node class， graph class， 然后就是利口找有方向图里面的圈，感觉oop弄清楚了， DFS会没啥问题，没刷过题就稍微有点一脸懵逼
+
+一个图算法。
+测试是不是DAG
+
+1）怎么帮一个存成linked list （从高位到地位： 1234 --》 1--->2 ---> 3 ---> 4；2）如何用linkedlist 来做integer的加法。如这题： https://leetcode.com/problems/add-two-numbers-ii/
+
+1. HR 店面之后的第一轮技术店面，问了很多我简历上的经历，包括PhD的研究用到的所有ML algorithm都问得很详细，我经历里有用到的Gaussian Process 和Random Forest 他都会让我详细解释一遍，例如decision tree 的impurity index公式一类的都让在online hackerrank上打出来。最后做了一道很简单的leetcode easy.
+2. 主要是coding, 聊了一些behavioral (past experience, why bloomberg...)， 问了一些简单的NLP word embedding, 然后做了一道binary tree common ancester和一道anagram问题。hackerrank上写没有让跑。
+3 Onsite 第一面是live coding，让写一个function 保存并输出data stream的mean，做的不是很好，一开始用binary search，后来interviewer提示用data structure，但是花了很长时间想最后时间不够就结束了。第二面问我一些ML的问题，有一题是data set 的 Golden standard， 怎么test 一个data set 是不是golden standard，这个到现在我也不知道怎么做。。。最后让我写一个能在GPU上跑的Kmean我就直接懵比了？？？？面完第二轮hiring manager告诉我他们临时有别的安排就先面这两轮然而我知道已经挂了
+
+第一轮做45分钟presentation，
+第二轮：一个印度瘦哥加一个美国胖哥，ML基础知识，问了logistic regression，各种loss，啥是reguarlization等等非常基础标准的问题
+第三轮：一个中国大哥加一个印度小哥，第一题 里扣 二舅吾，第二题问了一个系统设计题（印度小哥说的是系统设计题，但我听起来感觉像LRU），无奈楼主实在没准备过这类问题，题目有些忘了，大概是bb有数据不断的stream in，先是问怎么来设计数据结构能够最快找到公司股价，并且返回某个公司最新的股价之类的
+午饭：一个伊朗小哥和一个日本小哥带我吃饭，人都挺好的，聊得挺high
+第四轮：HR: 我以为到此为止就跪了，结束了的，后来发现HR就给讲讲BB有好多好处，接下来会有两个hiring manager跟我聊
+第五轮：一个孕妇大姐，人很好，看起来很和善，先问为啥选BB，然后问我如果让我做sentiment analysis我该咋做，接着问我如果数据没有label你咋办，在接着问我，如果我们给hedge fund提供信息，不想用deep learning那样复杂的方法，你咋办。
+第六轮：一个大叔，眼神犀利，感觉快我把射穿了。。自称是所有ML的头，直接给CTO汇报啥的，所以比较紧张吧，然后先问为啥选BB，然后问了我一道非常奇怪的open question，楼主实在是记不起来题目的具体内容了，大概是什么有twitter的评价，但没label，要评分还是啥的，这个问题实在是非常古怪，感觉答得不。
+
+不知道哪国大叔，聊实习项目，问了KNN,lasso regression, random forest, 然后coding实现decision tree，写完后又写了一个函数prune这个tree（就是假如leaf太多overfit了，如何减少leaf的数量），没写完，最后留了一点儿伪代码
+听口音是亚裔或中国女，聊实习项目，类似前一轮的一些理论问题，然后coding kmeans。然后一个credit card fraud detection的case study
+
+给定两个整数 n 和 k，建一棵有 n 个节点，每个节点有 k 个子节点的树。用 bfs 做就可以了。
+Follow-up 是问如果每个节点可以有 1-k 个子节点，总共可以构建多少个不同的树。只要讲思路不要求实现，再提示下发现是个动规的问题，虽然最后感觉没有完全答对，还是给过了，感谢。
+比如 n = 7，k = 3，得到的树就是：
+              1
+        2    3    4
+      567
+
+前半个小时是ML/NLP概念题：怎么处理overfitting/underfitting，什么是regularization，什么是convex optimization，什么是gradient vanish，LSTM用几层，keep gate的结构，Drop-out的结构…… 有一道题我不明白：Machine learning分为numerical和categorical两种，它们各自假设的分布是什么？我随口说一个连续、一个离散，他说是不是正态呢？我不知道怎么回答……
+后半个小时是coding题：利扣x，x=我国一共多少个民族。因为我答的比较快，他又加了一道，就是贪心法的股票题，不过时间不够了我说说算法即可。
+
+
+
+332, 987, 140, 1679, 642第二轮烙印，给个非tag的hard，还非要我把tire结构先画出来，不用说肯定跪了
 
 
 ## DE Shaw
