@@ -1328,7 +1328,70 @@ B: team 2
 第一轮 两个题都不是tag，一个是给一个排序后的序列，按数字平方排序，一个是输出当前时间点调用某函数的次数
 第二轮 第一个题是top k 变形，第二个是min stack
 
+一共5轮，分两天进行。Target是 Senior SWE Infra track。 Recruiter LinkedIn上联系的。
+第一天三轮：
+1. Coding round I:  (PASS) 白女 Sr SWE 挺nice的。
+题目和过往面经一样。
+['apple, facebook, google', 'banana, facebook', 'facebook, google, tesla', 'intuit, google, facebook']
+然后有一个 filter list， 根据 filter list 输出这些 Tags 的补集
+比如 filter by ['apple']那么 return ['facebook', 'google'] (只有第一个里面有 APPLE）
+比如 filter by ['facebook', 'google']那么 return‍‍‍‌‍‍‍‍‍‍‌‌‍‍‍‌‌‍‍ ['apple', 'tesla','intuit']
+我是用hashmap 做Cache。 Follow up 是怎么更好的index 这个hashmap (Key 是啥，Value 是啥）。
+2. Experience：（PASS) 中年白男 Sr SRE/SWE，很nice，问的很切合也很懂。
+这一论是深入讲解一个以前做过的Project 从设计到实现到合作都问，问的挺深的，建议一定要是自己做过或者drive过的。
+3. Value (aka Behaviour round): （PASS) 中年白男 director.
+各种behaviour questions 轰炸。不过准备过几个常用例子就不怕。
+第二天两轮：
+4. Design (aka System Design) (FAIL) 华人小伙男（呵呵🙂，🤮） 各种找茬，真是。。.
+题目也是以往面经题目。让你设计一个flight ticket deals email notification system, 要求 1.不能发重复的deal 2.如果有新users加入且subscribe 了他想知道的目的地的deal, 之前发过的no‍‍‍‌‍‍‍‍‍‍‌‌‍‍‍‌‌‍‍tification也需要发给他
+我用的是message queue 做传送notifications, 用cache 做read heavy 的缓存。期间一直问如果十分钟内有10 billion deals 咋办 怎么存，要不你试试问你老板怎么去存。。。
+5. Coding round II: (勉强PASS). 小白男，挺Nice 的，我一直以为这轮会挂。主要脑子到这轮不好使，被上轮气疯啦， 😃。。。
+题目很简单。一个INPUT array , 每行要么是Query String （starts with Q: ) 要么是 Log message String (starts with L) , 输出一个Array, 每行如果是INPUT 的Query String, 就输出 query string, 如果是Log String, 就输出 Log String + all query index. (i.e, "My database connection failed, Query ID=1,2,3" 如果input 里有Query String 而且每个word都出现在LOG 里。比如第二行有database,第三行有 connection failed, 第四行里有 database connection failed). 注意大小写不区分，ID starts with 1 not 0. 面试官挺不错，一直给hint. 题目不难，细节tricks 有点多。
 
+10 billion deals or 10 billion notifications?
+Forget about 10 billion deals b/c it bombards users.
+Assume 10 billion notifications in 10 minutes with 10 billion users.
+First of all, it'll crash external systems, include email/SMS servers. Therefore, the system must (a) batch processes (b) spread out notifications into days. (Hours might not be feasible.) (c) multiple external email/SMS servers.
+Well, maybe also forget it. If it works, it's more like a DDOS. It must be the center of hatred b/c it creates too much junk emails and crash/saturate external systems. Most likely the system will be blocked permanently.
+feedback是recruiter给我的，说这是面试官写的，具体recruiter也不懂，毕竟不是technical. 我的猜测是这个SYSTEM Design可能主要考察怎么选数据库，怎么存数据，怎么design document/schema吧
+
+
+电面通过后recruiter给联系了两个组，每个组各面两轮，每轮一小时
+第一个组based在伦敦，对了，每轮面试都有两个面试官，每个组都是一轮coding，一轮design
+都是zoom面试+hackerrank
+1, coding
+有个执行交易的interface：
+execute_trade(ticker, quantity)
+被调用很多次
+问：打印出当天交易量top k tickers
+复制代码
+requirements非常模糊，需要自己clairify，以上信息是交流过程中最后获得的，开始没有提供interface
+一个面试官在LN，感觉比较jerky，另一个在纽约。
+题其实不难，属于考察气场的题，面试官可以故意坑你
+2，design
+设计一个系统，从100个交易所接受实时的交易数据，储存+处理之后，输送给不同的应用场景，比如其它的计算服务引擎，或者显示终端
+复制代码
+考点在典型的multi-producer / multi-consumer messaging system，capacity，caching，partitionning等等
+需要back of envelop计算，画图（用的hackerrank），讨论tradeoff
+两个面试官都是纽约的，都很nice
+后来得知挂在了coding
+我也是这道code题， 我感觉我也挂了。 问题在于这个 execute_trade(ticker, quantity) 是real time processing的。感觉不是很好处理。你确实有很多的方式。不过感觉我面到的面试官有点故意为难你。
+
+上周一口气面了两个组
+分别是这两题：
+1. 1029 利口 two city scheduling
+这题压中题了，轻松过
+2. 1244 要你设计一个解决方案 - input是股票的名字和交易数量，设计一个方程来储存这个input，会不停地被call到；然后设计另一个方程输出所有股票的名字和总交易数量，按交易量从大到小排序
+这题我用一个priority queue做的，但是不是最优解，估计没有过
+会被反复call到
+第二题有什么好办法？
+用hashmap存很快，但是取的时候要sort。n log n
+用heap，存取都不快。
+补充内容 (2024-01-31 11:16 +08:00):
+输出所有股票，是最后call一次，还是反复会call到？
+除了priorityQueue用heap， 实在想不起来其他有什么data structure用heap了，面试官想我换一个用heap的数据结构但是我说除了pq我比较熟练其他的不太了解也不常用，面试官也没说应该用什么，感觉这个面试官也很一般
+第二题有点像药饵丝丝
+看了一眼，感觉是的，少了个reset(playerId)方程，怪我没准备充分没刷到哈哈
 
 
 
