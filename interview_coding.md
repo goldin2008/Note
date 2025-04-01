@@ -1463,6 +1463,439 @@ coding 两题：
 之前看面经说，这家可以给feedback的，然而我问了recruiter，说不给specific feedback，说综合了两轮考虑，不要。
 第二题求有环有向图最大路径，不确定是否存在正环的算法是spfa。就是写个bfs，记录一个访问过点的最大路径值，如果比之前的大，重新进queue，还得记录一个每个点被更新的次数，如果超过n-1次，则说明有正环，跳出。
 
+Datadog 视频Onsite 一共面了5轮  今天接到email,挂，但不知道是挂在哪一轮，还是都挂
+Design
+Coding I
+Coding II
+Values
+Experience
+System Design: 之前地里出现的类似于mint.com
+Coding:    FileSystem , 地里出现过
+                  给出了API
+                  list(string path) 返回STRING列表，每一个可以代表DIR，也可以是一个FILE
+                   isDirectory(String path)
+                   delete(String path) 如果是文件会返回true，如果是空目录，返回true, 如果不为空，则返回false
+      让实现一个新的DELETE(String path)，可以删除本目录以及子目录，如果是文件，直接删除
+      递归实现
+       follow up question:  系统运行后，发现OOM, 怎么FIX                                                    
+3。 coding 2：给出, 无序的list of point  (tags, timestamp, int value),  例如
+                      {   "env:dev", 0, 444
+                           "env:dev", 5, 300
+                           "env:dev", 1, 300
+                           。。。。。。。。。。。。。。
+                      }
+                     
+                 实现query( String tag, int windowSize), 返回某一个tag, 在给定的WINDOW SIZE内， value的SUM
+prefix sum?应该也是可以的，
+我当时用的是sliding window,
+因为是一次返回特定size的sum .
+比如
+3,4,3,4,3,4     如果window size 是2
+那就要求返回: 7,7,7,7,7
+4。 Value: 比较类似于BQ ，问一些做过的项目，担任的ROLE，怎么沟通等。
+5。 Experience： 讲一个自己做过的PROJECT。  画了architect图，讲了一些设计的选择等。。
+
+system design
+设计mint.com
+
+problems coding:
+Query and Log. 给一系列字符串
+[ "Q: Hello world";   "Q: Good morning";  "L: Hello my friend and the morning is good in this world"; "L: This morning is good"..]
+每进来一个Query，你要打印出这个Query被assign的ID，比如第一个Query Hello world就需要打印1，第二个Query Good morning就需要打印2，以此类推3，4…。每进来一个Log，打印出有哪些之前进来的Query是match这个Log的。Match的定义就是该Query的所有单词都在该Log里出现.
+      => 地里之前有讨论， 进来一个Q就build inverted index.  然后到L里查找就好
+第一题：地里高频的logs and queries match
+设计一个queries search object，它每次读取一行信息string。当这个string格式是
+"Q: hello world" 表示这是个queries， 内容是 hello world
+如果string 格式是 “L: hello morning world”那么表示这是个log， 内容是 hello morning world。 每次读取query要保存query内容并赋予query id， 每次读取log要把所有在这个log中出现的query id给出来。 这里出现的定义是如果query的每一个word都在log中出现了。注意这里有可能要求log中相同word的出现次数要多于或等于在query中出现的次数，也可能不要求次数，word只要出现即可。但不管怎样，在log中的每个word都能和不同的query中的word重复而独立的匹配。解法是用地里之前提到的reverted index 去记录每一个word在哪些query中出现了，然后遇到log把每个word带入reverted index 去重建 qid-> words list 结构然后和那个qid的word list相比较。
+这里列一下我的解法代码：
+```
+from collections import defaultdict, Counter
+class LogsAndQueries:
+    def __init__(self):
+        self.queriesDict= {}
+        self.revertedIdx= defaultdict(list)
+        self.id=1
+    # assuming there is no number in the queries and logs
+    def getHashFromCounters(self, counter):
+        res = []
+        keys = list(counter.keys())
+        keys.sort()
+        for w in keys:
+            res.append(w)
+            res.append(str(counter[w]))
+        return "".join(res)
+    def input(self, entry: str):
+        tp, content = entry.split(":")
+        words = content.strip().split(" ")
+        counter = Counter(words) # a dictionary of word counts
+        if tp == "Q":
+            hash = self.getHashFromCounters(counter)
+            if hash not in self.queriesDict:
+                self.queriesDict[hash] = self.id
+                for word in counter:
+                    self.revertedIdx[word].append(self.id)
+                self.id += 1
+            print("receive query {}".format(self.queriesDict[hash]))
+        else:
+            result = []
+            queries = defaultdict(list)
+            for word in words:
+                for q in self.revertedIdx[word]:
+                    queries[q].append(word)
+            for cq in queries:
+                chash = self.getHashFromCounters(Counter(queries[cq]))
+                if chash in self.queriesDict and self.queriesDict[chash]==cq:
+                    result.append(cq)
+            print("recieve log and the relevant queries are {}".format(result))
+```
+注 这个代码是对应于需要考虑相同word在每个query中出现次数的情况，如果不需要考虑出现次数，那么做相应简化即可，思路是一样的。
+
+
+
+电面和VO按类型分类
+coding：
+322 用面值 [1,2,5,10] 硬币组合出面值为n， 求最少硬币使用数量
+=> 贪心尽量多用大面值
+文件目录统计文件大小sum,
+=> 多叉树的遍历。
+
+第二题： implement a buffered writer: 这个writer存在一个buffer 和可设置的最大buffer size，这里的buffer工作方式是
+1， 读取的数据先存在buffer里面不写入硬盘
+2， 当buffer里的数据量达到buffer size的时候，一次性清空所有buffer内的数据到硬盘中。如此往复。
+写文件的api 要使用缓存写。 缓存满后要先flush，然后继续写。
+=> 类似 蠡口 157
+
+
+system design:
+设计用户花费通知系统。 类似这个
+https://www.youtube.com/watch?v=ZWXmPgwInjg
+
+
+店面：（都是老题，strong hire）
+1. 段落找重复词 (regex，小心多余空格）
+2. 文件夹求总大小 （递归。有个follow up的，我写了一半，但具体忘记了，还是很简单的）
+昂塞：
+1. Log and query老题。秒了，拿了strong hire。
+2. 跟这个帖子的第二个coding题一样的，是最近三个月的新题。解法是用sliding window，需要先跟面试官互动问清限制条件还有sorting与否之类的，一共有两问的。
+我第一轮做完做到了follow up。follow up的window是要按时间戳，不是总数。我follow up没写完，口头说了没写完的那几行是啥。拿了个weak hire。
+3. BQ就是常见那些。聊的非常好，拿了个strong hire。
+4. Project deep diving 就是聊过去一个project。拿了strong hire。
+5. SD 先mint.com。然后那个面试官很不懂的样子，问data model什么的我都简单答了，结果最后反馈说他觉得我太aggressive还抢话了，导致他觉得我根本没去回答他想要的data modeling和API design signals。
+6. 其他拿strong hire轮的要求recruiter给我加面个SD，面ins api找脸那题。地里很少见，但有过两人报面经的。这次特别咱真不aggressive了，认真跟面试官互动，被问了很深。广度也cover住了。就是你是用户，然后有个ins的API，让你设计一个一旦有你脸的照片出现在ins就给你发通知的系统
+最后说SD平均两轮算，总的signal就不够强，所以还是拒。据说它家现在要全hire且strong越多越好。
+
+
+系统设计是设计打折机票通知，蛮多non functional的要求，感觉能讲完就很不容易的，有被问到数据库的设计。
+还想问问机票折扣通知这个题，是不是跟design camelcamelcamel会很类似？ 这个题有哪些可以在deep dive环节讨论的functional/non-functional requirement?
+跟三骆驼是像的，但具体怎么问其实是面试官决定的。我就记得当时被问了半天从3rd party那里pull了以后如何aggreation以及replication的问题。再就是后面notification。还有它家本来就是做monitoring的，所以就主动说了一下这里。
+
+两个题，第一个是换硬币，利口叁贰贰变体，要求输出每个硬币用了多少个的数组而不是总和。
+本来我疯狂输出dp和bfs但是他拦住了我说是没那么复杂，意思就是直接从大到小遍历下硬币数组即可。
+第二个题是实现一个circular buffer用fixed sized array, 要求实现queue的各种基本操作。没写完，只说了思路，用两个指针分别存下一个push 和pop的位置。
+
+两题coding, 地理都有
+1. put a list of integers into a list of buckets, with a specific bucket width, return counter per bucket
+for example,
+a list of integers - [1,2,11,20, 100]
+num of bucket - 3
+bucket width - 10
+0-9:       2 (1,2)
+10-19:   1 (11)
+20+:      2 (20, 100)
+最后一个bucket, 包含所有后面的数字
+2. 给一个list 里面有坐标，按间隙补齐缺失坐标,  点和点之间是直线连接，缺失的点也必须在直线上
+for example, interval=5, interpolate missing point at x-coordinate with incremental of 5 (e.g. (0,y1), (5,y2), (10,y3)....
+input = [(0,10), (10,10),(20, -10)]
+output = [(0,10), (5,20),(10,10),(15,0) ,(20,-10)]
+(5,20) 在直线(0,10)-(10,10)上, (15,0)在直线(10,10)-(20,-10)上
+
+非常想去的公司，做了很多的准备。地理的面经很有用，全看完基本能覆盖8成。
+第一轮，白人小哥，非常nice不断提示，题目是飞不同城市最大化holiday天数，比利口上的标签题简单。
+但follow-up把我卡住了，要求在最大化同时最少化飞行次数，有个edge case一直过不去：
+比如
+w1:  [2,0,2]
+w2:  [3,0,3]
+w3:  [1,0,1]
+w4:  [0,0,2]
+三个坐标分别代表三个城市在这周的假日，所以需要从第一周开始就待在第三个城市。其实解法不难，但当时时间紧卡住了，小哥说没关系。我以为挂在这一轮。
+第二问应该也是greedy吧？就是代码可能会写的冗长一些。greedy的话就是不太好证明，我的理解是不管怎么样某一周的最优解一定是从上一周的最优解（可能有多个）飞过来，不存在上一周次优解飞过来？
+哦哦，我明白了，直接找出每一周哪个城市假期最多存起来，最后直接找出出现最多那个城市就行
+哦哦，那第一问就是纯粹greedy了，每周挑假期最多的待着
+第二问确实不好想，目前我就想到dfs肯定能做，优化成dp的话目前只能想到三维dp，周，城市号，flight 次数是三个纬度，不确定能不能走通
+关于sd，题目是有一个api查机票，如果发现有优惠需要通知user，还有我遗漏的功能吗？对的 功能上和以往面经一样，基本都八九不离十，
+关键点是scale，也是他们主要考察点
+第二轮，华人大哥，人不太nice，系统设计flight折扣原题，准备了很久，整个过程基本一气呵成。大哥表示满意，但后面其中一个follow-up，关于为什么一个地方用DB存而不直接用queue。可能没答出他想听到的，最后HR feedback显示挂在了这一轮。
+我猜sd他问的是notificatin里为啥存db没有用queue？
+第三轮，白人小哥，L+Q问题， 建inverted index就可以，有很多follow up，但只要一开始interface建好后面extend非常简单。小哥当即反馈是他见过最全面和整洁的代码
+第四轮，印度经理，大量BQ，得问了有快7，8个问题，对答如流。
+
+11月，店面都是地里面经题，1. frequency of words; 2. max path sum in a tree
+12月，onsite
+coding都是地里的原题，但有一道log and query感觉地里reverted index解法是错误的。
+Q1: hello world
+Q2: hello, apple
+Q3: morning, world
+L: hello morning world
+如果对query建inverted index 会是这样
+hello -> Q1, Q2
+world -> Q3
+morning -> Q3
+对query建inverted index一点用都没有，还是得扫描所有query暴力破解
+inverted index有用的应该是对log, 想下面这样
+log1: hello world,
+log2: hello, apple
+log3: world, google
+query: hello world
+如果对log建inverted index 会是这样
+hello -> log1, log2
+world -> log1
+query -> hello ^ world -> (log1, log) ^ log1 -> log1
+楼主当时一上来就按地里的解法，但最后stuck。换了一个思路，只能暴力扫描所有query。
+coding 2: file buffer
+system design: design mint.com
+experience: 详细讲解自己做的一个项目，中间会夹杂BQ.
+最后feedback是都只达到SDE II level，但不给降级，说是SDE II 没有 HC。那道log coding题的反馈是没有最优解，面试官的意思是我开始的inverted index是正确的，但我真不知道怎么用inverted index。
+
+
+一周多前面的Datadog VO， 一共四轮，两轮Coding，一轮SD，一轮project deep dive.
+第一轮Coding，之前面经看到过的Log and Query题：
+给一组strings,开头可能是"L: " or "Q: "，如果是Q就是query，后面会跟一组words比如“Q：hello world”; 如果是L就是log,后面同样会跟一组words比如"L: hi hello world"
+写一个function，读入这组strings, 如果是query, 要register不同的query并给他们assign一个qid，如果是log, 找到match的query qid并print出来。
+Input example:
+["Q: hello world",
+"Q: data failure",
+"Q: world hello",
+"L: hello world we have a data failure",
+"L: oh no system error",
+"Q: system error",
+"L: oh no system error again"]
+Output would be:
+[ "Registered q1",
+"Registered q2",
+"Registered q1",
+"Log q1, q2",
+"Log",
+"Registered q3",
+"Log q3"]
+注意有几个tricky part
+1. query 里面的单词顺序不管，只要有一样的set of words就算是一样的query。但是单词出现次数要管，比如"hello world world"跟"hello hello world"是两个不一样的query。
+2. log里面也是顺序不管，但是单词出现次数要一致。
+第二轮Coding, 简单版LC408.
+就是给一个word和一个pattern, pattern里有数字，如果看到数字就match word里的几个字符，这题有3 parts
+1. 如果数字只是一个digit： word: datadog, pattern: d3dog -> match
+2. 数字可以是多个digit: word: accessibility, pattern: a11y -> match
+3. 加分项，可以escape数字，in which case escape掉的数字就要match word里面的数字
+word: datadog, pattern: d\3dog -> NO match
+word: d3dog, pattern: d\3dog -> match.（这part可以不用写就说思路就行，但是我前两part很快写完所以很快把这个也写完了，就这样加上前后聊天还是多出来15分钟左右，最后这轮提前结束了）
+第三轮SD,
+设计一个类似mint.com的系统，design an application which will collect and store purchases from credit and debit cards and provide the user with insight into their spending habits. 这轮讲的时候我觉得讲的挺好，有具体讨论Database choice, schema, pw如何存etc.但最后给的反馈是这一轮fail了，因为没有讲太多detailed design。我也是不大懂要detail到怎样。
+第四轮manager问past experience，就准备好讲一个past project，challenge在哪儿，问得挺细，最好要讲自己真正做过的project。然后还问了几个BQ，就是很Frequent那种，遇到conflict怎么做啊什么的。
+整个面下来体验不错，面试官都很nice，聊得也都不错，就是fail的理由感觉有点牵强，可能他们也没有急着招人吧。新人，看在我写得这么详细的份上请大家多赏点米让我好看面经吧！
+
+1. coin change
+2. 给一个多叉树，每个节点上都有自己的分数，问 从 根节点到最终叶子节点 累计分数最大值是多少。DFS or BFS
+
+1. 给一个string，排序每个word出现次数
+2. 添加中间数达到线性
+eg1： input：[5，10，20], 5  output: [5,10,15,20]
+           数组，间隔
+eg2：input: [5,25,35], 10   output:[5,15,25,35]
+
+题目一
+题库毵薾薾, 我用的是解法里面没有的greedy的方法，时间复杂度是S, 还解释了半天
+题目二
+Tree Max Sum Path, 但是是n-ray tree, 还是用BFS，单独一个queue用来存路径就可以
+
+Given a string of words, output the number of duplicated words.
+其实就是第一次看到的word不算，如果已经看到过了return value加一。 需要注意的是大小写以及标点符号。
+LC 986, 211
+
+第一轮: hiring manager projects deep dive, 会问得非常细. 然后有5-10分钟会问你behavior, 把 亚马逊的leadership principles背了 准备几个例子就可以了
+第二轮: 一道lc medium 的string processing 问题. 两个parameters: 一个array of streams, 一个 array of key words.
+每个stream都有key word 用 | 来分开, 让你寻找这几个key words的mutual stream.
+第三轮: 让你设计一个flight ticket deals email notification system, 要求 1.不能发重复的deal 2.如果有新users加入且subscribe 了他想知道的目的地的deal, 之前发过的notification也需要发给他
+
+首先是hr轮
+然后视频面试，要装摄像头和对‍‍‌‍‌‍‍‍‍‍‌‍‍‌‌‌‌‌‌面面试，大概1小时，45分钟做题，15分钟聊天。题目是一道LC easy难度的用hashmap的题和另外一道图的遍历的题，大概就是Medium里比较简单的那种，有点类似LC二灵期解决一个有依赖关系的job schedule，但是入度为0的点只有一个，用最简单的bfs就可以做。
+过了视频面试之后，会再有一轮HR讨论下一轮怎么面 O.O
+下一轮要写一个log msg aggregator类似的程序，给的输入是一个文件里面类似tomcat的request log，要按照他的要求按照stream读入输出当前各种统计数据，比如10分钟内最大的responsetime之类的，最后还要写好unittest。这个assignment可以在家里做也可以直接onsite做，给的时间一共3个小时。但他们家对时间要求每那么严格。强烈建议提前把你IDE配置好，unittest framework setup之后再开始做题。最后要打包成一个可以跑的程序，还要把怎么跑的instruction写好，编程语言不限。
+过了上面这轮，就是onsite了，住在时代广场附近，他家大楼在new york times building里面，没事可以去当旅游，风景还是非常牛逼的。onsite可能有5-6轮，他们的hiring process很不正规，感觉你会的东西多，他们可能会加一轮。中间还有一个环节是产品展示，给你show一下datadog多好用，这一轮你可以随便问一些问题。真正的题目只有第一轮和第二轮，第一轮是一道LC HARD难度的题，也是输入时某种形式的log message，然后按照某个field做统计，由最简单的实现到最后扩展到怎么做pre-setup让处理更快。这个题还挺新鲜是他们自己出的，抱歉时间久远忘了具体啥题了。但是如果LC MEDIUM你基本都能做出来，那在他的提示下应该可以做出这道题。
+第二轮是我挂的一轮，系统设计youtube，完全现场发挥，我挂的地方是上传视要用event queue来做来保证fault tolerant（断点续传），我没用，我说可以通过browser端检测和单独一个table来实现断点续传（后来想想是够麻烦的）。
+后面几轮都是behavior。
+最后挂了，但是recruiter说，结果很奇妙最后内部分歧很大，要说有问题就是设计youtube没用message queue。也有可能我跟他们说我已经有的offer他们觉得match不了，谁知道。
+
+问了一个简单的写代码题，找零钱(蠡口叁贰贰)的变种，但是没那么复杂，接口如下
+/*Given a number of cents, write a function to make change with the fewest number of coins,returning the number of coins for each denomination needed for the given number of cents.make_change(33) -> (3, 1, 0, 1)
+[1, 5, 10, 25] * * If you need more classes, simply define them inline. */
+public int[] make_change(int amount){
+        final int[] denoms = new int[]{25,10,5,1};
+        int[] counts = new int[]{0,0,0,0};
+        int numCoin = 0;
+        for (int i = 0; i < denoms.length; i++){
+                 numCoin = amount / denoms[i];
+                 counts[i] = numCoin;
+                 amount %= denoms[i];
+         }
+         return counts;
+}
+
+
+coding 两题：
+1. 给一个bucket_size和bucket_width和一堆input数字。最后返回每个bucket里装了多少个。我就用一个int array数数，每次除一除就知道是哪个bucket的了。有一个edge case，最后一个bucekt是所有大于max的加和。譬如，我有10个bucekt，每个size是1，如果我的input里有90，这个90算在最后一个bucekt里。
+2. 多叉树path sum那题，leetcode里的二叉树改成loop就好了。最后问了一下input可能会有什么问题，我想半天没想出来。然后，小哥说，可能会有loop，然后问了我解决方法。我说，用个visited，但应该要跟着树的结构，不能直接是个array什么的。现在回想，其实可以用hashset，因为每个node都是一个object。（是不是这里挂了？）
+第二题求有环有向图最大路径，不确定是否存在正环的算法是spfa。就是写个bfs，记录一个访问过点的最大路径值，如果比之前的大，重新进queue，还得记录一个每个点被更新的次数，如果超过n-1次，则说明有正环，跳出。
+
+
+coding
+- 地里原题filter tag
+design
+- 设计streaming website like youtube
+coding
+- 地里原题 encoded string, datadog -> d3dog
+
+VO 4轮
+1. 那道log 题，用inverted index, 面经很多
+就是把match的 array index存下来 最后再找intersection
+2. coding: string match. 给定一个string和一个compressed string, 判断是否match. compressed string里数字代表任意n个letter
+datadog, d3dog -> true
+datadog‍‌‌‍‍‌‌‌‌‌‌‍‍‌‌‌‌‍‌, d2dog -> false
+很多follow up , parse 各种新的字符
+代表range d{1,3}dog-> d1dog, d2dog, d3dog 然后再对比 ddog
+d10dog (parse 两位数),
+(d^4dog, d4dog)  ^ 代表skip pattern
+一些edge case, empty string 这些
+3. System design flight ticket 那题，感觉关键实在MQ， 和 cache flight 上面，如果不cache, 就打太多request 到flight API 上，还问了应该多少时间打，我说1小时，如果flight 价格变换太快 整个系统就没有意义
+4. BQ deep div 问了很多技术细节
+
+题目是地理面经的题，coin change的变种。这是求一个min coin change的具体方案。可能现在的面试者都太强了，地里大家都说简单，没有看到有人写思路。一开始没认真审题，还以为是求随便一个方案。然后写了个递归backtrack的，小哥指出来，我才再认真审题。我吭哧吭哧地继续用递归来写，但一直卡，因为不知道怎么把挑选了的coin记录下来，虽然大概猜到是backtrack，小哥看我卡了很久给了一个hint，可以返回个list。然后我写着写着又卡，因为min的时候需要打擂台，一时紧张脑塞想不出用一个变量来记录，小哥又来了一个hint。后来还出了几个bug，自己调过了2个，第三个求min的时候还用错了变量来比较，小哥给我指出来了。
+没时间写memoization优化，没时间写第二题，小哥甚至不屑问我时间复杂度，跪得彻底。
+greedy优先把大数额的塞进去就好了 但是coin change还是推荐dp
+对于coin change有些情况下greedy会失效（比如1 15 25， 目标30)，听说有一个多项式时间内检测能否用贪心的办法但是面试的时候那个检测几乎没用
+之前常见的一个 coin[i] + coin[0] >= 2* coin[i-1] 条件也被1 15 25这个反例打破了
+贪心有些testcase过不了，比如说【1， 2，5， 25】 33， 贪心的话 return 硬币数量是 0， 4， 0， 1
+但答案实际上是1，1，1， 1
+coin change 的最小问题，贪心只对于某些input是可行的。
+所以要看题目的coins 面值 是不是固定。如果是固定的且符合贪心解法，这种情况才可以用贪心。
+这里有个证明
+https://www.cnblogs.com/hapjin/p/5575112.html
+https://www.cs.ucf.edu/~dmarino/progcontests/cop4516/notes/Greedy-Contests.pdf
+
+1. 找钢镚，简单greedy，1,2,5,25,  找33，就从大到小，return 每个 钢镚的数 [3,0,1,1]
+2. root 到 leaf 和，follow up 是 一个node, 多个parent, dfs/bfs 会重复读取
+
+基本和地里一样
+1. 给一个text，叫你数一下里面有多少个重复的，要注意，是数重复的数量，不是重复的总数，比如“hello world text, text hello, text"， 那么text重复了2次，hellow 重复了1次，答案就是3
+2. 给一个file system，要你统计文件大小。
+home/
+|--- me/
+|.      |--- foo.txt : 231
+|.      |--- abs.txt : 443
+|--- haha.css : 52
+就一个BFS或者DFS
+follow up：给你一个制定的dir，你去数一下里面文件的大小，比如 /home/me/
+
+四十分钟：两个coding
+第一题：给一个list of integers要放进buckets里面, 给 number_of_buckets, bucket_width，output 每个bucket里面有几个数
+直接用array/hashmap存，divide by width, 注意如果是落入最后一个bucket，整除的数会大于number_of_buckets, 要设置一个max才不会index out of bound
+第二题：
+给一个file system structure (json) 算出所有文件的内存大小。去壳：遍历树并求叶子的值之和
+
+124, 568, 518
+
+1，输入一窜长String，找重复单词次数。这个其实不用map或者pq那么复杂。用个set记一下哪些出现过，再出现+1就结了
+2，N-tree的root-leaf最大值，标准dfs
+可能我写的比较块，问了很多follow up，时间空间，input里有环怎么判断，怎么提升效率等等。白人小哥，待了3年的senior，人挺好的
+
+一共有两道题， 面了一个小时。
+第一题是力扣三三二， 经典找零题，一开始有点愣住，给了一个hardcoded 解体，之后面试官要求才改成用coin 面值当input
+第二题 是 树结构file structure，有子文件夹和文件， 要求output 每个文件夹的总文件大小。
+这题很简单，一个BFS就基本解决了
+
+1. coding: 经典面经题, 给定一个array, 每个元素都是一个string array, 输入一个string array, 返回输入对每个给定string arrary的补集 (需要保证输入里每个单词都在string arrary里), 直接返回一个arrary就好.
+  给定: [['apple', 'facebook', 'google'], ['banana', 'facebook'], ['facebook', 'google', 'tesla', 'apple'], ['intuit', 'google', 'facebook']]
+  输入: ['apple'], 输出: ['facebook', 'google', 'tesla']
+  输入: ['facebook', 'google'], 输出: ['apple', 'tesla', 'intuit']
+2. coding: string match. 给定一个string和一个compressed string, 判断是否match. compressed string里数字代表任意n个letter
+datadog, d3dog -> true
+datadog, d2dog -> false
+data, 4 -> true
+3. system design: design mint.com. 主要功能是连接bank account, 可以制定budget, 分类.
+4. HM BQ: why change company, why datadog, project deep dive.
+
+面试官是白人小哥，在数据狗工作两年多，挺nice的，10分钟自我介绍，问了一个the most challenging project，剩下45分钟做两个题，用Coderpad，题都是地里的面经，最后5分钟问问题。
+1. 给一个string，找重复单词的总数
+function: count_repetition()
+input: paragraph = "The sun is the largest object in the solar system. It is the only star. And the sun is bright."
+output: 7
+the: appears 5 times (repetition: 4)
+is: appears 3 times (repetition: 2)
+sun: appears 2 times (repetition: 1)
+number of repetition : 7
+大小写不管，我用hashmap
+请问标点需要考虑吗？只算单词，所以我把句子里的标点，大小写，空格，都预处理一下，然后把单词放进hashmap里。
+2. 给一个list of points，points是坐标，按间隔补齐缺失的坐标，坐标都是线性增长或减少的
+function: interpolate()
+input: (0, 0), (5, 100), (15, 300), (30, 150)
+output: (0, 0), (5, 100), (10, 200), (15, 250), (20, 250), (25, 200), (30, 150)
+给了一个Point class表示坐标
+我就linear scan，计算比例，插入缺的坐标。
+没有要求写不同的test cases，我把他给的example做出来就停了，随后问了时间复杂度和空间复杂度。
+
+coding 2：白人姐姐 LC 568
+题目是给你一些国家和这些国家放假的日期，假设你可以随意旅行，最大化利用每个国家的放假时间，让自己休息最长时间。
+没有给定严格的输入输出，先讨论用什么数据结构，要存些什么信息，然后我先用了一个暴力解法，面试官认可。
+随后要求优化，要把旅行的开销算进去，就是你要找到一个可以待最长时间不旅行，又可以最大化休息日的国家，我只讲了一下思路，没有写完代码。
+system design：ABC小哥
+设计一个financial tracking system，类似mint，之前好几个面经里都提到过。
+功能比较简单，只需要用户可以连结银行账户，然后显示自己的开销，不需要分类，不需要制定预算，不需要notification，面试官只让我focus在基本功能。很基本的distributed system，用message queue和worker在连接银行账户和获取数据的时候做aysn，设计database schema，用SQL和cache，怎么scale，怎么shard，系统什么时候refresh数据，user authentication怎么做，如何使用authentication token和refresh token。
+behavior：三哥，Director
+先是project deep dive，问得很细，然后是一些senario的问题，最后反向bq，他在狗家做了15年，跳到这里刚半年。
+
+店面两道题
+1. 找硬币，给你硬币【1，5，10】， target 33 ，找到最少需要的硬币数量
+2. 给一个多叉树，每个节点上都有自己的分数，问 从 根节点到最终叶子节点 累计分数最大值是多少。
+VO四轮，因为选择不做homework， 所以有两轮coding
+1. 给你一个file class， 有delete，list，isDirectory 等helperfunction，给你一个absolute path，做一个rm 操作
+followup： 用dfs，bfs是否会有memory issue 如何解决。
+如果subfolder有太多层，recursion可能会stack overflow，可以先问file system有没有什么限制，像是最多有多少sub folder level, 或者是每个folder是否有最多subfolder数，根据情况选dfs还是bfs，如果选dfs可以用stack写，如果还是out of memory，可以dfs/bfs每次处理最多n个subfolder，最后看root是否已经空了，没有空的话循环一直到root空了返回delete完成
+2. 跟有个人的面经一样，不重复了
+['apple, facebook, google', 'banana, facebook', 'facebook, google, tesla', 'intuit, google, facebook']
+然后有一个 filter list， 根据 filter list 输出这些 Tags 的补集
+比如 filter by ['apple']那么 return ['facebook', 'google'] (只有第一个里面有 APPLE）
+比如 filter by ['facebook', 'google']那么 return ['apple', 'tesla','intuit']
+需要 high performance filter
+3. system design
+design mint.com 不要求做notification， 只需要track spent
+4. manager 聊天BQ
+5. HR sync up
+
+design， notification system，就是flight ticket 变化了，要通知用户，需要实现exactly once。讨论了用户怎么设置alert，price history的数据，notification system。
+
+given a string, find the total number of repetitions. Repetition means if a word appear more than once, and repetition number is the times minus one.
+for example: The sun is the largest object in the solar system. It is the only star.
+"the" apprears 4 times, "is" appears 2 time so return value is 3+1 = 4
+
+两道题，感觉是easy LC 但是我对不上号
+第一题，给一个字符串，把里面重复的单词的数量输出
+例如 “This is a nice car, I would like to buy one. But I don't have enough money” 输出 2，因为 I 重复两次
+我的解法: hash, linear scan
+第二题，给一个list 里面有坐标，按间隙补齐缺失坐标
+输入[(0,10), (5,20),(20, -10)]
+输出[(0,10), (5,20), (10,10),(15,0) ,(20,-10)]
+我的解法: linear scan，同时补齐
+题目是一组二维坐标 x, y 而 x 是时间 按固定 interval 增长，y 是值 线性递增但是有峰值会线性下降
+嗯，都给了的，可能可以用二分查找，不过输出要求是把所有数补齐，个人觉得直接扫描一遍比较合适
+
+Coding:
+Sliding window. 给一个数组，每个元素代表一个时间，统计window里的数据。windown的定义是一个时间段。
+Coding:
+类似于Read4。数据先存到buffer里。buffer再存到file里。
+follow up：多线程怎么办，用mutex写。
+System Design
+Design mint: user can get transaction history; user can set a budget.
+两个Behavior
+
+
 ## Scale AI
 Tell me a time you made a hard decision, talk about the trade off.
 Tell me a time you failed the project and need to redo it, and the hard work you did.
