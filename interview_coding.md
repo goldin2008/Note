@@ -1004,6 +1004,333 @@ id       value  time
 2. 药饵丝丝 1244, 要你设计一个解决方案 - input是股票的名字和交易数量，设计一个方程来储存这个input，会不停地被call到；然后设计另一个方程输出所有股票的名字和总交易数量，按交易量从大到小排序
 这题我用一个priority queue做的，但是不是最优解，估计没有过
 
+题目： 设计一个sequecer类 输入id和content， 按照id顺序输出， 假设id不连续就暂时缓存， Example： [1, "aaa"], [2, "bbb"] [4, "ddd"], [3, "ccc"] etc，
+输出  aaa
+         bbb
+         ccc ddd
+代码其实很简单 中间穿插问了unordered_map, map, stack的插入查找复杂度。
+followup Q： 如果missing id一直不出现该怎么办？（buffer size, timeout, curr_id - missing_id > some_threshold， etc）
+
+coding 1: 打印最深层次括号里的字符串。 没见过。
+我的思路是找到最深层次的括号，然后标记下位置。然后再倒序查找，找到字符串。
+明显不是他想要的。不过也写了。
+然后说太麻烦，要求只loop一遍。
+Coding 2: 三八零
+follow up: 三八一。
+我觉得这货绝对有大病。我用的就是经典的map<String, List<Integer>> 结构。他不满意，说这样不行。不能达到O(1). 然后我说我们可以用PriorityQueue.
+还是不满意。说是要存一个index 然后每次能很精准的找到位置，就达到O(1)
+问题是你找到index 删除index 的值不占时间的呀。神经病嘛。 这是给的解，自己看吧。
+
+VO3: 利口药流药斯 药药气（我用的BFS，followup如何用DFS实现）
+每题都followup了时间空间复杂度
+
+二面：刷的有限，没见过这题，题目是给一个数，从1开始只能✖️数字a或者除以数字b （具体a和b是啥忘了）来达到这个给的数，知道的人可以贴个题号
+第二题补充一下，求的是最短的sequence，sequence例如 [“乘以a”, “乘以a”，“处以b”]
+第二题我之前也遇到过，抽到这个题基本上就无缘了。跟散酒其很像，我当时说了bfs，dfs和加memo做。最后结果是悲剧。这个题源于Collatz conjecture，不是搞数学的，基本上做不出来
+1654 用一个log 把乘除改成加法
+三面：设计题，minstack
+
+非tag非leetcode题：
+"A string is valid if all characters of the string appear the same number of times. It is also valid if we can remove just 1 character in the string, and the remaining characters will occur the same number of times. Given a string s, determine if it is valid. If so, return true, otherwise return false.
+For example, if s=abc, it is a valid string because frequencies are {a:1,b:1,c:1} . So is s=abcc because we can remove one c and have 1 of each character in the remaining string. If s=abccc however, the string is not valid as we can only remove 1 occurrence of c. That would leave character frequencies of {a:1,b:1,c:2}."
+大概easy-medium level？但是楼主一开始思路想错了（想到stack 去了）导致最后几分钟才完成绝杀。。。
+搜了一下有点像刷题网2423，不同之处是如果原来的letter count都相同的话也return true
+
+/**
+Ranked Choice Voting
+More than 50% wins
+No one reaches 50% it's a re-do
+例子2： 1和2都有2票，第五个人投给3没用，只能投给1，所以赢家是1
+例子3: 第一轮之后，1和2都有2票，平局，第五个人只能投给1而不是3才会产生赢家1
+1. [ [1], [1], [2] ] -> 1
+2. [ [1], [1], [2], [2], [3, 1] ] -> 1
+3. [ [1, 2], [1, 2], [2, 1], [2, 3], [3, 1] ] -> 1
+**/
+没做出来，只能说了思路，分析时间复杂度。
+这不是tag题吧，也没做过leetcode原题，类似1366，但也有很大不同吧，投票不是分轮，感觉很tricky
+感觉这个像是一个backtrack呀，回溯每一个人的投票，每次都从第一志愿一直选到最后。尤其按照“例子3”的描述，如果所有人的投票投不出结果，那就从后往前改（最后投票的先改自己的票），这正好符合了backtrack自底向上回溯的过程。
+下面是我的实现，目前的三个测试用例是都可以过的，可以作为参考
+from typing import List
+from collections import Counter
+
+result = None
+def q4(votes: List[List[int]]) -> int:
+    backtrack(votes, Counter(), 0)
+    return result
+
+def backtrack(votes: List[List[int]], counter: Counter, index: int) -> None:
+    global result
+    if result:
+        return
+    if index == len(votes):
+        winner, count = max(counter.items(), key=lambda item: item[1])
+        if count > len(votes) // 2:
+            result = winner
+        return
+    for candidate in votes[index]:
+        counter[candidate] += 1
+        backtrack(votes, counter, index + 1)
+        counter[candidate] -= 1
+
+votes = [ [1], [1], [2] ]
+print(q4(votes)) # 1
+votes = [ [1], [1], [2], [2], [3, 1] ]
+print(q4(votes)) # 1
+votes = [ [1, 2], [1, 2], [2, 1], [2, 3], [3, 1] ]
+print(q4(votes)) # 1
+
+System Design 设计一个job scheduler。面试官重点问了很多monitoring 和Capacity planning的东西，比如应该monitor哪些metrics, 用哪些metrics来做autoscaling，还有怎么做capacity planning。这一轮答的一般般吧
+
+原本和hr交流的时候他们说是一轮coding一轮system design，但是不知道为什么两轮都是coding.
+第一轮考了两题：
+第一题是在一个数组里面，有一些数字重复了2次，找到并返回不重复的数字。这题轻松秒杀。
+第二题提供一堆数和一个函数，这个函数输入两个数字会给出一个结果 (可能是true/false，也可能是1,2,3)，需要写一个函数把这些数字按函数的结果group到一起，然后返回一个2d array。这题也不难，用脚趾头都能写出来。
+第二轮面试官迟到了，两面试官都是印度人：
+首先给自我介绍和之前项目的时间已经不多了，我简短的介绍了一下，想着快点给我出题吧。
+题目是设计一个浏览器，需要支持两个函数：visit(url) 和history, 如果一旦visit了之后, history网页顺序需要修改，比如history = [a,b,c,d,e], 在visit(c)之后history = [c, a,b,d,e], 我心想这不就是力扣幺漆舞瘤吗？我把我的想法告诉面试官了，结果面试官一直challenge我，让我写一个history是O(1)的答案，我想了一下用priority queue可以解决，但是visit需要花O(log(n))的时间，面试官继续challenge我，让我把visit也用O(1)解决（两个函数都必须是O(1)），我思考了一下用了一个hint，结果在他们的hint下解决了这道题。并且我们还从头到尾演算了一遍，代码没有问题。跑完演算之后时间也不多了，问了他们几个问题就结束了。
+浏览器 visit history 那个题应该是要用 linkedHashMap
+没错，我在他们的hint下用linked list + hashmap 解决了，但是问题是他们说我代码不能运行，我不能理解为什么这么说。明明当着他们的面跑了一次。
+是1472. Design Browser History的一道变题，要求用O(1)解决那些函数实现：
+
+vo2是找maximum non-overlapping intervals的题  一开始思路搞错方向了耽误了很多时间 第二题是1d candy crush
+
+ghc最后一天第一轮vo，一个小时，前15min问了一波简历，做完了两道半medium，Longest Substring Without Repeating Characters 和Flatten a Multilevel Doubly Linked List，最后还有时间所以又做了半道题（Decode String），没写码只聊了一下思路
+oct 11第二轮，是一个台湾or香港姐姐，structure跟第一轮差不多，问的是的All Paths From Source to Target的变种。题很快做出来了但time和space complexity脑抽了想了好久（factorial），感觉是因为这个寄的，还是功夫不到家
+
+两位印度面试官, 20分钟简历+bq, 40分钟做了两道lc hard, 题号是987和239. 由于我解题太过丝滑, 印度姐姐又给239 follow up了一下, 让我找滑动窗口里的median.
+楼主真心脾气好，那个第一轮做完那两个让你做找median，有一说一这个根本不算239的follow，而且是双红黑树这种级别的代码量，摆明了要黑你，你还叫她姐姐，没有骂娘你是真心牛
+sliding window median得用two heaps来解吧，是让写代码运行吗，我觉得细节还挺多的
+em面试官是一位在bbg干了20年的印度大叔, 人非常sweet, 也很聪明的感觉. 他考了我一道开放式的设计题: 有三个数据源, 每天产生很多股票交易, 设计一个系统，从每个数据源返回特定股票的最新股价。每支股票都有一个ID和一个价格，数据规模庞大，确保可扩展性和准确性。
+我的回答(用chatgpt概括了一下lol):
+创建包含5列的表，包括“主键”、“股票ID”、“股票价格”、“时间戳”和“数据来源”。
+建立joint index在股票ID和数据来源上以提高查询效率。
+使用缓存存储常更新的股票数据，包括股票价格、时间戳和评估分数。
+更新缓存中的数据并计算评估分数，考虑最新时间戳和频率。
+当缓存接近满时，淘汰评分最低的数据并存储到数据库。
+定期备份数据库以保障数据，如果缓存丢失可回滚数据库。
+根据流量负载的情况，动态管理缓存大小。
+当需要时，将读写操作转向数据库，确保数据准确性。
+为了满足未来高流量需求，准备多个备用数据库。
+印度大叔讲了许多工作感悟, 我也学到了很多, in general he feels like a manager that I want to work with, really articulate and intelligent.
+
+面试官是印度老哥，正常人都是两道medium，然后给我出的很难，怀疑被坑了
+一开始给的LC洱市，然后又问不能用stack应该怎么解，后来又说怎么把它divide and conquer解出来，需要时间复杂度小于O（n）
+可以不用stack 用一个数组和一个指针指向数组顶部就可以代替stack 达到O(1)的空间复杂度
+
+面试官很友好，说主要看解决方法和思路，先问了问自我介绍，然后两道高频tag题，242+430
+两道题都有follow up，第一道题用hashmap做，问有没有edge case，有没有其他方法节约空间
+第二道题用stack做，问有没有不用stack的方法，时间不够面试官没有要求写
+
+去gym找杠铃片，给1,5,10,15,20种杠铃片，问给定重量，最少用多少片
+w=100 ->  (20)(20)(10)-----(20)(20)(10) ->6
+用了dp O(w*types)
+不限制coin system的情况下要判断coin system 是不是canonical，我研究了一下看到这个 https://stackoverflow.com/a/69997310/4982678。这应该就是楼上同学说的一个n^3算法判断。
+如果判断是non-canonical coin system，那么只有用dp O(w*types)‍‍‍‌‌‌‌‍‍‌‍‌‍‌‍‍‍‌‍‍才能解，如果是正常coin system，那么greedy跟dp O(w*types)‍‍‍‌‌‌‌‍‍‌‍‌‍‌‍‍‍‌‍‍的答案是一样的。
+假如我说这个coin system是canonical面试官要你证明的话，我感觉只有神人才能证明而且跟面试官解释清楚。这个follow up好奇葩
+不限制数目的话，那就是尽量用大重量的，这不就是最少的片数了？
+total = 50;
+bells = int[]{20, 15, 10, 5, 1};
+ans = [];
+while(total>0){
+    if(total>=bells[ptr]){
+       total -= bells[ptr];
+       ans.Add(bells[ptr]);
+    }
+    else  ptr++;
+}
+return ans;
+OK got it: (from stakeoverflow)
+For example, for the set {1, 15, 25} and the sum 30, the greedy algorithm first chooses 25, leaving a remainder of 5, and then five 1s for a total of six coins. But the solution with the minimal number of coins is to choose 15 twice.
+
+题目就是NLP的训练（我投的不是MLE）：
+input =[ ["I","am","Sam"],
+["I","am","Bob"],
+["I","like","eggs"]]
+要求写3个函数：
+第一个训练，统计每个词后面最可能出现的词，
+第二个打印，就是打印所有的词，词后面出现的词，以及出现次数，
+第三个接受一个词作为输入，输出频率最高的词。
+感觉比我看的面经简单一些。但是还是没做好，因为设计存储的时候，用的dict of list of pairs。为的是好根据词频排序。但面试官说其实不用排序，直接训练好了以后，找到频率最高的再存一份就好。我说可以用heap，这样可以在存储过程中就排好了，面试官说heap是follow up的内容。也就是说，有个follow up我没触发。。大概是说需要不停加入新词训练，如何提高performance，这样就是heap了。
+
+2道medium
+第一题是 word break的变形, 但是要求return所有的combination
+第二题是leetcode 3原题
+
+Input: A=[22, 19, 18, 15, 14, 10, 5, 1, 3, 4, 7, 20, 25]
+k=21
+Output: the number of elements in A strictly greater than k. In this case, output will be 2.
+面试官说不能简单过一遍
+他其实是一个Rotated sorted array
+前半部是大到小
+后半部是小到大
+我把它们分两半用Binary Search做的
+但应该有更好的解法
+单调栈吧 lc739
+
+上来互相介绍，然后第一题是先让你解释什么是binary search tree，然后写一个function判断这个bst是不是valid。DFS carry over lo/hi解决。
+第二题是让你设计彩票系统，三个功能（添加参与者，删除参与者，随机选参与者），他想要三个功能都用constant time complecity O(1)
+我的解法是自带两个dictionary，一个{idx:person} 一个{person:idx}，用空间换时间。考虑一些edge case比如不能添加重复，不能删除不存在，不能随机0参与者。
+
+最近面的开花包senior岗
+onsite 两轮算法 + 一轮design
+算法1. 地里多次提到，重复率超级高。请看到小伙伴一定要注意！
+问题在于excute trade 是realtime processing 一直在被call，如何存储很重要。
+execute_trade(company, volume)
+print_topk_company(top_n)
+举例:
+execute_trade("MSFT", 900)
+execute_trade("APPL", 300)
+execute_trade("GOOG", 1000)
+execute_trade("APPL", 400)
+execute_trade("META", 200)
+execute_trade("BA", 500)
+print_topk_company(2):
+  GOOG|1000, MSFT|900, APPL|700,
+让print_topk_company越快越好
+算法2:
+你有个sentence = "youareanapple"
+你有个dictionary = ["you", "we", "are", "an", "apple", ....] 1M words
+如果你能把sentence词都找到， 结果 输出是 “you are an apple”
+是个trie tree + backtracking 的题。时间有点短我没有写完，说完了思路
+系统设计：
+设计一个检查 是否能够交易的系统， 假设你有10w个银行 彼此之间会有交易的限额。银行在进行交易的时候，会发request 给这个交易系统， 如果还有额度可以交易。系统设计还可以。
+算法一做的非常不好，看似很简单，看到地里的同学很多都挂在这道题上了。我面的面试官一直在challenge你。
+补充一下算法题2: 意丝岭 看到是hard tag 我也没什么遗憾了
+第一题只能想到用Heap。 这是处理大量的call，然后输出top K。这样的话，就是 N logK (K is the size of the heap).
+
+一共面了三个组。
+1. 嗯按value递增 刷题网嗣叁灵，变种：在展开的基础上， 保持递增排序，比如：
+dummy
+|
+[1] . [2] . [3] . [8] . [10]
+|      |
+|     [9]
+|
+[4] . [5] . [6]
+              |
+             [7]
+结果：
+[1] . [2] . [3] . [4] . [5] . [6] . [7] . [8] . [9] . [10]
+叁灵依，删括号变种，比如：
+abcd()efg)()((
+结果：
+abcd()efg()
+要求：线性时间复杂度，和常数空间复杂度。
+3. 第三题是陆依依 给定一个自然数数组，每个数字可以是三角形的一个边长，找出能组成一个三角形的三组数的个数。数字允许重复。比如[4,4,3,5,6,7], 三角形有[3,4,4], [3,4,5], [3,4,6], [3,5,6], [3,5,7], [4,4,5], [4,4,6], [4,4,7], [4,5,6], [4,5,7], [5,6,7]; 所以返回11。
+
+接下来是系统设计面试，忘记具体问题了，因为我有考AWS证，对AWS整体系统设计有了解，又有10多年工作经验，就根据问题说了一通，系统设计不外乎数据库设计，缓存数据设计，Load Balancer设计，还有Log监测系统，Message Queue等，反正根据问题和面试官的反应往上套，系统设计是很开放的问题，随便聊了一通。
+
+店面：LC200 只不过把数Island改成了数图片中的云
+followup:
+1.如果每一行的长度都不一样，该怎么改
+2. 如果用不同的数字表示不同云朵的颜色，你的代码要输出每种颜色的云的数量并且找到最大的一朵云的尺寸，那该如何修改code （提前不知道一共有多少种颜色的云）
+第二轮:
+实现下面两个函数:
+execute_trade(company, volume)
+print_topk_company(top_n)
+举例:
+execute_trade("MSFT", 900)
+execute_trade("APPL", 300)
+execute_trade("GOOG", 1000)
+execute_trade("APPL", 400)
+execute_trade("META", 200)
+execute_trade("BA", 500)
+print_topk_company(2):
+  GOOG|1000, MSFT|900, APPL|700,
+让print_topk_company越快越好
+followup:
+如果top_n很小 (<5) 如何优化
+保证print_topk_company快的同时能不能优化 execute_trade 的实现
+
+stream of input of
+{EURUSD, 100}
+{CHFEUR, 200}
+{EURUSD, 100}
+return the top k total amount
+
+3轮，前两轮技术，HR说一轮算法一轮系统设计，但感觉来了两轮算法，最后半小时经理bq。
+第一轮：一个白人伯伯+一个有口音的白人大哥，两个人都挺nice的
+15min各自自我介绍，15min解释问题，问题是设计一个简化版的他们的product。计算规则超级复杂的散散酒。其中考了design pattern，我模糊记得但没设计对，我以为是decorator，后来查Gang of 4的那本书才知道记错了，是composite 。要根据描述的规则自己设计数据结构，总之是某种树。具体大概是给一个数目，根据不同规则，分别分到不同的bucket里。譬如，给100，有3个bucket，A容量30,B容量20,C容量50。分配的规则有两种，一种是按顺序的，先fill up A,还有剩下的fill up B，还有就fill up C。另一种规则是按比例分配，100，A会分到3/10, B分到2/10,C分到5/10 etc。最后结果是要求进行一轮这样的分配后，所有bucket还有多少容量。规则里可以嵌套其他规则。
+譬如，你有3个bucket，你可以先A，B，C之间用按比例分配，然后B，C之间按顺序分配，可以无限嵌套无限层
+第二轮：白人大哥+国人大哥，
+15min各自介绍，15min浅挖project，问了遇到什么困难，怎么解决。然后上算法题。这轮没写出来，说真的，我到最后也没理解到底怎么判断。题目大概是这样的，说一堆学生做project，大家都有想组队的小伙伴，但老师给随机分配了。最后求，有多少学生不开心。但这个不开心的定义我没看太太懂。好像说，A如果被分给D，如果A在D想组队小伙伴的优先列表里排序比其他的小伙伴高，A就开心。如果C排得比A前，那么A就不开心。（这个记不清楚，基本没看懂）两个都挺nice的，尤其是国人大哥，几次试图拯救，但真的没懂题目。这题感觉考阅读理解呀艹
+
+ML position
+1) CODING题•            im_stream: A stream (generator) that produces IMPosts. Calling next(im_stream) will yield a new post.
+•            target_sender_id: a string, the sender_id of the user we want to get a context for
+•            window_size: The number of posts before and after the target post that should be included
+•             in the context.
+•            
+•            Returns: An iterable (anything we can iterate over) containing the posts from the first conversational context found in im_stream.
+•            A context consists of an "target post" sent by target_sender_id, plus the window_size posts immediately
+•            before and after the anchor post that were made in the same chatroom.
+2) ML 题
+Consider an equity trader who chats with other traders on an instant messaging app:
+- She is in several chatrooms, exposed to various kinds of chatter:
+news about the market (e.g, "Oil prices are spiking")
+trade negotiations (e.g, "I want to buy Tesla stock")
+relationship building (e.g., "Lovely weather!")
+- When flooded with unread messages (e.g., after stepping away from her desk or if the incoming message volume is high):
+she'd like an automated way to discover actionable unread posts
+i.e., posts in which people have indicated interest in buying/selling equities
+
+设计一个函数 packetize(), 能够根据输入的packets 找到 complete messages. 然后 call 另一个函数 process 去处理每一个完整的message.
+Ex. Input: (123456abc), (de)
+      123456 和 abcde 在逻辑上是两个完整的message. 但是它们被分散到了两个不同的packets。
+      Output: packetize() 需要找到这两个完整的message 并且分别call process(123456) and process(abcde) 进行处理
+     首先讨论如何判断一个message 是否complete. 这是一个完全开放的问题， 跟面试官讨论多个options 并且说明tradeoff. 比如每一个complete message 之间加一个separator 之类的。
+     根据上一步的讨论，可以将input预先处理成(123456#abc), (de#)。
+     然后implement packetize() 函数。这一步不难，就是要考虑到一些edge case. 新人求大米！
+
+
+通过坐标输出值。坐标如下
+y ^
+   |
+4 | 15
+3 | 10 14
+2 | 6  9  13
+1 | 3  5  8  12
+0 | 1  2  4  7  11
+  +---------------->
+    0  1  2  3  4  x
+比如(2,0) -> 4, (3,1)->12.  算是一个数学题，找到规律即可。
+Input 是坐标点，比如（3,1），（2,0）。Output是值，比如12， 4.
+(x, y) -> (x+y+1)*(x+y)/2 + (y + 1）
+第一列的差从下往上是【2，3，4，5】第一行从左到右的差是【1，2，3，4】。剩下就是看坐标了。
+
+onsite 三轮
+第一轮 coding 两个面试官
+国人大哥问了一个 变种散散 前半段array是decreasing的 要求logn
+美国小姐姐问了 lc露丝二 只来得及说了思路 写了个trie的class
+第二轮 coding 两个面试官
+国人小哥 给你一个数n 你从1开始，可以选择把当前数乘以2或者除以3(除不尽的话直接round down取整），然后求最少步数把1变到n
+eg. input 10=1*2*2*2*2/3*2 -> output: 6
+印度小哥 lc 伞 要求one pass
+半小时休息
+第三轮 sd
+美国大哥 前15分钟聊个自己组里的project 后面问了半小时design一个system 处理大量股票交易transaction files，parse file然后存到db，要求low latency和data accuracy。这个是很具体的business use case，所以注重讨论
+
+Bloomberg：电面：国人面试官，力扣53。背靠背两轮vo（全是tag题），力扣1209，top k stocks（用heap做）（这道题两轮都有类似的，就是换了个壳），还有一道easy（大概就是一个数是奇数就乘一个给定的常数，如果是偶数也是线性变换，问多少steps变成一个target value。Followup：多次call这个函数怎么办，答案：用hashmap记录已经算出来的结果）。VO2结束的时候面试官说后半个小时hr面，都是地里面hr面常问的问题，但是问预期工资属实是有点尴尬。Em面：最恶心的一轮面试，屏幕那头一看到三哥我就知道要挂了，最后果然被他恶心了。基础知识问了hashmap怎么实现，还有一些杂七杂八的数据结构以及怎么实现。然后问我想做什么，我说想做xxx，因为之前学了一门课很有兴趣，他直接原地教我做人：你不能因为学校学了一门课就说感兴趣（nmd是看不见我简历做的project吗）。然后问实习做了啥，感觉他没咋听懂，最后问了一句，你写代码了吗（nmd以为所有工程师都像你们一样能说会道不会写代码是吧）。果然一周后催了hr收到拒信。
+
+第一轮是也是dfs/bfs 2d 搜索是否可以到达出口，中间一次性加油站可以获得对应油量。写出来了没跑，面试官nice，亚裔
+第二轮两个题，是个非裔？小姐姐，说话比较模糊，听不太清楚每个问题都基本上要求重复 尽管是最简单的那种，，，所以感觉面的不行，虽然代码基本上都写出来了
+一个是decode 3[a]->aaa 这个，一个是flatten linkedlist 就是把down 和 next 弄成一个，两个题都表演了一会，最后都写完了，有个小bug不知道他看到没，第二个中间交流的不是很充分，比如merge的原则，因为只有十几分钟了，就大概说了下。反正面完就是感觉gg，第二天拒信。
+
+题目是team match 每位新员工将对所有团队进行排名，每个团队将对所有新员工进行排名。如果match不上就team的意愿优先
+eg {team1: [A, B], team2:[A, B]}
+{A: [Team1, Team2], B: [Team2, Team1]}
+结果输出
+team 1 : A
+team 2 : B
+A: team 1
+B: team 2
+
+第一轮 两个题都不是tag，一个是给一个排序后的序列，按数字平方排序，一个是输出当前时间点调用某函数的次数
+第二轮 第一个题是top k 变形，第二个是min stack
+
+
+
+
 
 1249, 26, 399, 200, 314, 56, 102, 380, 42, 1274, 1347, 1209, 33, 443, 445, 116, 560, 109, 797, 387, 103, 146, 1472, 39, 656, 1396, 91, 1656, 428, 1244, 1029, 253(meeting room II)
 
@@ -1895,6 +2222,55 @@ System Design
 Design mint: user can get transaction history; user can set a budget.
 两个Behavior
 
+第四轮系统设计：设计一个系统来识别用户的肖像是否出现在了ins的post上，如果识别到了要通知用户。假定：有API可以接受来自ins的event包含图片信息，有现成的算法来做面部识别。
+
+coding: rolling window based mad (median absolute deviation) values, 输入是一个list 和一个window size, 计算每一个window的mad value, 输出也是一个list of value. MAD 的定义可以参考这个（https://en.wikipedia.org/wiki/Median_absolute_deviation），需要求中位数。暴力解法秒解，问了一下时间复杂度，因为对window sort了所以时间复杂度偏高。后面问怎么优化，我只回答了一个大概的思路避免每次都sort, 面试后发现求解中位数的过程和蠡口司八玲类似，不知道面试官出这道题的目的是不是直接找最优解，如果是那这里就跪了。这部分大约面了二十分钟出头，面试官说move on 到data science quesitons.
+DS questions: 给了一个场景然后是两个variable (cost & money), 问怎么进行拟合，答linear regression,  计算mse loss。怎么看模型性能以及怎么predict, 答用train,val,test 预测的时候用weight & bias。 如果有 outlier 怎么办，答需要先做data preprocessing 剔除 outliers,  再训练linear regression. 这里问怎么detect outliers, 答看distribution以及看根据数据intervals 有没有outliers（当时想到箱型图但是描述的不好），后面追问怎么具体做，对哪个variable 做，突然有点懵逼，就改口说要对y/x 这个计算一个值来发现 outliers, 因为x,y过大过小并不算outliers,  只要他们符合线性回归方程（这个就扯到怎么定义outliers）这里答的不好。后面问如果几百个features 怎么做，那就高维线性回归，不过要考虑overfitting 的问题，得去做一些feature selection,  以及对feature做 normalize 以及scaling。又问如果不是linear 的关系，怎么去拟合，答加一个activation functions类似NN 去拟合非线性关系，感觉这里答的不好，面试官应该想问如何去拟合曲线。
+
+一周多前面的Datadog VO， 一共四轮，两轮Coding，一轮SD，一轮project deep dive.
+第一轮Coding，之前面经看到过的Log and Query题：
+给一组strings,开头可能是"L: " or "Q: "，如果是Q就是query，后面会跟一组words比如“Q：hello world”; 如果是L就是log,后面同样会跟一组words比如"L: hi hello world"
+写一个function，读入这组strings, 如果是query, 要register不同的query并给他们assign一个qid，如果是log, 找到match的query qid并print出来。
+Input example:
+["Q: hello world",
+"Q: data failure",
+"Q: world hello",
+"L: hello world we have a data failure",
+"L: oh no system error",
+"Q: system error",
+"L: oh no system error again"]
+Output would be:
+[ "Registered q1",
+"Registered q2",
+"Registered q1",
+"Log q1, q2",
+"Log",
+"Registered q3",
+"Log q3"]
+注意有几个tricky part
+1. query 里面的单词顺序不管，只要有一样的set of words就算是一样的query。但是单词出现次数要管，比如"hello world world"跟"hello hello world"是两个不一样的query。
+2. log里面也是顺序不管，但是单词出现次数要一致。
+第二轮Coding, 简单版LC408.
+就是给一个word和一个pattern, pattern里有数字，如果看到数字就match word里的几个字符，这题有3 parts
+1. 如果数字只是一个digit： word: datadog, pattern: d3dog -> match
+2. 数字可以是多个digit: word: accessibility, pattern: a11y -> match
+3. 加分项，可以escape数字，in which case escape掉的数字就要match word里面的数字
+word: datadog, pattern: d\3dog -> NO match
+word: d3dog, pattern: d\3dog -> match.（这part可以不用写就说思路就行，但是我前两part很快写完所以很快把这个也写完了，就这样加上前后聊天还是多出来15分钟左右，最后这轮提前结束了）
+第三轮SD,
+设计一个类似mint.com的系统，design an application which will collect and store purchases from credit and debit cards and provide the user with insight into their spending habits. 这轮讲的时候我觉得讲的挺好，有具体讨论Database choice, schema, pw如何存etc.但最后给的反馈是这一轮fail了，因为没有讲太多detailed design。我也是不大懂要detail到怎样。
+第四轮manager问past experience，就准备好讲一个past project，challenge在哪儿，问得挺细，最好要讲自己真正做过的project。然后还问了几个BQ，就是很Frequent那种，遇到conflict怎么做啊什么的。
+
+第一轮: hiring manager projects deep dive, 会问得非常细. 然后有5-10分钟会问你behavior, 把 亚马逊的leadership principles背了 准备几个例子就可以了
+第二轮: 一道lc medium 的string processing 问题. 两个parameters: 一个array of streams, 一个 array of key words.
+每个stream都有key word 用 | 来分开, 让你寻找这几个key words的mutual stream.
+第三轮: 让你设计一个flight ticket deals email notification system, 要求 1.不能发重复的deal 2.如果有新users加入且subscribe 了他想知道的目的地的deal, 之前发过的notification也需要发给他
+feedback说第一第二轮都没有问题 第三轮因为我的设计too heavy read/too heavy read 被挂掉了
+
+4. Design (aka System Design) (FAIL) 华人小伙男（呵呵🙂，🤮） 各种找茬，真是。。.
+题目也是以往面经题目。让你设计一个flight ticket deals email notification system, 要求 1.不能发重复的deal 2.如果有新users加入且subscribe 了他想知道的目的地的deal, 之前发过的no‍‍‍‌‍‍‍‍‍‍‌‌‍‍‍‌‌‍‍tification也需要发给他
+我用的是message queue 做传送notifications, 用cache 做read heavy 的缓存。期
+database connection failed). 注意大小写不区分，ID starts with 1 not 0. 面试官挺不错，一直给hint. 题目不难，细节tricks 有点多。 结果就是 system design 挂了，因为我的设计too heavy read/too heavy read。
 
 ## Scale AI
 Tell me a time you made a hard decision, talk about the trade off.
