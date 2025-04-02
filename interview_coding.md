@@ -332,7 +332,55 @@ points
 如果所有数值大于零，挪动 right pointer guarantees increament in subarray sum, 挪动 left pointer vice versa
 当 subarray < k，++right 直到 subarray sum >= k, 当 subarray sum > k, ++left 标准解法用prefix sum 如果有大于零条件，可以用two pointers
 第二题是109，要求不能用额外的资料结构。
-
+以前面过同样岗位的实习，刷top 20题就能过，
+这次面全职，刷了top 50题，没有遇到原题，第二天收到挂了，
+第一题 14，有点麻烦的easy题，
+第二题 🔗 leetcode.com， 是23的变种，
+https://leetcode.com/discuss/post/169334/facebook-phone-screen-sorted-iterator-by-2hpf/
+第二題 高頻 987 不需要考慮最後值的順序
+Q1:
+Given the root of a binary tree, return the vertical order traversal of its nodes’ values (from left to right, top to bottom, column by column).
+Example:
+Input Tree:
+        100
+       /   \
+      2     3
+     / \   / \
+    4   5 6   7
+Output:
+[[4], [2], [100, 5, 6], [3], [7]]
+Q2:
+Given an array of integers (both positive and negative), return the number of contiguous subarrays that sum up to a given target k.
+Example:
+Input:
+        •        array = [1, 2, 3, 4, 5]
+        •        target_sum = 5
+Output:
+        •        2 (because [2, 3] and [5] both sum to 5).
+先是bq: 1.proudest projects->at would you do differently if you do this project again->how do you evaluate the impact ->how you dealt with impact that is different than your expectation. 2. Handle team conflicts.
+Coding: 幺儿舞125，follow up怎么处理特殊符号/regex
+药吾妻灵1570，follow up不能用hashtable怎么搞，如果变成dense vector但依然不能用hashtable怎么搞。两题都追问time/space complexity, at best/worst case scenario.
+第一题50是merge 两个sorted array，其中有一个有一些dummy elements. 要求efficiency.
+第二题是确认一个binary tree是不是complete.
+第三题是给一个binary tree, 假设人站在右面看，输出一个list, 包含每一个level最右面的element.
+相信常刷题的小伙伴知道LC代码，楼主几乎没刷过LC，不出意料地挂了。算法都很简单，但是写不出code.
+第一题写一个function算出a的b次方，先写了最简单的for loop，面试官问能不能优化，想到可以用类似binary search，之后在提示下磕磕绊绊写出来了略微超时
+第二题检查一个array里有没有一段连续的数字加起来等于target，用cumulative sum比较简单，但面完发现少了个edge case
+药奇岂捌1778 变种 就是move from current location, 找target. 但是没有给定m, n,  assume 有些function avaiable, 比如canmove(), Istarget()， etc. 用bfs 或者 dfs都可。我记得lc不是求最短距离吗？这个就是找target，一遍dfs就可以了。
+代码轮1：
+器灵罢708
+乌尔疤528 否楼阿婆 时间怎么O(1)
+一个比较容易忽略的地方是，当递增或者递减趋势变化的时候，要把指针pointer+2而不是+1。比如4，5,6,1,2,3。6->1，虽然递增变递减，但是不应该子序列计数+1。个人觉得O（1）不太可能，除非 每个数字都拿来做 num:idx mapping，这样可以做到O（1）时间复杂度, 但是是用空间复杂度换取的，而且不scalable和practical。 如果prefix的数字间隔是某个数字的倍数，那么可以用beckting来做 number➝bucket_id - >{buket_id:idx}的映射
+应该就是每次趋势变换时候就counter+1，最后loop结束return counter+1就好了。因为最后一个序列不会被捕捉到。
+代码轮2：
+我还没刷到，知道的人可以po一下题号。一个数列，由多个单调递增或者递减的数列拼成，要求数出来里面有多少个单调数列。
+坝流散863
+https://leetcode.com/discuss/post/5203188/metaonsitee5-by-anonymous_user-9xwc/
+https://leetcode.com/discuss/post/4525578/meta-phone-screen-by-eegbunam-kn7f/
+蠡口留疤玲+姨儿遗留
+蠡口物流领
+recruiter 还发邮件强调没有任何的 DP 问题（md 我最擅长 DP 问题了），所以有一道 followup 本来是用 DP 解的，面试官直接说别了，超纲了，这个 recursion 就够了。
+followup就是 姨儿遗留，最优解是DP，但是我加memoization的时候被打断了，所以留了个带重复计算的recursion解法
 
 
 `BQ`
@@ -347,8 +395,36 @@ constructive feedback; project without enough information
 go beyond your scope, deal with hard people, constructive feedback, how to measure impact
 conflicts/ cosntructive feedback/ do you have failed project
 最骄傲项目，如何合作，被pushback，老板的反馈
+BQ： conflicts, constructive feedback, proud projects, least favorable people to work with, failure
 
 
+`MLSD`
+1. 经典推广搜，在chat app上给用户推广告，给了很多方便条件narrow down问题。十分感谢!
+2. Design a yelp-like system for places recommendation. 设计一个推荐附近event的系统，感觉类似yelp. 推荐一些像是餐厅酒吧活动之类的，一共有6个category，要求两个场景，一个是不分category推，一个是分category推（类似用户可以filter）. design a system to recommend new events for a user.
+Yelp那轮侧重high level design,需要讲怎么做retrieval怎么做ranking。感觉面试官的重点在怎么设计metric和eval/testing去满足business need。模型设计也聊了，但时间所限没有讲太多细节（基本上就是name drop, e.g. 2-tower model,DCN, SENet, Transformer, etc)。
+Classification那轮面得更细节一些（毕竟没什么high level architecture好讲）。few shot learning一般不会用于online serving（太贵），做offline data labeling(+human raters) 可以，但我没聊这个话题（面试官让我assume可以随意获取需要的labeled training data)。主要还是针对metric,多给几个建模方案（从最轻量到最复杂），讲清楚pros/cons, 再讲一讲online learning+unsupervised learning，最后说清楚怎么serving+testing，时间就差不多了.基本都是我在说，面试官没有给什么feedback，也不知道是不是说在他的考点上。serving就是谈一谈模型上线后可能遇到的问题和需要做什么优化（毕竟不是MLops岗，这里聊得很粗浅），testing就是分offline和online讲，说清楚各自怎么做/为什么要做/怎么分析和决策
+3. recommendation 变种hashtag，没见过，问了各种embedding长啥样，loss function什么
+4. video recommendation
+5. 偵測武器 harmful content detection
+请问unsupervised learning 在harmful content detection怎么应用啊？
+可以参考下Contrastive learning, 尤其是BYOL一类的论文用到的的joint predictive embedding方法。meta自己的DINO也是类似的方法去训练图像embedding。最后在提炼的feature上面加相应的prediction heads就行了。因为面试官让我考虑posting里包含image/video的情况，我就顺带聊了聊。当然这类模型普遍需要参数量较大，刚好可以一起把model distillation讲一讲
+6. reels short video recommendation， model部分主要在讨论结构 和方案选型
+7. Research design问了如何设计一个多模态的推荐系统，lz当时alex xu看的不够仔细准备的不好，可能也是挂的主要原因。
+8. news feed in fb reel
+9. Design a notification filtering system -> ranking model by user, notification, time and locale infomration, plus a ruled based layer to filter on push frequencies
+10. 推荐Facebook events给用户, 推荐活动的变形，问了如何收集label
+分享个Meta ML design面经。
+我个人不做异常检测，考我异常检测的ML设计。。。不给可以选择topic的机会
+facebook有很多posts，怎么检测暴力信息的posts。给了四个方向，数据，特征，模型，评估。
+我首先确定了busines方面的理解，然后确定KPI。
+数据是包含多模态，有少量人为标签（ground truth），大量unlabeled。
+到这里就很工业界，和学术界很不一样，如果不是做这种方向的很少了解吧？
+说了做数据分析，特征工程等等。
+到设计模型简单画了模型结构以及loss function
+因为有unlabeled data，我提出使用Contrastive Learning（我也是一知半解，当场想到的，没做过。。。）
+然后简单说了说。
+最后讲评估围绕confusion matrix， AUC讲的。
+最后问线上评估和线下评估区别？
 
 `Coding`
 第一题留领悟，感谢高抬贵手。
@@ -431,23 +507,9 @@ Example:
 1668 → False
 解法有很多种了，时间复杂度应该是O(n),空间复杂度O(1)。
 第二题是尧耳舞寺1254(Number of Closed Islands)的变种，不需要计算有多少closed islands，而需要找到最大closed island size。在原有BFS/DFS实现基础上, return local island size + 记住global max即可。
-
-
-
-`MLSD`
-1. 经典推广搜，在chat app上给用户推广告，给了很多方便条件narrow down问题。十分感谢!
-2. Design a yelp-like system for places recommendation. 设计一个推荐附近event的系统，感觉类似yelp. 推荐一些像是餐厅酒吧活动之类的，一共有6个category，要求两个场景，一个是不分category推，一个是分category推（类似用户可以filter）. design a system to recommend new events for a user.
-Yelp那轮侧重high level design,需要讲怎么做retrieval怎么做ranking。感觉面试官的重点在怎么设计metric和eval/testing去满足business need。模型设计也聊了，但时间所限没有讲太多细节（基本上就是name drop, e.g. 2-tower model,DCN, SENet, Transformer, etc)。
-Classification那轮面得更细节一些（毕竟没什么high level architecture好讲）。few shot learning一般不会用于online serving（太贵），做offline data labeling(+human raters) 可以，但我没聊这个话题（面试官让我assume可以随意获取需要的labeled training data)。主要还是针对metric,多给几个建模方案（从最轻量到最复杂），讲清楚pros/cons, 再讲一讲online learning+unsupervised learning，最后说清楚怎么serving+testing，时间就差不多了.基本都是我在说，面试官没有给什么feedback，也不知道是不是说在他的考点上。serving就是谈一谈模型上线后可能遇到的问题和需要做什么优化（毕竟不是MLops岗，这里聊得很粗浅），testing就是分offline和online讲，说清楚各自怎么做/为什么要做/怎么分析和决策
-3. recommendation 变种hashtag，没见过，问了各种embedding长啥样，loss function什么
-4. video recommendation
-5. 偵測武器 harmful content detection
-请问unsupervised learning 在harmful content detection怎么应用啊？
-可以参考下Contrastive learning, 尤其是BYOL一类的论文用到的的joint predictive embedding方法。meta自己的DINO也是类似的方法去训练图像embedding。最后在提炼的feature上面加相应的prediction heads就行了。因为面试官让我考虑posting里包含image/video的情况，我就顺带聊了聊。当然这类模型普遍需要参数量较大，刚好可以一起把model distillation讲一讲
-6. reels short video recommendation， model部分主要在讨论结构 和方案选型
-7. Research design问了如何设计一个多模态的推荐系统，lz当时alex xu看的不够仔细准备的不好，可能也是挂的主要原因。
-8. news feed in fb reel
-9. Design a notification filtering system -> ranking model by user, notification, time and locale infomration, plus a ruled based layer to filter on push frequencies
+Code: calculator 變形 + 339 + merge two list of intervals + 找subarray 是否存在sum 加起來等於Target
+刚结束了OV面的第一轮，也就是AI coding。问了两道题，一道是给定一个array和window size，计算moving average。一道是给定一个array，找出local minimum. 最像的题是leetcode上的一道Meta tag的题，是找 peak element的。另外，我两个同学考到了一道leetcode原题，是找离原点最近的K个点。
+总的来说比较简单，但是第二道题如果没看到答案，蛮难想出optimal solution的。面完才发现第二道的brute force解法出了一点错，index弄错了，希望影响不大。
 
 
 
