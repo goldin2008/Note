@@ -18,6 +18,58 @@ STAR method to construct the response:
   - What trade-offs did you have to make to achieve this?
   - What did you learn or would have done differently?
 
+如果google l4和l5， meta e4 和e5.google
+我想请问，同样一道bq题， 我应该着重于什么。假设我面的是senior职位。
+比如how you handle conflicts with others。
+如果是面e4， 我可以说和同事有技术点的争论， xxxx, 最后我说服了对方
+如果是面e5， 我是不是说上面这种就挂了，我得说， 我带了一个项目，和别的cross function team argue， xxxx, 最后我赢了， 给team争得了话语权？也就是说，面senior一定要强调leadership和large scope，这样我才能过？
+请大佬指点1， 2
+如果我在一个问题里尽可能的多说几点？是不是容易踩中，这个方法有什么不好的地方吗？ 比如conflicts with others， 我先提design时候有技术conflicts(Backbone; Disagree and Commit), 然后定plan时候manager希望快，我觉得需要写足够的test cases(Insist on the Highest Standards), 然后deployed的时候，infra team希望用较少的server( save cost)， 我强调需要多加resource, 因为增长会很快  (think for future)
+
+
+这个问题不光是一个面试题，是真的再测试你怎么处理工作事情，测试你在工作中的行为准则。
+所谓退一步海阔天空，我在回答问题之前，先退一步反抛出问题：为什么工作中会有conflict？
+然后回答自己抛出的问题：因为我和同事都care， 我们都希望把工作做好。如果我对手头的工作不care的话，我什么事情都能：好好好，做个老好人，对不对？这么一来，我就和同事build了同样的基础点。既然我们high level的目标相同，都想把事情做好，只是具体怎么执行出现了分歧，那这就不是一个大问题。那回答到这步其实我的答案就很简单的推进下去了：communication。可以通过不同程度的communication和同事一起坐下来讨论不同方案的pro和con，从requirement出发来评定各自的好处，最终一起决定一个大家都满意的方案去执行。
+你看，这样是谁说服谁根本不重要，把一个conflict的问题变成了一个teamwork和management的问题。
+当然，这不光是我的回答，具体工作中我也是这么做的。
+e.g.，如果是金字塔式的企业，回答可以偏重“只要团队利益这个大前提不受到损害就愿意在conflict中做出一定的妥协（一般面试官不会追问具体是多大程度的妥协这种低级问题）”；如果是比较egalitarian的企业，可以适当地增加“stand my groud”的权重。
+BQ的目的就是考察除了硬实力、候选人是否有能力融入到即将加入的团队中高效高质量地完成团队目标。不同的企业有不同的核心价值，这个是可以在官网上查到的，就算部门团队执行起来是另一套，但是面试回答BQ的时候只要能尽量往核心价值上靠，是肯定不会吃亏的。
+
+conflict之类的问题，以前的话，我可能也会和你一样，想办法去说服别人…….1point3acres
+现在的话，我会想着了解xfn的痛点和反对的原因，把他们列出来，然后一起通过几轮的design review合作想出一些解决方案。如果涉及到的东西很大很广，就include更高级别的ic来寻求建议
+
+behavioral questions本质上就是考察你是不是一个别人愿意和你一起共事的人  所以展现领导力合作能力和共情力等情商技能很重要
+handle conflicts这种问题回答的重点在如何让对方在对你不生气的情况下解决冲突
+
+1. 避免争端。 2. 增加communication。 3. 听取领导意见。 4. 向领导学习成功经验。  这题答案就不收你米了。
+
+0.忠言逆耳说在前头：从楼主的这几句问题概述，是能看出楼主对于BQ毫无经验……以下由浅到深分享一些方法论，希望楼主细读下去，然后写逐字稿，交给ChatGPT润色，再对着镜子逐字背，做到当面问答的时候整段整段的活都在脑子里，不要现想。.
+1.BQ跟简历一样，描述做了什么只是媒介，目的是证明你是一个有价值的人，是一个有各种优点的好员工。BQ也是一样，你要读到每道题的题眼，即对方希望你讲一个什么例子、来证明你具有哪个品质。
+2.就拿经典题conflicts with others来说，楼主觉得题眼是什么呢？你提及的e4/5/6 level之别，抑或你说服了对方/争得了话语权云云，真的是对方想听的么？
+这道题背后的“品质”可以有好几个方向，我先随手列一些：
+2.1一个tech任务，我觉得该做，同事觉得没必要，我调研/presentation/最后组会上说服team做了，事后deploy了也证明成功——我有big picture，并且launch project linked with actions
+2.2一个tech任务，我觉得不该做但组里坚持做，我表达了反对意见但坚决执行了——backbone, disagree and commit
+2.3一个tech任务，同事急于求成，但feature可能有compromise，我没同意，坚决保持design完整性和code quality——insist on highest standard
+2.4一个tech任务，我强调时间紧，必须缩紧scope保证commitment，但同事非说要做完善——delivery result, speed matters
+2.5一个新加的需求，同事马上准备coding但我push back——manage with standardization; 做活儿要有优先级和方法论. 1point3acres.com
+2.6新需求但是是customer/stake holder提的，同事想push back但我坚持必须立刻shifting demand——customer obsession
+2.7一个活儿同事觉得做完了，但我认为没做完——我预先看到很多potential concern没解决，我要dive deep. ----
+2.8一个活儿同事觉得做完了，但我认为没做完——在pass to QA前还有很多dev能做的，比如补足data metrics或者增加event tracking方便发布后验证其效果；refactor to test-driven code或者加上unit test……总之，take the ownership of your code，而非做完就交，啥也不想
+（先写这么多）
+3.楼主是不是觉得我跑题了？我为什么一字不提“到底是谁convince了谁”？因为这道题到现在都只有一半信息，我们并不知道另一半的题干，于是无从作答。
+我举一个生活中的例子，相亲（注意不是恋爱，不是双向选择；就是单纯的相亲，就是如何在一问一答间说出对方期待的答案）。假如对方问你生活中有什么兴趣，怎么答？——假如对方期待的是“宅在家里的兴趣”，你说越多旅行/郊游/往外走的兴趣，red flag越多。假如对方期待的是“开发共同兴趣”，你说越多对方不感冒的兴趣，red flag越多。甚至假如对方期待的是“踏实顾家”，那你说越多兴趣，你red flag就越多。所以答案是“不能答”，我们要先探一探对面的需求。
+比如，我会先说，我喜欢读书，也喜欢打游戏，你想先听我一本正经的、还是嬉戏玩耍的？或者，我平时工作很忙，周末也要花一些时间看tech blog/自我学习，然后另一半时间做我的兴趣，你刚才说的生活中的时间分配是前一类，更和我正业/职业相关的？还是后一类，完全是生活中如何放松自己愉悦自己的？
+所以楼主现在开窍了么？conflicts with others应该怎么回答？——别答呀，此刻这只是半道题，另一半题干需要你“communication”呀。我通常会反问面试官，您的问题指的是technical方面，我和其他engineer有conflict的情景吗？还是我和product或者manager有conflict的情景？
+那对方很可能会说，我都在问，你都可以说，以上都包括。
+那我就会接着说，好的，那我来说两个例子吧，一个和同事的，更technical一点；一个和manager的，更business view/long-term value/big picture一点。然后我随着答，会随着挑选上面的踩分点，根据对方的即时反馈/插话追问/deep dive，来调整我下一段怎么选择。比如我第一段儿强调一个conflict重要的是technical如何取舍，说了30s感觉对方无感，那就说明踩分点错了，下一段我就会掉头，说争论只是过程，重点在于deliver the result赶紧出活儿。又或者前一段说speed matters应该赶紧发布，对方无感，我下一段就“补充”说这个活儿我是如何长期维护、长期更新、扩大scalability等等。就是准备好招数，前一招没破防，下一招就要变招。这是两个人沟通的过程，你要积极接收对面的信息。出口的所有的话都是半试探，半前进，且随时给自己留保存点，该读档的时候要读档，不能一句话把自己堵死。
+4.回到conflict，咱们说谁convince了谁更合适？——先说一个你technical、convince别人的，选insist on highest standard, 或者deliver the result这种打击面最广的AOE，先试试，看对面反应。面试官的题板上大多会有他想考察你的key value的。我按照上文抛出第一段儿后，通常面试官听完后会说挺好的，但我也想听听你有没有被别人convince的经历？我第二段就会说一个我被manager convince的经历，主题大概是我有很好的technical perspective，但engineering lifecycle是一个多元的、合作的事情，manager教会了我CI/CD的知识——what have you learned from XXX / if 某活儿 you can do it again, how will you improve your solution or strategy，这都是经典的这道题的后半题题干。.--
+5.以上是“简单句”，咱们有余力，可以再尝试一下“复合句”。如何处理conflict的这道题，我把我常用的例子写给你：
+曾经有一次，有一个需要前端和后端合力完成的活儿。后端先做完了，wrap up，code freeze，送给QA测试了。但最后一刻发现还有个feature竟然遗漏了，于是甩给我移动端来做（我是iOS dev）。这个feature是要look into a http request, do interpretation, etc.，这是一个极度违反mobile end设计理念的（我们不对raw data做这么复杂且hacky的transformation），我本不同意（出现矛盾）；但delivery date在眼前，后端已经没时间重写重测了。于是我是这么解决这个矛盾的：1.首先我答应我会做，因为这个feature直接授意于stake holder，deliver result重于implementation环节上的龃龉。2.我会把code写得test-driven，decoupling做好，多做一层abstraction，这次发布用hacky实现类，之后版本更正回来（面试官tech background深我就多说，否则就少说；前边我在描述事件的时候看对方需要多少clarification就可以判断出来）。3.我在写完代码后，也额外补了一些data metrics，方便debug；也在ticket里注明了QA acceptable criteria，方便测试（take ownership，team cooperation，big picture都是可选方向，看对方更想听哪个）。4.我在deploy之前喊了tech lead，back-end developer，以及PM开了个会，我严肃声明这是一个非常compromising的实现，这是一个不该出现在前端的代码，我们必须在之后的版本中移除去后端（communication，notify in advance and sync on the same page, long-term value, highest standard of the code quality自选方向）。5.最后deploy了，说一下结果圆满，发布按时。以及之后的retrospective上，我把这件事做了复盘，并严格执行了这段代码从前端移除去后端的实施。short-term和long-term兼顾了。code quality和delivery也兼顾了（有矛盾，但重要的是完成任务。有分歧，但重要的是成员合作）。当然也不要说得尽善尽美，面试官假如问如果再来一次你有什么可以改进的，我会说tech角度我们的代码应该在abstraction上再加强一些，Dependency injection多用一些，下次万一不得已又要加hacky东西，不用先做refactor。非tech角度，我会说我思考如何使流程更成熟，而不是每次都依靠临场应变。
+BQ题到最后就是复合句的写作。跟写代码一样，不要长算式，而是一个function就return一个值，unit test coverage查一查这些中间变量，有不对的赶紧停，变招，再call再试。多线程，多async call。别只顾自说自话，别只有output没有input。如果没有constraint先问constraint，如果题目太ambiguous我们就自己先来缩小scope，等等等等。
+掌握了这些，每轮最后“你有什么问题问我么”，其实也都是很好的交流点，可以反问一些BQ问题的。比如对面是hiring manager，我就常问假如我是你的队员，你最看重的value是什么？你希望我更backbone一点、还是implement the delegated task更要紧？比如对面是tech lead，我也会问你希望我在high-level design多花心思，还是implementation时更注重test-driven code多花心思？……面试毕竟是双向选择，我问这些的时候，也是真想知道这个组的现有组员都是怎么做活儿的。楼主也可以反问环节问一些BQ问题，你通过设计这些问题，也会逐渐理解别人问你的时候，他想探求的是你的哪方面品质的有无。
+
+
+
 `Example`:
 - First, I created a customer feedback mechanism on a weekly basis.
 - Second, I wanted to make sure our users knew the why behind this change, and I took the action of creating a monthly office hours and 12 continued education sessions on the product. In fact, these sessions are now being used as standard practice for all future implementations, which there have been three of this size so far.
