@@ -714,6 +714,243 @@ Code: calculator 變形 + 339 + merge two list of intervals + 找subarray 是否
 - Example: # Question: Given an array of numbers a and another array of numbers b, # find k nearest elements from a for each element in b. # a = [1, 2, 10, 100, 102, 205] # b = [3, 80] # k = 2 # output = [[1,2], [100, 102]]
 
 
+## Plaid
+我觉得面试必须得在这几点上比较strong才算稳过了
+1 跟面试官clarify题目意思，确保双方on the same page
+2 做之前一定要清楚地communicate自己的思路再做，不然即使答案对了也是一个huge red flag
+   如果时间允许，提出一些alternatives，各个alternatives的trade off，捎带展示一下数据结构知识
+3 把题目都做完，有的时候会有2到3道。如果做到最后一道，但是做地比较迷糊没做完之类的，就比较危险，碰到比较严格的面试官大概率是不会过
+4 做完之后主动写test cases，各种情况的正面反面test case都要cover
+5 做的过程中如果遇到了bugs，能展现快速debug能力(论坛里所谓的要求bug free只是有些人利用bug free来避免展示debug能力而已，谁会真的要求一个人写的所有代码都是第一遍bug free的呢)
+
+1. 两个问题，第一问coupon只能用于一个category，怎么用最省钱。第二问是如果coupon能用于多余一个category，怎么用最省钱。
+这里有个小细节，第一问里的coupon数据结构一般都会有一个 "valid_category"或者类似的field，只对应一个category，第二问要多个category的时候不要头铁想着怎么refactor成list，直接开一个新的field，重写一个新的打折函数就完事儿了，会产生很多copy&paste代码但是能工作，面试官不介意的
+代码量不少，注意控制时间
+讲slides就是挑一个自己拿手的项目，写slide给他们讲。最好之前看看面试官的背景适当做些调整，不然技术细节太多他们会听不懂
+
+地理有人说过的优惠券题。题目面试官纯口述，只给输入的例子。NDA，用全中文写。
+优惠券 = (种类：电子产品，百分比：二十，额度：无，最少购买数量：二，最少购买金额：二十)
+购物车 = [{价格：二， 种类：电子产品}， {价格：五， 种类：厨房用品}， {价格：十五，种类：食物}]
+要求：优惠券有两种形式，一个是打折，一个是减额度，但两者都有或两者都没有，优惠券无效报错。最少购买数量和最少购买金额就是满足了才能用，可以是无。
+求使用优惠券后，购物车里的产品的总价。这题输出是1.6+5+15=21.6
+第二问：优惠券的种类可为多个，并且有多个优惠券。
+优惠券 = (种类：[电子产品，食物] ，百分比：二十，额度：无，最少购买数量：二，最少购买金额：二十)
+购物车 = [{价格：二， 种类：电子产品}， {价格：五， 种类：厨房用品}， {价格：十五，种类：食物}]
+要求：其他同上，如果多个优惠券都可用于同一个种类，直接报错（要求有点怪）。
+同样求使用优惠券后，购物车里的产品的总价。这题输出是2+5+12=19，因为用于食物是最大化优惠。
+他家的bar确实迷，最后做出来但挂了。感觉应该是抓取有效信息不全面吧，面试官上来噼里啪啦把题目和各种细节怎么处理都讲了一遍，但信息量有点多，实现代码的时候，我重新确认了几个他一开始阐述过的要求，没办法。分享给后面要面他家的小伙伴吧
+
+Coding题目也不难，用户有一个shopping cart，有一个coupon，让你写一个程序判断满不满足条件使用coupon，discount是多少。Followup是有好几个coupon时怎么办。
+
+2. sd是credit history那道题。说是250 writes per second的流量，我就没有加message queue做缓冲（解释了这个load真的很小所以任何database都可以轻松handle，然后口头比较了一下各种db的优缺点）。然后read方面沟通了qps说也不会多大因为每个user一年也查不了几次credit score，于是我说cache也没必要做，因为费钱还需要更多的setup。credit monitoring我表示可以直接cron job每个决定opt-in这个功能的user检查一下然后跟上次的对比，因为credit score变动不会很频繁（一年几次）于是做event streaming是overkill。面试官感觉全程一脸
+问了一下feedback应该主要是coding那个bug的问题，但sd被说“api performance没有处理好”，所以是真的想在250 qps的情况下加queue吗-.- 那随意了，我们组relational db都是5k-15k qps写入，没queue也好好的。
+挂的点楼主应该理解错了。message queue的目的，并不总是为了handle峰值流量。
+试想一下，如果下游的database短时间挂了，那你的所有write request是不是都丢失了？如果你有message queue的话，你就可以存住这段时间的所有write request，等database再起来以后，retry所有message就好了。
+不过我认同你的说法，很多面试官应该都是觉得用一个mq来replay应该比较保险。只是我自己的实际工作经验告诉我mq并不必要，但也许那个面试官并没有这样的经验所以他觉得我在胡扯（我给他讲我们组实际系统性能和设计的时候他非常震惊脸）。
+
+店面：算法是地里中央银行那题 + credit history 系统设计 感觉和脸家系统设计的风格差不多 就是画图呗 常见的什么 nosql + kafka + stream processing 甩上去就差不多啦 特别说啦说为什么不用lamda
+Lamda 有个最大的坏处就是 同一套逻辑implement两次。 以前batch processing 经常被拿来纠正stream processing的错误 实际上很多时候batch processing自己的误差也挺大的。现在的stream processing因为stateful的原因 是可以支持很高的正确率的。 网上有很多killing lamda的tech blog，有兴趣可以去找找。我印象里LinkedIn和Uber的tech blog都有提过
+但这个这个db只是需要支持update 和 查询，不用什么join之类的 你用sql也行 但数据太多 表之后可能太大 之后就不好办啦
+read heavey write heavy是可以在面试的时候问的 我记得我问啦update和查询都是什么情况下用 又是怎么用 根据具体api的定义还是比较好推断的
+我用stream是因为这个系统还要支持monitor 个什么东西， 出现变化大于某个值就要发notification什么的 db change stream  + stream process之前工作见挺多 就用上啦
+
+
+3. coding，Central Bank Algo好像之前有人说过的银行转账问题，基本上一摸一样。follw up是给出一个提案 减少transaction总量，大概是利口 中等的难度。
+银行转帐都会通过一个中央行A转账，给一个list的转账信息 最后需要output一个简化版本的list
+是动态的选择中央银行
+请问可以展开讲一下吗？什么是动态的选择中央银行？ 可以是根据transaction amount或者number of transactions来选择中央银行？
+要最少的，number of transactions
+union find
+coding 就是那道central bank A and simplify transaction among A-Z banks followup 沒central 怎麼搞 大致講了算法很快就原用上題的code run  test case就結束了
+应该要和interviewer商量一下 我用的是批判标准是最小的balance
+
+"This question is inspired by Plaid's Auth product which serves as a gateway to the ACH system. ACH stands for Automated Clearing House and is the backend for almost all bank payments in the United States."
+"Plaid customers such as Venmo use Plaid to authenticate users before issuing ACH transfers to your bank to fund your Venmo account."
+"ACH processes transfer requests in large batches, typically once a day in order to simplify each large batch of transfers into the simplest equivalent set o
+"ACH processes transfer requests in large batches, typically once a day in order to simplify each large batch of transfers into the simplest equivalent set of transfers between member banks. This process is called Netting."
+sourcebank targetbank amount
+Input:
+AB1
+BA2
+AC3
+output
+[BA1,AC3]
+
+问如何选中央银行
+要注意handle一些edge cases
+like
+filter 0 transfer的值
+A->B 10
+B<-A 10
+很简单的，一共三问吧。就一个bank里有不同的account, 然后有个interval，每隔多久会有account update。现在有多个bank   Call一个function with time stamp，问现在有update的account 列表。。第二问是想把这些update 尽量平均一下，比如interval是3, 有4个account 那这个bank就可以0秒2个，1秒1个，2秒1个，3秒2个这样。第三问是有sleep window 不update 但是尽量不丢失信息 我写出来其实有edge case不对的，但是面试官说不重要了
+
+example 2
+input: ["AB1", "BA2", "BC3"] // A转$1到B，B转$2到A, B转$3到C
+output: ["BA4", "AC3"] // 合起来算B转$4到A，A转$3到C
+followup是 不指定中央行是A怎么找到一个最合适的中央行，然后output
+from collections import defaultdict
+
+def simplify_transactions(orig_transactions, cent_bank):
+    flow_map = defaultdict(int) # dict{bank : $ flow in, negative means expense}
+    res = []
+    # step 1: process and populate flow_map, clearing house
+    for tran in orig_transactions:
+        payer, payee, amount = tran[0], tran[1], int(tran[2:])
+        if payee != cent_bank:
+            flow_map[payee] += amount
+        if payer != cent_bank:
+            flow_map[payer] -= amount
+
+    # step 2: output
+    for bank, amount in flow_map.items():
+        if amount > 0:
+            res.append(cent_bank + bank + str(amount))
+        elif amount < 0:
+            res.append(bank + cent_bank + str(-amount))
+
+    return res
+
+
+def simplify_transactions_v2(orig_transactions):
+    flow_map = defaultdict(int) # dict{bank : $ flow in, negative means expense}
+    # step 1: process and populate flow_map, clearing house
+    for tran in orig_transactions:
+        payer, payee, amount = tran[0], tran[1], int(tran[2:])
+        flow_map[payee] += amount
+        flow_map[payer] -= amount
+
+    # step 2: choose central bank
+    max_net_amount = 0
+    cent_bank = None
+    for bank, amount in flow_map.items():
+        if amount != 0 and abs(amount) > max_net_amount:
+            max_net_amount = amount
+            cent_bank = bank
+
+    if max_net_amount == 0:
+        return []
+
+    # step 3: output
+    return simplify_transactions(orig_transactions, cent_bank)
+
+02/02/2022: 面的也是这个题目， followup有个code case：["AB1", "AC1", "AD1", "AE1", "DE1000"]
+补充内容 (2022-03-20 12:25 +8:00):
+code case --> corner case
+最佳银行应该是transaction数和转账总算两项都为最少的那个。就["AB1", "AC1", "AD1", "AE1", "DE1000"]而言，遍数选各个为中央银行的可能：
+A：AB1, AC1, AD999, AE1001,  total sum: 2002
+B：AB4, BC1, BD999, BE1001, total sum: 2005
+C：AC4, CB1, CD999, CE1001, total sum: 2005
+D：AD4, DB1, DC1, DE1001, total sum:1007
+E：AE4, EB1, EC1, ED999, total sum:1005
+所以E应该是最佳答案。这是我的理解。
+问如何选中央银行
+要注意handle一些edge cases
+like
+filter 0 transfer的值
+A->B 10
+B<-A 10
+
+
+他们叫TDD，technical dive deep。准备一个 slide deck 简单介绍一下自己做过的项目，其实不用讲得太细，主要流畅把项目说好就ok，我这个环节感觉更多他们考核是言语表达能力。Follow up问题 都很high level，没怎么问细节。
+
+
+ML depth and width & optimization
+Suppose we have a training dataset with 10M data points, each marked either “healthy” or “unhealthy.” In the dataset, 100,000 points are unhealthy, and the rest are healthy. For each data point, we have 1,000 features that we’d like to use to predict if the data point is healthy or unhealthy
+
+电面基本上地里的内容 最少不同银行转账的flow 还有一个购物车和优惠券的题目没啥算法 不难
+还有一个是写job scheduler 把record给不同银行 也不难
+表演 设计lender查信用记录的系统 lender会一直发很多record去系统 并且如果fico score降低可以通知
+
+Round 1 - Coding (挂在这轮）
+应用题，具体记不太清了，大体是设计一个job scheduler, 定时汇报需要更新的银行账户。需求非常奇怪，然而具体到编程, 难度就是LeetCode Easy. 一小时的面试时间，撸主花了整整30分钟来理解题目，然后十几分钟刷刷刷两问做出来了。
+Recruiter 的feedback是面试官觉得理解问题速度太慢，花了太多时间无效clarify question, 挂。
+Round 2 - System Design
+Credit/Loan Application System 变型。可以参考这个设计并思考怎么拓展（然而LeetCode这老哥RESTful API是有问题的)
+https://leetcode.com/discuss/post/1637489/credit-cardloan-application-system-desig-aexw/
+Round 3- Behavioral
+特别常规的聊天，主要问简历项目
+面试整体非常简单，主要撸主太菜，不适应做应用题。HR回复速度很快，哪怕拒信也在电话给了相对具体Feedback, 体验非常好。
+
+
+两轮coding，祖传的两道题都碰上了，中央银行 & recurring transactions
+https://leetcode.com/discuss/post/1367137/plaid-phone-interview-by-anonymous_user-gjl2/
+第一轮答的很好，相谈甚欢
+第二轮跟面试官解释等差数列里 中间项 * 2 = 前一项+后一项，他表示不明白，我说 【10，20，30】， 20*2 = 10+30，他表示不是很明白
+写出来了但是莫名跪了，可能等差数列真的很难吧: )
+很奇葩的经历，第一次面试要自己准备code pad，我现场注册了coderpad，写完还要把code发邮件给面试官，记关视频前把他们email都存好
+做题建议不要装傻，会写就赶紧写出来，争取把followup也都写/跑出来，他们可能自己也知道就这两道题，除非写的炉火纯青倒背如流不然不给过
+central bank 面试官建议iterate只要involve的银行就可以作为central bank，直到它被清零
+第二题我没被问到follow up，装傻坐太慢了lol，地里看到有人被问到amount，也有人被问到both，建议都准备一下哈
+btw我放的刷题网链接的答案有问题（transaction那一道），仅作题目参考
+1. central bank followup是用了absolute最大值求解？
+2. recurring txn 20%区间只是 timestamp only 还是 apply to both timestamp and amount？
+
+可以請問一下credit history有什麽特殊要準備的地方嗎！還是説標準的system design! 感謝！
+比较标准，但是会侧重于  API endpoints 和 data schema。 建议熟悉一下官方doc。Read write traffic要不同的service和database 选择。
+LZ前两题除了transaction还有哪一题？Transaction followup是timestamp和amount都要20%浮动，还是只有amount？
+都要20%， 但是是很簡單的那種，不用多想， 想再問問credit history, 問題就是design a system which can calculate the credit history？這樣是不是就是read > write 然後注重db怎麽存，怎麽scale好像想不出來啥特別的，感覺availability 和 consistency 沒那麽重要，可以多説説嗎，我剛開始準備， 沒啥頭緒，感謝！！
+
+
+1. Coding
+find recurring transactions.
+[
+  ("Netflix", 9.99, 10),
+  ("Netflix", 9.99, 20),
+  ("Netflix", 9.99, 30),
+  ("Amazon", 27.12, 32),
+  ("Sprint", 50.11, 45),
+  ("Sprint", 50.11, 55),
+  ("Sprint", 50.11, 65),
+  ("Sprint", 60.13, 77),
+]
+# input always valid
+# days are increasing
+这题不难，要和面试官讨论一些clarifying questions来明确reqs，主要还是看你的engineering best practice，modularity啊readability，extensibility什么的因为会有follow up比如加一个新的req怎么修改code。
+System Design是设计一个给lender查询user credit history服务。service需要handle lender查询某个用户过去几年的信用记录，并且支持用户贷款payment update。
+第一次面系统设计所以答得特别差，回想起来基本踩了所有雷区。应该是挂在这轮了。
+coding
+List Transaction, category, recurring
+[
+  ("Netflix", 9.99, 10),
+  ("Netflix", 9.99, 20),
+  ("Netflix", 9.99, 30),
+  ("Amazon", 27.12, 32),
+  ("Netflix", 9.99, 40),
+  ("Sprint", 50.11, 45),
+  ("Sprint", 50.11, 55),
+  ("Sprint", 50.11, 65),
+  ("Sprint", 60.13, 77),
+]
+找出recurring transaction
+1. 连续三次时间间隔一样，钱数一样
+2.时间和钱数可以允许20%的偏差
+"""
+[
+  # merchant, amount, date
+  ("Netflix", 9.99, 10),
+  ("Netflix", 9.99, 20),
+  ("Netflix", 9.99, 30),
+  ("Amzn", 27.12, 32),
+  ("Sprint", 50.11, 45),
+  ("Sprint", 50.11, 55),
+  ("Sprint", 50.11, 65),
+  ("Sprint", 60.13, 77),
+]
+"""
+
+给一个 transactions list，找到重复的 merchant，重复的意思 merchant 是出现三次，amount 相同并且之间相差相同的时间。 比如上面这个例子 output 是 ["Netflix"].
+follow-up 是把重复的定义改成 amount 的最大值和最小值相差不超过20%，其他条件不变。
+
+其实就是系统设计经典几大块：API，LB，services，database。API和DB schema要设计的详细一点，requests来的量大了怎么handle。然后DB选哪种，read-heavy还是write-heavy，sql vs nosql，consistency vs availability应该更偏向哪种情况，怎么partition。requests和数据多了以后系统怎么scale，bottleneck在哪里。感觉能展开讨论的地方还挺多的，但是最后没时间了
+
+电面两道题，都比较简单：
+1. 妖舞舞
+2. write a function to valid check a routing number. You can google to find out the rules for verifying routing number.
+
+两轮电面。一轮是简单题，lc min stack变种；一轮是涉及到multithread的，LC上的design hit counter
+
+
+
 ## Bloomberg
 `MLE`
 ML SDE电面，先聊聊做过的ML project，问的挺细的，需要自己准备准备。
