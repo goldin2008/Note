@@ -715,6 +715,9 @@ Code: calculator 變形 + 339 + merge two list of intervals + 找subarray 是否
 
 
 ## Plaid
+
+https://leetcode.com/discuss/post/1637489/credit-cardloan-application-system-desig-aexw/
+
 我觉得面试必须得在这几点上比较strong才算稳过了
 1 跟面试官clarify题目意思，确保双方on the same page
 2 做之前一定要清楚地communicate自己的思路再做，不然即使答案对了也是一个huge red flag
@@ -2830,6 +2833,185 @@ feedback说第一第二轮都没有问题 第三轮因为我的设计too heavy r
 题目也是以往面经题目。让你设计一个flight ticket deals email notification system, 要求 1.不能发重复的deal 2.如果有新users加入且subscribe 了他想知道的目的地的deal, 之前发过的no‍‍‍‌‍‍‍‍‍‍‌‌‍‍‍‌‌‍‍tification也需要发给他
 我用的是message queue 做传送notifications, 用cache 做read heavy 的缓存。期
 database connection failed). 注意大小写不区分，ID starts with 1 not 0. 面试官挺不错，一直给hint. 题目不难，细节tricks 有点多。 结果就是 system design 挂了，因为我的设计too heavy read/too heavy read。
+
+
+第一题是一个文章的段落，需要找到重复的单词的总数。比如段落里apple出现了5次，那么apple重复的次数就是4， google出现了3次，那么google重复的次数就是3，然后这个段落的重复总数是4 + 3 = 7。用regex取出单词的数组，用set记录一下出现过的单词。
+第二题类似利扣依尓斯124类似， 不过简单很多;‍只需要找到从root到leaf的路径和的最大值，分治法很容易做
+很NICE1. 简单题。 给一行字符，输出出现频率最高的单词. HashMap + PQ
+2. 类似利口124. 给了类似树的结构，输出从ROOT 到 LEAF 节点的最大值‍‌‌‍‍
+数据狗电面总共60分钟。一个笑眯眯的engineer面的，先他自己自我介绍自家产品，然后我自我介绍，说说自己的项目，工作中遇到的最大挑战是什么。15分钟
+两个题，第一个是换硬币，利口叁贰贰变体，要求输出每个硬币用了多少个的数组而不是总和。
+本来我疯狂输出dp和bfs但是他拦住了我说是没那么复杂，意思就是直接从大到小遍历下硬币数组即可。
+第二个题是实现一个circular buffer用fixed sized array, 要求实现queue的各种基本操作。没写完，只说了思路，用两个指针分别存下一个
+1. coding: 经典面经题, 给定一个array, 每个元素都是一个string array, 输入一个string array, 返回输入对每个给定string arrary的补集 (需要保证输入里每个单词都在string arrary里), 直接返回一个arrary就好.
+  给定: [['apple', 'facebook', 'google'], ['banana', 'facebook'], ['facebook', 'google', 'tesla', 'apple'], ['intuit', 'google', 'facebook']]
+  输入: ['apple'], 输出: ['facebook', 'google', 'tesla']
+  输入: ['facebook', 'google'], 输出: ['apple', 'tesla', 'intuit']
+3. system design: design mint.com. 主要功能是连接bank account, 可以制定budget, 分类.
+4. HM BQ: why change company, why datadog, project deep dive.
+面试官是白人小哥，在数据狗工作两年多，挺nice的，10分钟自我介绍，问了一个the most challenging project，剩下45分钟做两个题，用Coderpad，题都是地里的面经，最后5分钟问问题。
+1. 给一个string，找重复单词的总数
+function: count_repetition()
+input: paragraph = "The sun is the largest object in the solar system. It is the only star. And the sun is bright."
+output: 7
+the: appears 5 times (repetition: 4)
+is: appears 3 times (repetition: 2)
+sun: appears 2 times (repetition: 1)
+number of repetition : 7
+大小写不管，我用hashmap
+2. 给一个list of points，points是坐标，按间隔补齐缺失的坐标，坐标都是线性增长或减少的
+function: interpolate()
+input: (0, 0), (5, 100), (15, 300), (30, 150)
+output: (0, 0), (5, 100), (10, 200), (15, 250), (20, 250), (25, 200), (30, 150)
+给了一个Point class表示坐标
+我就linear scan，计算比例，插入缺的坐标。
+没有要求写不同的test cases，我把他给的example做出来就停了，随后问了时间复杂度和空间复杂度。
+求过！
+面试是在zoom上进行的，自我介绍后问了15分钟的BQ，最有挑战的project，有follow up questions， how to scale。
+一共有两道题， 面了一个小时。
+第一题是力扣三三二， 经典找零题，一开始有点愣住，给了一个hardcoded 解体，之后面试官要求才改成用coin 面值当input
+第二题 是 树结构file structure，有子文件夹和文件， 要求output 每个文件夹的总文件大小。
+1，输入一窜长String，找重复单词次数。这个其实不用map或者pq那么复杂。用个set记一下哪些出现过，再出现+1就结了
+2，N-tree的root-leaf最大值，标准dfs
+可能我写的比较块，问了很多follow up，时间空间，input里有环怎么判
+聊了聊简历和项目 然后做题 都是面经
+第一个硬币找零 硬币都是可以假设硬币都是美国标准硬币 1, 5, 10, 25
+第二个多叉树找从root到leaf最大的路径
+onsite
+coding 两轮 都是给你一串log 需要build index或者reverse index 很水
+design youtube
+重点吐糟hiring manager轮。一个linkedin过去的director，极度自以为是，每一句话都assume你在撒谎…后面提到和前文他理解的有出入就会用一种“老子抓住你刚才撒谎”的语气马上问你刚才说xxx 现在又说yy‍‌R
+1. 给一个text，叫你数一下里面有多少个重复的，要注意，是数重复的数量，不是重复的总数，比如“hello world text, text hello, text"， 那么text重复了2次，hellow 重复了1次，答案就是3
+2. 给一个file system，要你统计文件大小。
+home/
+|--- me/
+|.      |--- foo.txt : 231
+|.      |--- abs.txt : 443
+|--- haha.css : 52
+1. 找钢镚，简单greedy，1,2,5,25,  找33，就从大到小，return 每个 钢镚的数 [3,0,1,1]
+2. root 到 leaf 和，follow up‍‌‌‍‍‍‍‌
+前两道coding都是地里面的原题，系统设计是设计查看银行transaction history的系统，也是地里原题。 以上都过了，精彩的是BQ，挂了。
+问我BQ的是一个做前端的director，然后我给他讨论的我做的后端项目，很底层的东西，就是如何去实现优化Map-Reduce之间那个shuffle stage。我同样的话，已经说给了好几个其他的HM听过了，人家都觉得没啥问题，这货，给我挂了。说我‍‌R
+Coding 2 类似刷题王舞溜罢
+十分钟：面试官自我介绍，面试者自我介绍，介绍一个项目，面试官问follow up
+四十分钟：两个coding
+第一题：给一个list of integers要放进buckets里面, 给 number_of_buckets, bucket_width，output 每个bucket里面有几个数
+直接用array/hashmap存，divide by width, 注意如果是落入最后一个bucket，整除的数会大于number_of_buckets, 要设置一个max才不会index out of bound
+第
+第一道是给英文段落，然后你统计words的repetitions
+思路就是linear scan，遇到delimiter，如果有cur word 就存在hashmap里面。最后扫一遍hashmap 算repetition
+注意大小写，存的时候可以换成lowercase
+第二题 就是root to l
+数据狗新鲜店面
+简单自我介绍和过去project介绍
+两题coding, 地理都有
+1. put a list of integers into a list of buckets, with a specific bucket width, return counter per bucket
+for example,
+a list of integers - [1,2,11,20, 100]
+num of bucket - 3
+bucket width - 10
+0-9:       2 (1,2)
+10-19:   1 (11)
+20+:      2 (20, 100)
+最后一个bucket, 包含所有后面的数字
+2. 给一个list 里面有坐标，按间隙补齐缺失坐标,  点和点之间是直线连接，缺失的点也必须在直线上
+for example, interval=5, interpolate missing
+;‌‌‌‍) ,(20,-10)]
+(5,20) 在直线(0,10)-(10,10)上, (15,0)在直线(10,10)-(20,-10)上
+求米，后续更新，同时祝大家面试顺利
+店面轮 给你string（是integer） array 求bucket, 0,10,20.。。。100+，count。 第二题不记得了，也是很简单的
+Onsite
+design， notification system，就是flight ticket 变化了，要通知用户，需要实现exactly once。讨论了用户怎么设置alert，price history的数据，notification system。
+HM，闲聊，问你想做什么。。。
+coding，leetcode easy 级别的题
+Coding第一题是吴要发的变形题，第二题记不清了，是关于树的遍历。两道题总共用时20分钟，testing全过。然后问了时间空间复杂度的问题。
+趁着还有些记忆，把店面和OV的题目分享一下
+店面两道题
+1. 找硬币，给你硬币【1，5，10】， target 33 ，找到最少需要的硬币数量
+2. 给一个多叉树，每个节点上都有自己的分数，问 从 根节点到最终叶子节点 累计分数最大值是多少。
+VO四轮，因为选择不做homework， 所以有两轮coding
+1. 给你一个file class， 有delete，list，isDirectory 等helperfunction，给你一个absolute path，做一个rm 操作
+followup： 用dfs，bfs是否会有memory issue 如何解决。
+2. 跟有个人的面经一样，不重复了
+['apple, facebook, google', 'banana, facebook', 'facebook, google, tesla', 'intuit, google, facebook']
+然后有一个 filter list， 根据 filter list 输出这些 Tags 的补集
+比如 filter by ['apple']那么 return ['fa
+performance filter
+3. system design
+design mint.com 不要求做notification， 只需要track spent
+4. manager 聊天BQ
+5. HR sync up
+两题都很简单。
+第一题，有[1, 5, 10, 25]硬币，用最少的组合，得到33。我写了一个while loop，然后FUQ是怎么improve RT，我说的module，然后他没有让我写
+第二题，tree, max path sum fr
+和地里另外一个面经两道题是一样的
+第一道题是找total repetition 需要注意case
+第二道题line
+两个题目：
+1. 给一个string，排序每个word出现次数
+2. 添加中间数达到线性
+eg1： input：[5，10，20], 5  output: [5,10,15,20]
+           数组，间隔
+eg2：input: [5‍‌‌‍R
+#8205;,25,35], 10   output:[5,15,25,35]
+面到一样的第二题，需要先求出斜率（可上升/下降）然后再根据斜率补充missing的点。
+电面是在hackerrank上，他家基本没有面筋所以也没有怎么准备，记得就是两道大概是lc medium-的题，应该就是类似扫一遍list或者array然后做一些string操作或者是int操作， 时间有点久所以不记得了
+VO是3轮 coding , design , Hring manager
+coding：
+有一个数据流会进来一些tags比如
+['apple, facebook, google', 'banana, facebook', 'facebook, google, tesla', 'intuit, google, facebook']
+然后有一个filter list， 根据filter list输出这些Tags的补集
+比如filter by ['apple']那么return ['facebook', 'google'] (只有第一个里面有APPLE）
+比如filter by ['facebook', 'google']那么return ['apple', 'tesla','intuit']
+需要high performance filter
+这个题挺奇怪的， 到现在我也不知道它正确解法是什么， 当时写了一个single thread 解法然后面试官一直表示要high performance, 然后我问它这个可以把stream 分几个机器parallel执行就行貌似面试官也不是想要这个。然后一开始给的stream格式是Array，后来又说不能fit in
+ul feedback。事实上system design 如果面试官自己都不知道requirements到底是什么的话， 整个design可以go anywhere
+简单自我介绍和简历项目介绍后有2道题
+第一道easy 输入一个字符数组，每个字符串是逗号分割的一堆tag
+就像 "tag1,tag2,tag3"
+然后叫你统计每个tag出现的次数 hashmap秒了
+第二道还是easy 输入一堆 job，duration，children job的pairs，和一个job id
+让求总共
+1. coin change
+2. 给一个多叉树，每个节点上都有自己的分数，问 从 根节点到最终叶子节点 累计分数最大‍‌‌‍‍‍‍‌‍‍‌‍‌‍‌‌‌‍值是多少。DFS or BFS
+
+
+讲讲极高频的mint.com design，
+以下仅代表我个人准备的内容，仅供参考, 反正我遇到的面试官在我说了以下一半内容不到的情况下（时间关系）就让我过了。
+functional 和 nonfunctional requirements
+functional requirement:
+1, user bind account to financial accounts
+2, going to the target financial accounts to get users' expenses information
+3, categorize these expenses records to several buckets types and calculate total amounts of each for each month
+4, users can read monthly report about their expenses distributions
+5, if users spend more than the threshold defined, it will notify the users.
+non-functional:
+available 10millions users, read 1/day and 10expenses/day, 100millions write/day 1200 rps, 1kB/write, 100GB/day to storage  3T/month distrubuted DB and multiple servers
+reliable
+performance: fast computation and fast data receiving/writing low users waiting time for a report
+scalable:
+security
+我准备的图见附件
+system design面试60分钟，留给你讨论题目的时间只有45~50分钟。必须在10分钟之内讨论完functional， nonfunctional requirements和back envelope calculation。calculation不需要很精确，只要通过每天/每月增加的storage 和 RPS证明必须要用distributed system面试官就认为你上道了。然后你必须在另外20分钟内画完所有functional requirement的service graph和列出来Data Storage里面要存储的数据的大体内容和互相关系。这个题我列的data storage conent就是 users table，users finance accounts table, users expenses records from bank accounts, reports DB, (如果你在reports DB 和 users expenses raw data 之间加一个aggregated data by user,month,expenses bucket 作为中间的dynamic data storage用作动态生成功能更多的reports的作用那也很好)。 然后你必须有最后15到20分钟讲讲整个系统的bottle neck，怎么优化，或者对于data storage你怎么选型，最好能把理由归结到你之前列的non-functional requirements上。这里面可讲的部分包括：
+1， scheduled expenses records crawling 和 data aggregation calculation是 batch job 还是 streaming job
+2， 根据data storage内容的性质分析是用SQL还是nonSQL，并列出理由（我在附件中写的是 users， finance accounts data 用 SQL。 users expenses raw data用 BLOB like s3, reports DB 用 nonSQL mangoDB）
+3， 讨论系统的性能瓶颈，这里可以是reports DB的读取，也可以是持续读取users expenses来计算更新reports，取决于你之前back envelope number的设定。而writing如果是batch job 可以讨论会在writing的时候，怎么缓解对reading的影响，streaming的话writing强度如何等等，然后就自然引入下面几点的对reading和writing的优化。
+4，reports DB用partitions做horizontal sharding, 讨论用user id做partition key。然后谈谈怎么做partitions load balance to avoid skewed hot data, 然后提到consisitent hash之类的。然后对每一个partition 加多个read replicas， 然后谈谈这个 read replicas和 master node之间怎么data sync. 这个例子你可说expenses reports不需要很强的最新数据同步性，所以可以用async write更新read replicas来增加writing的performance, 如果你认为writing performance不重要因为writing not intensive，而users reading latest and consistent reports 更重要那就说要用synchronous way去更新read replicas
+5， 添加cache缓存最近读过的reports
+6， 讨论是否可以通过区分active users 和non-active users来采用不同的reports生成策略。因为active users的data reading intensity更大，那么是否可以设batch job主动生成reports以减少用户request等待时间？non-active users 几乎很少request reports，是否可以不主动生成reports减少系统资源开销？这样可以通过有request的时候临时生成reports来应对。那么由此带来的用户等待时间极其长怎么办，可以引入第7点
+7， display reports service 接到request，可以先查看cache，如果cache没有则用async模式把request放入队列中由reports query/generation service读取队列。这样display reports service可以先返回客户端消息表示reports正在生成。reports query/generation service读取request之后先查询DB是否存在reports，如果没有则现场query aggregated dataset去生成reports存入DB，存入cache然后返回客户端reports或者用另一个队列把消息送会给display reports service（display reports service这时候需要保持与客户端的long term TCP链接？），或者用另一个notification service去通知用户reports已生成。这些各种options都可以讲讲去实现异步生成reports的功能。
+8， 出于security（non-functional requirements），可以设定在用户添加或查看银行账户的时候，需要额外的认证。可以讲讲怎么设计一个给用户手机发送passcode然后让用户输入passcode来认证用户，然后在front end service生成一个加强版短期有效的cookie的方案。我随便写了一下可见于附件图中。
+9， 讲一讲怎么monitor 你的DB partition nodes， 各个servers去异常检测，比如让这些node每隔10秒1分钟之类的发送 heartbeat， CPU usage， memory usage rate给monitoring server，如果需要scale怎么办，如果node not responding怎么办，然后就可以讨论一下DB nodes replicas re-election来生成新的master nodes， hot ready servers fail-over backup, 怎么scale DB partitions， replicas， 和 service servers之类的
+10， 因为datadog就是做monitoring的，它很希望你说一说给这个系统设计一个logs based monitoring system架构。这个内容我有被面试官主动问道，所以我就在附件中附上了monitoring and alerting system架构参考图。
+这10点只是我认知范围内可以谈的内容的举例。相信大家还会有其他很好的提高nonfunctional requirement的点可以详细谈。实际上因为时间关系你不可能谈这么多点。我的经验是如果你谈到了3个点，那就很有可能过关了，如果你谈了4到5点，那你就相当稳了。
+最后说一点我的感受吧。
+1， 多看看 youtube上的interviewing.io 这个频道 https://www.youtube.com/@interviewingio，FLAANG面试官真人和训练者实战，非常权威非常有帮助。
+2， the easiest way to sound like a smart guy in system design interview: 画图的时候直接用这个模版 client -> load balancer -> rate limiter(prevent malfunctional users sending abnormally high volume of requests) -> front end servers(act like api gateway，authentication etc) -> each service components based on your functional requirements -> DB 无脑用，百利而无一弊。
+3， 不要有题家思维认为system design会有一个在面试官脑海中的标准答案，而我要做的就是要揣测这个标准答案然后回答出来让面试官满意。实际上面试官没有标准答案，连requirement是什么都是高度开放的。面试官就是想让你自己折腾，想看你对系统设计的理解深度怎么样。你要做的就是自己假设一个requirement，然后自圆其说为了达到这个requirement该怎么设计系统，这个系统的瓶颈在哪儿，怎么改进。面试官的评判标准就是看你是否能利用系统设计的知识对你自己提的假设所产生的难点提出一个解决方案，并且这个解决方案逻辑自洽，符合行业广泛共识。
+4， 不要问面试官太多requirements问题，自己假设自己说。不要花太多时间在requirements gathering和back envelope data calculation上。不要怕自己不和面试官沟通自说自话导致偏离了面试官的本意。因为面试时间非常非常有限，时间过得很快，你必须在10分钟之内进入画图设计阶段才有充足时间谈细节，谈瓶颈，谈优化，而这些才是面试官真正想听的。面试官真的没有太多预设的本意藏着不说故意等你问。你尽管假设然后往下说根据这个假设自己的想法，如果面试官觉得你偏离了其预设的内容TA会自动纠正你的。你要做的就是如果TA明确指出你的方向之后，不要和TA犟，接受这个设定，然后在此基础上继续假设继续说，直到下次TA纠偏你。面试官不会因为纠偏你而扣你分，因为考点根本不是猜requirements是什么，考点永远是你针对你提出的requirement有什么好的system design解决方案。当然面试官也有可能会challenge你提出的解决方案而打断你，那你要判断是否是你的设计不合理或者是你也可以坚持己见用自洽的逻辑和知识储备捍卫你的观点，这也可以是亮点，当然取决于面试官和你自己的硬实力了，就不多说了。
+5， mock interview 真的很重要，对于我们这种英语不是母语的人来说更重要。看人吃豆腐牙快，自己上了才知道原来这么不顺手。强烈推荐去一些付费的找真实FLANNG面试官mock interview的平台练练。你即使不用和真人mock interview也要自己找个没人的地方假设处于面试中把整个流程走一遍，一切和真实面试一样去画图，对着图大声说，然后掐时间算好，就能发现原来自己有这么多问题之前都没意识到。然后结合网上mock interview的真人视频（比如上面第1点的）去听听面试官给训练者的反馈，反复自己模拟练习，会很有帮助。
+
+
 
 ## Scale AI
 Tell me a time you made a hard decision, talk about the trade off.
