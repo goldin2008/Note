@@ -51,9 +51,9 @@ handle conflicts这种问题回答的重点在如何让对方在对你不生气�
 2.2一个tech任务，我觉得不该做但组里坚持做，我表达了反对意见但坚决执行了——backbone, disagree and commit
 2.3一个tech任务，同事急于求成，但feature可能有compromise，我没同意，坚决保持design完整性和code quality——insist on highest standard
 2.4一个tech任务，我强调时间紧，必须缩紧scope保证commitment，但同事非说要做完善——delivery result, speed matters
-2.5一个新加的需求，同事马上准备coding但我push back——manage with standardization; 做活儿要有优先级和方法论. 1point3acres.com
+2.5一个新加的需求，同事马上准备coding但我push back——manage with standardization; 做活儿要有优先级和方法论.
 2.6新需求但是是customer/stake holder提的，同事想push back但我坚持必须立刻shifting demand——customer obsession
-2.7一个活儿同事觉得做完了，但我认为没做完——我预先看到很多potential concern没解决，我要dive deep. ----
+2.7一个活儿同事觉得做完了，但我认为没做完——我预先看到很多potential concern没解决，我要dive deep.
 2.8一个活儿同事觉得做完了，但我认为没做完——在pass to QA前还有很多dev能做的，比如补足data metrics或者增加event tracking方便发布后验证其效果；refactor to test-driven code或者加上unit test……总之，take the ownership of your code，而非做完就交，啥也不想
 （先写这么多）
 3.楼主是不是觉得我跑题了？我为什么一字不提“到底是谁convince了谁”？因为这道题到现在都只有一半信息，我们并不知道另一半的题干，于是无从作答。
