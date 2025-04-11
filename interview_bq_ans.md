@@ -24,24 +24,25 @@ STAR method to construct the response:
 如果是面e4， 我可以说和同事有技术点的争论， xxxx, 最后我说服了对方
 如果是面e5， 我是不是说上面这种就挂了，我得说， 我带了一个项目，和别的cross function team argue， xxxx, 最后我赢了， 给team争得了话语权？也就是说，面senior一定要强调leadership和large scope，这样我才能过？
 请大佬指点1， 2
-如果我在一个问题里尽可能的多说几点？是不是容易踩中，这个方法有什么不好的地方吗？ 比如conflicts with others， 我先提design时候有技术conflicts(Backbone; Disagree and Commit), 然后定plan时候manager希望快，我觉得需要写足够的test cases(Insist on the Highest Standards), 然后deployed的时候，infra team希望用较少的server( save cost)， 我强调需要多加resource, 因为增长会很快  (think for future)
+如果我在一个问题里尽可能的多说几点？是不是容易踩中，这个方法有什么不好的地方吗？ 比如conflicts with others， 我先提design时候有技术conflicts(`Backbone; Disagree and Commit`), 然后定plan时候manager希望快，我觉得需要写足够的test cases(`Insist on the Highest Standards`), 然后deployed的时候，infra team希望用较少的server( `save cost`)， 我强调需要多加resource, 因为增长会很快  (`think for future`)
 
 
 这个问题不光是一个面试题，是真的再测试你怎么处理工作事情，测试你在工作中的行为准则。
 所谓退一步海阔天空，我在回答问题之前，先退一步反抛出问题：为什么工作中会有conflict？
-然后回答自己抛出的问题：因为我和同事都care， 我们都希望把工作做好。如果我对手头的工作不care的话，我什么事情都能：好好好，做个老好人，对不对？这么一来，我就和同事build了同样的基础点。既然我们high level的目标相同，都想把事情做好，只是具体怎么执行出现了分歧，那这就不是一个大问题。那回答到这步其实我的答案就很简单的推进下去了：communication。可以通过不同程度的communication和同事一起坐下来讨论不同方案的pro和con，从requirement出发来评定各自的好处，最终一起决定一个大家都满意的方案去执行。
-你看，这样是谁说服谁根本不重要，把一个conflict的问题变成了一个teamwork和management的问题。
+然后回答自己抛出的问题：因为我和同事都care， 我们都希望把工作做好。如果我对手头的工作不care的话，我什么事情都能：好好好，做个老好人，对不对？这么一来，我就和同事build了同样的基础点。既然我们high level的目标相同，都想把事情做好，只是具体怎么执行出现了分歧，那这就不是一个大问题。那回答到这步其实我的答案就很简单的推进下去了：`communication。可以通过不同程度的communication和同事一起坐下来讨论不同方案的pro和con，从requirement出发来评定各自的好处，最终一起决定一个大家都满意的方案去执行。`
+你看，这样是谁说服谁根本不重要，`把一个conflict的问题变成了一个teamwork和management的问题`。
 当然，这不光是我的回答，具体工作中我也是这么做的。
-e.g.，如果是金字塔式的企业，回答可以偏重“只要团队利益这个大前提不受到损害就愿意在conflict中做出一定的妥协（一般面试官不会追问具体是多大程度的妥协这种低级问题）”；如果是比较egalitarian的企业，可以适当地增加“stand my groud”的权重。
+e.g.，如果是金字塔式的企业，回答可以偏重“`只要团队利益这个大前提不受到损害就愿意在conflict中做出一定的妥协`（一般面试官不会追问具体是多大程度的妥协这种低级问题）”；如果是比较egalitarian的企业，可以适当地增加“stand my groud”的权重。
 BQ的目的就是考察除了硬实力、候选人是否有能力融入到即将加入的团队中高效高质量地完成团队目标。不同的企业有不同的核心价值，这个是可以在官网上查到的，就算部门团队执行起来是另一套，但是面试回答BQ的时候只要能尽量往核心价值上靠，是肯定不会吃亏的。
 
-conflict之类的问题，以前的话，我可能也会和你一样，想办法去说服别人…….1point3acres
+conflict之类的问题，以前的话，我可能也会和你一样，想办法去说服别人…….
 现在的话，我会想着了解xfn的痛点和反对的原因，把他们列出来，然后一起通过几轮的design review合作想出一些解决方案。如果涉及到的东西很大很广，就include更高级别的ic来寻求建议
 
 behavioral questions本质上就是考察你是不是一个别人愿意和你一起共事的人  所以展现领导力合作能力和共情力等情商技能很重要
-handle conflicts这种问题回答的重点在如何让对方在对你不生气的情况下解决冲突
+`handle conflicts这种问题回答的重点在如何让对方在对你不生气的情况下解决冲突`
 
-1. 避免争端。 2. 增加communication。 3. 听取领导意见。 4. 向领导学习成功经验。  这题答案就不收你米了。
+`1.避免争端。 2. 增加communication。 3. 听取领导意见。 4. 向领导学习成功经验。`  这题答案就不收你米了。
+
 
 0.忠言逆耳说在前头：从楼主的这几句问题概述，是能看出楼主对于BQ毫无经验……以下由浅到深分享一些方法论，希望楼主细读下去，然后写逐字稿，交给ChatGPT润色，再对着镜子逐字背，做到当面问答的时候整段整段的活都在脑子里，不要现想。.
 1.BQ跟简历一样，描述做了什么只是媒介，目的是证明你是一个有价值的人，是一个有各种优点的好员工。BQ也是一样，你要读到每道题的题眼，即对方希望你讲一个什么例子、来证明你具有哪个品质。
