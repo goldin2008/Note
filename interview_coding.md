@@ -622,12 +622,15 @@ facebook有很多posts，怎么检测暴力信息的posts。给了四个方向�
 * Proximity
 * Youtube
 
-1. `推荐的题目`, masketplace item 推荐, short video 推荐, nearby place推荐等; 推荐系统一般只有general query或者没有query, 只能当类别retrieval channel或者user embedding的一部分, 不需要query processing. 而要侧重user login作为输入, 输出是a list of recommendations according to personalization and user preference. ML objective是accuracy, 还要考虑diversity. 其它的non-functional requirements可以提一下scalability, low latency足够.
-2. `广告ranking题目`, 我觉得是类似推荐的, 没有query, 只有user past behavior做personalization, 也需要考虑diversity, 毕竟不能把相似广告放一起给用户影响体验. 如果不考虑diversity, 那就要在metric里考虑DCG或者PNR了, 因为最后输出的list, order是重要的, 不只是binary的点和不点了. 同时广告要考虑explicit negative feedback, 就是hide block这种反馈, 对于multi-task的ranking来说很好实现, 就是多一个头label反着01, 但在策略上可能要考虑delay多久再次投送的问题
-3. `搜索的题目`, 就要问清是general search还是vertical domain search了, 需要query process, 这部分很重要但是在ML design里却不太重要, `可能涉及query的tokenization, BPE, wordpiece, sentencepiece, 还有term的weight; 涉及user intention detection, 比如是否时间敏感; 涉及搜索对象的quality estimation, 比如doc的EAT分数, website的pagerank分数,图像的resolution分数`; 但并不是ML design的重点. search虽然用到user past interaction作为参考, 但更重要的是query和candidates的relevance, 这个和推荐不一样. 有一类搜索题目是图搜图, 或者copyright, 这个模版就不太适合了
-Clarify部分, 要问清是否有query, user interaction有哪些种类, click, like, save, share, rating, 是否考虑负面反馈, 是否考虑implicit feedback比如long click或者dwell time; 要问清是否是user generated content, 因为UGC的话goal就多了个penetration rate, 希望content pool越大越好, new content能够被及时曝光, 要讨论cold start, 不然会影响user engagement. 对象一般会包括textual, image, 有没有video要问清. 然后问是否考虑user-user connection, follower和friend, 有些同学可能会用GNN做, 我个人会把user-user当一个召回通道, 比如news feed的题目, 其实是推荐, 因为你friend的post并不多.
-Data部分, 广推是personalization为主, user部分需要ID, demographic, past behavior, user embedding通过双塔来学习; item部分是category, hashtag, description, age, 如果UGC就需要creator info. item的feature engineering是在发布时线下学好的, 其中textual的部分basic LM extract feature vector, 比如word2vec, BM25, TFIDF; image用unsupervised model不用label的那些CLIP, SimCLR来extract, video也用frame-based就好, 因为这些feature是初步的, 真正的item embedding也是双塔来learn; 这里我说的不对的话大佬指正; user, item,然后是user-item interaction data; 还有aggregated statistics, 就是interaction in 1week/month之类; 还有contextual data, 就是device, time of the date, location,isHoliday之类; feature engineering可以提one-hot和buketize. 搜索就没personalization那么多事儿, item部分差不多, query部分前面讲过一些
-Outline, 我是习惯讲retrieval和ranking这种funnel design的, 因为一个fast but coarse,一个slow but precise, 感觉有对比很像考核点. 我现场会选择画图把online, offline都画上, 这样万一没时间讲deploy也有个online部分做垫底. 细节就见图了, 召回 + bloom filter 和其它rule-based filter + ranking (肯定没时间分粗排精排) + re-rank (简单讲diversity或者business logic). 然后提feedback loop, 提召回 offline的vector DB, 有同学说提FAISS博个好感. 我会提有些deploy会把usr embedding model和ANN index放一个docker里, 用memory访问代替network速度更快.
+1. `推荐的题目`, `maketplace item 推荐, short video 推荐, nearby place推荐等`; `推荐系统一般只有general query或者没有query`, 只能当类别retrieval channel或者user embedding的一部分, 不需要query processing. 而要侧重user login作为输入, 输出是a list of recommendations according to personalization and user preference. `ML objective是accuracy ???`, 还要考虑diversity. 其它的non-functional requirements可以提一下scalability, low latency足够.
+2. `广告ranking题目`, 我觉得是类似推荐的, `没有query, 只有user past behavior做personalization`, 也需要考虑diversity, 毕竟不能把相似广告放一起给用户影响体验. 如果不考虑diversity, 那就要在metric里考虑DCG或者PNR了, 因为最后输出的list, order是重要的, 不只是binary的点和不点了. 同时广告要考虑explicit negative feedback, 就是hide block这种反馈, 对于multi-task的ranking来说很好实现, 就是多一个头label反着01, 但在策略上可能要考虑delay多久再次投送的问题
+3. `搜索的题目`, 就要问清是general search还是vertical domain search了, 需要query process, 这部分很重要但是在ML design里却不太重要, `可能涉及query的tokenization, BPE, wordpiece, sentencepiece, 还有term的weight; 涉及user intention detection, 比如是否时间敏感; 涉及搜索对象的quality estimation, 比如doc的EAT分数, website的pagerank分数,图像的resolution分数 ???`; 但并不是ML design的重点. search虽然用到user past interaction作为参考, 但更重要的是query和candidates的relevance, 这个和推荐不一样. 有一类搜索题目是图搜图, 或者copyright, 这个模版就不太适合了
+- `Clarify部分`, 要问清是否有query, user interaction有哪些种类, click, like, save, share, rating, 是否考虑负面反馈, 是否考虑implicit feedback比如long click或者dwell time; 要问清是否是user generated content, 因为UGC的话goal就多了个penetration rate, 希望content pool越大越好, new content能够被及时曝光, 要讨论`cold start`, 不然会影响user engagement. 对象一般会包括textual, image, 有没有video要问清. 然后问是否考虑user-user connection, follower和friend, 有些同学可能会用GNN做, 我个人会把user-user当一个召回通道, `比如news feed的题目, 其实是推荐`, 因为你friend的post并不多.
+- `Data部分`, 广推是personalization为主, user部分需要ID, demographic, past behavior, user embedding`通过双塔来学习 ???`; item部分是category, hashtag, description, age, 如果UGC就需要creator info. item的feature engineering是在发布时线下学好的, 其中textual的部分basic LM extract feature vector, 比如word2vec, BM25, TFIDF; image用unsupervised model不用label的那些CLIP, SimCLR来extract, video也用frame-based就好, 因为这些feature是初步的, `真正的item embedding也是双塔来learn`; 这里我说的不对的话大佬指正; user, item,然后是user-item interaction data; 还有aggregated statistics, 就是interaction in 1week/month之类; 还有contextual data, 就是device, time of the date, location,isHoliday之类; feature engineering可以提one-hot和buketize. 搜索就没personalization那么多事儿, item部分差不多, query部分前面讲过一些
+- `Outline`, 我是习惯讲retrieval和ranking这种funnel design的, 因为一个fast but coarse,一个slow but precise, 感觉有对比很像考核点. 我现场会选择画图把online, offline都画上, 这样万一没时间讲deploy也有个online部分做垫底. 细节就见图了, 召回 + bloom filter 和其它rule-based filter + ranking (肯定没时间分粗排精排) + re-rank (简单讲diversity或者business logic). 然后提feedback loop, 提召回 offline的vector DB, 有同学说提FAISS博个好感. 我会提有些deploy会把usr embedding model和ANN index放一个docker里, 用memory访问代替network速度更快.
+
+<img src="pic/fb_mle.jpg" width=50% height=50%>
+
 越写越多累了, 后面省略一些, 就按推荐来吧. 召回是基于user embedding或者query和item embedding的cos similarity, narrow to thousands of candidates. 召回的训练, 正负样本选择会是个考点, 正样本是有过交互行为的, 但是负样本可以是无交互行为的几乎全数据集采样, 可以是简单负样本和困难负样本(过了召回没过ranking)的集合, 也可以是in-batch sampled negative(只用于listwise loss, 1个pos, N-1个neg, N是batch size). loss 可以是pointwise的BCE, pairwise的hinge loss, pairwise logistic, 或者listwise的softmax + CE; 这样基本回答了imbalance data的问题. 这里可能还会问long tail也就是训练会被popular item dominate的问题, solution可以是log q correction, 也可以是self-supervised item embedding; 还有个问题是cold start, 就是说new user或者new item, 它们的embedding还没有经过back propagation啥也不是的情况, solution 1是分配default embedding给他们而不是0 initial或者random initial; solution 2是用其他retrieval channel比如category-based retrieval, 这些通道用reverse chronological order存新item, 减弱cold start problem, 缺点是只能work一小段时间.
 ranking就用multi-task classification, 每一种interaction作为一个task head, predict the likelihood of like/save in user-item pair. 召回产生的candidates, 它们的feature要整合成大feature, concatenated by user, item, statistics, context feature, 然后过shared bottom. 速度慢但精度高. multitask的好处, 1有些task的数据不多,现在可以大家share了; 2consistency among tasks, 3. richer feature; 坏处是训练慢一些, 不好对某些任务做prioritize; 改进方案是multi task Mix of Expert (MMOE). 训练的正负样本就是有无相应的交互行为, 对应每个head做sigmoid; 整个ranking的loss是weighted sum of BCE, weight是超参预设; 输出是一个aggregated score用于排序. 这里有正负样本imbalance的问题, downsample就好, 但是要calibrate according to downsampling rate. 有可能会有watching time或者dwell time这种使用非离散数据的head, regression也行, 也可以用 t / t+1 去逼近 sigmoid exp(z) / 1 + exp(z), 转换成BCE.
 Metrics, offline的, 召回其实最重要是recall; end2end的metrics, 不考虑rank的就都是binary的mAP, F1, AUC那些; 考虑order的就提一提MRR, ERR, DCG, PNR这些. online的metrics, click through rate肯定要提, GMV, conversion rate, DAU, user engagement time这些就看着办了.
@@ -971,7 +974,7 @@ follow-up 是把重复的定义改成 amount 的最大值和最小值相差不�
 `MLE`
 ML SDE电面，先聊聊做过的ML project，问的挺细的，需要自己准备准备。
 然后大概30mins问ML的问题，问我什么是supervised/unsupervised learning，举几个例子。然后问我logistics regression，问的很细。。要写cost function，然后怎么optimize求parameter，一直要写公式，中间还问我什么是EM和cross entropy，GG了。。
-后面小半个小时coding，利口要斯留原题。
+后面小半个小时coding，利口要斯留`LC146`原题LRU Cache。
 
 有一陣子很常在LinkedIn上看到的職缺 Bloomberg Law Senior machine Learning Engineer
 網投後大概一週收到HR面，一週後接著電面，再一週通知reject
@@ -1079,11 +1082,38 @@ deep dive了之前做的和开花堡这个组类似的项目，这轮很神奇�
 面试官一个印度小哥，没有coding，问的是deep learning相关的问题：
 1) 在train neural networks的时候，如果可以同时选 a) full-batch training; b) mini-batch training。 优先选哪个？
 答案是b)。原因是mini-batch training带来的随机性可以：1. 在优化陷入saddle point的时候帮助跳出saddle point；2.一定程度上能加速training convergence（这点是小哥说的，我不是特别清楚）。
+Mini-batch vs Full-batch Training
+Correct choice is b) mini-batch. Key reasons:
+Noise as regularization: Stochastic gradients help escape saddle points (critical for non-convex optimization)
+Convergence acceleration: Mini-batches provide more frequent parameter updates per epoch
+Hardware efficiency: Better GPU utilization through parallelization
+Implicit regularization: Noise prevents overfitting (similar to small LR+GD)
 2) 解释一下train graph neural networks的时候有哪些hyper-parameters可以调。
+GNN Hyperparameters
+Architectural: Number of layers (message-passing steps), hidden dims, aggregation type
+Optimization: Learning rate, batch size, # epochs
+Regularization: Dropout rate, weight decay, edge dropout
+Graph-specific: Normalization (Layer/Batch/GraphNorm), sampling neighbors
+Advanced: Attention heads (GAT), jump connections
 3) Deep neural networks(DNN)有很多参数特别复杂。按照传统机器学习理论它应该过拟合，然后在测试集上表现不好。但是为什么在实际中DNN表现得不错？
-我其实也不知道为啥。。。随便答了一个说可能data有low-dimensional structure。
+我其实也不知道为啥。。。随便答了一个说可能data有low-dimensional structure
+DNN Generalization Paradox
+Your answer about low-dimensional structure is correct (manifold hypothesis)
+Additional explanations:
+Implicit bias: GD prefers "simple" solutions (e.g. low-norm)
+Double descent: Modern NN regimes differ from classical U-shaped risk
+Overparameterization: Enables interpolation without overfitting
+SGD noise: Acts as implicit regularization。
 4) Train graph neural networks (GNN) 的时候， 做aggregation可以用什么？
    答案是：max, mean, 或者用一个MLP。 然后有一个follow-up：有人用RNN来做aggregation，这有什么缺点？ 答案是：RNN的输出和输入的order有关; 如果用RNN做aggregation的话，aggregation的结果和nodes的labeling有关，这违反了我们希望GNN是permutation invariant的初衷。
+GNN Aggregation Methods
+Correct answer on RNN limitation (order sensitivity violates permutation invariance)
+Additional context:
+Mean: Preserves distributional info
+Max: Focuses on dominant features
+Sum: Cardinality-aware
+Attention: Dynamic importance weighting
+MLP: Universal approximator but computationally heavy
 5） GNN的hidden layer的维数一般倾向去选“比较大的维数”还是“比较小的维数”。我答的是"比较小"。原因是数据里可能有low-dimensional structures, 选比较小的维数能促使GNN去学这些low-dimensional structures.
 6) Train GNN的时候，如果内存放不下一整个graph怎么办？回答是：可以采用mini-batch training，也就是每个epoch从graph中选a subset of nodes, 然在这个subset产生的小图(the graph induced from the subset) 上训练。
 7) 解释一下GNN的工作原理。
@@ -1103,7 +1133,7 @@ deep dive了之前做的和开花堡这个组类似的项目，这轮很神奇�
 
 2月中旬 猎头 linkedin 联系 职位是Sr MLE 应该是组招
 2月末 店面邀请
-3.月初 第一轮店面 是一个很有好的国人小哥哥 准备之前以为只有coding 没想到 其实是half ML half coding， 是1D candy crush 用的是一二零酒的逻辑 第一部分也是比较偏向设计 关于从文档中提取表格的metrics 之类的
+3.月初 第一轮店面 是一个很有好的国人小哥哥 准备之前以为只有coding 没想到 其实是half ML half coding， 是1D candy crush 用的是一二零酒`LC1209` Remove All Adjacent Duplicates in String II的逻辑 第一部分也是比较偏向设计 关于从文档中提取表格的metrics 之类的
 两天之后 约第二轮
 前几天 第二轮店面 是manager Level 的人walk through 一个具体的case （吐槽一下 我是真的没想到一整轮都是walk through 和recruiter联系 他感觉也不是很清楚 他说的是有coding和ML theory 和design
 从句子里面提取NER相关信息 会比较发散的问比较多的细节 比如你会怎么设计， 如果结果不好了怎么办？ 提取的数据其实是不同的类型 还有什么其他方法 我一直很不安等待他问coding 结果没有问 中间突然说从英文转成数字用什么算法 我当时直接愣住了 我想的就是直接brute force转
@@ -1125,7 +1155,7 @@ Follow up:  1) 怎么设计feature，预处理，high dimensional怎么办，�
 第2轮：
 Introduction，问实习project details，扣了下feature和model细节，why use A instead of B，model的最终performance如何。完了开始代码
 面试官1问了下popular clustering model有哪些，都有什么联系和差别，然后implement Kmeans from scratch。可以用numpy。边实现边回答细节问题，比如怎么initialize centers和怎么choose k。码完后让自己写一个test case测试一下运行结果。
-面试官2紧接着来了个经典的利口药尔灵舅，把题目的fixed k换成 k>=3。码完跑test case测试运行结果
+面试官2紧接着来了个经典的利口药尔灵舅`LC1209`，把题目的fixed k换成 k>=3。码完跑test case测试运行结果
 前2轮结束后休息了30分钟，接着开始3-4轮。
 第3轮：
 Introduction，问了与DNN相关的project，然后让解释什么是NN，常见的NN strcuture有哪些，能否并行，怎么参数怎么更新等等，接下来又是一道ML design
@@ -1137,9 +1167,25 @@ VO完了第2天（周五）发邮件给recruiter要feedback，recuriter说最早
 bloomberg article有很多entity。需要写一个 data structure，输入text，累计每个entity出现次数，返回top-k frequently mentioned entity.
 用hashmap counting + heapsort 秒了。问了下时空复杂度
 Follow up: 如果经常访问top-k，能不能有更好解法。一开始没什么好思路，小哥给了个hint之后勉强搞了个O(n)解法，时间比较紧但刚好写完
+from collections import defaultdict
+import heapq
 
-一个support ticket system，用户写ticket主题内容后需要填分类，每个分类都有相应specialist处理。ticket按FIFO处理。如果分类错specialist需要按自己理解纠正分类，然后重新排期。设计一个ML系统降低用户和specialist的等待时间。
-整个过程不停的扣细节，从特征到model到evaluation问得非常细。
+class EntityTracker:
+    def __init__(self):
+        self.counts = defaultdict(int)
+
+    def process_text(self, text):
+        entities = extract_entities(text)  # Assume this exists
+        for e in entities:
+            self.counts[e] += 1
+
+    def get_top_k(self, k):
+        return heapq.nlargest(k, self.counts.items(), key=lambda x: x[1])
+Process text: O(1) per entity (hashmap update)
+Get top-k: O(n + k log n) (heapq.nlargest implementation)
+
+
+一个support ticket system，用户写ticket主题内容后需要填分类，每个分类都有相应specialist处理。ticket按FIFO处理。如果分类错specialist需要按自己理解纠正分类，然后重新排期。设计一个ML系统降低用户和specialist的等待时间。整个过程不停的扣细节，从特征到model到evaluation问得非常细。
 
 上周面了VO
 第一轮 两个题 一个是auto complete（应该用Trie 的 但是楼主当时概念不熟 没写出来
@@ -1157,10 +1203,10 @@ Follow up:
 
 four rounds
 第一 round
-    a. 妖恶灵酒
+    a. 妖恶灵酒 LC1209
     b. basic ML problem, starting from my previous project
 第二 round
-    a. 衣遛柒遛
+    a. 衣遛柒遛 LC1676
     b. design a API to de-duplicate the same news article generated daily (There are 2M articles/day; same article: same title and same body)
 第三 round
     a. design a ML system to identify different threads in a discussion log.
@@ -1181,9 +1227,9 @@ four rounds
 3.Virtual onsite:
 总共5轮，其中三轮是technical的，从早面到晚，因为是virtual onsite，所以连午饭时间都基本没有:(，因为还要自己赶快找点吃的。。。
 1. 简单的coding+design NER; 这次楼主准备好了感觉答的还不错
-2. ML design：search ranking
+2. `ML design：search ranking`
 3. 吃饭+HR聊天
-4. coding/design: 给定一个stream，要求写一个method，返回top k frequent elements, 有点类似leetcode 347, 不过因为要对stream经常调用这个method，所以需要设计一个比较好update的，时间complexity也比较好的；
+4. coding/design: 给定一个stream，要求写一个method，返回top k frequent elements, 有点类似leetcode `LC347`, 不过因为要对stream经常调用这个method，所以需要设计一个比较好update的，时间complexity也比较好的；
 这一轮楼主先打答了brute force的方法，然后讲了一个用heap的方法，method complexity 是 NlogK的；但是面试官不满意，一定要求想出kLogN的，在面试官提示下，最后写了一个dictionary+heap， 然后heap是从底层开始实现，需要有heap udpate （bubble up)的方法，花费了好大功夫。。。
 不知道这题是不是曾经出现过在哪里？虽然最后写出来了，但感觉面这个题好像是烙印面试官在坑楼主一样的。。如果大家有什么想法或者知道leetcode题号可以跟大家说一下
 5. director聊天，一个很年轻的director，一直在讲bloomberg onboarding process怎么好，对new grad怎么友善，话说我面的senior为什么要给我讲这个。。
@@ -1191,7 +1237,7 @@ four rounds
 回报地里报一个bloomberg ai 的面经
 总共两轮技术电面 五轮onsite（包含三轮技术）
 每轮技术面都是1-2道lc 和 ml/dl concepts 和 case study
-遇到的题目有利口 1396 1029 146 380 （时间有点久了就记得这么多了）
+遇到的题目有利口 `LC1396 1029 146 380` （时间有点久了就记得这么多了）
 还有implement 一些简单的ml算法
 concept部分很简单 ex. l1l2 的区别 ， gradient boosting 和 random forest区别； pca的原理； 描述svm
 case 部分 问了multi label classification （news topic）； sequential data ；
@@ -1206,13 +1252,13 @@ VO当天coordinator 跟我说了名字，发现全是友人。原来这是个5�
 
 9月16日第一轮电面
 怎么选feature，怎么做prediction？linear regression，feature correlation怎么办？regularization 有哪些？L1 的作用是什么？如果有个变量range特别大怎么办？会发生什么？L1对这个情况有什么影响？怎么sample你的训练集，如果是time series的怎么办？
-coding：就是飞机票打印那题Reconstruct Itinerary
+coding：`就是飞机票打印那题Reconstruct Itinerary`
 9月30日第二轮电面
-236, 235 + 时空复杂度，最坏情况？
+`236, 235` + 时空复杂度，最坏情况？
 Logistic Regression是什么？怎么做？怎么迭代更新？怎么split你的data，什么是cross validation？你的这种data split 什么情况下是无效的？那要怎么处理？
 
 新鲜的开花堡电面加onsite
-第一轮电面 基本过简历以及相关的dl知识，像是batchnormalizaion 什么的，给了一个case study ：news multi-topic怎么设计.就是有好多news，每个news有多个topic label，如何设计一个learning system来完成。
+第一轮电面 基本过简历以及相关的dl知识，像是batch normalizaion 什么的，给了一个case study ：news multi-topic怎么设计.就是有好多news，每个news有多个topic label，如何设计一个learning system来完成。
 第二轮电面 coding，国人老哥，人很nice，没的说，乐扣 Add Strings 和 Multiply Strings
 virtual onsite 六轮
 第一轮 ml + case study, name entity
@@ -1232,7 +1278,7 @@ def nextMonday(d : LegacyDate):
     # d = Tuesday
     # return d.addDays(6)
 电面2：
-1. 乐扣雾医霸 需要输出最少硬币得到target的组合
+1. 乐扣雾医霸`LC518` 需要输出最少硬币得到target的组合
 2. 一个多叉树，每个节点有一个值，输出从跟节点到叶节点的max path sum。
 
 1,  原题，longest substring without repeating characters
@@ -1241,25 +1287,21 @@ def nextMonday(d : LegacyDate):
 ML Eng, 第一轮店面，好像有两轮店面，国人小弟，挺友好
 开始是ML的问题，问熟悉的classical classifier models, 具体问了logistic regression 和 random forest,  lost fuction, gradient descent, regularization.
 后来进入深度学习，问了RNN, CNN
-后半部分写程序，类似于word break, 不要求syntax correct, 后来扩展到如果 字典里的word有权重，要结果最大化平均权重怎么做，没有要求code
+后半部分写程序，类似于`word break`, 不要求syntax correct, 后来扩展到如果 字典里的word有权重，要结果最大化平均权重怎么做，没有要求code
 
 BB 家的AI research scientist， title是sales intelligient。九月份的时候就找人内推了，当时HR说只招2019/12 入职的，就搁置了，过了一个月HR又来联系说HC开了。大致流程是两轮店面，各一小时，35-40分钟ML剩下时间coding和问问题。
 面试大哥是london打过来的，一开始问了ML基础：
 evaluation metrics L1/L2 区别 data不balance怎么办，聊到decision tree和random forest 又问了training时候的区别。为什么data不imbalance也可以。我当时说是因为train的时候cosset function是totalloss， 所以即使有class很大也没关系
 又问了logistic regression和SVM的区别。
-提到了PCA但没细问，估计可能看出我不太熟PCA了。。。
+提到了`PCA`但没细问，估计可能看出我不太熟PCA了。。。
 最后问了为什么LSTM比RNN好之类的
 感觉ML面就是很杂，但都不深，可能想general了解一下吧
 coding是一道palindrom的题，太简单不太记得，目测easy难度
 
-ML SDE电面，先聊聊做过的ML project，问的挺细的，需要自己准备准备。
-然后大概30mins问ML的问题，问我什么是supervised/unsupervised learning，举几个例子。然后问我logistics regression，问的很细。。要写cost function，然后怎么optimize求parameter，一直要写公式，中间还问我什么是EM和cross entropy，GG了。。
-后面小半个小时coding，利口要斯留原题。
-
 Generative model & Discriminative model 区别
 Decision tree & logistic regression区别
 介绍常见的无监督算法，KMeans算法原理
-对于Fraud transaction detection 设计feature和model
+`对于Fraud transaction detection 设计feature和model`
 公交路线给定(swipe_in time, car_id,station_id), (swipe_out time, car_id,station_id), O(N)计算平均trip的时间
 
 面的是腐国的AI组，聊ML细节，做过的project，问的比较细致，譬如怎么train embedding，w2v loss function是什么，input和output looks like，如何防止overfitting，和一道coding，一个sampler，大意就是给一个p vector（对应一个distribution）， 如何做一个符合这个distribution的sampler，如何优化，时间复杂度等等
@@ -1268,7 +1310,7 @@ Decision tree & logistic regression区别
 一个图算法。
 测试是不是DAG
 
-1）怎么帮一个存成linked list （从高位到地位： 1234 --》 1--->2 ---> 3 ---> 4；2）如何用linkedlist 来做integer的加法。如这题： https://leetcode.com/problems/add-two-numbers-ii/
+1）`LC445` 怎么帮一个存成linked list （从高位到地位： 1234 --》 1--->2 ---> 3 ---> 4；2）如何用linkedlist 来做integer的加法。如这题： https://leetcode.com/problems/add-two-numbers-ii/
 
 1. HR 店面之后的第一轮技术店面，问了很多我简历上的经历，包括PhD的研究用到的所有ML algorithm都问得很详细，我经历里有用到的Gaussian Process 和Random Forest 他都会让我详细解释一遍，例如decision tree 的impurity index公式一类的都让在online hackerrank上打出来。最后做了一道很简单的leetcode easy.
 2. 主要是coding, 聊了一些behavioral (past experience, why bloomberg...)， 问了一些简单的NLP word embedding, 然后做了一道binary tree common ancester和一道anagram问题。hackerrank上写没有让跑。
@@ -1276,13 +1318,13 @@ Decision tree & logistic regression区别
 
 第一轮做45分钟presentation，
 第二轮：一个印度瘦哥加一个美国胖哥，ML基础知识，问了logistic regression，各种loss，啥是reguarlization等等非常基础标准的问题
-第三轮：一个中国大哥加一个印度小哥，第一题 里扣 二舅吾，第二题问了一个系统设计题（印度小哥说的是系统设计题，但我听起来感觉像LRU），无奈楼主实在没准备过这类问题，题目有些忘了，大概是bb有数据不断的stream in，先是问怎么来设计数据结构能够最快找到公司股价，并且返回某个公司最新的股价之类的
+第三轮：一个中国大哥加一个印度小哥，第一题 里扣 二舅吾 `LC295`，第二题问了一个系统设计题（印度小哥说的是系统设计题，但我听起来感觉像LRU），无奈楼主实在没准备过这类问题，题目有些忘了，大概是bb有数据不断的stream in，先是问怎么来设计数据结构能够最快找到公司股价，并且返回某个公司最新的股价之类的
 午饭：一个伊朗小哥和一个日本小哥带我吃饭，人都挺好的，聊得挺high
 第四轮：HR: 我以为到此为止就跪了，结束了的，后来发现HR就给讲讲BB有好多好处，接下来会有两个hiring manager跟我聊
 第五轮：一个孕妇大姐，人很好，看起来很和善，先问为啥选BB，然后问我如果让我做sentiment analysis我该咋做，接着问我如果数据没有label你咋办，在接着问我，如果我们给hedge fund提供信息，不想用deep learning那样复杂的方法，你咋办。
 第六轮：一个大叔，眼神犀利，感觉快我把射穿了。。自称是所有ML的头，直接给CTO汇报啥的，所以比较紧张吧，然后先问为啥选BB，然后问了我一道非常奇怪的open question，楼主实在是记不起来题目的具体内容了，大概是什么有twitter的评价，但没label，要评分还是啥的，这个问题实在是非常古怪，感觉答得不。
 
-不知道哪国大叔，聊实习项目，问了KNN,lasso regression, random forest, 然后coding实现decision tree，写完后又写了一个函数prune这个tree（就是假如leaf太多overfit了，如何减少leaf的数量），没写完，最后留了一点儿伪代码
+不知道哪国大叔，聊实习项目，问了`KNN`,lasso regression, random forest, 然后`coding实现decision tree`，写完后又写了`一个函数prune这个tree`（就是假如leaf太多overfit了，如何减少leaf的数量），没写完，最后留了一点儿伪代码
 听口音是亚裔或中国女，聊实习项目，类似前一轮的一些理论问题，然后coding kmeans。然后一个credit card fraud detection的case study
 
 给定两个整数 n 和 k，建一棵有 n 个节点，每个节点有 k 个子节点的树。用 bfs 做就可以了。
@@ -1291,13 +1333,102 @@ Follow-up 是问如果每个节点可以有 1-k 个子节点，总共可以构�
               1
         2    3    4
       567
+from collections import deque
+# BFS
+class TreeNode:
+    def __init__(self, val=0, children=None):
+        self.val = val
+        self.children = children if children is not None else []
+
+def build_k_ary_tree(n, k):
+    if n == 0:
+        return None
+    root = TreeNode(1)
+    queue = deque([root])
+    current_val = 2
+    while queue and current_val <= n:
+        node = queue.popleft()
+        for _ in range(k):
+            if current_val > n:
+                break
+            child = TreeNode(current_val)
+            node.children.append(child)
+            queue.append(child)
+            current_val += 1
+    return root
+
+# 示例：构建n=7，k=3的树
+root = build_k_ary_tree(7, 3)
+# DFS
+class TreeNode:
+    def __init__(self, val=0, children=None):
+        self.val = val
+        self.children = children if children is not None else []
+
+def build_k_ary_tree_dfs(n, k):
+    if n == 0:
+        return None
+    current_val = 1
+    root = TreeNode(current_val)
+    current_val += 1
+    stack = [(root, 0)]  # (node, depth)
+
+    while stack and current_val <= n:
+        node, depth = stack.pop()
+        for _ in range(k):
+            if current_val > n:
+                break
+            child = TreeNode(current_val)
+            node.children.append(child)
+            stack.append((child, depth + 1))
+            current_val += 1
+    return root
+
+# Example: Build a tree with n=7, k=3
+root = build_k_ary_tree_dfs(7, 3)
+# followup
+def count_k_ary_trees(n, k):
+    dp = [0] * (n + 1)
+    dp[0] = 1  # Empty tree
+    dp[1] = 1  # Single node
+
+    for m in range(2, n + 1):
+        for i in range(1, k + 1):
+            # Distribute m-1 nodes into i subtrees
+            # Using stars and bars method to find all possible partitions
+            # Here, we use a helper function to compute the sum of products
+            # For simplicity, we'll use a recursive approach to partition
+            total = 0
+            from itertools import combinations_with_replacement
+            for partition in partitions(m - 1, i):
+                product = 1
+                for size in partition:
+                    product *= dp[size]
+                total += product
+            dp[m] += total
+    return dp[n]
+
+def partitions(remaining, parts, min_size=1):
+    if parts == 1:
+        if remaining >= min_size:
+            yield (remaining,)
+        return
+    for first in range(min_size, remaining - parts + 2):
+        for p in partitions(remaining - first, parts - 1, first):
+            yield (first,) + p
+
+# Example usage
+n = 3
+k = 2
+print(count_k_ary_trees(n, k))  # Output: 2
+
 
 前半个小时是ML/NLP概念题：怎么处理overfitting/underfitting，什么是regularization，什么是convex optimization，什么是gradient vanish，LSTM用几层，keep gate的结构，Drop-out的结构…… 有一道题我不明白：Machine learning分为numerical和categorical两种，它们各自假设的分布是什么？我随口说一个连续、一个离散，他说是不是正态呢？我不知道怎么回答……
 后半个小时是coding题：利扣x，x=我国一共多少个民族。因为我答的比较快，他又加了一道，就是贪心法的股票题，不过时间不够了我说说算法即可。
 
 
-
 332, 987, 140, 1679, 642第二轮烙印，给个非tag的hard，还非要我把tire结构先画出来，不用说肯定跪了
+
 
 `NON MLE`
 第一面前10分鐘自介
@@ -1327,18 +1458,18 @@ follow up：如果可以flip K次0变1，最多有多少个连续的 -》 slidin
 然后做题 两道题
 都是lc tag的
 第一道是 给一个string 你可以remove其中的一个char 如果remove了以后所有string的frequency一样的话就true要不然就false
-第二道是lc430原题
+第二道是`LC430`原题
 感觉面试官挺nice的 就是做题的时候用了counter()和deque啥的面试官不懂让我解释或者换一种东西用
 
-一面：1/14: 過簡歷，離口：56，102，380
+一面：1/14: 過簡歷，離口：`LC56，102，380`
 二面：2/4
-上午：過簡歷，42, 1274
-中午：過簡歷，79，meeting room變種。中間問到了Trie這種data structure. 大部分人大學應該都沒學過。
+上午：過簡歷，`LC42, 1274`
+中午：過簡歷，`LC79`，meeting room變種。中間問到了Trie這種data structure. 大部分人大學應該都沒學過。
 下午：HR面：為什麼選擇CS專業，薪水期望，需不需要sponsor，為什麼bloomberg，介紹職位。
 ​三面：3/5
 EM面，純聊天，過簡歷。只面了45分鐘，中間一直是我在說話，感覺對方不怎麼搭理我。對我做過的東西好像不是特別感興趣。搞得我很暈。我到底是表現的好還是不好？有人有經驗麼。
 
-力扣 1387变形题，dfs + memorization解决。这题轻松过
+力扣 `LC1387`变形题，dfs + memorization解决。这题轻松过
 力扣 地铁系统变形题，主要是讨论的想法和数据结构，实现了进站方法。
 
 Bloomberg 25ng 4轮挂经
@@ -1371,9 +1502,9 @@ Optional: G, L, E, P, T, N
 Example: POLE, TONE, TOLL, GONE
 TROPE
 TON
-# 1. define all necessary letters and possible letter and store them in hashset to reduce time complexity.
-# 2. built in dictory which can be referred, it is dictory.
-# 3. check if they are in dictory.
+# 1.define all necessary letters and possible letter and store them in hashset to reduce time complexity.
+# 2.built in dictory which can be referred, it is dictory.
+# 3.check if they are in dictory.
     # required = ['N']
     # Optional = ["V",  "C",  "O", "D", "E", "Y"]
     # dictionary = {all possible english words}
@@ -1403,11 +1534,11 @@ HR面：為什麼選擇CS專業，薪水期望，需不需要sponsor，為什麼
 第一轮：技术面 (coding)
 两位面试官，最开始15min问了点简历上的project内容
 后面45min在hackerrank上写两道题（不用跑测试）
-LC 1347, 1209 题目还是很简单滴
+`LC1347, 1209` 题目还是很简单滴
 第二轮：技术面 (coding)
 Round 2 (60 min.): This round will focus on your coding skills and knowledge of data structures and algorithms.
 前十分钟问了一些之前实习项目的内容，后面五十分钟做两道题（主题是重叠区间）
-第一题是力扣253（最少meeting room），第二题是第一题的追加问题，计算最大重叠数量
+第一题是力扣`LC253`（最少meeting room），第二题是第一题的追加问题，计算最大重叠数量
 第三轮：技术面 (project)
 Round 3 (60 min.): Progressing from your previous interview, this one-hour virtual interview will further assess your technical skills. The focus of the interview will be to assess your technical skills through discussion of a real world problem. Your interviewer will be assessing your technical communication skills and problem solving from first principles.
 邮件里说第三轮是further assess your technical skills，我以为是system design，结果问得之前实习项目经历等。主要问的是：
@@ -1432,7 +1563,7 @@ VO1 地里出现过题 BFS (followup dijkstra) 秒
 VO2 easy + 地理的Underground 秒
 HR + EM 全BQ，没准备现场想的，答得不好
 
-两道题，一道类似lc200；还有一道类似lc 443 string compression，但input和output都是integer。
+两道题，一道类似`LC200`；还有一道类似`LC443` string compression，但input和output都是integer。
 
 一共4轮
 Coding 1
@@ -1452,30 +1583,30 @@ Tl:
 9.26 apply
 10.3 phone邀请
 10.24 phone interview：
-25分钟简历➕why bloomberg，做了LC445。
+25分钟简历➕why bloomberg，做了`LC445`。
 10.28 VO邀请：
 on campus满了，virtual约到了11.7。
 11.7 Back to back：
 两轮VO+一轮HR：考了LC wordbreak minstack还有他们自己出的题
 11.12拒信
 
-都是利口变形 妖妖柳116 么尔斯久1249 伞拔冻380
+都是利口变形 妖妖柳`LC116` 么尔斯久`LC1249` 伞拔冻`LC380`
 还有一题找不到原题 是 grid 上找两点的 shortest path, 可能有 obstacle
 HR 面 30min 主要是 bq 和介绍入职后的 training program
 self intro, proudest project, why bloomberg, constructive feedback, top 3 priority choosing an offer
 感觉对方在我回答时没什么兴趣听, 我也就尽快讲完重点
 
-第一题很像舞遛零560，但是多了一个里面数值大于零的条件。如果所有数值大于零，挪动 right pointer guarantees increament in subarray sum, 挪动 left pointer vice versa
+第一题很像舞遛零`LC560`，但是多了一个里面数值大于零的条件。如果所有数值大于零，挪动 right pointer guarantees increament in subarray sum, 挪动 left pointer vice versa
 当 subarray < k，++right 直到 subarray sum >= k, 当 subarray sum > k, ++left. 标准解法用prefix sum 如果有大于零条件，可以用two pointers
-第二题是腰零九109，要求不能用额外的资料结构。
+第二题是腰零九`LC109`，要求不能用额外的资料结构。
 
 经典题目LRU cache，只存value，最后return前K个values即可
 
 面试一共五轮
 前三轮都是lc technical，第四轮recruiter，第五轮em
 sliding window
-妻舅妻797
-叁霸妻387
+妻舅妻`LC797`
+叁霸妻`LC387`
 binary tree traversal
 还有两题不记得了，都是easy-medium难度
 em简单问了一下过去的project和简单的design。
@@ -1483,21 +1614,21 @@ em简单问了一下过去的project和简单的design。
 2. You need to count the overlapping intervals. I put each start and end time in a list,
 and then counted the maximum number of overlapping intervals, which was very similar to meeting rooms ii
 
-第一道是霰妖司314变种，题目一样只是把数字换成了character，最后输出一个单词
-第二道题是幺洱司酒1249原题
+第一道是霰妖司`LC314`变种，题目一样只是把数字换成了character，最后输出一个单词
+第二道题是幺洱司酒`LC1249`原题
 
-一面：齐救齐797、幺尔私酒1249
+一面：齐救齐`LC797`、幺尔私酒`LC1249`
 二面：给一系列股票操作，比如[[9.1, BUY, 100 (shares), $50], [9.3, SELL, 50 (shares), $80]，但是30天内sell不能超过buy price（不能赚钱）问怎么判断是否valid；先假设只有buy，followup是如果有的有sell怎么判断
 三面：
-1. 给一些fail的节点，每个节点知道自己的children，找到最开始fail的那个节点
-2. 类似 耳零零200，但是找number of lakes
+1.给一些fail的节点，每个节点知道自己的children，找到最开始fail的那个节点
+2.类似 耳零零`LC200`，但是找number of lakes
 
 店面
 coins 无线数量 【1,5,10,25】
 给定一个target
 按照给定格式
 返回最小硬币数量的所有组合
-散酒39
+散酒`LC39`
 要求优化 好像意思是memorization 没搞出来
 
 输入 stream of data, 有id, value 和 时间，
@@ -1507,13 +1638,13 @@ id       value  time
 4349,   sret,   12
 5663，t46u,  7
 1549，a4y5, 13
-依次输出 id       value  time其实就是留舞流656 和 药散就榴 的合体
+依次输出 id       value  time其实就是留舞流`LC656` 和 药散就榴`LC1396` 的合体
 但是是分成两个部分问的，千万不要被第一个迷惑了
 
 分别是这两题：
-1. 利口 two city scheduling
+1.利口 two city scheduling
 这题压中题了，轻松过
-2. 药饵丝丝 1244, 要你设计一个解决方案 - input是股票的名字和交易数量，设计一个方程来储存这个input，会不停地被call到；然后设计另一个方程输出所有股票的名字和总交易数量，按交易量从大到小排序
+2.药饵丝丝 1244, 要你设计一个解决方案 - input是股票的名字和交易数量，设计一个方程来储存这个input，会不停地被call到；然后设计另一个方程输出所有股票的名字和总交易数量，按交易量从大到小排序
 这题我用一个priority queue做的，但是不是最优解，估计没有过
 
 题目： 设计一个sequecer类 输入id和content， 按照id顺序输出， 假设id不连续就暂时缓存， Example： [1, "aaa"], [2, "bbb"] [4, "ddd"], [3, "ccc"] etc，
@@ -1527,18 +1658,18 @@ coding 1: 打印最深层次括号里的字符串。 没见过。
 我的思路是找到最深层次的括号，然后标记下位置。然后再倒序查找，找到字符串。
 明显不是他想要的。不过也写了。
 然后说太麻烦，要求只loop一遍。
-Coding 2: 三八零
-follow up: 三八一。
+Coding 2: 三八零 `LC380`
+follow up: 三八一 `LC381`
 我觉得这货绝对有大病。我用的就是经典的map<String, List<Integer>> 结构。他不满意，说这样不行。不能达到O(1). 然后我说我们可以用PriorityQueue.
 还是不满意。说是要存一个index 然后每次能很精准的找到位置，就达到O(1)
 问题是你找到index 删除index 的值不占时间的呀。神经病嘛。 这是给的解，自己看吧。
 
-VO3: 利口药流药斯 药药气（我用的BFS，followup如何用DFS实现）
+VO3: 利口药流药斯`LC1614` 药药气`LC117`（我用的BFS，followup如何用DFS实现）
 每题都followup了时间空间复杂度
 
 二面：刷的有限，没见过这题，题目是给一个数，从1开始只能✖️数字a或者除以数字b （具体a和b是啥忘了）来达到这个给的数，知道的人可以贴个题号
 第二题补充一下，求的是最短的sequence，sequence例如 [“乘以a”, “乘以a”，“处以b”]
-第二题我之前也遇到过，抽到这个题基本上就无缘了。跟散酒其很像，我当时说了bfs，dfs和加memo做。最后结果是悲剧。这个题源于Collatz conjecture，不是搞数学的，基本上做不出来
+第二题我之前也遇到过，抽到这个题基本上就无缘了。跟散酒其`LC397`很像，我当时说了bfs，dfs和加memo做。最后结果是悲剧。这个题源于Collatz conjecture，不是搞数学的，基本上做不出来
 1654 用一个log 把乘除改成加法
 三面：设计题，minstack
 
@@ -1546,7 +1677,7 @@ VO3: 利口药流药斯 药药气（我用的BFS，followup如何用DFS实现）
 "A string is valid if all characters of the string appear the same number of times. It is also valid if we can remove just 1 character in the string, and the remaining characters will occur the same number of times. Given a string s, determine if it is valid. If so, return true, otherwise return false.
 For example, if s=abc, it is a valid string because frequencies are {a:1,b:1,c:1} . So is s=abcc because we can remove one c and have 1 of each character in the remaining string. If s=abccc however, the string is not valid as we can only remove 1 occurrence of c. That would leave character frequencies of {a:1,b:1,c:2}."
 大概easy-medium level？但是楼主一开始思路想错了（想到stack 去了）导致最后几分钟才完成绝杀。。。
-搜了一下有点像刷题网2423，不同之处是如果原来的letter count都相同的话也return true
+搜了一下有点像刷题网`LC2423`，不同之处是如果原来的letter count都相同的话也return true
 
 /**
 Ranked Choice Voting
@@ -1554,12 +1685,12 @@ More than 50% wins
 No one reaches 50% it's a re-do
 例子2： 1和2都有2票，第五个人投给3没用，只能投给1，所以赢家是1
 例子3: 第一轮之后，1和2都有2票，平局，第五个人只能投给1而不是3才会产生赢家1
-1. [ [1], [1], [2] ] -> 1
-2. [ [1], [1], [2], [2], [3, 1] ] -> 1
-3. [ [1, 2], [1, 2], [2, 1], [2, 3], [3, 1] ] -> 1
+1.[ [1], [1], [2] ] -> 1
+2.[ [1], [1], [2], [2], [3, 1] ] -> 1
+3.[ [1, 2], [1, 2], [2, 1], [2, 3], [3, 1] ] -> 1
 **/
 没做出来，只能说了思路，分析时间复杂度。
-这不是tag题吧，也没做过leetcode原题，类似1366，但也有很大不同吧，投票不是分轮，感觉很tricky
+这不是tag题吧，也没做过leetcode原题，类似`LC1366`，但也有很大不同吧，投票不是分轮，感觉很tricky
 感觉这个像是一个backtrack呀，回溯每一个人的投票，每次都从第一志愿一直选到最后。尤其按照“例子3”的描述，如果所有人的投票投不出结果，那就从后往前改（最后投票的先改自己的票），这正好符合了backtrack自底向上回溯的过程。
 下面是我的实现，目前的三个测试用例是都可以过的，可以作为参考
 from typing import List
@@ -1602,14 +1733,14 @@ System Design 设计一个job scheduler。面试官重点问了很多monitoring 
 题目是设计一个浏览器，需要支持两个函数：visit(url) 和history, 如果一旦visit了之后, history网页顺序需要修改，比如history = [a,b,c,d,e], 在visit(c)之后history = [c, a,b,d,e], 我心想这不就是力扣幺漆舞瘤吗？我把我的想法告诉面试官了，结果面试官一直challenge我，让我写一个history是O(1)的答案，我想了一下用priority queue可以解决，但是visit需要花O(log(n))的时间，面试官继续challenge我，让我把visit也用O(1)解决（两个函数都必须是O(1)），我思考了一下用了一个hint，结果在他们的hint下解决了这道题。并且我们还从头到尾演算了一遍，代码没有问题。跑完演算之后时间也不多了，问了他们几个问题就结束了。
 浏览器 visit history 那个题应该是要用 linkedHashMap
 没错，我在他们的hint下用linked list + hashmap 解决了，但是问题是他们说我代码不能运行，我不能理解为什么这么说。明明当着他们的面跑了一次。
-是1472. Design Browser History的一道变题，要求用O(1)解决那些函数实现：
+是`LC1472`. Design Browser History的一道变题，要求用O(1)解决那些函数实现：
 
 vo2是找maximum non-overlapping intervals的题  一开始思路搞错方向了耽误了很多时间 第二题是1d candy crush
 
 ghc最后一天第一轮vo，一个小时，前15min问了一波简历，做完了两道半medium，Longest Substring Without Repeating Characters 和Flatten a Multilevel Doubly Linked List，最后还有时间所以又做了半道题（Decode String），没写码只聊了一下思路
 oct 11第二轮，是一个台湾or香港姐姐，structure跟第一轮差不多，问的是的All Paths From Source to Target的变种。题很快做出来了但time和space complexity脑抽了想了好久（factorial），感觉是因为这个寄的，还是功夫不到家
 
-两位印度面试官, 20分钟简历+bq, 40分钟做了两道lc hard, 题号是987和239. 由于我解题太过丝滑, 印度姐姐又给239 follow up了一下, 让我找滑动窗口里的median.
+两位印度面试官, 20分钟简历+bq, 40分钟做了两道lc hard, 题号是`LC987, 239`. 由于我解题太过丝滑, 印度姐姐又给`LC239` follow up了一下, 让我找滑动窗口里的median.
 楼主真心脾气好，那个第一轮做完那两个让你做找median，有一说一这个根本不算239的follow，而且是双红黑树这种级别的代码量，摆明了要黑你，你还叫她姐姐，没有骂娘你是真心牛
 sliding window median得用two heaps来解吧，是让写代码运行吗，我觉得细节还挺多的
 em面试官是一位在bbg干了20年的印度大叔, 人非常sweet, 也很聪明的感觉. 他考了我一道开放式的设计题: 有三个数据源, 每天产生很多股票交易, 设计一个系统，从每个数据源返回特定股票的最新股价。每支股票都有一个ID和一个价格，数据规模庞大，确保可扩展性和准确性。
@@ -1626,10 +1757,10 @@ em面试官是一位在bbg干了20年的印度大叔, 人非常sweet, 也很聪�
 印度大叔讲了许多工作感悟, 我也学到了很多, in general he feels like a manager that I want to work with, really articulate and intelligent.
 
 面试官是印度老哥，正常人都是两道medium，然后给我出的很难，怀疑被坑了
-一开始给的LC洱市，然后又问不能用stack应该怎么解，后来又说怎么把它divide and conquer解出来，需要时间复杂度小于O（n）
+一开始给的LC洱市`LC20`，然后又问不能用stack应该怎么解，后来又说怎么把它divide and conquer解出来，需要时间复杂度小于O（n）
 可以不用stack 用一个数组和一个指针指向数组顶部就可以代替stack 达到O(1)的空间复杂度
 
-面试官很友好，说主要看解决方法和思路，先问了问自我介绍，然后两道高频tag题，242+430
+面试官很友好，说主要看解决方法和思路，先问了问自我介绍，然后两道高频tag题，`LC242+430`
 两道题都有follow up，第一道题用hashmap做，问有没有edge case，有没有其他方法节约空间
 第二道题用stack做，问有没有不用stack的方法，时间不够面试官没有要求写
 
@@ -1666,10 +1797,9 @@ input =[ ["I","am","Sam"],
 
 2道medium
 第一题是 word break的变形, 但是要求return所有的combination
-第二题是leetcode 3原题
+第二题是leetcode `LC3`原题
 
-Input: A=[22, 19, 18, 15, 14, 10, 5, 1, 3, 4, 7, 20, 25]
-k=21
+Input: A=[22, 19, 18, 15, 14, 10, 5, 1, 3, 4, 7, 20, 25] k=21
 Output: the number of elements in A strictly greater than k. In this case, output will be 2.
 面试官说不能简单过一遍
 他其实是一个Rotated sorted array
@@ -1677,7 +1807,7 @@ Output: the number of elements in A strictly greater than k. In this case, outpu
 后半部是小到大
 我把它们分两半用Binary Search做的
 但应该有更好的解法
-单调栈吧 lc739
+单调栈吧 `LC739`
 
 上来互相介绍，然后第一题是先让你解释什么是binary search tree，然后写一个function判断这个bst是不是valid。DFS carry over lo/hi解决。
 第二题是让你设计彩票系统，三个功能（添加参与者，删除参与者，随机选参与者），他想要三个功能都用constant time complecity O(1)
@@ -1707,11 +1837,11 @@ print_topk_company(2):
 系统设计：
 设计一个检查 是否能够交易的系统， 假设你有10w个银行 彼此之间会有交易的限额。银行在进行交易的时候，会发request 给这个交易系统， 如果还有额度可以交易。系统设计还可以。
 算法一做的非常不好，看似很简单，看到地里的同学很多都挂在这道题上了。我面的面试官一直在challenge你。
-补充一下算法题2: 意丝岭 看到是hard tag 我也没什么遗憾了
+补充一下算法题2: 意丝岭`LC140` 看到是hard tag 我也没什么遗憾了
 第一题只能想到用Heap。 这是处理大量的call，然后输出top K。这样的话，就是 N logK (K is the size of the heap).
 
 一共面了三个组。
-1. 嗯按value递增 刷题网嗣叁灵，变种：在展开的基础上， 保持递增排序，比如：
+1.嗯按value递增 刷题网嗣叁灵`LC430`，变种：在展开的基础上， 保持递增排序，比如：
 dummy
 |
 [1] . [2] . [3] . [8] . [10]
@@ -1723,19 +1853,19 @@ dummy
              [7]
 结果：
 [1] . [2] . [3] . [4] . [5] . [6] . [7] . [8] . [9] . [10]
-叁灵依，删括号变种，比如：
+叁灵依`LC301`，删括号变种，比如：
 abcd()efg)()((
 结果：
 abcd()efg()
 要求：线性时间复杂度，和常数空间复杂度。
-3. 第三题是陆依依 给定一个自然数数组，每个数字可以是三角形的一个边长，找出能组成一个三角形的三组数的个数。数字允许重复。比如[4,4,3,5,6,7], 三角形有[3,4,4], [3,4,5], [3,4,6], [3,5,6], [3,5,7], [4,4,5], [4,4,6], [4,4,7], [4,5,6], [4,5,7], [5,6,7]; 所以返回11。
+3.第三题是陆依依`LC611` 给定一个自然数数组，每个数字可以是三角形的一个边长，找出能组成一个三角形的三组数的个数。数字允许重复。比如[4,4,3,5,6,7], 三角形有[3,4,4], [3,4,5], [3,4,6], [3,5,6], [3,5,7], [4,4,5], [4,4,6], [4,4,7], [4,5,6], [4,5,7], [5,6,7]; 所以返回11。
 
-接下来是系统设计面试，忘记具体问题了，因为我有考AWS证，对AWS整体系统设计有了解，又有10多年工作经验，就根据问题说了一通，系统设计不外乎数据库设计，缓存数据设计，Load Balancer设计，还有Log监测系统，Message Queue等，反正根据问题和面试官的反应往上套，系统设计是很开放的问题，随便聊了一通。
+接下来是系统设计面试，忘记具体问题了，因为我有考AWS证，对AWS整体系统设计有了解，又有10多年工作经验，就根据问题说了一通，系统设计不外乎数据库设计，缓存数据设计，Load Balancer设计，还有Log监测系统，Message Queue等，反正根据问题和面试官的反应往上套，系统设计是很开放的问题，随便聊了一通
 
-店面：LC200 只不过把数Island改成了数图片中的云
+店面：`LC200` 只不过把数Island改成了数图片中的云
 followup:
 1.如果每一行的长度都不一样，该怎么改
-2. 如果用不同的数字表示不同云朵的颜色，你的代码要输出每种颜色的云的数量并且找到最大的一朵云的尺寸，那该如何修改code （提前不知道一共有多少种颜色的云）
+2.如果用不同的数字表示不同云朵的颜色，你的代码要输出每种颜色的云的数量并且找到最大的一朵云的尺寸，那该如何修改code （提前不知道一共有多少种颜色的云）
 第二轮:
 实现下面两个函数:
 execute_trade(company, volume)
@@ -1762,29 +1892,10 @@ return the top k total amount
 
 3轮，前两轮技术，HR说一轮算法一轮系统设计，但感觉来了两轮算法，最后半小时经理bq。
 第一轮：一个白人伯伯+一个有口音的白人大哥，两个人都挺nice的
-15min各自自我介绍，15min解释问题，问题是设计一个简化版的他们的product。计算规则超级复杂的散散酒。其中考了design pattern，我模糊记得但没设计对，我以为是decorator，后来查Gang of 4的那本书才知道记错了，是composite 。要根据描述的规则自己设计数据结构，总之是某种树。具体大概是给一个数目，根据不同规则，分别分到不同的bucket里。譬如，给100，有3个bucket，A容量30,B容量20,C容量50。分配的规则有两种，一种是按顺序的，先fill up A,还有剩下的fill up B，还有就fill up C。另一种规则是按比例分配，100，A会分到3/10, B分到2/10,C分到5/10 etc。最后结果是要求进行一轮这样的分配后，所有bucket还有多少容量。规则里可以嵌套其他规则。
+15min各自自我介绍，15min解释问题，问题是设计一个简化版的他们的product。计算规则超级复杂的散散酒`LC339`。其中考了design pattern，我模糊记得但没设计对，我以为是decorator，后来查Gang of 4的那本书才知道记错了，是composite 。要根据描述的规则自己设计数据结构，总之是某种树。具体大概是给一个数目，根据不同规则，分别分到不同的bucket里。譬如，给100，有3个bucket，A容量30,B容量20,C容量50。分配的规则有两种，一种是按顺序的，先fill up A,还有剩下的fill up B，还有就fill up C。另一种规则是按比例分配，100，A会分到3/10, B分到2/10,C分到5/10 etc。最后结果是要求进行一轮这样的分配后，所有bucket还有多少容量。规则里可以嵌套其他规则。
 譬如，你有3个bucket，你可以先A，B，C之间用按比例分配，然后B，C之间按顺序分配，可以无限嵌套无限层
 第二轮：白人大哥+国人大哥，
-15min各自介绍，15min浅挖project，问了遇到什么困难，怎么解决。然后上算法题。这轮没写出来，说真的，我到最后也没理解到底怎么判断。题目大概是这样的，说一堆学生做project，大家都有想组队的小伙伴，但老师给随机分配了。最后求，有多少学生不开心。但这个不开心的定义我没看太太懂。好像说，A如果被分给D，如果A在D想组队小伙伴的优先列表里排序比其他的小伙伴高，A就开心。如果C排得比A前，那么A就不开心。（这个记不清楚，基本没看懂）两个都挺nice的，尤其是国人大哥，几次试图拯救，但真的没懂题目。这题感觉考阅读理解呀艹
-
-ML position
-1) CODING题•            im_stream: A stream (generator) that produces IMPosts. Calling next(im_stream) will yield a new post.
-•            target_sender_id: a string, the sender_id of the user we want to get a context for
-•            window_size: The number of posts before and after the target post that should be included
-•             in the context.
-•            
-•            Returns: An iterable (anything we can iterate over) containing the posts from the first conversational context found in im_stream.
-•            A context consists of an "target post" sent by target_sender_id, plus the window_size posts immediately
-•            before and after the anchor post that were made in the same chatroom.
-2) ML 题
-Consider an equity trader who chats with other traders on an instant messaging app:
-- She is in several chatrooms, exposed to various kinds of chatter:
-news about the market (e.g, "Oil prices are spiking")
-trade negotiations (e.g, "I want to buy Tesla stock")
-relationship building (e.g., "Lovely weather!")
-- When flooded with unread messages (e.g., after stepping away from her desk or if the incoming message volume is high):
-she'd like an automated way to discover actionable unread posts
-i.e., posts in which people have indicated interest in buying/selling equities
+15min各自介绍，15min浅挖project，问了遇到什么困难，怎么解决。然后上算法题。这轮没写出来，说真的，我到最后也没理解到底怎么判断。题目大概是这样的，说一堆学生做project，大家都有想组队的小伙伴，但老师给随机分配了。最后求，有多少学生不开心。但这个不开心的定义我没看太太懂。好像说，A如果被分给D，如果A在D想组队小伙伴的优先列表里排序比其他的小伙伴高，A就开心。如果C排得比A前，那么A就不开心。（这个记不清楚，基本没看懂）两个都挺nice的，尤其是国人大哥，几次试图拯救，但真的没懂题目。这题感觉考阅读理解呀艹 `unhappy friend`
 
 设计一个函数 packetize(), 能够根据输入的packets 找到 complete messages. 然后 call 另一个函数 process 去处理每一个完整的message.
 Ex. Input: (123456abc), (de)
@@ -1792,7 +1903,7 @@ Ex. Input: (123456abc), (de)
       Output: packetize() 需要找到这两个完整的message 并且分别call process(123456) and process(abcde) 进行处理
      首先讨论如何判断一个message 是否complete. 这是一个完全开放的问题， 跟面试官讨论多个options 并且说明tradeoff. 比如每一个complete message 之间加一个separator 之类的。
      根据上一步的讨论，可以将input预先处理成(123456#abc), (de#)。
-     然后implement packetize() 函数。这一步不难，就是要考虑到一些edge case. 新人求大米！
+     然后implement packetize() 函数。这一步不难，就是要考虑到一些edge case.
 
 
 通过坐标输出值。坐标如下
@@ -1812,17 +1923,17 @@ Input 是坐标点，比如（3,1），（2,0）。Output是值，比如12， 4.
 
 onsite 三轮
 第一轮 coding 两个面试官
-国人大哥问了一个 变种散散 前半段array是decreasing的 要求logn
-美国小姐姐问了 lc露丝二 只来得及说了思路 写了个trie的class
+国人大哥问了一个 变种散散`LC33` 前半段array是decreasing的 要求logn
+美国小姐姐问了 lc露丝二`LC642` 只来得及说了思路 写了个trie的class
 第二轮 coding 两个面试官
 国人小哥 给你一个数n 你从1开始，可以选择把当前数乘以2或者除以3(除不尽的话直接round down取整），然后求最少步数把1变到n
 eg. input 10=1*2*2*2*2/3*2 -> output: 6
-印度小哥 lc 伞 要求one pass
+印度小哥 lc 伞`LC3` 要求one pass
 半小时休息
 第三轮 sd
 美国大哥 前15分钟聊个自己组里的project 后面问了半小时design一个system 处理大量股票交易transaction files，parse file然后存到db，要求low latency和data accuracy。这个是很具体的business use case，所以注重讨论
 
-Bloomberg：电面：国人面试官，力扣53。背靠背两轮vo（全是tag题），力扣1209，top k stocks（用heap做）（这道题两轮都有类似的，就是换了个壳），还有一道easy（大概就是一个数是奇数就乘一个给定的常数，如果是偶数也是线性变换，问多少steps变成一个target value。Followup：多次call这个函数怎么办，答案：用hashmap记录已经算出来的结果）。VO2结束的时候面试官说后半个小时hr面，都是地里面hr面常问的问题，但是问预期工资属实是有点尴尬。Em面：最恶心的一轮面试，屏幕那头一看到三哥我就知道要挂了，最后果然被他恶心了。基础知识问了hashmap怎么实现，还有一些杂七杂八的数据结构以及怎么实现。然后问我想做什么，我说想做xxx，因为之前学了一门课很有兴趣，他直接原地教我做人：你不能因为学校学了一门课就说感兴趣（nmd是看不见我简历做的project吗）。然后问实习做了啥，感觉他没咋听懂，最后问了一句，你写代码了吗（nmd以为所有工程师都像你们一样能说会道不会写代码是吧）。果然一周后催了hr收到拒信。
+Bloomberg：电面：国人面试官，力扣`LC53`。背靠背两轮vo（全是tag题），力扣`LC1209`，top k stocks（用heap做）（这道题两轮都有类似的，就是换了个壳），还有一道easy（大概就是一个数是奇数就乘一个给定的常数，如果是偶数也是线性变换，问多少steps变成一个target value。Followup：多次call这个函数怎么办，答案：用hashmap记录已经算出来的结果）。VO2结束的时候面试官说后半个小时hr面，都是地里面hr面常问的问题，但是问预期工资属实是有点尴尬。Em面：最恶心的一轮面试，屏幕那头一看到三哥我就知道要挂了，最后果然被他恶心了。基础知识问了hashmap怎么实现，还有一些杂七杂八的数据结构以及怎么实现。然后问我想做什么，我说想做xxx，因为之前学了一门课很有兴趣，他直接原地教我做人：你不能因为学校学了一门课就说感兴趣（nmd是看不见我简历做的project吗）。然后问实习做了啥，感觉他没咋听懂，最后问了一句，你写代码了吗（nmd以为所有工程师都像你们一样能说会道不会写代码是吧）。果然一周后催了hr收到拒信。
 
 第一轮是也是dfs/bfs 2d 搜索是否可以到达出口，中间一次性加油站可以获得对应油量。写出来了没跑，面试官nice，亚裔
 第二轮两个题，是个非裔？小姐姐，说话比较模糊，听不太清楚每个问题都基本上要求重复 尽管是最简单的那种，，，所以感觉面的不行，虽然代码基本上都写出来了
@@ -1872,17 +1983,11 @@ feedback是recruiter给我的，说这是面试官写的，具体recruiter也不
 第一个组based在伦敦，对了，每轮面试都有两个面试官，每个组都是一轮coding，一轮design
 都是zoom面试+hackerrank
 1, coding
-有个执行交易的interface：
-execute_trade(ticker, quantity)
-被调用很多次
-问：打印出当天交易量top k tickers
-复制代码
+有个执行交易的interface：execute_trade(ticker, quantity) 被调用很多次 问：打印出当天交易量top k tickers
 requirements非常模糊，需要自己clairify，以上信息是交流过程中最后获得的，开始没有提供interface
-一个面试官在LN，感觉比较jerky，另一个在纽约。
-题其实不难，属于考察气场的题，面试官可以故意坑你
+一个面试官在LN，感觉比较jerky，另一个在纽约。 题其实不难，属于考察气场的题，面试官可以故意坑你
 2，design
 设计一个系统，从100个交易所接受实时的交易数据，储存+处理之后，输送给不同的应用场景，比如其它的计算服务引擎，或者显示终端
-复制代码
 考点在典型的multi-producer / multi-consumer messaging system，capacity，caching，partitionning等等
 需要back of envelop计算，画图（用的hackerrank），讨论tradeoff
 两个面试官都是纽约的，都很nice
@@ -1891,19 +1996,47 @@ requirements非常模糊，需要自己clairify，以上信息是交流过程中
 
 上周一口气面了两个组
 分别是这两题：
-1. 1029 利口 two city scheduling
+1. `LC1029` 利口 two city scheduling
 这题压中题了，轻松过
-2. 1244 要你设计一个解决方案 - input是股票的名字和交易数量，设计一个方程来储存这个input，会不停地被call到；然后设计另一个方程输出所有股票的名字和总交易数量，按交易量从大到小排序
-这题我用一个priority queue做的，但是不是最优解，估计没有过
-会被反复call到
-第二题有什么好办法？
-用hashmap存很快，但是取的时候要sort。n log n
-用heap，存取都不快。
-补充内容 (2024-01-31 11:16 +08:00):
-输出所有股票，是最后call一次，还是反复会call到？
-除了priorityQueue用heap， 实在想不起来其他有什么data structure用heap了，面试官想我换一个用heap的数据结构但是我说除了pq我比较熟练其他的不太了解也不常用，面试官也没说应该用什么，感觉这个面试官也很一般
-第二题有点像药饵丝丝
-看了一眼，感觉是的，少了个reset(playerId)方程，怪我没准备充分没刷到哈哈
+2. `LC1244` 要你设计一个解决方案 - input是股票的名字和交易数量，设计一个方程来储存这个input，会不停地被call到；然后设计另一个方程输出所有股票的名字和总交易数量，按交易量从大到小排序
+这题我用一个priority queue做的，但是不是最优解，估计没有过 会被反复call到
+第二题有什么好办法？ 用hashmap存很快，但是取的时候要sort。n log n 用heap，存取都不快。
+输出所有股票，是最后call一次，还是反复会call到？ 除了priorityQueue用heap， 实在想不起来其他有什么data structure用heap了，面试官想我换一个用heap的数据结构但是我说除了pq我比较熟练其他的不太了解也不常用，面试官也没说应该用什么，感觉这个面试官也很一般
+第二题有点像药饵丝丝, 看了一眼，感觉是的，少了个reset(playerId)方程，怪我没准备充分没刷到哈哈
+```
+Complexity Analysis
+Time Complexity:
+O(1) for addScore.
+O(1) for reset.
+O(K)+O(NlogK) = O(NlogK). It takes O(K) to construct the initial heap and then for the rest of the N−K elements, we perform the extractMin and add operations on the heap each of which take (logK) time.
+Space Complexity:
+O(N+K) where O(N) is used by the scores dictionary and O(K) is used by the heap.
+```
+class Leaderboard:
+
+    def __init__(self):
+        self.scores = {}
+
+    def addScore(self, playerId: int, score: int) -> None:
+        if playerId not in self.scores:
+            self.scores[playerId] = 0
+        self.scores[playerId] += score
+
+    def top(self, K: int) -> int:
+
+        # This is a min-heap by default in Python.
+        heap = []
+        for x in self.scores.values():
+            heapq.heappush(heap, x)
+            if len(heap) > K:
+                heapq.heappop(heap)
+        res = 0
+        while heap:
+            res += heapq.heappop(heap)
+        return res
+
+    def reset(self, playerId: int) -> None:
+        self.scores[playerId] = 0
 
 
 
