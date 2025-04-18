@@ -70,6 +70,81 @@ BQ题到最后就是复合句的写作。跟写代码一样，不要长算式，
 掌握了这些，每轮最后“你有什么问题问我么”，其实也都是很好的交流点，可以反问一些BQ问题的。比如对面是hiring manager，我就常问假如我是你的队员，你最看重的value是什么？你希望我更backbone一点、还是implement the delegated task更要紧？比如对面是tech lead，我也会问你希望我在high-level design多花心思，还是implementation时更注重test-driven code多花心思？……面试毕竟是双向选择，我问这些的时候，也是真想知道这个组的现有组员都是怎么做活儿的。楼主也可以反问环节问一些BQ问题，你通过设计这些问题，也会逐渐理解别人问你的时候，他想探求的是你的哪方面品质的有无。
 
 
+在讨论LP之前，我们先讨论一下如何开始一场interview 以及如何professional 的结束它。很重要。这些细节虽然不会直接起决定性的作用，但我觉得会给面试官留下一个好的印象。
+1. 上来先尬聊, 不要冷场。尽自己最大的努力，把场子活起来。以下是一些可开头的句式：
+“How are you?/How are you doing today?/Are u currently working from home?”
+"Hey! How is it going?! God, I don't even remembr how long I have been working from home，feels like longer than it actually is."
+"I am actually really excited about the interviews, this is the only chance to talk to someone outside of my apartment" 此时配上你的性格大笑。
+"How are things in Seattle? People start to wear masks and take things seriously now, hope it gets better soon!"
+2. 准备一段30-40s内的pitch(网上example很多, 但肯定需要有的姓名、学校、专业、毕业时间、感兴趣的领域、两三句经历介绍等)
+pitch很容易被大家忽视，但它重要的程度不亚于任何LP的问题。为什么？因为不只是亚麻，你去参加任何一个面试或者career fair都会要给对方自我介绍。
+3. 面试中/Coding中
+1.1 如果你可能会沉默一会，要告诉面试官：
+“Hi, if I am silent for a couple secs/mins, I am just thinking through the question.”
+1.2 如果面试官问你这道题是不是做过
+“I do not have the chance to solve exactly question before, but this question is a very typical DFS/BFS/Graph等等 problem. I do prepare because I take this opportunity seriously. I don’t want to waste the opportunity and I don’t waste your time.”
+1.3 如果面试官问到某个你不会的skill/framework/language
+I do not have a chance to go deep about it but I am very interested in growing my skills in this area. I am a fast learner and making the transition won't be a challenge.
+1.4 Coding中可用句子
+Ok. Perfect. Thank you very much!
+Is that a good understanding of it? I am more comfortable with Java. So I will start my method signature with Java.
+So now I have my method signature, I will run a couple of simple examples to illustrate my thoughts.
+What are input/output types? Could I name the variables like....?? Further question: .....(ensure the inputs are valid, form well)
+I think I could break down my pseudo code into this...Does this look like an ok approach?
+4. Question to Ask Interviwers (Google上很多例子，可以自己选择）
+What is your favorite part working here?
+What is your favorite Amazon leadership principle and why?
+What is the team culture like?
+What do you think are the most important qualities for someone to be really successful in this position?
+What are the common career paths in this department?
+What are the biggest challenges the company is facing right now?
+What is the typical day at Amazon?
+5. 结束后
+It’s a pleasure to be here and I am very excited about this opportunity.
+Thank you for giving me this great opportunity to interview today.
+I am very excited to have the opportunity to be interviewed here on Amazon.
+记住说: Have a great day.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+现在聊一下LP热门考题和其考察的点, 非常建议大家准备下面👇几个题目就可以了, 每个题目准备一个故事, 实在没有的，就两个题目公用一个故事。我个人觉得没有必要每一条LP都准备一个故事。之前亚麻HR有和我提到过，说是一个故事最好不要对超过两个面试官使用，如果能下面每个题目都准备一个故事，我个人觉得妥妥管够。每一个LP问题都可以从我推荐的地里经典帖子里找到别人的写的故事。我自己就不嫌丑了，帖子里的故事写得非常棒以及上面👆的youtube小哥做的视频里也有故事而且答得也都很好
+#### `Tell me about a time you failed/ The biggest mistake you made`
+→ 对应的是 `earn trust, customer obsession`
+错误不能是致命伤,突出的是为了customer坚持了什么，没有customer的换成老师同学小组都可以。
+#### `Take a risk, or do not have much time, to make a decision/ Tell me about a time when you had to work on a project with unclear responsibilities.`
+→ 对应的是 `Bias for action, Ownership`.
+是行动优先，而且是要突出当仁不让，有责任自己能顶上的意识。比如customer找不到人刚好你在，你能主动做些事。
+#### `Challenging client-facing situation/ Disagree with teammate or manager/ Tell me a time when you did something without asking approval from you manager`
+→ 对应的是`earn trust`
+这个很多人没对准，记住不是强行说服或者没什么理由的顺应别人, 为了customer或者最重要目的所以不同意别人。都是好说辞，和事佬的说法是偏题。介绍背景，说出分歧。然后说自己怎么做，可以是讨论trade off, 可以是坚持高标准..等 结局一定说最后的选择是对的。 It proved to work well.
+#### `Most challenging/proudest project/Tell me a time you solved a complex problem`
+→ 对应的是`highest standards, think big`
+要讲自己怎么走出comfort zone, 当然舒适区本身也是一道题。扣题，怎么复杂，是deadline 紧，还是技术复杂，你怎么做的，学习了新技术，use my priavte time to work on it 等等 最后说结果或者说通过这个process 你学到了什么
+#### `Miss deadline`
+→ 对应的是`customer obsession, Deliver Results.`
+要突出怎么让影响最小, 让customer不受影响。讲你自己的影响就偏题了。解释为何会miss 你是怎么把损失降到最低的，最后结果是好的，影响不是很大
+#### `Tell me a time when you received negative feedback`
+先介绍背景,别人对你哪里不满意了, 简单说以下就行, 不要说很多别人如何对你不满, 也不要sugar coat 说自己其实没错。重点放在自己怎么解决这个问题，以及学到了什么。结果一定是好结果
+#### `Tell me about a time when you gave a simple solution to a complex problem/ Find a new way to do something`
+这个问题一定要让面试官信服你说的例子。先说一般的方法很耗时，自己找到一个方法很快就完成并且Deliver 了，而且很稳定，没出过问题，结果要是好的。
+
+#### 亚麻军规14条(LP 14):
+1. Customer Obsession 顾客至上：永远站在顾客的视角上看待问题
+2. Ownership 领导视角：目光长远, 相对于完成短期工作任务，更关注对于公司的长期收益
+3. Invent and Simplify 创造优化：不断创新，并且精简工作中不必要的流程
+4. Are Right, A Lot 洞察预判, 挑战自己：用直觉为公司做判断
+5. Learn and Be Curious 不断学习：做一台没有感情的学习机器
+6. Hire and Develop The Best 选择最优：总裁养成计划：会用人也会培养人
+7. Insist on the Highest Standards 坚持最高标准：完美主义+强迫症: 对自己对团队最高要求， 从长计议，长期收益永远高于短期收益
+8. Think Big 大智慧全局观:想的多、想的远、想的“骚”(揽客思路要骚)
+9. Bias for Action 行动是第一生产力: 敢冒险勇担责
+10. Frugality 勤俭持家从我做起：doing more with less
+11. Earn Trust 获取信任：与用户、同事、上司建立信任关系
+12. Dive Deep 注重细节：细节决定效率和成败
+13. Have Backbone; Disagree and Commit 保持不同观点：希望听见不同的声音和可取的建议，一旦下了决定就会绝不言弃
+14. Deliver Results 结果导向：为最终的目标而努力
+
+
+
 
 `Example`:
 - First, I created a customer feedback mechanism on a weekly basis.
