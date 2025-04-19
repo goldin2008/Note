@@ -110,22 +110,470 @@ I am very excited to have the opportunity to be interviewed here on Amazon.
 #### `Tell me about a time you failed/ The biggest mistake you made`
 → 对应的是 `earn trust, customer obsession`
 错误不能是致命伤,突出的是为了customer坚持了什么，没有customer的换成老师同学小组都可以。
-#### `Take a risk, or do not have much time, to make a decision/ Tell me about a time when you had to work on a project with unclear responsibilities.`
+
+Situation:
+As a Machine Learning Engineer at [FinTech Company], I optimized our fraud detection model to reduce false positives—but accidentally increased false negatives by 12%. For two days, some fraudulent transactions slipped through, triggering customer chargebacks and frustration.
+
+The Mistake:
+Over-indexed on precision (reducing false alarms) at the cost of recall (missing actual fraud).
+Didn’t A/B test thoroughly before full rollout.
+Failed to consider real-world impact—customers were now dealing with fraud disputes.
+
+How I Prioritized Customers & Rebuilt Trust
+1. Immediate Response (First 24 Hours)
+  Rolled back the model update and notified affected customers proactively:
+  "We made a mistake. Here’s what happened, and how we’re fixing it."
+  Covered fraud-related losses for impacted users (~$18K in reimbursements).
+  Set up a dedicated support queue for faster dispute resolution.
+2. Transparent Recovery
+  Published a detailed incident report, including:
+  Root cause (trade-off between precision & recall)
+  Steps to prevent recurrence
+  Hosted a customer webinar to explain how fraud detection works and how we’d improve.
+3. Long-Term Fixes (Turning Failure into Innovation)
+  Introduced "Guardrail Testing":
+  Now, any model update must pass minimum recall thresholds in staging.
+  Real customer transaction patterns are included in validation.
+  Built a customer feedback loop:
+  Users can flag suspicious transactions directly to retrain the model.
+  We reward verified reports with $10 account credits.
+
+Results & Lessons
+✅ Higher Trust Than Before: Customer satisfaction scores increased by 25% post-fix.
+✅ Stronger Fraud Detection: The new guardrails improved model robustness.
+✅ Industry Recognition: Our transparency was featured in a FinTech security report.
+
+Key Takeaways for Interviewers:
+Admit the mistake candidly—no deflection.
+Show customer obsession—compensation, communication, and long-term fixes.
+Prove you learned—institutional improvements that outlasted the error.
+
+- The Situation:
+  As a Data Scientist working on a credit scoring model for a major bank, I insisted on achieving 99.9% model accuracy before deployment - delaying launch by 3 weeks past our committed deadline. My perfectionism created tension with both the product team and waiting customers.
+- The Mistake:
+  • Over-prioritized model precision over business timelines
+  • Failed to recognize that 98% accuracy would have met all regulatory requirements
+  • Didn't properly communicate trade-offs to stakeholders
+- Customer-Centric Recovery:
+  Immediate Action (Day 1):
+  Personally contacted the 200 affected small business applicants whose approvals were delayed
+  Created expedited review paths with human underwriters
+  Offered 0.25% rate reductions for the inconvenience
+  Strategic Solution:
+  Implemented a phased accuracy approach:
+  Phase 1: 98% accurate model (meeting minimum requirements)
+  Phase 2: Continuous learning updates to reach 99.9%
+  Developed a transparent dashboard showing applicants exactly where they stood in the process
+  Process Improvement:
+  Created new "Accuracy vs. Speed" decision framework for all models
+  Instituted mandatory stakeholder alignment checkpoints
+- The Outcome:
+• Reduced future model deployment cycles by 40%
+• Customer satisfaction scores for loan applicants improved by 32%
+• The bank adopted our framework across all their scoring models
+• Ironically, the continuous learning system ultimately achieved 99.95% accuracy - better than my original target
+
+Key Lessons Demonstrated:
+✓ Recognized when perfect became the enemy of good
+✓ Put customers first in remediation
+✓ Created systemic improvements from the experience
+✓ Showed technical and business balance
+
+
+- Situation:
+As an ML engineer at a fintech startup, I built a fraud detection system that mistakenly flagged 12% of legitimate transactions during peak holiday shopping. Customers were furious—their payments were blocked right before Christmas.
+- The Mistake:
+I had overfitted the model to historical fraud patterns, failing to account for seasonal spending spikes.
+Skipped real-world stress testing to meet a tight deadline.
+
+How I Put Customers First:
+1. Immediate Crisis Response (First 24 Hours)
+Shut down the faulty model and reverted to a rules-based system (even though it meant more manual reviews).
+Personally contacted affected customers via phone/email:
+"We messed up. Here’s how we’re fixing it."
+Offered **20accountcredits∗∗toimpactedusers(cost: 50K).
+2. Transparent Fixing Process
+Live-streamed a "How We’re Fixing This" workshop for enterprise clients.
+Published daily updates on LinkedIn/X showing:
+  Progress metrics
+  New safeguards being implemented
+3. Systemic Improvements
+Created a "Customer Shadow Testing" program:
+  Real users now test models before launch
+  Pays participants $50/month for feedback
+Implemented dynamic risk thresholds that auto-adjust for:
+  Seasonality
+  Regional trends
+  Individual spending habits
+- Results:
+  Higher trust than before: CSAT scores rose from 3.2 → 4.7/5
+  Competitive advantage: Our transparency became a marketing point
+  Industry impact: The shadow testing approach is now used by 3 competitors
+
+
+#### `Take a risk, or do not have much time, to make a decision/ Tell me about a time when you had to work on a project with unclear responsibilities./ Tell me a time when you took on something significant outside your area of responsibility`
 → 对应的是 `Bias for action, Ownership`.
 是行动优先，而且是要突出当仁不让，有责任自己能顶上的意识。比如customer找不到人刚好你在，你能主动做些事。
+- Situation
+  During a critical model deployment for a healthcare client, we discovered silent data corruption in production—the model was generating nonsensical predictions for 5% of patient cases.
+- Why This Required Immediate Action
+  No Clear Owner: Data engineers said it was a "model issue"; ML team blamed "upstream data."
+  Time Pressure: Clinical decisions relied on these predictions (potential life-or-death impact).
+  Uncharted Territory: The bug involved HIPAA-compliant log access (outside my normal permissions).
+- My Actions (Bias for Action + Ownership)
+  Took Initiative Without Consensus:
+    Spent Saturday reverse-engineering the data pipeline.
+    Discovered a timezone conversion bug in patient admission records.
+  Broke Protocol to Fix Fast:
+    Without approval, wrote a hotfix that:
+      Patched the live data stream using regex transformations.
+      Added data validation checks to prevent recurrence.
+    Sent a transparent incident report to all stakeholders within 4 hours.
+  Expanded Responsibility:
+    Built a real-time data monitor (not my job) that became a company-wide tool.
+    Trained the data engineering team on ML data hygiene.
+- Results
+  Zero patient harm: Fixed before Monday’s clinical rounds.
+  Process Change: My validation checks became mandatory for all healthcare deployments.
+  Promotion: Recognized for "going beyond domain boundaries" to solve systemic issues.
+
+Key Messaging for Interviews
+✅ Bias for Action:
+"I couldn’t wait for perfect consensus—clinical safety was at stake."
+✅ Ownership:
+"This wasn’t ‘my’ bug, but it was ‘my’ problem to solve."
+✅ Scale of Impact:
+Turned a one-off fix into institutional prevention.
+
+Alternative Scenario (for DS Roles):
+"A competitor launched a feature we lacked. Without asking, I prototyped a better version using LLMs over a weekend. We shipped it in 10 days and regained market share."
+
+Banking Example (Fraud Detection Bypass)
+- Situation:
+  An AML model started missing 12% of high-risk transactions after a SWIFT format update. Compliance team refused to block payments without model certainty.
+- Action:
+  Built real-time shadow mode comparing old/new model outputs
+  Manually intercepted $28M in suspicious wires using SQL overrides (breaking audit trails)
+  Created hybrid ruleset combining model scores with legacy pattern matching
+- Result:
+  Zero regulatory penalties that quarter
+  New "Model Fallback Framework" adopted across 3 divisions
+  Promoted to Head of Model Risk Engineering within 6 months
+
+Why These Work
+✅ Tech: Shows cloud architecture mastery under fire
+✅ Banking: Proves risk/regulation balancing skill
+✅ Both:
+Immediate action with measured rule-breaking
+Solutions became institutionalized best practices
+Quantified dollars/seconds saved
+Tailoring Tip:
+For fintech interviews, add:
+"This mirrors how Stripe handles payment failures - graceful degradation beats perfect uptime."
+
 #### `Challenging client-facing situation/ Disagree with teammate or manager/ Tell me a time when you did something without asking approval from you manager`
 → 对应的是`earn trust`
 这个很多人没对准，记住不是强行说服或者没什么理由的顺应别人, 为了customer或者最重要目的所以不同意别人。都是好说辞，和事佬的说法是偏题。介绍背景，说出分歧。然后说自己怎么做，可以是讨论trade off, 可以是坚持高标准..等 结局一定说最后的选择是对的。 It proved to work well.
+可以答custom obsession  很紧急 没时间问经理 为了customer 你做了xx决定
+
+- Situation
+  During the deployment of a real-time recommendation system upgrade for a major e-commerce client, we faced a critical issue:
+  Our new BERT-based model showed a 15% CTR lift in A/B tests.
+  But latency spiked from 50ms to 400ms—violating the client’s 100ms SLA.
+- The Conflict
+  Manager’s Stance: "Ship it—we’ll optimize latency later."
+  My Data-Backed Concern:
+  Simulations showed 8% drop in mobile user retention due to slow load times.
+  Risked $1.2M/month in lost revenue (using historical elasticity models).
+- My Action (Technical Solution & Autonomous Decision)
+  Built a Real-Time Impact Model
+  Quantified: 400ms = $256K weekly loss.
+  Designed a Tiered Serving System
+  High-Value Users: Full BERT model (VIPs, high LTV)
+  General Users: Distilled TinyBERT model (2.5x faster)
+  Deployed Without Waiting
+  Modified Kubernetes traffic-split annotations in production.
+  Added real-time monitoring with fallback triggers.
+- Results
+  CTR: Maintained 12% lift (vs original 15%)
+  Latency: Achieved 83ms avg (under SLA)
+  Business Impact:
+  Zero rollout-related complaints (vs 15+ tickets last upgrade).
+  Client adopted this as their new ML serving standard.
+
+Why This Earned Trust
+✅ Technical Rigor: Model distillation + intelligent routing.
+✅ Business Acumen: Revenue impact projections.
+✅ Ownership: Took calculated risk to protect client KPIs.
+✅ Scalable Solution: Became best practice for other clients.
+
+How to Tailor This Further
+For DS Roles: Emphasize the elasticity modeling details.
+For MLE Roles: Dive deeper into model optimization tricks.
+For Leadership: Highlight cross-team coordination efforts.
+
 #### `Most challenging/proudest project/Tell me a time you solved a complex problem`
 → 对应的是`highest standards, think big`
+INVENT AND SIMPLIFY: Tell me a time when you created an innovative product.
+Leaders expect and require innovation and invention from their teams and always find ways to simplify. They are externally aware, look for new ideas from everywhere, and are not limited by "not invented here". As we do new things, we accept that we may be misunderstood for long periods of time.
 要讲自己怎么走出comfort zone, 当然舒适区本身也是一道题。扣题，怎么复杂，是deadline 紧，还是技术复杂，你怎么做的，学习了新技术，use my priavte time to work on it 等等 最后说结果或者说通过这个process 你学到了什么
+- Situation
+  At [Company X], our team faced a critical problem: our recommendation system was struggling with cold-start users (new users with no history). The existing model relied heavily on historical behavior, leading to poor engagement for 30% of new signups.
+- Why It Was Challenging
+  Data scarcity: No past interactions for cold-start users.
+  Business impact: Low retention = lost revenue (~$1.2M/year).
+  Technical complexity: Most solutions required invasive data collection (hurting user privacy).
+- Action (Innovative Solution)
+  Rethought the Problem:
+  Instead of relying solely on user history, I proposed leveraging contextual signals (e.g., signup channel, device type, referral source).
+  Designed a hybrid model combining:
+  Lightweight collaborative filtering (for users with some history).
+  Content-based features (for true cold-start).
+  Highest Standards:
+  Ran rigorous A/B tests to ensure no regression for existing users.
+  Optimized for latency (sub-100ms) to maintain UX.
+  Think Big:
+  Pitched the solution as a company-wide framework for cold-start problems (adopted later by other teams).
+- Result
+  35% improvement in Day-7 retention for cold-start users.
+  15% uplift in overall engagement (proving better recommendations = happier users).
+  Patent filed for the hybrid approach (with team).
+
+Why This Works for Interviews
+✅ Proves technical depth (ML + systems thinking).
+✅ Shows business impact ($ saved, retention gained).
+✅ Highlights leadership (scaled solution beyond initial scope).
+
+Tip: Use a "Before-After-Why" structure:
+Before: What was broken?
+After: How did you fix it?
+Why: What made it hard/innovative?
+
 #### `Miss deadline`
-→ 对应的是`customer obsession, Deliver Results.`
+→ 对应的是`ownership, customer obsession, Deliver Results.`
+leaders start with the customer and work backwards. They work vigorously to earn and keep customer trust. Although leaders pay attention to competitors, they obsess over customers.
 要突出怎么让影响最小, 让customer不受影响。讲你自己的影响就偏题了。解释为何会miss 你是怎么把损失降到最低的，最后结果是好的，影响不是很大
+- Situation
+  During a critical machine learning model deployment at [Company X], my team was tasked with delivering a new fraud detection system by a hard deadline (launching with a client’s product update). Due to unexpected data quality issues, we missed the deadline by 3 days.
+- Why It Happened
+  Over-optimism: I underestimated the time needed to clean messy transaction logs.
+  Silent blocker: A dependency (third-party API for feature engineering) had inconsistent uptime.
+- Action (How I Fixed It & Prevented Recurrence)
+  Immediate Response:
+  Transparent communication: Alerted the PM and client early (as soon as I saw risks).
+  Proposed a patch: Used a simpler heuristic model as a stopgap while fixing the full solution.
+  Root Cause Fix:
+  Automated data validation checks to catch issues earlier.
+  Added a buffer sprint for similar projects in the future.
+  Process Improvement:
+  Instituted a pre-mortem for high-stakes deadlines ("What could go wrong?").
+- Result
+  The client appreciated the proactive updates and accepted the delay.
+  The final model outperformed the heuristic by 20% (making the wait worth it).
+  My team now builds slack into timelines for data-dependent projects.
+
+Key Lessons for Interviews
+✅ Accountability: Admit the mistake without blaming others.
+✅ Problem-solving: Show how you mitigated impact.
+✅ Growth: Prove you learned (e.g., better estimation, communication).
+
+Alternative Scenario:
+For engineering: Missed a sprint deadline due to tech debt, then advocated for refactoring time.
+For research: Overpromised on a paper submission, then negotiated an extension.
+
+
+- Situation
+  At [Company X], our team was building a real-time fraud detection model for a key client’s payment platform. The deadline was tied to their quarterly product launch—a hard cutoff with contractual penalties for delays.
+  Due to unexpected training data corruption (caused by an upstream API change), we risked missing the deadline by 5 days.
+- Why This Tested Customer Obsession
+  Business impact: A delay would cost the client $500K+ in fraud losses.
+  Trust at stake: This was our first project with the client; missing the deadline could harm the partnership.
+- Action (How We Delivered Despite the Setback)
+  Immediate Triage (Day 1):
+  Alerted the client within 1 hour of discovering the issue, with a clear recovery plan.
+  Proposed a two-phase delivery:
+  Phase 1: Deploy a lightweight "emergency" model (trained on clean historical data) by the deadline.
+  Phase 2: Deliver the full model 3 days later via hotfix.
+  Customer-Centric Compromise:
+  The emergency model had ~80% of the accuracy but met latency/reliability SLAs.
+  Worked extra hours to ensure Phase 2’s fix included zero downtime (rolling update).
+  Preventive Measures:
+  Added automated data validation checks to catch similar issues earlier.
+  Created a client-facing dashboard to show real-time model health (transparency).
+- Result
+  Met the legal deadline with the emergency model (client avoided penalties).
+  The full model went live 3 days later, ultimately reducing fraud by 40%.
+  The client praised our transparency and urgency—we became their preferred vendor for ML projects.
+
+Key Takeaways for Interviews
+✅ Customer Obsession:
+Prioritized the client’s immediate need (avoiding penalties) over perfection.
+Proactive communication built trust.
+✅ Deliver Results:
+Found a short-term workaround without sacrificing long-term quality.
+Quantified the impact ($ saved, fraud reduced).
+
+Alternative Scenario:
+For engineering: Broke a monolithic release into a feature flag rollout to meet a deadline.
+For research: Delivered preliminary results for a conference, then followed up with a full paper.
+
 #### `Tell me a time when you received negative feedback`
 先介绍背景,别人对你哪里不满意了, 简单说以下就行, 不要说很多别人如何对你不满, 也不要sugar coat 说自己其实没错。重点放在自己怎么解决这个问题，以及学到了什么。结果一定是好结果
+- Situation
+  During a machine learning project at [Company X], I built a predictive model for customer churn and presented my findings to stakeholders. After the demo, my manager gave me constructive criticism:
+  "Your analysis is technically strong, but the business takeaways are unclear. The executives don’t care about AUC scores—they want to know which customers to prioritize and why."
+- My Initial Reaction
+  I felt defensive (I’d spent weeks fine-tuning the model!).
+  But I recognized this was a blind spot—I’d focused too much on technical metrics and not enough on actionable insights.
+- Action (How I Improved)
+  Clarified Expectations: Asked my manager, "What’s the ideal format for these updates?" (Turns out, they wanted a 1-slide summary with dollar impacts).
+  Reframed the Work:
+  Instead of: "Model AUC = 0.85" → "Targeting these 3 customer segments could save $2M/year."
+  Added visuals (e.g., a decision tree showing why customers left).
+  Proactively Shared Revisions: Circulated a revised version before the next meeting and asked for feedback.
+- Result
+  The next presentation got buy-in from leadership.
+  My manager noted my growth in communication skills in my next review.
+  I now default to business-first storytelling in all my projects.
+
+Why This Works in Interviews
+✅ Shows humility: You’re open to feedback, not defensive.
+✅ Demonstrates growth: You turned criticism into improvement.
+✅ Proves collaboration: You sought clarity and realigned with stakeholders.
+Tip: Pick feedback that wasn’t catastrophic (no "I messed up a $1M project") but still had real stakes.
+
 #### `Tell me about a time when you gave a simple solution to a complex problem/ Find a new way to do something`
+INVENT AND SIMPLIFY: Tell me a time when you created an innovative product.
+Leaders expect and require innovation and invention from their teams and always find ways to simplify. They are externally aware, look for new ideas from everywhere, and are not limited by "not invented here". As we do new things, we accept that we may be misunderstood for long periods of time.
+
 这个问题一定要让面试官信服你说的例子。先说一般的方法很耗时，自己找到一个方法很快就完成并且Deliver 了，而且很稳定，没出过问题，结果要是好的。
+- Situation
+  At [Company X], our team was struggling with a real-time recommendation system that used a complex deep learning model (Transformer-based). While the model was accurate, it had:
+  High latency (~500ms per prediction), hurting user experience.
+  Costly infrastructure (GPU-heavy, scaling issues).
+- Task
+  We needed to reduce latency without sacrificing recommendation quality. The team initially proposed:
+  Optimizing the Transformer (pruning, quantization).
+  Adding more GPUs (expensive).
+  I suggested a simpler, more elegant solution.
+- Action (Simple Solution to Complex Problem)
+  Analyzed User Behavior: Found that 80% of recommendations could be handled by a lightweight model, while only 20% needed deep learning.
+  Two-Stage Approach:
+  Stage 1: A fast, rule-based filter (e.g., "users who bought X also bought Y") for instant results.
+  Stage 2: A fallback to the Transformer only for edge cases (low-confidence predictions).
+  Cache Popular Results: Pre-computed top recommendations for high-traffic items.
+- Result
+  Latency dropped from 500ms → 50ms for most requests.
+  GPU costs reduced by 60% with no measurable drop in engagement.
+  Scaled effortlessly during peak traffic (Black Friday).
+
+Key Takeaways for Interviews
+✅ Problem-Solving: Identified over-engineering and found a Pareto-optimal solution (80/20 rule).
+✅ Impact: Improved performance and cut costs.
+✅ Innovation: Challenged the "bigger ML model = better" assumption.
+
+#### `Tell me a time when you take caculated risk/ Give me a example of when you took a risk and it failed.`
+→ 对应的是 `OWNERSHIP`
+leaders are owners. They think long term and don’t sacrifice long-term value for short-term results. They act on behalf of the entire company, beyond just their own team. They never say “That’s not my job”.
+- Situation
+  At my previous company, we were building a real-time fraud detection model using transaction data. The existing rule-based system had high precision but missed many fraud cases (low recall). I proposed replacing it with a machine learning model, but stakeholders were hesitant due to:
+  Risk of false positives (blocking legitimate transactions).
+  Regulatory concerns (needing explainability for audits).
+- Task
+  I needed to balance risk vs. reward:
+  ✅ Potential gain: Catch 30% more fraud, saving ~$2M/year.
+  ❌ Potential risk: False positives could harm customer trust.
+- Action (Calculated Risk)
+  Instead of a full rollout, I took these steps to minimize risk:
+  Pilot Test: Ran a shadow mode (ML predictions logged but not acted upon) to compare with the rule-based system.
+  Explainability: Used SHAP values to show why the model flagged transactions, easing regulatory concerns.
+  Fallback Plan: Designed a hybrid system where low-confidence predictions defaulted to the old rules.
+  Phased Rollout: Initially deployed to 5% of traffic, monitored KPIs (fraud catch rate, false positives), then scaled up.
+- Result
+  The model increased fraud detection by 25% with only a 0.5% rise in false positives.
+  After 3 months, it was fully adopted and became the new standard.
+  Lesson: Taking risks is necessary for innovation, but mitigation strategies (testing, monitoring, fallbacks) are key.
+
+Why This Works for Interviews
+Clear stakes ($$ and customer trust).
+Shows analytical thinking (quantified risk/reward).
+Highlights leadership (convincing stakeholders).
+Proves impact (25% improvement → business value).
+
+#### `how you handle conflicts with others`
+根据提供的思维方式，BQ的关键不在于描述冲突本身，而在于通过冲突展示自己的哪些优秀品质。因此，我们需要思考：
+冲突的类型：是与同事的技术分歧，还是与产品经理的需求冲突，或是与上级的管理方式冲突？
+    与产品经理的冲突：坚持技术可行性 vs. 业务需求。
+    展示：Customer obsession + backbone.
+    与同事的代码审查冲突：坚持代码质量标准。
+    展示：Highest standard + constructive feedback.
+    与上级的优先级冲突：坚持技术债务清理。
+    展示：Big picture + disagree and commit.
+展示的品质：是坚持高标准（highest standard）、以客户为中心（customer obsession）、交付结果（deliver results）、还是团队协作（teamwork）？
+解决冲突的方式：是通过沟通、妥协、数据说服，还是其他方法？
+避免的陷阱
+    不要只强调“谁对谁错”：重点是解决冲突的过程，而非输赢。
+    不要抱怨他人：保持专业，聚焦自己的行动和成长。
+    不要过于笼统：用具体细节让故事可信。
+    如果面试官是技术型（如 MLE/DS）：
+    多讲 技术权衡（模型选择、实验设计）。
+    强调 数据/实验说服他人。
+
+    如果面试官是产品/业务型（如 PM）：
+    多讲 如何与业务方达成共识（指标定义、优先级）。
+    强调 ML 如何驱动业务 impact。
+
+    如果面试官是工程型（如 SWE）：
+    多讲 ML 系统协作（模型部署、资源优化）。
+    强调 ML 与工程团队的磨合。
+1. 技术方案冲突（模型选择 / 实验设计）
+- Situation:
+  In a previous ML project, our team was debating whether to use a simpler logistic regression model (favored by the engineers for its interpretability and low latency) or a more complex gradient boosting model (which I believed would yield higher accuracy).
+- Task:
+  I needed to convince the team that the additional complexity was justified, while addressing their concerns about maintainability, latency, and interpretability.
+- Action:
+  Ran A/B tests comparing both models on real-world data, showing that the GBM improved key metrics (e.g., +5% AUC).
+  Proposed a hybrid approach: Use GBM for offline predictions (where latency wasn’t critical) and logistic regression for real-time inference.
+  Added monitoring & explainability: Integrated SHAP values to maintain interpretability, and set up logging to track performance drift.
+- Result:
+  The team agreed to adopt the hybrid approach, which improved model performance without sacrificing system stability. This experience taught me how to balance technical trade-offs and advocate for data-driven decisions.
+🔹 展示的品质:
+Data-driven decision-making (用实验证明)
+Technical leadership (提出折中方案)
+Cross-functional collaboration (说服工程师)
+
+2. 资源 / 优先级冲突（实验 vs. 生产化）
+- Situation:
+  Our DS team wanted to explore a new deep learning approach for a recommendation system, but the engineering team argued it would take too much GPU compute and delay the production launch.
+- Task:
+  I needed to align the team on a realistic roadmap—balancing research innovation with engineering constraints.
+- Action:
+  Benchmarked alternatives: Ran small-scale experiments to compare DL vs. simpler models (e.g., matrix factorization).
+  Prioritized quick wins: Identified a lightweight hybrid model that improved metrics without requiring massive infra changes.
+  Set clear milestones: Agreed to phase the rollout—first deploy the simpler model, then iterate on DL later.
+- Result:
+  We shipped an improved model within the deadline, and later secured additional compute budget to test the DL approach in a follow-up sprint.
+🔹 展示的品质:
+Business impact focus (不盲目追求 fancy ML)
+Negotiation & prioritization (平衡研究和工程)
+Incremental delivery (分阶段推进)
+
+3. 数据 / 指标定义冲突（与 PM / 业务方）
+- Situation:
+  A product manager insisted that we optimize for "click-through rate (CTR)", but I believed "conversion rate" was a better success metric for our ML model.
+- Task:
+  I needed to align stakeholders on the right metric, ensuring our model solved the real business problem.
+- Action:
+  Analyzed historical data: Showed cases where high CTR didn’t lead to conversions (e.g., clickbait vs. genuine engagement).
+  Proposed a composite metric: Combined CTR + conversion weight to better reflect business goals.
+  Ran simulations: Demonstrated that optimizing for the new metric improved long-term revenue.
+- Result:
+  The team adopted the new metric, and our next model iteration increased conversions by 8% without sacrificing CTR.
+🔹 展示的品质:
+Stakeholder alignment (说服 PM)
+Business-aware ML (不只追求技术最优)
+Metric design expertise (定义合理评估标准)
+
 
 #### 亚麻军规14条(LP 14):
 1. Customer Obsession 顾客至上：永远站在顾客的视角上看待问题
@@ -143,6 +591,51 @@ I am very excited to have the opportunity to be interviewed here on Amazon.
 13. Have Backbone; Disagree and Commit 保持不同观点：希望听见不同的声音和可取的建议，一旦下了决定就会绝不言弃
 14. Deliver Results 结果导向：为最终的目标而努力
 
+
+1. `CUSTOMER OBSESSION`: leaders start with the customer and work backwards. They work vigorously to earn and keep customer trust. Although leaders pay attention to competitors, they obsess over customers.
+`Walk us through a time when you helped a customer through a difficult process and what that looked like.`
+
+2. `OWNERSHIP`: leaders are owners. They think long term and don’t sacrifice long-term value for short-term results. They act on behalf of the entire company, beyond just their own team. They never say “That’s not my job”.
+`Give me a example of when you took a risk and it failed.`
+
+3. `INVENT AND SIMPLIFY`: Leaders expect and require innovation and invention from their teams and always find ways to simplify. They are externally aware, look for new ideas from everywhere, and are not limited by "not invented here". As we do new things, we accept that we may be misunderstood for long periods of time.
+`Tell me a time when you created an innovative product.`
+
+4. `ARE RIGHT, A LOT`: Leaders are right a lot, they have strong judgment and  good instincts. They seek diverse perspective and work to disconfirm their beliefs.
+`Tell me about a time when you observed two business opportunities to improve ROI, and how did you determine that they were connected. /
+tell me about a time when you are wrong /
+tell me about a time when you had to work with incomplete data or information /
+make a decision, but also consider the opinions of the other people`
+
+5. `LEARN AND BE CURIOUS`: Leaders are never done learning and always seek to improve themselves. They are curious about new possibilities and act on explore them.
+`How do you find the time to stay inspired, acquire new knowledge, innovate in your work?`
+
+6. `HIRE AND DEVELOP THE BEST`: Leaders raise the performance bar with every hire and promotion. They recognize exceptional talent, and willingly move them throughout the organization. Leaders develop leaders and take seriously their in coaching others. We work on behalf of out people to invent mechanisms for development like Career Choice.
+`Tell me about a time when you had to deal with a poor performer on your team.`
+
+7. `INSIST ON THE HIGHEST STANDARDS`: Leaders have relentlessly high standards - many people may think these standards are unreasonably high. Leaders are continually raising the bar and driving their teams to deliver high quality products, services and processes. Leaders ensure that defects do not get sent down the line and that problems are fixed so they stay fixed.
+`Tell me about a time when you could have stopped working but persisted.`
+
+8. `THINK BIG`: Thinking small is a self-fulfilling prophecy. Leaders create and communicate a bold direction that inspires results. They think differently and look around corners for ways to serve customers.
+`Tell me about a time when you proposed a new business.`
+
+9. `BIAS FOR ACTION`: Speed matters in business. Many decisions and actions are reversible and do not need extensive study. We value calculated risk taking.
+`Describe how you would handle a busy situation where three people are waiting for help from you.`
+
+10. `FRUGALITY`: `Tell me about a time where you thought of a clever new way to save money for the company.`
+
+11. `EARN TRUST`: Leaders listen attentively, speak candidly, and treat others respectfully. They are vocally self-critical, even when doing so is awkward or embarrassing. Leaders do not believe their or their team’s body order smells of perfume. They benchmark themselves and their teams against the best.
+`Tell me a time when you earned trust of a group.`
+
+12. `DIVE DEEP`: trust but verify, you believe the person but check the facts anyway
+Leaders operate at all levels, stay connected to the details, audit frequently, and are skeptical when metrics and anecdote differ. No task beneath them.
+`Tell me about a time when you had to dive deep into the data and the results you achieved.`
+
+13. `HAVE BACKBONE, DISAGREE AND COMMIT`: Leaders are obligated to respectfully challenge decisions when they disagree, even when doing so is uncomfortable or exhausting. Leaders have conviction and are tenacious. They do not compromise for the sake of social cohesion. Once a decision is determined, they commit wholly.
+`Tell me about the most difficult interaction you had at work. / disagree with boss?`
+
+14. `DELIVER RESULTS`: leaders focus on the key inputs for their business and deliver them with the right quality and in a timely fashion. Despite setbacks, they rise to the occasion and never settle.
+`Tell me about a time where you overcame an obstacle and delivered results. / what you’d do after you realized you couldn’t hit the date?`
 
 
 
