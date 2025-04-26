@@ -2097,6 +2097,19 @@ class Leaderboard:
 
 
 
+10/20 phone screen： 面试官是个印度小哥人挺好很热情。 上来自我介绍之后先问为什么选Bloomberg，walk me through your resume， your proudest project。
+blablabla的谈了大概10分钟然后进去coding。
+题目是某刷题平台的430，给一个多层次的linked list要你拉平它， 不过他给的example跟平台的不一样。 平台的是每一层只会有一个node会有child node，他给的是一层内可以有多个nodes有child node。一开始我没按着他的例子写后来被他提醒了一下把码改了改过了。大概思路还是一样，先走到最底层最后一个node然后连接upper levels。
+做完还剩下10分钟随便撤了点东西就早点离开了。
+Phone screen之后立刻收到onsite，不得不说我的recruiter是真的效率。
+12/2 onsite：两轮面试每一轮1个小时。中间30分钟的break。
+第一轮面试的时候两个面试官，一个主导一个全程闭麦听。 主导的面试官态度很差感觉很不耐烦。先讨论了resume， most challenging project，conflict with teammate how did you handle it. 15分钟左右进入coding。
+题目跟#146很像，要我design个leaderboard用在一场马拉松比赛里。有m个sensors with id 0 - m-1 和n个players with id 0 - n-1。
+我用dict来存每个sensor， 然后value是list， list里面存player id。 后来被他说到用list太慢能不能用其他的ds， 脑子顿时抽筋没想得出来用linked list。直到最后10分钟才知道用linked list， 不过我逻辑已经乱掉了没做出来。
+第二轮面试的时候就只有一个面试官， 上来直接coding。 题目#543但是他找的是longest length （# of edges instead of # of nodes）。 10分钟搞定聊了聊runtime和space之后就没了。
+周一收到rejection。总的来说比较简单，题目大部分都来自刷题平台。码字不容易给个大米吧谢谢
+
+
 1249, 26, 399, 200, 314, 56, 102, 380, 42, 1274, 1347, 1209, 33, 443, 445, 116, 560, 109, 797, 387, 103, 146, 1472, 39, 656, 1396, 91, 1656, 428, 1244, 1029, 253(meeting room II)
 
 
@@ -3100,7 +3113,7 @@ Coding 2 类似刷题王舞溜罢
 四十分钟：两个coding
 第一题：给一个list of integers要放进buckets里面, 给 number_of_buckets, bucket_width，output 每个bucket里面有几个数
 直接用array/hashmap存，divide by width, 注意如果是落入最后一个bucket，整除的数会大于number_of_buckets, 要设置一个max才不会index out of bound
-第
+
 第一道是给英文段落，然后你统计words的repetitions
 思路就是linear scan，遇到delimiter，如果有cur word 就存在hashmap里面。最后扫一遍hashmap 算repetition
 注意大小写，存的时候可以换成lowercase
@@ -3148,6 +3161,7 @@ design mint.com 不要求做notification， 只需要track spent
 第一题，有[1, 5, 10, 25]硬币，用最少的组合，得到33。我写了一个while loop，然后FUQ是怎么improve RT，我说的module，然后他没有让我写
 第二题，tree, max path sum fr
 和地里另外一个面经两道题是一样的
+
 第一道题是找total repetition 需要注意case
 第二道题line
 两个题目：
@@ -3155,8 +3169,8 @@ design mint.com 不要求做notification， 只需要track spent
 2. 添加中间数达到线性
 eg1： input：[5，10，20], 5  output: [5,10,15,20]
            数组，间隔
-eg2：input: [5‍‌‌‍R
-#8205;,25,35], 10   output:[5,15,25,35]
+eg2：input: [5‍‌‌‍R#8205;,25,35], 10   output:[5,15,25,35]
+
 面到一样的第二题，需要先求出斜率（可上升/下降）然后再根据斜率补充missing的点。
 电面是在hackerrank上，他家基本没有面筋所以也没有怎么准备，记得就是两道大概是lc medium-的题，应该就是类似扫一遍list或者array然后做一些string操作或者是int操作， 时间有点久所以不记得了
 VO是3轮 coding , design , Hring manager
