@@ -842,7 +842,6 @@ coding 就是那道central bank A and simplify transaction among A-Z banks follo
 
 "This question is inspired by Plaid's Auth product which serves as a gateway to the ACH system. ACH stands for Automated Clearing House and is the backend for almost all bank payments in the United States."
 "Plaid customers such as Venmo use Plaid to authenticate users before issuing ACH transfers to your bank to fund your Venmo account."
-"ACH processes transfer requests in large batches, typically once a day in order to simplify each large batch of transfers into the simplest equivalent set o
 "ACH processes transfer requests in large batches, typically once a day in order to simplify each large batch of transfers into the simplest equivalent set of transfers between member banks. This process is called Netting."
 sourcebank targetbank amount
 Input:
@@ -2221,6 +2220,31 @@ BQ
 
 
 ## Intuit
+322. Coin Change
+124. Binary Tree Maximum Path Sum (自己implement treenode)
+215. Kth Largest Element in an Array
+33. Search in Rotated Sorted Array
+40. Combination Sum II
+31. Next Permutation
+146. LRU Cache
+1. Two Sum
+167. Two Sum II - Input Array Is Sorted
+
+伊, follow up 伊流漆
+
+2. 1小时店面, implement LRU cahe. 鬣寇原题. 写完后说一下时间和空间复杂度
+3. VO (3轮)
+第二轮系统设计, 聊天系统，需要支持双人，后续是多人聊天
+
+给了两道题都比较简单，第一道一是给一堆颜色(0,1,2,3...) 去sort他们 [0,0,1,2,3,2,0,3,2,1], 这道题用bucket sort最optimal. followup是怎么在rotated array里面搜索。刷题网 散散
+
+boolean rateLimit(String key, int interval, int maxLimit)
+可以直接搜一下rate limiter这个算法，解释得更清楚~    string key是面试官给的input， like rateLimit("device_info", 30, 3); 就是指这个key在interval的时间内只能出现这么多次
+就是做api rate limiter那道题，用sliding window就好，我一开始以为会是和hit counter一样的用binary search，但是这道题难度低一些
+题目是写一个method实现rate_limit，接口是rate_limit(key, intervalInSec, maxLimit)。就是要求在interval里面，如果同一个key的request超过了maxLimit那就disallow，如果没超过就allow，她说了可以用fixed window也可以sliding window。我是用的一个deque来维持sliding window，每次进来新的request就把timestamp放到deque tail，然后把deque head所有的out dated request pop掉，最后count deque长度。
+之后的followup是如果在一个distributed 环境下，该怎么做rate limit，就有点类似于rate limiter的sd了，简单谈了谈用分布式的redis来存sliding window然后注意race condition可以用lock但是会影响performance，可以用redis自带的builtin数据结构和command或者用lua script都行。
+
+
 技术面半小时讲之前做过的项目，从model choice到data pipeline还有deployment都问了。 剩余半小时coding，力扣LRU原题。整体不算太难，能讲清思路就好
 我看DS店面和你的MLE还蛮像的：
 “The first 30 mins is dedicated to  learning about you (relevant experience, projects, etc.) and asking general ML questions which may include fundamental topics such as data sampling, modeling approaches, pros/cons of algorithms, cross-validation, etc. The last 30 minutes is a live coding session, which usually includes a focus on core Python data structures or data manipulation (arrays, dictionaries, Pandas, Numpy, etc.)“
@@ -2235,33 +2259,254 @@ leetcode 124， 一道题
 
 
 ## DataDog
+2025-4-4 22:52:45 店面
+店面：recursion算folder size那题
+coding：地里sliding window求和那题，follow up是把index的window变时间窗口。例子中最后一个窗口是否输出和面试官有争议，我觉得他自己也没想清楚。。。我最后是对最后一个元素特殊处理。
+coding：log and query那题，几个简单followup做完了，最后问了是数据流怎么处理我也按message broker+数据库答了。面试官看起来也挺满意，不过这轮也只是weak hire。
+
+2025-4-30 16:23:57 电面
+是tail log, 我直接把description发上来：
+livetail_stream = [
+  "Q: database",
+  "Q: Stacktrace",
+  "Q: loading failed",
+  "L: Database service started",
+  "Q: snapshot loading",
+  "Q: fail",
+  "L: Started processing events",
+  "L: Loading main DB snapshot",
+  "L: Loading snapshot failed no stacktrace available",
+]
+livetail_output = [
+  "ACK: database; ID=1",
+  "ACK: Stacktrace; ID=2",
+  "ACK: loading failed; ID=3",
+  "M: Database service started; Q=1",
+  "ACK: snapshot loading; ID=4",
+  "ACK: fail; ID=5",
+  "M: Loading main DB snapshot; Q=4",
+  "M: Loading snapshot failed no stacktrace available; Q=2,3,4",
+]
+"M: Loading snapshot failed no stacktrace available; Q=2,3,4"
+is a match with Q 2,3,4 because - "Stacktrace", "loading failed", and "snapshot loading" - each of these words are present in the Log "Loading snapshot failed no stacktrace available".
+这道题算法很简单，但实际要做的string processing不少，同时要handle不少edgecase，比如说关键字的大小写normalization，所以时间还有点小紧张。强烈建议用python。
+
+2025-4-23 店面
+一个小时店面：10分钟了解面试官做什么，介绍自己做什么。剩余时间面试了两道题
+第一道题
+Input: 1) An array of latencies[], all positive integers 2) the number of buckets. 3) the bucket width.
+Output:  返回一个array，统计落入每个bucket range的latencies个数
+比如，
+Input: latencies[6,7,50, 100,110]
+bucket width： 10
+num of buckets: 11
+ranges： 0-9, 10-19, 20-29, 30-39, 40-49,50-59, 60-69, 70-79, 80-89, 90-99, 100>=
+Input: latencies[6,7,50, 100,110], numOfBuckets: 11, bucketWidth: 10
+output:
+{0-9}: 2
+{50-59}: 1
+{>=100}: 2
+第二道题
+给出一些二维的坐标点，这些坐标点会形成线性相关的几条直线。但给定的这些点都不是连续的，缺失了一下连续的点。如果连续两个点之间的x坐标相差长度k，要求根据给出的点，找到所有连续的点，每个点之间x坐标相差k，并且都在一条直线上 （也就是slope是一样的）
+input：a vector of coordinates {x, y} 和 interval size: k
+output:  打印出所有的连续点，包括已经给出的点和miss的点。
+
+2025-4-23 14:30:15
+贡献dp 全部面经题
+电面：段落找重复词，文件tree统计大小
+vo1：sliding window， k分别为个数/时间区域
+vo2: log and query （面试官解释了很久 我也只能装作没见过这道题听他解释 结果没写完...java选手无助哭泣
+sd：mint.com 这轮feedback说是sde2过，senior需要主动去提怎么去scale而不是问了才说... ok fine
+experience & value：主要挂在这两个 给的都是low sde2 原因是没有足够mentorship 以前干的活scope不够 没有impactful的engineer decision blah blah
+明摆着就是拿senior的bar去招2了
+
+2025-4-14 16:53:52 店面
+總共有兩道題目，follow up也很簡短
+第一題是給一些 log 然後要 implement 一個搜尋系統
+有點忘記細節了，不過主要是要處理大小寫、空格等
+第二題是給一個 Tree 然後要印出從起點（root）走到終點（leaf node）的路徑
+其實就是簡單的 DFS 只是要印出路徑（記得 pass in path即可）
+
+2025-4-8 23:42:31 电面
+1）given a input list containing datapoints for a metric that we receive from a customer, such as this：
+input_points = [{"tags":["env:dev"],"timestamp":0, "value 1}, {"tags":["env:dev"],"timestamp":1, "value 2}]
+write a function that takes this input, tag t, and an integer k, return the computed sum of each consective window of size k for all datapoints associated with tag k.
+
+2025-4-1 电面
+Log query
+live_input_stream =
+[
+“Q: Database”,
+“L: loading database”,
+“Q: print log”,
+“L: log is not working”,
+“L: database print log is broken”,
+“Q: Starbucks”,
+“L: starbucks database is down”
+]
+每收到了一个query， 打出ACK
+每一个query assign一个id
+如果收到一个log， 打出M，
+最后code 可以再 optimize一下， 但是没有注意到， 大家可以把 processed query words 存成 set ， 后面好处理
+写出一个函数来处理 input
+Expected output:
+out_put_stream =
+[
+“ACK: Database; QID=1”
+“M: loading database; Q=1”
+“ACK: print log; QID=2”
+“M: log is not working; Q=2”,
+“M: database print log is broken; Q=1,2”,
+“ACK: Starbucks; QID=3”,
+“M:  starbucks database is down; QID.
+]
+Follow ups:
+如果数据量很大怎么处理？
+我的答案：建立search index来辅助搜索，inverted index
+想删除query怎么办？
+面试官先让我讲了一下 目前implementation下怎么support？ inefficiency 在哪里
+然后我讲了一下可以用hashmap + doubly linkedlist 来存query 这样就可以由O（1）删除了
+
+
+2025-4-1 08:35:51 电面
+Log live tail
+Query and Log. 给一系列字符串
+[ "Q: Hello world";   "Q: Good morning";  "L: Hello my friend and the morning is good in this world"; "L: This morning is good"..]
+看到Q 就是query build index
+看到L  就是LOG， 去找之前能match上的query
+空格分开， 一个单词为单位。
+query里的单词必须都出现在Query里 才能算上这个query
+最后输出L 可以match上的Query
+面试官叫Matthew
+
+2025-3-19 VO
+Coding:
+Sliding window. 给一个数组，每个元素代表一个时间，统计window里的数据。windown的定义是一个时间段。
+类似于sliding window里的数字求和
+Coding:
+类似于Read4。数据先存到buffer里。buffer再存到file里。
+follow up：多线程怎么办，用mutex写。
+System Design
+Design mint: user can get transaction history; user can set a budget.
+两个Behavior
+
+
+2025-3-19 电面
+Buffered File 写文件的api 要使用缓存写。 缓存满后要先flush，然后继续写
+
+
+2025-3-14
 讲项目
 设计油管
-window sum
+window sum 耳令舅209?
 log and query
 BQ
 
+coding: string match. 给定一个string和一个compressed string, 判断是否match. compressed
+string里数字代表任意n个letter
+datadog, d3dog -> true
+datadog, d2dog -> false
+很多follow up , parse 各种新的字符
+代表range d{1,3}dog-> d1dog, d2dog, d3dog 然后再对比 ddog
+d10dog (parse 两位数),
+(d^4dog, d4dog) ^ 代表skip pattern
+一些edge case, empty string 这些
+
+
+2025-3-13 店面
 两个地里出现的题目：
 查找出现频率大于1的单词的数量
 DFS求最大深度的那个题
 第一题，去除,.的时候用了replace，后来debug的时候，自己发现并改成replaceAll，才run过
 第二题，回答空间复杂度的时候，回答成O（1），脑抽了，面试官challenge了一下，立刻反应过来，回答出来average，和最差情况
 
+2025-3-7 店面
 强盗抢劫房子 蠡口 亿酒捌
 做出后 follow up 了 尔亿伞
 
+2025-2-27 店面
 面试之前过了一遍Datadog所有面经 结合Recruitor发我的文档 我预计面试应该是10min project deep dive + 2道题目maybe 结果面试老哥来了之后简单互相介绍了下直接要开始做题了 我明确问有没有project deep dive环节 老哥说那是project round的事情 他只管做题, fine. 然后问了个这个题目 🔗 leetcode.com 有很多follow up, 问OOM的时候让我解释了recursion和iteration时候内存分配的区别 然后还问我有没有O(1) 空间复杂度的办法(就是读取 + parse absolute path str本身, 也挺精巧的)
 
+2025-2-10
+电面和VO按类型分类
+coding：
+用面值 [1,2,5,10] 硬币组合出面值为n， 求最少硬币使用数量
+=> 贪心尽量多用大面值
+文件目录统计文件大小sum,
+=> 多叉树的遍历。
+写文件的api 要使用缓存写。 缓存满后要先flush，然后继续写。
+=> 类似 蠡口幺午漆157。
+Query and Log. 给一系列字符串
+[ "Q: Hello world";   "Q: Good morning";  "L: Hello my friend and the morning is good in this world"; "L: This morning is good"..]
+每进来一个Query，你要打印出这个Query被assign的ID，比如第一个Query Hello world就需要打印1，第二个Query Good morning就需要打印2，以此类推3，4…。每进来一个Log，打印出有哪些之前进来的Query是match这个Log的。Match的定义就是该Query的所有单词都在该Log里出现.
+=> 地里之前有讨论， 进来一个Q就build inverted index.  然后到L里查找就好
+system design:
+设计用户花费通知系统。 类似这个
+🔗 youtu.be
+experience:
+聊工作经验。
+面试感觉挺好。面试官态度友善。 我没通过。祝大家都好运。 顺手的话请帮我加点米。谢谢。
+
+
+
+
+两题coding, 地理都有
+1. put a list of integers into a list of buckets, with a specific bucket width, return counter per bucket
+for example,
+a list of integers - [1,2,11,20, 100]
+num of bucket - 3
+bucket width - 10
+0-9:       2 (1,2)
+10-19:   1 (11)
+20+:      2 (20, 100)
+最后一个bucket, 包含所有后面的数字
+2. 给一个list 里面有坐标，按间隙补齐缺失坐标,  点和点之间是直线连接，缺失的点也必须在直线上
+for example, interval=5, interpolate missing point at x-coordinate with incremental of 5 (e.g. (0,y1), (5,y2), (10,y3)....
+input = [(0,10), (10,10),(20, -10)]
+output = [(0,10), (5,20),(10,10),(15,0) ,(20,-10)]
+(5,20) 在直线(0,10)-(10,10)上, (15,0)在直线(10,10)-(20,-10)上
+
+
+2025-2-4 Phone Interview
 here were 2 questions:
 Find duplicate words in a paragraph. Words are duplicate if they are spelled the same, even if one is capitalized and the other is not.
 Return the maximum amount of points gained in a maze game. In this game, you are given a graph representing a maze game and the amount of points awarded for entering each room. Add the total amount of points.
 
+2025-1-28
+店面：（都是老题，strong hire）
+1. 段落找重复词 (regex，小心多余空格）
+2. 文件夹求总大小 （递归。有个follow up的，我写了一半，但具体忘记了，还是很简单的）
+昂塞：
+1. Log and query老题。秒了，拿了strong hire。
+2. 跟这个帖子的第二个coding题一样的，是最近三个月的新题。解法是用sliding window，需要先跟面试官互动问清限制条件还有sorting与否之类的，一共有两问的。
+🔗 www.1point3acres.com
+我第一轮做完做到了follow up。follow up的window是要按时间戳，不是总数。我follow up没写完，口头说了没写完的那几行是啥。拿了个weak hire。
+3. BQ就是常见那些。聊的非常好，拿了个strong hire。
+4. Project deep diving 就是聊过去一个project。拿了strong hire。
+5. SD 先mint.com。然后那个面试官很不懂的样子，问data model什么的我都简单答了，结果最后反馈说他觉得我太aggressive还抢话了，导致他觉得我根本没去回答他想要的data modeling和API design signals。
+6. 其他拿strong hire轮的要求recruiter给我加面个SD，面ins api找脸那题。地里很少见，但有过两人报面经的。这次特别咱真不aggressive了，认真跟面试官互动，被问了很深。广度也cover住了。
+最后说SD平均两轮算，总的signal就不够强，所以还是拒。据说它家现在要全hire且strong越多越好。
+
+2025-1-22 11:37:07 电面
 File system/File path题变种。给了写好的class FileEntry以及它的sub classes，可以是Directory也可以是File，需要写个method 算出来给的FileEntry底下所有文件size总和。
 Follow up: Input 变成一个filepath 然后要求return这个filepath底下的所有entry的size
+
+2025-1-4 00:10:33 电面
+2024-7-10 02:29:56 电面
+bq问了最近做的项目，然后根据项目deep dive
+两个 coding 面经题
+以下内容需要积分高于 188 您已经可以浏览
+1. 给一段话，word count然后算总共重复的个数，注意大小写，只有period和comma。
+2. 给一个file system tree和directory/file interface统计总共的文件大小，follow up是给一个path统计path下的文件
+大小
+一个小时后说过了
+
+
 
 1. 给一段话，word count然后算总共重复的个数，注意大小写，只有period和comma。
 2. 给一个file system tree和directory/file interface统计总共的文件大小，follow up是给一个path统计path下的文件
 
+2025-1-4 00:04:39
 coding 1: log query
 follow up: 怎么ensure thread safe
 coding 2: buffer file
@@ -2271,6 +2516,40 @@ follow up: 怎么ensure thread safe --> lock
 system design: flight ticket price notification system
 project deep dive: 讲自己的project
 values: 正常的BQ
+
+2024-12-20 17:50:48 店面
+刚面完datadog就来地里回馈大家： 一上来一个白人小哥挺热情， 然后介绍了下流程，然后开始自我介绍，然后两道coding题，第一道是地里老题：给一个paragraph,求repetitions很简单，秒了。第二道是类似于求最大路径和，但是不能回溯，题目是一个video game的milestone, 给了mileston 结构体，然后求从root到leaf的最大和，当时代码写出来有点问题，然后面试官给了点提示，然后debug了一下通过了，希望不要挂我，整体面试体验很好，看得出来内部氛围也挺好，希望能过，分享给大家，攒rp.
+
+2024-11-15 22:16:18
+回馈地里加求米
+Datadog 视频Onsite 一共面了5轮  今天接到email,挂，但不知道是挂在哪一轮，还是都挂
+Design
+Coding I
+Coding II
+Values
+Experience
+System Design: 之前地里出现的类似于mint.com
+Coding:    FileSystem , 地里出现过
+                  给出了API
+                  list(string path) 返回STRING列表，每一个可以代表DIR，也可以是一个FILE
+                   isDirectory(String path)
+                   delete(String path) 如果是文件会返回true，如果是空目录，返回true, 如果不为空，则返回false
+      让实现一个新的DELETE(String path)，可以删除本目录以及子目录，如果是文件，直接删除
+      递归实现
+       follow up question:  系统运行后，发现OOM, 怎么FIX     
+3。 coding 2：给出, 无序的list of point  (tags, timestamp, int value),  例如
+                      {   "env:dev", 0, 444
+                           "env:dev", 5, 300
+                           "env:dev", 1, 300
+                           。。。。。。。。。。。。。。
+                      }
+                     
+                 实现query( String tag, int windowSize), 返回某一个tag, 在给定的WINDOW SIZE内， value的SUM
+4。 Value: 比较类似于BQ ，问一些做过的项目，担任的ROLE，怎么沟通等。           
+5。 Experience： 讲一个自己做过的PROJECT。  画了architect图，讲了一些设计的选择等。。
+
+
+
 
 1. maximum tree path sum
 2. frequency of words
@@ -2338,6 +2617,7 @@ onsite
 
 刚面完datadog就来地里回馈大家： 一上来一个白人小哥挺热情， 然后介绍了下流程，然后开始自我介绍，然后两道coding题，第一道是地里老题：给一个paragraph,求repetitions很简单，秒了。第二道是类似于求最大路径和，但是不能回溯，题目是一个video game的milestone, 给了mileston 结构体，然后求从root到leaf的最大和，当时代码写出来有点问题，然后面试官给了点提示，然后debug了一下通过了，希望不要挂我，整体面试体验很好，看得出来内部氛围也挺好，希望能过，分享给大家，攒rp.
 
+2024-12-5 21:40:52 VO
 coding1: log query
 coding2: buffer write, follow up: what happen if multithread write same file
 experience: 會問你一個你工作過的一個系統，要選一個複雜的系統，不要用太簡單的，我用了一個read only service with cache, 他們覺得太簡單。
@@ -2360,6 +2640,7 @@ system design: design youtube, 對話要清楚解釋design原因,比如為什麼
 很像依伍妻
 follow up multi threading, 你可以說要加 lock = threading.Lock(), with lock:
 
+2024-11-13 09:07:46
 Datadog Onsite 一共面了5轮
 Values
 Coding I
@@ -2410,7 +2691,7 @@ behaviror include experience deep dive, how to resolve conflict, why datadog
 coin找零，组合一定是能greedy的，问了什么样的组合不能greedy
 max path sum，从root开始
 
-
+2024-10-26 23:43:30
 VO总共5轮
 1. Coding I
 给一系列字符串
@@ -2435,7 +2716,27 @@ VO总共5轮
 5. Project Deep Dive
 在Excalidraw里手画了一个做过的Project架构图，谈一下要解决什么问题，技术难度有哪些，你都做了什么工作，timeline等等。
 
+2024-10-24 17:32:24 店面
+发帖吐槽下面试官。B.H initials
+题目就是地里常见的两道LC easy 原题
+1. 给一段话，数frequency
+2. nary tree target max sum
 
+2024-10-18 16:29:24 店面
+coding都是地里原题。第一个是number buckets那道，第二个是计算文件夹中所有文件大小。
+具体题目和解答可以看地里大佬写的，在这里不多赘述
+
+2024-10-16 20:55:40
+coding第一轮：删除目录，followup是什么情况会OOM以及怎么办
+coding第二轮：write to a file with a buffer，followup是write可能部分成功（类似pwrite）
+sys design轮：design mint，followup是怎么monitor这个系统，这轮比较轻松
+value轮：常规bq问题，答的一般
+experience轮：画了几个图没太认真做slides，感觉面试官技术水平一般，讲深了就听不懂
+HR反馈第一轮coding不太行给hint太多，早上第一轮还没睡好完全没在状态，所以要downlevel，move on了
+
+补充下店面，是两道题一道是count一段文字里重复的单词个数，另一道是二叉树根到叶子的值之和
+
+2024-10-7 20:27:29 店面
 LinkedIn上recruiter reach out。首先和recruiter视频闲聊了一会，唠唠家常的感觉，就开始约店面Coding轮了。
 店面前15min，自我介绍了下，然后着重讲了一个自己drive的project，回答了一个对方针对性的提问。不需要画图，纯口述。
 第一题是给一个target sum，和[1,5,10,25]。问使用最少的数字个数来凑齐这个target sum。解答很简单：先用大数，再用小数，直到最后用1来凑齐。
@@ -2452,7 +2753,7 @@ sys design轮：design mint，followup是怎么monitor这个系统，这轮比�
 value轮：常规bq问题，答的一般
 experience轮：画了几个图没太认真做slides，感觉面试官技术水平一般，讲深了就听不懂
 
-
+2024-9-24 07:16:33 VO
 面试senior software engineer， fail了， hr反馈系统设计一般，整体体验还不错，感觉每个人都很chill，应该是个适合长待的地方。 顺便求点大米
 第一轮： coding， 老题，query和log
 写一个function，读入这组strings, 如果是query, 要register不同的query并给他们assign一个qid，如果是log, 找到match的query qid并print出来. match 的意思是query的words是 subset of log‘s words。
@@ -2656,7 +2957,7 @@ class LogsAndQueries:
 注 这个代码是对应于需要考虑相同word在每个query中出现次数的情况，如果不需要考虑出现次数，那么做相应简化即可，思路是一样的。
 
 
-
+2025-2-10
 电面和VO按类型分类
 coding：
 322 用面值 [1,2,5,10] 硬币组合出面值为n， 求最少硬币使用数量
@@ -2698,21 +2999,6 @@ https://www.youtube.com/watch?v=ZWXmPgwInjg
 本来我疯狂输出dp和bfs但是他拦住了我说是没那么复杂，意思就是直接从大到小遍历下硬币数组即可。
 第二个题是实现一个circular buffer用fixed sized array, 要求实现queue的各种基本操作。没写完，只说了思路，用两个指针分别存下一个push 和pop的位置。
 
-两题coding, 地理都有
-1. put a list of integers into a list of buckets, with a specific bucket width, return counter per bucket
-for example,
-a list of integers - [1,2,11,20, 100]
-num of bucket - 3
-bucket width - 10
-0-9:       2 (1,2)
-10-19:   1 (11)
-20+:      2 (20, 100)
-最后一个bucket, 包含所有后面的数字
-2. 给一个list 里面有坐标，按间隙补齐缺失坐标,  点和点之间是直线连接，缺失的点也必须在直线上
-for example, interval=5, interpolate missing point at x-coordinate with incremental of 5 (e.g. (0,y1), (5,y2), (10,y3)....
-input = [(0,10), (10,10),(20, -10)]
-output = [(0,10), (5,20),(10,10),(15,0) ,(20,-10)]
-(5,20) 在直线(0,10)-(10,10)上, (15,0)在直线(10,10)-(20,-10)上
 
 非常想去的公司，做了很多的准备。地理的面经很有用，全看完基本能覆盖8成。
 第一轮，白人小哥，非常nice不断提示，题目是飞不同城市最大化holiday天数，比利口上的标签题简单。
