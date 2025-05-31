@@ -3,12 +3,12 @@
 
 ### Hello Interview
 主线任务:
-Requirements( 5 mins)
-Core Entities ( 2 mins)
-API Design ( 5 mins)
-[Optional]Data Flow ( 5 mins) -not applicable to product design
-High Level Design ( 10-15 mins)
-Deep Dives ( 10 mins)
+- Requirements( 5 mins)
+- Core Entities ( 2 mins)
+- API Design ( 5 mins)
+- [Optional]Data Flow ( 5 mins) -not applicable to product design
+- High Level Design ( 10-15 mins)
+- Deep Dives ( 10 mins)
 
 ### System Design Problems ###
 Be in charge and tradeoffs, tradeoffs, tradeoffs...
