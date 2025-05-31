@@ -1,6 +1,15 @@
 ## System Design
 > https://github.com/alex-xu-system/bytebytego
 
+### Hello Interview
+主线任务:
+Requirements( 5 mins)
+Core Entities ( 2 mins)
+API Design ( 5 mins)
+[Optional]Data Flow ( 5 mins) -not applicable to product design
+High Level Design ( 10-15 mins)
+Deep Dives ( 10 mins)
+
 ### System Design Problems ###
 Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
@@ -134,7 +143,7 @@ Here are a few reasons to choose a NoSQL database: Storing large volumes of data
 ![Diagram of deployment.](pic/cap.png)
 
 `CAP Theorem`
-CAP theorem states that it is impossible for a distributed system to simultaneously provide all three of the following desirable properties: 
+CAP theorem states that it is impossible for a distributed system to simultaneously provide all three of the following desirable properties:
 - Consistency (C): All nodes see the same data at the same time.
 - Availability (A): In simple terms, availability refers to a system’s ability to remain accessible even if one or more nodes in the system go down.
 - Partition tolerance (P): A partition is a communication break (or a network failure) between any two nodes in the system, i.e., both nodes are up but cannot communicate with each other.
@@ -297,7 +306,7 @@ Stream Processing: Samza, Storm
 ```
 1. What size of data are you dealing with?
 
-2. Do you need to be able to serve predictions in real time? 
+2. Do you need to be able to serve predictions in real time?
 
 3. How often do you expect to update your models?
 
