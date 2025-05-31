@@ -10,6 +10,18 @@
 - High Level Design ( 10-15 mins)
 - Deep Dives ( 10 mins)
 
+key technologies每个类别至少深入掌握一种广泛使用的技术,比如关系型数据库,至少熟悉一种(postgreSQL或者mysql), nosql至少熟悉一种(for example, Cassandra 或者DynamoDB):
+- Database: Relational(PostgreSQL) and  NoSQL(Cassandra, DynamoDB)
+- Blob Storage(S3)
+- Search Optimized Database(Elasticsearch)
+- API Gateway(AWS api gateway, etc.)
+- Load Balancer
+- Queue(Kafka)
+- Stream/Event Sourcing
+- Distributed Lock
+- Distributed Cache(Redis)
+- CDN
+
 ### System Design Problems ###
 Be in charge and tradeoffs, tradeoffs, tradeoffs...
 
