@@ -4,7 +4,8 @@
 > https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction
 
 ### Hello Interview
-主线任务:
+
+`主线任务:`
 - Requirements( 5 mins)
 - Core Entities ( 2 mins)
 - API Design ( 5 mins)
@@ -12,7 +13,7 @@
 - High Level Design ( 10-15 mins)
 - Deep Dives ( 10 mins)
 
-key technologies每个类别至少深入掌握一种广泛使用的技术,比如关系型数据库,至少熟悉一种(postgreSQL或者mysql), nosql至少熟悉一种(for example, Cassandra 或者DynamoDB):
+`key technologies每个类别至少深入掌握一种广泛使用的技术,比如关系型数据库,至少熟悉一种(postgreSQL或者mysql), nosql至少熟悉一种(for example, Cassandra 或者DynamoDB):`
 - Database: Relational(PostgreSQL) and  NoSQL(Cassandra, DynamoDB)
 - Blob Storage(S3)
 - Search Optimized Database(Elasticsearch)
@@ -24,7 +25,7 @@ key technologies每个类别至少深入掌握一种广泛使用的技术,比如
 - Distributed Cache(Redis)
 - CDN
 
-hellointerview总结了系统设计面试需要用到的核心概念:
+`hellointerview总结了系统设计面试需要用到的核心概念:`
 - vertical scaling vs horizontal scaling
 - work distribution(load balancing)
 - data distribution(sharding)
@@ -35,7 +36,7 @@ hellointerview总结了系统设计面试需要用到的核心概念:
 - Security(Authentication/authorization, Encryption, Data Protection)
 - Monitoring:  infrastructure monitoring, service-level  monitoring, application-level monitoring
 
-面试准备时间紧迫,如果你能够识别特定设计所需的模式,不仅可以fall back to best practices而且可以节省大量重试造轮子的时间:
+`面试准备时间紧迫,如果你能够识别特定设计所需的模式,不仅可以fall back to best practices而且可以节省大量重试造轮子的时间:`
 - Simple DB-backend CRUD Service with caching
 - Async job worker pool
 - Two Stage architecture
