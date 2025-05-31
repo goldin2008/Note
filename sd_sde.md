@@ -1,5 +1,6 @@
 ## System Design
 > https://github.com/alex-xu-system/bytebytego
+
 > https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction
 
 ### Hello Interview
@@ -22,6 +23,27 @@ key technologies每个类别至少深入掌握一种广泛使用的技术,比如
 - Distributed Lock
 - Distributed Cache(Redis)
 - CDN
+
+hellointerview总结了系统设计面试需要用到的核心概念:
+- vertical scaling vs horizontal scaling
+- work distribution(load balancing)
+- data distribution(sharding)
+- CAP Theorem
+- Locking(granularity of the lock, duration of the lock, whether we can bypass the lock)
+- Indexing(database index, geospatial indexes, vector databases, full-text indexes)
+- Communication Protocols: HTTP(s), SSE, long polling, websocket
+- Security(Authentication/authorization, Encryption, Data Protection)
+- Monitoring:  infrastructure monitoring, service-level  monitoring, application-level monitoring
+
+面试准备时间紧迫,如果你能够识别特定设计所需的模式,不仅可以fall back to best practices而且可以节省大量重试造轮子的时间:
+- Simple DB-backend CRUD Service with caching
+- Async job worker pool
+- Two Stage architecture
+- Event-Driven Architecture
+- Durable Job Processing
+- Proximity-based services
+- Real-time updates
+
 
 ### System Design Problems ###
 Be in charge and tradeoffs, tradeoffs, tradeoffs...
