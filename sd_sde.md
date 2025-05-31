@@ -1,5 +1,6 @@
 ## System Design
 > https://github.com/alex-xu-system/bytebytego
+> https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction
 
 ### Hello Interview
 主线任务:
