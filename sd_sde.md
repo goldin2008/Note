@@ -46,7 +46,7 @@
 - Real-time updates
 
 
-The most common ways that candidates fail with this competency are:
+`The most common ways that candidates fail with this competency are:`
 - Not being able to communicate complex concepts clearly.
 - Being defensive or argumentative when receiving feedback.
 - Getting lost in the weeds and not being able to work with the interviewer to solve the problem.
