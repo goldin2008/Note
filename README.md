@@ -97,6 +97,11 @@ Rank	Destination	International
 - [x] 9	 Portugal	―	9.6 million	6.5 million	24.5 million	―	Increase 48.4
 - [x] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
 
+#### 2026, 5.18 (30 days)
+- Finland
+  - Rovaniemi
+  - Helsinki
+
 
 #### 2025, 8.18-2025, 11.01 (60 days)
 - France
@@ -106,9 +111,22 @@ Rank	Destination	International
 - Liechtenstein
 - Andorra
 - Monaco
+- Bulgaria 2 days
+  - Sofia
+- Croatia
+  - Dubrovnik
+- Slovakia
+  - Bratislava
+- Slovenia
+  - Ljubljana
+- Germany
+  - Hamburg
+- Switzerland 1.14-1.15 (1 day)
+  - Zürich
+
+
 - Turkey (电子签)
   - Istanbul
-
 - Belarus (互免普通护照签证)
   - Minsk
 - Georgia (对中国护照已免签30天, GC 90天)
@@ -117,26 +135,16 @@ Rank	Destination	International
   - Yerevan
 - Moldova (电子签)
   - Chișinău
-
-- Bulgaria 2 days
-  - Sofia
 - North Macedonia (China 停留期：15天) 2 days
   - Skopje
 - Montenegro (GC 停留期：30天) 2 days
   - Podgorica
-- Croatia
-  - Dubrovnik
-- Slovakia
-  - Bratislava
-- Slovenia
-  - Ljubljana
-- Finland
-  - Rovaniemi
-  - Helsinki
-  - Ukraine (电子签)
-    - Kyiv
-  - Russia (电子签)
-    - Moscow
+- Kosovo
+- Ukraine (电子签)
+  - Kyiv
+- Russia (电子签)
+  - Moscow
+
 
 #### 2024, 12.25-2025 1.26 (33 days)
 - France (1 day)
