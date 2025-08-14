@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     A[User Interface] --> B[API Gateway];
     B --> C[AWS Lambda (RAG Function)];
@@ -9,3 +10,4 @@ graph TD
     G --> C;
     C --> B;
     B --> A;
+```
