@@ -6,7 +6,8 @@
       C-->D;
 ```
 
-graph TD
+```mermaid
+  graph TD
     A[User Interface] --> B[API Gateway];
     B --> C["AWS Lambda (RAG Function)"];
     C --> D[Amazon Kendra / Knowledge Bases for Amazon Bedrock];
@@ -17,3 +18,4 @@ graph TD
     G --> C;
     C --> B;
     B --> A;
+```
