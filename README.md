@@ -103,9 +103,9 @@ Rank	Destination	International
   - Helsinki
 
 
-#### 2025, 8.18-2025, 11.01 (60 days)
+#### 2025, 8.29-2025, 10.11 (40 days)
 - France
-  - Paris (8.18)
+  - Paris (8.29)
 - Italy
   - Rome
 - Liechtenstein
