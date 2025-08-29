@@ -105,13 +105,10 @@ Rank	Destination	International
 
 #### 2025, 8.29-2025, 10.11 (40 days)
 - France
-  - Paris (8.29)
+  - Paris (8.29-8.31)
 - Italy
   - Rome
-- Liechtenstein
-- Andorra
-- Monaco
-- Bulgaria 2 days
+- Bulgaria
   - Sofia
 - Croatia
   - Dubrovnik
@@ -120,13 +117,13 @@ Rank	Destination	International
 - Slovenia
   - Ljubljana
 - Germany
-  - Hamburg
-- Switzerland 1.14-1.15 (1 day)
-  - Zürich
+  - Stuttgart
+  - Munich
+- Czech Republic 9.23-9.26 (3 days)
+  - Prague
 
 
-- Turkey (电子签)
-  - Istanbul
+
 - Belarus (互免普通护照签证)
   - Minsk
 - Georgia (对中国护照已免签30天, GC 90天)
@@ -140,6 +137,12 @@ Rank	Destination	International
 - Montenegro (GC 停留期：30天) 2 days
   - Podgorica
 - Kosovo
+
+- Liechtenstein
+- Andorra
+- Monaco
+- Turkey (电子签)
+  - Istanbul
 - Ukraine (电子签)
   - Kyiv
 - Russia (电子签)
