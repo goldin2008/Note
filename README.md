@@ -105,42 +105,46 @@ Rank	Destination	International
 
 #### 2025, 8.29-2025, 10.11 (40 days)
 - France
-  - Paris (8.29-8.31)
-- Italy
-  - Rome
+  - Paris (8.29-8.30)
+  - Fontainebleau (8.31)
 - Bulgaria
-  - Sofia
+  - Sofia (9.1-9.2)
+- North Macedonia (China 停留期：15天) 2 days
+  - Skopje (9.3)
+  - Ohrid (9.5-9.6)
+- Montenegro (GC 停留期：30天) 2 days
+  - Kotor (9.7)
+- Kosovo
+  - Pristina (9.4)
 - Croatia
-  - Dubrovnik
-- Slovakia
-  - Bratislava
+  - Dubrovnik (9.8)
+  - Zagreb (9.9)
 - Slovenia
-  - Ljubljana
+  - Ljubljana (9.10)
 - Germany
   - Stuttgart
   - Munich
-- Czech Republic 9.23-9.26 (3 days)
-  - Prague
+
+- Liechtenstein
+- Italy
+  - Rome
 
 
-
+- Andorra
+- Monaco
+- Slovakia
+  - Bratislava
 - Belarus (互免普通护照签证)
   - Minsk
+
+
 - Georgia (对中国护照已免签30天, GC 90天)
   - Tbilisi
 - Armenia (互免普通护照签证)
   - Yerevan
+
 - Moldova (电子签)
   - Chișinău
-- North Macedonia (China 停留期：15天) 2 days
-  - Skopje
-- Montenegro (GC 停留期：30天) 2 days
-  - Podgorica
-- Kosovo
-
-- Liechtenstein
-- Andorra
-- Monaco
 - Turkey (电子签)
   - Istanbul
 - Ukraine (电子签)
