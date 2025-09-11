@@ -2,32 +2,32 @@
 The Schengen area is made up of (23+2)29 European countries, including:
 - [x] Austria
 - [x] Belgium
-- [?] Bulgaria
-- [?] Croatia
+- [x] Bulgaria
+- [x] Croatia
 - [x] Czech Republic
-- [X] Denmark
+- [x] Denmark
 - [x] Estonia
-- [] Finland
+- [?] Finland
 - [x] France
 - [x] Germany
 - [x] Greece
 - [x] Hungary
-- [X] Iceland
+- [?] Iceland
 - [x] Italy
 - [x] Latvia
 - [?] Liechtenstein
 - [x] Lithuania
-- [X] Luxembourg
+- [x] Luxembourg
 - [x] Malta
-- [X] The Netherlands
-- [X] Norway
+- [x] The Netherlands
+- [x] Norway
 - [x] Poland
 - [x] Portugal
-- [X] Romania
-- [?] Slovakia
-- [?] Slovenia
+- [x] Romania
+- [x] Slovakia
+- [x] Slovenia
 - [x] Spain
-- [X] Sweden
+- [x] Sweden
 - [x] Switzerland
 
 - [?] Andorra
@@ -102,6 +102,19 @@ Rank	Destination	International
   - Rovaniemi
   - Helsinki
 
+- Georgia (对中国护照已免签30天, GC 90天)
+  - Tbilisi
+- Armenia (互免普通护照签证)
+  - Yerevan
+
+- Moldova (电子签)
+  - Chișinău
+- Turkey (电子签)
+  - Istanbul
+- Ukraine (电子签)
+  - Kyiv
+- Russia (电子签)
+  - Moscow
 
 #### 2025, 8.29-2025, 10.11 (40 days)
 - France
@@ -118,39 +131,26 @@ Rank	Destination	International
   - Pristina (9.4)
 - Croatia
   - Dubrovnik (9.8)
-  - Zagreb (9.9)
+  - Zagreb (9.9-9.10)
 - Slovenia
   - Ljubljana (9.10)
-- Germany
-  - Stuttgart
-  - Munich
-
-- Liechtenstein
-- Italy
-  - Rome
-
-
-- Andorra
-- Monaco
+- Austria
+  - Vienna (9.11)
 - Slovakia
-  - Bratislava
+  - Bratislava (9.12)
+- Hungary
+  - Budapest (9.12-9.13)
+- Italy
+  - Rome (9.14)
+
 - Belarus (互免普通护照签证)
   - Minsk
 
+- Liechtenstein
+- Andorra
+- Monaco
 
-- Georgia (对中国护照已免签30天, GC 90天)
-  - Tbilisi
-- Armenia (互免普通护照签证)
-  - Yerevan
 
-- Moldova (电子签)
-  - Chișinău
-- Turkey (电子签)
-  - Istanbul
-- Ukraine (电子签)
-  - Kyiv
-- Russia (电子签)
-  - Moscow
 
 
 #### 2024, 12.25-2025 1.26 (33 days)
