@@ -141,15 +141,26 @@ Rank	Destination	International
 - Hungary
   - Budapest (9.12-9.13)
 - Italy
-  - Rome (9.14)
-
+  - Rome (9.14-9.15, 9.21)
+  - Palermo (9.16-9.18)
+  - Naples (9.19)
+  - Pompei (9.20)
+- Lithuania
+  - Vilnius (9.22-9.23)
 - Belarus (互免普通护照签证)
-  - Minsk
+  - Minsk (9.24-9.25)
+- Poland
+  - Warsaw (9.26-9.27)
 
-- Liechtenstein
+- Spain
+  - Barcelona 12.11-12.13 (2 days)
 - Andorra
 - Monaco
-
+- Liechtenstein
+- Switzerland 1.14-1.15 (1 day)
+  - Zürich
+- France
+  - Paris 1.24-1.25
 
 
 
