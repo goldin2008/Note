@@ -146,21 +146,20 @@ Rank	Destination	International
   - Naples (9.19)
   - Pompei (9.20)
 - Lithuania
-  - Vilnius (9.22-9.23)
+  - Vilnius (9.22-9.23, 9.26)
 - Belarus (互免普通护照签证)
   - Minsk (9.24-9.25)
-- Poland
-  - Warsaw (9.26-9.27)
-
-- Spain
-  - Barcelona 12.11-12.13 (2 days)
-- Andorra
-- Monaco
-- Liechtenstein
-- Switzerland 1.14-1.15 (1 day)
-  - Zürich
+- Italy
+  - Turin (9.27-9.28)
 - France
-  - Paris 1.24-1.25
+  - Nice (9.29-10.1)
+  - Marseille (10.2)
+- Monaco
+- Spain
+  - Barcelona (10.3-10.8)
+- Andorra
+- France
+  - Paris (10.9-10.11)
 
 
 
