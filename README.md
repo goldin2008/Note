@@ -150,13 +150,13 @@ Rank	Destination	International
 - Belarus (互免普通护照签证)
   - Minsk (9.24-9.25)
 - Italy
-  - Turin (9.27-9.28)
+  - Turin (9.27-9.30, 10.1) 5days
 - France
-  - Nice (9.29-10.1)
-  - Marseille (10.2)
+  - Nice (10.2)
+  - Marseille (10.3)
 - Monaco
 - Spain
-  - Barcelona (10.3-10.8)
+  - Barcelona (10.4-10.8)
 - Andorra
 - France
   - Paris (10.9-10.11)
