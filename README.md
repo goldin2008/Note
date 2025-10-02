@@ -1,5 +1,5 @@
 ### Travel
-The Schengen area is made up of (23+2)29 European countries, including:
+The Schengen area is made up of (26+4)29+4 European countries, including:
 - [x] Austria
 - [x] Belgium
 - [x] Bulgaria
@@ -30,10 +30,14 @@ The Schengen area is made up of (23+2)29 European countries, including:
 - [x] Sweden
 - [x] Switzerland
 
-- [?] Andorra
-- [?] Monaco
+- [x] Andorra
+- [x] Monaco
 - [x] San Marino
 - [x] Vatican City
+
+Europe:
+
+
 
 Most visited destinations by international tourist arrivals
 Rank	Destination	International
