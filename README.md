@@ -1,4 +1,5 @@
-### Travel
+### Travel (42 Countries)
+
 The Schengen area is made up of (26+4)29+4 European countries, including:
 - [x] Austria
 - [x] Belgium
@@ -35,8 +36,29 @@ The Schengen area is made up of (26+4)29+4 European countries, including:
 - [x] San Marino
 - [x] Vatican City
 
-Europe:
+Europe: 7
+- North Macedonia (China 停留期：15天) 2 days
+  - Skopje (9.3)
+  - Ohrid (9.5-9.6)
+- Montenegro (GC 停留期：30天) 2 days
+  - Kotor (9.7)
+- Kosovo
+  - Pristina (9.4)
+- Belarus (互免普通护照签证)
+  - Minsk (9.24-9.25)
+- Albania (China) 2 days
+  - Tirana (1.2)
+- Serbia (China) 2 days
+  - Belgrade (1.3-1.5)
+- Bosnia and Herzegovina (China) 2 days
+  - Mostar (1.6-1.7)
+  - Sarajevo (1.8-1.9)
 
+Asia: 1
+China
+
+North America: 1
+USA
 
 
 Most visited destinations by international tourist arrivals
