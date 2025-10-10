@@ -168,7 +168,10 @@ Rank	Destination	International
 - [x] 9	 Portugal	―	9.6 million	6.5 million	24.5 million	―	Increase 48.4
 - [x] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
 
-#### 2026, 5.18 (30 days)
+#### 2025, 12.18 (30 days)
+
+
+
 - Finland
   - Rovaniemi
   - Helsinki
@@ -227,10 +230,9 @@ Rank	Destination	International
   - Marseille (10.3)
 - Monaco
 - Spain
-  - Barcelona (10.4-10.8)
-- Andorra
+  - Barcelona (10.4-10.11)
 - France
-  - Paris (10.9-10.11)
+  - Paris (10.11)
 
 
 
