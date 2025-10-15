@@ -168,19 +168,7 @@ Rank	Destination	International
 - [x] 9	 Portugal	―	9.6 million	6.5 million	24.5 million	―	Increase 48.4
 - [x] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
 
-#### 2025, 12.18 (30 days)
-
-
-
-- Finland
-  - Rovaniemi
-  - Helsinki
-
-- Georgia (对中国护照已免签30天, GC 90天)
-  - Tbilisi
-- Armenia (互免普通护照签证)
-  - Yerevan
-
+#### 2026, 12.13-1.6 (days)
 - Moldova (电子签)
   - Chișinău
 - Turkey (电子签)
@@ -190,7 +178,23 @@ Rank	Destination	International
 - Russia (电子签)
   - Moscow
 
-#### 2025, 8.29-2025, 10.11 (40 days)
+
+#### 2025, 12.13-1.6 (24 days)
+- Finland
+  - Rovaniemi
+  - Helsinki
+
+- Georgia (对中国护照已免签30天, GC 90天)
+  - Tbilisi
+- Armenia (互免普通护照签证)
+  - Yerevan
+
+- Andorra
+- Liechtenstein
+- Malta
+
+
+#### 2025, 8.29-2025, 10.11 (43 days)
 - France
   - Paris (8.29-8.30)
   - Fontainebleau (8.31)
