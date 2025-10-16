@@ -31,7 +31,7 @@ The Schengen area is made up of (26+4)29+4 European countries, including:
 - [x] Sweden
 - [x] Switzerland
 
-- [x] Andorra
+- [?] Andorra
 - [x] Monaco
 - [x] San Marino
 - [x] Vatican City
