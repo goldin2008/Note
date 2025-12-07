@@ -19,6 +19,13 @@ Random forest and gradient boosting machines (GBM) are both ensemble methods tha
 - GBM, on the other hand, reduces bias by creating a sequence of decision trees where each tree tries to correct the errors of the previous tree. The algorithm starts with a simple model and then iteratively adds new trees, with each tree focusing on the residuals of the previous trees. This sequential process helps to reduce bias and improve the model's accuracy.
 - In terms of bias-variance trade-off, Random Forest tends to have lower variance and higher bias compared to GBM, while GBM tends to have lower bias and higher variance compared to Random Forest. This is because Random Forest creates multiple independent trees with random subsets of the data, which helps to reduce overfitting and improve generalization, but also reduces the model's ability to capture complex relationships in the data. GBM, on the other hand, creates a sequence of trees that sequentially correct errors, which helps to capture complex relationships in the data but also increases the risk of overfitting. Overall, the choice between Random Forest and GBM depends on the specific problem, the size and quality of the data, and the desired trade-off between bias and variance. It is often recommended to try both methods and compare their performance on the specific task at hand.
 
+### Coinbase
+
+
+
+
+
+
 
 ### Amazon
 AS面试
