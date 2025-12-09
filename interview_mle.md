@@ -20,7 +20,22 @@ Random forest and gradient boosting machines (GBM) are both ensemble methods tha
 - In terms of bias-variance trade-off, Random Forest tends to have lower variance and higher bias compared to GBM, while GBM tends to have lower bias and higher variance compared to Random Forest. This is because Random Forest creates multiple independent trees with random subsets of the data, which helps to reduce overfitting and improve generalization, but also reduces the model's ability to capture complex relationships in the data. GBM, on the other hand, creates a sequence of trees that sequentially correct errors, which helps to capture complex relationships in the data but also increases the risk of overfitting. Overall, the choice between Random Forest and GBM depends on the specific problem, the size and quality of the data, and the desired trade-off between bias and variance. It is often recommended to try both methods and compare their performance on the specific task at hand.
 
 ### Coinbase
+6道多选题（顺序忘了）
+1. 算recall和FPR选满足条件的选项
+2. 选logistic regression的loss
+3. 怎么同时increase bias和reduce variance
+4. 选择在考虑使用Ensemble learning时候正确的consideration
+5. 什么时候考虑使用PCA vs LDA
+6. 还有一题忘了
 
+1道计算题（填空写一个最终答案，四位小数）
+给了一个两层的神经网络计算output。激活函数是ReLU和Sigmoid
+
+3道coding
+1. 给一个string输出最长的连续字符和这个字符的长度。如果有多个最长的输出最右边的一个。
+2. implement bootstrap。需要implement bootstrap的resampling，fit和predict
+3. implement decision tree。需要implement计算purity（不是gini，会给公式）, information gain和predict
+推荐可以上codesignal过一遍classification algorithms and metrics这个课，有一节是Building a Decision Tree from Scratch in Python
 
 
 
