@@ -20,22 +20,68 @@ Random forest and gradient boosting machines (GBM) are both ensemble methods tha
 - In terms of bias-variance trade-off, Random Forest tends to have lower variance and higher bias compared to GBM, while GBM tends to have lower bias and higher variance compared to Random Forest. This is because Random Forest creates multiple independent trees with random subsets of the data, which helps to reduce overfitting and improve generalization, but also reduces the model's ability to capture complex relationships in the data. GBM, on the other hand, creates a sequence of trees that sequentially correct errors, which helps to capture complex relationships in the data but also increases the risk of overfitting. Overall, the choice between Random Forest and GBM depends on the specific problem, the size and quality of the data, and the desired trade-off between bias and variance. It is often recommended to try both methods and compare their performance on the specific task at hand.
 
 ### Coinbase
-6道多选题（顺序忘了）
-1. 算recall和FPR选满足条件的选项
-2. 选logistic regression的loss
-3. 怎么同时increase bias和reduce variance
-4. 选择在考虑使用Ensemble learning时候正确的consideration
-5. 什么时候考虑使用PCA vs LDA
-6. 还有一题忘了
+- 6道多选题（顺序忘了）
+  1. 算recall和FPR选满足条件的选项
+  2. 选logistic regression的loss
+  3. 怎么同时increase bias和reduce variance
+  4. 选择在考虑使用Ensemble learning时候正确的consideration
+  5. 什么时候考虑使用PCA vs LDA
+  6. 还有一题忘了
 
-1道计算题（填空写一个最终答案，四位小数）
-给了一个两层的神经网络计算output。激活函数是ReLU和Sigmoid
+- 1道计算题（填空写一个最终答案，四位小数）
+  给了一个两层的神经网络计算output。激活函数是ReLU和Sigmoid
 
-3道coding
-1. 给一个string输出最长的连续字符和这个字符的长度。如果有多个最长的输出最右边的一个。
-2. implement bootstrap。需要implement bootstrap的resampling，fit和predict
-3. implement decision tree。需要implement计算purity（不是gini，会给公式）, information gain和predict
-推荐可以上codesignal过一遍classification algorithms and metrics这个课，有一节是Building a Decision Tree from Scratch in Python
+- 3道coding
+  1. 给一个string输出最长的连续字符和这个字符的长度。如果有多个最长的输出最右边的一个。
+  2. implement bootstrap。需要implement bootstrap的resampling，fit和predict
+  3. implement decision tree。需要implement计算purity（不是gini，会给公式）, information gain和predict
+  推荐可以上codesignal过一遍classification algorithms and metrics这个课，有一节是Building a Decision Tree from Scratch in Python
+
+每题可以多次提交。coding题能看到自己的test case过了多少个（总共200多个应该）
+
+"""---------"""
+70分钟，7道多选题和计算题，3道coding。如果没有提前准备，应该是做不完，时间太紧张了，有些test cases还挺难过的。是我目前做过最难的OA了。主要是题目太多了。普通的SDE OA 70分钟最多2题coding，这个三题coding，题目还很长，还要读他们给的code，不能改他们的style，要看懂才能继续做……
+
+用的是codesignal的machine learning track。要开摄像头。
+
+6题多选题都是ML基本知识考察。占分很小。所以要先做coding。
+一题看图计算神经网络的输出值。手算估计是来不及了。
+
+三题coding，一题是leetcode那种。比较简单的。比如着local maximum的数。
+另外两题：decision tree算法实现，kmeans算法实现，KNN算法实现或者bagging算法实现。
+
+"""---------"""
+然后是 codesignal 的技术 OA 。 70 分钟，7 道选择，1 道神经网络算输出，3 道 coding 题。
+
+选择题都是ML 基础知识，出结果之后发现一道都没做对。。。
+
+coding 1：不需要什么算法和时间复杂度，但边界条件比较繁琐。大概是说，给一个 string，格式是 123 + 456，往里面加一个括号，找出所有可能性里最小的结果。比如可以是 1(23 + 4)56，那么结果就是 1 * (23 + 4) * 56 。
+
+coding 2：implement 一个perceptron和 back propagation。纯 native python，不需要用 numpy 之类的。给了一些 helper funtion，往里填就可以。
+
+coding 3：implement 一个 decision tree，但真正需要写代码的地方只有 imformation entropy 和 information gain 两个函数。
+
+"""---------"""
+前两周做的没做过，这个OA一定得提前写，因为每个题目都特别长，看题目都要看很久还要看代码，出点问题他们IDE也不容易debug。
+
+70min，7个小题，3个大题，建议先做大题。
+
+第一个题是个coding题目，local maximum，就是说给你一组数然后给你window size，比如window size是2，如果 A_i-2<A_i-1<A_i and A_i>A_i+1>A_i+2 那A_i就是local maximum，得注意一些边界条件。
+
+第二个题就是一个正常的神经网络，让你写backpropogation，它会给你derivative的计算公式，我记得神经网络好像比较简单，就是Y=WX+B，然后loss是MSE应该，纯python的，没有调用任何包
+
+第三个题是个decision tree，让你写entropy，当然也给你计算公式，让你完成怎么训练一个decision tree，然后写怎么做inference好像。
+
+后面两个题都是大框架给你了，让你写一些method，知道题目让chatgpt给你写，自己也写一写，能提前熟悉一下题目70分钟应该能写完，祝大家都能过OA，有帮助的话麻烦加米。
+
+
+"""---------"""
+面试官天竺小姐姐，要手写K means再写点test，plot loss function，plot的syntax不会可以查Follow up: parallel computing
+
+Follow up:
+1. time complexity
+2. 如何parallel
+3. 用KMEANS的assumption, 如何确定Stop criteria, 以及number of cluster
 
 
 
