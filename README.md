@@ -168,7 +168,7 @@ Rank	Destination	International
 - [x] 9	 Portugal	―	9.6 million	6.5 million	24.5 million	―	Increase 48.4
 - [x] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
 
-#### 2026, 12.13-1.6 (days)
+#### 2026, 6.1-8.1 (days)
 - Moldova (电子签)
   - Chișinău
 - Turkey (电子签)
@@ -178,6 +178,17 @@ Rank	Destination	International
 - Russia (电子签)
   - Moscow
 
+
+#### 2026, 3.5-3.22 (18-2 days)
+- 天津 (3 days)
+- 香港 (4 days)
+- 澳门 (1 day)
+- 珠海 (1 day)
+- 广州 (2 days)
+- 桂林 (1 day)
+- 长沙 (1 day)
+- 武汉 (1 day)
+- 北京 (2 days)
 
 #### 2025, 12.13-1.6 (24 days)
 - Finland
