@@ -185,9 +185,7 @@ Rank	Destination	International
 - 澳门 (1 day)
 - 珠海 (1 day)
 - 广州 (2 days)
-- 桂林 (1 day)
-- 长沙 (1 day)
-- 武汉 (1 day)
+- 上海 (2 days)
 - 北京 (2 days)
 
 #### 2025, 12.13-1.6 (24 days)
