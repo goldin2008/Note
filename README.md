@@ -182,10 +182,10 @@ Rank	Destination	International
 #### 2026, 3.5-3.22 (18-2 days)
 - 天津 (3 days)
 - 香港 (4 days)
-- 澳门 (1 day)
-- 珠海 (1 day)
-- 广州 (2 days)
+- 深圳 (1 day)
+- 广州 (1 day)
 - 上海 (2 days)
+- 南京 (2 days)
 - 北京 (2 days)
 
 #### 2025, 12.13-1.6 (24 days)
