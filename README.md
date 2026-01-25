@@ -188,20 +188,22 @@ Rank	Destination	International
 - 南京 (2 days)
 - 北京 (2 days)
 
-#### 2025, 12.13-1.6 (24 days)
+#### 2026, 4.18-5.30 (42 days)
+- Spain
+  - Barcelona
+  - Madrid
+- Andorra
+- Liechtenstein
+- Malta
 - Finland
   - Rovaniemi
   - Helsinki
-
 - Georgia (对中国护照已免签30天, GC 90天)
   - Tbilisi
 - Armenia (互免普通护照签证)
   - Yerevan
-
-- Andorra
-- Liechtenstein
-- Malta
-
+- Turkey
+  - Istanbul
 
 #### 2025, 8.29-2025, 10.11 (43 days)
 - France
@@ -246,8 +248,6 @@ Rank	Destination	International
   - Barcelona (10.4-10.11)
 - France
   - Paris (10.11)
-
-
 
 #### 2024, 12.25-2025 1.26 (33 days)
 - France (1 day)
