@@ -123,7 +123,7 @@ Africa
 Rank	Destination	International
 - [?] 1	 Egypt	13.0 million	11.3 million	Increase 14.8	Increase 36.8
 - [?] 2	 Morocco	12.9 million	12.3 million	Increase 5.2	Increase 8.3
-- [] 3	 South Africa	10.2 million	10.5 million	Decrease 2.3	Increase 1.8
+- [?] 3	 South Africa	10.2 million	10.5 million	Decrease 2.3	Increase 1.8
 
 Americas
 Rank	Destination	International
