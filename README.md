@@ -76,12 +76,12 @@ Asia: 1 + (11)
 China
 
 Thailand
-Japan
+[?] Japan
 Malaysia
-Hong Kong
-Macau
+[x] Hong Kong
+[?] Macau
 India
-South Korea
+[?] South Korea
 Indonesia
 
 Saudi Arabia
@@ -93,8 +93,8 @@ Qatar
 North America: 1 + (2)
 USA
 
-Mexico
-Canada
+[?] Mexico
+[?] Canada
 
 Africa: (3)
 Egypt
@@ -102,8 +102,8 @@ Morocco
 South Africa
 
 South America: (2)
-Argentina
-Brazil
+[?] Argentina
+[?] Brazil
 
 
 Most visited destinations by international tourist arrivals
@@ -139,7 +139,7 @@ Rank	Destination	International
 - [?] 2	 Thailand	28.15 million	39.8 million	38.2 million	Increase 4.3	Increase 7.3
 - [?] 3	 Japan	25.07 million	32.2 million	31.2 million	Increase 3.2	Increase 8.7
 - [?] 4	 Malaysia		26.1 million	25.8 million	Increase 1.0	Decrease 0.4
-- [?] 5	 Hong Kong		23.8 million	29.3 million	Decrease 18.8	Increase 4.9
+- [x] 5	 Hong Kong		23.8 million	29.3 million	Decrease 18.8	Increase 4.9
 - [?] 6	 Macau		18.6 million	18.5 million	Increase 0.8	Increase 7.2
 - [?] 7	 Vietnam		18.0 million	15.5 million	Increase 16.2	Increase 19.9
 - [?] 8	 India		17.9 million	17.4 million	Increase 2.8	Increase 12.1
@@ -168,7 +168,7 @@ Rank	Destination	International
 - [x] 9	 Portugal	―	9.6 million	6.5 million	24.5 million	―	Increase 48.4
 - [x] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
 
-#### 2026, 6.1-8.1 (days)
+#### 2026, 8.24-10.18 (56 days)
 - Moldova (电子签)
   - Chișinău
 - Turkey (电子签)
@@ -177,18 +177,24 @@ Rank	Destination	International
   - Kyiv
 - Russia (电子签)
   - Moscow
+- Turkey
+  - Istanbul
 
 
-#### 2026, 3.5-3.22 (18-2 days)
-- 天津 (3 days)
-- 香港 (4 days)
-- 深圳 (1 day)
-- 广州 (1 day)
-- 上海 (2 days)
-- 南京 (2 days)
-- 北京 (2 days)
+#### 2026, 7.20-8.23 (35 days)
+- Moldova (电子签)
+  - Chișinău
+- Turkey (电子签)
+  - Istanbul
+- Ukraine (电子签)
+  - Kyiv
+- Russia (电子签)
+  - Moscow
+- Turkey
+  - Istanbul
 
-#### 2026, 4.18-5.30 (42 days)
+
+#### 2026, 4.18-5.23 (35 days)
 - Spain
   - Barcelona
   - Madrid
@@ -202,8 +208,47 @@ Rank	Destination	International
   - Tbilisi
 - Armenia (互免普通护照签证)
   - Yerevan
-- Turkey
-  - Istanbul
+
+- Belarus (互免普通护照签证)
+  - Minsk (9.24-9.25)
+- Italy
+  - Turin (9.27-9.30, 10.1) 5days
+- France
+  - Narbonne
+  - Montpellier
+  - Arles
+  - Avignon
+  - Gordes
+  - Provence
+  - Cannes
+  - Èze
+  - Menton
+  - Nice (10.2)
+  - Marseille (10.3)
+- Italy
+  - Cinque Terre
+  - Milan
+- Germany
+  - Stuttgart
+  - Munich
+  - Frankfurt
+- Monaco
+- Hungary
+  - Budapest (9.12-9.13)
+- Czech Republic 9.23-9.26 (3 days)
+  - Prague
+
+
+#### 2026, 3.5-3.22 (18-2 days)
+- 天津 (3 days)
+- 香港 (4 days)
+- 深圳 (1 day)
+
+- 广州 (1 day)
+- 上海 (2 days)
+- 南京 (2 days)
+- 北京 (2 days)
+
 
 #### 2025, 8.29-2025, 10.11 (43 days)
 - France
