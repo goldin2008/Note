@@ -193,13 +193,6 @@ Rank	Destination	International
 - Turkey
   - Istanbul
 
-
-#### 2026, 4.18-5.23 (35 days)
-- Spain
-  - Barcelona
-  - Madrid
-- Andorra
-- Liechtenstein
 - Malta
 - Finland
   - Rovaniemi
@@ -211,32 +204,62 @@ Rank	Destination	International
 
 - Belarus (互免普通护照签证)
   - Minsk (9.24-9.25)
-- Italy
-  - Turin (9.27-9.30, 10.1) 5days
-- France
-  - Narbonne
-  - Montpellier
-  - Arles
-  - Avignon
-  - Gordes
-  - Provence
-  - Cannes
-  - Èze
-  - Menton
-  - Nice (10.2)
-  - Marseille (10.3)
-- Italy
-  - Cinque Terre
-  - Milan
-- Germany
-  - Stuttgart
-  - Munich
-  - Frankfurt
-- Monaco
 - Hungary
   - Budapest (9.12-9.13)
-- Czech Republic 9.23-9.26 (3 days)
-  - Prague
+
+
+
+#### 2026, 4.18-5.23 (35 days)
+- Spain
+  - Barcelona 4.19
+  - Tarragona 4.20
+  - Zaragoza 4.21-4.22 (2 days)
+  - Madrid 4.23, 4.27-4.28 (3 days)
+  - Avila 4.24
+  - Segovia 4.25
+  - Toledo 4.26
+  - Valadolid 4.29
+  - Burgos 4.30
+  - Bilbao 5.1
+  - San Sebastian 5.2
+  - Zaragoza 5.3
+  - Barcelona 5.3-5.7 (5 days)
+- Andorra
+- Liechtenstein 
+
+- France
+  - Perpignan 5.9
+  - Narbonne 5.10
+  - Montpellier 5.10
+
+  - Arles 5.11
+  - Avignon 5.11
+  - Gordes 5.12
+  - Sault 5.12
+
+  - Provence 5.13
+  - Cannes 5.13
+  - Antibes 5.14
+
+  - Èze 5.15
+  - Menton 5.15
+
+  - Colmar
+  - Paris 5.21-5.22 (2 days)
+- Monaco 5.15
+- Italy
+  - Milan 5.16
+- Liechtenstein 5.17
+- Germany
+  - Neuschwanstein Castle 5.17
+  - Rothenburg ob der Tauber
+  - Stuttgart
+  - Frankfurt
+- Austria
+  - Hallstatt 5.18
+- Czech Republic
+  - Český Krumlov 5.19
+  - Prague 5.20
 
 
 #### 2026, 3.5-3.22 (18-2 days)
