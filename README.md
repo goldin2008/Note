@@ -207,46 +207,6 @@ Rank	Destination	International
 - Hungary
   - Budapest (9.12-9.13)
 
-
-
-#### 2026, 4.18-5.23 (35 days)
-- Spain
-  - Barcelona 4.19
-  - Tarragona 4.20
-  - Zaragoza 4.21-4.22 (2 days)
-  - Madrid 4.23, 4.27-4.28 (3 days)
-  - Avila 4.24
-  - Segovia 4.25
-  - Toledo 4.26
-  - Valadolid 4.29
-  - Burgos 4.30
-  - Bilbao 5.1
-  - San Sebastian 5.2
-  - Zaragoza 5.3
-  - Barcelona 5.3-5.7 (5 days)
-- Andorra
-- Liechtenstein 
-
-- France
-  - Perpignan 5.9
-  - Narbonne 5.10
-  - Montpellier 5.10
-
-  - Arles 5.11
-  - Avignon 5.11
-  - Gordes 5.12
-  - Sault 5.12
-
-  - Provence 5.13
-  - Cannes 5.13
-  - Antibes 5.14
-
-  - Èze 5.15
-  - Menton 5.15
-
-  - Colmar
-  - Paris 5.21-5.22 (2 days)
-- Monaco 5.15
 - Italy
   - Milan 5.16
 - Liechtenstein 5.17
@@ -260,6 +220,40 @@ Rank	Destination	International
 - Czech Republic
   - Český Krumlov 5.19
   - Prague 5.20
+
+#### 2026, 4.18-5.23 (35 days)
+- Spain
+  - Barcelona 4.19
+  - Tarragona 4.20
+  - Zaragoza 4.21-4.22 (2 days)
+  - Madrid 4.23, 4.28-4.28 (3 days)
+  - Avila 4.24, 4.25 (2 days)
+  - Segovia 4.26
+  - Toledo 4.27
+  - Salamanca 4.29
+  - Valadolid 4.30
+  - Burgos 5.1
+  - Bilbao 5.2
+  - Barcelona 5.3-5.7 (5 days)
+- Andorra 5.8
+- France
+  - Montpellier 5.9
+  - Nimes 5.10
+  - Arles 5.11
+  - Avignon 5.11
+  - Gordes 5.12
+  - Moustiers-Sainte-Marie 5.12
+
+  - Cannes 5.13
+  - Antibes 5.13
+
+  - Nice 5.13
+  - Èze 5.14
+  - Menton 5.14
+
+  - Colmar
+  - Paris 5.21-5.22 (2 days)
+- Monaco 5.15
 
 
 #### 2026, 3.5-3.22 (18-2 days)
