@@ -244,16 +244,16 @@ Rank	Destination	International
   - Gordes 5.12
   - Moustiers-Sainte-Marie 5.12
 
-  - Cannes 5.13
-  - Antibes 5.13
-
   - Nice 5.13
   - Èze 5.14
   - Menton 5.14
 
+  - Cannes 5.15
+  - Antibes 5.15
+
   - Colmar
   - Paris 5.21-5.22 (2 days)
-- Monaco 5.15
+- Monaco 5.14
 
 
 #### 2026, 3.5-3.22 (18-2 days)
