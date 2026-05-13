@@ -168,17 +168,8 @@ Rank	Destination	International
 - [x] 9	 Portugal	―	9.6 million	6.5 million	24.5 million	―	Increase 48.4
 - [x] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
 
-#### 2026, 8.24-10.18 (56 days)
-- Moldova (电子签)
-  - Chișinău
-- Turkey (电子签)
-  - Istanbul
-- Ukraine (电子签)
-  - Kyiv
-- Russia (电子签)
-  - Moscow
-- Turkey
-  - Istanbul
+#### 2026, 8.27-11.01 (66 days)
+
 
 
 #### 2026, 7.20-8.23 (35 days)
@@ -244,15 +235,15 @@ Rank	Destination	International
   - Gordes 5.12
   - Moustiers-Sainte-Marie 5.12
 
-  - Nice 5.13
+  - Nice 5.13-5.18 (6 days)
   - Èze 5.14
   - Menton 5.14
 
   - Cannes 5.15
   - Antibes 5.15
 
-  - Colmar
-  - Paris 5.21-5.22 (2 days)
+  - Lyon 5.19-5.21 (3 days)
+  - Paris 5.22-5.23 (2 days)
 - Monaco 5.14
 
 
