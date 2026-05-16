@@ -198,10 +198,9 @@ Rank	Destination	International
 - Hungary
   - Budapest (9.12-9.13)
 
-- Italy
-  - Milan 5.16
 - Liechtenstein 5.17
 - Germany
+  - Munich 5.17
   - Neuschwanstein Castle 5.17
   - Rothenburg ob der Tauber
   - Stuttgart
@@ -233,18 +232,18 @@ Rank	Destination	International
   - Arles 5.11
   - Avignon 5.11
   - Gordes 5.12
-  - Moustiers-Sainte-Marie 5.12
+  - Marseille 5.12
 
   - Nice 5.13-5.18 (6 days)
-  - Èze 5.14
+  - Èze 5.17
   - Menton 5.14
 
-  - Cannes 5.15
-  - Antibes 5.15
+  - Cannes 5.16
+  - Antibes 5.18
 
   - Lyon 5.19-5.21 (3 days)
   - Paris 5.22-5.23 (2 days)
-- Monaco 5.14
+- Monaco 5.17
 
 
 #### 2026, 3.5-3.22 (18-2 days)
