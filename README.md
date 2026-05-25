@@ -172,15 +172,7 @@ Rank	Destination	International
 
 
 
-#### 2026, 7.20-8.23 (35 days)
-- Moldova (电子签)
-  - Chișinău
-- Turkey (电子签)
-  - Istanbul
-- Ukraine (电子签)
-  - Kyiv
-- Russia (电子签)
-  - Moscow
+#### 2026, 7.21-8.22 (33 days)
 - Turkey
   - Istanbul
 
@@ -193,10 +185,6 @@ Rank	Destination	International
 - Armenia (互免普通护照签证)
   - Yerevan
 
-- Belarus (互免普通护照签证)
-  - Minsk (9.24-9.25)
-- Hungary
-  - Budapest (9.12-9.13)
 
 - Liechtenstein 5.17
 - Germany
@@ -210,6 +198,22 @@ Rank	Destination	International
 - Czech Republic
   - Český Krumlov 5.19
   - Prague 5.20
+
+
+- Belarus (互免普通护照签证)
+  - Minsk (9.24-9.25)
+- Hungary
+  - Budapest (9.12-9.13)
+
+
+
+
+- Moldova (电子签)
+  - Chișinău
+- Ukraine (电子签)
+  - Kyiv
+- Russia (电子签)
+  - Moscow
 
 #### 2026, 4.18-5.23 (35 days)
 - Spain
@@ -235,11 +239,11 @@ Rank	Destination	International
   - Marseille 5.12
 
   - Nice 5.13-5.18 (6 days)
-  - Èze 5.17
   - Menton 5.14
+  - Èze 5.17
 
   - Cannes 5.16
-  - Antibes 5.18
+  - Antibes 5.17
 
   - Lyon 5.19-5.21 (3 days)
   - Paris 5.22-5.23 (2 days)
