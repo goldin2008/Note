@@ -169,7 +169,12 @@ Rank	Destination	International
 - [x] 10	 Netherlands	15.9 million	6.2 million	7.3 million	20.1 million	Increase 155	Decrease 14.0
 
 #### 2026, 8.27-11.01 (66 days)
-
+- 天津 8.27-11.01 (50 days)
+- 北京 9.7-9.10  (4 days)
+- 西安 10.9-10.13  (5 days)
+- 兰州 10.14-10.15 (2 days)
+- 成都 10.16-10.19 (3 days)
+- 重庆 10.20-10.21 (2 days)
 
 
 #### 2026, 7.21-8.22 (33 days)
